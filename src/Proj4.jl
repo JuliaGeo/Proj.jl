@@ -2,51 +2,48 @@ module Proj4
 
 export transform, Projection
 
-const libproj = "libproj"
-
 ## Types
 
-# Cartographic projection type
+# Projection context.  TODO: Will this be exposed?
+type Context
+    rep::Ptr{Void} # Pointer to internal projCtx struct
+end
+
+"""
+Cartographic projection type
+"""
 type Projection
+    #ctx::Context   # Projection context object
     rep::Ptr{Void} # Pointer to internal projPJ struct
 end
 
 
-# Projection context
-type ProjContext
-    rep::Ptr{Void} # Pointer to internal projCtx struct
-end
 
+## Low-level interface pieces
+const libproj = "libproj"
 
-"""Free C datastructure associated with a projection.  For internal use only!"""
+"Free C datastructure associated with a projection.  For internal use only!"
 function _free(proj::Projection)
     @assert proj.rep != C_NULL
     ccall((:pj_free, libproj), Void, (Ptr{Void},), proj.rep)
     proj.rep = C_NULL
 end
 
-
-"""
-Construct a projection from a string in PROJ.4 format
-
-The projection string `proj_string` is defined in the PROJ.4 "plus format",
-with arguments prefixed with '+' character.  For example:
-
-    `wgs84 = Projection("+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs")`
-"""
-function Projection(proj_string::String)
-    proj = Projection(ccall((:pj_init_plus, libproj), Ptr{Void}, (Ptr{UInt8},), proj_string))
-    if proj.rep == C_NULL
-        error("Could not parse projection string: \"$proj_string\"")
-    end
-    finalizer(proj, _free)
-    proj
+"Get human readable error string from proj.4 error code"
+function _strerrno(code::Cint)
+    bytestring(ccall((:pj_strerrno, libproj), Cstring, (Cint,), code))
 end
 
+"Get global errno string in human readable form"
+function _strerrno()
+    _strerrno(unsafe_load(ccall((:pj_get_errno_ref, libproj), Ptr{Cint}, ())))
+end
 
-## Low-level interface stuff
-function strerrno(code::Cint)
-    bytestring(ccall((:pj_strerrno, "libproj"), Cstring, (Cint,), code))
+"Get projection definition string in the proj.4 plus format"
+function _get_def(proj::Projection)
+    @assert proj.rep != C_NULL
+    opts = 0 # Apparently obsolete argument, not used in current proj source
+    bytestring(ccall((:pj_get_def, libproj), Cstring, (Ptr{Void}, Cint), proj.rep, opts))
 end
 
 """Low level interface to libproj transform, allowing user to specify strides"""
@@ -57,20 +54,35 @@ function _transform!(src::Projection, dest::Projection, point_count, point_strid
           src.rep, dest.rep, point_count, point_stride, x, y, z)
 end
 
-function get_def(proj::Projection)
-    @assert proj.rep != C_NULL
-    opts = 0 # Apparently obsolete argument, not used in current proj source
-    bytestring(ccall((:pj_get_def, libproj), Cstring, (Ptr{Void}, Cint), proj.rep, opts))
-end
 
 
 ## High level interface
 
 """
+Construct a projection from a string in proj.4 "plus format"
+
+The projection string `proj_string` is defined in the proj.4 format,
+with each part of the projection specification prefixed with '+' character.
+For example:
+
+    `wgs84 = Projection("+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs")`
+"""
+function Projection(proj_string::String)
+    proj = Projection(ccall((:pj_init_plus, libproj), Ptr{Void}, (Ptr{UInt8},), proj_string))
+    if proj.rep == C_NULL
+        # TODO: use context?
+        error("Could not parse projection string: \"$proj_string\": $(_strerrno())")
+    end
+    finalizer(proj, _free)
+    proj
+end
+
+
+"""
 Show a projection in human readable form
 """
 function Base.show(io::IO, proj::Projection)
-    defstr = strip(get_def(proj))
+    defstr = strip(_get_def(proj))
     print(io, "Projection(\"$defstr\")")
 end
 
@@ -113,7 +125,7 @@ function transform!(src::Projection, dest::Projection, position::Array{Float64,2
     z = ncomps < 3 ? C_NULL : P + 2*sizeof(Cdouble)*npoints
     err = _transform!(src, dest, npoints, 1, x, y, z)
     if err != 0
-        error("transform error: $(strerrno(err))")
+        error("transform error: $(_strerrno(err))")
     end
     if !radians && is_latlong(dest)
         position[:,1:2] = rad2deg(position[:,1:2])
@@ -137,7 +149,7 @@ end
 
 
 # Hacky globals for debugging
-wgs84 = Projection("+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs")
-zone56 = Projection("+proj=utm +zone=56 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs")
+wgs84 = Projection("+proj=longlat +datum=WGS84 +no_defs")
+zone56 = Projection("+proj=utm +zone=56 +south +datum=WGS84 +units=m +no_defs")
 
 end # module
