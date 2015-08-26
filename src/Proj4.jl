@@ -11,14 +11,36 @@ type ProjPJ
     rep::Ptr{Void}
 end
 
-function ProjPJ(proj_string::String)
-    ProjPJ(ccall((:pj_init_plus, libproj), Ptr{Void}, (Ptr{UInt8},), proj_string))
-end
-
 
 # Projection context (rename?)
 type ProjCtx
     rep::Ptr{Void}
+end
+
+
+"""Free C datastructure associated with a projection.  NB: for internal use only!"""
+function _free(proj::ProjPJ)
+    @assert proj.rep != C_NULL
+    ccall((:pj_free, libproj), Void, (Ptr{Void},), proj.rep)
+    proj.rep = C_NULL
+end
+
+
+"""
+Construct a projection from a string in PROJ.4 format
+
+The projection string `proj_string` is defined in the PROJ.4 "plus format",
+with arguments prefixed with '+' character.  For example:
+
+    `wgs84 = ProjPJ("+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs")`
+"""
+function ProjPJ(proj_string::String)
+    proj = ProjPJ(ccall((:pj_init_plus, libproj), Ptr{Void}, (Ptr{UInt8},), proj_string))
+    if proj.rep == C_NULL
+        error("Could not parse projection string: \"$proj_string\"")
+    end
+    finalizer(proj, _free)
+    proj
 end
 
 
@@ -28,6 +50,7 @@ function strerrno(code::Cint)
 end
 
 function _transform!(src::ProjPJ, dest::ProjPJ, point_count, point_stride, x, y, z)
+    @assert src.rep != C_NULL && dest.rep != C_NULL
     ccall((:pj_transform, libproj), Cint,
           (Ptr{Void}, Ptr{Void}, Clong, Cint, Ptr{Cdouble}, Ptr{Cdouble}, Ptr{Cdouble}),
           src.rep, dest.rep, point_count, point_stride, x, y, z)
@@ -35,6 +58,7 @@ end
 
 function get_def(proj::ProjPJ)
     options = 0 # TODO: What is this?
+    @assert proj.rep != C_NULL
     bytestring(ccall((:pj_get_def, libproj), Cstring, (Ptr{Void}, Cint), proj.rep, options))
 end
 
@@ -54,6 +78,7 @@ end
 Return true if the projection is a geographic coordinate system (lon,lat)
 """
 function is_latlong(proj::ProjPJ)
+    @assert proj.rep != C_NULL
     ccall((:pj_is_latlong, libproj), Cint, (Ptr{Void},), proj.rep) != 0
 end
 
@@ -111,7 +136,7 @@ end
 
 
 # Hacky globals for debugging
-#wgs84 = ProjPJ("+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs")
-#zone56 = ProjPJ("+proj=utm +zone=56 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs")
+wgs84 = ProjPJ("+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs")
+zone56 = ProjPJ("+proj=utm +zone=56 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs")
 
 end
