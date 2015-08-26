@@ -49,6 +49,7 @@ function strerrno(code::Cint)
     bytestring(ccall((:pj_strerrno, "libproj"), Cstring, (Cint,), code))
 end
 
+"""Low level interface to libproj transform, allowing user to specify strides"""
 function _transform!(src::ProjPJ, dest::ProjPJ, point_count, point_stride, x, y, z)
     @assert src.rep != C_NULL && dest.rep != C_NULL
     ccall((:pj_transform, libproj), Cint,
@@ -57,9 +58,9 @@ function _transform!(src::ProjPJ, dest::ProjPJ, point_count, point_stride, x, y,
 end
 
 function get_def(proj::ProjPJ)
-    options = 0 # TODO: What is this?
     @assert proj.rep != C_NULL
-    bytestring(ccall((:pj_get_def, libproj), Cstring, (Ptr{Void}, Cint), proj.rep, options))
+    opts = 0 # Apparently obsolete argument, not used in current proj source
+    bytestring(ccall((:pj_get_def, libproj), Cstring, (Ptr{Void}, Cint), proj.rep, opts))
 end
 
 
