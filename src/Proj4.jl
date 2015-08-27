@@ -1,13 +1,13 @@
 module Proj4
 
-export transform, transform!, Projection
+export transform, transform!, Projection, is_latlong, is_gencent
 
 ## Types
 
 # Projection context.  TODO: Will this be exposed?
-type Context
-    rep::Ptr{Void} # Pointer to internal projCtx struct
-end
+#type Context
+#    rep::Ptr{Void} # Pointer to internal projCtx struct
+#end
 
 """
 Cartographic projection type
@@ -21,6 +21,9 @@ end
 
 ## Low-level interface pieces
 const libproj = "libproj"
+
+# The following functions are generally named after the associated C API
+# functions, but without the pj prefix.
 
 "Free C datastructure associated with a projection.  For internal use only!"
 function _free(proj::Projection)
@@ -95,21 +98,20 @@ function is_latlong(proj::Projection)
     ccall((:pj_is_latlong, libproj), Cint, (Ptr{Void},), proj.rep) != 0
 end
 
+"""
+Return true if the projection is a geocentric coordinate system
+"""
+function is_gencent(proj::Projection)
+    @assert proj.rep != C_NULL
+    ccall((:pj_is_geocent, libproj), Cint, (Ptr{Void},), proj.rep) != 0
+end
+
 
 """
-Transform between geographic or projected coordinate systems
+Transform between geographic or projected coordinate systems in place.
 
-Args:
+See transform() for details
 
-    src      - Source coordinate system definition
-    dest     - Destination coordinate system definition
-    position - An Nx2 or Nx3 array of coordinates to be transformed in place.
-    radians  - If true, treat geographic lon,lat coordinates as radians on
-            input and output.
-
-Returns:
-
-    position - Transformed position
 """
 function transform!(src::Projection, dest::Projection, position::Array{Float64,2}; radians::Bool=false)
     npoints = size(position,1)
@@ -138,7 +140,19 @@ end
 """
 Transform between geographic or projected coordinate systems
 
-See transform! for details.
+Args:
+
+    src      - Source coordinate system definition
+    dest     - Destination coordinate system definition
+    position - An Nx2 or Nx3 array of coordinates to be transformed in place.
+               For geographic coordinate systems, the first two columns are
+               the *longitude* and *latitude*, in that order.
+    radians  - If true, treat geographic lon,lat coordinates as radians on
+               input and output.
+
+Returns:
+
+    position - Transformed position
 """
 function transform(src::Projection, dest::Projection, position::Array{Float64,2}; radians::Bool=false)
     transform!(src, dest, copy(position), radians=radians)
@@ -148,13 +162,10 @@ function transform{T}(src::Projection, dest::Projection, position::Array{T,2}; r
     transform(src, dest, map(Float64, position), radians=radians)
 end
 
-"Get a string describing the installed version of libproj"
+
+"Get a string describing the underlying version of libproj in use"
 function libproj_version()
     bytestring(ccall((:pj_get_release, libproj), Cstring, ()))
 end
-
-# Hacky globals for debugging
-wgs84 = Projection("+proj=longlat +datum=WGS84 +no_defs")
-zone56 = Projection("+proj=utm +zone=56 +south +datum=WGS84 +units=m +no_defs")
 
 end # module
