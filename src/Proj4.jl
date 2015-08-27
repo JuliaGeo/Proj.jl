@@ -1,6 +1,6 @@
 module Proj4
 
-export transform, Projection
+export transform, transform!, Projection
 
 ## Types
 
@@ -100,14 +100,15 @@ end
 Transform between geographic or projected coordinate systems
 
 Args:
+
     src      - Source coordinate system definition
     dest     - Destination coordinate system definition
     position - An Nx2 or Nx3 array of coordinates to be transformed in place.
-
     radians  - If true, treat geographic lon,lat coordinates as radians on
-               input and output.
+            input and output.
 
 Returns:
+
     position - Transformed position
 """
 function transform!(src::Projection, dest::Projection, position::Array{Float64,2}; radians::Bool=false)
@@ -147,6 +148,10 @@ function transform{T}(src::Projection, dest::Projection, position::Array{T,2}; r
     transform(src, dest, map(Float64, position), radians=radians)
 end
 
+"Get a string describing the installed version of libproj"
+function libproj_version()
+    bytestring(ccall((:pj_get_release, libproj), Cstring, ()))
+end
 
 # Hacky globals for debugging
 wgs84 = Projection("+proj=longlat +datum=WGS84 +no_defs")
