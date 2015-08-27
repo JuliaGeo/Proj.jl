@@ -17,8 +17,6 @@ type Projection
     rep::Ptr{Void} # Pointer to internal projPJ struct
 end
 
-
-
 ## Low-level interface pieces
 const libproj = "libproj"
 
@@ -50,14 +48,21 @@ function _get_def(proj::Projection)
 end
 
 """Low level interface to libproj transform, allowing user to specify strides"""
-function _transform!(src::Projection, dest::Projection, point_count, point_stride, x, y, z)
+function _transform!(src::Projection, dest::Projection, point_count::Int64,
+                     point_stride::Int32, x::Ptr{Float64}, y::Ptr{Float64}, z::Ptr{Float64})
     @assert src.rep != C_NULL && dest.rep != C_NULL
     ccall((:pj_transform, libproj), Cint,
           (Ptr{Void}, Ptr{Void}, Clong, Cint, Ptr{Cdouble}, Ptr{Cdouble}, Ptr{Cdouble}),
           src.rep, dest.rep, point_count, point_stride, x, y, z)
 end
 
-
+function _transform!(src::Projection, dest::Projection, point_count::Int64,
+                     point_stride::Int32, x::Ptr{Float64}, y::Ptr{Float64})
+    @assert src.rep != C_NULL && dest.rep != C_NULL
+    ccall((:pj_transform, libproj), Cint,
+          (Ptr{Void}, Ptr{Void}, Clong, Cint, Ptr{Cdouble}, Ptr{Cdouble}, Ptr{Void}),
+          src.rep, dest.rep, point_count, point_stride, x, y, C_NULL)
+end
 
 ## High level interface
 
@@ -119,8 +124,9 @@ function transform!(src::Projection, dest::Projection, position::Array{Float64,2
     P = pointer(position)
     x = P
     y = P + sizeof(Cdouble)*npoints
-    z = ncomps < 3 ? C_NULL : P + 2*sizeof(Cdouble)*npoints
-    err = _transform!(src, dest, npoints, 1, x, y, z)
+    z = P + 2*sizeof(Cdouble)*npoints
+    err = (ncomps < 3) ? _transform!(src, dest, npoints, Int32(1), x, y) :
+          _transform!(src, dest, npoints, Int32(1), x, y, z)
     if err != 0
         error("transform error: $(_strerrno(err))")
     end
@@ -129,6 +135,9 @@ function transform!(src::Projection, dest::Projection, position::Array{Float64,2
     end
     position
 end
+
+transform!(src::Projection, dest::Projection, position::Vector{Float64}; radians::Bool=false) =
+    transform!(src, dest, reshape(position,(1,length(position))), radians=radians)
 
 
 """
@@ -148,18 +157,23 @@ Returns:
 
     position - Transformed position
 """
-function transform(src::Projection, dest::Projection, position::Array{Float64,2}; radians::Bool=false)
+transform(src::Projection, dest::Projection, position::Array{Float64,2}; radians::Bool=false) =
     transform!(src, dest, copy(position), radians=radians)
-end
 
-function transform{T}(src::Projection, dest::Projection, position::Array{T,2}; radians::Bool=false)
-    transform(src, dest, map(Float64, position), radians=radians)
-end
+transform(src::Projection, dest::Projection, position::Vector{Float64}; radians::Bool=false) =
+    transform!(src, dest, copy(reshape(position,(1,length(position)))), radians=radians)
 
+transform{T <: Real}(src::Projection, dest::Projection, position::Array{T,2}; radians::Bool=false) =
+    transform!(src, dest, map(Float64,position), radians=radians)
+
+transform{T <: Real}(src::Projection, dest::Projection, position::Vector{T}; radians::Bool=false) =
+    transform!(src, dest, reshape(map(Float64,position),(1,length(position))), radians=radians)
 
 "Get a string describing the underlying version of libproj in use"
 function libproj_version()
     bytestring(ccall((:pj_get_release, libproj), Cstring, ()))
 end
+
+include("projection_codes.jl")
 
 end # module
