@@ -41,8 +41,6 @@ rt90 = Projection("+lon_0=15.808277777799999 +lat_0=0.0 +k=1.0 +x_0=1500000.0 +y
              319480 6397862;
              329200 6599800], 1e-6)
 
-# lla_point = [1.290270 103.851959 0.0]
-
 for proj_string in values(Proj4.epsg)
    proj = Projection(proj_string)
    proj_string1 = Proj4._get_def(proj)

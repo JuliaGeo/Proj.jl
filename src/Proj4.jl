@@ -1,5 +1,7 @@
 module Proj4
 
+using Compat
+
 export transform, transform!, Projection, is_latlong, is_geocent
 
 ## Types
@@ -48,20 +50,11 @@ function _get_def(proj::Projection)
 end
 
 """Low level interface to libproj transform, allowing user to specify strides"""
-function _transform!(src::Projection, dest::Projection, point_count::Int64,
-                     point_stride::Int32, x::Ptr{Float64}, y::Ptr{Float64}, z::Ptr{Float64})
+function _transform!(src::Projection, dest::Projection, point_count, point_stride, x, y, z)
     @assert src.rep != C_NULL && dest.rep != C_NULL
     ccall((:pj_transform, libproj), Cint,
           (Ptr{Void}, Ptr{Void}, Clong, Cint, Ptr{Cdouble}, Ptr{Cdouble}, Ptr{Cdouble}),
           src.rep, dest.rep, point_count, point_stride, x, y, z)
-end
-
-function _transform!(src::Projection, dest::Projection, point_count::Int64,
-                     point_stride::Int32, x::Ptr{Float64}, y::Ptr{Float64})
-    @assert src.rep != C_NULL && dest.rep != C_NULL
-    ccall((:pj_transform, libproj), Cint,
-          (Ptr{Void}, Ptr{Void}, Clong, Cint, Ptr{Cdouble}, Ptr{Cdouble}, Ptr{Void}),
-          src.rep, dest.rep, point_count, point_stride, x, y, C_NULL)
 end
 
 ## High level interface
@@ -75,8 +68,8 @@ For example:
 
     `wgs84 = Projection("+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs")`
 """
-function Projection(proj_string::String)
-    proj = Projection(ccall((:pj_init_plus, libproj), Ptr{Void}, (Ptr{UInt8},), proj_string))
+function Projection(proj_string::ASCIIString)
+    proj = Projection(ccall((:pj_init_plus, libproj), Ptr{Void}, (Cstring,), proj_string))
     if proj.rep == C_NULL
         # TODO: use context?
         error("Could not parse projection string: \"$proj_string\": $(_strerrno())")
@@ -130,9 +123,8 @@ function transform!(src::Projection, dest::Projection, position::Array{Float64,2
     P = pointer(position)
     x = P
     y = P + sizeof(Cdouble)*npoints
-    z = P + 2*sizeof(Cdouble)*npoints
-    err = (ncomps < 3) ? _transform!(src, dest, npoints, Int32(1), x, y) :
-          _transform!(src, dest, npoints, Int32(1), x, y, z)
+    z = (ncomps < 3) ? C_NULL : P + 2*sizeof(Cdouble)*npoints
+    err = _transform!(src, dest, npoints, 1, x, y, z)
     if err != 0
         error("transform error: $(_strerrno(err))")
     end
@@ -170,10 +162,10 @@ transform(src::Projection, dest::Projection, position::Vector{Float64}; radians:
     transform!(src, dest, copy(reshape(position,(1,length(position)))), radians=radians)
 
 transform{T <: Real}(src::Projection, dest::Projection, position::Array{T,2}; radians::Bool=false) =
-    transform!(src, dest, map(Float64,position), radians=radians)
+    transform!(src, dest, @compat(map(Float64,position)), radians=radians)
 
 transform{T <: Real}(src::Projection, dest::Projection, position::Vector{T}; radians::Bool=false) =
-    transform!(src, dest, reshape(map(Float64,position),(1,length(position))), radians=radians)
+    transform!(src, dest, reshape(@compat(map(Float64,position)),(1,length(position))), radians=radians)
 
 "Get a string describing the underlying version of libproj in use"
 function libproj_version()
