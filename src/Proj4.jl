@@ -1,6 +1,6 @@
 module Proj4
 
-export transform, transform!, Projection, is_latlong, is_gencent
+export transform, transform!, Projection, is_latlong, is_geocent
 
 ## Types
 
@@ -100,7 +100,7 @@ end
 """
 Return true if the projection is a geocentric coordinate system
 """
-function is_gencent(proj::Projection)
+function is_geocent(proj::Projection)
     @assert proj.rep != C_NULL
     ccall((:pj_is_geocent, libproj), Cint, (Ptr{Void},), proj.rep) != 0
 end
