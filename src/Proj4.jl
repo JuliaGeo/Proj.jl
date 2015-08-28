@@ -80,15 +80,9 @@ function Projection(proj_string::String)
     proj
 end
 
-
-"""
-Show a projection in human readable form
-"""
-function Base.show(io::IO, proj::Projection)
-    defstr = strip(_get_def(proj))
-    print(io, "Projection(\"$defstr\")")
-end
-
+# Pretty printing
+Base.print(io::IO, proj::Projection) = print(io, strip(_get_def(proj)))
+Base.show(io::IO, proj::Projection) = print(io, "Projection(\"$proj\")")
 
 """
 Return true if the projection is a geographic coordinate system (lon,lat)
