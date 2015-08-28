@@ -15,7 +15,7 @@ for filename in FILENAMES
     lines = readlines(proj_file)
     close(proj_file)
 
-    println("$filename = Dict(")
+    println("$filename = Compat.@compat Dict(")
     for i=1:length(lines)
         m = parse_projection(lines[i])
         if is(m, nothing)
