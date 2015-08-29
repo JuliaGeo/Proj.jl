@@ -45,11 +45,11 @@ epsg_error = Int[]
 for epsg_code in keys(Proj4.epsg)
     try
         proj = Projection(Proj4.epsg[epsg_code])
-        proj_string1 = Proj4._get_def(proj)
+        proj_string1 = string(proj)
         proj1 = Projection(proj_string1)
-        proj_string2 = Proj4._get_def(proj1)
+        proj_string2 = string(proj1)
         proj2 = Projection(proj_string2)
-        proj_string3 = Proj4._get_def(proj2)
+        proj_string3 = string(proj2)
         @fact proj_string1 --> proj_string2
         @fact proj_string2 --> proj_string3
         @fact proj_string3 --> proj_string1
@@ -63,11 +63,11 @@ for esri_code in keys(Proj4.esri)
     try
         proj_string = Proj4.esri[esri_code]
         proj = Projection(proj_string)
-        proj_string1 = Proj4._get_def(proj)
+        proj_string1 = string(proj)
         proj1 = Projection(proj_string1)
-        proj_string2 = Proj4._get_def(proj1)
+        proj_string2 = string(proj1)
         proj2 = Projection(proj_string2)
-        proj_string3 = Proj4._get_def(proj2)
+        proj_string3 = string(proj2)
         @fact proj_string1 --> proj_string2
         @fact proj_string2 --> proj_string3
         @fact proj_string3 --> proj_string1
@@ -76,10 +76,27 @@ for esri_code in keys(Proj4.esri)
     end
 end
 
-println("The following projection strings could not be parsed:")
-for epsg_code in sort(epsg_error)
-    println("[EPSG:$epsg_code] \"$(Proj4.epsg[epsg_code])\"")
-end
-for esri_code in sort(esri_error)
-    println("[ESRI:$esri_code] \"$(Proj4.esri[esri_code])\"")
+if length(epsg_error) > 0 || length(esri_error) > 0
+    errorFraction = (length(epsg_error) + length(esri_error)) /
+                    (length(Proj4.epsg) + length(Proj4.esri))
+    # Some errors are ok (due to old libproj versions), but a good fraction of
+    # the strings should parse - if not something *really* wrong has probably
+    # occurred.
+    @fact errorFraction --> less_than(0.1)
+
+    println(
+    """
+    The following projection strings could not be parsed by your version of
+    libproj Note that this isn't necessarily a problem, but you won't be able
+    to use the projections in question.
+
+    total errors: $(round(100*errorFraction,2))%
+    libproj version: $(Proj4.libproj_version())
+    """)
+    for epsg_code in sort(epsg_error)
+        println("[EPSG:$epsg_code] \"$(Proj4.epsg[epsg_code])\"")
+    end
+    for esri_code in sort(esri_error)
+        println("[ESRI:$esri_code] \"$(Proj4.esri[esri_code])\"")
+    end
 end
