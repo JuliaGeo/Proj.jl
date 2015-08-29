@@ -76,10 +76,27 @@ for esri_code in keys(Proj4.esri)
     end
 end
 
-println("The following projection strings could not be parsed:")
-for epsg_code in sort(epsg_error)
-    println("[EPSG:$epsg_code] \"$(Proj4.epsg[epsg_code])\"")
-end
-for esri_code in sort(esri_error)
-    println("[ESRI:$esri_code] \"$(Proj4.esri[esri_code])\"")
+if length(epsg_error) > 0 || length(esri_error) > 0
+    errorFraction = (length(epsg_error) + length(esri_error)) /
+                    (length(Proj4.epsg) + length(Proj4.esri))
+    # Some errors are ok (due to old libproj versions), but a good fraction of
+    # the strings should parse - if not something *really* wrong has probably
+    # occurred.
+    @fact errorFraction --> less_than(0.1)
+
+    println(
+    """
+    The following projection strings could not be parsed by your version of
+    libproj Note that this isn't necessarily a problem, but you won't be able
+    to use the projections in question.
+
+    total errors: $(round(100*errorFraction,2))%
+    libproj version: $(Proj4.libproj_version())
+    """)
+    for epsg_code in sort(epsg_error)
+        println("[EPSG:$epsg_code] \"$(Proj4.epsg[epsg_code])\"")
+    end
+    for esri_code in sort(esri_error)
+        println("[ESRI:$esri_code] \"$(Proj4.esri[esri_code])\"")
+    end
 end
