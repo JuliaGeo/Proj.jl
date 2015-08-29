@@ -41,21 +41,27 @@ rt90 = Projection("+lon_0=15.808277777799999 +lat_0=0.0 +k=1.0 +x_0=1500000.0 +y
              319480 6397862;
              329200 6599800], 1e-6)
 
-for proj_string in values(Proj4.epsg)
-   proj = Projection(proj_string)
-   proj_string1 = Proj4._get_def(proj)
-   proj1 = Projection(proj_string1)
-   proj_string2 = Proj4._get_def(proj1)
-   proj2 = Projection(proj_string2)
-   proj_string3 = Proj4._get_def(proj2)
-   @fact proj_string1 --> proj_string2
-   @fact proj_string2 --> proj_string3
-   @fact proj_string3 --> proj_string1
+epsg_error = Int[]
+for epsg_code in keys(Proj4.epsg)
+    try
+        proj = Projection(Proj4.epsg[epsg_code])
+        proj_string1 = Proj4._get_def(proj)
+        proj1 = Projection(proj_string1)
+        proj_string2 = Proj4._get_def(proj1)
+        proj2 = Projection(proj_string2)
+        proj_string3 = Proj4._get_def(proj2)
+        @fact proj_string1 --> proj_string2
+        @fact proj_string2 --> proj_string3
+        @fact proj_string3 --> proj_string1
+    catch
+        push!(epsg_error, epsg_code)
+    end
 end
 
-error_strings = ASCIIString[]
-for proj_string in values(Proj4.esri)
+esri_error = Int[]
+for esri_code in keys(Proj4.esri)
     try
+        proj_string = Proj4.esri[esri_code]
         proj = Projection(proj_string)
         proj_string1 = Proj4._get_def(proj)
         proj1 = Projection(proj_string1)
@@ -66,37 +72,14 @@ for proj_string in values(Proj4.esri)
         @fact proj_string2 --> proj_string3
         @fact proj_string3 --> proj_string1
     catch
-        push!(error_strings, proj_string)
+        push!(esri_error, esri_code)
     end
 end
 
-@fact sort(error_strings) -->
-    ["+a=6371000 +b=6371000 +units=m",      # ESRI:53001
-     "+a=6371000 +b=6371000 +units=m",      # ESRI:53002
-     "+a=6371000 +b=6371000 +units=m",      # ESRI:53011
-     "+a=6371000 +b=6371000 +units=m",      # ESRI:53013
-     "+a=6371000 +b=6371000 +units=m",      # ESRI:53014
-     "+a=6371000 +b=6371000 +units=m",      # ESRI:53015
-     "+a=6371000 +b=6371000 +units=m",      # ESRI:53017
-     "+a=6371000 +b=6371000 +units=m",      # ESRI:53018
-     "+a=6371000 +b=6371000 +units=m",      # ESRI:53019
-     "+a=6371000 +b=6371000 +units=m",      # ESRI:53022
-     "+a=6371000 +b=6371000 +units=m",      # ESRI:53023
-     "+a=6371000 +b=6371000 +units=m",      # ESRI:53024
-     "+a=6371000 +b=6371000 +units=m",      # ESRI:53025
-     "+a=6371000 +b=6371000 +units=m",      # ESRI:53031
-     "+ellps=WGS84 +datum=WGS84 +units=m",  # ESRI:54001
-     "+ellps=WGS84 +datum=WGS84 +units=m",  # ESRI:54002
-     "+ellps=WGS84 +datum=WGS84 +units=m",  # ESRI:54011
-     "+ellps=WGS84 +datum=WGS84 +units=m",  # ESRI:54013
-     "+ellps=WGS84 +datum=WGS84 +units=m",  # ESRI:54014
-     "+ellps=WGS84 +datum=WGS84 +units=m",  # ESRI:54015
-     "+ellps=WGS84 +datum=WGS84 +units=m",  # ESRI:54017
-     "+ellps=WGS84 +datum=WGS84 +units=m",  # ESRI:54018
-     "+ellps=WGS84 +datum=WGS84 +units=m",  # ESRI:54019
-     "+ellps=WGS84 +datum=WGS84 +units=m",  # ESRI:54022
-     "+ellps=WGS84 +datum=WGS84 +units=m",  # ESRI:54023
-     "+ellps=WGS84 +datum=WGS84 +units=m",  # ESRI:54024
-     "+ellps=WGS84 +datum=WGS84 +units=m",  # ESRI:54025
-     "+ellps=WGS84 +datum=WGS84 +units=m",  # ESRI:54031
-     "+ellps=bessel +units=m"]              # ESRI:102163
+println("The following projection strings could not be parsed:")
+for epsg_code in sort(epsg_error)
+    println("[EPSG:$epsg_code] \"$(Proj4.epsg[epsg_code])\"")
+end
+for esri_code in sort(esri_error)
+    println("[ESRI:$esri_code] \"$(Proj4.esri[esri_code])\"")
+end
