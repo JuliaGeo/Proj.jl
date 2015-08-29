@@ -1,6 +1,7 @@
 # The following functions are generally named after the associated C API
 # functions, but without the pj prefix.
 
+
 function _init_plus(proj_string::ASCIIString)
     proj_ptr = ccall((:pj_init_plus, libproj), Ptr{Void}, (Cstring,), proj_string)
     if proj_ptr == C_NULL
@@ -74,6 +75,7 @@ function libproj_version()
     bytestring(ccall((:pj_get_release, libproj), Cstring, ()))
 end
 
+@doc "This function converts cartesian (xyz) geocentric coordinates into geodetic (lat/long/alt) coordinates" ->
 function _geocentric_to_geodetic!(a::Cdouble, es::Cdouble, point_count, point_offset, x, y, z)
     ccall((:pj_geocentric_to_geodetic, libproj), Cint, (Cdouble, Cdouble, Clong, Cint,
           Ptr{Cdouble}, Ptr{Cdouble}, Ptr{Cdouble}), a, es, point_count, point_offset, x, y, z)
@@ -94,8 +96,10 @@ function _geocentric_to_geodetic!(a::Cdouble, es::Cdouble, position::Array{Float
     if err != 0
         error("geocentric_to_geodetic error: $(_strerrno(err))")
     end
+    position
 end
 
+@doc "This function converts geodetic (lat/long/alt) coordinates into cartesian (xyz) geocentric coordinates" ->
 function _geodetic_to_geocentric!(a::Cdouble, es::Cdouble, point_count, point_offset, x, y, z)
     ccall((:pj_geodetic_to_geocentric, libproj), Cint, (Cdouble, Cdouble, Clong, Cint,
           Ptr{Cdouble}, Ptr{Cdouble}, Ptr{Cdouble}), a, es, point_count, point_offset, x, y, z)
@@ -116,8 +120,16 @@ function _geodetic_to_geocentric!(a::Cdouble, es::Cdouble, position::Array{Float
     if err != 0
         error("geodetic_to_geocentric error: $(_strerrno(err))")
     end
+    position
 end
 
+@doc """
+Fetch the internal definition of the spheroid, and returns the tuple (a, es). Note that
+you can compute "b" from eccentricity_squared as:
+
+    b = a * sqrt(1 - es)
+
+""" ->
 function _get_spheroid_defn(proj_ptr::Ptr{Void})
     major_axis = Ref{Cdouble}()
     eccentricity_squared = Ref{Cdouble}()
@@ -126,10 +138,15 @@ function _get_spheroid_defn(proj_ptr::Ptr{Void})
     major_axis[], eccentricity_squared[]
 end
 
-function _compare_datums(src_ptr::Ptr{Void}, dest_ptr::Ptr{Void})
-    ccall((:pj_compare_datums, libproj), Cint, (Ptr{Void}, Ptr{Void}), src_ptr, dest_ptr)
+@doc "Returns true if the two datums are identical, otherwise false." ->
+function _compare_datums(p1_ptr::Ptr{Void}, p2_ptr::Ptr{Void})
+    @compat(Bool(ccall((:pj_compare_datums, libproj), Cint, (Ptr{Void}, Ptr{Void}), p1_ptr, p2_ptr)))
 end
 
+@doc """
+Return the lat/long coordinate system on which a projection is based.
+If the coordinate system passed in is latlong, a clone of the same will be returned.
+""" ->
 function _latlong_from_proj(proj_ptr::Ptr{Void})
     ccall((:pj_latlong_from_proj, libproj), Ptr{Void}, (Ptr{Void},), proj_ptr)
 end
