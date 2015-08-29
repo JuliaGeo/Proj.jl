@@ -1,6 +1,8 @@
 module Proj4
 
-export transform, transform!, Projection, is_latlong, is_gencent
+using Compat
+
+export transform, transform!, Projection, is_latlong, is_geocent
 
 ## Types
 
@@ -16,8 +18,6 @@ type Projection
     #ctx::Context   # Projection context object
     rep::Ptr{Void} # Pointer to internal projPJ struct
 end
-
-
 
 ## Low-level interface pieces
 const libproj = "libproj"
@@ -57,8 +57,6 @@ function _transform!(src::Projection, dest::Projection, point_count, point_strid
           src.rep, dest.rep, point_count, point_stride, x, y, z)
 end
 
-
-
 ## High level interface
 
 """
@@ -70,8 +68,8 @@ For example:
 
     `wgs84 = Projection("+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs")`
 """
-function Projection(proj_string::String)
-    proj = Projection(ccall((:pj_init_plus, libproj), Ptr{Void}, (Ptr{UInt8},), proj_string))
+function Projection(proj_string::ASCIIString)
+    proj = Projection(ccall((:pj_init_plus, libproj), Ptr{Void}, (Cstring,), proj_string))
     if proj.rep == C_NULL
         # TODO: use context?
         error("Could not parse projection string: \"$proj_string\": $(_strerrno())")
@@ -95,7 +93,7 @@ end
 """
 Return true if the projection is a geocentric coordinate system
 """
-function is_gencent(proj::Projection)
+function is_geocent(proj::Projection)
     @assert proj.rep != C_NULL
     ccall((:pj_is_geocent, libproj), Cint, (Ptr{Void},), proj.rep) != 0
 end
@@ -119,7 +117,7 @@ function transform!(src::Projection, dest::Projection, position::Array{Float64,2
     P = pointer(position)
     x = P
     y = P + sizeof(Cdouble)*npoints
-    z = ncomps < 3 ? C_NULL : P + 2*sizeof(Cdouble)*npoints
+    z = (ncomps < 3) ? C_NULL : P + 2*sizeof(Cdouble)*npoints
     err = _transform!(src, dest, npoints, 1, x, y, z)
     if err != 0
         error("transform error: $(_strerrno(err))")
@@ -129,6 +127,9 @@ function transform!(src::Projection, dest::Projection, position::Array{Float64,2
     end
     position
 end
+
+transform!(src::Projection, dest::Projection, position::Vector{Float64}; radians::Bool=false) =
+    transform!(src, dest, reshape(position,(1,length(position))), radians=radians)
 
 
 """
@@ -148,18 +149,23 @@ Returns:
 
     position - Transformed position
 """
-function transform(src::Projection, dest::Projection, position::Array{Float64,2}; radians::Bool=false)
+transform(src::Projection, dest::Projection, position::Array{Float64,2}; radians::Bool=false) =
     transform!(src, dest, copy(position), radians=radians)
-end
 
-function transform{T}(src::Projection, dest::Projection, position::Array{T,2}; radians::Bool=false)
-    transform(src, dest, map(Float64, position), radians=radians)
-end
+transform(src::Projection, dest::Projection, position::Vector{Float64}; radians::Bool=false) =
+    transform!(src, dest, copy(reshape(position,(1,length(position)))), radians=radians)
 
+transform{T <: Real}(src::Projection, dest::Projection, position::Array{T,2}; radians::Bool=false) =
+    transform!(src, dest, @compat(map(Float64,position)), radians=radians)
+
+transform{T <: Real}(src::Projection, dest::Projection, position::Vector{T}; radians::Bool=false) =
+    transform!(src, dest, reshape(@compat(map(Float64,position)),(1,length(position))), radians=radians)
 
 "Get a string describing the underlying version of libproj in use"
 function libproj_version()
     bytestring(ccall((:pj_get_release, libproj), Cstring, ()))
 end
+
+include("projection_codes.jl")
 
 end # module
