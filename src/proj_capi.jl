@@ -73,3 +73,69 @@ end
 function libproj_version()
     bytestring(ccall((:pj_get_release, libproj), Cstring, ()))
 end
+
+function _geocentric_to_geodetic!(a::Cdouble, es::Cdouble, point_count, point_offset, x, y, z)
+    ccall((:pj_geocentric_to_geodetic, libproj), Cint, (Cdouble, Cdouble, Clong, Cint,
+          Ptr{Cdouble}, Ptr{Cdouble}, Ptr{Cdouble}), a, es, point_count, point_offset, x, y, z)
+end
+
+function _geocentric_to_geodetic!(a::Cdouble, es::Cdouble, position::Array{Float64,2})
+    npoints, ncomps = size(position)
+    if ncomps != 2 && ncomps != 3
+        error("position must be Nx2 or Nx3")
+    end
+
+    P = pointer(position)
+    x = P
+    y = P + sizeof(Cdouble)*npoints
+    z = (ncomps < 3) ? C_NULL : P + 2*sizeof(Cdouble)*npoints
+
+    err = _geocentric_to_geodetic!(a, es, npoints, 1, x, y, z)
+    if err != 0
+        error("geocentric_to_geodetic error: $(_strerrno(err))")
+    end
+end
+
+function _geodetic_to_geocentric!(a::Cdouble, es::Cdouble, point_count, point_offset, x, y, z)
+    ccall((:pj_geodetic_to_geocentric, libproj), Cint, (Cdouble, Cdouble, Clong, Cint,
+          Ptr{Cdouble}, Ptr{Cdouble}, Ptr{Cdouble}), a, es, point_count, point_offset, x, y, z)
+end
+
+function _geodetic_to_geocentric!(a::Cdouble, es::Cdouble, position::Array{Float64,2})
+    npoints, ncomps = size(position)
+    if ncomps != 2 && ncomps != 3
+        error("position must be Nx2 or Nx3")
+    end
+
+    P = pointer(position)
+    x = P
+    y = P + sizeof(Cdouble)*npoints
+    z = (ncomps < 3) ? C_NULL : P + 2*sizeof(Cdouble)*npoints
+
+    err = _geodetic_to_geocentric!(a, es, npoints, 1, x, y, z)
+    if err != 0
+        error("geodetic_to_geocentric error: $(_strerrno(err))")
+    end
+end
+
+function _get_spheroid_defn(proj_ptr::Ptr{Void})
+    major_axis = Ref{Cdouble}()
+    eccentricity_squared = Ref{Cdouble}()
+    ccall((:pj_get_spheroid_defn, libproj), Void, (Ptr{Void}, Ptr{Cdouble}, Ptr{Cdouble}),
+          proj_ptr, major_axis, eccentricity_squared)
+    major_axis[], eccentricity_squared[]
+end
+
+function _compare_datums(src_ptr::Ptr{Void}, dest_ptr::Ptr{Void})
+    ccall((:pj_compare_datums, libproj), Cint, (Ptr{Void}, Ptr{Void}), src_ptr, dest_ptr)
+end
+
+function _latlong_from_proj(proj_ptr::Ptr{Void})
+    ccall((:pj_latlong_from_proj, libproj), Ptr{Void}, (Ptr{Void},), proj_ptr)
+end
+
+# TODO
+# void pj_pr_list(projPJ);
+# int pj_apply_gridshift( projCtx, const char *, int, 
+#                         long point_count, int point_offset,
+#                         double *x, double *y, double *z );
