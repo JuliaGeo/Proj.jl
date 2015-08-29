@@ -1,171 +1,25 @@
 module Proj4
 
+if VERSION < v"0.4.0-dev"
+    using Docile
+end
 using Compat
 
-export transform, transform!, Projection, is_latlong, is_geocent
-
-## Types
-
-# Projection context.  TODO: Will this be exposed?
-#type Context
-#    rep::Ptr{Void} # Pointer to internal projCtx struct
-#end
-
-"""
-Cartographic projection type
-"""
-type Projection
-    #ctx::Context   # Projection context object
-    rep::Ptr{Void} # Pointer to internal projPJ struct
-end
-
-## Low-level interface pieces
 const libproj = "libproj"
 
-# The following functions are generally named after the associated C API
-# functions, but without the pj prefix.
+export Projection, # proj_types.jl
+       transform, transform!, # proj_functions.jl
+       is_latlong, is_geocent
 
-"Free C datastructure associated with a projection.  For internal use only!"
-function _free(proj::Projection)
-    @assert proj.rep != C_NULL
-    ccall((:pj_free, libproj), Void, (Ptr{Void},), proj.rep)
-    proj.rep = C_NULL
-end
+include("projection_codes.jl") # ESRI and EPSG projection strings
+include("proj_capi.jl") # low-level C-facing functions
+include("proj_types.jl") # type definitions for proj objects
+include("proj_functions.jl") # user-facing proj functions
 
-"Get human readable error string from proj.4 error code"
-function _strerrno(code::Cint)
-    bytestring(ccall((:pj_strerrno, libproj), Cstring, (Cint,), code))
-end
+@doc "Get a global error string in human readable form" ->
+error_message() = _strerrno()
 
-"Get global errno string in human readable form"
-function _strerrno()
-    _strerrno(unsafe_load(ccall((:pj_get_errno_ref, libproj), Ptr{Cint}, ())))
-end
-
-"Get projection definition string in the proj.4 plus format"
-function _get_def(proj::Projection)
-    @assert proj.rep != C_NULL
-    opts = 0 # Apparently obsolete argument, not used in current proj source
-    bytestring(ccall((:pj_get_def, libproj), Cstring, (Ptr{Void}, Cint), proj.rep, opts))
-end
-
-"""Low level interface to libproj transform, allowing user to specify strides"""
-function _transform!(src::Projection, dest::Projection, point_count, point_stride, x, y, z)
-    @assert src.rep != C_NULL && dest.rep != C_NULL
-    ccall((:pj_transform, libproj), Cint,
-          (Ptr{Void}, Ptr{Void}, Clong, Cint, Ptr{Cdouble}, Ptr{Cdouble}, Ptr{Cdouble}),
-          src.rep, dest.rep, point_count, point_stride, x, y, z)
-end
-
-## High level interface
-
-"""
-Construct a projection from a string in proj.4 "plus format"
-
-The projection string `proj_string` is defined in the proj.4 format,
-with each part of the projection specification prefixed with '+' character.
-For example:
-
-    `wgs84 = Projection("+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs")`
-"""
-function Projection(proj_string::ASCIIString)
-    proj = Projection(ccall((:pj_init_plus, libproj), Ptr{Void}, (Cstring,), proj_string))
-    if proj.rep == C_NULL
-        # TODO: use context?
-        error("Could not parse projection string: \"$proj_string\": $(_strerrno())")
-    end
-    finalizer(proj, _free)
-    proj
-end
-
-# Pretty printing
-Base.print(io::IO, proj::Projection) = print(io, strip(_get_def(proj)))
-Base.show(io::IO, proj::Projection) = print(io, "Projection(\"$proj\")")
-
-"""
-Return true if the projection is a geographic coordinate system (lon,lat)
-"""
-function is_latlong(proj::Projection)
-    @assert proj.rep != C_NULL
-    ccall((:pj_is_latlong, libproj), Cint, (Ptr{Void},), proj.rep) != 0
-end
-
-"""
-Return true if the projection is a geocentric coordinate system
-"""
-function is_geocent(proj::Projection)
-    @assert proj.rep != C_NULL
-    ccall((:pj_is_geocent, libproj), Cint, (Ptr{Void},), proj.rep) != 0
-end
-
-
-"""
-Transform between geographic or projected coordinate systems in place.
-
-See transform() for details
-
-"""
-function transform!(src::Projection, dest::Projection, position::Array{Float64,2}; radians::Bool=false)
-    npoints = size(position,1)
-    ncomps = size(position,2)
-    if ncomps != 2 && ncomps != 3
-        error("position must be Nx2 or Nx3")
-    end
-    if !radians && is_latlong(src)
-        position[:,1:2] = deg2rad(position[:,1:2])
-    end
-    P = pointer(position)
-    x = P
-    y = P + sizeof(Cdouble)*npoints
-    z = (ncomps < 3) ? C_NULL : P + 2*sizeof(Cdouble)*npoints
-    err = _transform!(src, dest, npoints, 1, x, y, z)
-    if err != 0
-        error("transform error: $(_strerrno(err))")
-    end
-    if !radians && is_latlong(dest)
-        position[:,1:2] = rad2deg(position[:,1:2])
-    end
-    position
-end
-
-transform!(src::Projection, dest::Projection, position::Vector{Float64}; radians::Bool=false) =
-    transform!(src, dest, reshape(position,(1,length(position))), radians=radians)
-
-
-"""
-Transform between geographic or projected coordinate systems
-
-Args:
-
-    src      - Source coordinate system definition
-    dest     - Destination coordinate system definition
-    position - An Nx2 or Nx3 array of coordinates to be transformed in place.
-               For geographic coordinate systems, the first two columns are
-               the *longitude* and *latitude*, in that order.
-    radians  - If true, treat geographic lon,lat coordinates as radians on
-               input and output.
-
-Returns:
-
-    position - Transformed position
-"""
-transform(src::Projection, dest::Projection, position::Array{Float64,2}; radians::Bool=false) =
-    transform!(src, dest, copy(position), radians=radians)
-
-transform(src::Projection, dest::Projection, position::Vector{Float64}; radians::Bool=false) =
-    transform!(src, dest, copy(reshape(position,(1,length(position)))), radians=radians)
-
-transform{T <: Real}(src::Projection, dest::Projection, position::Array{T,2}; radians::Bool=false) =
-    transform!(src, dest, @compat(map(Float64,position)), radians=radians)
-
-transform{T <: Real}(src::Projection, dest::Projection, position::Vector{T}; radians::Bool=false) =
-    transform!(src, dest, reshape(@compat(map(Float64,position)),(1,length(position))), radians=radians)
-
-"Get a string describing the underlying version of libproj in use"
-function libproj_version()
-    bytestring(ccall((:pj_get_release, libproj), Cstring, ()))
-end
-
-include("projection_codes.jl")
+@doc "Get a string describing the underlying version of libproj in use" ->
+version() = _get_release()
 
 end # module
