@@ -45,11 +45,11 @@ epsg_error = Int[]
 for epsg_code in keys(Proj4.epsg)
     try
         proj = Projection(Proj4.epsg[epsg_code])
-        proj_string1 = Proj4._get_def(proj)
+        proj_string1 = string(proj)
         proj1 = Projection(proj_string1)
-        proj_string2 = Proj4._get_def(proj1)
+        proj_string2 = string(proj1)
         proj2 = Projection(proj_string2)
-        proj_string3 = Proj4._get_def(proj2)
+        proj_string3 = string(proj2)
         @fact proj_string1 --> proj_string2
         @fact proj_string2 --> proj_string3
         @fact proj_string3 --> proj_string1
@@ -63,11 +63,11 @@ for esri_code in keys(Proj4.esri)
     try
         proj_string = Proj4.esri[esri_code]
         proj = Projection(proj_string)
-        proj_string1 = Proj4._get_def(proj)
+        proj_string1 = string(proj)
         proj1 = Projection(proj_string1)
-        proj_string2 = Proj4._get_def(proj1)
+        proj_string2 = string(proj1)
         proj2 = Projection(proj_string2)
-        proj_string3 = Proj4._get_def(proj2)
+        proj_string3 = string(proj2)
         @fact proj_string1 --> proj_string2
         @fact proj_string2 --> proj_string3
         @fact proj_string3 --> proj_string1
