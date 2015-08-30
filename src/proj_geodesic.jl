@@ -72,13 +72,11 @@ end
 
 @doc """
 Construct an ellipsoid of revolution with
+    
     equatorial radius a,
-    polar semi-axis b,
     flattening f,
-    third flattening n,
-    eccentricity-squared es
 
-given by the formulas
+Remark, we construct it when constructing a [Projection] using the formulas:
 
     f = (a − b)/a = 1 − sqrt(1-es)
     n = (a − b)/(a + b) = f /(2 − f)
@@ -117,14 +115,11 @@ Remarks:
 """ ->
 function _geod_direct!(g::geod_geodesic, lonlat::Vector{Cdouble}, azimuth::Cdouble, distance::Cdouble)
     p = pointer(lonlat)
-    azi = Array(Cdouble,1) # the (forward) azimuth at the destination
+    azi = Ref{Cdouble}() # the (forward) azimuth at the destination
     ccall((:geod_direct, "libproj"),Void,(Ptr{Void},Cdouble,Cdouble,Cdouble,Cdouble,Ptr{Cdouble},Ptr{Cdouble},
-          Ptr{Cdouble}), pointer_from_objref(g), lonlat[2], lonlat[1], azimuth, distance, p+sizeof(Cdouble), p, pointer(azi))
-    lonlat, azi[1]
+          Ptr{Cdouble}), pointer_from_objref(g), lonlat[2], lonlat[1], azimuth, distance, p+sizeof(Cdouble), p, azi)
+    lonlat, azi[]
 end
-
-_geod_direct!(g::geod_geodesic, lonlat::Array{Cdouble, 2}, azimuth::Cdouble, distance::Cdouble) =
-    _geod_direct!(g, vec(lonlat), azimuth, distance)
 
 @doc """
 Solve the inverse geodesic problem.
@@ -147,12 +142,11 @@ Remarks:
     writing lat = 90 +/- eps, and taking the limit as eps -> 0+.
 """ ->
 function _geod_inverse(g::geod_geodesic, lonlat1::Vector{Cdouble}, lonlat2::Vector{Cdouble})
-    dist = Array(Cdouble,1) # the distance between point 1 and point 2 (meters)
-    azi1 = Array(Cdouble,1) # the azimuth at point 1 (degrees)
-    azi2 = Array(Cdouble,1) # the (forward) azimuth at point 2 (degrees)
+    dist = Ref{Cdouble}()
+    azi1 = Ref{Cdouble}()
+    azi2 = Ref{Cdouble}()
     ccall((:geod_inverse, libproj), Void, (Ptr{Void},Cdouble,Cdouble,Cdouble,
           Cdouble,Ptr{Cdouble},Ptr{Cdouble},Ptr{Cdouble}),
-          pointer_from_objref(g), lonlat1[2], lonlat1[1], lonlat2[2], lonlat2[1], pointer(dist), pointer(azi1), pointer(azi2))
-    dist[1], azi1[1], azi2[1]
+          pointer_from_objref(g), lonlat1[2], lonlat1[1], lonlat2[2], lonlat2[1], dist, azi1, azi2)
+    dist[], azi1[], azi2[]
 end
-_geod_inverse(g::geod_geodesic, p1::Array{Cdouble,2}, p2::Array{Cdouble,2}) = _geod_inverse(g, vec(p1), vec(p2))
