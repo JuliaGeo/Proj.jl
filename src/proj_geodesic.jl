@@ -87,12 +87,9 @@ given by the formulas
 Reference: equations (1)-(3) of 
     Algorithms for geodesics (arXiv:1109.4448v2 [physics.geo-ph] 28 Mar 2012)
 """ ->
-geod_geodesic(a::Cdouble, f::Cdouble) = geod_geodesic(geod_init(a,f))
-geod_geodesic(a::Cdouble, es::Cdouble) = geod_geodesic(a, sqrt(1-es))
-
-function geod_init(a::Cdouble, f::Cdouble)
+function geod_geodesic(a::Cdouble, f::Cdouble)
     g = geod_geodesic()
-    ccall((:geod_init, "libproj"), Void, (Ptr{Void},Cdouble,Cdouble),
+    ccall((:geod_init, libproj), Void, (Ptr{Void},Cdouble,Cdouble),
           pointer_from_objref(g), a, f)
     g
 end
@@ -103,15 +100,14 @@ Solve the direct geodesic problem.
 Args:
 
     g        - the geod_geodesic object specifying the ellipsoid.
-    lat      - latitude (degrees) ∈ [-90, 90]
-    lon      - longitude (degrees) ∈ [-540, 540) 
+    lonlat   - where lat ∈ [-90, 90], lon ∈ [-540, 540), modified in-place to [dest] (described below)
     azimuth  - azimuth (degrees) ∈ [-540, 540)
-    distance - distance to move, from (lat,lon) in the direction of the given azimuth; can be negative
+    distance - distance (metres) to move from (lon,lat); can be negative
    
 Returns:
 
-    latlon   - destination after moving for [distance] metres in [azimuth] direction.
-    azi      - forward azimuth (degrees) at destination [latlon].
+    dest     - destination after moving for [distance] metres in [azimuth] direction.
+    azi      - forward azimuth (degrees) at destination [dest].
 
 Remarks:
 
@@ -119,18 +115,40 @@ Remarks:
     writing lat = 90 +/- eps, and taking the limit as eps -> 0+. An arc length greater than 180deg
     signifies a geodesic which is not a shortest path.
 """ ->
-function geod_direct(g::geod_geodesic, lat::Cdouble, lon::Cdouble, azimuth::Cdouble, distance::Cdouble)
-    latlon = Array(Cdouble,2) # the coordinates of the destination
-    p = pointer(latlon)
+function _geod_direct!(g::geod_geodesic, lonlat::Vector{Cdouble}, azimuth::Cdouble, distance::Cdouble)
+    p = pointer(lonlat)
     azi = Ref{Cdouble}() # the (forward) azimuth at the destination
-    ccall((:geod_direct, "libproj"), Void, (Ptr{Void},Cdouble,Cdouble,Cdouble,
-          Cdouble,Ptr{Cdouble},Ptr{Cdouble},Ptr{Cdouble}),
-          pointer_from_objref(g), lat, lon, azimuth, distance, p, p+sizeof(Cdouble), azi)
-    latlon, azi
+    ccall((:geod_direct, "libproj"),Void,(Ptr{Void},Cdouble,Cdouble,Cdouble,Cdouble,Ptr{Cdouble},Ptr{Cdouble},
+          Ptr{Cdouble}), pointer_from_objref(g), lonlat[2], lonlat[1], azimuth, distance, p+sizeof(Cdouble), p, azi)
+    # back azimuth needs to be flipped 180deg to match what proj4 geod utility produces
+    lonlat, azi[] #+ 180*(azi[]<=0) - 180*(azi[]>0)
 end
-geod_direct(g::geod_geodesic, latlon::Vector{Cdouble}, azi::Cdouble, dist::Cdouble) = geod_direct(g, latlon[1], latlon[2], azi, dist)
-geod_direct(g::geod_geodesic, latlon::Array{Cdouble,2}, azi::Cdouble, dist::Cdouble) = geod_direct(g, latlon[1], latlon[2], azi, dist)
+_geod_direct!(g::geod_geodesic, lonlat::Array{Cdouble, 2}, azimuth::Cdouble, distance::Cdouble) = 
+    reshape(_geod_direct!(g, vec(lonlat), azimuth, distance),(1,length(lonlat)))
 
+@doc """
+Solve the direct geodesic problem.
+
+Args:
+
+    g        - the geod_geodesic object specifying the ellipsoid.
+    lonlat   - lonlat (degrees), where lat ∈ [-90, 90], lon ∈ [-540, 540) 
+    azimuth  - azimuth (degrees) ∈ [-540, 540)
+    distance - distance (metres) to move from (lat,lon); can be negative
+   
+Returns:
+
+    dest     - destination after moving for [distance] metres in [azimuth] direction.
+    azi      - forward azimuth (degrees) at destination [dest].
+
+Remarks:
+
+    If either point is at a pole, the azimuth is defined by keeping the longitude fixed,
+    writing lat = 90 +/- eps, and taking the limit as eps -> 0+. An arc length greater than 180deg
+    signifies a geodesic which is not a shortest path.
+""" ->
+_geod_direct(g::geod_geodesic, lonlat::Vector{Cdouble}, azi::Cdouble, dist::Cdouble) = _geod_direct!(g, copy(lonlat), azi, dist)
+_geod_direct(g::geod_geodesic, lonlat::Array{Cdouble,2}, azi::Cdouble, dist::Cdouble) = _geod_direct!(g, copy(lonlat), azi, dist)
 
 @doc """
 Solve the inverse geodesic problem.
@@ -138,10 +156,8 @@ Solve the inverse geodesic problem.
 Args:
 
     g       - the geod_geodesic object specifying the ellipsoid.
-    lat1    - latitude of point 1 (degrees) ∈ [-90, 90]
-    lon1    - longitude of point 1 (degrees) ∈ [-540, 540) 
-    lat2    - latitude of point 2 (degrees) ∈ [-90, 90]
-    lon2    - longitude of point 2 (degrees) ∈ [-540, 540) 
+    lonlat1 - point 1 (degrees), where lat ∈ [-90, 90], lon ∈ [-540, 540) 
+    lonlat2 - point 2 (degrees), where lat ∈ [-90, 90], lon ∈ [-540, 540) 
 
 Returns:
 
@@ -154,14 +170,14 @@ Remarks:
     If either point is at a pole, the azimuth is defined by keeping the longitude fixed,
     writing lat = 90 +/- eps, and taking the limit as eps -> 0+.
 """ ->
-function geod_inverse(g::geod_geodesic, lat1::Cdouble, lon1::Cdouble, lat2::Cdouble, lon2::Cdouble)
+function _geod_inverse(g::geod_geodesic, lonlat1::Vector{Cdouble}, lonlat2::Vector{Cdouble})
     dist = Ref{Cdouble}() # the distance between point 1 and point 2 (meters)
     azi1 = Ref{Cdouble}() # the azimuth at point 1 (degrees)
     azi2 = Ref{Cdouble}() # the (forward) azimuth at point 2 (degrees)
-    ccall((:geod_inverse, "libproj"), Void, (Ptr{Void},Cdouble,Cdouble,Cdouble,
+    ccall((:geod_inverse, libproj), Void, (Ptr{Void},Cdouble,Cdouble,Cdouble,
           Cdouble,Ptr{Cdouble},Ptr{Cdouble},Ptr{Cdouble}),
-          pointer_from_objref(g), lat1, lon1, lat2, lon2, dist, azi1, azi2)
-    dist[], azi1[], azi2[]
+          pointer_from_objref(g), lonlat1[2], lonlat1[1], lonlat2[2], lonlat2[1], dist, azi1, azi2)
+    # back azimuth needs to be flipped 180deg to match what proj4 geod utility produces
+    dist[], azi1[], azi2[] #+ 180*(azi2[]<=0) - 180*(azi2[]>0)
 end
-geod_inverse(g::geod_geodesic, p1::Vector{Cdouble}, p2::Vector{Cdouble}) = geod_inverse(g, p1[1], p1[2], p2[1], p2[2])
-geod_inverse(g::geod_geodesic, p1::Array{Cdouble,2}, p2::Array{Cdouble,2}) = geod_inverse(g, p1[1], p1[2], p2[1], p2[2])
+_geod_inverse(g::geod_geodesic, p1::Array{Cdouble,2}, p2::Array{Cdouble,2}) = _geod_inverse(g, vec(p1), vec(p2))

@@ -1,6 +1,28 @@
 # The following functions are generally named after the associated C API
 # functions, but without the pj prefix.
 
+immutable ProjUV
+    u::Cdouble
+    v::Cdouble
+end
+
+@doc "forward projection from Lat/Lon to X/Y (only supports 2 dimensions)" ->
+function _fwd!(lonlat::Vector{Cdouble}, proj_ptr::Ptr{Void})
+    xy = ccall((:pj_fwd, libproj), ProjUV, (ProjUV, Ptr{Void}), ProjUV(lonlat[1], lonlat[2]), proj_ptr)
+    lonlat[1] = xy.u
+    lonlat[2] = xy.v
+    lonlat
+end
+_fwd(lonlat::Vector{Cdouble}, proj_ptr::Ptr{Void}) = _fwd!(copy(lonlat), proj_ptr)
+
+@doc "inverse projection from X/Y to Lat/Lon (only supports 2 dimensions)" ->
+function _inv!(xy::Vector{Cdouble}, proj_ptr::Ptr{Void})
+    lonlat = ccall((:pj_inv, libproj), ProjUV, (ProjUV, Ptr{Void}), ProjUV(xy[1], xy[2]), proj_ptr)
+    xy[1] = lonlat.u
+    xy[2] = lonlat.v
+    xy
+end
+_inv(xyz::Vector{Cdouble}, proj_ptr::Ptr{Void}) = _inv!(copy(xyz), proj_ptr)
 
 function _init_plus(proj_string::ASCIIString)
     proj_ptr = ccall((:pj_init_plus, libproj), Ptr{Void}, (Cstring,), proj_string)
@@ -39,33 +61,38 @@ function _transform!(src_ptr::Ptr{Void}, dest_ptr::Ptr{Void}, point_count, point
     @assert src_ptr != C_NULL && dest_ptr != C_NULL
     ccall((:pj_transform, libproj), Cint,
           (Ptr{Void}, Ptr{Void}, Clong, Cint, Ptr{Cdouble}, Ptr{Cdouble}, Ptr{Cdouble}),
-          src.rep, dest.rep, point_count, point_stride, x, y, z)
+          src_ptr, dest_ptr, point_count, point_stride, x, y, z)
 end
 
 @doc "Low level interface to libproj transform, taking in (and modifying) an Nx2 or Nx3 array of positions" ->
-function _transform!(src_ptr::Ptr{Void}, dest_ptr::Ptr{Void}, position::Array{Float64,2})
+function _transform!(src_ptr::Ptr{Void}, dest_ptr::Ptr{Void}, position::Array{Cdouble,2})
     @assert src_ptr != C_NULL && dest_ptr != C_NULL
     npoints, ncomps = size(position)
     if ncomps != 2 && ncomps != 3
         error("position must be Nx2 or Nx3")
     end
 
+    stride = sizeof(Cdouble)*npoints
     P = pointer(position)
     x = P
-    y = P + sizeof(Cdouble)*npoints
-    z = (ncomps < 3) ? C_NULL : P + 2*sizeof(Cdouble)*npoints
+    y = P + stride
+    z = (ncomps < 3) ? C_NULL : P + 2*stride
 
-    if _transform!(src, dest, npoints, 1, x, y, z) != 0
+    err = _transform!(src_ptr, dest_ptr, npoints, 1, x, y, z)
+    if err != 0
         error("transform error: $(_strerrno(err))")
     end
+    position
 end
+_transform!(src_ptr::Ptr{Void}, dest_ptr::Ptr{Void}, position::Vector{Cdouble}) =
+    vec(_transform!(src_ptr, dest_ptr, reshape(position,(1,length(position)))))
 
 function _is_latlong(proj_ptr::Ptr{Void})
     @assert proj_ptr != C_NULL
     ccall((:pj_is_latlong, libproj), Cint, (Ptr{Void},), proj_ptr) != 0
 end
 
-function _is_geocent(proj::Ptr{Void})
+function _is_geocent(proj_ptr::Ptr{Void})
     @assert proj_ptr != C_NULL
     ccall((:pj_is_geocent, libproj), Cint, (Ptr{Void},), proj_ptr) != 0
 end
@@ -81,16 +108,17 @@ function _geocentric_to_geodetic!(a::Cdouble, es::Cdouble, point_count, point_of
           Ptr{Cdouble}, Ptr{Cdouble}, Ptr{Cdouble}), a, es, point_count, point_offset, x, y, z)
 end
 
-function _geocentric_to_geodetic!(a::Cdouble, es::Cdouble, position::Array{Float64,2})
+function _geocentric_to_geodetic!(a::Cdouble, es::Cdouble, position::Array{Cdouble,2})
     npoints, ncomps = size(position)
     if ncomps != 2 && ncomps != 3
         error("position must be Nx2 or Nx3")
     end
 
+    stride = sizeof(Cdouble)*npoints
     P = pointer(position)
     x = P
-    y = P + sizeof(Cdouble)*npoints
-    z = (ncomps < 3) ? C_NULL : P + 2*sizeof(Cdouble)*npoints
+    y = P + stride
+    z = (ncomps < 3) ? C_NULL : P + 2*stride
 
     err = _geocentric_to_geodetic!(a, es, npoints, 1, x, y, z)
     if err != 0
@@ -98,6 +126,8 @@ function _geocentric_to_geodetic!(a::Cdouble, es::Cdouble, position::Array{Float
     end
     position
 end
+_geocentric_to_geodetic!(a::Cdouble, es::Cdouble, position::Vector{Cdouble}) =
+    vec(_geocentric_to_geodetic!(a, es, reshape(position,(1,length(position)))))
 
 @doc "This function converts geodetic (lat/long/alt) coordinates into cartesian (xyz) geocentric coordinates" ->
 function _geodetic_to_geocentric!(a::Cdouble, es::Cdouble, point_count, point_offset, x, y, z)
@@ -105,7 +135,7 @@ function _geodetic_to_geocentric!(a::Cdouble, es::Cdouble, point_count, point_of
           Ptr{Cdouble}, Ptr{Cdouble}, Ptr{Cdouble}), a, es, point_count, point_offset, x, y, z)
 end
 
-function _geodetic_to_geocentric!(a::Cdouble, es::Cdouble, position::Array{Float64,2})
+function _geodetic_to_geocentric!(a::Cdouble, es::Cdouble, position::Array{Cdouble,2})
     npoints, ncomps = size(position)
     if ncomps != 2 && ncomps != 3
         error("position must be Nx2 or Nx3")
@@ -122,6 +152,8 @@ function _geodetic_to_geocentric!(a::Cdouble, es::Cdouble, position::Array{Float
     end
     position
 end
+_geodetic_to_geocentric!(a::Cdouble, es::Cdouble, position::Vector{Cdouble}) =
+    vec(_geodetic_to_geocentric!(a, es, reshape(position,(1,length(position)))))
 
 @doc """
 Fetch the internal definition of the spheroid, and returns the tuple (a, es). Note that

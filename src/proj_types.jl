@@ -23,8 +23,8 @@ type Projection
 end
 
 function Projection(proj_ptr::Ptr{Void})
-    proj = Projection(proj_ptr,
-                      geod_geodesic(_get_spheroid_defn(proj_ptr)...))
+    a, es = _get_spheroid_defn(proj_ptr)
+    proj = Projection(proj_ptr, geod_geodesic(a, 1-sqrt(1-es)))
     finalizer(proj, freeProjection)
     proj
 end
@@ -46,5 +46,5 @@ function freeProjection(proj::Projection)
 end
 
 # Pretty printing
-Base.print(io::IO, proj::Projection) = print(io, strip(_get_def(proj)))
+Base.print(io::IO, proj::Projection) = print(io, strip(_get_def(proj.rep)))
 Base.show(io::IO, proj::Projection) = print(io, "Projection(\"$proj\")")
