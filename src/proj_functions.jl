@@ -15,11 +15,16 @@ Returns the forward projection from LatLon to XY in the given projection,
 modifying the input lonlat inplace (only supports 2 dimensions)""" ->
 function lonlat2xy!(lonlat::Vector{Float64}, proj::Projection, radians::Bool=false)
     !radians && (lonlat[:] = deg2rad(lonlat))
-    xy = _fwd!(lonlat, proj.rep)
-    xy
+    _fwd!(lonlat, proj.rep)
 end
-lonlat2xy!(lonlat::Array{Float64,2}, proj::Projection, radians::Bool=false) =
-    reshape(lonlat2xy!(vec(lonlat), proj, radians), (1,length(lonlat)))
+function lonlat2xy!(lonlat::Array{Float64,2}, proj::Projection, radians::Bool=false)
+    if !radians
+        for i=1:size(lonlat,1)
+            lonlat[i,:] = deg2rad(lonlat[i,:])
+        end
+    end
+    _fwd!(lonlat, proj.rep)
+end
 
 @doc "Returns the forward projection from LonLat to XY in the given projection (only supports 2 dimensions)" ->
 lonlat2xy(lonlat::Vector{Float64}, proj::Projection, radians::Bool=false) =
@@ -35,8 +40,16 @@ function xy2lonlat!(xy::Vector{Float64}, proj::Projection, radians::Bool=false)
     !radians && (xy[1:2] = rad2deg(xy[1:2]))
     xy
 end
-xy2lonlat!(xy::Array{Float64,2}, proj::Projection, radians::Bool=false) =
-    reshape(xy2lonlat!(vec(xy), proj, radians),(1,length(xy)))
+
+function xy2lonlat!(xy::Array{Float64,2}, proj::Projection, radians::Bool=false)
+    _inv!(xy, proj.rep)
+    if !radians
+        for i=1:size(xy,1)
+            xy[i,1:2] = deg2rad(xy[i,1:2])
+        end
+    end
+    xy
+end
 
 @doc "Returns the inverse projection from XY to LatLon in the given projection (only supports 2 dimensions)" ->
 xy2lonlat(xy::Vector{Float64}, proj::Projection, radians::Bool=false) = xy2lonlat!(copy(xy), proj, radians)
@@ -119,8 +132,11 @@ function geod_direct!(position::Vector{Float64}, azimuth::Float64, distance::Flo
     dest, azi = _geod_direct!(proj.geod, position, azimuth, distance)
     lonlat2xy!(dest, proj), azi
 end
-geod_direct!(position::Array{Float64,2}, azimuth::Float64, distance::Float64, proj::Projection) = 
-    reshape(geod_direct!(vec(position), azimuth, distance, proj), (1,length(position)))
+function geod_direct!(position::Array{Float64,2}, azimuth::Float64, distance::Float64, proj::Projection)
+    xy2lonlat!(position, proj)
+    dest, azi = _geod_direct!(proj.geod, position, azimuth, distance)
+    lonlat2xy!(dest, proj), azi
+end
 
 @doc """
 Solve the direct geodesic problem.
