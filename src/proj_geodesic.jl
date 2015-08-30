@@ -122,32 +122,9 @@ function _geod_direct!(g::geod_geodesic, lonlat::Vector{Cdouble}, azimuth::Cdoub
           Ptr{Cdouble}), pointer_from_objref(g), lonlat[2], lonlat[1], azimuth, distance, p+sizeof(Cdouble), p, pointer(azi))
     lonlat, azi[1]
 end
-_geod_direct!(g::geod_geodesic, lonlat::Array{Cdouble, 2}, azimuth::Cdouble, distance::Cdouble) = 
-    reshape(_geod_direct!(g, vec(lonlat), azimuth, distance),(1,length(lonlat)))
 
-@doc """
-Solve the direct geodesic problem.
-
-Args:
-
-    g        - the geod_geodesic object specifying the ellipsoid.
-    lonlat   - lonlat (degrees), where lat ∈ [-90, 90], lon ∈ [-540, 540) 
-    azimuth  - azimuth (degrees) ∈ [-540, 540)
-    distance - distance (metres) to move from (lat,lon); can be negative
-   
-Returns:
-
-    dest     - destination after moving for [distance] metres in [azimuth] direction.
-    azi      - forward azimuth (degrees) at destination [dest].
-
-Remarks:
-
-    If either point is at a pole, the azimuth is defined by keeping the longitude fixed,
-    writing lat = 90 +/- eps, and taking the limit as eps -> 0+. An arc length greater than 180deg
-    signifies a geodesic which is not a shortest path.
-""" ->
-_geod_direct(g::geod_geodesic, lonlat::Vector{Cdouble}, azi::Cdouble, dist::Cdouble) = _geod_direct!(g, copy(lonlat), azi, dist)
-_geod_direct(g::geod_geodesic, lonlat::Array{Cdouble,2}, azi::Cdouble, dist::Cdouble) = _geod_direct!(g, copy(lonlat), azi, dist)
+_geod_direct!(g::geod_geodesic, lonlat::Array{Cdouble, 2}, azimuth::Cdouble, distance::Cdouble) =
+    _geod_direct!(g, vec(lonlat), azimuth, distance)
 
 @doc """
 Solve the inverse geodesic problem.

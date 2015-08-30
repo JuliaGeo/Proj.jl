@@ -8,21 +8,49 @@ end
 
 @doc "forward projection from Lat/Lon to X/Y (only supports 2 dimensions)" ->
 function _fwd!(lonlat::Vector{Cdouble}, proj_ptr::Ptr{Void})
-    xy = ccall((:pj_fwd, libproj), ProjUV, (ProjUV, Ptr{Void}), ProjUV(lonlat[1], lonlat[2]), proj_ptr)
+    # Returning C structs by-value to Julia for v0.3.x
+    # (see http://stackoverflow.com/questions/29375433/returning-c-structs-by-value-to-julia)
+    uv_buffer = Array(ProjUV)
+    ccall((:pj_fwd, libproj), Void, (ProjUV, Ptr{Void}), ProjUV(lonlat[1], lonlat[2]), proj_ptr)
+    xy = uv_buffer[]
     lonlat[1] = xy.u
     lonlat[2] = xy.v
     lonlat
 end
-_fwd(lonlat::Vector{Cdouble}, proj_ptr::Ptr{Void}) = _fwd!(copy(lonlat), proj_ptr)
+
+@doc "Row-wise forward projection from Lat/Lon to X/Y (only supports 2 dimensions, i.e. Nx2)" ->
+function _fwd!(lonlat::Array{Cdouble,2}, proj_ptr::Ptr{Void})
+    for i=1:size(lonlat,1)
+        uv_buffer = Array(ProjUV)
+        ccall((:pj_fwd, libproj), Void, (ProjUV, Ptr{Void}), ProjUV(lonlat[i,1], lonlat[i,2]), proj_ptr)
+        xy = uv_buffer[]
+        lonlat[i,1] = xy.u
+        lonlat[i,2] = xy.v
+    end
+    lonlat
+end
 
 @doc "inverse projection from X/Y to Lat/Lon (only supports 2 dimensions)" ->
 function _inv!(xy::Vector{Cdouble}, proj_ptr::Ptr{Void})
-    lonlat = ccall((:pj_inv, libproj), ProjUV, (ProjUV, Ptr{Void}), ProjUV(xy[1], xy[2]), proj_ptr)
+    uv_buffer = Array(ProjUV)
+    ccall((:pj_inv, libproj), Void, (ProjUV, Ptr{Void}), ProjUV(xy[1], xy[2]), proj_ptr)
+    lonlat = uv_buffer[]
     xy[1] = lonlat.u
     xy[2] = lonlat.v
     xy
 end
-_inv(xyz::Vector{Cdouble}, proj_ptr::Ptr{Void}) = _inv!(copy(xyz), proj_ptr)
+
+@doc "Row-wise inverse projection from X/Y to Lat/Lon (only supports 2 dimensions, i.e. Nx2)" ->
+function _inv!(xy::Array{Cdouble,2}, proj_ptr::Ptr{Void})
+    for i=1:size(xy,1)
+        uv_buffer = Array(ProjUV)
+        ccall((:pj_inv, libproj), Void, (ProjUV, Ptr{Void}), ProjUV(xy[i,1], xy[i,2]), proj_ptr)
+        lonlat = uv_buffer[]
+        xy[i,1] = lonlat.u
+        xy[i,2] = lonlat.v
+    end
+    xy
+end
 
 function _init_plus(proj_string::ASCIIString)
     proj_ptr = ccall((:pj_init_plus, libproj), Ptr{Void}, (Cstring,), proj_string)
@@ -84,8 +112,26 @@ function _transform!(src_ptr::Ptr{Void}, dest_ptr::Ptr{Void}, position::Array{Cd
     end
     position
 end
-_transform!(src_ptr::Ptr{Void}, dest_ptr::Ptr{Void}, position::Vector{Cdouble}) =
-    vec(_transform!(src_ptr, dest_ptr, reshape(position,(1,length(position)))))
+
+function _transform!(src_ptr::Ptr{Void}, dest_ptr::Ptr{Void}, position::Vector{Cdouble})
+    @assert src_ptr != C_NULL && dest_ptr != C_NULL
+    ncomps = length(position)
+    if ncomps != 2 && ncomps != 3
+        error("position must be 2 or 3-dimensional")
+    end
+
+    stride = sizeof(Cdouble)
+    P = pointer(position)
+    x = P
+    y = P + stride
+    z = (ncomps < 3) ? C_NULL : P + 2*stride
+
+    err = _transform!(src_ptr, dest_ptr, 1, 1, x, y, z)
+    if err != 0
+        error("transform error: $(_strerrno(err))")
+    end
+    position
+end
 
 function _is_latlong(proj_ptr::Ptr{Void})
     @assert proj_ptr != C_NULL
@@ -126,8 +172,25 @@ function _geocentric_to_geodetic!(a::Cdouble, es::Cdouble, position::Array{Cdoub
     end
     position
 end
-_geocentric_to_geodetic!(a::Cdouble, es::Cdouble, position::Vector{Cdouble}) =
-    vec(_geocentric_to_geodetic!(a, es, reshape(position,(1,length(position)))))
+
+function _geocentric_to_geodetic!(a::Cdouble, es::Cdouble, position::Vector{Cdouble})
+    ncomps = length(position)
+    if ncomps != 2 && ncomps != 3
+        error("position must be 2 or 3-dimensional")
+    end
+
+    stride = sizeof(Cdouble)
+    P = pointer(position)
+    x = P
+    y = P + stride
+    z = (ncomps < 3) ? C_NULL : P + 2*stride
+
+    err = _geocentric_to_geodetic!(a, es, 1, 1, x, y, z)
+    if err != 0
+        error("geocentric_to_geodetic error: $(_strerrno(err))")
+    end
+    position
+end
 
 @doc "This function converts geodetic (lat/long/alt) coordinates into cartesian (xyz) geocentric coordinates" ->
 function _geodetic_to_geocentric!(a::Cdouble, es::Cdouble, point_count, point_offset, x, y, z)
@@ -141,10 +204,11 @@ function _geodetic_to_geocentric!(a::Cdouble, es::Cdouble, position::Array{Cdoub
         error("position must be Nx2 or Nx3")
     end
 
+    stride = sizeof(Cdouble)*npoints
     P = pointer(position)
     x = P
-    y = P + sizeof(Cdouble)*npoints
-    z = (ncomps < 3) ? C_NULL : P + 2*sizeof(Cdouble)*npoints
+    y = P + stride
+    z = (ncomps < 3) ? C_NULL : P + 2*stride
 
     err = _geodetic_to_geocentric!(a, es, npoints, 1, x, y, z)
     if err != 0
@@ -152,8 +216,25 @@ function _geodetic_to_geocentric!(a::Cdouble, es::Cdouble, position::Array{Cdoub
     end
     position
 end
-_geodetic_to_geocentric!(a::Cdouble, es::Cdouble, position::Vector{Cdouble}) =
-    vec(_geodetic_to_geocentric!(a, es, reshape(position,(1,length(position)))))
+
+function _geodetic_to_geocentric!(a::Cdouble, es::Cdouble, position::Vector{Cdouble})
+    ncomps = length(position)
+    if ncomps != 2 && ncomps != 3
+        error("position must be 2 or 3-dimensional")
+    end
+
+    stride = sizeof(Cdouble)
+    P = pointer(position)
+    x = P
+    y = P + stride
+    z = (ncomps < 3) ? C_NULL : P + 2*stride
+
+    err = _geodetic_to_geocentric!(a, es, 1, 1, x, y, z)
+    if err != 0
+        error("geodetic_to_geocentric error: $(_strerrno(err))")
+    end
+    position
+end
 
 @doc """
 Fetch the internal definition of the spheroid, and returns the tuple (a, es). Note that
