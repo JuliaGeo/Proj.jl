@@ -163,11 +163,11 @@ you can compute "b" from eccentricity_squared as:
 
 """ ->
 function _get_spheroid_defn(proj_ptr::Ptr{Void})
-    major_axis = Ref{Cdouble}()
-    eccentricity_squared = Ref{Cdouble}()
+    major_axis = Array(Cdouble,1)
+    eccentricity_squared = Array(Cdouble,1)
     ccall((:pj_get_spheroid_defn, libproj), Void, (Ptr{Void}, Ptr{Cdouble}, Ptr{Cdouble}),
-          proj_ptr, major_axis, eccentricity_squared)
-    major_axis[], eccentricity_squared[]
+          proj_ptr, pointer(major_axis), pointer(eccentricity_squared))
+    major_axis[1], eccentricity_squared[1]
 end
 
 @doc "Returns true if the two datums are identical, otherwise false." ->

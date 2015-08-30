@@ -117,11 +117,10 @@ Remarks:
 """ ->
 function _geod_direct!(g::geod_geodesic, lonlat::Vector{Cdouble}, azimuth::Cdouble, distance::Cdouble)
     p = pointer(lonlat)
-    azi = Ref{Cdouble}() # the (forward) azimuth at the destination
+    azi = Array(Cdouble,1) # the (forward) azimuth at the destination
     ccall((:geod_direct, "libproj"),Void,(Ptr{Void},Cdouble,Cdouble,Cdouble,Cdouble,Ptr{Cdouble},Ptr{Cdouble},
-          Ptr{Cdouble}), pointer_from_objref(g), lonlat[2], lonlat[1], azimuth, distance, p+sizeof(Cdouble), p, azi)
-    # back azimuth needs to be flipped 180deg to match what proj4 geod utility produces
-    lonlat, azi[] #+ 180*(azi[]<=0) - 180*(azi[]>0)
+          Ptr{Cdouble}), pointer_from_objref(g), lonlat[2], lonlat[1], azimuth, distance, p+sizeof(Cdouble), p, pointer(azi))
+    lonlat, azi[1]
 end
 _geod_direct!(g::geod_geodesic, lonlat::Array{Cdouble, 2}, azimuth::Cdouble, distance::Cdouble) = 
     reshape(_geod_direct!(g, vec(lonlat), azimuth, distance),(1,length(lonlat)))
@@ -171,13 +170,12 @@ Remarks:
     writing lat = 90 +/- eps, and taking the limit as eps -> 0+.
 """ ->
 function _geod_inverse(g::geod_geodesic, lonlat1::Vector{Cdouble}, lonlat2::Vector{Cdouble})
-    dist = Ref{Cdouble}() # the distance between point 1 and point 2 (meters)
-    azi1 = Ref{Cdouble}() # the azimuth at point 1 (degrees)
-    azi2 = Ref{Cdouble}() # the (forward) azimuth at point 2 (degrees)
+    dist = Array(Cdouble,1) # the distance between point 1 and point 2 (meters)
+    azi1 = Array(Cdouble,1) # the azimuth at point 1 (degrees)
+    azi2 = Array(Cdouble,1) # the (forward) azimuth at point 2 (degrees)
     ccall((:geod_inverse, libproj), Void, (Ptr{Void},Cdouble,Cdouble,Cdouble,
           Cdouble,Ptr{Cdouble},Ptr{Cdouble},Ptr{Cdouble}),
-          pointer_from_objref(g), lonlat1[2], lonlat1[1], lonlat2[2], lonlat2[1], dist, azi1, azi2)
-    # back azimuth needs to be flipped 180deg to match what proj4 geod utility produces
-    dist[], azi1[], azi2[] #+ 180*(azi2[]<=0) - 180*(azi2[]>0)
+          pointer_from_objref(g), lonlat1[2], lonlat1[1], lonlat2[2], lonlat2[1], pointer(dist), pointer(azi1), pointer(azi2))
+    dist[1], azi1[1], azi2[1]
 end
 _geod_inverse(g::geod_geodesic, p1::Array{Cdouble,2}, p2::Array{Cdouble,2}) = _geod_inverse(g, vec(p1), vec(p2))

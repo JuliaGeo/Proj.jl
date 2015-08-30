@@ -7,7 +7,7 @@ is_geocent(proj::Projection) = _is_geocent(proj.rep)
 @doc "Return true if the projection is a geocentric coordinate system" ->
 is_identical(p1::Projection, p2::Projection) = _compare_datums(p1.rep, p2.rep)
 
-@doc "Returns the major axis a, and eccentricity-squared es, as a tuple (a, es)"
+@doc "Returns the major axis a, and eccentricity-squared es, as a tuple (a, es)" ->
 spheroid_params(proj::Projection) = _get_spheroid_defn(proj.rep)
 
 @doc """
