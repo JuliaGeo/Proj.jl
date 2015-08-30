@@ -1,7 +1,7 @@
 # Contents of this file is generated on 2015-08-28T01:52:06. Do not edit by hand!
 # $ julia generate_projection_codes.jl > projection_codes.jl
 
-epsg = Compat.@compat Dict(
+epsg = Dict(
   3819 => "+proj=longlat +ellps=bessel +towgs84=595.48,121.69,515.35,4.115,-2.9383,0.853,-3.408 +no_defs", # HD1909
   3821 => "+proj=longlat +ellps=aust_SA +no_defs", # TWD67
   3824 => "+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs", # TWD97
@@ -5010,7 +5010,7 @@ epsg = Compat.@compat Dict(
   7423 => "+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +vunits=m +no_defs", # ETRS89 + EVRF2007 height
 )
 
-esri = Compat.@compat Dict(
+esri = Dict(
   2000 => "+proj=tmerc +lat_0=0 +lon_0=-62 +k=0.999500 +x_0=400000 +y_0=0 +ellps=clrk80 +units=m +no_defs", # Anguilla 1957 / British West Indies Grid
   2001 => "+proj=tmerc +lat_0=0 +lon_0=-62 +k=0.999500 +x_0=400000 +y_0=0 +ellps=clrk80 +towgs84=-255,-15,71,0,0,0,0 +units=m +no_defs", # Antigua 1943 / British West Indies Grid
   2002 => "+proj=tmerc +lat_0=0 +lon_0=-62 +k=0.999500 +x_0=400000 +y_0=0 +ellps=clrk80 +towgs84=725,685,536,0,0,0,0 +units=m +no_defs", # Dominica 1945 / British West Indies Grid

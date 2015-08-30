@@ -1,14 +1,9 @@
 module Proj4
 
-if VERSION < v"0.4.0-dev"
-    using Docile
-end
-using Compat
-
 const libproj = "libproj"
 
 export Projection, # proj_types.jl
-       transform, transform!, latlong_projection, # proj_functions.jl
+       transform2, transform2!, transform3, transform3!, transform, transform!,  # proj_functions.jl
        is_latlong, is_geocent, is_identical, spheroid_params,
        xy2lonlat, xy2lonlat!, lonlat2xy, lonlat2xy!,
        geod_direct, geod_inverse, destination, ellps_distance
