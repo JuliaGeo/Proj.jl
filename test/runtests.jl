@@ -56,8 +56,8 @@ proj_a, proj_es = spheroid_params(proj)
 @fact abs(proj_es - wgs84_es) > 1e-6 --> true
 @fact abs(proj_a - wgs84_a) > 500.0 --> true
 
-@fact is_identical(svy21, wgs84) --> false
-@fact is_identical(svy21, svy21) --> true
+@fact compare_datums(svy21, wgs84) --> false
+@fact compare_datums(svy21, svy21) --> true
 @fact is_latlong(wgs84) --> true
 @fact is_latlong(utm56) --> false
 @fact is_latlong(sweref99tm) --> false
