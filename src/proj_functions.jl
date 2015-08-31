@@ -4,8 +4,8 @@ is_latlong(proj::Projection) = _is_latlong(proj.rep)
 @doc "Return true if the projection is a geocentric coordinate system" ->
 is_geocent(proj::Projection) = _is_geocent(proj.rep)
 
-@doc "Return true if the projection is a geocentric coordinate system" ->
-is_identical(p1::Projection, p2::Projection) = _compare_datums(p1.rep, p2.rep)
+@doc "Returns true if the datums for the two projections are identical" ->
+compare_datums(p1::Projection, p2::Projection) = _compare_datums(p1.rep, p2.rep)
 
 @doc """
 Return the definition of the spheroid as a tuple (a, es), where
