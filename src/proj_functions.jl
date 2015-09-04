@@ -98,18 +98,18 @@ transform2(src::Projection, dest::Projection, position::Vector{Float64}, radians
     transform2!(src, dest, copy(position), radians)
 
 function transform3!(src::Projection, dest::Projection, position::Array{Float64,2}, radians::Bool=false)
-    !radians && is_latlong(src) && (position[:,1:3] = deg2rad(position[:,1:3]))
-    _transform3!(src.rep, dest.rep, position[:,1:3])
-    !radians && is_latlong(dest) && (position[:,1:3] = rad2deg(position[:,1:3]))
+    !radians && is_latlong(src) && (position[:,1:2] = deg2rad(position[:,1:2]))
+    _transform3!(src.rep, dest.rep, position)
+    !radians && is_latlong(dest) && (position[:,1:2] = rad2deg(position[:,1:2]))
     position
 end
 transform3(src::Projection, dest::Projection, position::Array{Float64,2}, radians::Bool=false) =
     transform3!(src, dest, copy(position[:,1:3]), radians)
 
 function transform3!(src::Projection, dest::Projection, position::Vector{Float64}, radians::Bool=false)
-    !radians && is_latlong(src) && (position[1:3] = deg2rad(position))
+    !radians && is_latlong(src) && (position[1:2] = deg2rad(position[1:2]))
     _transform3!(src.rep, dest.rep, position)
-    !radians && is_latlong(dest) && (position[1:3] = rad2deg(position))
+    !radians && is_latlong(dest) && (position[1:2] = rad2deg(position[1:2]))
     position
 end
 transform3(src::Projection, dest::Projection, position::Vector{Float64}, radians::Bool=false) =
