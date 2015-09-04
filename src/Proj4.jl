@@ -3,7 +3,7 @@ module Proj4
 const libproj = "libproj"
 
 export Projection, # proj_types.jl
-       transform2, transform2!, transform3, transform3!, transform, transform!,  # proj_functions.jl
+       transform, transform!,  # proj_functions.jl
        is_latlong, is_geocent, compare_datums, spheroid_params,
        xy2lonlat, xy2lonlat!, lonlat2xy, lonlat2xy!,
        geod_direct, geod_inverse, destination, ellps_distance
