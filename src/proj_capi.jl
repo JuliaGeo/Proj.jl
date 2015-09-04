@@ -91,35 +91,31 @@ function _transform!(src_ptr::Ptr{Void}, dest_ptr::Ptr{Void}, point_count::Int, 
     err != 0 && error("transform error: $(_strerrno(err))")
 end
 
-function _transform2!(src_ptr::Ptr{Void}, dest_ptr::Ptr{Void}, position::Vector{Cdouble}, npoints::Int=1)
+function _transform!(src_ptr::Ptr{Void}, dest_ptr::Ptr{Void}, position::Vector{Cdouble})
     @assert src_ptr != C_NULL && dest_ptr != C_NULL
+    ndim = length(position)
+    @assert ndim >= 2
+
     x = pointer(position)
-    y = x + sizeof(Cdouble)*npoints
-    _transform!(src_ptr, dest_ptr, npoints, 1, x, y, Ptr{Cdouble}(C_NULL))
+    y = x + sizeof(Cdouble)
+    z = (ndim == 2) ? Ptr{Cdouble}(C_NULL) : 2*sizeof(Cdouble)
+
+    _transform!(src_ptr, dest_ptr, 1, 1, x, y, z)
     position
 end
-_transform2!(src_ptr::Ptr{Void}, dest_ptr::Ptr{Void}, position::Array{Cdouble,2}) =
-    _transform2!(src_ptr, dest_ptr, vec(position), size(position,1))
-
-function _transform3!(src_ptr::Ptr{Void}, dest_ptr::Ptr{Void}, position::Vector{Cdouble}, npoints::Int=1)
+function _transform!(src_ptr::Ptr{Void}, dest_ptr::Ptr{Void}, position::Array{Cdouble,2})
     @assert src_ptr != C_NULL && dest_ptr != C_NULL
+    npoints, ndim = size(position)
+    @assert ndim >= 2
+
     x = pointer(position)
     y = x + sizeof(Cdouble)*npoints
-    z = x + 2*sizeof(Cdouble)*npoints
+    z = (ndim == 2) ? Ptr{Cdouble}(C_NULL) : 2*sizeof(Cdouble)*npoints
+    #z = Ptr{Cdouble}((ndim == 2) * (x + 2*sizeof(Cdouble)*npoints))
+
     _transform!(src_ptr, dest_ptr, npoints, 1, x, y, z)
     position
 end
-_transform3!(src_ptr::Ptr{Void}, dest_ptr::Ptr{Void}, position::Array{Cdouble,2}) =
-    _transform3!(src_ptr, dest_ptr, vec(position))
-
-function _transform!(src_ptr::Ptr{Void}, dest_ptr::Ptr{Void}, position::Vector{Cdouble}, npoints=1)
-    ndim = size(position, 2)
-    ndim == 2 && return _transform2!(src_ptr, dest_ptr, position)
-    ndim == 3 && return _transform3!(src_ptr, dest_ptr, position)
-    error("position must be Nx2 or Nx3")
-end
-_transform!(src_ptr::Ptr{Void}, dest_ptr::Ptr{Void}, position::Array{Cdouble,2}) =
-    _transform!(src_ptr, dest_ptr, vec(position), size(position,1))
 
 function _is_latlong(proj_ptr::Ptr{Void})
     @assert proj_ptr != C_NULL

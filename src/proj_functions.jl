@@ -79,56 +79,30 @@ Returns:
 
     position - Transformed position
 """ ->
-function transform2!(src::Projection, dest::Projection, position::Array{Float64,2}, radians::Bool=false)
-    !radians && is_latlong(src) && (position[:,1:2] = deg2rad(position[:,1:2]))
-    _transform2!(src.rep, dest.rep, position[:,1:2])
-    !radians && is_latlong(dest) && (position[:,1:2] = rad2deg(position[:,1:2]))
-    position
-end
-transform2(src::Projection, dest::Projection, position::Array{Float64,2}, radians::Bool=false) =
-    transform2!(src, dest, copy(position[:,1:2]), radians)
-
-function transform2!(src::Projection, dest::Projection, position::Vector{Float64}, radians::Bool=false)
-    !radians && is_latlong(src) && (position[1:2] = deg2rad(position))
-    _transform2!(src.rep, dest.rep, position)
-    !radians && is_latlong(dest) && (position[1:2] = rad2deg(position))
-    position
-end
-transform2(src::Projection, dest::Projection, position::Vector{Float64}, radians::Bool=false) =
-    transform2!(src, dest, copy(position), radians)
-
-function transform3!(src::Projection, dest::Projection, position::Array{Float64,2}, radians::Bool=false)
-    !radians && is_latlong(src) && (position[:,1:2] = deg2rad(position[:,1:2]))
-    _transform3!(src.rep, dest.rep, position)
-    !radians && is_latlong(dest) && (position[:,1:2] = rad2deg(position[:,1:2]))
-    position
-end
-transform3(src::Projection, dest::Projection, position::Array{Float64,2}, radians::Bool=false) =
-    transform3!(src, dest, copy(position[:,1:3]), radians)
-
-function transform3!(src::Projection, dest::Projection, position::Vector{Float64}, radians::Bool=false)
-    !radians && is_latlong(src) && (position[1:2] = deg2rad(position[1:2]))
-    _transform3!(src.rep, dest.rep, position)
-    !radians && is_latlong(dest) && (position[1:2] = rad2deg(position[1:2]))
-    position
-end
-transform3(src::Projection, dest::Projection, position::Vector{Float64}, radians::Bool=false) =
-    transform3!(src, dest, copy(position), radians)
-
 function transform!(src::Projection, dest::Projection, position::Array{Float64,2}, radians::Bool=false)
-    ndim = size(position,2)
-    ndim == 2 && return transform2!(src, dest, position, radians)
-    ndim == 3 && return transform3!(src, dest, position, radians)
-    error("position must be Nx2 or Nx3")
+    npoints, ndim = size(position)
+    @assert ndim >= 2
+    if !radians && is_latlong(src)
+        for i=1:npoints
+            position[i,1] = deg2rad(position[i,1]); position[i,2] = deg2rad(position[i,2])
+        end
+    end
+    _transform!(src.rep, dest.rep, position)
+    if !radians && is_latlong(dest)
+        for i=1:npoints
+            position[i,1] = rad2deg(position[i,1]); position[i,2] = rad2deg(position[i,2])
+        end
+    end
+    position
 end
-transform!(src::Projection, dest::Projection, position::Array{Float64,2}, radians::Bool=false) =
+transform(src::Projection, dest::Projection, position::Array{Float64,2}, radians::Bool=false) =
     transform!(src, dest, copy(position), radians)
 
 function transform!(src::Projection, dest::Projection, position::Vector{Float64}, radians::Bool=false)
-    ndim = length(position)
-    ndim == 2 && return transform2!(src, dest, position, radians)
-    ndim == 3 && return transform3!(src, dest, position, radians)
-    error("position must be 2 or 3-dimensional")
+    !radians && is_latlong(src) && (position[1] = deg2rad(position[1]); position[2] = deg2rad(position[2]))
+    _transform!(src.rep, dest.rep, position)
+    !radians && is_latlong(dest) && (position[1] = rad2deg(position[1]); position[2] = rad2deg(position[2]))
+    position
 end
 transform(src::Projection, dest::Projection, position::Vector{Float64}, radians::Bool=false) =
     transform!(src, dest, copy(position), radians)
