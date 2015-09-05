@@ -9,7 +9,7 @@ end
 @doc "forward projection from Lat/Lon to X/Y (only supports 2 dimensions)" ->
 function _fwd!(lonlat::Vector{Cdouble}, proj_ptr::Ptr{Void})
     xy = ccall((:pj_fwd, libproj), ProjUV, (ProjUV, Ptr{Void}), ProjUV(lonlat[1], lonlat[2]), proj_ptr)
-    _errno() != 0 &&  error("forward projection error: $(_strerrno())")
+    _errno() == 0 || error("forward projection error: $(_strerrno())")
     lonlat[1] = xy.u; lonlat[2] = xy.v
     lonlat
 end
@@ -21,7 +21,7 @@ function _fwd!(lonlat::Array{Cdouble,2}, proj_ptr::Ptr{Void})
                    ProjUV(lonlat[i,1], lonlat[i,2]), proj_ptr)
         lonlat[i,1] = xy.u; lonlat[i,2] = xy.v
     end
-    _errno() != 0 &&  error("forward projection error: $(_strerrno())")
+    _errno() == 0 || error("forward projection error: $(_strerrno())")
     lonlat
 end
 
@@ -29,7 +29,7 @@ end
 function _inv!(xy::Vector{Cdouble}, proj_ptr::Ptr{Void})
     lonlat = ccall((:pj_inv, libproj), ProjUV, (ProjUV, Ptr{Void}),
                    ProjUV(xy[1], xy[2]), proj_ptr)
-    _errno() != 0 &&  error("forward projection error: $(_strerrno())")
+    _errno() == 0 || error("inverse projection error: $(_strerrno())")
     xy[1] = lonlat.u; xy[2] = lonlat.v
     xy
 end
@@ -41,7 +41,7 @@ function _inv!(xy::Array{Cdouble,2}, proj_ptr::Ptr{Void})
                        ProjUV(xy[i,1], xy[i,2]), proj_ptr)
         xy[i,1] = lonlat.u; xy[i,2] = lonlat.v
     end
-    _errno() != 0 &&  error("forward projection error: $(_strerrno())")
+    _errno() == 0 || error("inverse projection error: $(_strerrno())")
     xy
 end
 
