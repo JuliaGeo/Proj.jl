@@ -114,72 +114,84 @@ transform(src::Projection, dest::Projection, position::Vector{Float64}, radians:
 # """ ->
 # latlong_projection(proj::Projection) = Projection(_latlong_from_proj(proj.rep))
 
-@doc """
-Solve the direct geodesic problem.
+if version_release >= 4 && version_major >= 9 && version_minor >= 1
 
-Args:
+    function _geod(proj::Projection)
+        if proj.geod == C_NULL
+            a, es = _get_spheroid_defn(proj.rep)
+            proj.geod = _geod_geodesic(a, 1-sqrt(1-es))
+        end
+        proj.geod
+    end
 
-    position - coordinates of starting location, modified in-place to [dest] (described below)
-    azimuth  - azimuth (degrees) ∈ [-540, 540)
-    distance - distance (metres) to move from (lat,lon); can be negative
-    proj     - the given projection whose ellipsoid we move along
-   
-Returns:
+    @doc """
+    Solve the direct geodesic problem.
 
-    dest     - destination after moving for [distance] metres in [azimuth] direction.
-    azi      - forward azimuth (degrees) at destination [dest].
-""" ->
-function geod_direct!(position::Vector{Float64}, azimuth::Float64, distance::Float64, proj::Projection)
-    xy2lonlat!(position, proj)
-    dest, azi = _geod_direct!(proj.geod, position, azimuth, distance)
-    lonlat2xy!(dest, proj), azi
+    Args:
+
+        position - coordinates of starting location, modified in-place to [dest] (described below)
+        azimuth  - azimuth (degrees) ∈ [-540, 540)
+        distance - distance (metres) to move from (lat,lon); can be negative
+        proj     - the given projection whose ellipsoid we move along
+       
+    Returns:
+
+        dest     - destination after moving for [distance] metres in [azimuth] direction.
+        azi      - forward azimuth (degrees) at destination [dest].
+    """ ->
+    function geod_direct!(position::Vector{Float64}, azimuth::Float64, distance::Float64, proj::Projection)
+        xy2lonlat!(position, proj)
+        dest, azi = _geod_direct!(_geod(proj), position, azimuth, distance)
+        lonlat2xy!(dest, proj), azi
+    end
+
+    @doc """
+    Solve the direct geodesic problem.
+
+    Args:
+
+        lonlat   - latitude, longitude (degrees) ∈ [-90, 90]
+        azimuth  - azimuth (degrees) ∈ [-540, 540)
+        distance - distance (metres) to move from (lat,lon); can be negative
+        proj     - the given projection whose ellipsoid we move along
+       
+    Returns:
+
+        dest     - destination after moving for [distance] metres in [azimuth] direction.
+        azi      - forward azimuth (degrees) at destination [dest].
+
+    """ ->
+    geod_direct(position::Vector{Float64}, azimuth::Float64, distance::Float64, proj::Projection) = 
+        geod_direct!(copy(position), azimuth, distance, proj)
+
+    @doc "Returns the destination by moving along the ellipsoid in the given projection" ->
+    destination!(position::Vector{Float64}, azi::Float64, dist::Float64, proj::Projection) = geod_direct!(position, azi, dist, proj)[1]
+    destination(position::Vector{Float64}, azi::Float64, dist::Float64, proj::Projection) = destination!(copy(position), azi, dist, proj)
+
+    @doc """
+    Solve the inverse geodesic problem.
+
+    Args:
+
+        xy1     - coordinates of point 1 in the given projection
+        xy2     - coordinates of point 2 in the given projection
+        proj    - the given projection whose ellipsoid we move along
+
+    Returns:
+
+        dist    - distance between point 1 and point 2 (meters).
+        azi1    - azimuth at point 1 (degrees) ∈ [-180, 180)
+        azi2    - (forward) azimuth at point 2 (degrees) ∈ [-180, 180)
+
+    Remarks:
+
+        If either point is at a pole, the azimuth is defined by keeping the longitude fixed,
+        writing lat = 90 +/- eps, and taking the limit as eps -> 0+.
+    """ ->
+    geod_inverse(xy1::Vector{Float64}, xy2::Vector{Float64}, proj::Projection) =
+        _geod_inverse(_geod(proj), xy2lonlat(xy1, proj), xy2lonlat(xy2, proj))
+
+    @doc "Returns the distance between the two points in the given projection" ->
+    ellps_distance(p1::Vector{Float64}, p2::Vector{Float64}, proj::Projection) = geod_inverse(p1, p2, proj)[1]
+
 end
-
-@doc """
-Solve the direct geodesic problem.
-
-Args:
-
-    lonlat   - latitude, longitude (degrees) ∈ [-90, 90]
-    azimuth  - azimuth (degrees) ∈ [-540, 540)
-    distance - distance (metres) to move from (lat,lon); can be negative
-    proj     - the given projection whose ellipsoid we move along
-   
-Returns:
-
-    dest     - destination after moving for [distance] metres in [azimuth] direction.
-    azi      - forward azimuth (degrees) at destination [dest].
-
-""" ->
-geod_direct(position::Vector{Float64}, azimuth::Float64, distance::Float64, proj::Projection) = 
-    geod_direct!(copy(position), azimuth, distance, proj)
-
-@doc "Returns the destination by moving along the ellipsoid in the given projection" ->
-destination!(position::Vector{Float64}, azi::Float64, dist::Float64, proj::Projection) = geod_direct!(position, azi, dist, proj)[1]
-destination(position::Vector{Float64}, azi::Float64, dist::Float64, proj::Projection) = destination!(copy(position), azi, dist, proj)
-
-@doc """
-Solve the inverse geodesic problem.
-
-Args:
-
-    xy1     - coordinates of point 1 in the given projection
-    xy2     - coordinates of point 2 in the given projection
-    proj    - the given projection whose ellipsoid we move along
-
-Returns:
-
-    dist    - distance between point 1 and point 2 (meters).
-    azi1    - azimuth at point 1 (degrees) ∈ [-180, 180)
-    azi2    - (forward) azimuth at point 2 (degrees) ∈ [-180, 180)
-
-Remarks:
-
-    If either point is at a pole, the azimuth is defined by keeping the longitude fixed,
-    writing lat = 90 +/- eps, and taking the limit as eps -> 0+.
-""" ->
-geod_inverse(xy1::Vector{Float64}, xy2::Vector{Float64}, proj::Projection) =
-    _geod_inverse(proj.geod, xy2lonlat(xy1, proj), xy2lonlat(xy2, proj))
-
-@doc "Returns the distance between the two points in the given projection" ->
-ellps_distance(p1::Vector{Float64}, p2::Vector{Float64}, proj::Projection) = geod_inverse(p1, p2, proj)[1]

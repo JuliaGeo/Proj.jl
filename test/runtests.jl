@@ -86,63 +86,65 @@ p1, p2 = [-73.78, 40.64],[103.99, 30.36] # p1, p2 in degrees
 proj1, proj2 = wgs84, proj # chosen to have different ellipses
 q1, q2 = lonlat2xy(p1, proj1), lonlat2xy(p2, proj2)
 
-r2 = transform(proj2, proj1, q2)
-dist_q1r2, azi1, azi2 = geod_inverse(q1, r2, proj1)
-dest, azi = geod_direct(q1, azi1, dist_q1r2, proj1)
-@fact dest --> roughly(r2, 1e-6)
-@fact azi --> roughly(azi2, 1e-6)
-@fact destination(q1, azi1, dist_q1r2, proj1) --> roughly(r2, 1e-6)
+if Proj4.version_release >= 4 && Proj4.version_major >= 9 && Proj4.version_minor >= 1
+    r2 = transform(proj2, proj1, q2)
+    dist_q1r2, azi1, azi2 = geod_inverse(q1, r2, proj1)
+    dest, azi = geod_direct(q1, azi1, dist_q1r2, proj1)
+    @fact dest --> roughly(r2, 1e-6)
+    @fact azi --> roughly(azi2, 1e-6)
+    @fact destination(q1, azi1, dist_q1r2, proj1) --> roughly(r2, 1e-6)
 
-# # It is not necessarily symmetric:
-# # You can go q1(azi1) -[dist1]-> r2,
-# # but not    r2(azi2) -[dist1]-> q1
-# # So the following statements are false in general:
-# dest, azi = geod_direct(r2, azi2, dist1, proj1)
-# @fact dest --> roughly(q1, 1e-6)
-# @fact azi --> roughly(azi1, 1e-6)
-# @fact destination(r2, azi2, dist1, proj1) --> roughly(q1, 1e-6)
+    # # It is not necessarily symmetric:
+    # # You can go q1(azi1) -[dist1]-> r2,
+    # # but not    r2(azi2) -[dist1]-> q1
+    # # So the following statements are false in general:
+    # dest, azi = geod_direct(r2, azi2, dist1, proj1)
+    # @fact dest --> roughly(q1, 1e-6)
+    # @fact azi --> roughly(azi1, 1e-6)
+    # @fact destination(r2, azi2, dist1, proj1) --> roughly(q1, 1e-6)
 
-# # To get the reverse azimuth to move from r2 back to q1,
-# # make another call to geod_inverse: 
-dist_r2q1, azi1, azi2 = geod_inverse(r2, q1, proj1)
-dest, azi = geod_direct(r2, azi1, dist_r2q1, proj1)
-@fact dest --> roughly(q1, 1e-6)
-@fact azi --> roughly(azi2, 1e-6)
-@fact destination(r2, azi1, dist_r2q1, proj1) --> roughly(q1, 1e-6)
+    # # To get the reverse azimuth to move from r2 back to q1,
+    # # make another call to geod_inverse: 
+    dist_r2q1, azi1, azi2 = geod_inverse(r2, q1, proj1)
+    dest, azi = geod_direct(r2, azi1, dist_r2q1, proj1)
+    @fact dest --> roughly(q1, 1e-6)
+    @fact azi --> roughly(azi2, 1e-6)
+    @fact destination(r2, azi1, dist_r2q1, proj1) --> roughly(q1, 1e-6)
 
-# The distances from both calls to geod_inverse should be the same, i.e.
-@fact dist_r2q1 --> roughly(dist_q1r2, 1e-6)
+    # The distances from both calls to geod_inverse should be the same, i.e.
+    @fact dist_r2q1 --> roughly(dist_q1r2, 1e-6)
 
-# Doublecheck when we perform the operations in the other projection:
-r1 = transform(proj1, proj2, q1)
-dist_r1q2, azi1, azi2 = geod_inverse(r1, q2, proj2)
-dest, azi = geod_direct(r1, azi1, dist_r1q2, proj2)
-@fact dest --> roughly(q2, 1e-6)
-@fact azi --> roughly(azi2, 1e-6)
-@fact destination(r1, azi1, dist_r1q2, proj2) --> roughly(q2, 1e-6)
-dist_q2r1, azi1, azi2 = geod_inverse(q2, r1, proj1)
-dest, azi = geod_direct(q2, azi1, dist_q2r1, proj1)
-@fact dest --> roughly(r1, 1e-6)
-@fact azi --> roughly(azi2, 1e-6)
-@fact destination(q2, azi1, dist_q2r1, proj1) --> roughly(r1, 1e-6)
+    # Doublecheck when we perform the operations in the other projection:
+    r1 = transform(proj1, proj2, q1)
+    dist_r1q2, azi1, azi2 = geod_inverse(r1, q2, proj2)
+    dest, azi = geod_direct(r1, azi1, dist_r1q2, proj2)
+    @fact dest --> roughly(q2, 1e-6)
+    @fact azi --> roughly(azi2, 1e-6)
+    @fact destination(r1, azi1, dist_r1q2, proj2) --> roughly(q2, 1e-6)
+    dist_q2r1, azi1, azi2 = geod_inverse(q2, r1, proj1)
+    dest, azi = geod_direct(q2, azi1, dist_q2r1, proj1)
+    @fact dest --> roughly(r1, 1e-6)
+    @fact azi --> roughly(azi2, 1e-6)
+    @fact destination(q2, azi1, dist_q2r1, proj1) --> roughly(r1, 1e-6)
 
-@fact ellps_distance(r1, q2, proj2) --> roughly(dist_r1q2, 1e-6)
-@fact ellps_distance(q2, r1, proj2) --> roughly(dist_q2r1, 1e-6)
-@fact dist_r1q2 --> roughly(dist_q2r1, 1e-6)
-@fact ellps_distance(q1, r2, proj1) --> roughly(dist_q1r2, 1e-6)
-@fact ellps_distance(r2, q1, proj1) --> roughly(dist_r2q1, 1e-6)
-@fact dist_q1r2 --> roughly(dist_r2q1, 1e-6)
+    @fact ellps_distance(r1, q2, proj2) --> roughly(dist_r1q2, 1e-6)
+    @fact ellps_distance(q2, r1, proj2) --> roughly(dist_q2r1, 1e-6)
+    @fact dist_r1q2 --> roughly(dist_q2r1, 1e-6)
+    @fact ellps_distance(q1, r2, proj1) --> roughly(dist_q1r2, 1e-6)
+    @fact ellps_distance(r2, q1, proj1) --> roughly(dist_r2q1, 1e-6)
+    @fact dist_q1r2 --> roughly(dist_r2q1, 1e-6)
 
-# The distances computed in both projections can be significantly different if the ellipsoids are different
-@fact (dist_r1q2 - dist_q1r2) > 5e4 --> true
-@fact (dist_q2r1 - dist_r2q1) > 5e4 --> true
+    # The distances computed in both projections can be significantly different if the ellipsoids are different
+    @fact (dist_r1q2 - dist_q1r2) > 5e4 --> true
+    @fact (dist_q2r1 - dist_r2q1) > 5e4 --> true
 
-# So be consistent with your choice of projections when computing distances,
-# and deviate from WGS84 only if you know what you're doing
-@fact ellps_distance(r1, q2, proj2) --> roughly(ellps_distance(q2, r1, proj2), 1e-6)
-@fact ellps_distance(q1, r2, proj1) --> roughly(ellps_distance(r2, q1, proj1), 1e-6)
-@fact ellps_distance(r1, q2, proj2) --> roughly(ellps_distance(q2, r1, proj2), 1e-6)
-@fact ellps_distance(q1, r2, proj1) --> roughly(ellps_distance(r2, q1, proj1), 1e-6)
+    # So be consistent with your choice of projections when computing distances,
+    # and deviate from WGS84 only if you know what you're doing
+    @fact ellps_distance(r1, q2, proj2) --> roughly(ellps_distance(q2, r1, proj2), 1e-6)
+    @fact ellps_distance(q1, r2, proj1) --> roughly(ellps_distance(r2, q1, proj1), 1e-6)
+    @fact ellps_distance(r1, q2, proj2) --> roughly(ellps_distance(q2, r1, proj2), 1e-6)
+    @fact ellps_distance(q1, r2, proj1) --> roughly(ellps_distance(r2, q1, proj1), 1e-6)
+end
 
 epsg_error = Int[]
 for epsg_code in keys(Proj4.epsg)
