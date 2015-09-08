@@ -116,7 +116,7 @@ Remarks:
 function _geod_direct!(geod::geod_geodesic, lonlat::Vector{Cdouble}, azimuth::Cdouble, distance::Cdouble)
     p = pointer(lonlat)
     azi = Ref{Cdouble}() # the (forward) azimuth at the destination
-    ccall((:geod_direct, "libproj"),Void,(Ptr{Void},Cdouble,Cdouble,Cdouble,Cdouble,Ptr{Cdouble},Ptr{Cdouble},
+    ccall((:geod_direct, libproj),Void,(Ptr{Void},Cdouble,Cdouble,Cdouble,Cdouble,Ptr{Cdouble},Ptr{Cdouble},
           Ptr{Cdouble}), pointer_from_objref(geod), lonlat[2], lonlat[1], azimuth, distance, p+sizeof(Cdouble), p, azi)
     lonlat, azi[]
 end

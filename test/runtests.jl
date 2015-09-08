@@ -86,7 +86,7 @@ p1, p2 = [-73.78, 40.64],[103.99, 30.36] # p1, p2 in degrees
 proj1, proj2 = wgs84, proj # chosen to have different ellipses
 q1, q2 = lonlat2xy(p1, proj1), lonlat2xy(p2, proj2)
 
-if Proj4.version_release >= 4 && Proj4.version_major >= 9 && Proj4.version_minor >= 1
+if Proj4.has_geodesic_support
     r2 = transform(proj2, proj1, q2)
     dist_q1r2, azi1, azi2 = geod_inverse(q1, r2, proj1)
     dest, azi = geod_direct(q1, azi1, dist_q1r2, proj1)
@@ -196,7 +196,7 @@ if length(epsg_error) > 0 || length(esri_error) > 0
     to use the projections in question.
 
     total errors: $(round(100*errorFraction,2))%
-    libproj version: $(Proj4.version())
+    libproj version: $(Proj4.version)
     """)
     for epsg_code in sort(epsg_error)
         println("[EPSG:$epsg_code] \"$(Proj4.epsg[epsg_code])\"")

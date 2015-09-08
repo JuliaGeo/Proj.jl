@@ -114,7 +114,7 @@ transform(src::Projection, dest::Projection, position::Vector{Float64}, radians:
 # """ ->
 # latlong_projection(proj::Projection) = Projection(_latlong_from_proj(proj.rep))
 
-if version_release >= 4 && version_major >= 9 && version_minor >= 1
+if has_geodesic_support
 
     function _geod(proj::Projection)
         if isa(proj.geod, null_geodesic)
