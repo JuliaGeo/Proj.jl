@@ -15,7 +15,7 @@ version_release = parse(Int, __m[1])
 version_major  = parse(Int, __m[2])
 version_minor = parse(Int, __m[3])
 if version_release >= 4 && version_major >= 9 && version_minor >= 1
-    export geod_direct, geod_inverse, destination, ellps_distance
+    export geod_direct, geod_inverse, geod_destination, geod_distance
     include("proj_geodesic.jl") # low-level C-facing functions (corresponding to src/geodesic.h)
 end
 
