@@ -165,8 +165,8 @@ if version_release >= 4 && version_major >= 9 && version_minor >= 1
         geod_direct!(copy(position), azimuth, distance, proj)
 
     @doc "Returns the destination by moving along the ellipsoid in the given projection" ->
-    destination!(position::Vector{Float64}, azi::Float64, dist::Float64, proj::Projection) = geod_direct!(position, azi, dist, proj)[1]
-    destination(position::Vector{Float64}, azi::Float64, dist::Float64, proj::Projection) = destination!(copy(position), azi, dist, proj)
+    geod_destination!(position::Vector{Float64}, azi::Float64, dist::Float64, proj::Projection) = geod_direct!(position, azi, dist, proj)[1]
+    geod_destination(position::Vector{Float64}, azi::Float64, dist::Float64, proj::Projection) = geod_destination!(copy(position), azi, dist, proj)
 
     @doc """
     Solve the inverse geodesic problem.
@@ -192,6 +192,6 @@ if version_release >= 4 && version_major >= 9 && version_minor >= 1
         _geod_inverse(_geod(proj), xy2lonlat(xy1, proj), xy2lonlat(xy2, proj))
 
     @doc "Returns the distance between the two points in the given projection" ->
-    ellps_distance(p1::Vector{Float64}, p2::Vector{Float64}, proj::Projection) = geod_inverse(p1, p2, proj)[1]
+    geod_distance(p1::Vector{Float64}, p2::Vector{Float64}, proj::Projection) = geod_inverse(p1, p2, proj)[1]
 
 end
