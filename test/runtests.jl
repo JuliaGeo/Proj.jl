@@ -1,6 +1,11 @@
 using Proj4
 using FactCheck
 
+println("""
+C library version: $(Proj4.version)  [\"$(Proj4._get_release())\"]
+geodesic support: $(Proj4.has_geodesic_support)
+""")
+
 # Some very basic sanity checking
 wgs84 = Projection("+proj=longlat +datum=WGS84 +no_defs")
 utm56 = Projection("+proj=utm +zone=56 +south +datum=WGS84 +units=m +no_defs")
@@ -196,7 +201,6 @@ if length(epsg_error) > 0 || length(esri_error) > 0
     to use the projections in question.
 
     total errors: $(round(100*errorFraction,2))%
-    libproj version: $(Proj4.version)
     """)
     for epsg_code in sort(epsg_error)
         println("[EPSG:$epsg_code] \"$(Proj4.epsg[epsg_code])\"")

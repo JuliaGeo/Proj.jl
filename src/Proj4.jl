@@ -15,11 +15,11 @@ function _version()
     VersionNumber(parse(Int, m[1]), parse(Int, m[2]), parse(Int, m[3]))
 end
 
-@doc "A string describing the underlying version of libproj in use" ->
+@doc "Parsed version number for the underlying version of libproj" ->
 const version = _version()
 
 # Detect underlying libproj support for geodesic calculations
-const has_geodesic_support = version >= v"4.9.1"
+const has_geodesic_support = version >= v"4.9.0"
 
 if has_geodesic_support
     export geod_direct, geod_inverse, geod_destination, geod_distance
