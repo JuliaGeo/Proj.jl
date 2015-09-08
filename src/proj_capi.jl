@@ -1,3 +1,10 @@
+# For use in geodesic routines
+
+abstract _geodesic
+
+type null_geodesic <: _geodesic
+end
+
 # The following functions are generally named after the associated C API
 # functions, but without the pj prefix.
 

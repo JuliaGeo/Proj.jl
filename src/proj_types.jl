@@ -15,11 +15,11 @@ type Projection
     # [geod]: a structure containing the parameters of the spheroid
     # some of the fields in [geod] are mildly duplicative of the information
     # available in [rep], which can be exposed only through _get_spheroid_defn
-    geod::Ptr{Void}
+    geod::_geodesic
 end
 
 function Projection(proj_ptr::Ptr{Void})
-    proj = Projection(proj_ptr, C_NULL)
+    proj = Projection(proj_ptr, null_geodesic())
     finalizer(proj, freeProjection)
     proj
 end
@@ -38,7 +38,6 @@ Projection(proj_string::ASCIIString) = Projection(_init_plus(proj_string))
 function freeProjection(proj::Projection)
     _free(proj.rep)
     proj.rep = C_NULL
-    proj.geod = C_NULL
 end
 
 # Pretty printing
