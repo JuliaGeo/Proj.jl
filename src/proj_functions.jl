@@ -117,9 +117,9 @@ transform(src::Projection, dest::Projection, position::Vector{Float64}, radians:
 if version_release >= 4 && version_major >= 9 && version_minor >= 1
 
     function _geod(proj::Projection)
-        if proj.geod == C_NULL
+        if isa(proj.geod, null_geodesic)
             a, es = _get_spheroid_defn(proj.rep)
-            proj.geod = _geod_geodesic(a, 1-sqrt(1-es))
+            proj.geod = geod_geodesic(a, 1-sqrt(1-es))
         end
         proj.geod
     end

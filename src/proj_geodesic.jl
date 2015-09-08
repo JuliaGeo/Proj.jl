@@ -49,7 +49,7 @@ immutable Cdouble21
     x21::Cdouble
 end
 
-type geod_geodesic
+type geod_geodesic <: _geodesic
     a::Cdouble
     f::Cdouble
     f1::Cdouble
@@ -85,11 +85,11 @@ Remark, we construct it when constructing a [Projection] using the formulas:
 Reference: equations (1)-(3) of 
     Algorithms for geodesics (arXiv:1109.4448v2 [physics.geo-ph] 28 Mar 2012)
 """ ->
-function _geod_geodesic(a::Cdouble, f::Cdouble)
-    g_ptr = pointer_from_objref(geod_geodesic())
+function geod_geodesic(a::Cdouble, f::Cdouble)
+    geod = geod_geodesic()
     ccall((:geod_init, libproj), Void, (Ptr{Void},Cdouble,Cdouble),
-          g_ptr, a, f)
-    g_ptr
+          pointer_from_objref(geod), a, f)
+    geod
 end
 
 @doc """
@@ -113,11 +113,11 @@ Remarks:
     writing lat = 90 +/- eps, and taking the limit as eps -> 0+. An arc length greater than 180deg
     signifies a geodesic which is not a shortest path.
 """ ->
-function _geod_direct!(g_ptr::Ptr{Void}, lonlat::Vector{Cdouble}, azimuth::Cdouble, distance::Cdouble)
+function _geod_direct!(geod::geod_geodesic, lonlat::Vector{Cdouble}, azimuth::Cdouble, distance::Cdouble)
     p = pointer(lonlat)
     azi = Ref{Cdouble}() # the (forward) azimuth at the destination
     ccall((:geod_direct, "libproj"),Void,(Ptr{Void},Cdouble,Cdouble,Cdouble,Cdouble,Ptr{Cdouble},Ptr{Cdouble},
-          Ptr{Cdouble}), g_ptr, lonlat[2], lonlat[1], azimuth, distance, p+sizeof(Cdouble), p, azi)
+          Ptr{Cdouble}), pointer_from_objref(geod), lonlat[2], lonlat[1], azimuth, distance, p+sizeof(Cdouble), p, azi)
     lonlat, azi[]
 end
 
@@ -141,12 +141,12 @@ Remarks:
     If either point is at a pole, the azimuth is defined by keeping the longitude fixed,
     writing lat = 90 +/- eps, and taking the limit as eps -> 0+.
 """ ->
-function _geod_inverse(g_ptr::Ptr{Void}, lonlat1::Vector{Cdouble}, lonlat2::Vector{Cdouble})
+function _geod_inverse(geod::geod_geodesic, lonlat1::Vector{Cdouble}, lonlat2::Vector{Cdouble})
     dist = Ref{Cdouble}()
     azi1 = Ref{Cdouble}()
     azi2 = Ref{Cdouble}()
     ccall((:geod_inverse, libproj), Void, (Ptr{Void},Cdouble,Cdouble,Cdouble,
           Cdouble,Ptr{Cdouble},Ptr{Cdouble},Ptr{Cdouble}),
-          g_ptr, lonlat1[2], lonlat1[1], lonlat2[2], lonlat2[1], dist, azi1, azi2)
+          pointer_from_objref(geod), lonlat1[2], lonlat1[1], lonlat2[2], lonlat2[1], dist, azi1, azi2)
     dist[], azi1[], azi2[]
 end
