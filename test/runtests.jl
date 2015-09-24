@@ -1,6 +1,9 @@
 using Proj4
 using FactCheck
 
+facts("Proj4") do
+
+
 println("""
 C library version: $(Proj4.version)  [\"$(Proj4._get_release())\"]
 geodesic support: $(Proj4.has_geodesic_support)
@@ -209,3 +212,7 @@ if length(epsg_error) > 0 || length(esri_error) > 0
         println("[ESRI:$esri_code] \"$(Proj4.esri[esri_code])\"")
     end
 end
+
+
+end # facts
+
