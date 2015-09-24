@@ -105,7 +105,7 @@ function _transform!(src_ptr::Ptr{Void}, dest_ptr::Ptr{Void}, position::Vector{C
 
     x = pointer(position)
     y = x + sizeof(Cdouble)
-    z = (ndim == 2) ? Ptr{Cdouble}(C_NULL) : 2*sizeof(Cdouble)
+    z = (ndim == 2) ? Ptr{Cdouble}(C_NULL) : x + 2*sizeof(Cdouble)
 
     _transform!(src_ptr, dest_ptr, 1, 1, x, y, z)
     position
@@ -117,8 +117,7 @@ function _transform!(src_ptr::Ptr{Void}, dest_ptr::Ptr{Void}, position::Array{Cd
 
     x = pointer(position)
     y = x + sizeof(Cdouble)*npoints
-    z = (ndim == 2) ? Ptr{Cdouble}(C_NULL) : 2*sizeof(Cdouble)*npoints
-    #z = Ptr{Cdouble}((ndim == 2) * (x + 2*sizeof(Cdouble)*npoints))
+    z = (ndim == 2) ? Ptr{Cdouble}(C_NULL) : x + 2*sizeof(Cdouble)*npoints
 
     _transform!(src_ptr, dest_ptr, npoints, 1, x, y, z)
     position
