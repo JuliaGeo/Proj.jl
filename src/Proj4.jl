@@ -1,5 +1,8 @@
 module Proj4
 
+using BinDeps
+@BinDeps.load_dependencies
+
 const libproj = "libproj"
 
 export Projection, # proj_types.jl
