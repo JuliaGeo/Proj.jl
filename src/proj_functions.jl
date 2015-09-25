@@ -16,6 +16,7 @@ Return the definition of the spheroid as a tuple (a, es), where
 """ ->
 spheroid_params(proj::Projection) = _get_spheroid_defn(proj.rep)
 
+
 @doc """
 Returns the forward projection from LatLon to XY in the given projection,
 modifying the input lonlat inplace (only supports 2 dimensions)""" ->
@@ -62,6 +63,7 @@ end
 xy2lonlat(xy::Vector{Float64}, proj::Projection, radians::Bool=false) = xy2lonlat!(copy(xy), proj, radians)
 xy2lonlat(xy::Array{Float64,2}, proj::Projection, radians::Bool=false) = xy2lonlat!(copy(xy), proj, radians)
 
+
 @doc """
 Transform between geographic or projected coordinate systems
 
@@ -69,9 +71,11 @@ Args:
 
     src      - Source coordinate system definition
     dest     - Destination coordinate system definition
-    position - An Nx2 or Nx3 array of coordinates to be transformed in place.
-               For geographic coordinate systems, the first two columns are
-               the *longitude* and *latitude*, in that order.
+    position - An array of coordinates to be transformed in place.  If `position` is a
+               Vector of length 2 or 3 it's treated as a single point.  For
+               geographic coordinate systems, the first two columns are the
+               *longitude* and *latitude*, in that order.  To transform an
+               array of points, a matrix of shape Nx2 or Nx3 may be used.
     radians  - If true, treat geographic lon,lat coordinates as radians on
                input and output.
 
@@ -97,6 +101,9 @@ function transform!(src::Projection, dest::Projection, position::Array{Float64,2
 end
 transform(src::Projection, dest::Projection, position::Array{Float64,2}, radians::Bool=false) =
     transform!(src, dest, copy(position), radians)
+transform{T<:Real}(src::Projection, dest::Projection, position::Array{T,2}, radians::Bool=false) =
+    transform!(src, dest, map(Float64, position), radians)
+
 
 function transform!(src::Projection, dest::Projection, position::Vector{Float64}, radians::Bool=false)
     !radians && is_latlong(src) && (position[1] = deg2rad(position[1]); position[2] = deg2rad(position[2]))
@@ -106,6 +113,9 @@ function transform!(src::Projection, dest::Projection, position::Vector{Float64}
 end
 transform(src::Projection, dest::Projection, position::Vector{Float64}, radians::Bool=false) =
     transform!(src, dest, copy(position), radians)
+transform{T<:Real}(src::Projection, dest::Projection, position::Vector{T}, radians::Bool=false) =
+    transform!(src, dest, map(Float64, position), radians)
+
 
 # Unused/untested
 # @doc """
@@ -113,6 +123,7 @@ transform(src::Projection, dest::Projection, position::Vector{Float64}, radians:
 # If the coordinate system passed in is latlong, a clone of the same will be returned.
 # """ ->
 # latlong_projection(proj::Projection) = Projection(_latlong_from_proj(proj.rep))
+
 
 if has_geodesic_support
 
