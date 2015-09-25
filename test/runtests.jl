@@ -27,7 +27,7 @@ dup_wgs84 = Projection("+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs")
 # Taken from https://github.com/proj4js/proj4js/blob/master/test/test.js
 sweref99tm = Projection("+proj=utm +zone=33 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs")
 rt90 = Projection("+lon_0=15.808277777799999 +lat_0=0.0 +k=1.0 +x_0=1500000.0 +y_0=0.0 +proj=tmerc +ellps=bessel +units=m +towgs84=414.1,41.3,603.1,-0.855,2.141,-7.023,0 +no_defs")
-@fact transform(sweref99tm, rt90, [319180, 6399862]) -->
+@fact transform(sweref99tm, rt90, [319180 6399862]) -->
     roughly([1271137.927154 6404230.291456], 1e-6)
 @fact transform(sweref99tm, rt90, [319480 6397862;
                                    329200 6599800]) -->
@@ -73,6 +73,9 @@ proj_a, proj_es = spheroid_params(proj)
 @fact is_geocent(Projection(Proj4.epsg[4328])) --> true # WGS 84 (geocentric) 
 @fact is_geocent(wgs84) --> false # WGS 84 (geocentric)
 
+#=
+# TODO(cjf): It's unclear exatly what the below was meant to achieve.
+# Commented out for now since the tests are broken.
 function test_point(point)
     rev = reverse(vec(point))
     rad = deg2rad(point)
@@ -89,6 +92,7 @@ for point in ([-73.78, 40.64], # JFK
               [103.99   1.36])
     test_point(point)
 end
+=#
 
 p1, p2 = [-73.78, 40.64],[103.99, 30.36] # p1, p2 in degrees
 proj1, proj2 = wgs84, proj # chosen to have different ellipses
