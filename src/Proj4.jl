@@ -1,7 +1,9 @@
 module Proj4
 
-using BinDeps
-@BinDeps.load_dependencies
+# TODO (cjf): Automatically declare libproj using BinDeps.  Make sure it
+# doesn't hurt package load time (probably requires precompilation)
+#using BinDeps
+#@BinDeps.load_dependencies
 
 const libproj = "libproj"
 

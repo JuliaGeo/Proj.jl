@@ -2,7 +2,7 @@ using BinDeps
 
 @BinDeps.setup
 
-libproj = library_dependency("proj", aliases = ["libproj"])
+libproj = library_dependency("libproj", aliases = ["libproj"])
 
 @linux_only begin
     provides(AptGet, "libproj0", libproj, os = :Linux)
