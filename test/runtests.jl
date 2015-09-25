@@ -216,3 +216,4 @@ end
 
 end # facts
 
+FactCheck.exitstatus()
