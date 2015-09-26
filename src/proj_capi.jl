@@ -90,11 +90,11 @@ function _get_def(proj_ptr::Ptr{Void})
 end
 
 @doc "Low level interface to libproj transform, C_NULL can be passed in for z, if it's 2-dimensional" ->
-function _transform!(src_ptr::Ptr{Void}, dest_ptr::Ptr{Void}, point_count::Int, point_stride::Int,
+function _transform!(src_ptr::Ptr{Void}, dest_ptr::Ptr{Void}, point_count::Integer, point_stride::Integer,
                      x::Ptr{Cdouble}, y::Ptr{Cdouble}, z::Ptr{Cdouble})
     @assert src_ptr != C_NULL && dest_ptr != C_NULL
     err = ccall((:pj_transform, libproj), Cint, (Ptr{Void}, Ptr{Void}, Clong, Cint, Ptr{Cdouble}, Ptr{Cdouble},
-                Ptr{Cdouble}), src_ptr, dest_ptr, Clong(point_count), Cint(point_stride), x, y, z)
+                Ptr{Cdouble}), src_ptr, dest_ptr, point_count, point_stride, x, y, z)
     err != 0 && error("transform error: $(_strerrno(err))")
 end
 
