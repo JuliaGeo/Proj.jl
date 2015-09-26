@@ -140,11 +140,9 @@ if Proj4.has_geodesic_support
     @fact geod_destination(q2, azi1, dist_q2r1, proj1) --> roughly(r1, 1e-6)
 
     @fact geod_distance(r1, q2, proj2) --> roughly(dist_r1q2, 1e-6)
-    @fact geod_distance(q2, r1, proj2) --> roughly(dist_q2r1, 1e-6)
-    @fact dist_r1q2 --> roughly(dist_q2r1, 1e-6)
+    @fact geod_distance(q2, r1, proj1) --> roughly(dist_q2r1, 1e-6)
     @fact geod_distance(q1, r2, proj1) --> roughly(dist_q1r2, 1e-6)
     @fact geod_distance(r2, q1, proj1) --> roughly(dist_r2q1, 1e-6)
-    @fact dist_q1r2 --> roughly(dist_r2q1, 1e-6)
 
     # The distances computed in both projections can be significantly different if the ellipsoids are different
     @fact (dist_r1q2 - dist_q1r2) > 5e4 --> true
