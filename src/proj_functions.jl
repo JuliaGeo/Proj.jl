@@ -40,6 +40,13 @@ lonlat2xy(lonlat::Vector{Float64}, proj::Projection, radians::Bool=false) =
 lonlat2xy(lonlat::Array{Float64,2}, proj::Projection, radians::Bool=false) =
     lonlat2xy!(copy(lonlat), proj, radians)
 
+function lonlat2xy(lonlat::Tuple{Float64, Float64}, proj::Projection, radians::Bool=false)
+    !radians && (lonlat = (deg2rad(lonlat[1]), deg2rad(lonlat[2])))
+    _fwd(lonlat, proj.rep)
+end
+lonlat2xy(lonlat::Vector{Tuple{Float64, Float64}}, proj::Projection, radians::Bool=false) =
+    Tuple{Float64,Float64}[lonlat2xy(ll, proj, radians) for ll in lonlat]
+
 @doc """
 Returns the inverse projection from XY to LonLat in the given projection,
 modifying the input xy inplace (only supports 2 dimensions)""" ->
@@ -63,6 +70,13 @@ end
 xy2lonlat(xy::Vector{Float64}, proj::Projection, radians::Bool=false) = xy2lonlat!(copy(xy), proj, radians)
 xy2lonlat(xy::Array{Float64,2}, proj::Projection, radians::Bool=false) = xy2lonlat!(copy(xy), proj, radians)
 
+function xy2lonlat(xy::Tuple{Float64, Float64}, proj::Projection, radians::Bool=false)
+    xy = _inv(xy, proj.rep)
+    !radians && (xy = (rad2deg(xy[1]), rad2deg(xy[2])))
+    xy
+end
+xy2lonlat(xy::Vector{Tuple{Float64, Float64}}, proj::Projection, radians::Bool=false) =
+    Tuple{Float64,Float64}[xy2lonlat(coords, proj, radians) for coords in xy]
 
 @doc """
 Transform between geographic or projected coordinate systems
@@ -104,6 +118,8 @@ transform(src::Projection, dest::Projection, position::Array{Float64,2}, radians
 transform{T<:Real}(src::Projection, dest::Projection, position::Array{T,2}, radians::Bool=false) =
     transform!(src, dest, map(Float64, position), radians)
 
+transform(src::Projection, dest::Projection, position::Vector{Tuple{Float64, Float64}}, radians::Bool=false) =
+    Tuple{Float64, Float64}[transform(src, dest, pos, radians) for pos in position]
 
 function transform!(src::Projection, dest::Projection, position::Vector{Float64}, radians::Bool=false)
     !radians && is_latlong(src) && (position[1] = deg2rad(position[1]); position[2] = deg2rad(position[2]))
@@ -116,6 +132,10 @@ transform(src::Projection, dest::Projection, position::Vector{Float64}, radians:
 transform{T<:Real}(src::Projection, dest::Projection, position::Vector{T}, radians::Bool=false) =
     transform!(src, dest, map(Float64, position), radians)
 
+function transform(src::Projection, dest::Projection, position::Tuple{Float64, Float64}, radians::Bool=false)
+    position = transform!(src, dest, collect(position), radians)
+    tuple(position...)
+end
 
 # Unused/untested
 # @doc """
@@ -175,9 +195,15 @@ if has_geodesic_support
     geod_direct(position::Vector{Float64}, azimuth::Float64, distance::Float64, proj::Projection) = 
         geod_direct!(copy(position), azimuth, distance, proj)
 
+    function geod_direct(position::Tuple{Float64, Float64}, azimuth::Float64, distance::Float64, proj::Projection)
+        dest, azi = geod_direct!(collect(position), azimuth, distance, proj)
+        tuple(dest...), azi
+    end
+
     @doc "Returns the destination by moving along the ellipsoid in the given projection" ->
     geod_destination!(position::Vector{Float64}, azi::Float64, dist::Float64, proj::Projection) = geod_direct!(position, azi, dist, proj)[1]
     geod_destination(position::Vector{Float64}, azi::Float64, dist::Float64, proj::Projection) = geod_destination!(copy(position), azi, dist, proj)
+    geod_destination(position::Tuple{Float64, Float64}, azi::Float64, dist::Float64, proj::Projection) = geod_direct(position, azi, dist, proj)[1]
 
     @doc """
     Solve the inverse geodesic problem.
@@ -202,7 +228,11 @@ if has_geodesic_support
     geod_inverse(xy1::Vector{Float64}, xy2::Vector{Float64}, proj::Projection) =
         _geod_inverse(_geod(proj), xy2lonlat(xy1, proj), xy2lonlat(xy2, proj))
 
+    geod_inverse(xy1::Tuple{Float64, Float64}, xy2::Tuple{Float64, Float64}, proj::Projection) =
+        _geod_inverse(_geod(proj), xy2lonlat(xy1, proj), xy2lonlat(xy2, proj))
+
     @doc "Returns the distance between the two points in the given projection" ->
     geod_distance(p1::Vector{Float64}, p2::Vector{Float64}, proj::Projection) = geod_inverse(p1, p2, proj)[1]
+    geod_distance(p1::Tuple{Float64, Float64}, p2::Tuple{Float64, Float64}, proj::Projection) = geod_inverse(p1, p2, proj)[1]
 
 end

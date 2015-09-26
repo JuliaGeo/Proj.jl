@@ -121,6 +121,11 @@ function _geod_direct!(geod::geod_geodesic, lonlat::Vector{Cdouble}, azimuth::Cd
     lonlat, azi[]
 end
 
+function _geod_direct(geod::geod_geodesic, lonlat::Tuple{Cdouble, Cdouble}, azimuth::Cdouble, distance::Cdouble)
+    lonlat, azi = _geod_direct!(geod, collect(lonlat), azimuth, distance)
+    tuple(lonlat...), azi
+end
+
 @doc """
 Solve the inverse geodesic problem.
 
@@ -142,6 +147,16 @@ Remarks:
     writing lat = 90 +/- eps, and taking the limit as eps -> 0+.
 """ ->
 function _geod_inverse(geod::geod_geodesic, lonlat1::Vector{Cdouble}, lonlat2::Vector{Cdouble})
+    dist = Ref{Cdouble}()
+    azi1 = Ref{Cdouble}()
+    azi2 = Ref{Cdouble}()
+    ccall((:geod_inverse, libproj), Void, (Ptr{Void},Cdouble,Cdouble,Cdouble,
+          Cdouble,Ptr{Cdouble},Ptr{Cdouble},Ptr{Cdouble}),
+          pointer_from_objref(geod), lonlat1[2], lonlat1[1], lonlat2[2], lonlat2[1], dist, azi1, azi2)
+    dist[], azi1[], azi2[]
+end
+
+function _geod_inverse(geod::geod_geodesic, lonlat1::Tuple{Cdouble, Cdouble}, lonlat2::Tuple{Cdouble, Cdouble})
     dist = Ref{Cdouble}()
     azi1 = Ref{Cdouble}()
     azi2 = Ref{Cdouble}()
