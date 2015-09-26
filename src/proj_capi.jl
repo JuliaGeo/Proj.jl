@@ -21,6 +21,12 @@ function _fwd!(lonlat::Vector{Cdouble}, proj_ptr::Ptr{Void})
     lonlat
 end
 
+function _fwd(lonlat::Tuple{Cdouble, Cdouble}, proj_ptr::Ptr{Void})
+    xy = ccall((:pj_fwd, libproj), ProjUV, (ProjUV, Ptr{Void}), ProjUV(lonlat[1], lonlat[2]), proj_ptr)
+    _errno() == 0 || error("forward projection error: $(_strerrno())")
+    (xy.u, xy.v)
+end
+
 @doc "Row-wise projection from Lat/Lon to X/Y (only supports 2 dimensions)" ->
 function _fwd!(lonlat::Array{Cdouble,2}, proj_ptr::Ptr{Void})
     for i=1:size(lonlat,1)
@@ -32,6 +38,15 @@ function _fwd!(lonlat::Array{Cdouble,2}, proj_ptr::Ptr{Void})
     lonlat
 end
 
+function _fwd(lonlat::Vector{Tuple{Cdouble, Cdouble}}, proj_ptr::Ptr{Void})
+    xy_coords = Vector{Tuple{Cdouble, Cdouble}}
+    sizehint!(xy_coords, length(lonlat))
+    for i=1:length(lonlat)
+        push!(xy_coords, _fwd(lonlat[i], proj_ptr))
+    end
+    xy_coords
+end
+
 @doc "inverse projection from X/Y to Lat/Lon (only supports 2 dimensions)" ->
 function _inv!(xy::Vector{Cdouble}, proj_ptr::Ptr{Void})
     lonlat = ccall((:pj_inv, libproj), ProjUV, (ProjUV, Ptr{Void}),
@@ -39,6 +54,13 @@ function _inv!(xy::Vector{Cdouble}, proj_ptr::Ptr{Void})
     _errno() == 0 || error("inverse projection error: $(_strerrno())")
     xy[1] = lonlat.u; xy[2] = lonlat.v
     xy
+end
+
+function _inv(xy::Tuple{Cdouble, Cdouble}, proj_ptr::Ptr{Void})
+    lonlat = ccall((:pj_inv, libproj), ProjUV, (ProjUV, Ptr{Void}),
+                   ProjUV(xy[1], xy[2]), proj_ptr)
+    _errno() == 0 || error("inverse projection error: $(_strerrno())")
+    (lonlat.u, lonlat.v)
 end
 
 @doc "Row-wise projection from X/Y to Lat/Lon (only supports 2 dimensions)" ->
@@ -50,6 +72,15 @@ function _inv!(xy::Array{Cdouble,2}, proj_ptr::Ptr{Void})
     end
     _errno() == 0 || error("inverse projection error: $(_strerrno())")
     xy
+end
+
+function _inv(xy::Vector{Tuple{Cdouble, Cdouble}}, proj_ptr::Ptr{Void})
+    latlon_coords = Vector{Tuple{Cdouble, Cdouble}}()
+    sizehint!(latlon_coords, length(xy))
+    for i=1:length(xy)
+        push!(latlon_coords, _inv(xy[i], proj_ptr))
+    end
+    latlon_coords
 end
 
 function _init_plus(proj_string::ASCIIString)
