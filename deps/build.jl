@@ -24,18 +24,17 @@ const libproj_ver = "4.9.1"
 			GetSources(libproj)
 			CreateDirectory(builddir)
 			@build_steps begin
-				CreateDirectory(prefix)
-				println(srcdir)
-				cd(srcdir)
-				FileRule(joinpath(prefix,"lib","libproj.so"), @build_steps begin
-					#`./configure --prefix="$prefix"`
-					`./configure`   # installs to usr/local/lib by default
+				ChangeDirectory(builddir)
+				FileRule(joinpath("/usr", "local", "lib","libproj.so"), @build_steps begin
+					#`echo Configuring: $(srcdir)/configure --prefix=$(prefix)`
+					#`$(srcdir)/configure --prefix=$(prefix)`
+					`$(srcdir)/configure`
+					`echo Making`
 					`make`
-					`make install`
-					srcdir
+					`sudo make install`
 				end)
 			end
-		end),libproj, os = :Linux)
+		end), libproj, os = :Linux)
 end
 
 @osx_only begin
