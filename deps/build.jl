@@ -25,11 +25,8 @@ const libproj_ver = "4.9.1"
 			CreateDirectory(builddir)
 			@build_steps begin
 				ChangeDirectory(builddir)
-				FileRule(joinpath("/usr", "local", "lib","libproj.so"), @build_steps begin
-					#`echo Configuring: $(srcdir)/configure --prefix=$(prefix)`
-					#`$(srcdir)/configure --prefix=$(prefix)`
-					`$(srcdir)/configure`
-					`echo Making`
+				FileRule(joinpath(prefix, "lib","libproj.so"), @build_steps begin
+					`$(srcdir)/configure --prefix=$(prefix)`
 					`make`
 					`sudo make install`
 				end)
