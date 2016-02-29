@@ -10,13 +10,12 @@ libproj = library_dependency("libproj", aliases = ["libproj"])
 @linux_only begin
 
 	
-	
 	# AptGet's LibProj is old
 	#provides(AptGet, "libproj0", libproj, os = :Linux)  
 
 	# so download a newer version
 	libsrc = "http://download.osgeo.org/proj"
-	libproj_ver = "4.9.1" # from source http://download.osgeo.org/proj/
+	libproj_ver = "4.9.2" # from source http://download.osgeo.org/proj/
 	libproj_name = "proj-$(libproj_ver).tar.gz"
 
 	# and build it from source
