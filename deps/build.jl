@@ -35,9 +35,10 @@ libproj = library_dependency("libproj", aliases = ["libproj"])
 				ChangeDirectory(builddir)
 				FileRule(joinpath(libdir, "libproj.so"), 
 				@build_steps begin
-					`$(srcdir)/configure --prefix=$(prefix)`
+					ChangeDirectory(srcdir)
+					`./configure --prefix=$(prefix)`
 					`make`
-					#`sudo make install`
+					`make install`
 				end)
 			end
 		end), libproj, os = :Linux, installed_libpath=libdir)
