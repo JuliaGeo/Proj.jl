@@ -2,10 +2,15 @@ module Proj4
 
 # TODO (cjf): Automatically declare libproj using BinDeps.  Make sure it
 # doesn't hurt package load time (probably requires precompilation)
-#using BinDeps
-#@BinDeps.load_dependencies
+using BinDeps
+@BinDeps.load_dependencies
 
-const libproj = "libproj"
+
+@linux_only begin
+	push!(Libdl.DL_LOAD_PATH, dirname(Proj4.libproj[1][end]))
+end
+const libproj_str = "libproj"    # there must be a better way...
+
 
 export Projection, # proj_types.jl
        transform, transform!,  # proj_functions.jl
