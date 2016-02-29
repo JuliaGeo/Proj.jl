@@ -1,4 +1,5 @@
-VERSION >= v"0.4.0-dev+6521" && __precompile__(true)  # BinDeps is a little slow
+# VERSION >= v"0.4.0-dev+6521" && __precompile__(true)  # BinDeps is a little slow
+# The above causes the warning: eval from module __anon__ to Proj4
 
 module Proj4
 
