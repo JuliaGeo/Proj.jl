@@ -1,11 +1,14 @@
+VERSION >= v"0.4.0-dev+6521" && __precompile__(true)
+# The above causes the warning: eval from module __anon__ to Proj4
+
 module Proj4
 
-# TODO (cjf): Automatically declare libproj using BinDeps.  Make sure it
-# doesn't hurt package load time (probably requires precompilation)
-#using BinDeps
-#@BinDeps.load_dependencies
-
-const libproj = "libproj"
+const _projdeps = joinpath(dirname(@__FILE__),"..","deps","deps.jl")
+if isfile(_projdeps)
+    include(_projdeps)
+else
+    error("Proj4 is not properly installed. Please run Pkg.build(\"Proj4\")")
+end
 
 export Projection, # proj_types.jl
        transform, transform!,  # proj_functions.jl
