@@ -23,7 +23,7 @@ function _version()
     VersionNumber(parse(Int, m[1]), parse(Int, m[2]), parse(Int, m[3]))
 end
 
-@doc "Parsed version number for the underlying version of libproj" ->
+"Parsed version number for the underlying version of libproj"
 const version = _version()
 
 # Detect underlying libproj support for geodesic calculations
@@ -37,7 +37,7 @@ end
 include("proj_types.jl") # type definitions for proj objects
 include("proj_functions.jl") # user-facing proj functions
 
-@doc "Get a global error string in human readable form" ->
+"Get a global error string in human readable form"
 error_message() = _strerrno()
 
 end # module

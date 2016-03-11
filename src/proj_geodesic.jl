@@ -70,7 +70,7 @@ type geod_geodesic <: _geodesic
     geod_geodesic() = new()
 end
 
-@doc """
+"""
 Construct an ellipsoid of revolution with
     
     equatorial radius a,
@@ -84,7 +84,7 @@ Remark, we construct it when constructing a [Projection] using the formulas:
 
 Reference: equations (1)-(3) of 
     Algorithms for geodesics (arXiv:1109.4448v2 [physics.geo-ph] 28 Mar 2012)
-""" ->
+"""
 function geod_geodesic(a::Cdouble, f::Cdouble)
     geod = geod_geodesic()
     ccall((:geod_init, libproj), Void, (Ptr{Void},Cdouble,Cdouble),
@@ -92,7 +92,7 @@ function geod_geodesic(a::Cdouble, f::Cdouble)
     geod
 end
 
-@doc """
+"""
 Solve the direct geodesic problem.
 
 Args:
@@ -112,7 +112,7 @@ Remarks:
     If either point is at a pole, the azimuth is defined by keeping the longitude fixed,
     writing lat = 90 +/- eps, and taking the limit as eps -> 0+. An arc length greater than 180deg
     signifies a geodesic which is not a shortest path.
-""" ->
+"""
 function _geod_direct!(geod::geod_geodesic, lonlat::Vector{Cdouble}, azimuth::Cdouble, distance::Cdouble)
     p = pointer(lonlat)
     azi = Ref{Cdouble}() # the (forward) azimuth at the destination
@@ -121,7 +121,7 @@ function _geod_direct!(geod::geod_geodesic, lonlat::Vector{Cdouble}, azimuth::Cd
     lonlat, azi[]
 end
 
-@doc """
+"""
 Solve the inverse geodesic problem.
 
 Args:
@@ -140,7 +140,7 @@ Remarks:
 
     If either point is at a pole, the azimuth is defined by keeping the longitude fixed,
     writing lat = 90 +/- eps, and taking the limit as eps -> 0+.
-""" ->
+"""
 function _geod_inverse(geod::geod_geodesic, lonlat1::Vector{Cdouble}, lonlat2::Vector{Cdouble})
     dist = Ref{Cdouble}()
     azi1 = Ref{Cdouble}()

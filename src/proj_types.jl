@@ -5,9 +5,9 @@
 #    rep::Ptr{Void} # Pointer to internal projCtx struct
 #end
 
-@doc """
+"""
 Cartographic projection type
-""" ->
+"""
 type Projection
     #ctx::Context   # Projection context object
     rep::Ptr{Void} # Pointer to internal projPJ struct
@@ -24,7 +24,7 @@ function Projection(proj_ptr::Ptr{Void})
     proj
 end
 
-@doc """
+"""
 Construct a projection from a string in proj.4 "plus format"
 
 The projection string `proj_string` is defined in the proj.4 format,
@@ -32,7 +32,7 @@ with each part of the projection specification prefixed with '+' character.
 For example:
 
     `wgs84 = Projection("+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs")`
-""" ->
+"""
 Projection(proj_string::ASCIIString) = Projection(_init_plus(proj_string))
 
 function freeProjection(proj::Projection)
