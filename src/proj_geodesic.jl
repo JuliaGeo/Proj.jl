@@ -87,7 +87,7 @@ Reference: equations (1)-(3) of
 """ ->
 function geod_geodesic(a::Cdouble, f::Cdouble)
     geod = geod_geodesic()
-    ccall((:geod_init, libproj_str), Void, (Ptr{Void},Cdouble,Cdouble),
+    ccall((:geod_init, libproj), Void, (Ptr{Void},Cdouble,Cdouble),
           pointer_from_objref(geod), a, f)
     geod
 end
@@ -116,7 +116,7 @@ Remarks:
 function _geod_direct!(geod::geod_geodesic, lonlat::Vector{Cdouble}, azimuth::Cdouble, distance::Cdouble)
     p = pointer(lonlat)
     azi = Ref{Cdouble}() # the (forward) azimuth at the destination
-    ccall((:geod_direct, libproj_str),Void,(Ptr{Void},Cdouble,Cdouble,Cdouble,Cdouble,Ptr{Cdouble},Ptr{Cdouble},
+    ccall((:geod_direct, libproj),Void,(Ptr{Void},Cdouble,Cdouble,Cdouble,Cdouble,Ptr{Cdouble},Ptr{Cdouble},
           Ptr{Cdouble}), pointer_from_objref(geod), lonlat[2], lonlat[1], azimuth, distance, p+sizeof(Cdouble), p, azi)
     lonlat, azi[]
 end
@@ -145,7 +145,7 @@ function _geod_inverse(geod::geod_geodesic, lonlat1::Vector{Cdouble}, lonlat2::V
     dist = Ref{Cdouble}()
     azi1 = Ref{Cdouble}()
     azi2 = Ref{Cdouble}()
-    ccall((:geod_inverse, libproj_str), Void, (Ptr{Void},Cdouble,Cdouble,Cdouble,
+    ccall((:geod_inverse, libproj), Void, (Ptr{Void},Cdouble,Cdouble,Cdouble,
           Cdouble,Ptr{Cdouble},Ptr{Cdouble},Ptr{Cdouble}),
           pointer_from_objref(geod), lonlat1[2], lonlat1[1], lonlat2[2], lonlat2[1], dist, azi1, azi2)
     dist[], azi1[], azi2[]
