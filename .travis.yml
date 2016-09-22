@@ -3,8 +3,9 @@ os:
   - linux
   - osx
 julia:
-#  - release # 0.3 not supported yet
-  - nightly
+  - 0.4
+  - 0.5
+# - nightly
 notifications:
   email: false
 # uncomment the following lines to override the default test script

@@ -52,7 +52,7 @@ function _inv!(xy::Array{Cdouble,2}, proj_ptr::Ptr{Void})
     xy
 end
 
-function _init_plus(proj_string::ASCIIString)
+function _init_plus(proj_string::String)
     proj_ptr = ccall((:pj_init_plus, libproj), Ptr{Void}, (Cstring,), proj_string)
     if proj_ptr == C_NULL
         # TODO: use context?
@@ -69,7 +69,7 @@ end
 
 "Get human readable error string from proj.4 error code"
 function _strerrno(code::Cint)
-    bytestring(ccall((:pj_strerrno, libproj), Cstring, (Cint,), code))
+    unsafe_string(ccall((:pj_strerrno, libproj), Cstring, (Cint,), code))
 end
 
 "Get global errno string in human readable form"
@@ -86,7 +86,7 @@ end
 function _get_def(proj_ptr::Ptr{Void})
     @assert proj_ptr != C_NULL
     opts = 0 # Apparently obsolete argument, not used in current proj source
-    bytestring(ccall((:pj_get_def, libproj), Cstring, (Ptr{Void}, Cint), proj_ptr, opts))
+    unsafe_string(ccall((:pj_get_def, libproj), Cstring, (Ptr{Void}, Cint), proj_ptr, opts))
 end
 
 "Low level interface to libproj transform, C_NULL can be passed in for z, if it's 2-dimensional"
@@ -135,12 +135,12 @@ end
 
 "Get a string describing the underlying version of libproj in use"
 function _get_release()
-    bytestring(ccall((:pj_get_release, libproj), Cstring, ()))
+    unsafe_string(ccall((:pj_get_release, libproj), Cstring, ()))
 end
 
 """
 Fetch the internal definition of the spheroid as a tuple (a, es), where
-    
+
     a = major_axis
     es = eccentricity squared
 

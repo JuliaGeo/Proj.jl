@@ -2,6 +2,8 @@ VERSION >= v"0.4.0-dev+6521" && __precompile__(true)
 # The above causes the warning: eval from module __anon__ to Proj4
 
 module Proj4
+using Compat
+import Compat.String
 
 const _projdeps = joinpath(dirname(@__FILE__),"..","deps","deps.jl")
 if isfile(_projdeps)

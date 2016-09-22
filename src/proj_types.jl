@@ -11,7 +11,7 @@ Cartographic projection type
 type Projection
     #ctx::Context   # Projection context object
     rep::Ptr{Void} # Pointer to internal projPJ struct
-    
+
     # [geod]: a structure containing the parameters of the spheroid
     # some of the fields in [geod] are mildly duplicative of the information
     # available in [rep], which can be exposed only through _get_spheroid_defn
@@ -33,7 +33,7 @@ For example:
 
     `wgs84 = Projection("+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs")`
 """
-Projection(proj_string::ASCIIString) = Projection(_init_plus(proj_string))
+Projection(proj_string::String) = Projection(_init_plus(proj_string))
 
 function freeProjection(proj::Projection)
     _free(proj.rep)
