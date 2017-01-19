@@ -1,4 +1,4 @@
-using BinDeps
+using BinDeps, Compat
 
 @BinDeps.setup
 
@@ -10,7 +10,7 @@ libproj_min_ver = v"4.9.0" # First verison with supporting the geodesic API
 function validate_proj_version(libname, handle)
     pj_get_release = Libdl.dlsym_e(handle, :pj_get_release)
     pj_get_release != C_NULL || return false
-    verstr = bytestring(ccall(pj_get_release, Cstring, ()))
+    verstr = unsafe_string(ccall(pj_get_release, Cstring, ()))
     m = match(r"(\d+).(\d+).(\d+),.+", verstr)
     m !== nothing || return false
     ver = VersionNumber(parse(Int, m[1]), parse(Int, m[2]), parse(Int, m[3]))
@@ -51,7 +51,7 @@ provides(BuildProcess,
 )
 
 
-@osx_only begin
+if is_apple()
     using Homebrew
     provides(Homebrew.HB, "proj", libproj, os = :Darwin)
 end
@@ -62,4 +62,3 @@ end
 # we're using @install instead.  See
 # https://github.com/JuliaLang/BinDeps.jl/issues/196
 @BinDeps.install Dict(:libproj => :libproj)
-
