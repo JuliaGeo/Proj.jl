@@ -9,7 +9,7 @@ compare_datums(p1::Projection, p2::Projection) = _compare_datums(p1.rep, p2.rep)
 
 """
 Return the definition of the spheroid as a tuple (a, es), where
-    
+
     a = major_axis
     es = eccentricity squared
 
@@ -21,7 +21,7 @@ spheroid_params(proj::Projection) = _get_spheroid_defn(proj.rep)
 Returns the forward projection from LatLon to XY in the given projection,
 modifying the input lonlat inplace (only supports 2 dimensions)"""
 function lonlat2xy!(lonlat::Vector{Float64}, proj::Projection, radians::Bool=false)
-    !radians && (lonlat[:] = deg2rad(lonlat))
+    !radians && (lonlat[:] = deg2rad.(lonlat))
     _fwd!(lonlat, proj.rep)
 end
 
@@ -45,7 +45,7 @@ Returns the inverse projection from XY to LonLat in the given projection,
 modifying the input xy inplace (only supports 2 dimensions)"""
 function xy2lonlat!(xy::Vector{Float64}, proj::Projection, radians::Bool=false)
     _inv!(xy, proj.rep)
-    !radians && (xy[1:2] = rad2deg(xy[1:2]))
+    !radians && (xy[1:2] = rad2deg.(xy[1:2]))
     xy
 end
 
@@ -154,7 +154,7 @@ if has_geodesic_support
         azimuth  - azimuth (degrees) ∈ [-540, 540)
         distance - distance (metres) to move from (lat,lon); can be negative
         proj     - the given projection whose ellipsoid we move along
-       
+
     Returns:
 
         dest     - destination after moving for [distance] metres in [azimuth] direction.
@@ -175,14 +175,14 @@ if has_geodesic_support
         azimuth  - azimuth (degrees) ∈ [-540, 540)
         distance - distance (metres) to move from (lat,lon); can be negative
         proj     - the given projection whose ellipsoid we move along
-       
+
     Returns:
 
         dest     - destination after moving for [distance] metres in [azimuth] direction.
         azi      - forward azimuth (degrees) at destination [dest].
 
     """
-    geod_direct(position::Vector{Float64}, azimuth::Float64, distance::Float64, proj::Projection) = 
+    geod_direct(position::Vector{Float64}, azimuth::Float64, distance::Float64, proj::Projection) =
         geod_direct!(copy(position), azimuth, distance, proj)
 
     "Returns the destination by moving along the ellipsoid in the given projection"

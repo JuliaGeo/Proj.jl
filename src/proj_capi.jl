@@ -1,6 +1,6 @@
 # For use in geodesic routines
 
-abstract _geodesic
+@compat abstract type _geodesic end
 
 type null_geodesic <: _geodesic
 end
