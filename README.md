@@ -1,5 +1,7 @@
 # Proj4
 
+[![Build Status](https://travis-ci.org/JuliaGeo/Proj4.jl.svg?branch=master)](https://travis-ci.org/JuliaGeo/Proj4.jl)
+
 A simple wrapper around the Proj.4 cartographic projections library.
 
 Basic example:
@@ -16,4 +18,3 @@ transform(wgs84, utm56, [150 -27 0])
 
 API documentation for the underlying C API may be found here:
 https://github.com/OSGeo/proj.4/wiki/ProjAPI
-
