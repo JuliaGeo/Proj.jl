@@ -1,14 +1,14 @@
 # For use in geodesic routines
 
-@compat abstract type _geodesic end
+abstract type _geodesic end
 
-type null_geodesic <: _geodesic
+mutable struct null_geodesic <: _geodesic
 end
 
 # The following functions are generally named after the associated C API
 # functions, but without the pj prefix.
 
-immutable ProjUV
+struct ProjUV
     u::Cdouble
     v::Cdouble
 end
