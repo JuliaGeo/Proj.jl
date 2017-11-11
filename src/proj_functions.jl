@@ -111,7 +111,7 @@ transformed points in a Float64 array the same shape as `position`.
 """
 transform(src::Projection, dest::Projection, position::Array{Float64,2}, radians::Bool=false) =
     transform!(src, dest, copy(position), radians)
-transform{T<:Real}(src::Projection, dest::Projection, position::Array{T,2}, radians::Bool=false) =
+transform(src::Projection, dest::Projection, position::Array{T,2}, radians::Bool=false) where {T<:Real} =
     transform!(src, dest, map(Float64, position), radians)
 
 
@@ -123,7 +123,7 @@ function transform!(src::Projection, dest::Projection, position::Vector{Float64}
 end
 transform(src::Projection, dest::Projection, position::Vector{Float64}, radians::Bool=false) =
     transform!(src, dest, copy(position), radians)
-transform{T<:Real}(src::Projection, dest::Projection, position::Vector{T}, radians::Bool=false) =
+transform(src::Projection, dest::Projection, position::Vector{T}, radians::Bool=false) where {T<:Real} =
     transform!(src, dest, map(Float64, position), radians)
 
 

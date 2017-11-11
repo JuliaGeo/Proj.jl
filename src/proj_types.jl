@@ -8,7 +8,7 @@
 """
 Cartographic projection type
 """
-type Projection
+mutable struct Projection
     #ctx::Context   # Projection context object
     rep::Ptr{Void} # Pointer to internal projPJ struct
 

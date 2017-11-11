@@ -1,4 +1,4 @@
-immutable Cdouble6
+struct Cdouble6
     x1::Cdouble
     x2::Cdouble
     x3::Cdouble
@@ -7,7 +7,7 @@ immutable Cdouble6
     x6::Cdouble
 end
 
-immutable Cdouble15
+struct Cdouble15
     x1::Cdouble
     x2::Cdouble
     x3::Cdouble
@@ -25,7 +25,7 @@ immutable Cdouble15
     x15::Cdouble
 end
 
-immutable Cdouble21
+struct Cdouble21
     x1::Cdouble
     x2::Cdouble
     x3::Cdouble
@@ -49,7 +49,7 @@ immutable Cdouble21
     x21::Cdouble
 end
 
-type geod_geodesic <: _geodesic
+mutable struct geod_geodesic <: _geodesic
     a::Cdouble
     f::Cdouble
     f1::Cdouble
