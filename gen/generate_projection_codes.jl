@@ -1,5 +1,13 @@
-const FILENAMES = ("epsg",
-                   "esri")
+# Load in `deps.jl`, complaining if it does not exist
+const depsjl_path = joinpath(@__DIR__, "..", "deps", "deps.jl")
+if !isfile(depsjl_path)
+    error("Proj4 not installed properly, run Pkg.build(\"Proj4\"), restart Julia and try again")
+end
+include(depsjl_path)
+check_deps()
+
+const FILENAMES = (epsg_path,
+                   esri_path)
 
 parse_projection(line::String) = match(r"<(\d+)>\s+(.*?)\s+<>", line)
 
@@ -7,22 +15,18 @@ println("# Contents of this file is generated on $(now()). Do not edit by hand!"
 println("# \$ julia generate_projection_codes.jl > projection_codes.jl\n")
 
 for filename in FILENAMES
-    if !isfile(filename)
-        url = "https://raw.githubusercontent.com/OSGeo/proj.4/master/nad/$filename"
-        download(url, filename)
+    lines = open(filename) do proj_file
+        readlines(proj_file)
     end
-    proj_file = open(filename)
-    lines = readlines(proj_file)
-    close(proj_file)
 
-    println("$filename = Dict(")
+    println("$(basename(filename)) = Dict(")
     for i=1:length(lines)
         m = parse_projection(lines[i])
-        if is(m, nothing)
+        if m === nothing
             continue
         else
             proj_code, proj_string = m.captures
-            @printf("  %s => \"%s\", %s", proj_code, proj_string, lines[i-1])
+            @printf("  %s => \"%s\", %s\n", proj_code, proj_string, lines[i-1])
         end
     end
     println(")\n")
