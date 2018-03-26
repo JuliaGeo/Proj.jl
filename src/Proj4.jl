@@ -3,17 +3,23 @@ __precompile__()
 
 module Proj4
 
-const _projdeps = joinpath(@__DIR__,"..","deps","deps.jl")
-if isfile(_projdeps)
-    include(_projdeps)
-else
-    error("Proj4 is not properly installed. Please run Pkg.build(\"Proj4\")")
-end
-
 export Projection, # proj_types.jl
        transform, transform!,  # proj_functions.jl
        is_latlong, is_geocent, compare_datums, spheroid_params,
        xy2lonlat, xy2lonlat!, lonlat2xy, lonlat2xy!
+
+# Load in `deps.jl`, complaining if it does not exist
+const depsjl_path = joinpath(@__DIR__, "..", "deps", "deps.jl")
+if !isfile(depsjl_path)
+    error("Proj4 not installed properly, run Pkg.build(\"Proj4\"), restart Julia and try again")
+end
+include(depsjl_path)
+
+# Module initialization function
+function __init__()
+    # Always check your dependencies from `deps.jl`
+    check_deps()
+end
 
 include("projection_codes.jl") # ESRI and EPSG projection strings
 include("proj_capi.jl") # low-level C-facing functions (corresponding to src/proj_api.h)
