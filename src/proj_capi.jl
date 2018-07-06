@@ -14,17 +14,17 @@ struct ProjUV
 end
 
 "forward projection from Lat/Lon to X/Y (only supports 2 dimensions)"
-function _fwd!(lonlat::Vector{Cdouble}, proj_ptr::Ptr{Void})
-    xy = ccall((:pj_fwd, libproj), ProjUV, (ProjUV, Ptr{Void}), ProjUV(lonlat[1], lonlat[2]), proj_ptr)
+function _fwd!(lonlat::Vector{Cdouble}, proj_ptr::Ptr{Cvoid})
+    xy = ccall((:pj_fwd, libproj), ProjUV, (ProjUV, Ptr{Cvoid}), ProjUV(lonlat[1], lonlat[2]), proj_ptr)
     _errno() == 0 || error("forward projection error: $(_strerrno())")
     lonlat[1] = xy.u; lonlat[2] = xy.v
     lonlat
 end
 
 "Row-wise projection from Lat/Lon to X/Y (only supports 2 dimensions)"
-function _fwd!(lonlat::Array{Cdouble,2}, proj_ptr::Ptr{Void})
+function _fwd!(lonlat::Array{Cdouble,2}, proj_ptr::Ptr{Cvoid})
     for i=1:size(lonlat,1)
-        xy = ccall((:pj_fwd, libproj), ProjUV, (ProjUV, Ptr{Void}),
+        xy = ccall((:pj_fwd, libproj), ProjUV, (ProjUV, Ptr{Cvoid}),
                    ProjUV(lonlat[i,1], lonlat[i,2]), proj_ptr)
         lonlat[i,1] = xy.u; lonlat[i,2] = xy.v
     end
@@ -33,8 +33,8 @@ function _fwd!(lonlat::Array{Cdouble,2}, proj_ptr::Ptr{Void})
 end
 
 "inverse projection from X/Y to Lat/Lon (only supports 2 dimensions)"
-function _inv!(xy::Vector{Cdouble}, proj_ptr::Ptr{Void})
-    lonlat = ccall((:pj_inv, libproj), ProjUV, (ProjUV, Ptr{Void}),
+function _inv!(xy::Vector{Cdouble}, proj_ptr::Ptr{Cvoid})
+    lonlat = ccall((:pj_inv, libproj), ProjUV, (ProjUV, Ptr{Cvoid}),
                    ProjUV(xy[1], xy[2]), proj_ptr)
     _errno() == 0 || error("inverse projection error: $(_strerrno())")
     xy[1] = lonlat.u; xy[2] = lonlat.v
@@ -42,9 +42,9 @@ function _inv!(xy::Vector{Cdouble}, proj_ptr::Ptr{Void})
 end
 
 "Row-wise projection from X/Y to Lat/Lon (only supports 2 dimensions)"
-function _inv!(xy::Array{Cdouble,2}, proj_ptr::Ptr{Void})
+function _inv!(xy::Array{Cdouble,2}, proj_ptr::Ptr{Cvoid})
     for i=1:size(xy,1)
-        lonlat = ccall((:pj_inv, libproj), ProjUV, (ProjUV, Ptr{Void}),
+        lonlat = ccall((:pj_inv, libproj), ProjUV, (ProjUV, Ptr{Cvoid}),
                        ProjUV(xy[i,1], xy[i,2]), proj_ptr)
         xy[i,1] = lonlat.u; xy[i,2] = lonlat.v
     end
@@ -53,7 +53,7 @@ function _inv!(xy::Array{Cdouble,2}, proj_ptr::Ptr{Void})
 end
 
 function _init_plus(proj_string::String)
-    proj_ptr = ccall((:pj_init_plus, libproj), Ptr{Void}, (Cstring,), proj_string)
+    proj_ptr = ccall((:pj_init_plus, libproj), Ptr{Cvoid}, (Cstring,), proj_string)
     if proj_ptr == C_NULL
         # TODO: use context?
         error("Could not parse projection: \"$proj_string\": $(_strerrno())")
@@ -62,9 +62,9 @@ function _init_plus(proj_string::String)
 end
 
 "Free C datastructure associated with a projection. For internal use!"
-function _free(proj_ptr::Ptr{Void})
+function _free(proj_ptr::Ptr{Cvoid})
     @assert proj_ptr != C_NULL
-    ccall((:pj_free, libproj), Void, (Ptr{Void},), proj_ptr)
+    ccall((:pj_free, libproj), Cvoid, (Ptr{Cvoid},), proj_ptr)
 end
 
 "Get human readable error string from proj.4 error code"
@@ -83,22 +83,22 @@ function _errno()
 end
 
 "Get projection definition string in the proj.4 plus format"
-function _get_def(proj_ptr::Ptr{Void})
+function _get_def(proj_ptr::Ptr{Cvoid})
     @assert proj_ptr != C_NULL
     opts = 0 # Apparently obsolete argument, not used in current proj source
-    unsafe_string(ccall((:pj_get_def, libproj), Cstring, (Ptr{Void}, Cint), proj_ptr, opts))
+    unsafe_string(ccall((:pj_get_def, libproj), Cstring, (Ptr{Cvoid}, Cint), proj_ptr, opts))
 end
 
 "Low level interface to libproj transform, C_NULL can be passed in for z, if it's 2-dimensional"
-function _transform!(src_ptr::Ptr{Void}, dest_ptr::Ptr{Void}, point_count::Integer, point_stride::Integer,
+function _transform!(src_ptr::Ptr{Cvoid}, dest_ptr::Ptr{Cvoid}, point_count::Integer, point_stride::Integer,
                      x::Ptr{Cdouble}, y::Ptr{Cdouble}, z::Ptr{Cdouble})
     @assert src_ptr != C_NULL && dest_ptr != C_NULL
-    err = ccall((:pj_transform, libproj), Cint, (Ptr{Void}, Ptr{Void}, Clong, Cint, Ptr{Cdouble}, Ptr{Cdouble},
+    err = ccall((:pj_transform, libproj), Cint, (Ptr{Cvoid}, Ptr{Cvoid}, Clong, Cint, Ptr{Cdouble}, Ptr{Cdouble},
                 Ptr{Cdouble}), src_ptr, dest_ptr, point_count, point_stride, x, y, z)
     err != 0 && error("transform error: $(_strerrno(err))")
 end
 
-function _transform!(src_ptr::Ptr{Void}, dest_ptr::Ptr{Void}, position::Vector{Cdouble})
+function _transform!(src_ptr::Ptr{Cvoid}, dest_ptr::Ptr{Cvoid}, position::Vector{Cdouble})
     @assert src_ptr != C_NULL && dest_ptr != C_NULL
     ndim = length(position)
     @assert ndim >= 2
@@ -110,7 +110,7 @@ function _transform!(src_ptr::Ptr{Void}, dest_ptr::Ptr{Void}, position::Vector{C
     _transform!(src_ptr, dest_ptr, 1, 1, x, y, z)
     position
 end
-function _transform!(src_ptr::Ptr{Void}, dest_ptr::Ptr{Void}, position::Array{Cdouble,2})
+function _transform!(src_ptr::Ptr{Cvoid}, dest_ptr::Ptr{Cvoid}, position::Array{Cdouble,2})
     @assert src_ptr != C_NULL && dest_ptr != C_NULL
     npoints, ndim = size(position)
     @assert ndim >= 2
@@ -123,14 +123,14 @@ function _transform!(src_ptr::Ptr{Void}, dest_ptr::Ptr{Void}, position::Array{Cd
     position
 end
 
-function _is_latlong(proj_ptr::Ptr{Void})
+function _is_latlong(proj_ptr::Ptr{Cvoid})
     @assert proj_ptr != C_NULL
-    ccall((:pj_is_latlong, libproj), Cint, (Ptr{Void},), proj_ptr) != 0
+    ccall((:pj_is_latlong, libproj), Cint, (Ptr{Cvoid},), proj_ptr) != 0
 end
 
-function _is_geocent(proj_ptr::Ptr{Void})
+function _is_geocent(proj_ptr::Ptr{Cvoid})
     @assert proj_ptr != C_NULL
-    ccall((:pj_is_geocent, libproj), Cint, (Ptr{Void},), proj_ptr) != 0
+    ccall((:pj_is_geocent, libproj), Cint, (Ptr{Cvoid},), proj_ptr) != 0
 end
 
 "Get a string describing the underlying version of libproj in use"
@@ -145,17 +145,17 @@ Fetch the internal definition of the spheroid as a tuple (a, es), where
     es = eccentricity squared
 
 """
-function _get_spheroid_defn(proj_ptr::Ptr{Void})
+function _get_spheroid_defn(proj_ptr::Ptr{Cvoid})
     major_axis = Ref{Cdouble}()
     eccentricity_squared = Ref{Cdouble}()
-    ccall((:pj_get_spheroid_defn, libproj), Void, (Ptr{Void}, Ptr{Cdouble}, Ptr{Cdouble}),
+    ccall((:pj_get_spheroid_defn, libproj), Cvoid, (Ptr{Cvoid}, Ptr{Cdouble}, Ptr{Cdouble}),
           proj_ptr, major_axis, eccentricity_squared)
     major_axis[], eccentricity_squared[]
 end
 
 "Returns true if the two datums are identical, otherwise false."
-function _compare_datums(p1_ptr::Ptr{Void}, p2_ptr::Ptr{Void})
-    Bool(ccall((:pj_compare_datums, libproj), Cint, (Ptr{Void}, Ptr{Void}), p1_ptr, p2_ptr))
+function _compare_datums(p1_ptr::Ptr{Cvoid}, p2_ptr::Ptr{Cvoid})
+    Bool(ccall((:pj_compare_datums, libproj), Cint, (Ptr{Cvoid}, Ptr{Cvoid}), p1_ptr, p2_ptr))
 end
 
 # Unused/untested

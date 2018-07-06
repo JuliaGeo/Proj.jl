@@ -1,5 +1,5 @@
 using Proj4
-using Base.Test
+using Test
 
 @testset "Proj4" begin
 
