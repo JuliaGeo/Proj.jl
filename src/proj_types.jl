@@ -10,7 +10,7 @@ Cartographic projection type
 """
 mutable struct Projection
     #ctx::Context   # Projection context object
-    rep::Ptr{Void} # Pointer to internal projPJ struct
+    rep::Ptr{Cvoid} # Pointer to internal projPJ struct
 
     # [geod]: a structure containing the parameters of the spheroid
     # some of the fields in [geod] are mildly duplicative of the information
@@ -18,7 +18,7 @@ mutable struct Projection
     geod::_geodesic
 end
 
-function Projection(proj_ptr::Ptr{Void})
+function Projection(proj_ptr::Ptr{Cvoid})
     proj = Projection(proj_ptr, null_geodesic())
     finalizer(proj, freeProjection)
     proj
