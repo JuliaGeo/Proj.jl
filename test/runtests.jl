@@ -205,7 +205,7 @@ if length(epsg_error) > 0 || length(esri_error) > 0
     libproj Note that this isn't necessarily a problem, but you won't be able
     to use the projections in question.
 
-    total errors: $(round(100*errorFraction,2))%
+    total errors: $(round(100*errorFraction; digits=2))%
     """)
     for epsg_code in sort(epsg_error)
         println("[EPSG:$epsg_code] \"$(Proj4.epsg[epsg_code])\"")
