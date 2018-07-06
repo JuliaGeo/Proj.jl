@@ -20,7 +20,7 @@ end
 
 function Projection(proj_ptr::Ptr{Cvoid})
     proj = Projection(proj_ptr, null_geodesic())
-    finalizer(proj, freeProjection)
+    finalizer(freeProjection, proj)
     proj
 end
 
