@@ -1,6 +1,3 @@
-__precompile__()
-# The above causes the warning: eval from module __anon__ to Proj4
-
 module Proj4
 
 export Projection, # proj_types.jl

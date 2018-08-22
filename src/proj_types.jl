@@ -2,7 +2,7 @@
 
 # Projection context.  TODO: Will this be exposed?
 #type Context
-#    rep::Ptr{Void} # Pointer to internal projCtx struct
+#    rep::Ptr{Cvoid} # Pointer to internal projCtx struct
 #end
 
 """
