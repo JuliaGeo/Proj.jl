@@ -1,4 +1,5 @@
 *.jl.cov
 *.jl.mem
+deps/build.log
 deps/deps.jl
 deps/usr

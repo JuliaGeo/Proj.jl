@@ -1,4 +1,4 @@
-# Contents of this file is generated on 2018-03-25T15:05:14.103. Do not edit by hand!
+# Contents of this file is generated on 2019-01-21T14:21:05.51. Do not edit by hand!
 # $ julia generate_projection_codes.jl > projection_codes.jl
 
 epsg = Dict(
@@ -83,7 +83,7 @@ epsg = Dict(
   4146 => "+proj=longlat +a=6377299.151 +b=6356098.145120132 +towgs84=295,736,257,0,0,0,0 +no_defs", # Kalianpur 1975
   4147 => "+proj=longlat +ellps=krass +towgs84=-17.51,-108.32,-62.39,0,0,0,0 +no_defs", # Hanoi 1972
   4148 => "+proj=longlat +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +no_defs", # Hartebeesthoek94
-  4149 => "+proj=longlat +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +no_defs", # CH1903
+  4149 => "+proj=longlat +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +no_defs", # CH1903
   4150 => "+proj=longlat +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +no_defs", # CH1903+
   4151 => "+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs", # CHTRF95
   4152 => "+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs", # NAD83(HARN)
@@ -122,7 +122,7 @@ epsg = Dict(
   4188 => "+proj=longlat +ellps=airy +towgs84=482.5,-130.6,564.6,-1.042,-0.214,-0.631,8.15 +no_defs", # OSNI 1952
   4189 => "+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs", # REGVEN
   4190 => "+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs", # POSGAR 98
-  4191 => "+proj=longlat +ellps=krass +towgs84=-44.183,-0.58,-38.489,-2.3867,-2.7072,3.5196,-8.2703 +no_defs", # Albanian 1987
+  4191 => "+proj=longlat +ellps=krass +towgs84=-44.183,-0.58,-38.489,2.3867,2.7072,-3.5196,-8.2703 +no_defs", # Albanian 1987
   4192 => "+proj=longlat +ellps=intl +towgs84=-206.1,-174.7,-87.7,0,0,0,0 +no_defs", # Douala 1948
   4193 => "+proj=longlat +a=6378249.2 +b=6356515 +towgs84=-70.9,-151.8,-41.4,0,0,0,0 +no_defs", # Manoca 1962
   4194 => "+proj=longlat +ellps=intl +towgs84=164,138,-189,0,0,0,0 +no_defs", # Qornoq 1927
@@ -219,7 +219,7 @@ epsg = Dict(
   4286 => "+proj=longlat +ellps=helmert +no_defs", # Qatar 1948
   4287 => "+proj=longlat +ellps=intl +towgs84=164,138,-189,0,0,0,0 +no_defs", # Qornoq
   4288 => "+proj=longlat +ellps=intl +no_defs", # Loma Quintana
-  4289 => "+proj=longlat +ellps=bessel +towgs84=565.4171,50.3319,465.5524,-0.398957,0.343988,-1.87740,4.0725 +no_defs", # Amersfoort
+  4289 => "+proj=longlat +ellps=bessel +towgs84=565.2369,50.0087,465.658,-0.406857,0.350733,-1.87035,4.0812 +no_defs", # Amersfoort
   4291 => "+proj=longlat +ellps=GRS67 +towgs84=-57,1,-41,0,0,0,0 +no_defs", # SAD69
   4292 => "+proj=longlat +ellps=intl +towgs84=-355,21,72,0,0,0,0 +no_defs", # Sapper Hill 1943
   4293 => "+proj=longlat +ellps=bess_nam +towgs84=616,97,-251,0,0,0,0 +no_defs", # Schwarzeck
@@ -296,7 +296,7 @@ epsg = Dict(
   4635 => "+proj=longlat +ellps=intl +towgs84=-122.383,-188.696,103.344,3.5107,-4.9668,-5.7047,4.4798 +no_defs", # ST87 Ouvea
   4636 => "+proj=longlat +ellps=intl +towgs84=365,194,166,0,0,0,0 +no_defs", # Petrels 1972
   4637 => "+proj=longlat +ellps=intl +towgs84=325,154,172,0,0,0,0 +no_defs", # Perroud 1950
-  4638 => "+proj=longlat +ellps=clrk66 +towgs84=30,430,368,0,0,0,0 +no_defs", # Saint Pierre et Miquelon 1950
+  4638 => "+proj=longlat +ellps=clrk66 +towgs84=11.363,424.148,373.13,0,0,0,0 +no_defs", # Saint Pierre et Miquelon 1950
   4639 => "+proj=longlat +ellps=intl +towgs84=253,-132,-127,0,0,0,0 +no_defs", # MOP78
   4640 => "+proj=longlat +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +no_defs", # RRAF 1991
   4641 => "+proj=longlat +ellps=intl +towgs84=287.58,177.78,-135.41,0,0,0,0 +no_defs", # IGN53 Mare
@@ -358,7 +358,7 @@ epsg = Dict(
   4707 => "+proj=longlat +ellps=intl +towgs84=114,-116,-333,0,0,0,0 +no_defs", # Tern Island 1961
   4708 => "+proj=longlat +ellps=aust_SA +towgs84=-491,-22,435,0,0,0,0 +no_defs", # Cocos Islands 1965
   4709 => "+proj=longlat +ellps=intl +towgs84=145,75,-272,0,0,0,0 +no_defs", # Iwo Jima 1945
-  4710 => "+proj=longlat +ellps=intl +towgs84=-320,550,-494,0,0,0,0 +no_defs", # St. Helena 1971
+  4710 => "+proj=longlat +ellps=intl +towgs84=-320,550,-494,0,0,0,0 +no_defs", # Astro DOS 71
   4711 => "+proj=longlat +ellps=intl +towgs84=124,-234,-25,0,0,0,0 +no_defs", # Marcus Island 1952
   4712 => "+proj=longlat +ellps=intl +towgs84=-205,107,53,0,0,0,0 +no_defs", # Ascension Island 1958
   4713 => "+proj=longlat +ellps=clrk80 +towgs84=-77,-128,142,0,0,0,0 +no_defs", # Ayabelle Lighthouse
@@ -414,7 +414,7 @@ epsg = Dict(
   4763 => "+proj=longlat +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +no_defs", # Pitcairn 2006
   4764 => "+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs", # RSRGD2000
   4765 => "+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs", # Slovenia 1996
-  4801 => "+proj=longlat +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +pm=bern +no_defs", # Bern 1898 (Bern)
+  4801 => "+proj=longlat +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +pm=bern +no_defs", # Bern 1898 (Bern)
   4802 => "+proj=longlat +ellps=intl +towgs84=307,304,-318,0,0,0,0 +pm=bogota +no_defs", # Bogota 1975 (Bogota)
   4803 => "+proj=longlat +ellps=intl +towgs84=-304.046,-60.576,103.64,0,0,0,0 +pm=lisbon +no_defs", # Lisbon (Lisbon)
   4804 => "+proj=longlat +ellps=bessel +towgs84=-587.8,519.75,145.76,0,0,0,0 +pm=jakarta +no_defs", # Makassar (Jakarta)
@@ -499,7 +499,22 @@ epsg = Dict(
   7136 => "+proj=longlat +ellps=WGS84 +no_defs", # IGD05
   7139 => "+proj=longlat +ellps=WGS84 +no_defs", # IGD05/12
   7373 => "+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs", # ONGD14
+  7683 => "+proj=longlat +a=6378136.5 +b=6356751.757955603 +no_defs", # GSK-2011
   7686 => "+proj=longlat +ellps=GRS80 +no_defs", # Kyrg-06
+  7798 => "+proj=longlat +ellps=GRS80 +no_defs", # BGS2005
+  7844 => "+proj=longlat +ellps=GRS80 +no_defs", # GDA2020
+  7881 => "+proj=longlat +ellps=WGS84 +towgs84=-0.077,0.079,0.086,0,0,0,0 +no_defs", # St. Helena Tritan
+  7886 => "+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs", # SHGD2015
+  8042 => "+proj=longlat +a=6376045 +b=6355477.112903226 +pm=ferro +no_defs", # Gusterberg (Ferro)
+  8043 => "+proj=longlat +a=6376045 +b=6355477.112903226 +pm=ferro +no_defs", # St. Stephen (Ferro)
+  8086 => "+proj=longlat +ellps=GRS80 +no_defs", # ISN2016
+  8232 => "+proj=longlat +ellps=GRS80 +no_defs", # NAD83(CSRS96)
+  8237 => "+proj=longlat +ellps=GRS80 +no_defs", # NAD83(CSRS)v2
+  8240 => "+proj=longlat +ellps=GRS80 +no_defs", # NAD83(CSRS)v3
+  8246 => "+proj=longlat +ellps=GRS80 +no_defs", # NAD83(CSRS)v4
+  8249 => "+proj=longlat +ellps=GRS80 +no_defs", # NAD83(CSRS)v5
+  8252 => "+proj=longlat +ellps=GRS80 +no_defs", # NAD83(CSRS)v6
+  8255 => "+proj=longlat +ellps=GRS80 +no_defs", # NAD83(CSRS)v7
   2000 => "+proj=tmerc +lat_0=0 +lon_0=-62 +k=0.9995000000000001 +x_0=400000 +y_0=0 +ellps=clrk80 +units=m +no_defs", # Anguilla 1957 / British West Indies Grid
   2001 => "+proj=tmerc +lat_0=0 +lon_0=-62 +k=0.9995000000000001 +x_0=400000 +y_0=0 +ellps=clrk80 +towgs84=-255,-15,71,0,0,0,0 +units=m +no_defs", # Antigua 1943 / British West Indies Grid
   2002 => "+proj=tmerc +lat_0=0 +lon_0=-62 +k=0.9995000000000001 +x_0=400000 +y_0=0 +ellps=clrk80 +towgs84=725,685,536,0,0,0,0 +units=m +no_defs", # Dominica 1945 / British West Indies Grid
@@ -565,7 +580,7 @@ epsg = Dict(
   2062 => "+proj=lcc +lat_1=40 +lat_0=40 +lon_0=0 +k_0=0.9988085293 +x_0=600000 +y_0=600000 +a=6378298.3 +b=6356657.142669561 +pm=madrid +units=m +no_defs", # Madrid 1870 (Madrid) / Spain
   2063 => "+proj=utm +zone=28 +a=6378249.2 +b=6356515 +towgs84=-23,259,-9,0,0,0,0 +units=m +no_defs", # Dabola 1981 / UTM zone 28N (deprecated)
   2064 => "+proj=utm +zone=29 +a=6378249.2 +b=6356515 +towgs84=-23,259,-9,0,0,0,0 +units=m +no_defs", # Dabola 1981 / UTM zone 29N (deprecated)
-  2065 => "+proj=krovak +lat_0=49.5 +lon_0=42.5 +alpha=30.28813972222222 +k=0.9999 +x_0=0 +y_0=0 +ellps=bessel +towgs84=589,76,480,0,0,0,0 +pm=ferro +units=m +no_defs", # S-JTSK (Ferro) / Krovak
+  2065 => "+proj=krovak +lat_0=49.5 +lon_0=42.5 +alpha=30.28813972222222 +k=0.9999 +x_0=0 +y_0=0 +ellps=bessel +towgs84=570.8,85.7,462.8,4.998,1.587,5.261,3.56 +pm=ferro +units=m +no_defs", # S-JTSK (Ferro) / Krovak
   2066 => "+proj=cass +lat_0=11.25217861111111 +lon_0=-60.68600888888889 +x_0=37718.66159325 +y_0=36209.91512952 +a=6378293.645208759 +b=6356617.987679838 +to_meter=0.201166195164 +no_defs", # Mount Dillon / Tobago Grid
   2067 => "+proj=utm +zone=20 +ellps=intl +towgs84=-0.465,372.095,171.736,0,0,0,0 +units=m +no_defs", # Naparima 1955 / UTM zone 20N
   2068 => "+proj=tmerc +lat_0=0 +lon_0=9 +k=0.9999 +x_0=200000 +y_0=0 +ellps=intl +towgs84=-115.8543,-99.0583,-152.4616,0,0,0,0 +units=m +no_defs", # ELD79 / Libya zone 5
@@ -692,7 +707,7 @@ epsg = Dict(
   2196 => "+proj=tmerc +lat_0=0 +lon_0=9.5 +k=0.99995 +x_0=200000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # ETRS89 / Kp2000 Jutland
   2197 => "+proj=tmerc +lat_0=0 +lon_0=12 +k=0.99995 +x_0=500000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # ETRS89 / Kp2000 Zealand
   2198 => "+proj=tmerc +lat_0=0 +lon_0=15 +k=1 +x_0=900000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # ETRS89 / Kp2000 Bornholm
-  2199 => "+proj=tmerc +lat_0=0 +lon_0=21 +k=1 +x_0=4500000 +y_0=0 +ellps=krass +towgs84=-44.183,-0.58,-38.489,-2.3867,-2.7072,3.5196,-8.2703 +units=m +no_defs", # Albanian 1987 / Gauss Kruger zone 4 (deprecated)
+  2199 => "+proj=tmerc +lat_0=0 +lon_0=21 +k=1 +x_0=4500000 +y_0=0 +ellps=krass +towgs84=-44.183,-0.58,-38.489,2.3867,2.7072,-3.5196,-8.2703 +units=m +no_defs", # Albanian 1987 / Gauss Kruger zone 4 (deprecated)
   2200 => "+proj=sterea +lat_0=46.5 +lon_0=-66.5 +k=0.999912 +x_0=300000 +y_0=800000 +a=6378135 +b=6356750.304921594 +units=m +no_defs", # ATS77 / New Brunswick Stereographic (ATS77)
   2201 => "+proj=utm +zone=18 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # REGVEN / UTM zone 18N
   2202 => "+proj=utm +zone=19 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # REGVEN / UTM zone 19N
@@ -875,9 +890,9 @@ epsg = Dict(
   2394 => "+proj=tmerc +lat_0=0 +lon_0=30 +k=1 +x_0=4500000 +y_0=0 +ellps=intl +towgs84=-96.062,-82.428,-121.753,4.801,0.345,-1.376,1.496 +units=m +no_defs", # KKJ / Finland zone 4
   2395 => "+proj=tmerc +lat_0=0 +lon_0=45 +k=1 +x_0=8500000 +y_0=0 +ellps=krass +towgs84=-76,-138,67,0,0,0,0 +units=m +no_defs", # South Yemen / Gauss-Kruger zone 8
   2396 => "+proj=tmerc +lat_0=0 +lon_0=51 +k=1 +x_0=9500000 +y_0=0 +ellps=krass +towgs84=-76,-138,67,0,0,0,0 +units=m +no_defs", # South Yemen / Gauss-Kruger zone 9
-  2397 => "+proj=tmerc +lat_0=0 +lon_0=9 +k=1 +x_0=3500000 +y_0=0 +ellps=krass +towgs84=26,-121,-78,0,0,0,0 +units=m +no_defs", # Pulkovo 1942(83) / 3-degree Gauss-Kruger zone 3
-  2398 => "+proj=tmerc +lat_0=0 +lon_0=12 +k=1 +x_0=4500000 +y_0=0 +ellps=krass +towgs84=26,-121,-78,0,0,0,0 +units=m +no_defs", # Pulkovo 1942(83) / 3-degree Gauss-Kruger zone 4
-  2399 => "+proj=tmerc +lat_0=0 +lon_0=15 +k=1 +x_0=5500000 +y_0=0 +ellps=krass +towgs84=26,-121,-78,0,0,0,0 +units=m +no_defs", # Pulkovo 1942(83) / 3-degree Gauss-Kruger zone 5
+  2397 => "+proj=tmerc +lat_0=0 +lon_0=9 +k=1 +x_0=3500000 +y_0=0 +ellps=krass +towgs84=24.9,-126.4,-93.2,-0.063,-0.247,-0.041,1.01 +units=m +no_defs", # Pulkovo 1942(83) / 3-degree Gauss-Kruger zone 3
+  2398 => "+proj=tmerc +lat_0=0 +lon_0=12 +k=1 +x_0=4500000 +y_0=0 +ellps=krass +towgs84=24.9,-126.4,-93.2,-0.063,-0.247,-0.041,1.01 +units=m +no_defs", # Pulkovo 1942(83) / 3-degree Gauss-Kruger zone 4
+  2399 => "+proj=tmerc +lat_0=0 +lon_0=15 +k=1 +x_0=5500000 +y_0=0 +ellps=krass +towgs84=24.9,-126.4,-93.2,-0.063,-0.247,-0.041,1.01 +units=m +no_defs", # Pulkovo 1942(83) / 3-degree Gauss-Kruger zone 5
   2400 => "+proj=tmerc +lat_0=0 +lon_0=15.80827777777778 +k=1 +x_0=1500000 +y_0=0 +ellps=bessel +towgs84=414.1,41.3,603.1,-0.855,2.141,-7.023,0 +units=m +no_defs", # RT90 2.5 gon W (deprecated)
   2401 => "+proj=tmerc +lat_0=0 +lon_0=75 +k=1 +x_0=25500000 +y_0=0 +ellps=krass +towgs84=15.8,-154.4,-82.3,0,0,0,0 +units=m +no_defs", # Beijing 1954 / 3-degree Gauss-Kruger zone 25
   2402 => "+proj=tmerc +lat_0=0 +lon_0=78 +k=1 +x_0=26500000 +y_0=0 +ellps=krass +towgs84=15.8,-154.4,-82.3,0,0,0,0 +units=m +no_defs", # Beijing 1954 / 3-degree Gauss-Kruger zone 26
@@ -940,7 +955,7 @@ epsg = Dict(
   2459 => "+proj=tmerc +lat_0=26 +lon_0=131 +k=0.9999 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # JGD2000 / Japan Plane Rectangular CS XVII
   2460 => "+proj=tmerc +lat_0=20 +lon_0=136 +k=0.9999 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # JGD2000 / Japan Plane Rectangular CS XVIII
   2461 => "+proj=tmerc +lat_0=26 +lon_0=154 +k=0.9999 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # JGD2000 / Japan Plane Rectangular CS XIX
-  2462 => "+proj=tmerc +lat_0=0 +lon_0=21 +k=1 +x_0=4500000 +y_0=0 +ellps=krass +towgs84=-44.183,-0.58,-38.489,-2.3867,-2.7072,3.5196,-8.2703 +units=m +no_defs", # Albanian 1987 / Gauss-Kruger zone 4
+  2462 => "+proj=tmerc +lat_0=0 +lon_0=21 +k=1 +x_0=4500000 +y_0=0 +ellps=krass +towgs84=-44.183,-0.58,-38.489,2.3867,2.7072,-3.5196,-8.2703 +units=m +no_defs", # Albanian 1987 / Gauss-Kruger zone 4
   2463 => "+proj=tmerc +lat_0=0 +lon_0=21 +k=1 +x_0=500000 +y_0=0 +ellps=krass +towgs84=24.47,-130.89,-81.56,0,0,0.13,-0.22 +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger CM 21E
   2464 => "+proj=tmerc +lat_0=0 +lon_0=27 +k=1 +x_0=500000 +y_0=0 +ellps=krass +towgs84=24.47,-130.89,-81.56,0,0,0.13,-0.22 +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger CM 27E
   2465 => "+proj=tmerc +lat_0=0 +lon_0=33 +k=1 +x_0=500000 +y_0=0 +ellps=krass +towgs84=24.47,-130.89,-81.56,0,0,0.13,-0.22 +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger CM 33E
@@ -1461,7 +1476,7 @@ epsg = Dict(
   2982 => "+proj=utm +zone=58 +south +ellps=intl +towgs84=-13,-348,292,0,0,0,0 +units=m +no_defs", # IGN72 Grand Terre / UTM zone 58S (deprecated)
   2983 => "+proj=utm +zone=58 +south +ellps=intl +towgs84=-122.383,-188.696,103.344,3.5107,-4.9668,-5.7047,4.4798 +units=m +no_defs", # ST87 Ouvea / UTM zone 58S (deprecated)
   2984 => "+proj=lcc +lat_1=-20.66666666666667 +lat_2=-22.33333333333333 +lat_0=-21.5 +lon_0=166 +x_0=400000 +y_0=300000 +ellps=intl +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # RGNC 1991 / Lambert New Caledonia (deprecated)
-  2987 => "+proj=utm +zone=21 +ellps=clrk66 +towgs84=30,430,368,0,0,0,0 +units=m +no_defs", # Saint Pierre et Miquelon 1950 / UTM zone 21N
+  2987 => "+proj=utm +zone=21 +ellps=clrk66 +towgs84=11.363,424.148,373.13,0,0,0,0 +units=m +no_defs", # Saint Pierre et Miquelon 1950 / UTM zone 21N
   2988 => "+proj=utm +zone=1 +south +ellps=intl +towgs84=253,-132,-127,0,0,0,0 +units=m +no_defs", # MOP78 / UTM zone 1S
   2989 => "+proj=utm +zone=20 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # RRAF 1991 / UTM zone 20N (deprecated)
   2990 => "+proj=tmerc +lat_0=-21.11666666666667 +lon_0=55.53333333333333 +k=1 +x_0=50000 +y_0=160000 +ellps=intl +towgs84=94,-948,-1262,0,0,0,0 +units=m +no_defs", # Reunion 1947 / TM Reunion (deprecated)
@@ -1583,7 +1598,7 @@ epsg = Dict(
   3108 => "+proj=tmerc +lat_0=49.5 +lon_0=-2.416666666666667 +k=0.999997 +x_0=47000 +y_0=50000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # ETRS89 / Guernsey Grid
   3109 => "+proj=tmerc +lat_0=49.225 +lon_0=-2.135 +k=0.9999999000000001 +x_0=40000 +y_0=70000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # ETRS89 / Jersey Transverse Mercator
   3110 => "+proj=lcc +lat_1=-36 +lat_2=-38 +lat_0=-37 +lon_0=145 +x_0=2500000 +y_0=4500000 +ellps=aust_SA +towgs84=-117.808,-51.536,137.784,0.303,0.446,0.234,-0.29 +units=m +no_defs", # AGD66 / Vicgrid66
-  3111 => "+proj=lcc +lat_1=-36 +lat_2=-38 +lat_0=-37 +lon_0=145 +x_0=2500000 +y_0=2500000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # GDA94 / Vicgrid94
+  3111 => "+proj=lcc +lat_1=-36 +lat_2=-38 +lat_0=-37 +lon_0=145 +x_0=2500000 +y_0=2500000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # GDA94 / Vicgrid
   3112 => "+proj=lcc +lat_1=-18 +lat_2=-36 +lat_0=0 +lon_0=134 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # GDA94 / Geoscience Australia Lambert
   3113 => "+proj=tmerc +lat_0=-28 +lon_0=153 +k=0.99999 +x_0=50000 +y_0=100000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # GDA94 / BCSG02
   3114 => "+proj=tmerc +lat_0=4.596200416666666 +lon_0=-80.07750791666666 +k=1 +x_0=1000000 +y_0=1000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # MAGNA-SIRGAS / Colombia Far West zone
@@ -2290,7 +2305,7 @@ epsg = Dict(
   3841 => "+proj=tmerc +lat_0=0 +lon_0=18 +k=1 +x_0=6500000 +y_0=0 +ellps=krass +towgs84=26,-121,-78,0,0,0,0 +units=m +no_defs", # Pulkovo 1942(83) / 3-degree Gauss-Kruger zone 6
   3842 => "+proj=tmerc +lat_0=0 +lon_0=18 +k=1 +x_0=6500000 +y_0=0 +ellps=krass +towgs84=26,-121,-78,0,0,0,0 +units=m +no_defs", # Pulkovo 1942(83) / 3-degree Gauss-Kruger zone 7 (deprecated)
   3843 => "+proj=tmerc +lat_0=0 +lon_0=18 +k=1 +x_0=6500000 +y_0=0 +ellps=krass +towgs84=26,-121,-78,0,0,0,0 +units=m +no_defs", # Pulkovo 1942(83) / 3-degree Gauss-Kruger zone 8 (deprecated)
-  3844 => "+proj=sterea +lat_0=46 +lon_0=25 +k=0.99975 +x_0=500000 +y_0=500000 +ellps=krass +towgs84=33.4,-146.6,-76.3,-0.359,-0.053,0.844,-0.84 +units=m +no_defs", # Pulkovo 1942(58) / Stereo70
+  3844 => "+proj=sterea +lat_0=46 +lon_0=25 +k=0.99975 +x_0=500000 +y_0=500000 +ellps=krass +towgs84=2.329,-147.042,-92.08,0.309,-0.325,-0.497,5.69 +units=m +no_defs", # Pulkovo 1942(58) / Stereo70
   3845 => "+proj=tmerc +lat_0=0 +lon_0=11.30625 +k=1.000006 +x_0=1500025.141 +y_0=-667.282 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # SWEREF99 / RT90 7.5 gon V emulation
   3846 => "+proj=tmerc +lat_0=0 +lon_0=13.55626666666667 +k=1.0000058 +x_0=1500044.695 +y_0=-667.13 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # SWEREF99 / RT90 5 gon V emulation
   3847 => "+proj=tmerc +lat_0=0 +lon_0=15.80628452944445 +k=1.00000561024 +x_0=1500064.274 +y_0=-667.711 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # SWEREF99 / RT90 2.5 gon V emulation
@@ -3268,9 +3283,9 @@ epsg = Dict(
   6691 => "+proj=utm +zone=54 +ellps=GRS80 +units=m +no_defs", # JGD2011 / UTM zone 54N
   6692 => "+proj=utm +zone=55 +ellps=GRS80 +units=m +no_defs", # JGD2011 / UTM zone 55N
   6703 => "+proj=tmerc +lat_0=0 +lon_0=-60 +k=0.9996 +x_0=500000 +y_0=10000000 +datum=WGS84 +units=m +no_defs", # WGS 84 / TM 60 SW
-  6707 => "+proj=utm +zone=32 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # RDN2008 / TM32
-  6708 => "+proj=utm +zone=33 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # RDN2008 / TM33
-  6709 => "+proj=utm +zone=34 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # RDN2008 / TM34
+  6707 => "+proj=utm +zone=32 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # RDN2008 / UTM zone 32N (N-E)
+  6708 => "+proj=utm +zone=33 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # RDN2008 / UTM zone 33N (N-E)
+  6709 => "+proj=utm +zone=34 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # RDN2008 / UTM zone 34N (N-E)
   6720 => "+proj=tmerc +lat_0=0 +lon_0=105.625 +k=1.000024 +x_0=50000 +y_0=1300000 +datum=WGS84 +units=m +no_defs", # WGS 84 / CIG92
   6721 => "+proj=tmerc +lat_0=0 +lon_0=105.625 +k=1.00002514 +x_0=50000 +y_0=1300000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # GDA94 / CIG94
   6722 => "+proj=tmerc +lat_0=0 +lon_0=96.875 +k=1 +x_0=50000 +y_0=1400000 +datum=WGS84 +units=m +no_defs", # WGS 84 / CKIG92
@@ -3361,12 +3376,12 @@ epsg = Dict(
   6860 => "+proj=tmerc +lat_0=44.08333333333334 +lon_0=-122.5 +k=1.000155 +x_0=0 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD83(CORS96) / Oregon Santiam Pass zone (m)
   6861 => "+proj=tmerc +lat_0=44.08333333333334 +lon_0=-122.5 +k=1.000155 +x_0=0 +y_0=0 +ellps=GRS80 +units=ft +no_defs", # NAD83(CORS96) / Oregon Santiam Pass zone (ft)
   6862 => "+proj=tmerc +lat_0=44.08333333333334 +lon_0=-122.5 +k=1.000155 +x_0=0 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD83(2011) / Oregon Santiam Pass zone (m)
-  6863 => "+proj=tmerc +lat_0=44.08333333333334 +lon_0=-122.5 +k=1.000155 +x_0=0 +y_0=0 +ellps=GRS80 +units=ft +no_defs", # NAD83(2011) / Oregon Santiam Pass (ft)
+  6863 => "+proj=tmerc +lat_0=44.08333333333334 +lon_0=-122.5 +k=1.000155 +x_0=0 +y_0=0 +ellps=GRS80 +units=ft +no_defs", # NAD83(2011) / Oregon Santiam Pass zone (ft)
   6867 => "+proj=lcc +lat_1=43 +lat_2=45.5 +lat_0=41.75 +lon_0=-120.5 +x_0=400000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD83(CORS96) / Oregon LCC (m)
   6868 => "+proj=lcc +lat_1=43 +lat_2=45.5 +lat_0=41.75 +lon_0=-120.5 +x_0=399999.9999984 +y_0=0 +ellps=GRS80 +units=ft +no_defs", # NAD83(CORS96) / Oregon GIC Lambert (ft)
   6870 => "+proj=tmerc +lat_0=0 +lon_0=20 +k=1 +x_0=500000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # ETRS89 / Albania TM 2010
-  6875 => "+proj=tmerc +lat_0=0 +lon_0=12 +k=0.9985000000000001 +x_0=7000000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # RDN2008 / Italy zone
-  6876 => "+proj=tmerc +lat_0=0 +lon_0=12 +k=1 +x_0=3000000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # RDN2008 / Zone 12
+  6875 => "+proj=tmerc +lat_0=0 +lon_0=12 +k=0.9985000000000001 +x_0=7000000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # RDN2008 / Italy zone (N-E)
+  6876 => "+proj=tmerc +lat_0=0 +lon_0=12 +k=1 +x_0=3000000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # RDN2008 / Zone 12 (N-E)
   6879 => "+proj=lcc +lat_1=45.5 +lat_2=44.25 +lat_0=43.83333333333334 +lon_0=-90 +x_0=600000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD83(2011) / Wisconsin Central
   6880 => "+proj=lcc +lat_1=43 +lat_2=40 +lat_0=39.83333333333334 +lon_0=-100 +x_0=500000.00001016 +y_0=0 +ellps=GRS80 +units=us-ft +no_defs", # NAD83(2011) / Nebraska (ftUS)
   6884 => "+proj=lcc +lat_1=46 +lat_2=44.33333333333334 +lat_0=43.66666666666666 +lon_0=-120.5 +x_0=2500000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD83(CORS96) / Oregon North
@@ -3678,6 +3693,269 @@ epsg = Dict(
   7694 => "+proj=tmerc +lat_0=0 +lon_0=74.51666666666667 +k=1 +x_0=3300000 +y_0=14743.5 +ellps=GRS80 +units=m +no_defs", # Kyrg-06 / zone 3
   7695 => "+proj=tmerc +lat_0=0 +lon_0=77.51666666666667 +k=1 +x_0=4300000 +y_0=14743.5 +ellps=GRS80 +units=m +no_defs", # Kyrg-06 / zone 4
   7696 => "+proj=tmerc +lat_0=0 +lon_0=80.51666666666667 +k=1 +x_0=5300000 +y_0=14743.5 +ellps=GRS80 +units=m +no_defs", # Kyrg-06 / zone 5
+  7755 => "+proj=lcc +lat_1=12.472955 +lat_2=35.17280444444444 +lat_0=24 +lon_0=80 +x_0=4000000 +y_0=4000000 +datum=WGS84 +units=m +no_defs", # WGS 84 / India NSF LCC
+  7756 => "+proj=lcc +lat_1=13.75 +lat_2=18.75 +lat_0=16.25543298 +lon_0=80.875 +x_0=1000000 +y_0=1000000 +datum=WGS84 +units=m +no_defs", # WGS 84 / Andhra Pradesh
+  7757 => "+proj=lcc +lat_1=27 +lat_2=29 +lat_0=28.00157897 +lon_0=94.5 +x_0=1000000 +y_0=1000000 +datum=WGS84 +units=m +no_defs", # WGS 84 / Arunachal Pradesh
+  7758 => "+proj=lcc +lat_1=24.66666666666667 +lat_2=27.33333333333333 +lat_0=26.00257703 +lon_0=92.75 +x_0=1000000 +y_0=1000000 +datum=WGS84 +units=m +no_defs", # WGS 84 / Assam
+  7759 => "+proj=lcc +lat_1=24.625 +lat_2=27.125 +lat_0=25.87725247 +lon_0=85.875 +x_0=1000000 +y_0=1000000 +datum=WGS84 +units=m +no_defs", # WGS 84 / Bihar
+  7760 => "+proj=lcc +lat_1=28.375 +lat_2=28.875 +lat_0=28.62510126 +lon_0=77 +x_0=1000000 +y_0=1000000 +datum=WGS84 +units=m +no_defs", # WGS 84 / Delhi
+  7761 => "+proj=lcc +lat_1=20.79166666666667 +lat_2=23.95833333333333 +lat_0=22.37807121 +lon_0=71.375 +x_0=1000000 +y_0=1000000 +datum=WGS84 +units=m +no_defs", # WGS 84 / Gujarat
+  7762 => "+proj=lcc +lat_1=28.08333333333333 +lat_2=30.41666666666667 +lat_0=29.25226266 +lon_0=76 +x_0=1000000 +y_0=1000000 +datum=WGS84 +units=m +no_defs", # WGS 84 / Haryana
+  7763 => "+proj=lcc +lat_1=30.75 +lat_2=32.75 +lat_0=31.75183497 +lon_0=77.375 +x_0=1000000 +y_0=1000000 +datum=WGS84 +units=m +no_defs", # WGS 84 / Himachal Pradesh
+  7764 => "+proj=lcc +lat_1=33.08333333333334 +lat_2=36.41666666666666 +lat_0=34.75570874 +lon_0=76.5 +x_0=1000000 +y_0=1000000 +datum=WGS84 +units=m +no_defs", # WGS 84 / Jammu and Kashmir
+  7765 => "+proj=lcc +lat_1=22.54166666666667 +lat_2=24.70833333333333 +lat_0=23.62652682 +lon_0=85.625 +x_0=1000000 +y_0=1000000 +datum=WGS84 +units=m +no_defs", # WGS 84 / Jharkhand
+  7766 => "+proj=lcc +lat_1=22 +lat_2=26 +lat_0=24.00529821 +lon_0=78.375 +x_0=1000000 +y_0=1000000 +datum=WGS84 +units=m +no_defs", # WGS 84 / Madhya Pradesh
+  7767 => "+proj=lcc +lat_1=16.625 +lat_2=21.125 +lat_0=18.88015774 +lon_0=76.75 +x_0=1000000 +y_0=1000000 +datum=WGS84 +units=m +no_defs", # WGS 84 / Maharashtra
+  7768 => "+proj=lcc +lat_1=24.08333333333333 +lat_2=25.41666666666667 +lat_0=24.75060911 +lon_0=94 +x_0=1000000 +y_0=1000000 +datum=WGS84 +units=m +no_defs", # WGS 84 / Manipur
+  7769 => "+proj=lcc +lat_1=25.20833333333333 +lat_2=26.04166666666667 +lat_0=25.62524747 +lon_0=91.375 +x_0=1000000 +y_0=1000000 +datum=WGS84 +units=m +no_defs", # WGS 84 / Meghalaya
+  7770 => "+proj=lcc +lat_1=25.375 +lat_2=26.875 +lat_0=26.12581974 +lon_0=94.375 +x_0=1000000 +y_0=1000000 +datum=WGS84 +units=m +no_defs", # WGS 84 / Nagaland
+  7771 => "+proj=lcc +lat_1=23.04166666666667 +lat_2=28.20833333333333 +lat_0=25.63452135 +lon_0=93.5 +x_0=1000000 +y_0=1000000 +datum=WGS84 +units=m +no_defs", # WGS 84 / India Northeast
+  7772 => "+proj=lcc +lat_1=18.58333333333333 +lat_2=21.91666666666667 +lat_0=20.25305174 +lon_0=84.375 +x_0=1000000 +y_0=1000000 +datum=WGS84 +units=m +no_defs", # WGS 84 / Orissa
+  7773 => "+proj=lcc +lat_1=30 +lat_2=32 +lat_0=31.00178226 +lon_0=75.375 +x_0=1000000 +y_0=1000000 +datum=WGS84 +units=m +no_defs", # WGS 84 / Punjab
+  7774 => "+proj=lcc +lat_1=24.29166666666667 +lat_2=29.45833333333333 +lat_0=26.88505546 +lon_0=73.875 +x_0=1000000 +y_0=1000000 +datum=WGS84 +units=m +no_defs", # WGS 84 / Rajasthan
+  7775 => "+proj=lcc +lat_1=24.875 +lat_2=29.375 +lat_0=27.13270823 +lon_0=80.875 +x_0=1000000 +y_0=1000000 +datum=WGS84 +units=m +no_defs", # WGS 84 / Uttar Pradesh
+  7776 => "+proj=lcc +lat_1=29 +lat_2=31 +lat_0=30.0017132 +lon_0=79.375 +x_0=1000000 +y_0=1000000 +datum=WGS84 +units=m +no_defs", # WGS 84 / Uttaranchal
+  7777 => "+proj=tmerc +lat_0=10.25 +lon_0=93.25 +k=0.9999428 +x_0=1000000 +y_0=1000000 +datum=WGS84 +units=m +no_defs", # WGS 84 / Andaman and Nicobar
+  7778 => "+proj=tmerc +lat_0=21 +lon_0=82.25 +k=0.9998332 +x_0=1000000 +y_0=1000000 +datum=WGS84 +units=m +no_defs", # WGS 84 / Chhattisgarh
+  7779 => "+proj=tmerc +lat_0=15.375 +lon_0=74 +k=0.9999913 +x_0=1000000 +y_0=1000000 +datum=WGS84 +units=m +no_defs", # WGS 84 / Goa
+  7780 => "+proj=tmerc +lat_0=15.125 +lon_0=76.375 +k=0.9998011999999999 +x_0=1000000 +y_0=1000000 +datum=WGS84 +units=m +no_defs", # WGS 84 / Karnataka
+  7781 => "+proj=tmerc +lat_0=10.5 +lon_0=76 +k=0.9999177 +x_0=1000000 +y_0=1000000 +datum=WGS84 +units=m +no_defs", # WGS 84 / Kerala
+  7782 => "+proj=tmerc +lat_0=10 +lon_0=73.125 +k=0.9999536 +x_0=1000000 +y_0=1000000 +datum=WGS84 +units=m +no_defs", # WGS 84 / Lakshadweep
+  7783 => "+proj=tmerc +lat_0=23.125 +lon_0=92.75 +k=0.9999821 +x_0=1000000 +y_0=1000000 +datum=WGS84 +units=m +no_defs", # WGS 84 / Mizoram
+  7784 => "+proj=tmerc +lat_0=27.625 +lon_0=88.5 +k=0.9999926 +x_0=1000000 +y_0=1000000 +datum=WGS84 +units=m +no_defs", # WGS 84 / Sikkim
+  7785 => "+proj=tmerc +lat_0=10.875 +lon_0=78.375 +k=0.9997942 +x_0=1000000 +y_0=1000000 +datum=WGS84 +units=m +no_defs", # WGS 84 / Tamil Nadu
+  7786 => "+proj=tmerc +lat_0=23.75 +lon_0=91.75 +k=0.9999822 +x_0=1000000 +y_0=1000000 +datum=WGS84 +units=m +no_defs", # WGS 84 / Tripura
+  7787 => "+proj=tmerc +lat_0=24.375 +lon_0=87.875 +k=0.9998584 +x_0=1000000 +y_0=1000000 +datum=WGS84 +units=m +no_defs", # WGS 84 / West Bengal
+  7791 => "+proj=utm +zone=32 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # RDN2008 / UTM zone 32N
+  7792 => "+proj=utm +zone=33 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # RDN2008 / UTM zone 33N
+  7793 => "+proj=utm +zone=34 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # RDN2008 / UTM zone 34N
+  7794 => "+proj=tmerc +lat_0=0 +lon_0=12 +k=0.9985000000000001 +x_0=7000000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # RDN2008 / Italy zone (E-N)
+  7795 => "+proj=tmerc +lat_0=0 +lon_0=12 +k=1 +x_0=3000000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # RDN2008 / Zone 12 (E-N)
+  7799 => "+proj=utm +zone=34 +ellps=GRS80 +units=m +no_defs", # BGS2005 / UTM zone 34N (N-E)
+  7800 => "+proj=utm +zone=35 +ellps=GRS80 +units=m +no_defs", # BGS2005 / UTM zone 35N (N-E)
+  7801 => "+proj=lcc +lat_1=42 +lat_2=43.33333333333334 +lat_0=42.66787568333333 +lon_0=25.5 +x_0=500000 +y_0=4725824.3591 +ellps=GRS80 +units=m +no_defs", # BGS2005 / CCS2005
+  7803 => "+proj=utm +zone=34 +ellps=GRS80 +units=m +no_defs", # BGS2005 / UTM zone 34N
+  7804 => "+proj=utm +zone=34 +ellps=GRS80 +units=m +no_defs", # BGS2005 / UTM zone 35N
+  7805 => "+proj=utm +zone=36 +ellps=GRS80 +units=m +no_defs", # BGS2005 / UTM zone 36N
+  7825 => "+proj=tmerc +lat_0=0.08333333333333333 +lon_0=23.5 +k=1 +x_0=1300000 +y_0=0 +ellps=krass +towgs84=23.92,-141.27,-80.9,0,0.35,0.82,-0.12 +units=m +no_defs", # Pulkovo 1942 / CS63 zone X1
+  7826 => "+proj=tmerc +lat_0=0.08333333333333333 +lon_0=26.5 +k=1 +x_0=2300000 +y_0=0 +ellps=krass +towgs84=23.92,-141.27,-80.9,0,0.35,0.82,-0.12 +units=m +no_defs", # Pulkovo 1942 / CS63 zone X2
+  7827 => "+proj=tmerc +lat_0=0.08333333333333333 +lon_0=29.5 +k=1 +x_0=3300000 +y_0=0 +ellps=krass +towgs84=23.92,-141.27,-80.9,0,0.35,0.82,-0.12 +units=m +no_defs", # Pulkovo 1942 / CS63 zone X3
+  7828 => "+proj=tmerc +lat_0=0.08333333333333333 +lon_0=32.5 +k=1 +x_0=4300000 +y_0=0 +ellps=krass +towgs84=23.92,-141.27,-80.9,0,0.35,0.82,-0.12 +units=m +no_defs", # Pulkovo 1942 / CS63 zone X4
+  7829 => "+proj=tmerc +lat_0=0.08333333333333333 +lon_0=35.5 +k=1 +x_0=5300000 +y_0=0 +ellps=krass +towgs84=23.92,-141.27,-80.9,0,0.35,0.82,-0.12 +units=m +no_defs", # Pulkovo 1942 / CS63 zone X5
+  7830 => "+proj=tmerc +lat_0=0.08333333333333333 +lon_0=38.5 +k=1 +x_0=6300000 +y_0=0 +ellps=krass +towgs84=23.92,-141.27,-80.9,0,0.35,0.82,-0.12 +units=m +no_defs", # Pulkovo 1942 / CS63 zone X6
+  7831 => "+proj=tmerc +lat_0=0.08333333333333333 +lon_0=41.5 +k=1 +x_0=7300000 +y_0=0 +ellps=krass +towgs84=23.92,-141.27,-80.9,0,0.35,0.82,-0.12 +units=m +no_defs", # Pulkovo 1942 / CS63 zone X7
+  7845 => "+proj=lcc +lat_1=-18 +lat_2=-36 +lat_0=0 +lon_0=134 +x_0=0 +y_0=0 +ellps=GRS80 +units=m +no_defs", # GDA2020 / GA LCC
+  7846 => "+proj=utm +zone=46 +south +ellps=GRS80 +units=m +no_defs", # GDA2020 / MGA zone 46
+  7847 => "+proj=utm +zone=47 +south +ellps=GRS80 +units=m +no_defs", # GDA2020 / MGA zone 47
+  7848 => "+proj=utm +zone=48 +south +ellps=GRS80 +units=m +no_defs", # GDA2020 / MGA zone 48
+  7849 => "+proj=utm +zone=49 +south +ellps=GRS80 +units=m +no_defs", # GDA2020 / MGA zone 49
+  7850 => "+proj=utm +zone=50 +south +ellps=GRS80 +units=m +no_defs", # GDA2020 / MGA zone 50
+  7851 => "+proj=utm +zone=51 +south +ellps=GRS80 +units=m +no_defs", # GDA2020 / MGA zone 51
+  7852 => "+proj=utm +zone=52 +south +ellps=GRS80 +units=m +no_defs", # GDA2020 / MGA zone 52
+  7853 => "+proj=utm +zone=53 +south +ellps=GRS80 +units=m +no_defs", # GDA2020 / MGA zone 53
+  7854 => "+proj=utm +zone=54 +south +ellps=GRS80 +units=m +no_defs", # GDA2020 / MGA zone 54
+  7855 => "+proj=utm +zone=55 +south +ellps=GRS80 +units=m +no_defs", # GDA2020 / MGA zone 55
+  7856 => "+proj=utm +zone=56 +south +ellps=GRS80 +units=m +no_defs", # GDA2020 / MGA zone 56
+  7857 => "+proj=utm +zone=57 +south +ellps=GRS80 +units=m +no_defs", # GDA2020 / MGA zone 57
+  7858 => "+proj=utm +zone=58 +south +ellps=GRS80 +units=m +no_defs", # GDA2020 / MGA zone 58
+  7859 => "+proj=utm +zone=59 +south +ellps=GRS80 +units=m +no_defs", # GDA2020 / MGA zone 59
+  7877 => "+proj=tmerc +lat_0=-15.96666666666667 +lon_0=-5.716666666666667 +k=1 +x_0=300000 +y_0=2000000 +ellps=intl +towgs84=-320,550,-494,0,0,0,0 +units=m +no_defs", # Astro DOS 71 / SHLG71
+  7878 => "+proj=utm +zone=30 +south +ellps=intl +towgs84=-320,550,-494,0,0,0,0 +units=m +no_defs", # Astro DOS 71 / UTM zone 30S
+  7882 => "+proj=tmerc +lat_0=-15.96666666666667 +lon_0=-5.716666666666667 +k=1 +x_0=299483.737 +y_0=2000527.879 +ellps=WGS84 +towgs84=-0.077,0.079,0.086,0,0,0,0 +units=m +no_defs", # St. Helena Tritan / SHLG(Tritan)
+  7883 => "+proj=utm +zone=30 +south +ellps=WGS84 +towgs84=-0.077,0.079,0.086,0,0,0,0 +units=m +no_defs", # St. Helena Tritan / UTM zone 30S
+  7887 => "+proj=utm +zone=30 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # SHMG2015
+  7899 => "+proj=lcc +lat_1=-36 +lat_2=-38 +lat_0=-37 +lon_0=145 +x_0=2500000 +y_0=2500000 +ellps=GRS80 +units=m +no_defs", # GDA2020 / Vicgrid
+  7991 => "+proj=tmerc +lat_0=0 +lon_0=-79.5 +k=0.9999 +x_0=304800 +y_0=0 +datum=NAD27 +units=m +no_defs", # NAD27 / MTM zone 10
+  7992 => "+proj=utm +zone=33 +south +ellps=intl +towgs84=-254.1,-5.36,-100.29,0,0,0,0 +units=m +no_defs", # Malongo 1987 / UTM zone 33S
+  8013 => "+proj=tmerc +lat_0=0 +lon_0=117.8833333333333 +k=1.0000044 +x_0=50000 +y_0=4100000 +ellps=GRS80 +units=m +no_defs", # GDA2020 / ALB2020
+  8014 => "+proj=tmerc +lat_0=0 +lon_0=115.25 +k=1.0000022 +x_0=60000 +y_0=2700000 +ellps=GRS80 +units=m +no_defs", # GDA2020 / BIO2020
+  8015 => "+proj=tmerc +lat_0=0 +lon_0=122.3333333333333 +k=1.00000298 +x_0=50000 +y_0=2300000 +ellps=GRS80 +units=m +no_defs", # GDA2020 / BRO2020
+  8016 => "+proj=tmerc +lat_0=0 +lon_0=115.4333333333333 +k=0.99999592 +x_0=50000 +y_0=4000000 +ellps=GRS80 +units=m +no_defs", # GDA2020 / BCG2020
+  8017 => "+proj=tmerc +lat_0=0 +lon_0=113.6666666666667 +k=0.99999796 +x_0=50000 +y_0=3050000 +ellps=GRS80 +units=m +no_defs", # GDA2020 / CARN2020
+  8018 => "+proj=tmerc +lat_0=0 +lon_0=105.625 +k=1.00002514 +x_0=50000 +y_0=1400000 +ellps=GRS80 +units=m +no_defs", # GDA2020 / CIG2020
+  8019 => "+proj=tmerc +lat_0=0 +lon_0=96.875 +k=0.99999387 +x_0=50000 +y_0=1600000 +ellps=GRS80 +units=m +no_defs", # GDA2020 / CKIG2020
+  8020 => "+proj=tmerc +lat_0=0 +lon_0=115.9333333333333 +k=1.000019 +x_0=40000 +y_0=4100000 +ellps=GRS80 +units=m +no_defs", # GDA2020 / COL2020
+  8021 => "+proj=tmerc +lat_0=0 +lon_0=121.8833333333333 +k=1.0000055 +x_0=50000 +y_0=4050000 +ellps=GRS80 +units=m +no_defs", # GDA2020 / ESP2020
+  8022 => "+proj=tmerc +lat_0=0 +lon_0=114.0666666666667 +k=1.00000236 +x_0=50000 +y_0=2750000 +ellps=GRS80 +units=m +no_defs", # GDA2020 / EXM2020
+  8023 => "+proj=tmerc +lat_0=0 +lon_0=114.5833333333333 +k=1.00000628 +x_0=50000 +y_0=3450000 +ellps=GRS80 +units=m +no_defs", # GDA2020 / GCG2020
+  8024 => "+proj=tmerc +lat_0=0 +lon_0=121.5 +k=1.00004949 +x_0=60000 +y_0=3800000 +ellps=GRS80 +units=m +no_defs", # GDA2020 / GOLD2020
+  8025 => "+proj=tmerc +lat_0=0 +lon_0=114.9833333333333 +k=1.00000314 +x_0=50000 +y_0=3650000 +ellps=GRS80 +units=m +no_defs", # GDA2020 / JCG2020
+  8026 => "+proj=tmerc +lat_0=0 +lon_0=114.3152777777778 +k=1.000014 +x_0=55000 +y_0=3700000 +ellps=GRS80 +units=m +no_defs", # GDA2020 / KALB2020
+  8027 => "+proj=tmerc +lat_0=0 +lon_0=116.9333333333333 +k=0.9999989 +x_0=50000 +y_0=2550000 +ellps=GRS80 +units=m +no_defs", # GDA2020 / KAR2020
+  8028 => "+proj=tmerc +lat_0=0 +lon_0=128.75 +k=1.0000165 +x_0=50000 +y_0=2100000 +ellps=GRS80 +units=m +no_defs", # GDA2020 / KUN2020
+  8029 => "+proj=tmerc +lat_0=0 +lon_0=115.3666666666667 +k=1.00000157 +x_0=50000 +y_0=3750000 +ellps=GRS80 +units=m +no_defs", # GDA2020 / LCG2020
+  8030 => "+proj=tmerc +lat_0=0 +lon_0=115.1666666666667 +k=1.0000055 +x_0=50000 +y_0=4050000 +ellps=GRS80 +units=m +no_defs", # GDA2020 / MRCG2020
+  8031 => "+proj=tmerc +lat_0=0 +lon_0=115.8166666666667 +k=0.9999990600000001 +x_0=50000 +y_0=3900000 +ellps=GRS80 +units=m +no_defs", # GDA2020 / PCG2020
+  8032 => "+proj=tmerc +lat_0=0 +lon_0=118.6 +k=1.00000135 +x_0=50000 +y_0=2500000 +ellps=GRS80 +units=m +no_defs", # GDA2020 / PHG2020
+  8035 => "+proj=utm +zone=20 +datum=WGS84 +units=us-ft +no_defs", # WGS 84 / TM Zone 20N (ftUS)
+  8036 => "+proj=utm +zone=21 +datum=WGS84 +units=us-ft +no_defs", # WGS 84 / TM Zone 21N (ftUS)
+  8044 => "+proj=cass +lat_0=48.03846388888888 +lon_0=31.80418055555556 +x_0=0 +y_0=0 +a=6376045 +b=6355477.112903226 +pm=ferro +units=m +no_defs", # Gusterberg Grid (Ferro)
+  8045 => "+proj=cass +lat_0=48.20876111111112 +lon_0=34.04092222222222 +x_0=0 +y_0=0 +a=6376045 +b=6355477.112903226 +pm=ferro +units=m +no_defs", # St. Stephen Grid (Ferro)
+  8058 => "+proj=lcc +lat_1=-30.75 +lat_2=-35.75 +lat_0=-33.25 +lon_0=147 +x_0=9300000 +y_0=4500000 +ellps=GRS80 +units=m +no_defs", # GDA2020 / NSW Lambert
+  8059 => "+proj=lcc +lat_1=-28 +lat_2=-36 +lat_0=-32 +lon_0=135 +x_0=1000000 +y_0=2000000 +ellps=GRS80 +units=m +no_defs", # GDA2020 / SA Lambert
+  8065 => "+proj=omerc +lat_0=32.25 +lonc=-111.4 +alpha=45 +k=1.00011 +x_0=48768 +y_0=243840 +gamma=45 +ellps=GRS80 +units=ft +no_defs", # NAD83(2011) / PCCS zone 1 (ft)
+  8066 => "+proj=tmerc +lat_0=31.25 +lon_0=-112.1666666666667 +k=1.00009 +x_0=548640 +y_0=304800 +ellps=GRS80 +units=ft +no_defs", # NAD83(2011) / PCCS zone 2 (ft)
+  8067 => "+proj=tmerc +lat_0=31.5 +lon_0=-113.1666666666667 +k=1.000055 +x_0=182880 +y_0=0 +ellps=GRS80 +units=ft +no_defs", # NAD83(2011) / PCCS zone 3 (ft)
+  8068 => "+proj=lcc +lat_1=30.5 +lat_0=30.5 +lon_0=-110.75 +k_0=0.9998 +x_0=9144 +y_0=-188976 +ellps=GRS80 +units=ft +no_defs", # NAD83(2011) / PCCS zone 4 (ft)
+  8082 => "+proj=tmerc +lat_0=0 +lon_0=-61.5 +k=0.9999 +x_0=24500000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD83(CSRS)v6 / MTM Nova Scotia zone 4
+  8083 => "+proj=tmerc +lat_0=0 +lon_0=-64.5 +k=0.9999 +x_0=25500000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD83(CSRS)v6 / MTM Nova Scotia zone 5
+  8088 => "+proj=lcc +lat_1=64.25 +lat_2=65.75 +lat_0=65 +lon_0=-19 +x_0=2700000 +y_0=300000 +ellps=GRS80 +units=m +no_defs", # ISN2016 / Lambert 2016
+  8090 => "+proj=tmerc +lat_0=45.43888888888888 +lon_0=-88.14166666666668 +k=1.0000552095 +x_0=133502.6683 +y_0=0.0063 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Florence (m)
+  8091 => "+proj=tmerc +lat_0=45.43888888888888 +lon_0=-88.14166666666668 +k=1.0000552095 +x_0=133502.6682245364 +y_0=0.006400812801625603 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Florence (ftUS)
+  8092 => "+proj=lcc +lat_1=44.87228112638889 +lat_0=44.87228112638889 +lon_0=-91.28888888888889 +k_0=1.000035079 +x_0=120091.4402 +y_0=91687.92389999999 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Eau Claire (m)
+  8093 => "+proj=lcc +lat_1=44.87228112638889 +lat_0=44.87228112638889 +lon_0=-91.28888888888889 +k_0=1.000035079 +x_0=120091.4401828804 +y_0=91687.92390144781 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Eau Claire (ftUS)
+  8095 => "+proj=lcc +lat_1=44.36259546944444 +lat_0=44.36259546944444 +lon_0=-90 +k_0=1.0000421209 +x_0=208483.6173 +y_0=134589.754 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Wood (m)
+  8096 => "+proj=lcc +lat_1=44.36259546944444 +lat_0=44.36259546944444 +lon_0=-90 +k_0=1.0000421209 +x_0=208483.6172720346 +y_0=134589.7539243078 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Wood (ftUS)
+  8097 => "+proj=lcc +lat_1=44.11394404583334 +lat_0=44.11394404583334 +lon_0=-89.24166666666667 +k_0=1.0000392096 +x_0=120091.4402 +y_0=45069.7587 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Waushara (m)
+  8098 => "+proj=lcc +lat_1=44.11394404583334 +lat_0=44.11394404583334 +lon_0=-89.24166666666667 +k_0=1.0000392096 +x_0=120091.4401828804 +y_0=45069.7588011176 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Waushara (ftUS)
+  8099 => "+proj=tmerc +lat_0=43.42027777777778 +lon_0=-88.81666666666666 +k=1.0000333645 +x_0=185013.9709 +y_0=0.007 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Waupaca (m)
+  8100 => "+proj=tmerc +lat_0=43.42027777777778 +lon_0=-88.81666666666666 +k=1.0000333645 +x_0=185013.9709423419 +y_0=0.007010414020828041 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Waupaca (ftUS)
+  8101 => "+proj=tmerc +lat_0=42.56944444444445 +lon_0=-88.22499999999999 +k=1.0000346179 +x_0=208788.418 +y_0=0.0034 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Waukesha (m)
+  8102 => "+proj=tmerc +lat_0=42.56944444444445 +lon_0=-88.22499999999999 +k=1.0000346179 +x_0=208788.4178816358 +y_0=0.003352806705613411 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Waukesha (ftUS)
+  8103 => "+proj=tmerc +lat_0=42.91805555555555 +lon_0=-88.06388888888888 +k=1.00003738 +x_0=120091.4415 +y_0=0.003 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Washington (m)
+  8104 => "+proj=tmerc +lat_0=42.91805555555555 +lon_0=-88.06388888888888 +k=1.00003738 +x_0=120091.4414020828 +y_0=0.003048006096012192 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Washington (ftUS)
+  8105 => "+proj=lcc +lat_1=45.96121983333334 +lat_0=45.96121983333334 +lon_0=-91.78333333333333 +k_0=1.0000475376 +x_0=234086.8682 +y_0=188358.6058 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Washburn (m)
+  8106 => "+proj=lcc +lat_1=45.96121983333334 +lat_0=45.96121983333334 +lon_0=-91.78333333333333 +k_0=1.0000475376 +x_0=234086.8681737363 +y_0=188358.6059436119 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Washburn (ftUS)
+  8107 => "+proj=lcc +lat_1=42.66946209694444 +lat_0=42.66946209694444 +lon_0=-88.54166666666667 +k_0=1.0000367192 +x_0=232562.8651 +y_0=111088.2224 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Walworth (m)
+  8108 => "+proj=lcc +lat_1=42.66946209694444 +lat_0=42.66946209694444 +lon_0=-88.54166666666667 +k_0=1.0000367192 +x_0=232562.8651257302 +y_0=111088.2224028448 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Walworth (ftUS)
+  8109 => "+proj=lcc +lat_1=46.07784409055556 +lat_0=46.07784409055556 +lon_0=-89.48888888888889 +k_0=1.0000730142 +x_0=134417.0689 +y_0=50337.1092 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Vilas (m)
+  8110 => "+proj=lcc +lat_1=46.07784409055556 +lat_0=46.07784409055556 +lon_0=-89.48888888888889 +k_0=1.0000730142 +x_0=134417.0688341377 +y_0=50337.10927101854 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Vilas (ftUS)
+  8111 => "+proj=lcc +lat_1=43.57503293972223 +lat_0=43.57503293972223 +lon_0=-90.78333333333333 +k_0=1.0000408158 +x_0=222504.4451 +y_0=47532.0602 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Vernon (m)
+  8112 => "+proj=lcc +lat_1=43.57503293972223 +lat_0=43.57503293972223 +lon_0=-90.78333333333333 +k_0=1.0000408158 +x_0=222504.44500889 +y_0=47532.0603505207 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Vernon (ftUS)
+  8113 => "+proj=tmerc +lat_0=43.16111111111111 +lon_0=-91.36666666666666 +k=1.0000361538 +x_0=256946.9138 +y_0=0.0041 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Trempealeau (m)
+  8114 => "+proj=tmerc +lat_0=43.16111111111111 +lon_0=-91.36666666666666 +k=1.0000361538 +x_0=256946.9138938278 +y_0=0.003962407924815849 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Trempealeau (ftUS)
+  8115 => "+proj=lcc +lat_1=45.17782208583333 +lat_0=45.17782208583333 +lon_0=-90.48333333333333 +k_0=1.0000597566 +x_0=187147.5744 +y_0=107746.7522 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Taylor (m)
+  8116 => "+proj=lcc +lat_1=45.17782208583333 +lat_0=45.17782208583333 +lon_0=-90.48333333333333 +k_0=1.0000597566 +x_0=187147.5742951486 +y_0=107746.7521463043 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Taylor (ftUS)
+  8117 => "+proj=tmerc +lat_0=44.03611111111111 +lon_0=-92.63333333333334 +k=1.0000381803 +x_0=165506.7302 +y_0=0.0103 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS St. Croix (m)
+  8118 => "+proj=tmerc +lat_0=44.03611111111111 +lon_0=-92.63333333333334 +k=1.0000381803 +x_0=165506.7300990602 +y_0=0.01036322072644145 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS St. Croix (ftUS)
+  8119 => "+proj=tmerc +lat_0=44.03611111111111 +lon_0=-88.60555555555555 +k=1.000032144 +x_0=262433.3253 +y_0=0.009599999999999999 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Shawano (m)
+  8120 => "+proj=tmerc +lat_0=44.03611111111111 +lon_0=-88.60555555555555 +k=1.000032144 +x_0=262433.3251714504 +y_0=0.009448818897637795 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Shawano (ftUS)
+  8121 => "+proj=lcc +lat_1=45.90009913138888 +lat_0=45.90009913138888 +lon_0=-91.11666666666666 +k_0=1.0000573461 +x_0=216713.2336 +y_0=120734.1631 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Sawyer (m)
+  8122 => "+proj=lcc +lat_1=45.90009913138888 +lat_0=45.90009913138888 +lon_0=-91.11666666666666 +k_0=1.0000573461 +x_0=216713.2337312675 +y_0=120734.1631699263 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Sawyer (ftUS)
+  8123 => "+proj=tmerc +lat_0=42.81944444444445 +lon_0=-89.90000000000001 +k=1.0000373868 +x_0=185623.5716 +y_0=0.0051 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Sauk (m)
+  8124 => "+proj=tmerc +lat_0=42.81944444444445 +lon_0=-89.90000000000001 +k=1.0000373868 +x_0=185623.5715519431 +y_0=0.005181610363220727 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Sauk (ftUS)
+  8125 => "+proj=tmerc +lat_0=43.91944444444444 +lon_0=-91.06666666666666 +k=1.0000495976 +x_0=250546.1013 +y_0=0.0234 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Rusk (m)
+  8126 => "+proj=tmerc +lat_0=43.91944444444444 +lon_0=-91.06666666666666 +k=1.0000495976 +x_0=250546.1013970028 +y_0=0.02346964693929388 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Rusk (ftUS)
+  8127 => "+proj=tmerc +lat_0=41.94444444444444 +lon_0=-89.07222222222222 +k=1.0000337311 +x_0=146304.2926 +y_0=0.0068 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Rock (m)
+  8128 => "+proj=tmerc +lat_0=41.94444444444444 +lon_0=-89.07222222222222 +k=1.0000337311 +x_0=146304.2926085852 +y_0=0.006705613411226822 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Rock (ftUS)
+  8129 => "+proj=lcc +lat_1=43.3223129275 +lat_0=43.3223129275 +lon_0=-90.43055555555556 +k_0=1.0000375653 +x_0=202387.6048 +y_0=134255.4253 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Richland (m)
+  8130 => "+proj=lcc +lat_1=43.3223129275 +lat_0=43.3223129275 +lon_0=-90.43055555555556 +k_0=1.0000375653 +x_0=202387.6047752095 +y_0=134255.4254508509 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Richland (ftUS)
+  8131 => "+proj=tmerc +lat_0=44.55555555555555 +lon_0=-90.48888888888889 +k=1.0000649554 +x_0=227990.8546 +y_0=0.0109 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Price (m)
+  8132 => "+proj=tmerc +lat_0=44.55555555555555 +lon_0=-90.48888888888889 +k=1.0000649554 +x_0=227990.8544577089 +y_0=0.01097282194564389 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Price (ftUS)
+  8133 => "+proj=lcc +lat_1=44.41682397527777 +lat_0=44.41682397527777 +lon_0=-89.5 +k_0=1.000039936 +x_0=56388.1128 +y_0=50022.1874 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Portage (m)
+  8134 => "+proj=lcc +lat_1=44.41682397527777 +lat_0=44.41682397527777 +lon_0=-89.5 +k_0=1.000039936 +x_0=56388.11277622555 +y_0=50022.1874523749 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Portage (ftUS)
+  8135 => "+proj=tmerc +lat_0=44.66111111111111 +lon_0=-92.63333333333334 +k=1.0000433849 +x_0=141732.2823 +y_0=0.0059 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Polk (m)
+  8136 => "+proj=tmerc +lat_0=44.66111111111111 +lon_0=-92.63333333333334 +k=1.0000433849 +x_0=141732.2822453645 +y_0=0.005791211582423164 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Polk (ftUS)
+  8137 => "+proj=lcc +lat_1=44.63614887194444 +lat_0=44.63614887194444 +lon_0=-92.22777777777777 +k_0=1.0000362977 +x_0=167640.3354 +y_0=86033.0876 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Pepin and Pierce (m)
+  8138 => "+proj=lcc +lat_1=44.63614887194444 +lat_0=44.63614887194444 +lon_0=-92.22777777777777 +k_0=1.0000362977 +x_0=167640.3352806706 +y_0=86033.08773177546 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Pepin and Pierce (ftUS)
+  8139 => "+proj=lcc +lat_1=45.70422377027778 +lat_0=45.70422377027778 +lon_0=-89.54444444444444 +k_0=1.0000686968 +x_0=70104.1401 +y_0=57588.0346 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Oneida (m)
+  8140 => "+proj=lcc +lat_1=45.70422377027778 +lat_0=45.70422377027778 +lon_0=-89.54444444444444 +k_0=1.0000686968 +x_0=70104.14020828041 +y_0=57588.03474726949 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Oneida (ftUS)
+  8141 => "+proj=tmerc +lat_0=44.39722222222222 +lon_0=-87.90833333333335 +k=1.0000236869 +x_0=182880.3676 +y_0=0.0033 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Oconto (m)
+  8142 => "+proj=tmerc +lat_0=44.39722222222222 +lon_0=-87.90833333333335 +k=1.0000236869 +x_0=182880.3675895352 +y_0=0.003352806705613411 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Oconto (ftUS)
+  8143 => "+proj=lcc +lat_1=44.00007392861111 +lat_0=44.00007392861111 +lon_0=-90.64166666666668 +k_0=1.0000434122 +x_0=204521.209 +y_0=121923.9861 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Monroe (m)
+  8144 => "+proj=lcc +lat_1=44.00007392861111 +lat_0=44.00007392861111 +lon_0=-90.64166666666668 +k_0=1.0000434122 +x_0=204521.2090424181 +y_0=121923.9861823724 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Monroe (ftUS)
+  8145 => "+proj=tmerc +lat_0=44.71666666666667 +lon_0=-88.41666666666667 +k=1.0000362499 +x_0=105461.0121 +y_0=0.0029 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Menominee (m)
+  8146 => "+proj=tmerc +lat_0=44.71666666666667 +lon_0=-88.41666666666667 +k=1.0000362499 +x_0=105461.0121412243 +y_0=0.003048006096012192 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Menominee (ftUS)
+  8147 => "+proj=tmerc +lat_0=44.69166666666666 +lon_0=-87.71111111111111 +k=1.0000234982 +x_0=238658.8794 +y_0=0.0032 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Marinette (m)
+  8148 => "+proj=tmerc +lat_0=44.69166666666666 +lon_0=-87.71111111111111 +k=1.0000234982 +x_0=238658.8794513589 +y_0=0.003048006096012192 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Marinette (ftUS)
+  8149 => "+proj=lcc +lat_1=44.90090442361111 +lat_0=44.90090442361111 +lon_0=-89.77 +k_0=1.000053289 +x_0=74676.1493 +y_0=55049.2669 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Marathon (m)
+  8150 => "+proj=lcc +lat_1=44.90090442361111 +lat_0=44.90090442361111 +lon_0=-89.77 +k_0=1.000053289 +x_0=74676.1493522987 +y_0=55049.26695453391 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Marathon (ftUS)
+  8151 => "+proj=tmerc +lat_0=44.84444444444445 +lon_0=-89.73333333333333 +k=1.0000599003 +x_0=116129.0323 +y_0=0.0058 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Lincoln (m)
+  8152 => "+proj=tmerc +lat_0=44.84444444444445 +lon_0=-89.73333333333333 +k=1.0000599003 +x_0=116129.0322580645 +y_0=0.005791211582423164 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Lincoln (ftUS)
+  8153 => "+proj=lcc +lat_1=45.15423710527778 +lat_0=45.15423710527778 +lon_0=-89.03333333333333 +k_0=1.0000627024 +x_0=198425.197 +y_0=105279.7829 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Langlade (m)
+  8154 => "+proj=lcc +lat_1=45.15423710527778 +lat_0=45.15423710527778 +lon_0=-89.03333333333333 +k_0=1.0000627024 +x_0=198425.1968503937 +y_0=105279.7828803657 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Langlade (ftUS)
+  8155 => "+proj=tmerc +lat_0=43.45111111111111 +lon_0=-91.31666666666666 +k=1.0000319985 +x_0=130454.6598 +y_0=0.0033 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS La Crosse (m)
+  8156 => "+proj=tmerc +lat_0=43.45111111111111 +lon_0=-91.31666666666666 +k=1.0000319985 +x_0=130454.6596901194 +y_0=0.003352806705613411 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS La Crosse (ftUS)
+  8157 => "+proj=tmerc +lat_0=43.26666666666667 +lon_0=-87.55 +k=1.0000233704 +x_0=79857.7614 +y_0=0.0012 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Kewaunee, Manitowoc and Sheboygan (m)
+  8158 => "+proj=tmerc +lat_0=43.26666666666667 +lon_0=-87.55 +k=1.0000233704 +x_0=79857.76154432308 +y_0=0.001219202438404877 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Kewaunee, Manitowoc and Sheboygan (ftUS)
+  8159 => "+proj=tmerc +lat_0=42.21666666666667 +lon_0=-87.89444444444445 +k=1.0000260649 +x_0=185928.3728 +y_0=0.0009 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Kenosha, Milwaukee, Ozaukee and Racine (m)
+  8160 => "+proj=tmerc +lat_0=42.21666666666667 +lon_0=-87.89444444444445 +k=1.0000260649 +x_0=185928.3727711455 +y_0=0.0009144018288036576 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Kenosha, Milwaukee, Ozaukee and Racine (ftUS)
+  8161 => "+proj=tmerc +lat_0=44.25333512777778 +lon_0=-90.84429651944444 +k=1.0000353 +x_0=27000 +y_0=25000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Jackson (m)
+  8162 => "+proj=tmerc +lat_0=44.25333512777778 +lon_0=-90.84429651944444 +k=1.0000353 +x_0=27000 +y_0=24999.99989839979 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Jackson (ftUS)
+  8163 => "+proj=tmerc +lat_0=45.43333333333333 +lon_0=-90.25555555555556 +k=1.0000677153 +x_0=220980.4419 +y_0=0.008500000000000001 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Iron (m)
+  8164 => "+proj=tmerc +lat_0=45.43333333333333 +lon_0=-90.25555555555556 +k=1.0000677153 +x_0=220980.4419608839 +y_0=0.008534417068834137 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Iron (ftUS)
+  8165 => "+proj=tmerc +lat_0=42.53888888888888 +lon_0=-90.16111111111111 +k=1.0000394961 +x_0=113081.0261 +y_0=0.0045 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Iowa (m)
+  8166 => "+proj=tmerc +lat_0=42.53888888888888 +lon_0=-90.16111111111111 +k=1.0000394961 +x_0=113081.0261620523 +y_0=0.004572009144018288 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Iowa (ftUS)
+  8167 => "+proj=lcc +lat_1=43.80700011777778 +lat_0=43.80700011777778 +lon_0=-89.24166666666667 +k_0=1.0000344057 +x_0=150876.3018 +y_0=79170.7795 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Green Lake and Marquette (m)
+  8168 => "+proj=lcc +lat_1=43.80700011777778 +lat_0=43.80700011777778 +lon_0=-89.24166666666667 +k_0=1.0000344057 +x_0=150876.3017526035 +y_0=79170.77937515875 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Green Lake and Marquette (ftUS)
+  8169 => "+proj=lcc +lat_1=42.63756227694444 +lat_0=42.63756227694444 +lon_0=-89.83888888888889 +k_0=1.0000390487 +x_0=170078.7403 +y_0=45830.2947 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Green and Lafayette (m)
+  8170 => "+proj=lcc +lat_1=42.63756227694444 +lat_0=42.63756227694444 +lon_0=-89.83888888888889 +k_0=1.0000390487 +x_0=170078.7401574803 +y_0=45830.29484378968 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Green and Lafayette (ftUS)
+  8171 => "+proj=tmerc +lat_0=41.41111111111111 +lon_0=-90.8 +k=1.0000349452 +x_0=242316.4841 +y_0=0.01 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Grant (m)
+  8172 => "+proj=tmerc +lat_0=41.41111111111111 +lon_0=-90.8 +k=1.0000349452 +x_0=242316.484023368 +y_0=0.01005842011684023 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Grant (ftUS)
+  8173 => "+proj=tmerc +lat_0=44.00555555555555 +lon_0=-88.63333333333334 +k=1.0000673004 +x_0=275844.5533 +y_0=0.0157 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Forest (m)
+  8177 => "+proj=tmerc +lat_0=44.00555555555555 +lon_0=-88.63333333333334 +k=1.0000673004 +x_0=275844.5532131065 +y_0=0.0158496316992634 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Forest (ftUS)
+  8179 => "+proj=tmerc +lat_0=44.40833333333333 +lon_0=-91.89444444444445 +k=1.0000410324 +x_0=51816.104 +y_0=0.003 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Dunn (m)
+  8180 => "+proj=tmerc +lat_0=44.40833333333333 +lon_0=-91.89444444444445 +k=1.0000410324 +x_0=51816.10393700787 +y_0=0.003048006096012192 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Dunn (ftUS)
+  8181 => "+proj=tmerc +lat_0=45.88333333333333 +lon_0=-91.91666666666667 +k=1.0000385418 +x_0=59131.3183 +y_0=0.0041 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Douglas (m)
+  8182 => "+proj=tmerc +lat_0=45.88333333333333 +lon_0=-91.91666666666667 +k=1.0000385418 +x_0=59131.31826263652 +y_0=0.003962407924815849 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Douglas (ftUS)
+  8184 => "+proj=tmerc +lat_0=44.4 +lon_0=-87.27222222222223 +k=1.0000187521 +x_0=158801.1176 +y_0=0.0023 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Door (m)
+  8185 => "+proj=tmerc +lat_0=44.4 +lon_0=-87.27222222222223 +k=1.0000187521 +x_0=158801.1176022352 +y_0=0.002438404876809754 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Door (ftUS)
+  8187 => "+proj=tmerc +lat_0=41.47222222222222 +lon_0=-88.77500000000001 +k=1.0000346418 +x_0=263347.7263 +y_0=0.0076 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Dodge and Jefferson (m)
+  8189 => "+proj=tmerc +lat_0=41.47222222222222 +lon_0=-88.77500000000001 +k=1.0000346418 +x_0=263347.7263906528 +y_0=0.00762001524003048 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Dodge and Jefferson (ftUS)
+  8191 => "+proj=lcc +lat_1=43.0695160375 +lat_0=43.0695160375 +lon_0=-89.42222222222223 +k_0=1.0000384786 +x_0=247193.2944 +y_0=146591.9896 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Dane (m)
+  8193 => "+proj=lcc +lat_1=43.0695160375 +lat_0=43.0695160375 +lon_0=-89.42222222222223 +k_0=1.0000384786 +x_0=247193.2943865888 +y_0=146591.9896367793 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Dane (ftUS)
+  8196 => "+proj=lcc +lat_1=43.200055605 +lat_0=43.200055605 +lon_0=-90.9388888888889 +k_0=1.0000349151 +x_0=113690.6274 +y_0=53703.1201 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Crawford (m)
+  8197 => "+proj=lcc +lat_1=43.200055605 +lat_0=43.200055605 +lon_0=-90.9388888888889 +k_0=1.0000349151 +x_0=113690.6273812548 +y_0=53703.12024384048 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Crawford (ftUS)
+  8198 => "+proj=lcc +lat_1=43.46254664583333 +lat_0=43.46254664583333 +lon_0=-89.39444444444445 +k_0=1.00003498 +x_0=169164.3381 +y_0=111569.6134 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Columbia (m)
+  8200 => "+proj=lcc +lat_1=43.46254664583333 +lat_0=43.46254664583333 +lon_0=-89.39444444444445 +k_0=1.00003498 +x_0=169164.338023876 +y_0=111569.613512827 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Columbia (ftUS)
+  8201 => "+proj=tmerc +lat_0=43.6 +lon_0=-90.70833333333334 +k=1.0000463003 +x_0=199949.1989 +y_0=0.0086 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Clark (m)
+  8202 => "+proj=tmerc +lat_0=43.6 +lon_0=-90.70833333333334 +k=1.0000463003 +x_0=199949.198983998 +y_0=0.008534417068834137 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Clark (ftUS)
+  8203 => "+proj=lcc +lat_1=44.97785689861112 +lat_0=44.97785689861112 +lon_0=-91.29444444444444 +k_0=1.0000391127 +x_0=60045.72 +y_0=44091.4346 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Chippewa (m)
+  8204 => "+proj=lcc +lat_1=44.97785689861112 +lat_0=44.97785689861112 +lon_0=-91.29444444444444 +k_0=1.0000391127 +x_0=60045.72009144018 +y_0=44091.43449326898 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Chippewa (ftUS)
+  8205 => "+proj=tmerc +lat_0=42.71944444444445 +lon_0=-88.5 +k=1.0000286569 +x_0=244754.8893 +y_0=0.0049 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Calumet, Fond du Lac, Outagamie and Winnebago (m)
+  8206 => "+proj=tmerc +lat_0=42.71944444444445 +lon_0=-88.5 +k=1.0000286569 +x_0=244754.8892049784 +y_0=0.004876809753619507 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Calumet, Fond du Lac, Outagamie and Winnebago (ftUS)
+  8207 => "+proj=lcc +lat_1=45.89871486583333 +lat_0=45.89871486583333 +lon_0=-92.45777777777778 +k_0=1.0000383841 +x_0=64008.1276 +y_0=59445.9043 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Burnett (m)
+  8208 => "+proj=lcc +lat_1=45.89871486583333 +lat_0=45.89871486583333 +lon_0=-92.45777777777778 +k_0=1.0000383841 +x_0=64008.12771145543 +y_0=59445.90419100838 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Burnett (ftUS)
+  8209 => "+proj=tmerc +lat_0=43.48138888888889 +lon_0=-91.79722222222222 +k=1.0000382778 +x_0=175260.3502 +y_0=0.0048 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Buffalo (m)
+  8210 => "+proj=tmerc +lat_0=43.48138888888889 +lon_0=-91.79722222222222 +k=1.0000382778 +x_0=175260.3502159004 +y_0=0.004876809753619507 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Buffalo (ftUS)
+  8212 => "+proj=tmerc +lat_0=43 +lon_0=-88 +k=1.00002 +x_0=31600 +y_0=4600 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Brown (m)
+  8213 => "+proj=tmerc +lat_0=43 +lon_0=-88 +k=1.00002 +x_0=31599.99989839979 +y_0=4599.999898399797 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Brown (ftUS)
+  8214 => "+proj=lcc +lat_1=46.66964837722222 +lat_0=46.66964837722222 +lon_0=-91.15277777777779 +k_0=1.0000331195 +x_0=228600.4575 +y_0=148551.4837 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Bayfield (m)
+  8216 => "+proj=lcc +lat_1=46.66964837722222 +lat_0=46.66964837722222 +lon_0=-91.15277777777779 +k_0=1.0000331195 +x_0=228600.4575057151 +y_0=148551.4835661671 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Bayfield (ftUS)
+  8218 => "+proj=tmerc +lat_0=45.13333333333333 +lon_0=-91.84999999999999 +k=1.0000486665 +x_0=93150 +y_0=0.0029 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Barron (m)
+  8220 => "+proj=tmerc +lat_0=45.13333333333333 +lon_0=-91.84999999999999 +k=1.0000486665 +x_0=93150 +y_0=0.003048006096012192 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Barron (ftUS)
+  8222 => "+proj=tmerc +lat_0=45.70611111111111 +lon_0=-90.62222222222222 +k=1.0000495683 +x_0=172821.9461 +y_0=0.0017 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Ashland (m)
+  8224 => "+proj=tmerc +lat_0=45.70611111111111 +lon_0=-90.62222222222222 +k=1.0000495683 +x_0=172821.945948692 +y_0=0.001828803657607315 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Ashland (ftUS)
+  8225 => "+proj=tmerc +lat_0=43.36666666666667 +lon_0=-90 +k=1.0000365285 +x_0=147218.6942 +y_0=0.0037 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / WISCRS Adams and Juneau (m)
+  8226 => "+proj=tmerc +lat_0=43.36666666666667 +lon_0=-90 +k=1.0000365285 +x_0=147218.6941325883 +y_0=0.00365760731521463 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs", # NAD83(HARN) / WISCRS Adams and Juneau (ftUS)
+  8311 => "+proj=tmerc +lat_0=43.5 +lon_0=-117.6666666666667 +k=1.00014 +x_0=90000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD83(2011) / Oregon Burns-Harper zone (m)
+  8312 => "+proj=tmerc +lat_0=43.5 +lon_0=-117.6666666666667 +k=1.00014 +x_0=90000.00001488 +y_0=0 +ellps=GRS80 +units=ft +no_defs", # NAD83(2011) / Oregon Burns-Harper zone (ft)
+  8313 => "+proj=tmerc +lat_0=43.5 +lon_0=-119 +k=1.00022 +x_0=20000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD83(2011) / Oregon Canyon City-Burns zone (m)
+  8314 => "+proj=tmerc +lat_0=43.5 +lon_0=-119 +k=1.00022 +x_0=19999.99999992 +y_0=0 +ellps=GRS80 +units=ft +no_defs", # NAD83(2011) / Oregon Canyon City-Burns zone (ft)
+  8315 => "+proj=lcc +lat_1=45.58333333333334 +lat_0=45.58333333333334 +lon_0=-123.4166666666667 +k_0=1.000045 +x_0=30000 +y_0=20000 +ellps=GRS80 +units=m +no_defs", # NAD83(2011) / Oregon Coast Range North zone (m)
+  8316 => "+proj=lcc +lat_1=45.58333333333334 +lat_0=45.58333333333334 +lon_0=-123.4166666666667 +k_0=1.000045 +x_0=30000.00001512 +y_0=19999.99999992 +ellps=GRS80 +units=ft +no_defs", # NAD83(2011) / Oregon Coast Range North zone (ft)
+  8317 => "+proj=tmerc +lat_0=44.25 +lon_0=-119.6333333333333 +k=1.00012 +x_0=20000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD83(2011) / Oregon Dayville-Prairie City zone (m)
+  8318 => "+proj=tmerc +lat_0=44.25 +lon_0=-119.6333333333333 +k=1.00012 +x_0=19999.99999992 +y_0=0 +ellps=GRS80 +units=ft +no_defs", # NAD83(2011) / Oregon Dayville-Prairie City zone (ft)
+  8319 => "+proj=tmerc +lat_0=41.75 +lon_0=-118.4166666666667 +k=1.00019 +x_0=80000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD83(2011) / Oregon Denio-Burns zone (m)
+  8320 => "+proj=tmerc +lat_0=41.75 +lon_0=-118.4166666666667 +k=1.00019 +x_0=79999.99999968 +y_0=0 +ellps=GRS80 +units=ft +no_defs", # NAD83(2011) / Oregon Denio-Burns zone (ft)
+  8321 => "+proj=lcc +lat_1=45.25 +lat_0=45.25 +lon_0=-117.25 +k_0=1.000085 +x_0=40000 +y_0=70000 +ellps=GRS80 +units=m +no_defs", # NAD83(2011) / Oregon Halfway zone (m)
+  8322 => "+proj=lcc +lat_1=45.25 +lat_0=45.25 +lon_0=-117.25 +k_0=1.000085 +x_0=39999.99999984 +y_0=70000.00001495999 +ellps=GRS80 +units=ft +no_defs", # NAD83(2011) / Oregon Halfway zone (ft)
+  8323 => "+proj=lcc +lat_1=42 +lat_0=42 +lon_0=-122.25 +k_0=1.00004 +x_0=60000 +y_0=-60000 +ellps=GRS80 +units=m +no_defs", # NAD83(2011) / Oregon Medford-Diamond Lake zone (m)
+  8324 => "+proj=lcc +lat_1=42 +lat_0=42 +lon_0=-122.25 +k_0=1.00004 +x_0=59999.99999976 +y_0=-59999.99999976 +ellps=GRS80 +units=ft +no_defs", # NAD83(2011) / Oregon Medford-Diamond Lake zone (ft)
+  8325 => "+proj=lcc +lat_1=47 +lat_0=47 +lon_0=-120.25 +k_0=0.99927 +x_0=30000 +y_0=290000 +ellps=GRS80 +units=m +no_defs", # NAD83(2011) / Oregon Mitchell zone (m)
+  8326 => "+proj=lcc +lat_1=47 +lat_0=47 +lon_0=-120.25 +k_0=0.99927 +x_0=30000.00001512 +y_0=290000.00001408 +ellps=GRS80 +units=ft +no_defs", # NAD83(2011) / Oregon Mitchell zone (ft)
+  8327 => "+proj=lcc +lat_1=46.16666666666666 +lat_0=46.16666666666666 +lon_0=-120.5 +k_0=1 +x_0=100000 +y_0=140000 +ellps=GRS80 +units=m +no_defs", # NAD83(2011) / Oregon North Central zone (m)
+  8328 => "+proj=lcc +lat_1=46.16666666666666 +lat_0=46.16666666666666 +lon_0=-120.5 +k_0=1 +x_0=99999.99999960001 +y_0=139999.99999944 +ellps=GRS80 +units=ft +no_defs", # NAD83(2011) / Oregon North Central zone (ft)
+  8329 => "+proj=lcc +lat_1=43.5 +lat_0=43.5 +lon_0=-120.5 +k_0=1.00006 +x_0=40000 +y_0=-80000 +ellps=GRS80 +units=m +no_defs", # NAD83(2011) / Oregon Ochoco Summit zone (m)
+  8330 => "+proj=lcc +lat_1=43.5 +lat_0=43.5 +lon_0=-120.5 +k_0=1.00006 +x_0=39999.99999984 +y_0=-79999.99999968 +ellps=GRS80 +units=ft +no_defs", # NAD83(2011) / Oregon Ochoco Summit zone (ft)
+  8331 => "+proj=tmerc +lat_0=41.75 +lon_0=-117.5833333333333 +k=1.00018 +x_0=70000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD83(2011) / Oregon Owyhee zone (m)
+  8332 => "+proj=tmerc +lat_0=41.75 +lon_0=-117.5833333333333 +k=1.00018 +x_0=70000.00001495999 +y_0=0 +ellps=GRS80 +units=ft +no_defs", # NAD83(2011) / Oregon Owyhee zone (ft)
+  8333 => "+proj=lcc +lat_1=46.16666666666666 +lat_0=46.16666666666666 +lon_0=-119 +k_0=1.000025 +x_0=50000 +y_0=130000 +ellps=GRS80 +units=m +no_defs", # NAD83(2011) / Oregon Pilot Rock-Ukiah zone (m)
+  8334 => "+proj=lcc +lat_1=46.16666666666666 +lat_0=46.16666666666666 +lon_0=-119 +k_0=1.000025 +x_0=50000.00001504 +y_0=130000.00001472 +ellps=GRS80 +units=ft +no_defs", # NAD83(2011) / Oregon Pilot Rock-Ukiah zone (ft)
+  8335 => "+proj=lcc +lat_1=44 +lat_0=44 +lon_0=-118 +k_0=1.00017 +x_0=60000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD83(2011) / Oregon Prairie City-Brogan zone (m)
+  8336 => "+proj=lcc +lat_1=44 +lat_0=44 +lon_0=-118 +k_0=1.00017 +x_0=59999.99999976 +y_0=0 +ellps=GRS80 +units=ft +no_defs", # NAD83(2011) / Oregon Prairie City-Brogan zone (ft)
+  8337 => "+proj=tmerc +lat_0=41.75 +lon_0=-120.3333333333333 +k=1.000215 +x_0=70000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD83(2011) / Oregon Riley-Lakeview zone (m)
+  8338 => "+proj=tmerc +lat_0=41.75 +lon_0=-120.3333333333333 +k=1.000215 +x_0=70000.00001495999 +y_0=0 +ellps=GRS80 +units=ft +no_defs", # NAD83(2011) / Oregon Riley-Lakeview zone (ft)
+  8339 => "+proj=lcc +lat_1=42.5 +lat_0=42.5 +lon_0=-122.5833333333333 +k_0=1.00015 +x_0=10000 +y_0=60000 +ellps=GRS80 +units=m +no_defs", # NAD83(2011) / Oregon Siskiyou Pass zone (m)
+  8340 => "+proj=lcc +lat_1=42.5 +lat_0=42.5 +lon_0=-122.5833333333333 +k_0=1.00015 +x_0=10000.0000152 +y_0=59999.99999976 +ellps=GRS80 +units=ft +no_defs", # NAD83(2011) / Oregon Siskiyou Pass zone (ft)
+  8341 => "+proj=lcc +lat_1=45.25 +lat_0=45.25 +lon_0=-119 +k_0=1.00014 +x_0=30000 +y_0=90000 +ellps=GRS80 +units=m +no_defs", # NAD83(2011) / Oregon Ukiah-Fox zone (m)
+  8342 => "+proj=lcc +lat_1=45.25 +lat_0=45.25 +lon_0=-119 +k_0=1.00014 +x_0=30000.00001512 +y_0=90000.00001488 +ellps=GRS80 +units=ft +no_defs", # NAD83(2011) / Oregon Ukiah-Fox zone (ft)
+  8343 => "+proj=tmerc +lat_0=45.25 +lon_0=-117.5 +k=1.000195 +x_0=60000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD83(2011) / Oregon Wallowa zone (m)
+  8344 => "+proj=tmerc +lat_0=45.25 +lon_0=-117.5 +k=1.000195 +x_0=59999.99999976 +y_0=0 +ellps=GRS80 +units=ft +no_defs", # NAD83(2011) / Oregon Wallowa zone (ft)
+  8345 => "+proj=lcc +lat_1=42.5 +lat_0=42.5 +lon_0=-120 +k_0=1.000245 +x_0=40000 +y_0=60000 +ellps=GRS80 +units=m +no_defs", # NAD83(2011) / Oregon Warner Highway zone (m)
+  8346 => "+proj=lcc +lat_1=42.5 +lat_0=42.5 +lon_0=-120 +k_0=1.000245 +x_0=39999.99999984 +y_0=59999.99999976 +ellps=GRS80 +units=ft +no_defs", # NAD83(2011) / Oregon Warner Highway zone (ft)
+  8347 => "+proj=tmerc +lat_0=43 +lon_0=-122 +k=1.000223 +x_0=20000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD83(2011) / Oregon Willamette Pass zone (m)
+  8348 => "+proj=tmerc +lat_0=43 +lon_0=-122 +k=1.000223 +x_0=19999.99999992 +y_0=0 +ellps=GRS80 +units=ft +no_defs", # NAD83(2011) / Oregon Willamette Pass zone (ft)
   20004 => "+proj=tmerc +lat_0=0 +lon_0=21 +k=1 +x_0=4500000 +y_0=0 +ellps=krass +towgs84=24.47,-130.89,-81.56,0,0,0.13,-0.22 +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger zone 4
   20005 => "+proj=tmerc +lat_0=0 +lon_0=27 +k=1 +x_0=5500000 +y_0=0 +ellps=krass +towgs84=24.47,-130.89,-81.56,0,0,0.13,-0.22 +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger zone 5
   20006 => "+proj=tmerc +lat_0=0 +lon_0=33 +k=1 +x_0=6500000 +y_0=0 +ellps=krass +towgs84=24.47,-130.89,-81.56,0,0,0.13,-0.22 +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger zone 6
@@ -3824,9 +4102,9 @@ epsg = Dict(
   21482 => "+proj=tmerc +lat_0=0 +lon_0=129 +k=1 +x_0=500000 +y_0=0 +ellps=krass +towgs84=15.8,-154.4,-82.3,0,0,0,0 +units=m +no_defs", # Beijing 1954 / Gauss-Kruger 22N (deprecated)
   21483 => "+proj=tmerc +lat_0=0 +lon_0=135 +k=1 +x_0=500000 +y_0=0 +ellps=krass +towgs84=15.8,-154.4,-82.3,0,0,0,0 +units=m +no_defs", # Beijing 1954 / Gauss-Kruger 23N (deprecated)
   21500 => "+proj=lcc +lat_1=49.83333333333334 +lat_2=51.16666666666666 +lat_0=90 +lon_0=0 +x_0=150000 +y_0=5400000 +ellps=intl +pm=brussels +units=m +no_defs", # Belge 1950 (Brussels) / Belge Lambert 50
-  21780 => "+proj=somerc +lat_0=46.95240555555556 +lon_0=0 +k_0=1 +x_0=0 +y_0=0 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +pm=bern +units=m +no_defs", # Bern 1898 (Bern) / LV03C
-  21781 => "+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs", # CH1903 / LV03
-  21782 => "+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=0 +y_0=0 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs", # CH1903 / LV03C-G
+  21780 => "+proj=somerc +lat_0=46.95240555555556 +lon_0=0 +k_0=1 +x_0=0 +y_0=0 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +pm=bern +units=m +no_defs", # Bern 1898 (Bern) / LV03C
+  21781 => "+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs", # CH1903 / LV03
+  21782 => "+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=0 +y_0=0 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs", # CH1903 / LV03C-G
   21817 => "+proj=utm +zone=17 +ellps=intl +towgs84=307,304,-318,0,0,0,0 +units=m +no_defs", # Bogota 1975 / UTM zone 17N (deprecated)
   21818 => "+proj=utm +zone=18 +ellps=intl +towgs84=307,304,-318,0,0,0,0 +units=m +no_defs", # Bogota 1975 / UTM zone 18N
   21891 => "+proj=tmerc +lat_0=4.599047222222222 +lon_0=-77.08091666666667 +k=1 +x_0=1000000 +y_0=1000000 +ellps=intl +towgs84=307,304,-318,0,0,0,0 +units=m +no_defs", # Bogota 1975 / Colombia West zone (deprecated)
@@ -4433,8 +4711,8 @@ epsg = Dict(
   28491 => "+proj=tmerc +lat_0=0 +lon_0=-177 +k=1 +x_0=500000 +y_0=0 +ellps=krass +towgs84=23.92,-141.27,-80.9,0,0.35,0.82,-0.12 +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger 31N (deprecated)
   28492 => "+proj=tmerc +lat_0=0 +lon_0=-171 +k=1 +x_0=500000 +y_0=0 +ellps=krass +towgs84=23.92,-141.27,-80.9,0,0.35,0.82,-0.12 +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger 32N (deprecated)
   28600 => "+proj=tmerc +lat_0=24.45 +lon_0=51.21666666666667 +k=0.99999 +x_0=200000 +y_0=300000 +ellps=intl +towgs84=-128.16,-282.42,21.93,0,0,0,0 +units=m +no_defs", # Qatar 1974 / Qatar National Grid
-  28991 => "+proj=sterea +lat_0=52.15616055555555 +lon_0=5.38763888888889 +k=0.9999079 +x_0=0 +y_0=0 +ellps=bessel +towgs84=565.4171,50.3319,465.5524,-0.398957,0.343988,-1.87740,4.0725 +units=m +no_defs", # Amersfoort / RD Old
-  28992 => "+proj=sterea +lat_0=52.15616055555555 +lon_0=5.38763888888889 +k=0.9999079 +x_0=155000 +y_0=463000 +ellps=bessel +towgs84=565.4171,50.3319,465.5524,-0.398957,0.343988,-1.87740,4.0725 +units=m +no_defs", # Amersfoort / RD New
+  28991 => "+proj=sterea +lat_0=52.15616055555555 +lon_0=5.38763888888889 +k=0.9999079 +x_0=0 +y_0=0 +ellps=bessel +towgs84=565.2369,50.0087,465.658,-0.406857,0.350733,-1.87035,4.0812 +units=m +no_defs", # Amersfoort / RD Old
+  28992 => "+proj=sterea +lat_0=52.15616055555555 +lon_0=5.38763888888889 +k=0.9999079 +x_0=155000 +y_0=463000 +ellps=bessel +towgs84=565.2369,50.0087,465.658,-0.406857,0.350733,-1.87035,4.0812 +units=m +no_defs", # Amersfoort / RD New
   29100 => "+proj=poly +lat_0=0 +lon_0=-54 +x_0=5000000 +y_0=10000000 +ellps=GRS67 +towgs84=-57,1,-41,0,0,0,0 +units=m +no_defs", # SAD69 / Brazil Polyconic (deprecated)
   29101 => "+proj=poly +lat_0=0 +lon_0=-54 +x_0=5000000 +y_0=10000000 +ellps=aust_SA +towgs84=-66.87,4.37,-38.52,0,0,0,0 +units=m +no_defs", # SAD69 / Brazil Polyconic
   29118 => "+proj=utm +zone=18 +ellps=GRS67 +towgs84=-57,1,-41,0,0,0,0 +units=m +no_defs", # SAD69 / UTM zone 18N (deprecated)
@@ -4485,7 +4763,7 @@ epsg = Dict(
   29849 => "+proj=utm +zone=49 +ellps=evrstSS +towgs84=-679,669,-48,0,0,0,0 +units=m +no_defs", # Timbalai 1948 / UTM zone 49N
   29850 => "+proj=utm +zone=50 +ellps=evrstSS +towgs84=-679,669,-48,0,0,0,0 +units=m +no_defs", # Timbalai 1948 / UTM zone 50N
   29871 => "+proj=omerc +lat_0=4 +lonc=115 +alpha=53.31582047222222 +k=0.99984 +x_0=590476.8714630401 +y_0=442857.653094361 +gamma=53.13010236111111 +ellps=evrstSS +towgs84=-679,669,-48,0,0,0,0 +to_meter=20.11676512155263 +no_defs", # Timbalai 1948 / RSO Borneo (ch)
-  29872 => "+proj=omerc +lat_0=4 +lonc=115 +alpha=53.31582047222222 +k=0.99984 +x_0=590476.8727431979 +y_0=442857.6545573985 +gamma=53.13010236111111 +ellps=evrstSS +towgs84=-679,669,-48,0,0,0,0 +to_meter=0.3047994715386762 +no_defs", # Timbalai 1948 / RSO Borneo (ft)
+  29872 => "+proj=omerc +lat_0=4 +lonc=115 +alpha=53.31582047222222 +k=0.99984 +x_0=590476.8727431979 +y_0=442857.6545573985 +gamma=53.13010236111111 +ellps=evrstSS +towgs84=-679,669,-48,0,0,0,0 +to_meter=0.3047994715386762 +no_defs", # Timbalai 1948 / RSO Borneo (ftSe)
   29873 => "+proj=omerc +lat_0=4 +lonc=115 +alpha=53.31582047222222 +k=0.99984 +x_0=590476.87 +y_0=442857.65 +gamma=53.13010236111111 +ellps=evrstSS +towgs84=-679,669,-48,0,0,0,0 +units=m +no_defs", # Timbalai 1948 / RSO Borneo (m)
   29900 => "+proj=tmerc +lat_0=53.5 +lon_0=-8 +k=1.000035 +x_0=200000 +y_0=250000 +datum=ire65 +units=m +no_defs", # TM65 / Irish National Grid (deprecated)
   29901 => "+proj=tmerc +lat_0=53.5 +lon_0=-8 +k=1 +x_0=200000 +y_0=250000 +ellps=airy +towgs84=482.5,-130.6,564.6,-1.042,-0.214,-0.631,8.15 +units=m +no_defs", # OSNI 1952 / Irish National Grid
@@ -4529,9 +4807,9 @@ epsg = Dict(
   31154 => "+proj=tmerc +lat_0=0 +lon_0=-54 +k=0.9996 +x_0=500000 +y_0=0 +ellps=intl +towgs84=-265,120,-358,0,0,0,0 +units=m +no_defs", # Zanderij / TM 54 NW
   31170 => "+proj=tmerc +lat_0=0 +lon_0=-55.68333333333333 +k=0.9996 +x_0=500000 +y_0=0 +ellps=intl +towgs84=-265,120,-358,0,0,0,0 +units=m +no_defs", # Zanderij / Suriname Old TM
   31171 => "+proj=tmerc +lat_0=0 +lon_0=-55.68333333333333 +k=0.9999 +x_0=500000 +y_0=0 +ellps=intl +towgs84=-265,120,-358,0,0,0,0 +units=m +no_defs", # Zanderij / Suriname TM
-  31251 => "+proj=tmerc +lat_0=0 +lon_0=28 +k=1 +x_0=0 +y_0=-5000000 +ellps=bessel +towgs84=682,-203,480,0,0,0,0 +pm=ferro +units=m +no_defs", # MGI (Ferro) / Austria GK West Zone
-  31252 => "+proj=tmerc +lat_0=0 +lon_0=31 +k=1 +x_0=0 +y_0=-5000000 +ellps=bessel +towgs84=682,-203,480,0,0,0,0 +pm=ferro +units=m +no_defs", # MGI (Ferro) / Austria GK Central Zone
-  31253 => "+proj=tmerc +lat_0=0 +lon_0=34 +k=1 +x_0=0 +y_0=-5000000 +ellps=bessel +towgs84=682,-203,480,0,0,0,0 +pm=ferro +units=m +no_defs", # MGI (Ferro) / Austria GK East Zone
+  31251 => "+proj=tmerc +lat_0=0 +lon_0=28 +k=1 +x_0=0 +y_0=-5000000 +ellps=bessel +towgs84=577.326,90.129,463.919,5.137,1.474,5.297,2.4232 +pm=ferro +units=m +no_defs", # MGI (Ferro) / Austria GK West Zone
+  31252 => "+proj=tmerc +lat_0=0 +lon_0=31 +k=1 +x_0=0 +y_0=-5000000 +ellps=bessel +towgs84=577.326,90.129,463.919,5.137,1.474,5.297,2.4232 +pm=ferro +units=m +no_defs", # MGI (Ferro) / Austria GK Central Zone
+  31253 => "+proj=tmerc +lat_0=0 +lon_0=34 +k=1 +x_0=0 +y_0=-5000000 +ellps=bessel +towgs84=577.326,90.129,463.919,5.137,1.474,5.297,2.4232 +pm=ferro +units=m +no_defs", # MGI (Ferro) / Austria GK East Zone
   31254 => "+proj=tmerc +lat_0=0 +lon_0=10.33333333333333 +k=1 +x_0=0 +y_0=-5000000 +datum=hermannskogel +units=m +no_defs", # MGI / Austria GK West
   31255 => "+proj=tmerc +lat_0=0 +lon_0=13.33333333333333 +k=1 +x_0=0 +y_0=-5000000 +datum=hermannskogel +units=m +no_defs", # MGI / Austria GK Central
   31256 => "+proj=tmerc +lat_0=0 +lon_0=16.33333333333333 +k=1 +x_0=0 +y_0=-5000000 +datum=hermannskogel +units=m +no_defs", # MGI / Austria GK East
@@ -5287,7 +5565,39 @@ epsg = Dict(
   7134 => "+proj=geocent +ellps=WGS84 +units=m +no_defs", # IGD05
   7137 => "+proj=geocent +ellps=WGS84 +units=m +no_defs", # IGD05/12
   7371 => "+proj=geocent +ellps=GRS80 +units=m +no_defs", # ONGD14
+  7656 => "+proj=geocent +ellps=WGS84 +units=m +no_defs", # WGS 84 (G730)
+  7658 => "+proj=geocent +ellps=WGS84 +units=m +no_defs", # WGS 84 (G873)
+  7660 => "+proj=geocent +ellps=WGS84 +units=m +no_defs", # WGS 84 (G1150)
+  7662 => "+proj=geocent +ellps=WGS84 +units=m +no_defs", # WGS 84 (G1674)
+  7664 => "+proj=geocent +ellps=WGS84 +units=m +no_defs", # WGS 84 (G1762)
+  7677 => "+proj=geocent +a=6378136 +b=6356751.361745712 +units=m +no_defs", # PZ-90.02
+  7679 => "+proj=geocent +a=6378136 +b=6356751.361745712 +units=m +no_defs", # PZ-90.11
+  7681 => "+proj=geocent +a=6378136.5 +b=6356751.757955603 +units=m +no_defs", # GSK-2011
   7684 => "+proj=geocent +ellps=GRS80 +units=m +no_defs", # Kyrg-06
+  7789 => "+proj=geocent +ellps=GRS80 +units=m +no_defs", # ITRF2014
+  7796 => "+proj=geocent +ellps=GRS80 +units=m +no_defs", # BGS2005
+  7815 => "+proj=geocent +ellps=WGS84 +units=m +no_defs", # WGS 84 (Transit)
+  7842 => "+proj=geocent +ellps=GRS80 +units=m +no_defs", # GDA2020
+  7879 => "+proj=geocent +ellps=WGS84 +units=m +no_defs", # St. Helena Tritan
+  7884 => "+proj=geocent +ellps=GRS80 +units=m +no_defs", # SHGD2015
+  7914 => "+proj=geocent +ellps=GRS80 +units=m +no_defs", # ETRF89
+  7916 => "+proj=geocent +ellps=GRS80 +units=m +no_defs", # ETRF90
+  7918 => "+proj=geocent +ellps=GRS80 +units=m +no_defs", # ETRF91
+  7920 => "+proj=geocent +ellps=GRS80 +units=m +no_defs", # ETRF92
+  7922 => "+proj=geocent +ellps=GRS80 +units=m +no_defs", # ETRF93
+  7924 => "+proj=geocent +ellps=GRS80 +units=m +no_defs", # ETRF94
+  7926 => "+proj=geocent +ellps=GRS80 +units=m +no_defs", # ETRF96
+  7928 => "+proj=geocent +ellps=GRS80 +units=m +no_defs", # ETRF97
+  7930 => "+proj=geocent +ellps=GRS80 +units=m +no_defs", # ETRF2000
+  8084 => "+proj=geocent +ellps=GRS80 +units=m +no_defs", # ISN2016
+  8227 => "+proj=geocent +ellps=GRS80 +units=m +no_defs", # IGS14
+  8230 => "+proj=geocent +ellps=GRS80 +units=m +no_defs", # NAD83(CSRS96)
+  8233 => "+proj=geocent +ellps=GRS80 +units=m +no_defs", # NAD83(CSRS)v2
+  8238 => "+proj=geocent +ellps=GRS80 +units=m +no_defs", # NAD83(CSRS)v3
+  8242 => "+proj=geocent +ellps=GRS80 +units=m +no_defs", # NAD83(CSRS)v4
+  8247 => "+proj=geocent +ellps=GRS80 +units=m +no_defs", # NAD83(CSRS)v5
+  8250 => "+proj=geocent +ellps=GRS80 +units=m +no_defs", # NAD83(CSRS)v6
+  8253 => "+proj=geocent +ellps=GRS80 +units=m +no_defs", # NAD83(CSRS)v7
   3901 => "+proj=tmerc +lat_0=0 +lon_0=27 +k=1 +x_0=3500000 +y_0=0 +ellps=intl +towgs84=-96.062,-82.428,-121.753,4.801,0.345,-1.376,1.496 +units=m +vunits=m +no_defs", # KKJ / Finland Uniform Coordinate System + N60 height
   3902 => "+proj=utm +zone=35 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +vunits=m +no_defs", # ETRS89 / TM35FIN(N,E) + N60 height
   3903 => "+proj=utm +zone=35 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +vunits=m +no_defs", # ETRS89 / TM35FIN(N,E) + N2000 height
@@ -5425,14 +5735,14 @@ epsg = Dict(
   7405 => "+proj=tmerc +lat_0=49 +lon_0=-2 +k=0.9996012717 +x_0=400000 +y_0=-100000 +datum=OSGB36 +units=m +vunits=m +no_defs", # OSGB 1936 / British National Grid + ODN height
   7406 => "+proj=longlat +datum=NAD27 +vunits=us-ft +no_defs", # NAD27 + NGVD29 height
   7407 => "+proj=lcc +lat_1=34.65 +lat_2=36.18333333333333 +lat_0=34 +lon_0=-101.5 +x_0=609601.2192024384 +y_0=0 +datum=NAD27 +units=us-ft +vunits=us-ft +no_defs", # NAD27 / Texas North + NGVD29 height
-  7408 => "+proj=longlat +ellps=bessel +towgs84=565.4171,50.3319,465.5524,-0.398957,0.343988,-1.87740,4.0725 +vunits=m +no_defs", # RD/NAP
+  7408 => "+proj=longlat +ellps=bessel +towgs84=565.2369,50.0087,465.658,-0.406857,0.350733,-1.87035,4.0812 +vunits=m +no_defs", # RD/NAP
   7409 => "+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +vunits=m +no_defs", # ETRS89 + EVRF2000 height
   7410 => "+proj=longlat +ellps=clrk80 +towgs84=-180.624,-225.516,173.919,-0.81,-1.898,8.336,16.71006 +vunits=m +no_defs", # PSHD93
   7411 => "+proj=lcc +lat_1=46.8 +lat_0=46.8 +lon_0=0 +k_0=0.99987742 +x_0=600000 +y_0=2200000 +a=6378249.2 +b=6356515 +towgs84=-168,-60,320,0,0,0,0 +pm=paris +units=m +vunits=m +no_defs", # NTF (Paris) / Lambert zone II + NGF Lallemand height
   7412 => "+proj=lcc +lat_1=46.8 +lat_0=46.8 +lon_0=0 +k_0=0.99987742 +x_0=600000 +y_0=2200000 +a=6378249.2 +b=6356515 +towgs84=-168,-60,320,0,0,0,0 +pm=paris +units=m +vunits=m +no_defs", # NTF (Paris) / Lambert zone II + NGF IGN69
   7413 => "+proj=lcc +lat_1=44.10000000000001 +lat_0=44.10000000000001 +lon_0=0 +k_0=0.999877499 +x_0=600000 +y_0=3200000 +a=6378249.2 +b=6356515 +towgs84=-168,-60,320,0,0,0,0 +pm=paris +units=m +vunits=m +no_defs", # NTF (Paris) / Lambert zone III + NGF IGN69
   7414 => "+proj=longlat +ellps=bessel +towgs84=-146.414,507.337,680.507,0,0,0,0 +vunits=m +no_defs", # Tokyo + JSLD69 height
-  7415 => "+proj=sterea +lat_0=52.15616055555555 +lon_0=5.38763888888889 +k=0.9999079 +x_0=155000 +y_0=463000 +ellps=bessel +towgs84=565.4171,50.3319,465.5524,-0.398957,0.343988,-1.87740,4.0725 +units=m +vunits=m +no_defs", # Amersfoort / RD New + NAP height
+  7415 => "+proj=sterea +lat_0=52.15616055555555 +lon_0=5.38763888888889 +k=0.9999079 +x_0=155000 +y_0=463000 +ellps=bessel +towgs84=565.2369,50.0087,465.658,-0.406857,0.350733,-1.87035,4.0812 +units=m +vunits=m +no_defs", # Amersfoort / RD New + NAP height
   7416 => "+proj=utm +zone=32 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +vunits=m +no_defs", # ETRS89 / UTM zone 32N + DVR90 height
   7417 => "+proj=utm +zone=33 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +vunits=m +no_defs", # ETRS89 / UTM zone 33N + DVR90 height
   7418 => "+proj=tmerc +lat_0=0 +lon_0=9.5 +k=0.99995 +x_0=200000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +vunits=m +no_defs", # ETRS89 / Kp2000 Jutland + DVR90 height
@@ -5441,2962 +5751,2967 @@ epsg = Dict(
   7421 => "+proj=lcc +lat_1=46.8 +lat_0=46.8 +lon_0=0 +k_0=0.99987742 +x_0=600000 +y_0=2200000 +a=6378249.2 +b=6356515 +towgs84=-168,-60,320,0,0,0,0 +pm=paris +units=m +vunits=m +no_defs", # NTF (Paris) / Lambert zone II + NGF-IGN69 height
   7422 => "+proj=lcc +lat_1=44.10000000000001 +lat_0=44.10000000000001 +lon_0=0 +k_0=0.999877499 +x_0=600000 +y_0=3200000 +a=6378249.2 +b=6356515 +towgs84=-168,-60,320,0,0,0,0 +pm=paris +units=m +vunits=m +no_defs", # NTF (Paris) / Lambert zone III + NGF-IGN69 height
   7423 => "+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +vunits=m +no_defs", # ETRS89 + EVRF2007 height
+  7954 => "+proj=utm +zone=30 +south +ellps=intl +towgs84=-320,550,-494,0,0,0,0 +units=m +vunits=m +no_defs", # Astro DOS 71 / UTM zone 30S + Jamestown 1971 height
+  7955 => "+proj=utm +zone=30 +south +ellps=WGS84 +towgs84=-0.077,0.079,0.086,0,0,0,0 +units=m +vunits=m +no_defs", # St. Helena Tritan / UTM zone 30S +  Tritan 2011 height
+  7956 => "+proj=utm +zone=30 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +vunits=m +no_defs", # SHMG2015 +  SHVD2015 height
+  8349 => "+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +vunits=m +no_defs", # GR96 + GVR2000 height
+  8350 => "+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +vunits=m +no_defs", # GR96 + GVR2016 height
 )
 
 esri = Dict(
-  2000 => "+proj=tmerc +lat_0=0 +lon_0=-62 +k=0.999500 +x_0=400000 +y_0=0 +ellps=clrk80 +units=m +no_defs  no_defs", # Anguilla 1957 / British West Indies Grid
-  2001 => "+proj=tmerc +lat_0=0 +lon_0=-62 +k=0.999500 +x_0=400000 +y_0=0 +ellps=clrk80 +towgs84=-255,-15,71,0,0,0,0 +units=m +no_defs  no_defs", # Antigua 1943 / British West Indies Grid
-  2002 => "+proj=tmerc +lat_0=0 +lon_0=-62 +k=0.999500 +x_0=400000 +y_0=0 +ellps=clrk80 +towgs84=725,685,536,0,0,0,0 +units=m +no_defs  no_defs", # Dominica 1945 / British West Indies Grid
-  2003 => "+proj=tmerc +lat_0=0 +lon_0=-62 +k=0.999500 +x_0=400000 +y_0=0 +ellps=clrk80 +towgs84=72,213.7,93,0,0,0,0 +units=m +no_defs  no_defs", # Grenada 1953 / British West Indies Grid
-  2004 => "+proj=tmerc +lat_0=0 +lon_0=-62 +k=0.999500 +x_0=400000 +y_0=0 +ellps=clrk80 +towgs84=174,359,365,0,0,0,0 +units=m +no_defs  no_defs", # Montserrat 58 / British West Indies Grid
-  2005 => "+proj=tmerc +lat_0=0 +lon_0=-62 +k=0.999500 +x_0=400000 +y_0=0 +ellps=clrk80 +towgs84=9,183,236,0,0,0,0 +units=m +no_defs  no_defs", # St Kitts 1955 / British West Indies Grid
-  2006 => "+proj=tmerc +lat_0=0 +lon_0=-62 +k=0.999500 +x_0=400000 +y_0=0 +ellps=clrk80 +towgs84=-149,128,296,0,0,0,0 +units=m +no_defs  no_defs", # St Lucia 1955 / British West Indies Grid
-  2007 => "+proj=tmerc +lat_0=0 +lon_0=-62 +k=0.999500 +x_0=400000 +y_0=0 +ellps=clrk80 +units=m +no_defs  no_defs", # St Vincent 45 / British West Indies Grid
-  2008 => "+proj=tmerc +lat_0=0 +lon_0=-55.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=clrk66 +units=m +no_defs  no_defs", # NAD27(CGQ77) / SCoPQ zone 2
-  2009 => "+proj=tmerc +lat_0=0 +lon_0=-58.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=clrk66 +units=m +no_defs  no_defs", # NAD27(CGQ77) / SCoPQ zone 3
-  2010 => "+proj=tmerc +lat_0=0 +lon_0=-61.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=clrk66 +units=m +no_defs  no_defs", # NAD27(CGQ77) / SCoPQ zone 4
-  2011 => "+proj=tmerc +lat_0=0 +lon_0=-64.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=clrk66 +units=m +no_defs  no_defs", # NAD27(CGQ77) / SCoPQ zone 5
-  2012 => "+proj=tmerc +lat_0=0 +lon_0=-67.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=clrk66 +units=m +no_defs  no_defs", # NAD27(CGQ77) / SCoPQ zone 6
-  2013 => "+proj=tmerc +lat_0=0 +lon_0=-70.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=clrk66 +units=m +no_defs  no_defs", # NAD27(CGQ77) / SCoPQ zone 7
-  2014 => "+proj=tmerc +lat_0=0 +lon_0=-73.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=clrk66 +units=m +no_defs  no_defs", # NAD27(CGQ77) / SCoPQ zone 8
-  2015 => "+proj=tmerc +lat_0=0 +lon_0=-76.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=clrk66 +units=m +no_defs  no_defs", # NAD27(CGQ77) / SCoPQ zone 9
-  2016 => "+proj=tmerc +lat_0=0 +lon_0=-79.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=clrk66 +units=m +no_defs  no_defs", # NAD27(CGQ77) / SCoPQ zone 10
-  2017 => "+proj=tmerc +lat_0=0 +lon_0=-73.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=clrk66 +units=m +no_defs  no_defs", # NAD27(76) / MTM zone 8
-  2018 => "+proj=tmerc +lat_0=0 +lon_0=-76.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=clrk66 +units=m +no_defs  no_defs", # NAD27(76) / MTM zone 9
-  2019 => "+proj=tmerc +lat_0=0 +lon_0=-79.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=clrk66 +units=m +no_defs  no_defs", # NAD27(76) / MTM zone 10
-  2020 => "+proj=tmerc +lat_0=0 +lon_0=-82.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=clrk66 +units=m +no_defs  no_defs", # NAD27(76) / MTM zone 11
-  2021 => "+proj=tmerc +lat_0=0 +lon_0=-81 +k=0.999900 +x_0=304800 +y_0=0 +ellps=clrk66 +units=m +no_defs  no_defs", # NAD27(76) / MTM zone 12
-  2022 => "+proj=tmerc +lat_0=0 +lon_0=-84 +k=0.999900 +x_0=304800 +y_0=0 +ellps=clrk66 +units=m +no_defs  no_defs", # NAD27(76) / MTM zone 13
-  2023 => "+proj=tmerc +lat_0=0 +lon_0=-87 +k=0.999900 +x_0=304800 +y_0=0 +ellps=clrk66 +units=m +no_defs  no_defs", # NAD27(76) / MTM zone 14
-  2024 => "+proj=tmerc +lat_0=0 +lon_0=-90 +k=0.999900 +x_0=304800 +y_0=0 +ellps=clrk66 +units=m +no_defs  no_defs", # NAD27(76) / MTM zone 15
-  2025 => "+proj=tmerc +lat_0=0 +lon_0=-93 +k=0.999900 +x_0=304800 +y_0=0 +ellps=clrk66 +units=m +no_defs  no_defs", # NAD27(76) / MTM zone 16
-  2026 => "+proj=tmerc +lat_0=0 +lon_0=-96 +k=0.999900 +x_0=304800 +y_0=0 +ellps=clrk66 +units=m +no_defs  no_defs", # NAD27(76) / MTM zone 17
-  2027 => "+proj=utm +zone=15 +ellps=clrk66 +units=m +no_defs  no_defs", # NAD27(76) / UTM zone 15N
-  2028 => "+proj=utm +zone=16 +ellps=clrk66 +units=m +no_defs  no_defs", # NAD27(76) / UTM zone 16N
-  2029 => "+proj=utm +zone=17 +ellps=clrk66 +units=m +no_defs  no_defs", # NAD27(76) / UTM zone 17N
-  2030 => "+proj=utm +zone=18 +ellps=clrk66 +units=m +no_defs  no_defs", # NAD27(76) / UTM zone 18N
-  2031 => "+proj=utm +zone=17 +ellps=clrk66 +units=m +no_defs  no_defs", # NAD27(CGQ77) / UTM zone 17N
-  2032 => "+proj=utm +zone=18 +ellps=clrk66 +units=m +no_defs  no_defs", # NAD27(CGQ77) / UTM zone 18N
-  2033 => "+proj=utm +zone=19 +ellps=clrk66 +units=m +no_defs  no_defs", # NAD27(CGQ77) / UTM zone 19N
-  2034 => "+proj=utm +zone=20 +ellps=clrk66 +units=m +no_defs  no_defs", # NAD27(CGQ77) / UTM zone 20N
-  2035 => "+proj=utm +zone=21 +ellps=clrk66 +units=m +no_defs  no_defs", # NAD27(CGQ77) / UTM zone 21N
-  2036 => "+proj=stere +lat_0=46.5 +lon_0=-66.5 +k=0.999912 +x_0=2500000 +y_0=7500000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(CSRS98) / New Brunswick Stereo
-  2037 => "+proj=utm +zone=19 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(CSRS98) / UTM zone 19N
-  2038 => "+proj=utm +zone=20 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(CSRS98) / UTM zone 20N
-  2039 => "+proj=tmerc +lat_0=31.73439361111111 +lon_0=35.20451694444445 +k=1.000007 +x_0=219529.584 +y_0=626907.39 +ellps=GRS80 +units=m +no_defs  no_defs", # Israel / Israeli TM Grid
-  2040 => "+proj=utm +zone=30 +ellps=clrk80 +towgs84=-125,53,467,0,0,0,0 +units=m +no_defs  no_defs", # Locodjo 1965 / UTM zone 30N
-  2041 => "+proj=utm +zone=30 +ellps=clrk80 +towgs84=-124.76,53,466.79,0,0,0,0 +units=m +no_defs  no_defs", # Abidjan 1987 / UTM zone 30N
-  2042 => "+proj=utm +zone=29 +ellps=clrk80 +towgs84=-125,53,467,0,0,0,0 +units=m +no_defs  no_defs", # Locodjo 1965 / UTM zone 29N
-  2043 => "+proj=utm +zone=29 +ellps=clrk80 +towgs84=-124.76,53,466.79,0,0,0,0 +units=m +no_defs  no_defs", # Abidjan 1987 / UTM zone 29N
-  2044 => "+proj=tmerc +lat_0=0 +lon_0=105 +k=1.000000 +x_0=18500000 +y_0=0 +ellps=krass +towgs84=-17.51,-108.32,-62.39,0,0,0,0 +units=m +no_defs  no_defs", # Hanoi 1972 / Gauss-Kruger zone 18
-  2045 => "+proj=tmerc +lat_0=0 +lon_0=111 +k=1.000000 +x_0=19500000 +y_0=0 +ellps=krass +towgs84=-17.51,-108.32,-62.39,0,0,0,0 +units=m +no_defs  no_defs", # Hanoi 1972 / Gauss-Kruger zone 19
-  2056 => "+proj=omerc +lat_0=46.95240555555556 +lonc=7.439583333333333 +alpha=90 +k=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs  no_defs", # CH1903+ / LV95
-  2057 => "+proj=omerc +lat_0=27.51882880555555 +lonc=52.60353916666667 +alpha=0.5716611944444444 +k=0.999895934 +x_0=658377.437 +y_0=3044969.194 +ellps=intl +towgs84=-133.63,-157.5,-158.62,0,0,0,0 +units=m +no_defs  no_defs", # Rassadiran / Nakhl e Taqi
-  2058 => "+proj=utm +zone=38 +ellps=intl +units=m +no_defs  no_defs", # ED50(ED77) / UTM zone 38N
-  2059 => "+proj=utm +zone=39 +ellps=intl +units=m +no_defs  no_defs", # ED50(ED77) / UTM zone 39N
-  2060 => "+proj=utm +zone=40 +ellps=intl +units=m +no_defs  no_defs", # ED50(ED77) / UTM zone 40N
-  2061 => "+proj=utm +zone=41 +ellps=intl +units=m +no_defs  no_defs", # ED50(ED77) / UTM zone 41N
-  2062 => "+proj=lcc +lat_1=40 +lat_0=40 +lon_0=-3.687938888888889 +k_0=0.9988085293 +x_0=600000 +y_0=600000 +a=6378298.3 +b=6356657.142669562 +pm=madrid +units=m +no_defs  no_defs", # Madrid 1870 (Madrid) / Spain
-  2063 => "+proj=utm +zone=28 +a=6378249.2 +b=6356515 +towgs84=-23,259,-9,0,0,0,0 +units=m +no_defs  no_defs", # Dabola 1981 / UTM zone 28N
-  2064 => "+proj=utm +zone=29 +a=6378249.2 +b=6356515 +towgs84=-23,259,-9,0,0,0,0 +units=m +no_defs  no_defs", # Dabola 1981 / UTM zone 29N
-  2065 => "+proj=krovak +lat_0=49.5 +lon_0=24.83333333333333 +alpha=30.28813972222222 +k=0.9999 +x_0=0 +y_0=0 +ellps=bessel +pm=ferro +units=m +no_defs  no_defs", # S-JTSK (Ferro) / Krovak
-  2066 => "+proj=cass +lat_0=11.25217861111111 +lon_0=-60.68600888888889 +x_0=37718.66154375 +y_0=36209.915082 +a=6378293.63683822 +b=6356617.979337744 +to_meter=0.2011661949 +no_defs  no_defs", # Mount Dillon / Tobago Grid
-  2067 => "+proj=utm +zone=20 +ellps=intl +units=m +no_defs  no_defs", # Naparima 1955 / UTM zone 20N
-  2068 => "+proj=tmerc +lat_0=0 +lon_0=9 +k=0.999900 +x_0=200000 +y_0=0 +ellps=intl +units=m +no_defs  no_defs", # ELD79 / Libya zone 5
-  2069 => "+proj=tmerc +lat_0=0 +lon_0=11 +k=0.999900 +x_0=200000 +y_0=0 +ellps=intl +units=m +no_defs  no_defs", # ELD79 / Libya zone 6
-  2070 => "+proj=tmerc +lat_0=0 +lon_0=13 +k=0.999900 +x_0=200000 +y_0=0 +ellps=intl +units=m +no_defs  no_defs", # ELD79 / Libya zone 7
-  2071 => "+proj=tmerc +lat_0=0 +lon_0=15 +k=0.999900 +x_0=200000 +y_0=0 +ellps=intl +units=m +no_defs  no_defs", # ELD79 / Libya zone 8
-  2072 => "+proj=tmerc +lat_0=0 +lon_0=17 +k=0.999900 +x_0=200000 +y_0=0 +ellps=intl +units=m +no_defs  no_defs", # ELD79 / Libya zone 9
-  2073 => "+proj=tmerc +lat_0=0 +lon_0=19 +k=0.999900 +x_0=200000 +y_0=0 +ellps=intl +units=m +no_defs  no_defs", # ELD79 / Libya zone 10
-  2074 => "+proj=tmerc +lat_0=0 +lon_0=21 +k=0.999900 +x_0=200000 +y_0=0 +ellps=intl +units=m +no_defs  no_defs", # ELD79 / Libya zone 11
-  2075 => "+proj=tmerc +lat_0=0 +lon_0=23 +k=0.999900 +x_0=200000 +y_0=0 +ellps=intl +units=m +no_defs  no_defs", # ELD79 / Libya zone 12
-  2076 => "+proj=tmerc +lat_0=0 +lon_0=25 +k=0.999900 +x_0=200000 +y_0=0 +ellps=intl +units=m +no_defs  no_defs", # ELD79 / Libya zone 13
-  2077 => "+proj=utm +zone=32 +ellps=intl +units=m +no_defs  no_defs", # ELD79 / UTM zone 32N
-  2078 => "+proj=utm +zone=33 +ellps=intl +units=m +no_defs  no_defs", # ELD79 / UTM zone 33N
-  2079 => "+proj=utm +zone=34 +ellps=intl +units=m +no_defs  no_defs", # ELD79 / UTM zone 34N
-  2080 => "+proj=utm +zone=35 +ellps=intl +units=m +no_defs  no_defs", # ELD79 / UTM zone 35N
-  2081 => "+proj=tmerc +lat_0=-90 +lon_0=-69 +k=1.000000 +x_0=2500000 +y_0=0 +ellps=intl +units=m +no_defs  no_defs", # Chos Malal 1914 / Argentina zone 2
-  2082 => "+proj=tmerc +lat_0=-90 +lon_0=-69 +k=1.000000 +x_0=2500000 +y_0=0 +ellps=intl +units=m +no_defs  no_defs", # Pampa del Castillo / Argentina zone 2
-  2083 => "+proj=tmerc +lat_0=-90 +lon_0=-69 +k=1.000000 +x_0=2500000 +y_0=0 +ellps=intl +towgs84=18.38,192.45,96.82,0.056,-0.142,-0.2,-0.0013 +units=m +no_defs  no_defs", # Hito XVIII 1963 / Argentina zone 2
-  2084 => "+proj=utm +zone=19 +south +ellps=intl +towgs84=18.38,192.45,96.82,0.056,-0.142,-0.2,-0.0013 +units=m +no_defs  no_defs", # Hito XVIII 1963 / UTM zone 19S
-  2085 => "+proj=lcc +lat_1=22.35 +lat_0=22.35 +lon_0=-81 +k_0=0.99993602 +x_0=500000 +y_0=280296.016 +ellps=clrk66 +datum=NAD27 +units=m +no_defs  no_defs", # NAD27 / Cuba Norte
-  2086 => "+proj=lcc +lat_1=20.71666666666667 +lat_0=20.71666666666667 +lon_0=-76.83333333333333 +k_0=0.99994848 +x_0=500000 +y_0=229126.939 +ellps=clrk66 +datum=NAD27 +units=m +no_defs  no_defs", # NAD27 / Cuba Sur
-  2087 => "+proj=tmerc +lat_0=0 +lon_0=12 +k=0.999600 +x_0=500000 +y_0=0 +ellps=intl +units=m +no_defs  no_defs", # ELD79 / TM 12 NE
-  2088 => "+proj=tmerc +lat_0=0 +lon_0=11 +k=0.999600 +x_0=500000 +y_0=0 +a=6378249.2 +b=6356515 +units=m +no_defs  no_defs", # Carthage / TM 11 NE
-  2089 => "+proj=utm +zone=38 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # Yemen NGN96 / UTM zone 38N
-  2090 => "+proj=utm +zone=39 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # Yemen NGN96 / UTM zone 39N
-  2091 => "+proj=tmerc +lat_0=0 +lon_0=45 +k=1.000000 +x_0=8500000 +y_0=0 +ellps=krass +towgs84=-76,-138,67,0,0,0,0 +units=m +no_defs  no_defs", # South Yemen / Gauss Kruger zone 8
-  2092 => "+proj=tmerc +lat_0=0 +lon_0=51 +k=1.000000 +x_0=9500000 +y_0=0 +ellps=krass +towgs84=-76,-138,67,0,0,0,0 +units=m +no_defs  no_defs", # South Yemen / Gauss Kruger zone 9
-  2093 => "+proj=tmerc +lat_0=0 +lon_0=106 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +towgs84=-17.51,-108.32,-62.39,0,0,0,0 +units=m +no_defs  no_defs", # Hanoi 1972 / GK 106 NE
-  2094 => "+proj=tmerc +lat_0=0 +lon_0=106 +k=0.999600 +x_0=500000 +y_0=0 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / TM 106 NE
-  2095 => "+proj=utm +zone=28 +ellps=intl +towgs84=-173,253,27,0,0,0,0 +units=m +no_defs  no_defs", # Bissau / UTM zone 28N
-  2096 => "+proj=tmerc +lat_0=38 +lon_0=129 +k=1.000000 +x_0=200000 +y_0=500000 +ellps=bessel +units=m +no_defs  no_defs", # Korean 1985 / Korea East Belt
-  2097 => "+proj=tmerc +lat_0=38 +lon_0=127 +k=1.000000 +x_0=200000 +y_0=500000 +ellps=bessel +units=m +no_defs  no_defs", # Korean 1985 / Korea Central Belt
-  2098 => "+proj=tmerc +lat_0=38 +lon_0=125 +k=1.000000 +x_0=200000 +y_0=500000 +ellps=bessel +units=m +no_defs  no_defs", # Korean 1985 / Korea West Belt
-  2099 => "+proj=cass +lat_0=25.38236111111111 +lon_0=50.76138888888889 +x_0=100000 +y_0=100000 +ellps=helmert +units=m +no_defs  no_defs", # Qatar 1948 / Qatar Grid
-  2100 => "+proj=tmerc +lat_0=0 +lon_0=24 +k=0.999600 +x_0=500000 +y_0=0 +ellps=GRS80 +towgs84=-199.87,74.79,246.62,0,0,0,0 +units=m +no_defs  no_defs", # GGRS87 / Greek Grid
-  2101 => "+proj=lcc +lat_1=10.16666666666667 +lat_0=10.16666666666667 +lon_0=-71.60561777777777 +k_0=1 +x_0=0 +y_0=-52684.972 +ellps=intl +units=m +no_defs  no_defs", # Lake / Maracaibo Grid M1
-  2102 => "+proj=lcc +lat_1=10.16666666666667 +lat_0=10.16666666666667 +lon_0=-71.60561777777777 +k_0=1 +x_0=200000 +y_0=147315.028 +ellps=intl +units=m +no_defs  no_defs", # Lake / Maracaibo Grid
-  2103 => "+proj=lcc +lat_1=10.16666666666667 +lat_0=10.16666666666667 +lon_0=-71.60561777777777 +k_0=1 +x_0=500000 +y_0=447315.028 +ellps=intl +units=m +no_defs  no_defs", # Lake / Maracaibo Grid M3
-  2104 => "+proj=lcc +lat_1=10.16666666666667 +lat_0=10.16666666666667 +lon_0=-71.60561777777777 +k_0=1 +x_0=-17044 +y_0=-23139.97 +ellps=intl +units=m +no_defs  no_defs", # Lake / Maracaibo La Rosa Grid
-  2105 => "+proj=tmerc +lat_0=-36.87972222222222 +lon_0=174.7641666666667 +k=0.999900 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NZGD2000 / Mount Eden Circuit 2000
-  2106 => "+proj=tmerc +lat_0=-37.76111111111111 +lon_0=176.4661111111111 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NZGD2000 / Bay of Plenty Circuit 2000
-  2107 => "+proj=tmerc +lat_0=-38.62444444444444 +lon_0=177.8855555555556 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NZGD2000 / Poverty Bay Circuit 2000
-  2108 => "+proj=tmerc +lat_0=-39.65083333333333 +lon_0=176.6736111111111 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NZGD2000 / Hawkes Bay Circuit 2000
-  2109 => "+proj=tmerc +lat_0=-39.13555555555556 +lon_0=174.2277777777778 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NZGD2000 / Taranaki Circuit 2000
-  2110 => "+proj=tmerc +lat_0=-39.51222222222222 +lon_0=175.64 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NZGD2000 / Tuhirangi Circuit 2000
-  2111 => "+proj=tmerc +lat_0=-40.24194444444444 +lon_0=175.4880555555555 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NZGD2000 / Wanganui Circuit 2000
-  2112 => "+proj=tmerc +lat_0=-40.92527777777777 +lon_0=175.6472222222222 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NZGD2000 / Wairarapa Circuit 2000
-  2113 => "+proj=tmerc +lat_0=-41.3011111111111 +lon_0=174.7763888888889 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NZGD2000 / Wellington Circuit 2000
-  2114 => "+proj=tmerc +lat_0=-40.71472222222223 +lon_0=172.6719444444444 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NZGD2000 / Collingwood Circuit 2000
-  2115 => "+proj=tmerc +lat_0=-41.27444444444444 +lon_0=173.2991666666667 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NZGD2000 / Nelson Circuit 2000
-  2116 => "+proj=tmerc +lat_0=-41.28972222222222 +lon_0=172.1088888888889 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NZGD2000 / Karamea Circuit 2000
-  2117 => "+proj=tmerc +lat_0=-41.81055555555555 +lon_0=171.5811111111111 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NZGD2000 / Buller Circuit 2000
-  2118 => "+proj=tmerc +lat_0=-42.33361111111111 +lon_0=171.5497222222222 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NZGD2000 / Grey Circuit 2000
-  2119 => "+proj=tmerc +lat_0=-42.68888888888888 +lon_0=173.01 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NZGD2000 / Amuri Circuit 2000
-  2120 => "+proj=tmerc +lat_0=-41.54444444444444 +lon_0=173.8019444444444 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NZGD2000 / Marlborough Circuit 2000
-  2121 => "+proj=tmerc +lat_0=-42.88611111111111 +lon_0=170.9797222222222 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NZGD2000 / Hokitika Circuit 2000
-  2122 => "+proj=tmerc +lat_0=-43.11 +lon_0=170.2608333333333 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NZGD2000 / Okarito Circuit 2000
-  2123 => "+proj=tmerc +lat_0=-43.97777777777778 +lon_0=168.6061111111111 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NZGD2000 / Jacksons Bay Circuit 2000
-  2124 => "+proj=tmerc +lat_0=-43.59055555555556 +lon_0=172.7269444444445 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NZGD2000 / Mount Pleasant Circuit 2000
-  2125 => "+proj=tmerc +lat_0=-43.74861111111111 +lon_0=171.3605555555555 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NZGD2000 / Gawler Circuit 2000
-  2126 => "+proj=tmerc +lat_0=-44.40194444444445 +lon_0=171.0572222222222 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NZGD2000 / Timaru Circuit 2000
-  2127 => "+proj=tmerc +lat_0=-44.735 +lon_0=169.4675 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NZGD2000 / Lindis Peak Circuit 2000
-  2128 => "+proj=tmerc +lat_0=-45.13277777777778 +lon_0=168.3986111111111 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NZGD2000 / Mount Nicholas Circuit 2000
-  2129 => "+proj=tmerc +lat_0=-45.56361111111111 +lon_0=167.7386111111111 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NZGD2000 / Mount York Circuit 2000
-  2130 => "+proj=tmerc +lat_0=-45.81611111111111 +lon_0=170.6283333333333 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NZGD2000 / Observation Point Circuit 2000
-  2131 => "+proj=tmerc +lat_0=-45.86138888888889 +lon_0=170.2825 +k=0.999960 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NZGD2000 / North Taieri Circuit 2000
-  2132 => "+proj=tmerc +lat_0=-46.6 +lon_0=168.3427777777778 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NZGD2000 / Bluff Circuit 2000
-  2133 => "+proj=utm +zone=58 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NZGD2000 / UTM zone 58S
-  2134 => "+proj=utm +zone=59 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NZGD2000 / UTM zone 59S
-  2135 => "+proj=utm +zone=60 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NZGD2000 / UTM zone 60S
-  2136 => "+proj=tmerc +lat_0=4.666666666666667 +lon_0=-1 +k=0.999750 +x_0=274319.7391633579 +y_0=0 +a=6378300 +b=6356751.689189189 +towgs84=-199,32,322,0,0,0,0 +to_meter=0.3047997101815088 +no_defs  no_defs", # Accra / Ghana National Grid
-  2137 => "+proj=tmerc +lat_0=0 +lon_0=-1 +k=0.999600 +x_0=500000 +y_0=0 +a=6378300 +b=6356751.689189189 +towgs84=-199,32,322,0,0,0,0 +units=m +no_defs  no_defs", # Accra / TM 1 NW
-  2138 => "+proj=lcc +lat_1=60 +lat_2=46 +lat_0=44 +lon_0=-68.5 +x_0=0 +y_0=0 +ellps=clrk66 +units=m +no_defs  no_defs", # NAD27(CGQ77) / Quebec Lambert
-  2139 => "+proj=tmerc +lat_0=0 +lon_0=-55.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(CSRS98) / SCoPQ zone 2
-  2140 => "+proj=tmerc +lat_0=0 +lon_0=-58.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(CSRS98) / MTM zone 3
-  2141 => "+proj=tmerc +lat_0=0 +lon_0=-61.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(CSRS98) / MTM zone 4
-  2142 => "+proj=tmerc +lat_0=0 +lon_0=-64.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(CSRS98) / MTM zone 5
-  2143 => "+proj=tmerc +lat_0=0 +lon_0=-67.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(CSRS98) / MTM zone 6
-  2144 => "+proj=tmerc +lat_0=0 +lon_0=-70.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(CSRS98) / MTM zone 7
-  2145 => "+proj=tmerc +lat_0=0 +lon_0=-73.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(CSRS98) / MTM zone 8
-  2146 => "+proj=tmerc +lat_0=0 +lon_0=-76.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(CSRS98) / MTM zone 9
-  2147 => "+proj=tmerc +lat_0=0 +lon_0=-79.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(CSRS98) / MTM zone 10
-  2148 => "+proj=utm +zone=21 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(CSRS98) / UTM zone 21N
-  2149 => "+proj=utm +zone=18 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(CSRS98) / UTM zone 18N
-  2150 => "+proj=utm +zone=17 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(CSRS98) / UTM zone 17N
-  2151 => "+proj=utm +zone=13 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(CSRS98) / UTM zone 13N
-  2152 => "+proj=utm +zone=12 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(CSRS98) / UTM zone 12N
-  2153 => "+proj=utm +zone=11 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(CSRS98) / UTM zone 11N
-  2154 => "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # RGF93 / Lambert-93
-  2155 => "+proj=lcc +lat_1=-14.26666666666667 +lat_0=-14.26666666666667 +lon_0=170 +k_0=1 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +towgs84=-115,118,426,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # American Samoa 1962 / American Samoa Lambert
-  2156 => "+proj=utm +zone=59 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / UTM zone 59S
-  2157 => "+proj=tmerc +lat_0=53.5 +lon_0=-8 +k=0.999820 +x_0=600000 +y_0=750000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # IRENET95 / Irish Transverse Mercator
-  2158 => "+proj=utm +zone=29 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # IRENET95 / UTM zone 29N
-  2159 => "+proj=tmerc +lat_0=6.666666666666667 +lon_0=-12 +k=1.000000 +x_0=152399.8550907544 +y_0=0 +a=6378300 +b=6356751.689189189 +to_meter=0.3047997101815088 +no_defs  no_defs", # Sierra Leone 1924 / New Colony Grid
-  2160 => "+proj=tmerc +lat_0=6.666666666666667 +lon_0=-12 +k=1.000000 +x_0=243839.7681452071 +y_0=182879.8261089053 +a=6378300 +b=6356751.689189189 +to_meter=0.3047997101815088 +no_defs  no_defs", # Sierra Leone 1924 / New War Office Grid
-  2161 => "+proj=utm +zone=28 +ellps=clrk80 +towgs84=-88,4,101,0,0,0,0 +units=m +no_defs  no_defs", # Sierra Leone 1968 / UTM zone 28N
-  2162 => "+proj=utm +zone=29 +ellps=clrk80 +towgs84=-88,4,101,0,0,0,0 +units=m +no_defs  no_defs", # Sierra Leone 1968 / UTM zone 29N
-  2163 => "+proj=laea +lat_0=45 +lon_0=-100 +x_0=0 +y_0=0 +a=6370997 +b=6370997 +units=m +no_defs  no_defs", # US National Atlas Equal Area
-  2164 => "+proj=tmerc +lat_0=0 +lon_0=-5 +k=0.999600 +x_0=500000 +y_0=0 +ellps=clrk80 +towgs84=-125,53,467,0,0,0,0 +units=m +no_defs  no_defs", # Locodjo 1965 / TM 5 NW
-  2165 => "+proj=tmerc +lat_0=0 +lon_0=-5 +k=0.999600 +x_0=500000 +y_0=0 +ellps=clrk80 +towgs84=-124.76,53,466.79,0,0,0,0 +units=m +no_defs  no_defs", # Abidjan 1987 / TM 5 NW
-  2166 => "+proj=tmerc +lat_0=0 +lon_0=9 +k=1.000000 +x_0=3500000 +y_0=0 +ellps=krass +towgs84=24,-123,-94,0.02,-0.25,-0.13,1.1 +units=m +no_defs  no_defs", # Pulkovo 1942(83) / Gauss Kruger zone 3
-  2167 => "+proj=tmerc +lat_0=0 +lon_0=12 +k=1.000000 +x_0=4500000 +y_0=0 +ellps=krass +towgs84=24,-123,-94,0.02,-0.25,-0.13,1.1 +units=m +no_defs  no_defs", # Pulkovo 1942(83) / Gauss Kruger zone 4
-  2168 => "+proj=tmerc +lat_0=0 +lon_0=15 +k=1.000000 +x_0=5500000 +y_0=0 +ellps=krass +towgs84=24,-123,-94,0.02,-0.25,-0.13,1.1 +units=m +no_defs  no_defs", # Pulkovo 1942(83) / Gauss Kruger zone 5
-  2169 => "+proj=tmerc +lat_0=49.83333333333334 +lon_0=6.166666666666667 +k=1.000000 +x_0=80000 +y_0=100000 +ellps=intl +towgs84=-193,13.7,-39.3,-0.41,-2.933,2.688,0.43 +units=m +no_defs  no_defs", # Luxembourg 1930 / Gauss
-  2170 => "+proj=tmerc +lat_0=0 +lon_0=15 +k=0.999900 +x_0=500000 +y_0=0 +ellps=bessel +units=m +no_defs  no_defs", # MGI / Slovenia Grid
-  2171 => "+proj=stere +lat_0=50.625 +lon_0=21.08333333333333 +k=0.999800 +x_0=4637000 +y_0=5647000 +ellps=krass +towgs84=33.4,-146.6,-76.3,-0.359,-0.053,0.844,-0.84 +units=m +no_defs  no_defs", # Pulkovo 1942(58) / Poland zone I
-  2172 => "+proj=stere +lat_0=53.00194444444445 +lon_0=21.50277777777778 +k=0.999800 +x_0=4603000 +y_0=5806000 +ellps=krass +towgs84=33.4,-146.6,-76.3,-0.359,-0.053,0.844,-0.84 +units=m +no_defs  no_defs", # Pulkovo 1942(58) / Poland zone II
-  2173 => "+proj=stere +lat_0=53.58333333333334 +lon_0=17.00833333333333 +k=0.999800 +x_0=3501000 +y_0=5999000 +ellps=krass +towgs84=33.4,-146.6,-76.3,-0.359,-0.053,0.844,-0.84 +units=m +no_defs  no_defs", # Pulkovo 1942(58) / Poland zone III
-  2174 => "+proj=stere +lat_0=51.67083333333333 +lon_0=16.67222222222222 +k=0.999800 +x_0=3703000 +y_0=5627000 +ellps=krass +towgs84=33.4,-146.6,-76.3,-0.359,-0.053,0.844,-0.84 +units=m +no_defs  no_defs", # Pulkovo 1942(58) / Poland zone IV
-  2175 => "+proj=tmerc +lat_0=0 +lon_0=18.95833333333333 +k=0.999983 +x_0=237000 +y_0=-4700000 +ellps=krass +towgs84=33.4,-146.6,-76.3,-0.359,-0.053,0.844,-0.84 +units=m +no_defs  no_defs", # Pulkovo 1942(58) / Poland zone V
-  2176 => "+proj=tmerc +lat_0=0 +lon_0=15 +k=0.999923 +x_0=5500000 +y_0=0 +ellps=GRS80 +units=m +no_defs  no_defs", # ETRS89 / Poland CS2000 zone 5
-  2177 => "+proj=tmerc +lat_0=0 +lon_0=18 +k=0.999923 +x_0=6500000 +y_0=0 +ellps=GRS80 +units=m +no_defs  no_defs", # ETRS89 / Poland CS2000 zone 6
-  2178 => "+proj=tmerc +lat_0=0 +lon_0=21 +k=0.999923 +x_0=7500000 +y_0=0 +ellps=GRS80 +units=m +no_defs  no_defs", # ETRS89 / Poland CS2000 zone 7
-  2179 => "+proj=tmerc +lat_0=0 +lon_0=24 +k=0.999923 +x_0=8500000 +y_0=0 +ellps=GRS80 +units=m +no_defs  no_defs", # ETRS89 / Poland CS2000 zone 8
-  2180 => "+proj=tmerc +lat_0=0 +lon_0=19 +k=0.999300 +x_0=500000 +y_0=-5300000 +ellps=GRS80 +units=m +no_defs  no_defs", # ETRS89 / Poland CS92
-  2188 => "+proj=utm +zone=25 +ellps=intl +units=m +no_defs  no_defs", # Azores Occidental 1939 / UTM zone 25N
-  2189 => "+proj=utm +zone=26 +ellps=intl +units=m +no_defs  no_defs", # Azores Central 1948 / UTM zone 26N
-  2190 => "+proj=utm +zone=26 +ellps=intl +units=m +no_defs  no_defs", # Azores Oriental 1940 / UTM zone 26N
-  2191 => "+proj=utm +zone=28 +ellps=intl +units=m +no_defs  no_defs", # Madeira 1936 / UTM zone 28N
-  2192 => "+proj=lcc +lat_1=46.8 +lat_0=46.8 +lon_0=2.337229166666667 +k_0=0.99987742 +x_0=600000 +y_0=2200000 +ellps=intl +units=m +no_defs  no_defs", # ED50 / France EuroLambert
-  2193 => "+proj=tmerc +lat_0=0 +lon_0=173 +k=0.999600 +x_0=1600000 +y_0=10000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NZGD2000 / New Zealand Transverse Mercator
-  2194 => "+proj=lcc +lat_1=-14.26666666666667 +lat_0=-14.26666666666667 +lon_0=-170 +k_0=1 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +towgs84=-115,118,426,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # American Samoa 1962 / American Samoa Lambert
-  2195 => "+proj=utm +zone=2 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / UTM zone 2S
-  2196 => "+proj=tmerc +lat_0=0 +lon_0=9.5 +k=0.999950 +x_0=200000 +y_0=0 +ellps=GRS80 +units=m +no_defs  no_defs", # ETRS89 / Kp2000 Jutland
-  2197 => "+proj=tmerc +lat_0=0 +lon_0=12 +k=0.999950 +x_0=500000 +y_0=0 +ellps=GRS80 +units=m +no_defs  no_defs", # ETRS89 / Kp2000 Zealand
-  2198 => "+proj=tmerc +lat_0=0 +lon_0=15 +k=1.000000 +x_0=900000 +y_0=0 +ellps=GRS80 +units=m +no_defs  no_defs", # ETRS89 / Kp2000 Bornholm
-  2199 => "+proj=tmerc +lat_0=0 +lon_0=21 +k=1.000000 +x_0=4500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Albanian 1987 / Gauss Kruger zone 4
-  2200 => "+proj=stere +lat_0=46.5 +lon_0=-66.5 +k=0.999912 +x_0=300000 +y_0=800000 +a=6378135 +b=6356750.304921594 +units=m +no_defs  no_defs", # ATS77 / New Brunswick Stereographic (ATS77)
-  2201 => "+proj=utm +zone=18 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # REGVEN / UTM zone 18N
-  2202 => "+proj=utm +zone=19 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # REGVEN / UTM zone 19N
-  2203 => "+proj=utm +zone=20 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # REGVEN / UTM zone 20N
-  2204 => "+proj=lcc +lat_1=35.25 +lat_2=36.41666666666666 +lat_0=34.66666666666666 +lon_0=-86 +x_0=609601.2192024384 +y_0=30480.06096012192 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Tennessee
-  2205 => "+proj=lcc +lat_1=37.96666666666667 +lat_2=38.96666666666667 +lat_0=37.5 +lon_0=-84.25 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Kentucky North
-  2206 => "+proj=tmerc +lat_0=0 +lon_0=27 +k=1.000000 +x_0=9500000 +y_0=0 +ellps=intl +units=m +no_defs  no_defs", # ED50 / 3-degree Gauss-Kruger zone 9
-  2207 => "+proj=tmerc +lat_0=0 +lon_0=30 +k=1.000000 +x_0=10500000 +y_0=0 +ellps=intl +units=m +no_defs  no_defs", # ED50 / 3-degree Gauss-Kruger zone 10
-  2208 => "+proj=tmerc +lat_0=0 +lon_0=33 +k=1.000000 +x_0=11500000 +y_0=0 +ellps=intl +units=m +no_defs  no_defs", # ED50 / 3-degree Gauss-Kruger zone 11
-  2209 => "+proj=tmerc +lat_0=0 +lon_0=36 +k=1.000000 +x_0=12500000 +y_0=0 +ellps=intl +units=m +no_defs  no_defs", # ED50 / 3-degree Gauss-Kruger zone 12
-  2210 => "+proj=tmerc +lat_0=0 +lon_0=39 +k=1.000000 +x_0=13500000 +y_0=0 +ellps=intl +units=m +no_defs  no_defs", # ED50 / 3-degree Gauss-Kruger zone 13
-  2211 => "+proj=tmerc +lat_0=0 +lon_0=42 +k=1.000000 +x_0=14500000 +y_0=0 +ellps=intl +units=m +no_defs  no_defs", # ED50 / 3-degree Gauss-Kruger zone 14
-  2212 => "+proj=tmerc +lat_0=0 +lon_0=45 +k=1.000000 +x_0=15500000 +y_0=0 +ellps=intl +units=m +no_defs  no_defs", # ED50 / 3-degree Gauss-Kruger zone 15
-  2213 => "+proj=tmerc +lat_0=0 +lon_0=30 +k=0.999600 +x_0=500000 +y_0=0 +ellps=GRS80 +units=m +no_defs  no_defs", # ETRS89 / TM 30 NE
-  2214 => "+proj=tmerc +lat_0=0 +lon_0=10.5 +k=0.999000 +x_0=1000000 +y_0=1000000 +ellps=intl +units=m +no_defs  no_defs", # Douala 1948 / AOF west
-  2215 => "+proj=utm +zone=32 +a=6378249.2 +b=6356515 +towgs84=-70.9,-151.8,-41.4,0,0,0,0 +units=m +no_defs  no_defs", # Manoca 1962 / UTM zone 32N
-  2216 => "+proj=utm +zone=22 +ellps=intl +units=m +no_defs  no_defs", # Qornoq 1927 / UTM zone 22N
-  2217 => "+proj=utm +zone=23 +ellps=intl +units=m +no_defs  no_defs", # Qornoq 1927 / UTM zone 23N
-  2219 => "+proj=utm +zone=19 +a=6378135 +b=6356750.304921594 +units=m +no_defs  no_defs", # ATS77 / UTM zone 19N
-  2220 => "+proj=utm +zone=20 +a=6378135 +b=6356750.304921594 +units=m +no_defs  no_defs", # ATS77 / UTM zone 20N
-  2222 => "+proj=tmerc +lat_0=31 +lon_0=-110.1666666666667 +k=0.999900 +x_0=213360 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048 +no_defs  no_defs", # NAD83 / Arizona East (ft)
-  2223 => "+proj=tmerc +lat_0=31 +lon_0=-111.9166666666667 +k=0.999900 +x_0=213360 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048 +no_defs  no_defs", # NAD83 / Arizona Central (ft)
-  2224 => "+proj=tmerc +lat_0=31 +lon_0=-113.75 +k=0.999933 +x_0=213360 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048 +no_defs  no_defs", # NAD83 / Arizona West (ft)
-  2225 => "+proj=lcc +lat_1=41.66666666666666 +lat_2=40 +lat_0=39.33333333333334 +lon_0=-122 +x_0=2000000.0001016 +y_0=500000.0001016001 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / California zone 1 (ftUS)
-  2226 => "+proj=lcc +lat_1=39.83333333333334 +lat_2=38.33333333333334 +lat_0=37.66666666666666 +lon_0=-122 +x_0=2000000.0001016 +y_0=500000.0001016001 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / California zone 2 (ftUS)
-  2227 => "+proj=lcc +lat_1=38.43333333333333 +lat_2=37.06666666666667 +lat_0=36.5 +lon_0=-120.5 +x_0=2000000.0001016 +y_0=500000.0001016001 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / California zone 3 (ftUS)
-  2228 => "+proj=lcc +lat_1=37.25 +lat_2=36 +lat_0=35.33333333333334 +lon_0=-119 +x_0=2000000.0001016 +y_0=500000.0001016001 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / California zone 4 (ftUS)
-  2229 => "+proj=lcc +lat_1=35.46666666666667 +lat_2=34.03333333333333 +lat_0=33.5 +lon_0=-118 +x_0=2000000.0001016 +y_0=500000.0001016001 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / California zone 5 (ftUS)
-  2230 => "+proj=lcc +lat_1=33.88333333333333 +lat_2=32.78333333333333 +lat_0=32.16666666666666 +lon_0=-116.25 +x_0=2000000.0001016 +y_0=500000.0001016001 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / California zone 6 (ftUS)
-  2231 => "+proj=lcc +lat_1=40.78333333333333 +lat_2=39.71666666666667 +lat_0=39.33333333333334 +lon_0=-105.5 +x_0=914401.8288036576 +y_0=304800.6096012192 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / Colorado North (ftUS)
-  2232 => "+proj=lcc +lat_1=39.75 +lat_2=38.45 +lat_0=37.83333333333334 +lon_0=-105.5 +x_0=914401.8288036576 +y_0=304800.6096012192 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / Colorado Central (ftUS)
-  2233 => "+proj=lcc +lat_1=38.43333333333333 +lat_2=37.23333333333333 +lat_0=36.66666666666666 +lon_0=-105.5 +x_0=914401.8288036576 +y_0=304800.6096012192 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / Colorado South (ftUS)
-  2234 => "+proj=lcc +lat_1=41.86666666666667 +lat_2=41.2 +lat_0=40.83333333333334 +lon_0=-72.75 +x_0=304800.6096012192 +y_0=152400.3048006096 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / Connecticut (ftUS)
-  2235 => "+proj=tmerc +lat_0=38 +lon_0=-75.41666666666667 +k=0.999995 +x_0=200000.0001016002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / Delaware (ftUS)
-  2236 => "+proj=tmerc +lat_0=24.33333333333333 +lon_0=-81 +k=0.999941 +x_0=200000.0001016002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / Florida East (ftUS)
-  2237 => "+proj=tmerc +lat_0=24.33333333333333 +lon_0=-82 +k=0.999941 +x_0=200000.0001016002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / Florida West (ftUS)
-  2238 => "+proj=lcc +lat_1=30.75 +lat_2=29.58333333333333 +lat_0=29 +lon_0=-84.5 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / Florida North (ftUS)
-  2239 => "+proj=tmerc +lat_0=30 +lon_0=-82.16666666666667 +k=0.999900 +x_0=200000.0001016002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / Georgia East (ftUS)
-  2240 => "+proj=tmerc +lat_0=30 +lon_0=-84.16666666666667 +k=0.999900 +x_0=699999.9998983998 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / Georgia West (ftUS)
-  2241 => "+proj=tmerc +lat_0=41.66666666666666 +lon_0=-112.1666666666667 +k=0.999947 +x_0=200000.0001016002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / Idaho East (ftUS)
-  2242 => "+proj=tmerc +lat_0=41.66666666666666 +lon_0=-114 +k=0.999947 +x_0=500000.0001016001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / Idaho Central (ftUS)
-  2243 => "+proj=tmerc +lat_0=41.66666666666666 +lon_0=-115.75 +k=0.999933 +x_0=800000.0001016001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / Idaho West (ftUS)
-  2244 => "+proj=tmerc +lat_0=37.5 +lon_0=-85.66666666666667 +k=0.999967 +x_0=99999.99989839978 +y_0=249364.9987299975 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / Indiana East (ftUS)
-  2245 => "+proj=tmerc +lat_0=37.5 +lon_0=-87.08333333333333 +k=0.999967 +x_0=900000 +y_0=249364.9987299975 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / Indiana West (ftUS)
-  2246 => "+proj=lcc +lat_1=37.96666666666667 +lat_2=38.96666666666667 +lat_0=37.5 +lon_0=-84.25 +x_0=500000.0001016001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / Kentucky North (ftUS)
-  2247 => "+proj=lcc +lat_1=37.93333333333333 +lat_2=36.73333333333333 +lat_0=36.33333333333334 +lon_0=-85.75 +x_0=500000.0001016001 +y_0=500000.0001016001 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / Kentucky South (ftUS)
-  2248 => "+proj=lcc +lat_1=39.45 +lat_2=38.3 +lat_0=37.66666666666666 +lon_0=-77 +x_0=399999.9998983998 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / Maryland (ftUS)
-  2249 => "+proj=lcc +lat_1=42.68333333333333 +lat_2=41.71666666666667 +lat_0=41 +lon_0=-71.5 +x_0=200000.0001016002 +y_0=750000 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / Massachusetts Mainland (ftUS)
-  2250 => "+proj=lcc +lat_1=41.48333333333333 +lat_2=41.28333333333333 +lat_0=41 +lon_0=-70.5 +x_0=500000.0001016001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / Massachusetts Island (ftUS)
-  2251 => "+proj=lcc +lat_1=47.08333333333334 +lat_2=45.48333333333333 +lat_0=44.78333333333333 +lon_0=-87 +x_0=7999999.999968001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048 +no_defs  no_defs", # NAD83 / Michigan North (ft)
-  2252 => "+proj=lcc +lat_1=45.7 +lat_2=44.18333333333333 +lat_0=43.31666666666667 +lon_0=-84.36666666666666 +x_0=5999999.999976001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048 +no_defs  no_defs", # NAD83 / Michigan Central (ft)
-  2253 => "+proj=lcc +lat_1=43.66666666666666 +lat_2=42.1 +lat_0=41.5 +lon_0=-84.36666666666666 +x_0=3999999.999984 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048 +no_defs  no_defs", # NAD83 / Michigan South (ft)
-  2254 => "+proj=tmerc +lat_0=29.5 +lon_0=-88.83333333333333 +k=0.999950 +x_0=300000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / Mississippi East (ftUS)
-  2255 => "+proj=tmerc +lat_0=29.5 +lon_0=-90.33333333333333 +k=0.999950 +x_0=699999.9998983998 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / Mississippi West (ftUS)
-  2256 => "+proj=lcc +lat_1=49 +lat_2=45 +lat_0=44.25 +lon_0=-109.5 +x_0=599999.9999976 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048 +no_defs  no_defs", # NAD83 / Montana (ft)
-  2257 => "+proj=tmerc +lat_0=31 +lon_0=-104.3333333333333 +k=0.999909 +x_0=165000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / New Mexico East (ftUS)
-  2258 => "+proj=tmerc +lat_0=31 +lon_0=-106.25 +k=0.999900 +x_0=500000.0001016001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / New Mexico Central (ftUS)
-  2259 => "+proj=tmerc +lat_0=31 +lon_0=-107.8333333333333 +k=0.999917 +x_0=830000.0001016001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / New Mexico West (ftUS)
-  2260 => "+proj=tmerc +lat_0=38.83333333333334 +lon_0=-74.5 +k=0.999900 +x_0=150000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / New York East (ftUS)
-  2261 => "+proj=tmerc +lat_0=40 +lon_0=-76.58333333333333 +k=0.999938 +x_0=249999.9998983998 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / New York Central (ftUS)
-  2262 => "+proj=tmerc +lat_0=40 +lon_0=-78.58333333333333 +k=0.999938 +x_0=350000.0001016001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / New York West (ftUS)
-  2263 => "+proj=lcc +lat_1=41.03333333333333 +lat_2=40.66666666666666 +lat_0=40.16666666666666 +lon_0=-74 +x_0=300000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / New York Long Island (ftUS)
-  2264 => "+proj=lcc +lat_1=36.16666666666666 +lat_2=34.33333333333334 +lat_0=33.75 +lon_0=-79 +x_0=609601.2192024384 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / North Carolina (ftUS)
-  2265 => "+proj=lcc +lat_1=48.73333333333333 +lat_2=47.43333333333333 +lat_0=47 +lon_0=-100.5 +x_0=599999.9999976 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048 +no_defs  no_defs", # NAD83 / North Dakota North (ft)
-  2266 => "+proj=lcc +lat_1=47.48333333333333 +lat_2=46.18333333333333 +lat_0=45.66666666666666 +lon_0=-100.5 +x_0=599999.9999976 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048 +no_defs  no_defs", # NAD83 / North Dakota South (ft)
-  2267 => "+proj=lcc +lat_1=36.76666666666667 +lat_2=35.56666666666667 +lat_0=35 +lon_0=-98 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / Oklahoma North (ftUS)
-  2268 => "+proj=lcc +lat_1=35.23333333333333 +lat_2=33.93333333333333 +lat_0=33.33333333333334 +lon_0=-98 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / Oklahoma South (ftUS)
-  2269 => "+proj=lcc +lat_1=46 +lat_2=44.33333333333334 +lat_0=43.66666666666666 +lon_0=-120.5 +x_0=2500000.0001424 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048 +no_defs  no_defs", # NAD83 / Oregon North (ft)
-  2270 => "+proj=lcc +lat_1=44 +lat_2=42.33333333333334 +lat_0=41.66666666666666 +lon_0=-120.5 +x_0=1500000.0001464 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048 +no_defs  no_defs", # NAD83 / Oregon South (ft)
-  2271 => "+proj=lcc +lat_1=41.95 +lat_2=40.88333333333333 +lat_0=40.16666666666666 +lon_0=-77.75 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / Pennsylvania North (ftUS)
-  2272 => "+proj=lcc +lat_1=40.96666666666667 +lat_2=39.93333333333333 +lat_0=39.33333333333334 +lon_0=-77.75 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / Pennsylvania South (ftUS)
-  2273 => "+proj=lcc +lat_1=34.83333333333334 +lat_2=32.5 +lat_0=31.83333333333333 +lon_0=-81 +x_0=609600 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048 +no_defs  no_defs", # NAD83 / South Carolina (ft)
-  2274 => "+proj=lcc +lat_1=36.41666666666666 +lat_2=35.25 +lat_0=34.33333333333334 +lon_0=-86 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / Tennessee (ftUS)
-  2275 => "+proj=lcc +lat_1=36.18333333333333 +lat_2=34.65 +lat_0=34 +lon_0=-101.5 +x_0=200000.0001016002 +y_0=999999.9998983998 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / Texas North (ftUS)
-  2276 => "+proj=lcc +lat_1=33.96666666666667 +lat_2=32.13333333333333 +lat_0=31.66666666666667 +lon_0=-98.5 +x_0=600000 +y_0=2000000.0001016 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / Texas North Central (ftUS)
-  2277 => "+proj=lcc +lat_1=31.88333333333333 +lat_2=30.11666666666667 +lat_0=29.66666666666667 +lon_0=-100.3333333333333 +x_0=699999.9998983998 +y_0=3000000 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / Texas Central (ftUS)
-  2278 => "+proj=lcc +lat_1=30.28333333333333 +lat_2=28.38333333333333 +lat_0=27.83333333333333 +lon_0=-99 +x_0=600000 +y_0=3999999.9998984 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / Texas South Central (ftUS)
-  2279 => "+proj=lcc +lat_1=27.83333333333333 +lat_2=26.16666666666667 +lat_0=25.66666666666667 +lon_0=-98.5 +x_0=300000.0000000001 +y_0=5000000.0001016 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / Texas South (ftUS)
-  2280 => "+proj=lcc +lat_1=41.78333333333333 +lat_2=40.71666666666667 +lat_0=40.33333333333334 +lon_0=-111.5 +x_0=500000.0001504 +y_0=999999.9999960001 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048 +no_defs  no_defs", # NAD83 / Utah North (ft)
-  2281 => "+proj=lcc +lat_1=40.65 +lat_2=39.01666666666667 +lat_0=38.33333333333334 +lon_0=-111.5 +x_0=500000.0001504 +y_0=1999999.999992 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048 +no_defs  no_defs", # NAD83 / Utah Central (ft)
-  2282 => "+proj=lcc +lat_1=38.35 +lat_2=37.21666666666667 +lat_0=36.66666666666666 +lon_0=-111.5 +x_0=500000.0001504 +y_0=2999999.999988 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048 +no_defs  no_defs", # NAD83 / Utah South (ft)
-  2283 => "+proj=lcc +lat_1=39.2 +lat_2=38.03333333333333 +lat_0=37.66666666666666 +lon_0=-78.5 +x_0=3500000.0001016 +y_0=2000000.0001016 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / Virginia North (ftUS)
-  2284 => "+proj=lcc +lat_1=37.96666666666667 +lat_2=36.76666666666667 +lat_0=36.33333333333334 +lon_0=-78.5 +x_0=3500000.0001016 +y_0=999999.9998983998 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / Virginia South (ftUS)
-  2285 => "+proj=lcc +lat_1=48.73333333333333 +lat_2=47.5 +lat_0=47 +lon_0=-120.8333333333333 +x_0=500000.0001016001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / Washington North (ftUS)
-  2286 => "+proj=lcc +lat_1=47.33333333333334 +lat_2=45.83333333333334 +lat_0=45.33333333333334 +lon_0=-120.5 +x_0=500000.0001016001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / Washington South (ftUS)
-  2287 => "+proj=lcc +lat_1=46.76666666666667 +lat_2=45.56666666666667 +lat_0=45.16666666666666 +lon_0=-90 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / Wisconsin North (ftUS)
-  2288 => "+proj=lcc +lat_1=45.5 +lat_2=44.25 +lat_0=43.83333333333334 +lon_0=-90 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / Wisconsin Central (ftUS)
-  2289 => "+proj=lcc +lat_1=44.06666666666667 +lat_2=42.73333333333333 +lat_0=42 +lon_0=-90 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83 / Wisconsin South (ftUS)
-  2290 => "+proj=stere +lat_0=47.25 +lon_0=-63 +k=0.999912 +x_0=700000 +y_0=400000 +a=6378135 +b=6356750.304921594 +units=m +no_defs  no_defs", # ATS77 / Prince Edward Isl. Stereographic (ATS77)
-  2291 => "+proj=stere +lat_0=47.25 +lon_0=-63 +k=0.999912 +x_0=400000 +y_0=800000 +a=6378135 +b=6356750.304921594 +units=m +no_defs  no_defs", # NAD83(CSRS98) / Prince Edward Isl. Stereographic (NAD83)
-  2292 => "+proj=stere +lat_0=47.25 +lon_0=-63 +k=0.999912 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(CSRS98) / Prince Edward Isl. Stereographic (NAD83)
-  2294 => "+proj=tmerc +lat_0=0 +lon_0=-61.5 +k=0.999900 +x_0=4500000 +y_0=0 +a=6378135 +b=6356750.304921594 +units=m +no_defs  no_defs", # ATS77 / MTM Nova Scotia zone 4
-  2295 => "+proj=tmerc +lat_0=0 +lon_0=-64.5 +k=0.999900 +x_0=5500000 +y_0=0 +a=6378135 +b=6356750.304921594 +units=m +no_defs  no_defs", # ATS77 / MTM Nova Scotia zone 5
-  2308 => "+proj=tmerc +lat_0=0 +lon_0=109 +k=0.999600 +x_0=500000 +y_0=10000000 +ellps=bessel +units=m +no_defs  no_defs", # Batavia / TM 109 SE
-  2309 => "+proj=tmerc +lat_0=0 +lon_0=116 +k=0.999600 +x_0=500000 +y_0=10000000 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / TM 116 SE
-  2310 => "+proj=tmerc +lat_0=0 +lon_0=132 +k=0.999600 +x_0=500000 +y_0=10000000 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / TM 132 SE
-  2311 => "+proj=tmerc +lat_0=0 +lon_0=6 +k=0.999600 +x_0=500000 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / TM 6 NE
-  2312 => "+proj=utm +zone=33 +ellps=clrk80 +units=m +no_defs  no_defs", # Garoua / UTM zone 33N
-  2313 => "+proj=utm +zone=33 +ellps=clrk80 +units=m +no_defs  no_defs", # Kousseri / UTM zone 33N
-  2314 => "+proj=cass +lat_0=10.44166666666667 +lon_0=-61.33333333333334 +x_0=86501.46380699999 +y_0=65379.01334249999 +a=6378293.63683822 +b=6356617.979337744 +towgs84=-61.702,284.488,472.052,0,0,0,0 +to_meter=0.304797265 +no_defs  no_defs", # Trinidad 1903 / Trinidad Grid (ftCla)
-  2315 => "+proj=utm +zone=19 +south +ellps=intl +units=m +no_defs  no_defs", # Campo Inchauspe / UTM zone 19S
-  2316 => "+proj=utm +zone=20 +south +ellps=intl +units=m +no_defs  no_defs", # Campo Inchauspe / UTM zone 20S
-  2317 => "+proj=lcc +lat_1=9 +lat_2=3 +lat_0=6 +lon_0=-66 +x_0=1000000 +y_0=1000000 +ellps=intl +units=m +no_defs  no_defs", # PSAD56 / ICN Regional
-  2318 => "+proj=lcc +lat_1=17 +lat_2=33 +lat_0=25.08951 +lon_0=48 +x_0=0 +y_0=0 +ellps=intl +units=m +no_defs  no_defs", # Ain el Abd / Aramco Lambert
-  2319 => "+proj=tmerc +lat_0=0 +lon_0=27 +k=1.000000 +x_0=500000 +y_0=0 +ellps=intl +units=m +no_defs  no_defs", # ED50 / TM27
-  2320 => "+proj=tmerc +lat_0=0 +lon_0=30 +k=1.000000 +x_0=500000 +y_0=0 +ellps=intl +units=m +no_defs  no_defs", # ED50 / TM30
-  2321 => "+proj=tmerc +lat_0=0 +lon_0=33 +k=1.000000 +x_0=500000 +y_0=0 +ellps=intl +units=m +no_defs  no_defs", # ED50 / TM33
-  2322 => "+proj=tmerc +lat_0=0 +lon_0=36 +k=1.000000 +x_0=500000 +y_0=0 +ellps=intl +units=m +no_defs  no_defs", # ED50 / TM36
-  2323 => "+proj=tmerc +lat_0=0 +lon_0=39 +k=1.000000 +x_0=500000 +y_0=0 +ellps=intl +units=m +no_defs  no_defs", # ED50 / TM39
-  2324 => "+proj=tmerc +lat_0=0 +lon_0=42 +k=1.000000 +x_0=500000 +y_0=0 +ellps=intl +units=m +no_defs  no_defs", # ED50 / TM42
-  2325 => "+proj=tmerc +lat_0=0 +lon_0=45 +k=1.000000 +x_0=500000 +y_0=0 +ellps=intl +units=m +no_defs  no_defs", # ED50 / TM45
-  2326 => "+proj=tmerc +lat_0=22.31213333333334 +lon_0=114.1785555555556 +k=1.000000 +x_0=836694.05 +y_0=819069.8 +ellps=intl +towgs84=-162.619,-276.959,-161.764,0.067753,-2.24365,-1.15883,-1.09425 +units=m +no_defs  no_defs", # Hong Kong 1980 Grid System
-  2327 => "+proj=tmerc +lat_0=0 +lon_0=75 +k=1.000000 +x_0=13500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / Gauss-Kruger zone 13
-  2328 => "+proj=tmerc +lat_0=0 +lon_0=81 +k=1.000000 +x_0=14500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / Gauss-Kruger zone 14
-  2329 => "+proj=tmerc +lat_0=0 +lon_0=87 +k=1.000000 +x_0=15500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / Gauss-Kruger zone 15
-  2330 => "+proj=tmerc +lat_0=0 +lon_0=93 +k=1.000000 +x_0=16500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / Gauss-Kruger zone 16
-  2331 => "+proj=tmerc +lat_0=0 +lon_0=99 +k=1.000000 +x_0=17500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / Gauss-Kruger zone 17
-  2332 => "+proj=tmerc +lat_0=0 +lon_0=105 +k=1.000000 +x_0=18500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / Gauss-Kruger zone 18
-  2333 => "+proj=tmerc +lat_0=0 +lon_0=111 +k=1.000000 +x_0=19500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / Gauss-Kruger zone 19
-  2334 => "+proj=tmerc +lat_0=0 +lon_0=117 +k=1.000000 +x_0=20500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / Gauss-Kruger zone 20
-  2335 => "+proj=tmerc +lat_0=0 +lon_0=123 +k=1.000000 +x_0=21500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / Gauss-Kruger zone 21
-  2336 => "+proj=tmerc +lat_0=0 +lon_0=129 +k=1.000000 +x_0=22500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / Gauss-Kruger zone 22
-  2337 => "+proj=tmerc +lat_0=0 +lon_0=135 +k=1.000000 +x_0=23500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / Gauss-Kruger zone 23
-  2338 => "+proj=tmerc +lat_0=0 +lon_0=75 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / Gauss-Kruger CM 75E
-  2339 => "+proj=tmerc +lat_0=0 +lon_0=81 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / Gauss-Kruger CM 81E
-  2340 => "+proj=tmerc +lat_0=0 +lon_0=87 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / Gauss-Kruger CM 87E
-  2341 => "+proj=tmerc +lat_0=0 +lon_0=93 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / Gauss-Kruger CM 93E
-  2342 => "+proj=tmerc +lat_0=0 +lon_0=99 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / Gauss-Kruger CM 99E
-  2343 => "+proj=tmerc +lat_0=0 +lon_0=105 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / Gauss-Kruger CM 105E
-  2344 => "+proj=tmerc +lat_0=0 +lon_0=111 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / Gauss-Kruger CM 111E
-  2345 => "+proj=tmerc +lat_0=0 +lon_0=117 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / Gauss-Kruger CM 117E
-  2346 => "+proj=tmerc +lat_0=0 +lon_0=123 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / Gauss-Kruger CM 123E
-  2347 => "+proj=tmerc +lat_0=0 +lon_0=129 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / Gauss-Kruger CM 129E
-  2348 => "+proj=tmerc +lat_0=0 +lon_0=135 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / Gauss-Kruger CM 135E
-  2349 => "+proj=tmerc +lat_0=0 +lon_0=75 +k=1.000000 +x_0=25500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / 3-degree Gauss-Kruger zone 25
-  2350 => "+proj=tmerc +lat_0=0 +lon_0=78 +k=1.000000 +x_0=26500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / 3-degree Gauss-Kruger zone 26
-  2351 => "+proj=tmerc +lat_0=0 +lon_0=81 +k=1.000000 +x_0=27500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / 3-degree Gauss-Kruger zone 27
-  2352 => "+proj=tmerc +lat_0=0 +lon_0=84 +k=1.000000 +x_0=28500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / 3-degree Gauss-Kruger zone 28
-  2353 => "+proj=tmerc +lat_0=0 +lon_0=87 +k=1.000000 +x_0=29500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / 3-degree Gauss-Kruger zone 29
-  2354 => "+proj=tmerc +lat_0=0 +lon_0=90 +k=1.000000 +x_0=30500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / 3-degree Gauss-Kruger zone 30
-  2355 => "+proj=tmerc +lat_0=0 +lon_0=93 +k=1.000000 +x_0=31500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / 3-degree Gauss-Kruger zone 31
-  2356 => "+proj=tmerc +lat_0=0 +lon_0=96 +k=1.000000 +x_0=32500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / 3-degree Gauss-Kruger zone 32
-  2357 => "+proj=tmerc +lat_0=0 +lon_0=99 +k=1.000000 +x_0=33500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / 3-degree Gauss-Kruger zone 33
-  2358 => "+proj=tmerc +lat_0=0 +lon_0=102 +k=1.000000 +x_0=34500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / 3-degree Gauss-Kruger zone 34
-  2359 => "+proj=tmerc +lat_0=0 +lon_0=105 +k=1.000000 +x_0=35500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / 3-degree Gauss-Kruger zone 35
-  2360 => "+proj=tmerc +lat_0=0 +lon_0=108 +k=1.000000 +x_0=36500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / 3-degree Gauss-Kruger zone 36
-  2361 => "+proj=tmerc +lat_0=0 +lon_0=111 +k=1.000000 +x_0=37500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / 3-degree Gauss-Kruger zone 37
-  2362 => "+proj=tmerc +lat_0=0 +lon_0=114 +k=1.000000 +x_0=38500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / 3-degree Gauss-Kruger zone 38
-  2363 => "+proj=tmerc +lat_0=0 +lon_0=117 +k=1.000000 +x_0=39500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / 3-degree Gauss-Kruger zone 39
-  2364 => "+proj=tmerc +lat_0=0 +lon_0=120 +k=1.000000 +x_0=40500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / 3-degree Gauss-Kruger zone 40
-  2365 => "+proj=tmerc +lat_0=0 +lon_0=123 +k=1.000000 +x_0=41500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / 3-degree Gauss-Kruger zone 41
-  2366 => "+proj=tmerc +lat_0=0 +lon_0=126 +k=1.000000 +x_0=42500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / 3-degree Gauss-Kruger zone 42
-  2367 => "+proj=tmerc +lat_0=0 +lon_0=129 +k=1.000000 +x_0=43500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / 3-degree Gauss-Kruger zone 43
-  2368 => "+proj=tmerc +lat_0=0 +lon_0=132 +k=1.000000 +x_0=44500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / 3-degree Gauss-Kruger zone 44
-  2369 => "+proj=tmerc +lat_0=0 +lon_0=135 +k=1.000000 +x_0=45500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / 3-degree Gauss-Kruger zone 45
-  2370 => "+proj=tmerc +lat_0=0 +lon_0=75 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / 3-degree Gauss-Kruger CM 75E
-  2371 => "+proj=tmerc +lat_0=0 +lon_0=78 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / 3-degree Gauss-Kruger CM 78E
-  2372 => "+proj=tmerc +lat_0=0 +lon_0=81 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / 3-degree Gauss-Kruger CM 81E
-  2373 => "+proj=tmerc +lat_0=0 +lon_0=84 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / 3-degree Gauss-Kruger CM 84E
-  2374 => "+proj=tmerc +lat_0=0 +lon_0=87 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / 3-degree Gauss-Kruger CM 87E
-  2375 => "+proj=tmerc +lat_0=0 +lon_0=90 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / 3-degree Gauss-Kruger CM 90E
-  2376 => "+proj=tmerc +lat_0=0 +lon_0=93 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / 3-degree Gauss-Kruger CM 93E
-  2377 => "+proj=tmerc +lat_0=0 +lon_0=96 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / 3-degree Gauss-Kruger CM 96E
-  2378 => "+proj=tmerc +lat_0=0 +lon_0=99 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / 3-degree Gauss-Kruger CM 99E
-  2379 => "+proj=tmerc +lat_0=0 +lon_0=102 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / 3-degree Gauss-Kruger CM 102E
-  2380 => "+proj=tmerc +lat_0=0 +lon_0=105 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / 3-degree Gauss-Kruger CM 105E
-  2381 => "+proj=tmerc +lat_0=0 +lon_0=108 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / 3-degree Gauss-Kruger CM 108E
-  2382 => "+proj=tmerc +lat_0=0 +lon_0=111 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / 3-degree Gauss-Kruger CM 111E
-  2383 => "+proj=tmerc +lat_0=0 +lon_0=114 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / 3-degree Gauss-Kruger CM 114E
-  2384 => "+proj=tmerc +lat_0=0 +lon_0=117 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / 3-degree Gauss-Kruger CM 117E
-  2385 => "+proj=tmerc +lat_0=0 +lon_0=120 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / 3-degree Gauss-Kruger CM 120E
-  2386 => "+proj=tmerc +lat_0=0 +lon_0=123 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / 3-degree Gauss-Kruger CM 123E
-  2387 => "+proj=tmerc +lat_0=0 +lon_0=126 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / 3-degree Gauss-Kruger CM 126E
-  2388 => "+proj=tmerc +lat_0=0 +lon_0=129 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / 3-degree Gauss-Kruger CM 129E
-  2389 => "+proj=tmerc +lat_0=0 +lon_0=132 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / 3-degree Gauss-Kruger CM 132E
-  2390 => "+proj=tmerc +lat_0=0 +lon_0=135 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs  no_defs", # Xian 1980 / 3-degree Gauss-Kruger CM 135E
-  2391 => "+proj=tmerc +lat_0=0 +lon_0=21 +k=1.000000 +x_0=1500000 +y_0=0 +ellps=intl +towgs84=-90.7,-106.1,-119.2,4.09,0.218,-1.05,1.37 +units=m +no_defs  no_defs", # KKJ / Finland zone 1
-  2392 => "+proj=tmerc +lat_0=0 +lon_0=24 +k=1.000000 +x_0=2500000 +y_0=0 +ellps=intl +towgs84=-90.7,-106.1,-119.2,4.09,0.218,-1.05,1.37 +units=m +no_defs  no_defs", # KKJ / Finland zone 2
-  2393 => "+proj=tmerc +lat_0=0 +lon_0=27 +k=1.000000 +x_0=3500000 +y_0=0 +ellps=intl +towgs84=-90.7,-106.1,-119.2,4.09,0.218,-1.05,1.37 +units=m +no_defs  no_defs", # KKJ / Finland Uniform Coordinate System
-  2394 => "+proj=tmerc +lat_0=0 +lon_0=30 +k=1.000000 +x_0=4500000 +y_0=0 +ellps=intl +towgs84=-90.7,-106.1,-119.2,4.09,0.218,-1.05,1.37 +units=m +no_defs  no_defs", # KKJ / Finland zone 4
-  2395 => "+proj=tmerc +lat_0=0 +lon_0=45 +k=1.000000 +x_0=8500000 +y_0=0 +ellps=krass +towgs84=-76,-138,67,0,0,0,0 +units=m +no_defs  no_defs", # South Yemen / Gauss-Kruger zone 8
-  2396 => "+proj=tmerc +lat_0=0 +lon_0=51 +k=1.000000 +x_0=9500000 +y_0=0 +ellps=krass +towgs84=-76,-138,67,0,0,0,0 +units=m +no_defs  no_defs", # South Yemen / Gauss-Kruger zone 9
-  2397 => "+proj=tmerc +lat_0=0 +lon_0=9 +k=1.000000 +x_0=3500000 +y_0=0 +ellps=krass +towgs84=24,-123,-94,0.02,-0.25,-0.13,1.1 +units=m +no_defs  no_defs", # Pulkovo 1942(83) / Gauss-Kruger zone 3
-  2398 => "+proj=tmerc +lat_0=0 +lon_0=12 +k=1.000000 +x_0=4500000 +y_0=0 +ellps=krass +towgs84=24,-123,-94,0.02,-0.25,-0.13,1.1 +units=m +no_defs  no_defs", # Pulkovo 1942(83) / Gauss-Kruger zone 4
-  2399 => "+proj=tmerc +lat_0=0 +lon_0=15 +k=1.000000 +x_0=5500000 +y_0=0 +ellps=krass +towgs84=24,-123,-94,0.02,-0.25,-0.13,1.1 +units=m +no_defs  no_defs", # Pulkovo 1942(83) / Gauss-Kruger zone 5
-  2400 => "+proj=tmerc +lat_0=0 +lon_0=15.80827777777778 +k=1.000000 +x_0=1500000 +y_0=0 +ellps=bessel +units=m +no_defs  no_defs", # RT90 2.5 gon W
-  2401 => "+proj=tmerc +lat_0=0 +lon_0=75 +k=1.000000 +x_0=25500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / 3-degree Gauss-Kruger zone 25
-  2402 => "+proj=tmerc +lat_0=0 +lon_0=78 +k=1.000000 +x_0=26500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / 3-degree Gauss-Kruger zone 26
-  2403 => "+proj=tmerc +lat_0=0 +lon_0=81 +k=1.000000 +x_0=27500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / 3-degree Gauss-Kruger zone 27
-  2404 => "+proj=tmerc +lat_0=0 +lon_0=84 +k=1.000000 +x_0=28500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / 3-degree Gauss-Kruger zone 28
-  2405 => "+proj=tmerc +lat_0=0 +lon_0=87 +k=1.000000 +x_0=29500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / 3-degree Gauss-Kruger zone 29
-  2406 => "+proj=tmerc +lat_0=0 +lon_0=90 +k=1.000000 +x_0=30500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / 3-degree Gauss-Kruger zone 30
-  2407 => "+proj=tmerc +lat_0=0 +lon_0=93 +k=1.000000 +x_0=31500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / 3-degree Gauss-Kruger zone 31
-  2408 => "+proj=tmerc +lat_0=0 +lon_0=96 +k=1.000000 +x_0=32500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / 3-degree Gauss-Kruger zone 32
-  2409 => "+proj=tmerc +lat_0=0 +lon_0=99 +k=1.000000 +x_0=33500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / 3-degree Gauss-Kruger zone 33
-  2410 => "+proj=tmerc +lat_0=0 +lon_0=102 +k=1.000000 +x_0=34500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / 3-degree Gauss-Kruger zone 34
-  2411 => "+proj=tmerc +lat_0=0 +lon_0=105 +k=1.000000 +x_0=35500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / 3-degree Gauss-Kruger zone 35
-  2412 => "+proj=tmerc +lat_0=0 +lon_0=108 +k=1.000000 +x_0=36500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / 3-degree Gauss-Kruger zone 36
-  2413 => "+proj=tmerc +lat_0=0 +lon_0=111 +k=1.000000 +x_0=37500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / 3-degree Gauss-Kruger zone 37
-  2414 => "+proj=tmerc +lat_0=0 +lon_0=114 +k=1.000000 +x_0=38500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / 3-degree Gauss-Kruger zone 38
-  2415 => "+proj=tmerc +lat_0=0 +lon_0=117 +k=1.000000 +x_0=39500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / 3-degree Gauss-Kruger zone 39
-  2416 => "+proj=tmerc +lat_0=0 +lon_0=120 +k=1.000000 +x_0=40500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / 3-degree Gauss-Kruger zone 40
-  2417 => "+proj=tmerc +lat_0=0 +lon_0=123 +k=1.000000 +x_0=41500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / 3-degree Gauss-Kruger zone 41
-  2418 => "+proj=tmerc +lat_0=0 +lon_0=126 +k=1.000000 +x_0=42500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / 3-degree Gauss-Kruger zone 42
-  2419 => "+proj=tmerc +lat_0=0 +lon_0=129 +k=1.000000 +x_0=43500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / 3-degree Gauss-Kruger zone 43
-  2420 => "+proj=tmerc +lat_0=0 +lon_0=132 +k=1.000000 +x_0=44500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / 3-degree Gauss-Kruger zone 44
-  2421 => "+proj=tmerc +lat_0=0 +lon_0=135 +k=1.000000 +x_0=45500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / 3-degree Gauss-Kruger zone 45
-  2422 => "+proj=tmerc +lat_0=0 +lon_0=75 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / 3-degree Gauss-Kruger CM 75E
-  2423 => "+proj=tmerc +lat_0=0 +lon_0=78 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / 3-degree Gauss-Kruger CM 78E
-  2424 => "+proj=tmerc +lat_0=0 +lon_0=81 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / 3-degree Gauss-Kruger CM 81E
-  2425 => "+proj=tmerc +lat_0=0 +lon_0=84 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / 3-degree Gauss-Kruger CM 84E
-  2426 => "+proj=tmerc +lat_0=0 +lon_0=87 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / 3-degree Gauss-Kruger CM 87E
-  2427 => "+proj=tmerc +lat_0=0 +lon_0=90 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / 3-degree Gauss-Kruger CM 90E
-  2428 => "+proj=tmerc +lat_0=0 +lon_0=93 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / 3-degree Gauss-Kruger CM 93E
-  2429 => "+proj=tmerc +lat_0=0 +lon_0=96 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / 3-degree Gauss-Kruger CM 96E
-  2430 => "+proj=tmerc +lat_0=0 +lon_0=99 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / 3-degree Gauss-Kruger CM 99E
-  2431 => "+proj=tmerc +lat_0=0 +lon_0=102 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / 3-degree Gauss-Kruger CM 102E
-  2432 => "+proj=tmerc +lat_0=0 +lon_0=105 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / 3-degree Gauss-Kruger CM 105E
-  2433 => "+proj=tmerc +lat_0=0 +lon_0=108 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / 3-degree Gauss-Kruger CM 108E
-  2434 => "+proj=tmerc +lat_0=0 +lon_0=111 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / 3-degree Gauss-Kruger CM 111E
-  2435 => "+proj=tmerc +lat_0=0 +lon_0=114 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / 3-degree Gauss-Kruger CM 114E
-  2436 => "+proj=tmerc +lat_0=0 +lon_0=117 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / 3-degree Gauss-Kruger CM 117E
-  2437 => "+proj=tmerc +lat_0=0 +lon_0=120 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / 3-degree Gauss-Kruger CM 120E
-  2438 => "+proj=tmerc +lat_0=0 +lon_0=123 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / 3-degree Gauss-Kruger CM 123E
-  2439 => "+proj=tmerc +lat_0=0 +lon_0=126 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / 3-degree Gauss-Kruger CM 126E
-  2440 => "+proj=tmerc +lat_0=0 +lon_0=129 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / 3-degree Gauss-Kruger CM 129E
-  2441 => "+proj=tmerc +lat_0=0 +lon_0=132 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / 3-degree Gauss-Kruger CM 132E
-  2442 => "+proj=tmerc +lat_0=0 +lon_0=135 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / 3-degree Gauss-Kruger CM 135E
-  2443 => "+proj=tmerc +lat_0=33 +lon_0=129.5 +k=0.999900 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # JGD2000 / Japan Plane Rectangular CS I
-  2444 => "+proj=tmerc +lat_0=33 +lon_0=131 +k=0.999900 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # JGD2000 / Japan Plane Rectangular CS II
-  2445 => "+proj=tmerc +lat_0=36 +lon_0=132.1666666666667 +k=0.999900 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # JGD2000 / Japan Plane Rectangular CS III
-  2446 => "+proj=tmerc +lat_0=33 +lon_0=133.5 +k=0.999900 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # JGD2000 / Japan Plane Rectangular CS IV
-  2447 => "+proj=tmerc +lat_0=36 +lon_0=134.3333333333333 +k=0.999900 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # JGD2000 / Japan Plane Rectangular CS V
-  2448 => "+proj=tmerc +lat_0=36 +lon_0=136 +k=0.999900 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # JGD2000 / Japan Plane Rectangular CS VI
-  2449 => "+proj=tmerc +lat_0=36 +lon_0=137.1666666666667 +k=0.999900 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # JGD2000 / Japan Plane Rectangular CS VII
-  2450 => "+proj=tmerc +lat_0=36 +lon_0=138.5 +k=0.999900 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # JGD2000 / Japan Plane Rectangular CS VIII
-  2451 => "+proj=tmerc +lat_0=36 +lon_0=139.8333333333333 +k=0.999900 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # JGD2000 / Japan Plane Rectangular CS IX
-  2452 => "+proj=tmerc +lat_0=40 +lon_0=140.8333333333333 +k=0.999900 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # JGD2000 / Japan Plane Rectangular CS X
-  2453 => "+proj=tmerc +lat_0=44 +lon_0=140.25 +k=0.999900 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # JGD2000 / Japan Plane Rectangular CS XI
-  2454 => "+proj=tmerc +lat_0=44 +lon_0=142.25 +k=0.999900 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # JGD2000 / Japan Plane Rectangular CS XII
-  2455 => "+proj=tmerc +lat_0=44 +lon_0=144.25 +k=0.999900 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # JGD2000 / Japan Plane Rectangular CS XIII
-  2456 => "+proj=tmerc +lat_0=26 +lon_0=142 +k=0.999900 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # JGD2000 / Japan Plane Rectangular CS XIV
-  2457 => "+proj=tmerc +lat_0=26 +lon_0=127.5 +k=0.999900 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # JGD2000 / Japan Plane Rectangular CS XV
-  2458 => "+proj=tmerc +lat_0=26 +lon_0=124 +k=0.999900 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # JGD2000 / Japan Plane Rectangular CS XVI
-  2459 => "+proj=tmerc +lat_0=26 +lon_0=131 +k=0.999900 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # JGD2000 / Japan Plane Rectangular CS XVII
-  2460 => "+proj=tmerc +lat_0=20 +lon_0=136 +k=0.999900 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # JGD2000 / Japan Plane Rectangular CS XVIII
-  2461 => "+proj=tmerc +lat_0=26 +lon_0=154 +k=0.999900 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # JGD2000 / Japan Plane Rectangular CS XIX
-  2462 => "+proj=tmerc +lat_0=0 +lon_0=21 +k=1.000000 +x_0=4500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Albanian 1987 / Gauss-Kruger zone 4
-  2463 => "+proj=tmerc +lat_0=0 +lon_0=21 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger CM 21E
-  2464 => "+proj=tmerc +lat_0=0 +lon_0=27 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger CM 27E
-  2465 => "+proj=tmerc +lat_0=0 +lon_0=33 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger CM 33E
-  2466 => "+proj=tmerc +lat_0=0 +lon_0=39 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger CM 39E
-  2467 => "+proj=tmerc +lat_0=0 +lon_0=45 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger CM 45E
-  2468 => "+proj=tmerc +lat_0=0 +lon_0=51 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger CM 51E
-  2469 => "+proj=tmerc +lat_0=0 +lon_0=57 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger CM 57E
-  2470 => "+proj=tmerc +lat_0=0 +lon_0=63 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger CM 63E
-  2471 => "+proj=tmerc +lat_0=0 +lon_0=69 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger CM 69E
-  2472 => "+proj=tmerc +lat_0=0 +lon_0=75 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger CM 75E
-  2473 => "+proj=tmerc +lat_0=0 +lon_0=81 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger CM 81E
-  2474 => "+proj=tmerc +lat_0=0 +lon_0=87 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger CM 87E
-  2475 => "+proj=tmerc +lat_0=0 +lon_0=93 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger CM 93E
-  2476 => "+proj=tmerc +lat_0=0 +lon_0=99 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger CM 99E
-  2477 => "+proj=tmerc +lat_0=0 +lon_0=105 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger CM 105E
-  2478 => "+proj=tmerc +lat_0=0 +lon_0=111 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger CM 111E
-  2479 => "+proj=tmerc +lat_0=0 +lon_0=117 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger CM 117E
-  2480 => "+proj=tmerc +lat_0=0 +lon_0=123 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger CM 123E
-  2481 => "+proj=tmerc +lat_0=0 +lon_0=129 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger CM 129E
-  2482 => "+proj=tmerc +lat_0=0 +lon_0=135 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger CM 135E
-  2483 => "+proj=tmerc +lat_0=0 +lon_0=141 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger CM 141E
-  2484 => "+proj=tmerc +lat_0=0 +lon_0=147 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger CM 147E
-  2485 => "+proj=tmerc +lat_0=0 +lon_0=153 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger CM 153E
-  2486 => "+proj=tmerc +lat_0=0 +lon_0=159 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger CM 159E
-  2487 => "+proj=tmerc +lat_0=0 +lon_0=165 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger CM 165E
-  2488 => "+proj=tmerc +lat_0=0 +lon_0=171 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger CM 171E
-  2489 => "+proj=tmerc +lat_0=0 +lon_0=177 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger CM 177E
-  2490 => "+proj=tmerc +lat_0=0 +lon_0=-177 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger CM 177W
-  2491 => "+proj=tmerc +lat_0=0 +lon_0=-171 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger CM 171W
-  2492 => "+proj=tmerc +lat_0=0 +lon_0=9 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger CM 9E
-  2493 => "+proj=tmerc +lat_0=0 +lon_0=15 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger CM 15E
-  2494 => "+proj=tmerc +lat_0=0 +lon_0=21 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger CM 21E
-  2495 => "+proj=tmerc +lat_0=0 +lon_0=27 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger CM 27E
-  2496 => "+proj=tmerc +lat_0=0 +lon_0=33 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger CM 33E
-  2497 => "+proj=tmerc +lat_0=0 +lon_0=39 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger CM 39E
-  2498 => "+proj=tmerc +lat_0=0 +lon_0=45 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger CM 45E
-  2499 => "+proj=tmerc +lat_0=0 +lon_0=51 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger CM 51E
-  2500 => "+proj=tmerc +lat_0=0 +lon_0=57 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger CM 57E
-  2501 => "+proj=tmerc +lat_0=0 +lon_0=63 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger CM 63E
-  2502 => "+proj=tmerc +lat_0=0 +lon_0=69 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger CM 69E
-  2503 => "+proj=tmerc +lat_0=0 +lon_0=75 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger CM 75E
-  2504 => "+proj=tmerc +lat_0=0 +lon_0=81 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger CM 81E
-  2505 => "+proj=tmerc +lat_0=0 +lon_0=87 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger CM 87E
-  2506 => "+proj=tmerc +lat_0=0 +lon_0=93 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger CM 93E
-  2507 => "+proj=tmerc +lat_0=0 +lon_0=99 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger CM 99E
-  2508 => "+proj=tmerc +lat_0=0 +lon_0=105 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger CM 105E
-  2509 => "+proj=tmerc +lat_0=0 +lon_0=111 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger CM 111E
-  2510 => "+proj=tmerc +lat_0=0 +lon_0=117 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger CM 117E
-  2511 => "+proj=tmerc +lat_0=0 +lon_0=123 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger CM 123E
-  2512 => "+proj=tmerc +lat_0=0 +lon_0=129 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger CM 129E
-  2513 => "+proj=tmerc +lat_0=0 +lon_0=135 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger CM 135E
-  2514 => "+proj=tmerc +lat_0=0 +lon_0=141 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger CM 141E
-  2515 => "+proj=tmerc +lat_0=0 +lon_0=147 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger CM 147E
-  2516 => "+proj=tmerc +lat_0=0 +lon_0=153 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger CM 153E
-  2517 => "+proj=tmerc +lat_0=0 +lon_0=159 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger CM 159E
-  2518 => "+proj=tmerc +lat_0=0 +lon_0=165 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger CM 165E
-  2519 => "+proj=tmerc +lat_0=0 +lon_0=171 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger CM 171E
-  2520 => "+proj=tmerc +lat_0=0 +lon_0=177 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger CM 177E
-  2521 => "+proj=tmerc +lat_0=0 +lon_0=-177 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger CM 177W
-  2522 => "+proj=tmerc +lat_0=0 +lon_0=-171 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger CM 171W
-  2523 => "+proj=tmerc +lat_0=0 +lon_0=21 +k=1.000000 +x_0=7500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 7
-  2524 => "+proj=tmerc +lat_0=0 +lon_0=24 +k=1.000000 +x_0=8500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 8
-  2525 => "+proj=tmerc +lat_0=0 +lon_0=27 +k=1.000000 +x_0=9500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 9
-  2526 => "+proj=tmerc +lat_0=0 +lon_0=30 +k=1.000000 +x_0=10500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 10
-  2527 => "+proj=tmerc +lat_0=0 +lon_0=33 +k=1.000000 +x_0=11500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 11
-  2528 => "+proj=tmerc +lat_0=0 +lon_0=36 +k=1.000000 +x_0=12500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 12
-  2529 => "+proj=tmerc +lat_0=0 +lon_0=39 +k=1.000000 +x_0=13500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 13
-  2530 => "+proj=tmerc +lat_0=0 +lon_0=42 +k=1.000000 +x_0=14500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 14
-  2531 => "+proj=tmerc +lat_0=0 +lon_0=45 +k=1.000000 +x_0=15500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 15
-  2532 => "+proj=tmerc +lat_0=0 +lon_0=48 +k=1.000000 +x_0=16500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 16
-  2533 => "+proj=tmerc +lat_0=0 +lon_0=51 +k=1.000000 +x_0=17500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 17
-  2534 => "+proj=tmerc +lat_0=0 +lon_0=54 +k=1.000000 +x_0=18500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 18
-  2535 => "+proj=tmerc +lat_0=0 +lon_0=57 +k=1.000000 +x_0=19500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 19
-  2536 => "+proj=tmerc +lat_0=0 +lon_0=60 +k=1.000000 +x_0=20500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 20
-  2537 => "+proj=tmerc +lat_0=0 +lon_0=63 +k=1.000000 +x_0=21500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 21
-  2538 => "+proj=tmerc +lat_0=0 +lon_0=66 +k=1.000000 +x_0=22500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 22
-  2539 => "+proj=tmerc +lat_0=0 +lon_0=69 +k=1.000000 +x_0=23500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 23
-  2540 => "+proj=tmerc +lat_0=0 +lon_0=72 +k=1.000000 +x_0=24500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 24
-  2541 => "+proj=tmerc +lat_0=0 +lon_0=75 +k=1.000000 +x_0=25500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 25
-  2542 => "+proj=tmerc +lat_0=0 +lon_0=78 +k=1.000000 +x_0=26500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 26
-  2543 => "+proj=tmerc +lat_0=0 +lon_0=81 +k=1.000000 +x_0=27500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 27
-  2544 => "+proj=tmerc +lat_0=0 +lon_0=84 +k=1.000000 +x_0=28500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 28
-  2545 => "+proj=tmerc +lat_0=0 +lon_0=87 +k=1.000000 +x_0=29500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 29
-  2546 => "+proj=tmerc +lat_0=0 +lon_0=90 +k=1.000000 +x_0=30500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 30
-  2547 => "+proj=tmerc +lat_0=0 +lon_0=93 +k=1.000000 +x_0=31500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 31
-  2548 => "+proj=tmerc +lat_0=0 +lon_0=96 +k=1.000000 +x_0=32500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 32
-  2549 => "+proj=tmerc +lat_0=0 +lon_0=99 +k=1.000000 +x_0=33500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 33
-  2550 => "+proj=utm +zone=50 +south +ellps=bessel +towgs84=-404.78,685.68,45.47,0,0,0,0 +units=m +no_defs  no_defs", # Samboja / UTM zone 50S
-  2551 => "+proj=tmerc +lat_0=0 +lon_0=102 +k=1.000000 +x_0=34500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 34
-  2552 => "+proj=tmerc +lat_0=0 +lon_0=105 +k=1.000000 +x_0=35500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 35
-  2553 => "+proj=tmerc +lat_0=0 +lon_0=108 +k=1.000000 +x_0=36500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 36
-  2554 => "+proj=tmerc +lat_0=0 +lon_0=111 +k=1.000000 +x_0=37500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 37
-  2555 => "+proj=tmerc +lat_0=0 +lon_0=114 +k=1.000000 +x_0=38500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 38
-  2556 => "+proj=tmerc +lat_0=0 +lon_0=117 +k=1.000000 +x_0=39500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 39
-  2557 => "+proj=tmerc +lat_0=0 +lon_0=120 +k=1.000000 +x_0=40500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 40
-  2558 => "+proj=tmerc +lat_0=0 +lon_0=123 +k=1.000000 +x_0=41500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 41
-  2559 => "+proj=tmerc +lat_0=0 +lon_0=126 +k=1.000000 +x_0=42500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 42
-  2560 => "+proj=tmerc +lat_0=0 +lon_0=129 +k=1.000000 +x_0=43500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 43
-  2561 => "+proj=tmerc +lat_0=0 +lon_0=132 +k=1.000000 +x_0=44500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 44
-  2562 => "+proj=tmerc +lat_0=0 +lon_0=135 +k=1.000000 +x_0=45500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 45
-  2563 => "+proj=tmerc +lat_0=0 +lon_0=138 +k=1.000000 +x_0=46500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 46
-  2564 => "+proj=tmerc +lat_0=0 +lon_0=141 +k=1.000000 +x_0=47500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 47
-  2565 => "+proj=tmerc +lat_0=0 +lon_0=144 +k=1.000000 +x_0=48500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 48
-  2566 => "+proj=tmerc +lat_0=0 +lon_0=147 +k=1.000000 +x_0=49500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 49
-  2567 => "+proj=tmerc +lat_0=0 +lon_0=150 +k=1.000000 +x_0=50500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 50
-  2568 => "+proj=tmerc +lat_0=0 +lon_0=153 +k=1.000000 +x_0=51500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 51
-  2569 => "+proj=tmerc +lat_0=0 +lon_0=156 +k=1.000000 +x_0=52500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 52
-  2570 => "+proj=tmerc +lat_0=0 +lon_0=159 +k=1.000000 +x_0=53500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 53
-  2571 => "+proj=tmerc +lat_0=0 +lon_0=162 +k=1.000000 +x_0=54500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 54
-  2572 => "+proj=tmerc +lat_0=0 +lon_0=165 +k=1.000000 +x_0=55500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 55
-  2573 => "+proj=tmerc +lat_0=0 +lon_0=168 +k=1.000000 +x_0=56500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 56
-  2574 => "+proj=tmerc +lat_0=0 +lon_0=171 +k=1.000000 +x_0=57500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 57
-  2575 => "+proj=tmerc +lat_0=0 +lon_0=174 +k=1.000000 +x_0=58500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 58
-  2576 => "+proj=tmerc +lat_0=0 +lon_0=177 +k=1.000000 +x_0=59500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 59
-  2577 => "+proj=tmerc +lat_0=0 +lon_0=180 +k=1.000000 +x_0=60000000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 60
-  2578 => "+proj=tmerc +lat_0=0 +lon_0=-177 +k=1.000000 +x_0=61500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 61
-  2579 => "+proj=tmerc +lat_0=0 +lon_0=-174 +k=1.000000 +x_0=62500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 62
-  2580 => "+proj=tmerc +lat_0=0 +lon_0=-171 +k=1.000000 +x_0=63500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 63
-  2581 => "+proj=tmerc +lat_0=0 +lon_0=-168 +k=1.000000 +x_0=64500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 64
-  2582 => "+proj=tmerc +lat_0=0 +lon_0=21 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 21E
-  2583 => "+proj=tmerc +lat_0=0 +lon_0=24 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 24E
-  2584 => "+proj=tmerc +lat_0=0 +lon_0=27 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 27E
-  2585 => "+proj=tmerc +lat_0=0 +lon_0=30 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 30E
-  2586 => "+proj=tmerc +lat_0=0 +lon_0=33 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 33E
-  2587 => "+proj=tmerc +lat_0=0 +lon_0=36 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 36E
-  2588 => "+proj=tmerc +lat_0=0 +lon_0=39 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 39E
-  2589 => "+proj=tmerc +lat_0=0 +lon_0=42 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 42E
-  2590 => "+proj=tmerc +lat_0=0 +lon_0=45 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 45E
-  2591 => "+proj=tmerc +lat_0=0 +lon_0=48 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 48E
-  2592 => "+proj=tmerc +lat_0=0 +lon_0=51 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 51E
-  2593 => "+proj=tmerc +lat_0=0 +lon_0=54 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 54E
-  2594 => "+proj=tmerc +lat_0=0 +lon_0=57 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 57E
-  2595 => "+proj=tmerc +lat_0=0 +lon_0=60 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 60E
-  2596 => "+proj=tmerc +lat_0=0 +lon_0=63 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 63E
-  2597 => "+proj=tmerc +lat_0=0 +lon_0=66 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 66E
-  2598 => "+proj=tmerc +lat_0=0 +lon_0=69 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 69E
-  2599 => "+proj=tmerc +lat_0=0 +lon_0=72 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 72E
-  2600 => "+proj=tmerc +lat_0=0 +lon_0=24 +k=0.999800 +x_0=500000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # Lietuvos Koordinoei Sistema 1994
-  2601 => "+proj=tmerc +lat_0=0 +lon_0=75 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 75E
-  2602 => "+proj=tmerc +lat_0=0 +lon_0=78 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 78E
-  2603 => "+proj=tmerc +lat_0=0 +lon_0=81 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 81E
-  2604 => "+proj=tmerc +lat_0=0 +lon_0=84 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 84E
-  2605 => "+proj=tmerc +lat_0=0 +lon_0=87 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 87E
-  2606 => "+proj=tmerc +lat_0=0 +lon_0=90 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 90E
-  2607 => "+proj=tmerc +lat_0=0 +lon_0=93 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 93E
-  2608 => "+proj=tmerc +lat_0=0 +lon_0=96 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 96E
-  2609 => "+proj=tmerc +lat_0=0 +lon_0=99 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 99E
-  2610 => "+proj=tmerc +lat_0=0 +lon_0=102 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 102E
-  2611 => "+proj=tmerc +lat_0=0 +lon_0=105 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 105E
-  2612 => "+proj=tmerc +lat_0=0 +lon_0=108 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 108E
-  2613 => "+proj=tmerc +lat_0=0 +lon_0=111 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 111E
-  2614 => "+proj=tmerc +lat_0=0 +lon_0=114 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 114E
-  2615 => "+proj=tmerc +lat_0=0 +lon_0=117 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 117E
-  2616 => "+proj=tmerc +lat_0=0 +lon_0=120 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 120E
-  2617 => "+proj=tmerc +lat_0=0 +lon_0=123 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 123E
-  2618 => "+proj=tmerc +lat_0=0 +lon_0=126 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 126E
-  2619 => "+proj=tmerc +lat_0=0 +lon_0=129 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 129E
-  2620 => "+proj=tmerc +lat_0=0 +lon_0=132 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 132E
-  2621 => "+proj=tmerc +lat_0=0 +lon_0=135 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 135E
-  2622 => "+proj=tmerc +lat_0=0 +lon_0=138 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 138E
-  2623 => "+proj=tmerc +lat_0=0 +lon_0=141 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 141E
-  2624 => "+proj=tmerc +lat_0=0 +lon_0=144 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 144E
-  2625 => "+proj=tmerc +lat_0=0 +lon_0=147 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 147E
-  2626 => "+proj=tmerc +lat_0=0 +lon_0=150 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 150E
-  2627 => "+proj=tmerc +lat_0=0 +lon_0=153 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 153E
-  2628 => "+proj=tmerc +lat_0=0 +lon_0=156 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 156E
-  2629 => "+proj=tmerc +lat_0=0 +lon_0=159 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 159E
-  2630 => "+proj=tmerc +lat_0=0 +lon_0=162 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 162E
-  2631 => "+proj=tmerc +lat_0=0 +lon_0=165 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 165E
-  2632 => "+proj=tmerc +lat_0=0 +lon_0=168 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 168E
-  2633 => "+proj=tmerc +lat_0=0 +lon_0=171 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 171E
-  2634 => "+proj=tmerc +lat_0=0 +lon_0=174 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 174E
-  2635 => "+proj=tmerc +lat_0=0 +lon_0=177 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 177E
-  2636 => "+proj=tmerc +lat_0=0 +lon_0=180 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 180E
-  2637 => "+proj=tmerc +lat_0=0 +lon_0=-177 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 177W
-  2638 => "+proj=tmerc +lat_0=0 +lon_0=-174 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 174W
-  2639 => "+proj=tmerc +lat_0=0 +lon_0=-171 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 171W
-  2640 => "+proj=tmerc +lat_0=0 +lon_0=-168 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 168W
-  2641 => "+proj=tmerc +lat_0=0 +lon_0=21 +k=1.000000 +x_0=7500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 7
-  2642 => "+proj=tmerc +lat_0=0 +lon_0=24 +k=1.000000 +x_0=8500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 8
-  2643 => "+proj=tmerc +lat_0=0 +lon_0=27 +k=1.000000 +x_0=9500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 9
-  2644 => "+proj=tmerc +lat_0=0 +lon_0=30 +k=1.000000 +x_0=10500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 10
-  2645 => "+proj=tmerc +lat_0=0 +lon_0=33 +k=1.000000 +x_0=11500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 11
-  2646 => "+proj=tmerc +lat_0=0 +lon_0=36 +k=1.000000 +x_0=12500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 12
-  2647 => "+proj=tmerc +lat_0=0 +lon_0=39 +k=1.000000 +x_0=13500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 13
-  2648 => "+proj=tmerc +lat_0=0 +lon_0=42 +k=1.000000 +x_0=14500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 14
-  2649 => "+proj=tmerc +lat_0=0 +lon_0=45 +k=1.000000 +x_0=15500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 15
-  2650 => "+proj=tmerc +lat_0=0 +lon_0=48 +k=1.000000 +x_0=16500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 16
-  2651 => "+proj=tmerc +lat_0=0 +lon_0=51 +k=1.000000 +x_0=17500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 17
-  2652 => "+proj=tmerc +lat_0=0 +lon_0=54 +k=1.000000 +x_0=18500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 18
-  2653 => "+proj=tmerc +lat_0=0 +lon_0=57 +k=1.000000 +x_0=19500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 19
-  2654 => "+proj=tmerc +lat_0=0 +lon_0=60 +k=1.000000 +x_0=20500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 20
-  2655 => "+proj=tmerc +lat_0=0 +lon_0=63 +k=1.000000 +x_0=21500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 21
-  2656 => "+proj=tmerc +lat_0=0 +lon_0=66 +k=1.000000 +x_0=22500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 22
-  2657 => "+proj=tmerc +lat_0=0 +lon_0=69 +k=1.000000 +x_0=23500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 23
-  2658 => "+proj=tmerc +lat_0=0 +lon_0=72 +k=1.000000 +x_0=24500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 24
-  2659 => "+proj=tmerc +lat_0=0 +lon_0=75 +k=1.000000 +x_0=25500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 25
-  2660 => "+proj=tmerc +lat_0=0 +lon_0=78 +k=1.000000 +x_0=26500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 26
-  2661 => "+proj=tmerc +lat_0=0 +lon_0=81 +k=1.000000 +x_0=27500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 27
-  2662 => "+proj=tmerc +lat_0=0 +lon_0=84 +k=1.000000 +x_0=28500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 28
-  2663 => "+proj=tmerc +lat_0=0 +lon_0=87 +k=1.000000 +x_0=29500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 29
-  2664 => "+proj=tmerc +lat_0=0 +lon_0=90 +k=1.000000 +x_0=30500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 30
-  2665 => "+proj=tmerc +lat_0=0 +lon_0=93 +k=1.000000 +x_0=31500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 31
-  2666 => "+proj=tmerc +lat_0=0 +lon_0=96 +k=1.000000 +x_0=32500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 32
-  2667 => "+proj=tmerc +lat_0=0 +lon_0=99 +k=1.000000 +x_0=33500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 33
-  2668 => "+proj=tmerc +lat_0=0 +lon_0=102 +k=1.000000 +x_0=34500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 34
-  2669 => "+proj=tmerc +lat_0=0 +lon_0=105 +k=1.000000 +x_0=35500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 35
-  2670 => "+proj=tmerc +lat_0=0 +lon_0=108 +k=1.000000 +x_0=36500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 36
-  2671 => "+proj=tmerc +lat_0=0 +lon_0=111 +k=1.000000 +x_0=37500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 37
-  2672 => "+proj=tmerc +lat_0=0 +lon_0=114 +k=1.000000 +x_0=38500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 38
-  2673 => "+proj=tmerc +lat_0=0 +lon_0=117 +k=1.000000 +x_0=39500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 39
-  2674 => "+proj=tmerc +lat_0=0 +lon_0=120 +k=1.000000 +x_0=40500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 40
-  2675 => "+proj=tmerc +lat_0=0 +lon_0=123 +k=1.000000 +x_0=41500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 41
-  2676 => "+proj=tmerc +lat_0=0 +lon_0=126 +k=1.000000 +x_0=42500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 42
-  2677 => "+proj=tmerc +lat_0=0 +lon_0=129 +k=1.000000 +x_0=43500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 43
-  2678 => "+proj=tmerc +lat_0=0 +lon_0=132 +k=1.000000 +x_0=44500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 44
-  2679 => "+proj=tmerc +lat_0=0 +lon_0=135 +k=1.000000 +x_0=45500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 45
-  2680 => "+proj=tmerc +lat_0=0 +lon_0=138 +k=1.000000 +x_0=46500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 46
-  2681 => "+proj=tmerc +lat_0=0 +lon_0=141 +k=1.000000 +x_0=47500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 47
-  2682 => "+proj=tmerc +lat_0=0 +lon_0=144 +k=1.000000 +x_0=48500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 48
-  2683 => "+proj=tmerc +lat_0=0 +lon_0=147 +k=1.000000 +x_0=49500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 49
-  2684 => "+proj=tmerc +lat_0=0 +lon_0=150 +k=1.000000 +x_0=50500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 50
-  2685 => "+proj=tmerc +lat_0=0 +lon_0=153 +k=1.000000 +x_0=51500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 51
-  2686 => "+proj=tmerc +lat_0=0 +lon_0=156 +k=1.000000 +x_0=52500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 52
-  2687 => "+proj=tmerc +lat_0=0 +lon_0=159 +k=1.000000 +x_0=53500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 53
-  2688 => "+proj=tmerc +lat_0=0 +lon_0=162 +k=1.000000 +x_0=54500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 54
-  2689 => "+proj=tmerc +lat_0=0 +lon_0=165 +k=1.000000 +x_0=55500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 55
-  2690 => "+proj=tmerc +lat_0=0 +lon_0=168 +k=1.000000 +x_0=56500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 56
-  2691 => "+proj=tmerc +lat_0=0 +lon_0=171 +k=1.000000 +x_0=57500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 57
-  2692 => "+proj=tmerc +lat_0=0 +lon_0=174 +k=1.000000 +x_0=58500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 58
-  2693 => "+proj=tmerc +lat_0=0 +lon_0=177 +k=1.000000 +x_0=59500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 59
-  2694 => "+proj=tmerc +lat_0=0 +lon_0=180 +k=1.000000 +x_0=60000000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 60
-  2695 => "+proj=tmerc +lat_0=0 +lon_0=-177 +k=1.000000 +x_0=61500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 61
-  2696 => "+proj=tmerc +lat_0=0 +lon_0=-174 +k=1.000000 +x_0=62500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 62
-  2697 => "+proj=tmerc +lat_0=0 +lon_0=-171 +k=1.000000 +x_0=63500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 63
-  2698 => "+proj=tmerc +lat_0=0 +lon_0=-168 +k=1.000000 +x_0=64500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 64
-  2699 => "+proj=tmerc +lat_0=0 +lon_0=21 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 21E
-  2700 => "+proj=tmerc +lat_0=0 +lon_0=24 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 24E
-  2701 => "+proj=tmerc +lat_0=0 +lon_0=27 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 27E
-  2702 => "+proj=tmerc +lat_0=0 +lon_0=30 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 30E
-  2703 => "+proj=tmerc +lat_0=0 +lon_0=33 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 33E
-  2704 => "+proj=tmerc +lat_0=0 +lon_0=36 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 36E
-  2705 => "+proj=tmerc +lat_0=0 +lon_0=39 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 39E
-  2706 => "+proj=tmerc +lat_0=0 +lon_0=42 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 42E
-  2707 => "+proj=tmerc +lat_0=0 +lon_0=45 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 45E
-  2708 => "+proj=tmerc +lat_0=0 +lon_0=48 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 48E
-  2709 => "+proj=tmerc +lat_0=0 +lon_0=51 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 51E
-  2710 => "+proj=tmerc +lat_0=0 +lon_0=54 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 54E
-  2711 => "+proj=tmerc +lat_0=0 +lon_0=57 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 57E
-  2712 => "+proj=tmerc +lat_0=0 +lon_0=60 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 60E
-  2713 => "+proj=tmerc +lat_0=0 +lon_0=63 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 63E
-  2714 => "+proj=tmerc +lat_0=0 +lon_0=66 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 66E
-  2715 => "+proj=tmerc +lat_0=0 +lon_0=69 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 69E
-  2716 => "+proj=tmerc +lat_0=0 +lon_0=72 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 72E
-  2717 => "+proj=tmerc +lat_0=0 +lon_0=75 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 75E
-  2718 => "+proj=tmerc +lat_0=0 +lon_0=78 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 78E
-  2719 => "+proj=tmerc +lat_0=0 +lon_0=81 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 81E
-  2720 => "+proj=tmerc +lat_0=0 +lon_0=84 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 84E
-  2721 => "+proj=tmerc +lat_0=0 +lon_0=87 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 87E
-  2722 => "+proj=tmerc +lat_0=0 +lon_0=90 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 90E
-  2723 => "+proj=tmerc +lat_0=0 +lon_0=93 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 93E
-  2724 => "+proj=tmerc +lat_0=0 +lon_0=96 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 96E
-  2725 => "+proj=tmerc +lat_0=0 +lon_0=99 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 99E
-  2726 => "+proj=tmerc +lat_0=0 +lon_0=102 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 102E
-  2727 => "+proj=tmerc +lat_0=0 +lon_0=105 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 105E
-  2728 => "+proj=tmerc +lat_0=0 +lon_0=108 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 108E
-  2729 => "+proj=tmerc +lat_0=0 +lon_0=111 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 111E
-  2730 => "+proj=tmerc +lat_0=0 +lon_0=114 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 114E
-  2731 => "+proj=tmerc +lat_0=0 +lon_0=117 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 117E
-  2732 => "+proj=tmerc +lat_0=0 +lon_0=120 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 120E
-  2733 => "+proj=tmerc +lat_0=0 +lon_0=123 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 123E
-  2734 => "+proj=tmerc +lat_0=0 +lon_0=126 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 126E
-  2735 => "+proj=tmerc +lat_0=0 +lon_0=129 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 129E
-  2736 => "+proj=utm +zone=36 +south +ellps=clrk66 +units=m +no_defs  no_defs", # Tete / UTM zone 36S
-  2737 => "+proj=utm +zone=37 +south +ellps=clrk66 +units=m +no_defs  no_defs", # Tete / UTM zone 37S
-  2738 => "+proj=tmerc +lat_0=0 +lon_0=132 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 132E
-  2739 => "+proj=tmerc +lat_0=0 +lon_0=135 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 135E
-  2740 => "+proj=tmerc +lat_0=0 +lon_0=138 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 138E
-  2741 => "+proj=tmerc +lat_0=0 +lon_0=141 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 141E
-  2742 => "+proj=tmerc +lat_0=0 +lon_0=144 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 144E
-  2743 => "+proj=tmerc +lat_0=0 +lon_0=147 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 147E
-  2744 => "+proj=tmerc +lat_0=0 +lon_0=150 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 150E
-  2745 => "+proj=tmerc +lat_0=0 +lon_0=153 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 153E
-  2746 => "+proj=tmerc +lat_0=0 +lon_0=156 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 156E
-  2747 => "+proj=tmerc +lat_0=0 +lon_0=159 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 159E
-  2748 => "+proj=tmerc +lat_0=0 +lon_0=162 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 162E
-  2749 => "+proj=tmerc +lat_0=0 +lon_0=165 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 165E
-  2750 => "+proj=tmerc +lat_0=0 +lon_0=168 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 168E
-  2751 => "+proj=tmerc +lat_0=0 +lon_0=171 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 171E
-  2752 => "+proj=tmerc +lat_0=0 +lon_0=174 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 174E
-  2753 => "+proj=tmerc +lat_0=0 +lon_0=177 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 177E
-  2754 => "+proj=tmerc +lat_0=0 +lon_0=180 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 180E
-  2755 => "+proj=tmerc +lat_0=0 +lon_0=-177 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 177W
-  2756 => "+proj=tmerc +lat_0=0 +lon_0=-174 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 174W
-  2757 => "+proj=tmerc +lat_0=0 +lon_0=-171 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 171W
-  2758 => "+proj=tmerc +lat_0=0 +lon_0=-168 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 168W
-  2759 => "+proj=tmerc +lat_0=30.5 +lon_0=-85.83333333333333 +k=0.999960 +x_0=200000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Alabama East
-  2760 => "+proj=tmerc +lat_0=30 +lon_0=-87.5 +k=0.999933 +x_0=600000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Alabama West
-  2761 => "+proj=tmerc +lat_0=31 +lon_0=-110.1666666666667 +k=0.999900 +x_0=213360 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Arizona East
-  2762 => "+proj=tmerc +lat_0=31 +lon_0=-111.9166666666667 +k=0.999900 +x_0=213360 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Arizona Central
-  2763 => "+proj=tmerc +lat_0=31 +lon_0=-113.75 +k=0.999933 +x_0=213360 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Arizona West
-  2764 => "+proj=lcc +lat_1=36.23333333333333 +lat_2=34.93333333333333 +lat_0=34.33333333333334 +lon_0=-92 +x_0=400000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Arkansas North
-  2765 => "+proj=lcc +lat_1=34.76666666666667 +lat_2=33.3 +lat_0=32.66666666666666 +lon_0=-92 +x_0=400000 +y_0=400000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Arkansas South
-  2766 => "+proj=lcc +lat_1=41.66666666666666 +lat_2=40 +lat_0=39.33333333333334 +lon_0=-122 +x_0=2000000 +y_0=500000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / California zone 1
-  2767 => "+proj=lcc +lat_1=39.83333333333334 +lat_2=38.33333333333334 +lat_0=37.66666666666666 +lon_0=-122 +x_0=2000000 +y_0=500000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / California zone 2
-  2768 => "+proj=lcc +lat_1=38.43333333333333 +lat_2=37.06666666666667 +lat_0=36.5 +lon_0=-120.5 +x_0=2000000 +y_0=500000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / California zone 3
-  2769 => "+proj=lcc +lat_1=37.25 +lat_2=36 +lat_0=35.33333333333334 +lon_0=-119 +x_0=2000000 +y_0=500000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / California zone 4
-  2770 => "+proj=lcc +lat_1=35.46666666666667 +lat_2=34.03333333333333 +lat_0=33.5 +lon_0=-118 +x_0=2000000 +y_0=500000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / California zone 5
-  2771 => "+proj=lcc +lat_1=33.88333333333333 +lat_2=32.78333333333333 +lat_0=32.16666666666666 +lon_0=-116.25 +x_0=2000000 +y_0=500000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / California zone 6
-  2772 => "+proj=lcc +lat_1=40.78333333333333 +lat_2=39.71666666666667 +lat_0=39.33333333333334 +lon_0=-105.5 +x_0=914401.8289 +y_0=304800.6096 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Colorado North
-  2773 => "+proj=lcc +lat_1=39.75 +lat_2=38.45 +lat_0=37.83333333333334 +lon_0=-105.5 +x_0=914401.8289 +y_0=304800.6096 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Colorado Central
-  2774 => "+proj=lcc +lat_1=38.43333333333333 +lat_2=37.23333333333333 +lat_0=36.66666666666666 +lon_0=-105.5 +x_0=914401.8289 +y_0=304800.6096 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Colorado South
-  2775 => "+proj=lcc +lat_1=41.86666666666667 +lat_2=41.2 +lat_0=40.83333333333334 +lon_0=-72.75 +x_0=304800.6096 +y_0=152400.3048 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Connecticut
-  2776 => "+proj=tmerc +lat_0=38 +lon_0=-75.41666666666667 +k=0.999995 +x_0=200000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Delaware
-  2777 => "+proj=tmerc +lat_0=24.33333333333333 +lon_0=-81 +k=0.999941 +x_0=200000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Florida East
-  2778 => "+proj=tmerc +lat_0=24.33333333333333 +lon_0=-82 +k=0.999941 +x_0=200000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Florida West
-  2779 => "+proj=lcc +lat_1=30.75 +lat_2=29.58333333333333 +lat_0=29 +lon_0=-84.5 +x_0=600000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Florida North
-  2780 => "+proj=tmerc +lat_0=30 +lon_0=-82.16666666666667 +k=0.999900 +x_0=200000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Georgia East
-  2781 => "+proj=tmerc +lat_0=30 +lon_0=-84.16666666666667 +k=0.999900 +x_0=700000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Georgia West
-  2782 => "+proj=tmerc +lat_0=18.83333333333333 +lon_0=-155.5 +k=0.999967 +x_0=500000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Hawaii zone 1
-  2783 => "+proj=tmerc +lat_0=20.33333333333333 +lon_0=-156.6666666666667 +k=0.999967 +x_0=500000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Hawaii zone 2
-  2784 => "+proj=tmerc +lat_0=21.16666666666667 +lon_0=-158 +k=0.999990 +x_0=500000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Hawaii zone 3
-  2785 => "+proj=tmerc +lat_0=21.83333333333333 +lon_0=-159.5 +k=0.999990 +x_0=500000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Hawaii zone 4
-  2786 => "+proj=tmerc +lat_0=21.66666666666667 +lon_0=-160.1666666666667 +k=1.000000 +x_0=500000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Hawaii zone 5
-  2787 => "+proj=tmerc +lat_0=41.66666666666666 +lon_0=-112.1666666666667 +k=0.999947 +x_0=200000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Idaho East
-  2788 => "+proj=tmerc +lat_0=41.66666666666666 +lon_0=-114 +k=0.999947 +x_0=500000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Idaho Central
-  2789 => "+proj=tmerc +lat_0=41.66666666666666 +lon_0=-115.75 +k=0.999933 +x_0=800000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Idaho West
-  2790 => "+proj=tmerc +lat_0=36.66666666666666 +lon_0=-88.33333333333333 +k=0.999975 +x_0=300000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Illinois East
-  2791 => "+proj=tmerc +lat_0=36.66666666666666 +lon_0=-90.16666666666667 +k=0.999941 +x_0=700000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Illinois West
-  2792 => "+proj=tmerc +lat_0=37.5 +lon_0=-85.66666666666667 +k=0.999967 +x_0=100000 +y_0=250000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Indiana East
-  2793 => "+proj=tmerc +lat_0=37.5 +lon_0=-87.08333333333333 +k=0.999967 +x_0=900000 +y_0=250000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Indiana West
-  2794 => "+proj=lcc +lat_1=43.26666666666667 +lat_2=42.06666666666667 +lat_0=41.5 +lon_0=-93.5 +x_0=1500000 +y_0=1000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Iowa North
-  2795 => "+proj=lcc +lat_1=41.78333333333333 +lat_2=40.61666666666667 +lat_0=40 +lon_0=-93.5 +x_0=500000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Iowa South
-  2796 => "+proj=lcc +lat_1=39.78333333333333 +lat_2=38.71666666666667 +lat_0=38.33333333333334 +lon_0=-98 +x_0=400000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Kansas North
-  2797 => "+proj=lcc +lat_1=38.56666666666667 +lat_2=37.26666666666667 +lat_0=36.66666666666666 +lon_0=-98.5 +x_0=400000 +y_0=400000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Kansas South
-  2798 => "+proj=lcc +lat_1=37.96666666666667 +lat_2=38.96666666666667 +lat_0=37.5 +lon_0=-84.25 +x_0=500000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Kentucky North
-  2799 => "+proj=lcc +lat_1=37.93333333333333 +lat_2=36.73333333333333 +lat_0=36.33333333333334 +lon_0=-85.75 +x_0=500000 +y_0=500000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Kentucky South
-  2800 => "+proj=lcc +lat_1=32.66666666666666 +lat_2=31.16666666666667 +lat_0=30.5 +lon_0=-92.5 +x_0=1000000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Louisiana North
-  2801 => "+proj=lcc +lat_1=30.7 +lat_2=29.3 +lat_0=28.5 +lon_0=-91.33333333333333 +x_0=1000000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Louisiana South
-  2802 => "+proj=tmerc +lat_0=43.66666666666666 +lon_0=-68.5 +k=0.999900 +x_0=300000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Maine East
-  2803 => "+proj=tmerc +lat_0=42.83333333333334 +lon_0=-70.16666666666667 +k=0.999967 +x_0=900000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Maine West
-  2804 => "+proj=lcc +lat_1=39.45 +lat_2=38.3 +lat_0=37.66666666666666 +lon_0=-77 +x_0=400000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Maryland
-  2805 => "+proj=lcc +lat_1=42.68333333333333 +lat_2=41.71666666666667 +lat_0=41 +lon_0=-71.5 +x_0=200000 +y_0=750000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Massachusetts Mainland
-  2806 => "+proj=lcc +lat_1=41.48333333333333 +lat_2=41.28333333333333 +lat_0=41 +lon_0=-70.5 +x_0=500000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Massachusetts Island
-  2807 => "+proj=lcc +lat_1=47.08333333333334 +lat_2=45.48333333333333 +lat_0=44.78333333333333 +lon_0=-87 +x_0=8000000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Michigan North
-  2808 => "+proj=lcc +lat_1=45.7 +lat_2=44.18333333333333 +lat_0=43.31666666666667 +lon_0=-84.36666666666666 +x_0=6000000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Michigan Central
-  2809 => "+proj=lcc +lat_1=43.66666666666666 +lat_2=42.1 +lat_0=41.5 +lon_0=-84.36666666666666 +x_0=4000000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Michigan South
-  2810 => "+proj=lcc +lat_1=48.63333333333333 +lat_2=47.03333333333333 +lat_0=46.5 +lon_0=-93.09999999999999 +x_0=800000 +y_0=100000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Minnesota North
-  2811 => "+proj=lcc +lat_1=47.05 +lat_2=45.61666666666667 +lat_0=45 +lon_0=-94.25 +x_0=800000 +y_0=100000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Minnesota Central
-  2812 => "+proj=lcc +lat_1=45.21666666666667 +lat_2=43.78333333333333 +lat_0=43 +lon_0=-94 +x_0=800000 +y_0=100000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Minnesota South
-  2813 => "+proj=tmerc +lat_0=29.5 +lon_0=-88.83333333333333 +k=0.999950 +x_0=300000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Mississippi East
-  2814 => "+proj=tmerc +lat_0=29.5 +lon_0=-90.33333333333333 +k=0.999950 +x_0=700000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Mississippi West
-  2815 => "+proj=tmerc +lat_0=35.83333333333334 +lon_0=-90.5 +k=0.999933 +x_0=250000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Missouri East
-  2816 => "+proj=tmerc +lat_0=35.83333333333334 +lon_0=-92.5 +k=0.999933 +x_0=500000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Missouri Central
-  2817 => "+proj=tmerc +lat_0=36.16666666666666 +lon_0=-94.5 +k=0.999941 +x_0=850000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Missouri West
-  2818 => "+proj=lcc +lat_1=49 +lat_2=45 +lat_0=44.25 +lon_0=-109.5 +x_0=600000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Montana
-  2819 => "+proj=lcc +lat_1=43 +lat_2=40 +lat_0=39.83333333333334 +lon_0=-100 +x_0=500000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Nebraska
-  2820 => "+proj=tmerc +lat_0=34.75 +lon_0=-115.5833333333333 +k=0.999900 +x_0=200000 +y_0=8000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Nevada East
-  2821 => "+proj=tmerc +lat_0=34.75 +lon_0=-116.6666666666667 +k=0.999900 +x_0=500000 +y_0=6000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Nevada Central
-  2822 => "+proj=tmerc +lat_0=34.75 +lon_0=-118.5833333333333 +k=0.999900 +x_0=800000 +y_0=4000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Nevada West
-  2823 => "+proj=tmerc +lat_0=42.5 +lon_0=-71.66666666666667 +k=0.999967 +x_0=300000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / New Hampshire
-  2824 => "+proj=tmerc +lat_0=38.83333333333334 +lon_0=-74.5 +k=0.999900 +x_0=150000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / New Jersey
-  2825 => "+proj=tmerc +lat_0=31 +lon_0=-104.3333333333333 +k=0.999909 +x_0=165000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / New Mexico East
-  2826 => "+proj=tmerc +lat_0=31 +lon_0=-106.25 +k=0.999900 +x_0=500000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / New Mexico Central
-  2827 => "+proj=tmerc +lat_0=31 +lon_0=-107.8333333333333 +k=0.999917 +x_0=830000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / New Mexico West
-  2828 => "+proj=tmerc +lat_0=38.83333333333334 +lon_0=-74.5 +k=0.999900 +x_0=150000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / New York East
-  2829 => "+proj=tmerc +lat_0=40 +lon_0=-76.58333333333333 +k=0.999938 +x_0=250000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / New York Central
-  2830 => "+proj=tmerc +lat_0=40 +lon_0=-78.58333333333333 +k=0.999938 +x_0=350000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / New York West
-  2831 => "+proj=lcc +lat_1=41.03333333333333 +lat_2=40.66666666666666 +lat_0=40.16666666666666 +lon_0=-74 +x_0=300000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / New York Long Island
-  2832 => "+proj=lcc +lat_1=48.73333333333333 +lat_2=47.43333333333333 +lat_0=47 +lon_0=-100.5 +x_0=600000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / North Dakota North
-  2833 => "+proj=lcc +lat_1=47.48333333333333 +lat_2=46.18333333333333 +lat_0=45.66666666666666 +lon_0=-100.5 +x_0=600000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / North Dakota South
-  2834 => "+proj=lcc +lat_1=41.7 +lat_2=40.43333333333333 +lat_0=39.66666666666666 +lon_0=-82.5 +x_0=600000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Ohio North
-  2835 => "+proj=lcc +lat_1=40.03333333333333 +lat_2=38.73333333333333 +lat_0=38 +lon_0=-82.5 +x_0=600000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Ohio South
-  2836 => "+proj=lcc +lat_1=36.76666666666667 +lat_2=35.56666666666667 +lat_0=35 +lon_0=-98 +x_0=600000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Oklahoma North
-  2837 => "+proj=lcc +lat_1=35.23333333333333 +lat_2=33.93333333333333 +lat_0=33.33333333333334 +lon_0=-98 +x_0=600000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Oklahoma South
-  2838 => "+proj=lcc +lat_1=46 +lat_2=44.33333333333334 +lat_0=43.66666666666666 +lon_0=-120.5 +x_0=2500000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Oregon North
-  2839 => "+proj=lcc +lat_1=44 +lat_2=42.33333333333334 +lat_0=41.66666666666666 +lon_0=-120.5 +x_0=1500000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Oregon South
-  2840 => "+proj=tmerc +lat_0=41.08333333333334 +lon_0=-71.5 +k=0.999994 +x_0=100000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Rhode Island
-  2841 => "+proj=lcc +lat_1=45.68333333333333 +lat_2=44.41666666666666 +lat_0=43.83333333333334 +lon_0=-100 +x_0=600000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / South Dakota North
-  2842 => "+proj=lcc +lat_1=44.4 +lat_2=42.83333333333334 +lat_0=42.33333333333334 +lon_0=-100.3333333333333 +x_0=600000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / South Dakota South
-  2843 => "+proj=lcc +lat_1=36.41666666666666 +lat_2=35.25 +lat_0=34.33333333333334 +lon_0=-86 +x_0=600000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Tennessee
-  2844 => "+proj=lcc +lat_1=36.18333333333333 +lat_2=34.65 +lat_0=34 +lon_0=-101.5 +x_0=200000 +y_0=1000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Texas North
-  2845 => "+proj=lcc +lat_1=33.96666666666667 +lat_2=32.13333333333333 +lat_0=31.66666666666667 +lon_0=-98.5 +x_0=600000 +y_0=2000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Texas North Central
-  2846 => "+proj=lcc +lat_1=31.88333333333333 +lat_2=30.11666666666667 +lat_0=29.66666666666667 +lon_0=-100.3333333333333 +x_0=700000 +y_0=3000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Texas Central
-  2847 => "+proj=lcc +lat_1=30.28333333333333 +lat_2=28.38333333333333 +lat_0=27.83333333333333 +lon_0=-99 +x_0=600000 +y_0=4000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Texas South Central
-  2848 => "+proj=lcc +lat_1=27.83333333333333 +lat_2=26.16666666666667 +lat_0=25.66666666666667 +lon_0=-98.5 +x_0=300000 +y_0=5000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Texas South
-  2849 => "+proj=lcc +lat_1=41.78333333333333 +lat_2=40.71666666666667 +lat_0=40.33333333333334 +lon_0=-111.5 +x_0=500000 +y_0=1000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Utah North
-  2850 => "+proj=lcc +lat_1=40.65 +lat_2=39.01666666666667 +lat_0=38.33333333333334 +lon_0=-111.5 +x_0=500000 +y_0=2000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Utah Central
-  2851 => "+proj=lcc +lat_1=38.35 +lat_2=37.21666666666667 +lat_0=36.66666666666666 +lon_0=-111.5 +x_0=500000 +y_0=3000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Utah South
-  2852 => "+proj=tmerc +lat_0=42.5 +lon_0=-72.5 +k=0.999964 +x_0=500000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Vermont
-  2853 => "+proj=lcc +lat_1=39.2 +lat_2=38.03333333333333 +lat_0=37.66666666666666 +lon_0=-78.5 +x_0=3500000 +y_0=2000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Virginia North
-  2854 => "+proj=lcc +lat_1=37.96666666666667 +lat_2=36.76666666666667 +lat_0=36.33333333333334 +lon_0=-78.5 +x_0=3500000 +y_0=1000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Virginia South
-  2855 => "+proj=lcc +lat_1=48.73333333333333 +lat_2=47.5 +lat_0=47 +lon_0=-120.8333333333333 +x_0=500000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Washington North
-  2856 => "+proj=lcc +lat_1=47.33333333333334 +lat_2=45.83333333333334 +lat_0=45.33333333333334 +lon_0=-120.5 +x_0=500000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Washington South
-  2857 => "+proj=lcc +lat_1=40.25 +lat_2=39 +lat_0=38.5 +lon_0=-79.5 +x_0=600000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / West Virginia North
-  2858 => "+proj=lcc +lat_1=38.88333333333333 +lat_2=37.48333333333333 +lat_0=37 +lon_0=-81 +x_0=600000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / West Virginia South
-  2859 => "+proj=lcc +lat_1=46.76666666666667 +lat_2=45.56666666666667 +lat_0=45.16666666666666 +lon_0=-90 +x_0=600000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Wisconsin North
-  2860 => "+proj=lcc +lat_1=45.5 +lat_2=44.25 +lat_0=43.83333333333334 +lon_0=-90 +x_0=600000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Wisconsin Central
-  2861 => "+proj=lcc +lat_1=44.06666666666667 +lat_2=42.73333333333333 +lat_0=42 +lon_0=-90 +x_0=600000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Wisconsin South
-  2862 => "+proj=tmerc +lat_0=40.5 +lon_0=-105.1666666666667 +k=0.999938 +x_0=200000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Wyoming East
-  2863 => "+proj=tmerc +lat_0=40.5 +lon_0=-107.3333333333333 +k=0.999938 +x_0=400000 +y_0=100000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Wyoming East Central
-  2864 => "+proj=tmerc +lat_0=40.5 +lon_0=-108.75 +k=0.999938 +x_0=600000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Wyoming West Central
-  2865 => "+proj=tmerc +lat_0=40.5 +lon_0=-110.0833333333333 +k=0.999938 +x_0=800000 +y_0=100000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Wyoming West
-  2866 => "+proj=lcc +lat_1=18.43333333333333 +lat_2=18.03333333333333 +lat_0=17.83333333333333 +lon_0=-66.43333333333334 +x_0=200000 +y_0=200000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(HARN) / Puerto Rico & Virgin Is.
-  2867 => "+proj=tmerc +lat_0=31 +lon_0=-110.1666666666667 +k=0.999900 +x_0=213360 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048 +no_defs  no_defs", # NAD83(HARN) / Arizona East (ft)
-  2868 => "+proj=tmerc +lat_0=31 +lon_0=-111.9166666666667 +k=0.999900 +x_0=213360 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048 +no_defs  no_defs", # NAD83(HARN) / Arizona Central (ft)
-  2869 => "+proj=tmerc +lat_0=31 +lon_0=-113.75 +k=0.999933 +x_0=213360 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048 +no_defs  no_defs", # NAD83(HARN) / Arizona West (ft)
-  2870 => "+proj=lcc +lat_1=41.66666666666666 +lat_2=40 +lat_0=39.33333333333334 +lon_0=-122 +x_0=2000000.0001016 +y_0=500000.0001016001 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83(HARN) / California zone 1 (ftUS)
-  2871 => "+proj=lcc +lat_1=39.83333333333334 +lat_2=38.33333333333334 +lat_0=37.66666666666666 +lon_0=-122 +x_0=2000000.0001016 +y_0=500000.0001016001 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83(HARN) / California zone 2 (ftUS)
-  2872 => "+proj=lcc +lat_1=38.43333333333333 +lat_2=37.06666666666667 +lat_0=36.5 +lon_0=-120.5 +x_0=2000000.0001016 +y_0=500000.0001016001 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83(HARN) / California zone 3 (ftUS)
-  2873 => "+proj=lcc +lat_1=37.25 +lat_2=36 +lat_0=35.33333333333334 +lon_0=-119 +x_0=2000000.0001016 +y_0=500000.0001016001 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83(HARN) / California zone 4 (ftUS)
-  2874 => "+proj=lcc +lat_1=35.46666666666667 +lat_2=34.03333333333333 +lat_0=33.5 +lon_0=-118 +x_0=2000000.0001016 +y_0=500000.0001016001 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83(HARN) / California zone 5 (ftUS)
-  2875 => "+proj=lcc +lat_1=33.88333333333333 +lat_2=32.78333333333333 +lat_0=32.16666666666666 +lon_0=-116.25 +x_0=2000000.0001016 +y_0=500000.0001016001 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83(HARN) / California zone 6 (ftUS)
-  2876 => "+proj=lcc +lat_1=40.78333333333333 +lat_2=39.71666666666667 +lat_0=39.33333333333334 +lon_0=-105.5 +x_0=914401.8288036576 +y_0=304800.6096012192 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83(HARN) / Colorado North (ftUS)
-  2877 => "+proj=lcc +lat_1=39.75 +lat_2=38.45 +lat_0=37.83333333333334 +lon_0=-105.5 +x_0=914401.8288036576 +y_0=304800.6096012192 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83(HARN) / Colorado Central (ftUS)
-  2878 => "+proj=lcc +lat_1=38.43333333333333 +lat_2=37.23333333333333 +lat_0=36.66666666666666 +lon_0=-105.5 +x_0=914401.8288036576 +y_0=304800.6096012192 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83(HARN) / Colorado South (ftUS)
-  2879 => "+proj=lcc +lat_1=41.86666666666667 +lat_2=41.2 +lat_0=40.83333333333334 +lon_0=-72.75 +x_0=304800.6096012192 +y_0=152400.3048006096 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83(HARN) / Connecticut (ftUS)
-  2880 => "+proj=tmerc +lat_0=38 +lon_0=-75.41666666666667 +k=0.999995 +x_0=200000.0001016002 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83(HARN) / Delaware (ftUS)
-  2881 => "+proj=tmerc +lat_0=24.33333333333333 +lon_0=-81 +k=0.999941 +x_0=200000.0001016002 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83(HARN) / Florida East (ftUS)
-  2882 => "+proj=tmerc +lat_0=24.33333333333333 +lon_0=-82 +k=0.999941 +x_0=200000.0001016002 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83(HARN) / Florida West (ftUS)
-  2883 => "+proj=lcc +lat_1=30.75 +lat_2=29.58333333333333 +lat_0=29 +lon_0=-84.5 +x_0=600000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83(HARN) / Florida North (ftUS)
-  2884 => "+proj=tmerc +lat_0=30 +lon_0=-82.16666666666667 +k=0.999900 +x_0=200000.0001016002 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83(HARN) / Georgia East (ftUS)
-  2885 => "+proj=tmerc +lat_0=30 +lon_0=-84.16666666666667 +k=0.999900 +x_0=699999.9998983998 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83(HARN) / Georgia West (ftUS)
-  2886 => "+proj=tmerc +lat_0=41.66666666666666 +lon_0=-112.1666666666667 +k=0.999947 +x_0=200000.0001016002 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83(HARN) / Idaho East (ftUS)
-  2887 => "+proj=tmerc +lat_0=41.66666666666666 +lon_0=-114 +k=0.999947 +x_0=500000.0001016001 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83(HARN) / Idaho Central (ftUS)
-  2888 => "+proj=tmerc +lat_0=41.66666666666666 +lon_0=-115.75 +k=0.999933 +x_0=800000.0001016001 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83(HARN) / Idaho West (ftUS)
-  2889 => "+proj=tmerc +lat_0=37.5 +lon_0=-85.66666666666667 +k=0.999967 +x_0=99999.99989839978 +y_0=249364.9987299975 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83(HARN) / Indiana East (ftUS)
-  2890 => "+proj=tmerc +lat_0=37.5 +lon_0=-87.08333333333333 +k=0.999967 +x_0=900000 +y_0=249364.9987299975 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83(HARN) / Indiana West (ftUS)
-  2891 => "+proj=lcc +lat_1=37.96666666666667 +lat_2=38.96666666666667 +lat_0=37.5 +lon_0=-84.25 +x_0=500000.0001016001 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83(HARN) / Kentucky North (ftUS)
-  2892 => "+proj=lcc +lat_1=37.93333333333333 +lat_2=36.73333333333333 +lat_0=36.33333333333334 +lon_0=-85.75 +x_0=500000.0001016001 +y_0=500000.0001016001 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83(HARN) / Kentucky South (ftUS)
-  2893 => "+proj=lcc +lat_1=39.45 +lat_2=38.3 +lat_0=37.66666666666666 +lon_0=-77 +x_0=399999.9998983998 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83(HARN) / Maryland (ftUS)
-  2894 => "+proj=lcc +lat_1=42.68333333333333 +lat_2=41.71666666666667 +lat_0=41 +lon_0=-71.5 +x_0=200000.0001016002 +y_0=750000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83(HARN) / Massachusetts Mainland (ftUS)
-  2895 => "+proj=lcc +lat_1=41.48333333333333 +lat_2=41.28333333333333 +lat_0=41 +lon_0=-70.5 +x_0=500000.0001016001 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83(HARN) / Massachusetts Island (ftUS)
-  2896 => "+proj=lcc +lat_1=47.08333333333334 +lat_2=45.48333333333333 +lat_0=44.78333333333333 +lon_0=-87 +x_0=7999999.999968001 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048 +no_defs  no_defs", # NAD83(HARN) / Michigan North (ft)
-  2897 => "+proj=lcc +lat_1=45.7 +lat_2=44.18333333333333 +lat_0=43.31666666666667 +lon_0=-84.36666666666666 +x_0=5999999.999976001 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048 +no_defs  no_defs", # NAD83(HARN) / Michigan Central (ft)
-  2898 => "+proj=lcc +lat_1=43.66666666666666 +lat_2=42.1 +lat_0=41.5 +lon_0=-84.36666666666666 +x_0=3999999.999984 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048 +no_defs  no_defs", # NAD83(HARN) / Michigan South (ft)
-  2899 => "+proj=tmerc +lat_0=29.5 +lon_0=-88.83333333333333 +k=0.999950 +x_0=300000.0000000001 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83(HARN) / Mississippi East (ftUS)
-  2900 => "+proj=tmerc +lat_0=29.5 +lon_0=-90.33333333333333 +k=0.999950 +x_0=699999.9998983998 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83(HARN) / Mississippi West (ftUS)
-  2901 => "+proj=lcc +lat_1=49 +lat_2=45 +lat_0=44.25 +lon_0=-109.5 +x_0=599999.9999976 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048 +no_defs  no_defs", # NAD83(HARN) / Montana (ft)
-  2902 => "+proj=tmerc +lat_0=31 +lon_0=-104.3333333333333 +k=0.999909 +x_0=165000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83(HARN) / New Mexico East (ftUS)
-  2903 => "+proj=tmerc +lat_0=31 +lon_0=-106.25 +k=0.999900 +x_0=500000.0001016001 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83(HARN) / New Mexico Central (ftUS)
-  2904 => "+proj=tmerc +lat_0=31 +lon_0=-107.8333333333333 +k=0.999917 +x_0=830000.0001016001 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83(HARN) / New Mexico West (ftUS)
-  2905 => "+proj=tmerc +lat_0=38.83333333333334 +lon_0=-74.5 +k=0.999900 +x_0=150000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83(HARN) / New York East (ftUS)
-  2906 => "+proj=tmerc +lat_0=40 +lon_0=-76.58333333333333 +k=0.999938 +x_0=249999.9998983998 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83(HARN) / New York Central (ftUS)
-  2907 => "+proj=tmerc +lat_0=40 +lon_0=-78.58333333333333 +k=0.999938 +x_0=350000.0001016001 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83(HARN) / New York West (ftUS)
-  2908 => "+proj=lcc +lat_1=41.03333333333333 +lat_2=40.66666666666666 +lat_0=40.16666666666666 +lon_0=-74 +x_0=300000.0000000001 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83(HARN) / New York Long Island (ftUS)
-  2909 => "+proj=lcc +lat_1=48.73333333333333 +lat_2=47.43333333333333 +lat_0=47 +lon_0=-100.5 +x_0=599999.9999976 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048 +no_defs  no_defs", # NAD83(HARN) / North Dakota North (ft)
-  2910 => "+proj=lcc +lat_1=47.48333333333333 +lat_2=46.18333333333333 +lat_0=45.66666666666666 +lon_0=-100.5 +x_0=599999.9999976 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048 +no_defs  no_defs", # NAD83(HARN) / North Dakota South (ft)
-  2911 => "+proj=lcc +lat_1=36.76666666666667 +lat_2=35.56666666666667 +lat_0=35 +lon_0=-98 +x_0=600000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83(HARN) / Oklahoma North (ftUS)
-  2912 => "+proj=lcc +lat_1=35.23333333333333 +lat_2=33.93333333333333 +lat_0=33.33333333333334 +lon_0=-98 +x_0=600000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83(HARN) / Oklahoma South (ftUS)
-  2913 => "+proj=lcc +lat_1=46 +lat_2=44.33333333333334 +lat_0=43.66666666666666 +lon_0=-120.5 +x_0=2500000.0001424 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048 +no_defs  no_defs", # NAD83(HARN) / Oregon North (ft)
-  2914 => "+proj=lcc +lat_1=44 +lat_2=42.33333333333334 +lat_0=41.66666666666666 +lon_0=-120.5 +x_0=1500000.0001464 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048 +no_defs  no_defs", # NAD83(HARN) / Oregon South (ft)
-  2915 => "+proj=lcc +lat_1=36.41666666666666 +lat_2=35.25 +lat_0=34.33333333333334 +lon_0=-86 +x_0=600000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83(HARN) / Tennessee (ftUS)
-  2916 => "+proj=lcc +lat_1=36.18333333333333 +lat_2=34.65 +lat_0=34 +lon_0=-101.5 +x_0=200000.0001016002 +y_0=999999.9998983998 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83(HARN) / Texas North (ftUS)
-  2917 => "+proj=lcc +lat_1=33.96666666666667 +lat_2=32.13333333333333 +lat_0=31.66666666666667 +lon_0=-98.5 +x_0=600000 +y_0=2000000.0001016 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83(HARN) / Texas North Central (ftUS)
-  2918 => "+proj=lcc +lat_1=31.88333333333333 +lat_2=30.11666666666667 +lat_0=29.66666666666667 +lon_0=-100.3333333333333 +x_0=699999.9998983998 +y_0=3000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83(HARN) / Texas Central (ftUS)
-  2919 => "+proj=lcc +lat_1=30.28333333333333 +lat_2=28.38333333333333 +lat_0=27.83333333333333 +lon_0=-99 +x_0=600000 +y_0=3999999.9998984 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83(HARN) / Texas South Central (ftUS)
-  2920 => "+proj=lcc +lat_1=27.83333333333333 +lat_2=26.16666666666667 +lat_0=25.66666666666667 +lon_0=-98.5 +x_0=300000.0000000001 +y_0=5000000.0001016 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83(HARN) / Texas South (ftUS)
-  2921 => "+proj=lcc +lat_1=41.78333333333333 +lat_2=40.71666666666667 +lat_0=40.33333333333334 +lon_0=-111.5 +x_0=500000.0001504 +y_0=999999.9999960001 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048 +no_defs  no_defs", # NAD83(HARN) / Utah North (ft)
-  2922 => "+proj=lcc +lat_1=40.65 +lat_2=39.01666666666667 +lat_0=38.33333333333334 +lon_0=-111.5 +x_0=500000.0001504 +y_0=1999999.999992 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048 +no_defs  no_defs", # NAD83(HARN) / Utah Central (ft)
-  2923 => "+proj=lcc +lat_1=38.35 +lat_2=37.21666666666667 +lat_0=36.66666666666666 +lon_0=-111.5 +x_0=500000.0001504 +y_0=2999999.999988 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048 +no_defs  no_defs", # NAD83(HARN) / Utah South (ft)
-  2924 => "+proj=lcc +lat_1=39.2 +lat_2=38.03333333333333 +lat_0=37.66666666666666 +lon_0=-78.5 +x_0=3500000.0001016 +y_0=2000000.0001016 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83(HARN) / Virginia North (ftUS)
-  2925 => "+proj=lcc +lat_1=37.96666666666667 +lat_2=36.76666666666667 +lat_0=36.33333333333334 +lon_0=-78.5 +x_0=3500000.0001016 +y_0=999999.9998983998 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83(HARN) / Virginia South (ftUS)
-  2926 => "+proj=lcc +lat_1=48.73333333333333 +lat_2=47.5 +lat_0=47 +lon_0=-120.8333333333333 +x_0=500000.0001016001 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83(HARN) / Washington North (ftUS)
-  2927 => "+proj=lcc +lat_1=47.33333333333334 +lat_2=45.83333333333334 +lat_0=45.33333333333334 +lon_0=-120.5 +x_0=500000.0001016001 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83(HARN) / Washington South (ftUS)
-  2928 => "+proj=lcc +lat_1=46.76666666666667 +lat_2=45.56666666666667 +lat_0=45.16666666666666 +lon_0=-90 +x_0=600000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83(HARN) / Wisconsin North (ftUS)
-  2929 => "+proj=lcc +lat_1=45.5 +lat_2=44.25 +lat_0=43.83333333333334 +lon_0=-90 +x_0=600000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83(HARN) / Wisconsin Central (ftUS)
-  2930 => "+proj=lcc +lat_1=44.06666666666667 +lat_2=42.73333333333333 +lat_0=42 +lon_0=-90 +x_0=600000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD83(HARN) / Wisconsin South (ftUS)
-  2931 => "+proj=tmerc +lat_0=0 +lon_0=13 +k=0.999600 +x_0=500000.0000000001 +y_0=0 +a=6378249.2 +b=6356515 +to_meter=0.3048006096012192 +no_defs  no_defs", # Beduaram / TM 13 NE
-  2932 => "+proj=tmerc +lat_0=24.45 +lon_0=51.21666666666667 +k=0.999990 +x_0=200000 +y_0=300000 +ellps=intl +towgs84=-119.425,-303.659,-11.0006,1.1643,0.174458,1.09626,3.65706 +units=m +no_defs  no_defs", # QND95 / Qatar National Grid
-  2933 => "+proj=utm +zone=50 +south +ellps=bessel +towgs84=-404.78,685.68,45.47,0,0,0,0 +units=m +no_defs  no_defs", # Segara / UTM zone 50S
-  2934 => "+proj=merc +lat_ts=0 +lon_0=216.8077194444444 +k=0.997000 +x_0=3900000 +y_0=900000 +ellps=bessel +pm=jakarta +units=m +no_defs  no_defs", # Segara (Jakarta) / NEIEZ
-  2935 => "+proj=tmerc +lat_0=0.1166666666666667 +lon_0=41.53333333333333 +k=1.000000 +x_0=1300000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / CS63 zone A1
-  2936 => "+proj=tmerc +lat_0=0.1166666666666667 +lon_0=44.53333333333333 +k=1.000000 +x_0=2300000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / CS63 zone A2
-  2937 => "+proj=tmerc +lat_0=0.1166666666666667 +lon_0=47.53333333333333 +k=1.000000 +x_0=3300000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / CS63 zone A3
-  2938 => "+proj=tmerc +lat_0=0.1166666666666667 +lon_0=50.53333333333333 +k=1.000000 +x_0=4300000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / CS63 zone A4
-  2939 => "+proj=tmerc +lat_0=0.1333333333333333 +lon_0=50.76666666666667 +k=1.000000 +x_0=2300000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / CS63 zone K2
-  2940 => "+proj=tmerc +lat_0=0.1333333333333333 +lon_0=53.76666666666667 +k=1.000000 +x_0=3300000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / CS63 zone K3
-  2941 => "+proj=tmerc +lat_0=0.1333333333333333 +lon_0=56.76666666666667 +k=1.000000 +x_0=4300000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / CS63 zone K4
-  2942 => "+proj=utm +zone=28 +ellps=intl +units=m +no_defs  no_defs", # Porto Santo / UTM zone 28N
-  2943 => "+proj=utm +zone=28 +ellps=intl +units=m +no_defs  no_defs", # Selvagem Grande / UTM zone 28N
-  2944 => "+proj=tmerc +lat_0=0 +lon_0=-55.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(CSRS) / SCoPQ zone 2
-  2945 => "+proj=tmerc +lat_0=0 +lon_0=-58.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(CSRS) / MTM zone 3
-  2946 => "+proj=tmerc +lat_0=0 +lon_0=-61.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(CSRS) / MTM zone 4
-  2947 => "+proj=tmerc +lat_0=0 +lon_0=-64.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(CSRS) / MTM zone 5
-  2948 => "+proj=tmerc +lat_0=0 +lon_0=-67.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(CSRS) / MTM zone 6
-  2949 => "+proj=tmerc +lat_0=0 +lon_0=-70.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(CSRS) / MTM zone 7
-  2950 => "+proj=tmerc +lat_0=0 +lon_0=-73.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(CSRS) / MTM zone 8
-  2951 => "+proj=tmerc +lat_0=0 +lon_0=-76.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(CSRS) / MTM zone 9
-  2952 => "+proj=tmerc +lat_0=0 +lon_0=-79.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(CSRS) / MTM zone 10
-  2953 => "+proj=stere +lat_0=46.5 +lon_0=-66.5 +k=0.999912 +x_0=2500000 +y_0=7500000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(CSRS) / New Brunswick Stereo
-  2954 => "+proj=stere +lat_0=47.25 +lon_0=-63 +k=0.999912 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(CSRS) / Prince Edward Isl. Stereographic (NAD83)
-  2955 => "+proj=utm +zone=11 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(CSRS) / UTM zone 11N
-  2956 => "+proj=utm +zone=12 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(CSRS) / UTM zone 12N
-  2957 => "+proj=utm +zone=13 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(CSRS) / UTM zone 13N
-  2958 => "+proj=utm +zone=17 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(CSRS) / UTM zone 17N
-  2959 => "+proj=utm +zone=18 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(CSRS) / UTM zone 18N
-  2960 => "+proj=utm +zone=19 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(CSRS) / UTM zone 19N
-  2961 => "+proj=utm +zone=20 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(CSRS) / UTM zone 20N
-  2962 => "+proj=utm +zone=21 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # NAD83(CSRS) / UTM zone 21N
-  3036 => "+proj=utm +zone=36 +south +ellps=WGS84 +towgs84=0,0,0,-0,-0,-0,0 +units=m +no_defs  no_defs", # Moznet / UTM zone 36S
-  3037 => "+proj=utm +zone=37 +south +ellps=WGS84 +towgs84=0,0,0,-0,-0,-0,0 +units=m +no_defs  no_defs", # Moznet / UTM zone 37S
-  3148 => "+proj=utm +zone=48 +a=6377276.345 +b=6356075.413140239 +units=m +no_defs  no_defs", # Indian 1960 / UTM zone 48N
-  3149 => "+proj=utm +zone=49 +a=6377276.345 +b=6356075.413140239 +units=m +no_defs  no_defs", # Indian 1960 / UTM zone 49N
-  3176 => "+proj=tmerc +lat_0=0 +lon_0=106 +k=0.999600 +x_0=500000 +y_0=0 +a=6377276.345 +b=6356075.413140239 +units=m +no_defs  no_defs", # Indian 1960 / TM 106 NE
-  3200 => "+proj=lcc +lat_1=32.5 +lat_0=32.5 +lon_0=45 +k_0=0.9987864078000001 +x_0=1500000 +y_0=1166200 +ellps=clrk80 +units=m +no_defs  no_defs", # FD58 / Iraq zone
-  3300 => "+proj=lcc +lat_1=59.33333333333334 +lat_2=58 +lat_0=57.51755393055556 +lon_0=24 +x_0=500000 +y_0=6375000 +ellps=GRS80 +towgs84=0.055,-0.541,-0.185,0.0183,-0.0003,-0.007,-0.014 +units=m +no_defs  no_defs", # Estonian Coordinate System of 1992
-  3301 => "+proj=lcc +lat_1=59.33333333333334 +lat_2=58 +lat_0=57.51755393055556 +lon_0=24 +x_0=500000 +y_0=6375000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # Estonian Coordinate System of 1997
-  3439 => "+proj=utm +zone=39 +ellps=clrk80 +units=m +no_defs  no_defs", # PSD93 / UTM zone 39N
-  3440 => "+proj=utm +zone=40 +ellps=clrk80 +units=m +no_defs  no_defs", # PSD93 / UTM zone 40N
-  3561 => "+proj=tmerc +lat_0=18.83333333333333 +lon_0=-155.5 +k=0.999967 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +to_meter=0.3048006096012192 +no_defs  no_defs", # Old Hawaiian / Hawaii zone 1
-  3562 => "+proj=tmerc +lat_0=20.33333333333333 +lon_0=-156.6666666666667 +k=0.999967 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +to_meter=0.3048006096012192 +no_defs  no_defs", # Old Hawaiian / Hawaii zone 2
-  3563 => "+proj=tmerc +lat_0=21.16666666666667 +lon_0=-158 +k=0.999990 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +to_meter=0.3048006096012192 +no_defs  no_defs", # Old Hawaiian / Hawaii zone 3
-  3564 => "+proj=tmerc +lat_0=21.83333333333333 +lon_0=-159.5 +k=0.999990 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +to_meter=0.3048006096012192 +no_defs  no_defs", # Old Hawaiian / Hawaii zone 4
-  3565 => "+proj=tmerc +lat_0=21.66666666666667 +lon_0=-160.1666666666667 +k=1.000000 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +to_meter=0.3048006096012192 +no_defs  no_defs", # Old Hawaiian / Hawaii zone 5
-  3920 => "+proj=utm +zone=20 +ellps=clrk66 +units=m +no_defs  no_defs", # Puerto Rico / UTM zone 20N
-  3991 => "+proj=lcc +lat_1=18.43333333333333 +lat_2=18.03333333333333 +lat_0=17.83333333333333 +lon_0=-66.43333333333334 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +to_meter=0.3048006096012192 +no_defs  no_defs", # Puerto Rico State Plane CS of 1927
-  3992 => "+proj=lcc +lat_1=18.43333333333333 +lat_2=18.03333333333333 +lat_0=17.83333333333333 +lon_0=-66.43333333333334 +x_0=152400.3048006096 +y_0=30480.06096012192 +ellps=clrk66 +to_meter=0.3048006096012192 +no_defs  no_defs", # Puerto Rico / St. Croix
-  4001 => "+proj=longlat +ellps=airy +no_defs  no_defs", # Unknown datum based upon the Airy 1830 ellipsoid
-  4002 => "+proj=longlat +a=6377340.189 +b=6356034.447938534 +no_defs  no_defs", # Unknown datum based upon the Airy Modified 1849 ellipsoid
-  4003 => "+proj=longlat +ellps=aust_SA +no_defs  no_defs", # Unknown datum based upon the Australian National Spheroid
-  4004 => "+proj=longlat +ellps=bessel +no_defs  no_defs", # Unknown datum based upon the Bessel 1841 ellipsoid
-  4005 => "+proj=longlat +a=6377492.018 +b=6356173.508712696 +no_defs  no_defs", # Unknown datum based upon the Bessel Modified ellipsoid
-  4006 => "+proj=longlat +ellps=bess_nam +no_defs  no_defs", # Unknown datum based upon the Bessel Namibia ellipsoid
-  4007 => "+proj=longlat +a=6378293.63683822 +b=6356617.979337744 +no_defs  no_defs", # Unknown datum based upon the Clarke 1858 ellipsoid
-  4008 => "+proj=longlat +ellps=clrk66 +no_defs  no_defs", # Unknown datum based upon the Clarke 1866 ellipsoid
-  4009 => "+proj=longlat +a=6378450.047548896 +b=6356826.621488444 +no_defs  no_defs", # Unknown datum based upon the Clarke 1866 Michigan ellipsoid
-  4010 => "+proj=longlat +a=6378300.789 +b=6356566.435 +no_defs  no_defs", # Unknown datum based upon the Clarke 1880 (Benoit) ellipsoid
-  4011 => "+proj=longlat +a=6378249.2 +b=6356515 +no_defs  no_defs", # Unknown datum based upon the Clarke 1880 (IGN) ellipsoid
-  4012 => "+proj=longlat +ellps=clrk80 +no_defs  no_defs", # Unknown datum based upon the Clarke 1880 (RGS) ellipsoid
-  4013 => "+proj=longlat +a=6378249.145 +b=6356514.966398753 +no_defs  no_defs", # Unknown datum based upon the Clarke 1880 (Arc) ellipsoid
-  4014 => "+proj=longlat +a=6378249.2 +b=6356514.996941779 +no_defs  no_defs", # Unknown datum based upon the Clarke 1880 (SGA 1922) ellipsoid
-  4015 => "+proj=longlat +a=6377276.345 +b=6356075.413140239 +no_defs  no_defs", # Unknown datum based upon the Everest 1830 (1937 Adjustment) ellipsoid
-  4016 => "+proj=longlat +ellps=evrstSS +no_defs  no_defs", # Unknown datum based upon the Everest 1830 (1967 Definition) ellipsoid
-  4018 => "+proj=longlat +a=6377304.063 +b=6356103.038993155 +no_defs  no_defs", # Unknown datum based upon the Everest 1830 Modified ellipsoid
-  4019 => "+proj=longlat +ellps=GRS80 +no_defs  no_defs", # Unknown datum based upon the GRS 1980 ellipsoid
-  4020 => "+proj=longlat +ellps=helmert +no_defs  no_defs", # Unknown datum based upon the Helmert 1906 ellipsoid
-  4021 => "+proj=longlat +a=6378160 +b=6356774.50408554 +no_defs  no_defs", # Unknown datum based upon the Indonesian National Spheroid
-  4022 => "+proj=longlat +ellps=intl +no_defs  no_defs", # Unknown datum based upon the International 1924 ellipsoid
-  4024 => "+proj=longlat +ellps=krass +no_defs  no_defs", # Unknown datum based upon the Krassowsky 1940 ellipsoid
-  4025 => "+proj=longlat +ellps=WGS66 +no_defs  no_defs", # Unknown datum based upon the NWL 9D ellipsoid
-  4027 => "+proj=longlat +a=6376523 +b=6355862.933255573 +no_defs  no_defs", # Unknown datum based upon the Plessis 1817 ellipsoid
-  4028 => "+proj=longlat +a=6378298.3 +b=6356657.142669562 +no_defs  no_defs", # Unknown datum based upon the Struve 1860 ellipsoid
-  4029 => "+proj=longlat +a=6378300 +b=6356751.689189189 +no_defs  no_defs", # Unknown datum based upon the War Office ellipsoid
-  4030 => "+proj=longlat +ellps=WGS84 +no_defs  no_defs", # Unknown datum based upon the WGS 84 ellipsoid
-  4031 => "+proj=longlat +ellps=WGS84 +no_defs  no_defs", # Unknown datum based upon the GEM 10C ellipsoid
-  4032 => "+proj=longlat +a=6378136.2 +b=6356751.516927429 +no_defs  no_defs", # Unknown datum based upon the OSU86F ellipsoid
-  4033 => "+proj=longlat +a=6378136.3 +b=6356751.616592146 +no_defs  no_defs", # Unknown datum based upon the OSU91A ellipsoid
-  4034 => "+proj=longlat +ellps=clrk80 +no_defs  no_defs", # Unknown datum based upon the Clarke 1880 ellipsoid
-  4035 => "+proj=longlat +a=6371000 +b=6371000 +no_defs  no_defs", # Unknown datum based upon the Authalic Sphere
-  4036 => "+proj=longlat +ellps=GRS67 +no_defs  no_defs", # Unknown datum based upon the GRS 1967 ellipsoid
-  4041 => "+proj=longlat +a=6378135 +b=6356750.304921594 +no_defs  no_defs", # Unknown datum based upon the Average Terrestrial System 1977 ellipsoid
-  4042 => "+proj=longlat +a=6377299.36559538 +b=6356098.357204817 +no_defs  no_defs", # Unknown datum based upon the Everest (1830 Definition) ellipsoid
-  4043 => "+proj=longlat +ellps=WGS72 +no_defs  no_defs", # Unknown datum based upon the WGS 72 ellipsoid
-  4044 => "+proj=longlat +a=6377301.243 +b=6356100.230165385 +no_defs  no_defs", # Unknown datum based upon the Everest 1830 (1962 Definition) ellipsoid
-  4045 => "+proj=longlat +a=6377299.151 +b=6356098.145120132 +no_defs  no_defs", # Unknown datum based upon the Everest 1830 (1975 Definition) ellipsoid
-  4047 => "+proj=longlat +a=6370997 +b=6370997 +no_defs  no_defs", # Unspecified based upon the GRS 1980 Authalic Sphere
-  4120 => "+proj=longlat +ellps=bessel +no_defs  no_defs", # Greek
-  4121 => "+proj=longlat +ellps=GRS80 +towgs84=-199.87,74.79,246.62,0,0,0,0 +no_defs  no_defs", # GGRS87
-  4122 => "+proj=longlat +a=6378135 +b=6356750.304921594 +no_defs  no_defs", # ATS77
-  4123 => "+proj=longlat +ellps=intl +towgs84=-90.7,-106.1,-119.2,4.09,0.218,-1.05,1.37 +no_defs  no_defs", # KKJ
-  4124 => "+proj=longlat +ellps=bessel +no_defs  no_defs", # RT90
-  4125 => "+proj=longlat +ellps=bessel +towgs84=-404.78,685.68,45.47,0,0,0,0 +no_defs  no_defs", # Samboja
-  4126 => "+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs  no_defs", # LKS94 (ETRS89)
-  4127 => "+proj=longlat +ellps=clrk66 +no_defs  no_defs", # Tete
-  4128 => "+proj=longlat +ellps=clrk66 +no_defs  no_defs", # Madzansua
-  4129 => "+proj=longlat +ellps=clrk66 +no_defs  no_defs", # Observatario
-  4130 => "+proj=longlat +ellps=WGS84 +towgs84=0,0,0,-0,-0,-0,0 +no_defs  no_defs", # Moznet
-  4131 => "+proj=longlat +a=6377276.345 +b=6356075.413140239 +no_defs  no_defs", # Indian 1960
-  4132 => "+proj=longlat +ellps=clrk80 +no_defs  no_defs", # FD58
-  4133 => "+proj=longlat +ellps=GRS80 +towgs84=0.055,-0.541,-0.185,0.0183,-0.0003,-0.007,-0.014 +no_defs  no_defs", # EST92
-  4134 => "+proj=longlat +ellps=clrk80 +no_defs  no_defs", # PDO Survey Datum 1993
-  4135 => "+proj=longlat +ellps=clrk66 +no_defs  no_defs", # Old Hawaiian
-  4136 => "+proj=longlat +ellps=clrk66 +no_defs  no_defs", # St. Lawrence Island
-  4137 => "+proj=longlat +ellps=clrk66 +no_defs  no_defs", # St. Paul Island
-  4138 => "+proj=longlat +ellps=clrk66 +no_defs  no_defs", # St. George Island
-  4139 => "+proj=longlat +ellps=clrk66 +no_defs  no_defs", # Puerto Rico
-  4140 => "+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs  no_defs", # NAD83(CSRS98)
-  4141 => "+proj=longlat +ellps=GRS80 +no_defs  no_defs", # Israel
-  4142 => "+proj=longlat +ellps=clrk80 +towgs84=-125,53,467,0,0,0,0 +no_defs  no_defs", # Locodjo 1965
-  4143 => "+proj=longlat +ellps=clrk80 +towgs84=-124.76,53,466.79,0,0,0,0 +no_defs  no_defs", # Abidjan 1987
-  4144 => "+proj=longlat +a=6377276.345 +b=6356075.413140239 +no_defs  no_defs", # Kalianpur 1937
-  4145 => "+proj=longlat +a=6377301.243 +b=6356100.230165385 +towgs84=283,682,231,0,0,0,0 +no_defs  no_defs", # Kalianpur 1962
-  4146 => "+proj=longlat +a=6377299.151 +b=6356098.145120132 +towgs84=295,736,257,0,0,0,0 +no_defs  no_defs", # Kalianpur 1975
-  4147 => "+proj=longlat +ellps=krass +towgs84=-17.51,-108.32,-62.39,0,0,0,0 +no_defs  no_defs", # Hanoi 1972
-  4148 => "+proj=longlat +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +no_defs  no_defs", # Hartebeesthoek94
-  4149 => "+proj=longlat +ellps=bessel +no_defs  no_defs", # CH1903
-  4150 => "+proj=longlat +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +no_defs  no_defs", # CH1903+
-  4151 => "+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs  no_defs", # CHTRF95
-  4152 => "+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs  no_defs", # NAD83(HARN)
-  4153 => "+proj=longlat +ellps=intl +towgs84=-133.63,-157.5,-158.62,0,0,0,0 +no_defs  no_defs", # Rassadiran
-  4154 => "+proj=longlat +ellps=intl +no_defs  no_defs", # ED50(ED77)
-  4155 => "+proj=longlat +a=6378249.2 +b=6356515 +towgs84=-83,37,124,0,0,0,0 +no_defs  no_defs", # Dabola 1981
-  4156 => "+proj=longlat +ellps=bessel +no_defs  no_defs", # S-JTSK
-  4157 => "+proj=longlat +a=6378293.63683822 +b=6356617.979337744 +no_defs  no_defs", # Mount Dillon
-  4158 => "+proj=longlat +ellps=intl +no_defs  no_defs", # Naparima 1955
-  4159 => "+proj=longlat +ellps=intl +no_defs  no_defs", # ELD79
-  4160 => "+proj=longlat +ellps=intl +no_defs  no_defs", # Chos Malal 1914
-  4161 => "+proj=longlat +ellps=intl +no_defs  no_defs", # Pampa del Castillo
-  4162 => "+proj=longlat +ellps=bessel +no_defs  no_defs", # Korean 1985
-  4163 => "+proj=longlat +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +no_defs  no_defs", # Yemen NGN96
-  4164 => "+proj=longlat +ellps=krass +towgs84=-76,-138,67,0,0,0,0 +no_defs  no_defs", # South Yemen
-  4165 => "+proj=longlat +ellps=intl +towgs84=-173,253,27,0,0,0,0 +no_defs  no_defs", # Bissau
-  4166 => "+proj=longlat +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +no_defs  no_defs", # Korean 1995
-  4167 => "+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs  no_defs", # NZGD2000
-  4168 => "+proj=longlat +a=6378300 +b=6356751.689189189 +towgs84=-199,32,322,0,0,0,0 +no_defs  no_defs", # Accra
-  4169 => "+proj=longlat +ellps=clrk66 +towgs84=-115,118,426,0,0,0,0 +no_defs  no_defs", # American Samoa 1962
-  4170 => "+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs  no_defs", # SIRGAS
-  4171 => "+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs  no_defs", # RGF93
-  4172 => "+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs  no_defs", # POSGAR
-  4173 => "+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs  no_defs", # IRENET95
-  4174 => "+proj=longlat +a=6378300 +b=6356751.689189189 +no_defs  no_defs", # Sierra Leone 1924
-  4175 => "+proj=longlat +ellps=clrk80 +towgs84=-88,4,101,0,0,0,0 +no_defs  no_defs", # Sierra Leone 1968
-  4176 => "+proj=longlat +ellps=GRS80 +no_defs  no_defs", # Australian Antarctic
-  4178 => "+proj=longlat +ellps=krass +towgs84=24,-123,-94,0.02,-0.25,-0.13,1.1 +no_defs  no_defs", # Pulkovo 1942(83)
-  4179 => "+proj=longlat +ellps=krass +towgs84=33.4,-146.6,-76.3,-0.359,-0.053,0.844,-0.84 +no_defs  no_defs", # Pulkovo 1942(58)
-  4180 => "+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs  no_defs", # EST97
-  4181 => "+proj=longlat +ellps=intl +towgs84=-193,13.7,-39.3,-0.41,-2.933,2.688,0.43 +no_defs  no_defs", # Luxembourg 1930
-  4182 => "+proj=longlat +ellps=intl +no_defs  no_defs", # Azores Occidental 1939
-  4183 => "+proj=longlat +ellps=intl +no_defs  no_defs", # Azores Central 1948
-  4184 => "+proj=longlat +ellps=intl +no_defs  no_defs", # Azores Oriental 1940
-  4185 => "+proj=longlat +ellps=intl +no_defs  no_defs", # Madeira 1936
-  4188 => "+proj=longlat +ellps=airy +no_defs  no_defs", # OSNI 1952
-  4189 => "+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs  no_defs", # REGVEN
-  4190 => "+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs  no_defs", # POSGAR 98
-  4191 => "+proj=longlat +ellps=krass +no_defs  no_defs", # Albanian 1987
-  4192 => "+proj=longlat +ellps=intl +no_defs  no_defs", # Douala 1948
-  4193 => "+proj=longlat +a=6378249.2 +b=6356515 +towgs84=-70.9,-151.8,-41.4,0,0,0,0 +no_defs  no_defs", # Manoca 1962
-  4194 => "+proj=longlat +ellps=intl +no_defs  no_defs", # Qornoq 1927
-  4195 => "+proj=longlat +ellps=intl +towgs84=105,326,-102.5,0,0,0.814,-0.6 +no_defs  no_defs", # Scoresbysund 1952
-  4196 => "+proj=longlat +ellps=intl +towgs84=-45,417,-3.5,0,0,0.814,-0.6 +no_defs  no_defs", # Ammassalik 1958
-  4197 => "+proj=longlat +ellps=clrk80 +no_defs  no_defs", # Garoua
-  4198 => "+proj=longlat +ellps=clrk80 +no_defs  no_defs", # Kousseri
-  4199 => "+proj=longlat +ellps=intl +no_defs  no_defs", # Egypt 1930
-  4200 => "+proj=longlat +ellps=krass +no_defs  no_defs", # Pulkovo 1995
-  4201 => "+proj=longlat +ellps=clrk80 +no_defs  no_defs", # Adindan
-  4202 => "+proj=longlat +ellps=aust_SA +no_defs  no_defs", # AGD66
-  4203 => "+proj=longlat +ellps=aust_SA +no_defs  no_defs", # AGD84
-  4204 => "+proj=longlat +ellps=intl +no_defs  no_defs", # Ain el Abd
-  4205 => "+proj=longlat +ellps=krass +towgs84=-43,-163,45,0,0,0,0 +no_defs  no_defs", # Afgooye
-  4206 => "+proj=longlat +a=6378249.2 +b=6356515 +no_defs  no_defs", # Agadez
-  4207 => "+proj=longlat +ellps=intl +no_defs  no_defs", # Lisbon
-  4208 => "+proj=longlat +ellps=intl +no_defs  no_defs", # Aratu
-  4209 => "+proj=longlat +a=6378249.145 +b=6356514.966398753 +no_defs  no_defs", # Arc 1950
-  4210 => "+proj=longlat +ellps=clrk80 +no_defs  no_defs", # Arc 1960
-  4211 => "+proj=longlat +ellps=bessel +no_defs  no_defs", # Batavia
-  4212 => "+proj=longlat +ellps=clrk80 +no_defs  no_defs", # Barbados 1938
-  4213 => "+proj=longlat +a=6378249.2 +b=6356515 +no_defs  no_defs", # Beduaram
-  4214 => "+proj=longlat +ellps=krass +no_defs  no_defs", # Beijing 1954
-  4215 => "+proj=longlat +ellps=intl +no_defs  no_defs", # Belge 1950
-  4216 => "+proj=longlat +ellps=clrk66 +towgs84=-73,213,296,0,0,0,0 +no_defs  no_defs", # Bermuda 1957
-  4218 => "+proj=longlat +ellps=intl +no_defs  no_defs", # Bogota 1975
-  4219 => "+proj=longlat +ellps=bessel +towgs84=-384,664,-48,0,0,0,0 +no_defs  no_defs", # Bukit Rimpah
-  4220 => "+proj=longlat +ellps=clrk80 +no_defs  no_defs", # Camacupa
-  4221 => "+proj=longlat +ellps=intl +no_defs  no_defs", # Campo Inchauspe
-  4222 => "+proj=longlat +a=6378249.145 +b=6356514.966398753 +no_defs  no_defs", # Cape
-  4223 => "+proj=longlat +a=6378249.2 +b=6356515 +no_defs  no_defs", # Carthage
-  4224 => "+proj=longlat +ellps=intl +towgs84=-134,229,-29,0,0,0,0 +no_defs  no_defs", # Chua
-  4225 => "+proj=longlat +ellps=intl +towgs84=-206,172,-6,0,0,0,0 +no_defs  no_defs", # Corrego Alegre
-  4226 => "+proj=longlat +a=6378249.2 +b=6356515 +no_defs  no_defs", # Cote d'Ivoire
-  4227 => "+proj=longlat +a=6378249.2 +b=6356515 +no_defs  no_defs", # Deir ez Zor
-  4228 => "+proj=longlat +a=6378249.2 +b=6356515 +no_defs  no_defs", # Douala
-  4229 => "+proj=longlat +ellps=helmert +no_defs  no_defs", # Egypt 1907
-  4230 => "+proj=longlat +ellps=intl +no_defs  no_defs", # ED50
-  4231 => "+proj=longlat +ellps=intl +towgs84=-82.981,-99.719,-110.709,-0.5076,0.1503,0.3898,-0.3143 +no_defs  no_defs", # ED87
-  4232 => "+proj=longlat +ellps=clrk80 +no_defs  no_defs", # Fahud
-  4233 => "+proj=longlat +ellps=intl +no_defs  no_defs", # Gandajika 1970
-  4234 => "+proj=longlat +a=6378249.2 +b=6356515 +no_defs  no_defs", # Garoua
-  4235 => "+proj=longlat +ellps=intl +no_defs  no_defs", # Guyane Francaise
-  4236 => "+proj=longlat +ellps=intl +towgs84=-637,-549,-203,0,0,0,0 +no_defs  no_defs", # Hu Tzu Shan
-  4237 => "+proj=longlat +ellps=GRS67 +no_defs  no_defs", # HD72
-  4238 => "+proj=longlat +a=6378160 +b=6356774.50408554 +no_defs  no_defs", # ID74
-  4239 => "+proj=longlat +a=6377276.345 +b=6356075.413140239 +towgs84=217,823,299,0,0,0,0 +no_defs  no_defs", # Indian 1954
-  4240 => "+proj=longlat +a=6377276.345 +b=6356075.413140239 +no_defs  no_defs", # Indian 1975
-  4241 => "+proj=longlat +ellps=clrk80 +no_defs  no_defs", # Jamaica 1875
-  4242 => "+proj=longlat +ellps=clrk66 +no_defs  no_defs", # JAD69
-  4243 => "+proj=longlat +a=6377299.36559538 +b=6356098.357204817 +no_defs  no_defs", # Kalianpur 1880
-  4244 => "+proj=longlat +a=6377276.345 +b=6356075.413140239 +towgs84=-97,787,86,0,0,0,0 +no_defs  no_defs", # Kandawala
-  4245 => "+proj=longlat +a=6377304.063 +b=6356103.038993155 +towgs84=-11,851,5,0,0,0,0 +no_defs  no_defs", # Kertau
-  4246 => "+proj=longlat +ellps=clrk80 +no_defs  no_defs", # KOC
-  4247 => "+proj=longlat +ellps=intl +towgs84=-273.5,110.6,-357.9,0,0,0,0 +no_defs  no_defs", # La Canoa
-  4248 => "+proj=longlat +ellps=intl +no_defs  no_defs", # PSAD56
-  4249 => "+proj=longlat +ellps=intl +no_defs  no_defs", # Lake
-  4250 => "+proj=longlat +ellps=clrk80 +towgs84=-130,29,364,0,0,0,0 +no_defs  no_defs", # Leigon
-  4251 => "+proj=longlat +ellps=clrk80 +towgs84=-90,40,88,0,0,0,0 +no_defs  no_defs", # Liberia 1964
-  4252 => "+proj=longlat +a=6378249.2 +b=6356515 +no_defs  no_defs", # Lome
-  4253 => "+proj=longlat +ellps=clrk66 +no_defs  no_defs", # Luzon 1911
-  4254 => "+proj=longlat +ellps=intl +towgs84=18.38,192.45,96.82,0.056,-0.142,-0.2,-0.0013 +no_defs  no_defs", # Hito XVIII 1963
-  4255 => "+proj=longlat +ellps=intl +towgs84=-333,-222,114,0,0,0,0 +no_defs  no_defs", # Herat North
-  4256 => "+proj=longlat +ellps=clrk80 +towgs84=41,-220,-134,0,0,0,0 +no_defs  no_defs", # Mahe 1971
-  4257 => "+proj=longlat +ellps=bessel +towgs84=-587.8,519.75,145.76,0,0,0,0 +no_defs  no_defs", # Makassar
-  4258 => "+proj=longlat +ellps=GRS80 +no_defs  no_defs", # ETRS89
-  4259 => "+proj=longlat +ellps=intl +no_defs  no_defs", # Malongo 1987
-  4260 => "+proj=longlat +ellps=clrk80 +towgs84=-70.9,-151.8,-41.4,0,0,0,0 +no_defs  no_defs", # Manoca
-  4261 => "+proj=longlat +a=6378249.2 +b=6356515 +towgs84=31,146,47,0,0,0,0 +no_defs  no_defs", # Merchich
-  4262 => "+proj=longlat +ellps=bessel +towgs84=639,405,60,0,0,0,0 +no_defs  no_defs", # Massawa
-  4263 => "+proj=longlat +ellps=clrk80 +no_defs  no_defs", # Minna
-  4264 => "+proj=longlat +ellps=intl +towgs84=-252.95,-4.11,-96.38,0,0,0,0 +no_defs  no_defs", # Mhast
-  4265 => "+proj=longlat +ellps=intl +no_defs  no_defs", # Monte Mario
-  4266 => "+proj=longlat +a=6378249.2 +b=6356515 +no_defs  no_defs", # M'poraloko
-  4267 => "+proj=longlat +ellps=clrk66 +datum=NAD27 +no_defs  no_defs", # NAD27
-  4268 => "+proj=longlat +a=6378450.047548896 +b=6356826.621488444 +no_defs  no_defs", # NAD27 Michigan
-  4269 => "+proj=longlat +ellps=GRS80 +datum=NAD83 +no_defs  no_defs", # NAD83
-  4270 => "+proj=longlat +ellps=clrk80 +no_defs  no_defs", # Nahrwan 1967
-  4271 => "+proj=longlat +ellps=intl +no_defs  no_defs", # Naparima 1972
-  4272 => "+proj=longlat +ellps=intl +no_defs  no_defs", # NZGD49
-  4273 => "+proj=longlat +a=6377492.018 +b=6356173.508712696 +towgs84=278.3,93,474.5,7.889,0.05,-6.61,6.21 +no_defs  no_defs", # NGO 1948
-  4274 => "+proj=longlat +ellps=intl +no_defs  no_defs", # Datum 73
-  4275 => "+proj=longlat +a=6378249.2 +b=6356515 +towgs84=-168,-60,320,0,0,0,0 +no_defs  no_defs", # NTF
-  4276 => "+proj=longlat +ellps=WGS66 +no_defs  no_defs", # NSWC 9Z-2
-  4277 => "+proj=longlat +ellps=airy +no_defs  no_defs", # OSGB 1936
-  4278 => "+proj=longlat +ellps=airy +no_defs  no_defs", # OSGB70
-  4279 => "+proj=longlat +ellps=airy +no_defs  no_defs", # OS(SN)80
-  4280 => "+proj=longlat +ellps=bessel +no_defs  no_defs", # Padang
-  4281 => "+proj=longlat +a=6378300.789 +b=6356566.435 +no_defs  no_defs", # Palestine 1923
-  4282 => "+proj=longlat +a=6378249.2 +b=6356515 +no_defs  no_defs", # Pointe Noire
-  4283 => "+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs  no_defs", # GDA94
-  4284 => "+proj=longlat +ellps=krass +no_defs  no_defs", # Pulkovo 1942
-  4285 => "+proj=longlat +ellps=intl +no_defs  no_defs", # Qatar 1974
-  4286 => "+proj=longlat +ellps=helmert +no_defs  no_defs", # Qatar 1948
-  4287 => "+proj=longlat +ellps=intl +towgs84=164,138,-189,0,0,0,0 +no_defs  no_defs", # Qornoq
-  4288 => "+proj=longlat +ellps=intl +no_defs  no_defs", # Loma Quintana
-  4289 => "+proj=longlat +ellps=bessel +no_defs  no_defs", # Amersfoort
-  4291 => "+proj=longlat +ellps=GRS67 +no_defs  no_defs", # SAD69
-  4292 => "+proj=longlat +ellps=intl +towgs84=-355,21,72,0,0,0,0 +no_defs  no_defs", # Sapper Hill 1943
-  4293 => "+proj=longlat +ellps=bess_nam +no_defs  no_defs", # Schwarzeck
-  4294 => "+proj=longlat +ellps=bessel +no_defs  no_defs", # Segora
-  4295 => "+proj=longlat +ellps=bessel +no_defs  no_defs", # Serindung
-  4296 => "+proj=longlat +a=6378249.2 +b=6356515 +no_defs  no_defs", # Sudan
-  4297 => "+proj=longlat +ellps=intl +towgs84=-189,-242,-91,0,0,0,0 +no_defs  no_defs", # Tananarive
-  4298 => "+proj=longlat +ellps=evrstSS +no_defs  no_defs", # Timbalai 1948
-  4299 => "+proj=longlat +a=6377340.189 +b=6356034.447938534 +no_defs  no_defs", # TM65
-  4300 => "+proj=longlat +a=6377340.189 +b=6356034.447938534 +no_defs  no_defs", # TM75
-  4301 => "+proj=longlat +ellps=bessel +no_defs  no_defs", # Tokyo
-  4302 => "+proj=longlat +a=6378293.63683822 +b=6356617.979337744 +towgs84=-61.702,284.488,472.052,0,0,0,0 +no_defs  no_defs", # Trinidad 1903
-  4303 => "+proj=longlat +ellps=helmert +no_defs  no_defs", # TC(1948)
-  4304 => "+proj=longlat +a=6378249.2 +b=6356515 +towgs84=-73,-247,227,0,0,0,0 +no_defs  no_defs", # Voirol 1875
-  4306 => "+proj=longlat +ellps=bessel +no_defs  no_defs", # Bern 1938
-  4307 => "+proj=longlat +ellps=clrk80 +no_defs  no_defs", # Nord Sahara 1959
-  4308 => "+proj=longlat +ellps=bessel +no_defs  no_defs", # RT38
-  4309 => "+proj=longlat +ellps=intl +towgs84=-155,171,37,0,0,0,0 +no_defs  no_defs", # Yacare
-  4310 => "+proj=longlat +a=6378249.2 +b=6356515 +no_defs  no_defs", # Yoff
-  4311 => "+proj=longlat +ellps=intl +towgs84=-265,120,-358,0,0,0,0 +no_defs  no_defs", # Zanderij
-  4312 => "+proj=longlat +ellps=bessel +no_defs  no_defs", # MGI
-  4313 => "+proj=longlat +ellps=intl +no_defs  no_defs", # Belge 1972
-  4314 => "+proj=longlat +ellps=bessel +no_defs  no_defs", # DHDN
-  4315 => "+proj=longlat +a=6378249.2 +b=6356515 +towgs84=-23,259,-9,0,0,0,0 +no_defs  no_defs", # Conakry 1905
-  4316 => "+proj=longlat +ellps=intl +towgs84=103.25,-100.4,-307.19,0,0,0,0 +no_defs  no_defs", # Dealul Piscului 1933
-  4317 => "+proj=longlat +ellps=krass +no_defs  no_defs", # Dealul Piscului 1970
-  4318 => "+proj=longlat +ellps=WGS84 +no_defs  no_defs", # NGN
-  4319 => "+proj=longlat +ellps=GRS80 +no_defs  no_defs", # KUDAMS
-  4322 => "+proj=longlat +ellps=WGS72 +no_defs  no_defs", # WGS 72
-  4324 => "+proj=longlat +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +no_defs  no_defs", # WGS 72BE
-  4326 => "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs  no_defs", # WGS 84
-  4600 => "+proj=longlat +ellps=clrk80 +no_defs  no_defs", # Anguilla 1957
-  4601 => "+proj=longlat +ellps=clrk80 +towgs84=-255,-15,71,0,0,0,0 +no_defs  no_defs", # Antigua 1943
-  4602 => "+proj=longlat +ellps=clrk80 +towgs84=725,685,536,0,0,0,0 +no_defs  no_defs", # Dominica 1945
-  4603 => "+proj=longlat +ellps=clrk80 +towgs84=72,213.7,93,0,0,0,0 +no_defs  no_defs", # Grenada 1953
-  4604 => "+proj=longlat +ellps=clrk80 +towgs84=174,359,365,0,0,0,0 +no_defs  no_defs", # Montserrat 1958
-  4605 => "+proj=longlat +ellps=clrk80 +towgs84=9,183,236,0,0,0,0 +no_defs  no_defs", # St. Kitts 1955
-  4606 => "+proj=longlat +ellps=clrk80 +towgs84=-149,128,296,0,0,0,0 +no_defs  no_defs", # St. Lucia 1955
-  4607 => "+proj=longlat +ellps=clrk80 +no_defs  no_defs", # St. Vincent 1945
-  4608 => "+proj=longlat +ellps=clrk66 +no_defs  no_defs", # NAD27(76)
-  4609 => "+proj=longlat +ellps=clrk66 +no_defs  no_defs", # NAD27(CGQ77)
-  4610 => "+proj=longlat +a=6378140 +b=6356755.288157528 +no_defs  no_defs", # Xian 1980
-  4611 => "+proj=longlat +ellps=intl +towgs84=-162.619,-276.959,-161.764,0.067753,-2.24365,-1.15883,-1.09425 +no_defs  no_defs", # Hong Kong 1980
-  4612 => "+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs  no_defs", # JGD2000
-  4613 => "+proj=longlat +ellps=bessel +towgs84=-404.78,685.68,45.47,0,0,0,0 +no_defs  no_defs", # Segara
-  4614 => "+proj=longlat +ellps=intl +towgs84=-119.425,-303.659,-11.0006,1.1643,0.174458,1.09626,3.65706 +no_defs  no_defs", # QND95
-  4615 => "+proj=longlat +ellps=intl +no_defs  no_defs", # Porto Santo
-  4616 => "+proj=longlat +ellps=intl +no_defs  no_defs", # Selvagem Grande
-  4617 => "+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs  no_defs", # NAD83(CSRS)
-  4801 => "+proj=longlat +ellps=bessel +pm=bern +no_defs  no_defs", # Bern 1898 (Bern)
-  4802 => "+proj=longlat +ellps=intl +pm=bogota +no_defs  no_defs", # Bogota 1975 (Bogota)
-  4803 => "+proj=longlat +ellps=intl +pm=lisbon +no_defs  no_defs", # Lisbon (Lisbon)
-  4804 => "+proj=longlat +ellps=bessel +towgs84=-587.8,519.75,145.76,0,0,0,0 +pm=jakarta +no_defs  no_defs", # Makassar (Jakarta)
-  4805 => "+proj=longlat +ellps=bessel +pm=ferro +no_defs  no_defs", # MGI (Ferro)
-  4806 => "+proj=longlat +ellps=intl +pm=rome +no_defs  no_defs", # Monte Mario (Rome)
-  4807 => "+proj=longlat +a=6378249.2 +b=6356515 +towgs84=-168,-60,320,0,0,0,0 +pm=paris +no_defs  no_defs", # NTF (Paris)
-  4808 => "+proj=longlat +ellps=bessel +pm=jakarta +no_defs  no_defs", # Padang (Jakarta)
-  4809 => "+proj=longlat +ellps=intl +pm=brussels +no_defs  no_defs", # Belge 1950 (Brussels)
-  4810 => "+proj=longlat +ellps=intl +towgs84=-189,-242,-91,0,0,0,0 +pm=paris +no_defs  no_defs", # Tananarive (Paris)
-  4811 => "+proj=longlat +a=6378249.2 +b=6356515 +towgs84=-73,-247,227,0,0,0,0 +pm=paris +no_defs  no_defs", # Voirol 1875 (Paris)
-  4813 => "+proj=longlat +ellps=bessel +pm=jakarta +no_defs  no_defs", # Batavia (Jakarta)
-  4814 => "+proj=longlat +ellps=bessel +pm=stockholm +no_defs  no_defs", # RT38 (Stockholm)
-  4815 => "+proj=longlat +ellps=bessel +pm=athens +no_defs  no_defs", # Greek (Athens)
-  4816 => "+proj=longlat +a=6378249.2 +b=6356515 +pm=paris +no_defs  no_defs", # Carthage (Paris)
-  4817 => "+proj=longlat +a=6377492.018 +b=6356173.508712696 +towgs84=278.3,93,474.5,7.889,0.05,-6.61,6.21 +pm=oslo +no_defs  no_defs", # NGO 1948 (Oslo)
-  4818 => "+proj=longlat +ellps=bessel +pm=ferro +no_defs  no_defs", # S-JTSK (Ferro)
-  4819 => "+proj=longlat +ellps=clrk80 +pm=paris +no_defs  no_defs", # Nord Sahara 1959 (Paris)
-  4820 => "+proj=longlat +ellps=bessel +pm=jakarta +no_defs  no_defs", # Segara (Jakarta)
-  4901 => "+proj=longlat +a=6376523 +b=6355862.933255573 +pm=paris +no_defs  no_defs", # ATF (Paris)
-  4902 => "+proj=longlat +a=6376523 +b=6355862.933255573 +pm=paris +no_defs  no_defs", # NDG (Paris)
-  4903 => "+proj=longlat +a=6378298.3 +b=6356657.142669562 +pm=madrid +no_defs  no_defs", # Madrid 1870 (Madrid)
-  4904 => "+proj=longlat +ellps=bessel +pm=lisbon +no_defs  no_defs", # Lisbon 1890 (Lisbon)
-  20004 => "+proj=tmerc +lat_0=0 +lon_0=21 +k=1.000000 +x_0=4500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger zone 4
-  20005 => "+proj=tmerc +lat_0=0 +lon_0=27 +k=1.000000 +x_0=5500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger zone 5
-  20006 => "+proj=tmerc +lat_0=0 +lon_0=33 +k=1.000000 +x_0=6500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger zone 6
-  20007 => "+proj=tmerc +lat_0=0 +lon_0=39 +k=1.000000 +x_0=7500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger zone 7
-  20008 => "+proj=tmerc +lat_0=0 +lon_0=45 +k=1.000000 +x_0=8500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger zone 8
-  20009 => "+proj=tmerc +lat_0=0 +lon_0=51 +k=1.000000 +x_0=9500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger zone 9
-  20010 => "+proj=tmerc +lat_0=0 +lon_0=57 +k=1.000000 +x_0=10500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger zone 10
-  20011 => "+proj=tmerc +lat_0=0 +lon_0=63 +k=1.000000 +x_0=11500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger zone 11
-  20012 => "+proj=tmerc +lat_0=0 +lon_0=69 +k=1.000000 +x_0=12500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger zone 12
-  20013 => "+proj=tmerc +lat_0=0 +lon_0=75 +k=1.000000 +x_0=13500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger zone 13
-  20014 => "+proj=tmerc +lat_0=0 +lon_0=81 +k=1.000000 +x_0=14500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger zone 14
-  20015 => "+proj=tmerc +lat_0=0 +lon_0=87 +k=1.000000 +x_0=15500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger zone 15
-  20016 => "+proj=tmerc +lat_0=0 +lon_0=93 +k=1.000000 +x_0=16500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger zone 16
-  20017 => "+proj=tmerc +lat_0=0 +lon_0=99 +k=1.000000 +x_0=17500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger zone 17
-  20018 => "+proj=tmerc +lat_0=0 +lon_0=105 +k=1.000000 +x_0=18500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger zone 18
-  20019 => "+proj=tmerc +lat_0=0 +lon_0=111 +k=1.000000 +x_0=19500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger zone 19
-  20020 => "+proj=tmerc +lat_0=0 +lon_0=117 +k=1.000000 +x_0=20500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger zone 20
-  20021 => "+proj=tmerc +lat_0=0 +lon_0=123 +k=1.000000 +x_0=21500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger zone 21
-  20022 => "+proj=tmerc +lat_0=0 +lon_0=129 +k=1.000000 +x_0=22500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger zone 22
-  20023 => "+proj=tmerc +lat_0=0 +lon_0=135 +k=1.000000 +x_0=23500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger zone 23
-  20024 => "+proj=tmerc +lat_0=0 +lon_0=141 +k=1.000000 +x_0=24500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger zone 24
-  20025 => "+proj=tmerc +lat_0=0 +lon_0=147 +k=1.000000 +x_0=25500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger zone 25
-  20026 => "+proj=tmerc +lat_0=0 +lon_0=153 +k=1.000000 +x_0=26500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger zone 26
-  20027 => "+proj=tmerc +lat_0=0 +lon_0=159 +k=1.000000 +x_0=27500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger zone 27
-  20028 => "+proj=tmerc +lat_0=0 +lon_0=165 +k=1.000000 +x_0=28500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger zone 28
-  20029 => "+proj=tmerc +lat_0=0 +lon_0=171 +k=1.000000 +x_0=29500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger zone 29
-  20030 => "+proj=tmerc +lat_0=0 +lon_0=177 +k=1.000000 +x_0=30500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger zone 30
-  20031 => "+proj=tmerc +lat_0=0 +lon_0=-177 +k=1.000000 +x_0=31500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger zone 31
-  20032 => "+proj=tmerc +lat_0=0 +lon_0=-171 +k=1.000000 +x_0=32500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger zone 32
-  20064 => "+proj=tmerc +lat_0=0 +lon_0=21 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger 4N
-  20065 => "+proj=tmerc +lat_0=0 +lon_0=27 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger 5N
-  20066 => "+proj=tmerc +lat_0=0 +lon_0=33 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger 6N
-  20067 => "+proj=tmerc +lat_0=0 +lon_0=39 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger 7N
-  20068 => "+proj=tmerc +lat_0=0 +lon_0=45 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger 8N
-  20069 => "+proj=tmerc +lat_0=0 +lon_0=51 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger 9N
-  20070 => "+proj=tmerc +lat_0=0 +lon_0=57 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger 10N
-  20071 => "+proj=tmerc +lat_0=0 +lon_0=63 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger 11N
-  20072 => "+proj=tmerc +lat_0=0 +lon_0=69 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger 12N
-  20073 => "+proj=tmerc +lat_0=0 +lon_0=75 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger 13N
-  20074 => "+proj=tmerc +lat_0=0 +lon_0=81 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger 14N
-  20075 => "+proj=tmerc +lat_0=0 +lon_0=87 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger 15N
-  20076 => "+proj=tmerc +lat_0=0 +lon_0=93 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger 16N
-  20077 => "+proj=tmerc +lat_0=0 +lon_0=99 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger 17N
-  20078 => "+proj=tmerc +lat_0=0 +lon_0=105 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger 18N
-  20079 => "+proj=tmerc +lat_0=0 +lon_0=111 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger 19N
-  20080 => "+proj=tmerc +lat_0=0 +lon_0=117 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger 20N
-  20081 => "+proj=tmerc +lat_0=0 +lon_0=123 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger 21N
-  20082 => "+proj=tmerc +lat_0=0 +lon_0=129 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger 22N
-  20083 => "+proj=tmerc +lat_0=0 +lon_0=135 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger 23N
-  20084 => "+proj=tmerc +lat_0=0 +lon_0=141 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger 24N
-  20085 => "+proj=tmerc +lat_0=0 +lon_0=147 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger 25N
-  20086 => "+proj=tmerc +lat_0=0 +lon_0=153 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger 26N
-  20087 => "+proj=tmerc +lat_0=0 +lon_0=159 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger 27N
-  20088 => "+proj=tmerc +lat_0=0 +lon_0=165 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger 28N
-  20089 => "+proj=tmerc +lat_0=0 +lon_0=171 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger 29N
-  20090 => "+proj=tmerc +lat_0=0 +lon_0=177 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger 30N
-  20091 => "+proj=tmerc +lat_0=0 +lon_0=-177 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger 31N
-  20092 => "+proj=tmerc +lat_0=0 +lon_0=-171 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1995 / Gauss-Kruger 32N
-  20137 => "+proj=utm +zone=37 +ellps=clrk80 +units=m +no_defs  no_defs", # Adindan / UTM zone 37N
-  20138 => "+proj=utm +zone=38 +ellps=clrk80 +units=m +no_defs  no_defs", # Adindan / UTM zone 38N
-  20248 => "+proj=utm +zone=48 +south +ellps=aust_SA +units=m +no_defs  no_defs", # AGD66 / AMG zone 48
-  20249 => "+proj=utm +zone=49 +south +ellps=aust_SA +units=m +no_defs  no_defs", # AGD66 / AMG zone 49
-  20250 => "+proj=utm +zone=50 +south +ellps=aust_SA +units=m +no_defs  no_defs", # AGD66 / AMG zone 50
-  20251 => "+proj=utm +zone=51 +south +ellps=aust_SA +units=m +no_defs  no_defs", # AGD66 / AMG zone 51
-  20252 => "+proj=utm +zone=52 +south +ellps=aust_SA +units=m +no_defs  no_defs", # AGD66 / AMG zone 52
-  20253 => "+proj=utm +zone=53 +south +ellps=aust_SA +units=m +no_defs  no_defs", # AGD66 / AMG zone 53
-  20254 => "+proj=utm +zone=54 +south +ellps=aust_SA +units=m +no_defs  no_defs", # AGD66 / AMG zone 54
-  20255 => "+proj=utm +zone=55 +south +ellps=aust_SA +units=m +no_defs  no_defs", # AGD66 / AMG zone 55
-  20256 => "+proj=utm +zone=56 +south +ellps=aust_SA +units=m +no_defs  no_defs", # AGD66 / AMG zone 56
-  20257 => "+proj=utm +zone=57 +south +ellps=aust_SA +units=m +no_defs  no_defs", # AGD66 / AMG zone 57
-  20258 => "+proj=utm +zone=58 +south +ellps=aust_SA +units=m +no_defs  no_defs", # AGD66 / AMG zone 58
-  20348 => "+proj=utm +zone=48 +south +ellps=aust_SA +units=m +no_defs  no_defs", # AGD84 / AMG zone 48
-  20349 => "+proj=utm +zone=49 +south +ellps=aust_SA +units=m +no_defs  no_defs", # AGD84 / AMG zone 49
-  20350 => "+proj=utm +zone=50 +south +ellps=aust_SA +units=m +no_defs  no_defs", # AGD84 / AMG zone 50
-  20351 => "+proj=utm +zone=51 +south +ellps=aust_SA +units=m +no_defs  no_defs", # AGD84 / AMG zone 51
-  20352 => "+proj=utm +zone=52 +south +ellps=aust_SA +units=m +no_defs  no_defs", # AGD84 / AMG zone 52
-  20353 => "+proj=utm +zone=53 +south +ellps=aust_SA +units=m +no_defs  no_defs", # AGD84 / AMG zone 53
-  20354 => "+proj=utm +zone=54 +south +ellps=aust_SA +units=m +no_defs  no_defs", # AGD84 / AMG zone 54
-  20355 => "+proj=utm +zone=55 +south +ellps=aust_SA +units=m +no_defs  no_defs", # AGD84 / AMG zone 55
-  20356 => "+proj=utm +zone=56 +south +ellps=aust_SA +units=m +no_defs  no_defs", # AGD84 / AMG zone 56
-  20357 => "+proj=utm +zone=57 +south +ellps=aust_SA +units=m +no_defs  no_defs", # AGD84 / AMG zone 57
-  20358 => "+proj=utm +zone=58 +south +ellps=aust_SA +units=m +no_defs  no_defs", # AGD84 / AMG zone 58
-  20437 => "+proj=utm +zone=37 +ellps=intl +units=m +no_defs  no_defs", # Ain el Abd / UTM zone 37N
-  20438 => "+proj=utm +zone=38 +ellps=intl +units=m +no_defs  no_defs", # Ain el Abd / UTM zone 38N
-  20439 => "+proj=utm +zone=39 +ellps=intl +units=m +no_defs  no_defs", # Ain el Abd / UTM zone 39N
-  20499 => "+proj=utm +zone=39 +ellps=intl +units=m +no_defs  no_defs", # Ain el Abd / Bahrain Grid
-  20538 => "+proj=utm +zone=38 +ellps=krass +towgs84=-43,-163,45,0,0,0,0 +units=m +no_defs  no_defs", # Afgooye / UTM zone 38N
-  20539 => "+proj=utm +zone=39 +ellps=krass +towgs84=-43,-163,45,0,0,0,0 +units=m +no_defs  no_defs", # Afgooye / UTM zone 39N
-  20790 => "+proj=tmerc +lat_0=39.66666666666666 +lon_0=-8.131906111111112 +k=1.000000 +x_0=200000 +y_0=300000 +ellps=intl +pm=lisbon +units=m +no_defs  no_defs", # Lisbon (Lisbon)/Portuguese National Grid
-  20791 => "+proj=tmerc +lat_0=39.66666666666666 +lon_0=-8.131906111111112 +k=1.000000 +x_0=0 +y_0=0 +ellps=intl +pm=lisbon +units=m +no_defs  no_defs", # Lisbon (Lisbon)/Portuguese Grid
-  20822 => "+proj=utm +zone=22 +south +ellps=intl +units=m +no_defs  no_defs", # Aratu / UTM zone 22S
-  20823 => "+proj=utm +zone=23 +south +ellps=intl +units=m +no_defs  no_defs", # Aratu / UTM zone 23S
-  20824 => "+proj=utm +zone=24 +south +ellps=intl +units=m +no_defs  no_defs", # Aratu / UTM zone 24S
-  20934 => "+proj=utm +zone=34 +south +a=6378249.145 +b=6356514.966398753 +units=m +no_defs  no_defs", # Arc 1950 / UTM zone 34S
-  20935 => "+proj=utm +zone=35 +south +a=6378249.145 +b=6356514.966398753 +units=m +no_defs  no_defs", # Arc 1950 / UTM zone 35S
-  20936 => "+proj=utm +zone=36 +south +a=6378249.145 +b=6356514.966398753 +units=m +no_defs  no_defs", # Arc 1950 / UTM zone 36S
-  21035 => "+proj=utm +zone=35 +south +ellps=clrk80 +units=m +no_defs  no_defs", # Arc 1960 / UTM zone 35S
-  21036 => "+proj=utm +zone=36 +south +ellps=clrk80 +units=m +no_defs  no_defs", # Arc 1960 / UTM zone 36S
-  21037 => "+proj=utm +zone=37 +south +ellps=clrk80 +units=m +no_defs  no_defs", # Arc 1960 / UTM zone 37S
-  21095 => "+proj=utm +zone=35 +ellps=clrk80 +units=m +no_defs  no_defs", # Arc 1960 / UTM zone 35N
-  21096 => "+proj=utm +zone=36 +ellps=clrk80 +units=m +no_defs  no_defs", # Arc 1960 / UTM zone 36N
-  21097 => "+proj=utm +zone=37 +ellps=clrk80 +units=m +no_defs  no_defs", # Arc 1960 / UTM zone 37N
-  21100 => "+proj=merc +lat_ts=0 +lon_0=216.8077194444444 +k=0.997000 +x_0=3900000 +y_0=900000 +ellps=bessel +pm=jakarta +units=m +no_defs  no_defs", # Batavia (Jakarta) / NEIEZ
-  21148 => "+proj=utm +zone=48 +south +ellps=bessel +units=m +no_defs  no_defs", # Batavia / UTM zone 48S
-  21149 => "+proj=utm +zone=49 +south +ellps=bessel +units=m +no_defs  no_defs", # Batavia / UTM zone 49S
-  21150 => "+proj=utm +zone=50 +south +ellps=bessel +units=m +no_defs  no_defs", # Batavia / UTM zone 50S
-  21291 => "+proj=tmerc +lat_0=0 +lon_0=-62 +k=0.999500 +x_0=400000 +y_0=0 +ellps=clrk80 +units=m +no_defs  no_defs", # Barbados 1938 / British West Indies Grid
-  21292 => "+proj=tmerc +lat_0=13.17638888888889 +lon_0=-59.55972222222222 +k=0.999999 +x_0=30000 +y_0=75000 +ellps=clrk80 +units=m +no_defs  no_defs", # Barbados 1938 / Barbados National Grid
-  21413 => "+proj=tmerc +lat_0=0 +lon_0=75 +k=1.000000 +x_0=13500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / Gauss-Kruger zone 13
-  21414 => "+proj=tmerc +lat_0=0 +lon_0=81 +k=1.000000 +x_0=14500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / Gauss-Kruger zone 14
-  21415 => "+proj=tmerc +lat_0=0 +lon_0=87 +k=1.000000 +x_0=15500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / Gauss-Kruger zone 15
-  21416 => "+proj=tmerc +lat_0=0 +lon_0=93 +k=1.000000 +x_0=16500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / Gauss-Kruger zone 16
-  21417 => "+proj=tmerc +lat_0=0 +lon_0=99 +k=1.000000 +x_0=17500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / Gauss-Kruger zone 17
-  21418 => "+proj=tmerc +lat_0=0 +lon_0=105 +k=1.000000 +x_0=18500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / Gauss-Kruger zone 18
-  21419 => "+proj=tmerc +lat_0=0 +lon_0=111 +k=1.000000 +x_0=19500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / Gauss-Kruger zone 19
-  21420 => "+proj=tmerc +lat_0=0 +lon_0=117 +k=1.000000 +x_0=20500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / Gauss-Kruger zone 20
-  21421 => "+proj=tmerc +lat_0=0 +lon_0=123 +k=1.000000 +x_0=21500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / Gauss-Kruger zone 21
-  21422 => "+proj=tmerc +lat_0=0 +lon_0=129 +k=1.000000 +x_0=22500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / Gauss-Kruger zone 22
-  21423 => "+proj=tmerc +lat_0=0 +lon_0=135 +k=1.000000 +x_0=23500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / Gauss-Kruger zone 23
-  21453 => "+proj=tmerc +lat_0=0 +lon_0=75 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / Gauss-Kruger CM 75E
-  21454 => "+proj=tmerc +lat_0=0 +lon_0=81 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / Gauss-Kruger CM 81E
-  21455 => "+proj=tmerc +lat_0=0 +lon_0=87 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / Gauss-Kruger CM 87E
-  21456 => "+proj=tmerc +lat_0=0 +lon_0=93 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / Gauss-Kruger CM 93E
-  21457 => "+proj=tmerc +lat_0=0 +lon_0=99 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / Gauss-Kruger CM 99E
-  21458 => "+proj=tmerc +lat_0=0 +lon_0=105 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / Gauss-Kruger CM 105E
-  21459 => "+proj=tmerc +lat_0=0 +lon_0=111 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / Gauss-Kruger CM 111E
-  21460 => "+proj=tmerc +lat_0=0 +lon_0=117 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / Gauss-Kruger CM 117E
-  21461 => "+proj=tmerc +lat_0=0 +lon_0=123 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / Gauss-Kruger CM 123E
-  21462 => "+proj=tmerc +lat_0=0 +lon_0=129 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / Gauss-Kruger CM 129E
-  21463 => "+proj=tmerc +lat_0=0 +lon_0=135 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / Gauss-Kruger CM 135E
-  21473 => "+proj=tmerc +lat_0=0 +lon_0=75 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / Gauss-Kruger 13N
-  21474 => "+proj=tmerc +lat_0=0 +lon_0=81 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / Gauss-Kruger 14N
-  21475 => "+proj=tmerc +lat_0=0 +lon_0=87 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / Gauss-Kruger 15N
-  21476 => "+proj=tmerc +lat_0=0 +lon_0=93 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / Gauss-Kruger 16N
-  21477 => "+proj=tmerc +lat_0=0 +lon_0=99 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / Gauss-Kruger 17N
-  21478 => "+proj=tmerc +lat_0=0 +lon_0=105 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / Gauss-Kruger 18N
-  21479 => "+proj=tmerc +lat_0=0 +lon_0=111 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / Gauss-Kruger 19N
-  21480 => "+proj=tmerc +lat_0=0 +lon_0=117 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / Gauss-Kruger 20N
-  21481 => "+proj=tmerc +lat_0=0 +lon_0=123 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / Gauss-Kruger 21N
-  21482 => "+proj=tmerc +lat_0=0 +lon_0=129 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / Gauss-Kruger 22N
-  21483 => "+proj=tmerc +lat_0=0 +lon_0=135 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Beijing 1954 / Gauss-Kruger 23N
-  21500 => "+proj=lcc +lat_1=49.83333333333334 +lat_2=51.16666666666666 +lat_0=90 +lon_0=4.367975 +x_0=150000 +y_0=5400000 +ellps=intl +pm=brussels +units=m +no_defs  no_defs", # Belge 1950 (Brussels) / Belge Lambert 50
-  21780 => "+proj=omerc +lat_0=46.95240555555556 +lonc=7.439583333333333 +alpha=90 +k=1 +x_0=0 +y_0=0 +ellps=bessel +pm=bern +units=m +no_defs  no_defs", # Bern 1898 (Bern) / LV03C
-  21781 => "+proj=omerc +lat_0=46.95240555555556 +lonc=7.439583333333333 +alpha=90 +k=1 +x_0=600000 +y_0=200000 +ellps=bessel +units=m +no_defs  no_defs", # CH1903 / LV03
-  21817 => "+proj=utm +zone=17 +ellps=intl +units=m +no_defs  no_defs", # Bogota 1975 / UTM zone 17N
-  21818 => "+proj=utm +zone=18 +ellps=intl +units=m +no_defs  no_defs", # Bogota 1975 / UTM zone 18N
-  21891 => "+proj=tmerc +lat_0=4.599047222222222 +lon_0=-77.08091666666667 +k=1.000000 +x_0=1000000 +y_0=1000000 +ellps=intl +units=m +no_defs  no_defs", # Bogota 1975 / Colombia West zone
-  21892 => "+proj=tmerc +lat_0=4.599047222222222 +lon_0=-74.08091666666667 +k=1.000000 +x_0=1000000 +y_0=1000000 +ellps=intl +units=m +no_defs  no_defs", # Bogota 1975 / Colombia Bogota zone
-  21893 => "+proj=tmerc +lat_0=4.599047222222222 +lon_0=-71.08091666666667 +k=1.000000 +x_0=1000000 +y_0=1000000 +ellps=intl +units=m +no_defs  no_defs", # Bogota 1975 / Colombia East Central zone
-  21894 => "+proj=tmerc +lat_0=4.599047222222222 +lon_0=-68.08091666666667 +k=1.000000 +x_0=1000000 +y_0=1000000 +ellps=intl +units=m +no_defs  no_defs", # Bogota 1975 / Colombia East
-  22032 => "+proj=utm +zone=32 +south +ellps=clrk80 +units=m +no_defs  no_defs", # Camacupa / UTM zone 32S
-  22033 => "+proj=utm +zone=33 +south +ellps=clrk80 +units=m +no_defs  no_defs", # Camacupa / UTM zone 33S
-  22091 => "+proj=tmerc +lat_0=0 +lon_0=11.5 +k=0.999600 +x_0=500000 +y_0=10000000 +ellps=clrk80 +units=m +no_defs  no_defs", # Camacupa / TM 11.30 SE
-  22092 => "+proj=tmerc +lat_0=0 +lon_0=12 +k=0.999600 +x_0=500000 +y_0=10000000 +ellps=clrk80 +units=m +no_defs  no_defs", # Camacupa / TM 12 SE
-  22191 => "+proj=tmerc +lat_0=-90 +lon_0=-72 +k=1.000000 +x_0=1500000 +y_0=0 +ellps=intl +units=m +no_defs  no_defs", # Campo Inchauspe / Argentina 1
-  22192 => "+proj=tmerc +lat_0=-90 +lon_0=-69 +k=1.000000 +x_0=2500000 +y_0=0 +ellps=intl +units=m +no_defs  no_defs", # Campo Inchauspe / Argentina 2
-  22193 => "+proj=tmerc +lat_0=-90 +lon_0=-66 +k=1.000000 +x_0=3500000 +y_0=0 +ellps=intl +units=m +no_defs  no_defs", # Campo Inchauspe / Argentina 3
-  22194 => "+proj=tmerc +lat_0=-90 +lon_0=-63 +k=1.000000 +x_0=4500000 +y_0=0 +ellps=intl +units=m +no_defs  no_defs", # Campo Inchauspe / Argentina 4
-  22195 => "+proj=tmerc +lat_0=-90 +lon_0=-60 +k=1.000000 +x_0=5500000 +y_0=0 +ellps=intl +units=m +no_defs  no_defs", # Campo Inchauspe / Argentina 5
-  22196 => "+proj=tmerc +lat_0=-90 +lon_0=-57 +k=1.000000 +x_0=6500000 +y_0=0 +ellps=intl +units=m +no_defs  no_defs", # Campo Inchauspe / Argentina 6
-  22197 => "+proj=tmerc +lat_0=-90 +lon_0=-54 +k=1.000000 +x_0=7500000 +y_0=0 +ellps=intl +units=m +no_defs  no_defs", # Campo Inchauspe / Argentina 7
-  22234 => "+proj=utm +zone=34 +south +a=6378249.145 +b=6356514.966398753 +units=m +no_defs  no_defs", # Cape / UTM zone 34S
-  22235 => "+proj=utm +zone=35 +south +a=6378249.145 +b=6356514.966398753 +units=m +no_defs  no_defs", # Cape / UTM zone 35S
-  22236 => "+proj=utm +zone=36 +south +a=6378249.145 +b=6356514.966398753 +units=m +no_defs  no_defs", # Cape / UTM zone 36S
-  22332 => "+proj=utm +zone=32 +a=6378249.2 +b=6356515 +units=m +no_defs  no_defs", # Carthage / UTM zone 32N
-  22391 => "+proj=lcc +lat_1=36 +lat_0=36 +lon_0=9.9 +k_0=0.999625544 +x_0=500000 +y_0=300000 +a=6378249.2 +b=6356515 +units=m +no_defs  no_defs", # Carthage / Nord Tunisie
-  22392 => "+proj=lcc +lat_1=33.3 +lat_0=33.3 +lon_0=9.9 +k_0=0.999625769 +x_0=500000 +y_0=300000 +a=6378249.2 +b=6356515 +units=m +no_defs  no_defs", # Carthage / Sud Tunisie
-  22523 => "+proj=utm +zone=23 +south +ellps=intl +towgs84=-206,172,-6,0,0,0,0 +units=m +no_defs  no_defs", # Corrego Alegre / UTM zone 23S
-  22524 => "+proj=utm +zone=24 +south +ellps=intl +towgs84=-206,172,-6,0,0,0,0 +units=m +no_defs  no_defs", # Corrego Alegre / UTM zone 24S
-  22700 => "+proj=lcc +lat_1=34.65 +lat_0=34.65 +lon_0=37.35 +k_0=0.9996256 +x_0=300000 +y_0=300000 +a=6378249.2 +b=6356515 +units=m +no_defs  no_defs", # Deir ez Zor / Levant Zone
-  22770 => "+proj=lcc +lat_1=34.65 +lat_0=34.65 +lon_0=37.35 +k_0=0.9996256 +x_0=300000 +y_0=300000 +a=6378249.2 +b=6356515 +units=m +no_defs  no_defs", # Deir ez Zor / Syria Lambert
-  22780 => "+proj=stere +lat_0=34.2 +lon_0=39.15 +k=0.999534 +x_0=0 +y_0=0 +a=6378249.2 +b=6356515 +units=m +no_defs  no_defs", # Deir ez Zor / Levant Stereographic
-  22832 => "+proj=utm +zone=32 +a=6378249.2 +b=6356515 +units=m +no_defs  no_defs", # Douala / UTM zone 32N
-  22991 => "+proj=tmerc +lat_0=30 +lon_0=35 +k=1.000000 +x_0=300000 +y_0=1100000 +ellps=helmert +units=m +no_defs  no_defs", # Egypt 1907 / Blue Belt
-  22992 => "+proj=tmerc +lat_0=30 +lon_0=31 +k=1.000000 +x_0=615000 +y_0=810000 +ellps=helmert +units=m +no_defs  no_defs", # Egypt 1907 / Red Belt
-  22993 => "+proj=tmerc +lat_0=30 +lon_0=27 +k=1.000000 +x_0=700000 +y_0=200000 +ellps=helmert +units=m +no_defs  no_defs", # Egypt 1907 / Purple Belt
-  22994 => "+proj=tmerc +lat_0=30 +lon_0=27 +k=1.000000 +x_0=700000 +y_0=1200000 +ellps=helmert +units=m +no_defs  no_defs", # Egypt 1907 / Extended Purple Belt
-  23028 => "+proj=utm +zone=28 +ellps=intl +units=m +no_defs  no_defs", # ED50 / UTM zone 28N
-  23029 => "+proj=utm +zone=29 +ellps=intl +units=m +no_defs  no_defs", # ED50 / UTM zone 29N
-  23030 => "+proj=utm +zone=30 +ellps=intl +units=m +no_defs  no_defs", # ED50 / UTM zone 30N
-  23031 => "+proj=utm +zone=31 +ellps=intl +units=m +no_defs  no_defs", # ED50 / UTM zone 31N
-  23032 => "+proj=utm +zone=32 +ellps=intl +units=m +no_defs  no_defs", # ED50 / UTM zone 32N
-  23033 => "+proj=utm +zone=33 +ellps=intl +units=m +no_defs  no_defs", # ED50 / UTM zone 33N
-  23034 => "+proj=utm +zone=34 +ellps=intl +units=m +no_defs  no_defs", # ED50 / UTM zone 34N
-  23035 => "+proj=utm +zone=35 +ellps=intl +units=m +no_defs  no_defs", # ED50 / UTM zone 35N
-  23036 => "+proj=utm +zone=36 +ellps=intl +units=m +no_defs  no_defs", # ED50 / UTM zone 36N
-  23037 => "+proj=utm +zone=37 +ellps=intl +units=m +no_defs  no_defs", # ED50 / UTM zone 37N
-  23038 => "+proj=utm +zone=38 +ellps=intl +units=m +no_defs  no_defs", # ED50 / UTM zone 38N
-  23090 => "+proj=tmerc +lat_0=0 +lon_0=0 +k=0.999600 +x_0=500000 +y_0=0 +ellps=intl +units=m +no_defs  no_defs", # ED50 / TM 0 N
-  23095 => "+proj=tmerc +lat_0=0 +lon_0=5 +k=0.999600 +x_0=500000 +y_0=0 +ellps=intl +units=m +no_defs  no_defs", # ED50 / TM 5 NE
-  23239 => "+proj=utm +zone=39 +ellps=clrk80 +units=m +no_defs  no_defs", # Fahud / UTM zone 39N
-  23240 => "+proj=utm +zone=40 +ellps=clrk80 +units=m +no_defs  no_defs", # Fahud / UTM zone 40N
-  23433 => "+proj=utm +zone=33 +a=6378249.2 +b=6356515 +units=m +no_defs  no_defs", # Garoua / UTM zone 33N
-  23700 => "+proj=omerc +lat_0=47.14439372222222 +lonc=19.04857177777778 +alpha=90 +k=0.99993 +x_0=650000 +y_0=200000 +ellps=GRS67 +units=m +no_defs  no_defs", # HD72 / EOV
-  23846 => "+proj=utm +zone=46 +a=6378160 +b=6356774.50408554 +units=m +no_defs  no_defs", # ID74 / UTM zone 46N
-  23847 => "+proj=utm +zone=47 +a=6378160 +b=6356774.50408554 +units=m +no_defs  no_defs", # ID74 / UTM zone 47N
-  23848 => "+proj=utm +zone=48 +a=6378160 +b=6356774.50408554 +units=m +no_defs  no_defs", # ID74 / UTM zone 48N
-  23849 => "+proj=utm +zone=49 +a=6378160 +b=6356774.50408554 +units=m +no_defs  no_defs", # ID74 / UTM zone 49N
-  23850 => "+proj=utm +zone=50 +a=6378160 +b=6356774.50408554 +units=m +no_defs  no_defs", # ID74 / UTM zone 50N
-  23851 => "+proj=utm +zone=51 +a=6378160 +b=6356774.50408554 +units=m +no_defs  no_defs", # ID74 / UTM zone 51N
-  23852 => "+proj=utm +zone=52 +a=6378160 +b=6356774.50408554 +units=m +no_defs  no_defs", # ID74 / UTM zone 52N
-  23853 => "+proj=utm +zone=53 +a=6378160 +b=6356774.50408554 +units=m +no_defs  no_defs", # ID74 / UTM zone 53N
-  23886 => "+proj=utm +zone=46 +south +a=6378160 +b=6356774.50408554 +units=m +no_defs  no_defs", # ID74 / UTM zone 46S
-  23887 => "+proj=utm +zone=47 +south +a=6378160 +b=6356774.50408554 +units=m +no_defs  no_defs", # ID74 / UTM zone 47S
-  23888 => "+proj=utm +zone=48 +south +a=6378160 +b=6356774.50408554 +units=m +no_defs  no_defs", # ID74 / UTM zone 48S
-  23889 => "+proj=utm +zone=49 +south +a=6378160 +b=6356774.50408554 +units=m +no_defs  no_defs", # ID74 / UTM zone 49S
-  23890 => "+proj=utm +zone=50 +south +a=6378160 +b=6356774.50408554 +units=m +no_defs  no_defs", # ID74 / UTM zone 50S
-  23891 => "+proj=utm +zone=51 +south +a=6378160 +b=6356774.50408554 +units=m +no_defs  no_defs", # ID74 / UTM zone 51S
-  23892 => "+proj=utm +zone=52 +south +a=6378160 +b=6356774.50408554 +units=m +no_defs  no_defs", # ID74 / UTM zone 52S
-  23893 => "+proj=utm +zone=53 +south +a=6378160 +b=6356774.50408554 +units=m +no_defs  no_defs", # ID74 / UTM zone 53S
-  23894 => "+proj=utm +zone=54 +south +a=6378160 +b=6356774.50408554 +units=m +no_defs  no_defs", # ID74 / UTM zone 54S
-  23946 => "+proj=utm +zone=46 +a=6377276.345 +b=6356075.413140239 +towgs84=217,823,299,0,0,0,0 +units=m +no_defs  no_defs", # Indian 1954 / UTM zone 46N
-  23947 => "+proj=utm +zone=47 +a=6377276.345 +b=6356075.413140239 +towgs84=217,823,299,0,0,0,0 +units=m +no_defs  no_defs", # Indian 1954 / UTM zone 47N
-  23948 => "+proj=utm +zone=48 +a=6377276.345 +b=6356075.413140239 +towgs84=217,823,299,0,0,0,0 +units=m +no_defs  no_defs", # Indian 1954 / UTM zone 48N
-  24047 => "+proj=utm +zone=47 +a=6377276.345 +b=6356075.413140239 +units=m +no_defs  no_defs", # Indian 1975 / UTM zone 47N
-  24048 => "+proj=utm +zone=48 +a=6377276.345 +b=6356075.413140239 +units=m +no_defs  no_defs", # Indian 1975 / UTM zone 48N
-  24100 => "+proj=lcc +lat_1=18 +lat_0=18 +lon_0=-77 +k_0=1 +x_0=167638.49575 +y_0=121918.906 +ellps=clrk80 +to_meter=0.304797265 +no_defs  no_defs", # Jamaica 1875 / Jamaica (Old Grid)
-  24200 => "+proj=lcc +lat_1=18 +lat_0=18 +lon_0=-77 +k_0=1 +x_0=250000 +y_0=150000 +ellps=clrk66 +units=m +no_defs  no_defs", # JAD69 / Jamaica National Grid
-  24305 => "+proj=utm +zone=45 +a=6377276.345 +b=6356075.413140239 +units=m +no_defs  no_defs", # Kalianpur 1937 / UTM zone 45N
-  24306 => "+proj=utm +zone=46 +a=6377276.345 +b=6356075.413140239 +units=m +no_defs  no_defs", # Kalianpur 1937 / UTM zone 46N
-  24311 => "+proj=utm +zone=41 +a=6377301.243 +b=6356100.230165385 +towgs84=283,682,231,0,0,0,0 +units=m +no_defs  no_defs", # Kalianpur 1962 / UTM zone 41N
-  24312 => "+proj=utm +zone=42 +a=6377301.243 +b=6356100.230165385 +towgs84=283,682,231,0,0,0,0 +units=m +no_defs  no_defs", # Kalianpur 1962 / UTM zone 42N
-  24313 => "+proj=utm +zone=43 +a=6377301.243 +b=6356100.230165385 +towgs84=283,682,231,0,0,0,0 +units=m +no_defs  no_defs", # Kalianpur 1962 / UTM zone 43N
-  24342 => "+proj=utm +zone=42 +a=6377299.151 +b=6356098.145120132 +towgs84=295,736,257,0,0,0,0 +units=m +no_defs  no_defs", # Kalianpur 1975 / UTM zone 42N
-  24343 => "+proj=utm +zone=43 +a=6377299.151 +b=6356098.145120132 +towgs84=295,736,257,0,0,0,0 +units=m +no_defs  no_defs", # Kalianpur 1975 / UTM zone 43N
-  24344 => "+proj=utm +zone=44 +a=6377299.151 +b=6356098.145120132 +towgs84=295,736,257,0,0,0,0 +units=m +no_defs  no_defs", # Kalianpur 1975 / UTM zone 44N
-  24345 => "+proj=utm +zone=45 +a=6377299.151 +b=6356098.145120132 +towgs84=295,736,257,0,0,0,0 +units=m +no_defs  no_defs", # Kalianpur 1975 / UTM zone 45N
-  24346 => "+proj=utm +zone=46 +a=6377299.151 +b=6356098.145120132 +towgs84=295,736,257,0,0,0,0 +units=m +no_defs  no_defs", # Kalianpur 1975 / UTM zone 46N
-  24347 => "+proj=utm +zone=47 +a=6377299.151 +b=6356098.145120132 +towgs84=295,736,257,0,0,0,0 +units=m +no_defs  no_defs", # Kalianpur 1975 / UTM zone 47N
-  24370 => "+proj=lcc +lat_1=39.5 +lat_0=39.5 +lon_0=68 +k_0=0.99846154 +x_0=2153865.73916853 +y_0=2368292.194628102 +a=6377299.36559538 +b=6356098.357204817 +to_meter=0.9143985307444408 +no_defs  no_defs", # Kalianpur 1880 / India zone 0
-  24371 => "+proj=lcc +lat_1=32.5 +lat_0=32.5 +lon_0=68 +k_0=0.99878641 +x_0=2743195.592233322 +y_0=914398.5307444407 +a=6377299.36559538 +b=6356098.357204817 +to_meter=0.9143985307444408 +no_defs  no_defs", # Kalianpur 1880 / India zone I
-  24372 => "+proj=lcc +lat_1=26 +lat_0=26 +lon_0=74 +k_0=0.99878641 +x_0=2743195.592233322 +y_0=914398.5307444407 +a=6377299.36559538 +b=6356098.357204817 +to_meter=0.9143985307444408 +no_defs  no_defs", # Kalianpur 1880 / India zone IIa
-  24373 => "+proj=lcc +lat_1=19 +lat_0=19 +lon_0=80 +k_0=0.99878641 +x_0=2743195.592233322 +y_0=914398.5307444407 +a=6377299.36559538 +b=6356098.357204817 +to_meter=0.9143985307444408 +no_defs  no_defs", # Kalianpur 1880 / India zone III
-  24374 => "+proj=lcc +lat_1=12 +lat_0=12 +lon_0=80 +k_0=0.99878641 +x_0=2743195.592233322 +y_0=914398.5307444407 +a=6377299.36559538 +b=6356098.357204817 +to_meter=0.9143985307444408 +no_defs  no_defs", # Kalianpur 1880 / India zone IV
-  24375 => "+proj=lcc +lat_1=26 +lat_0=26 +lon_0=90 +k_0=0.99878641 +x_0=2743185.69 +y_0=914395.23 +a=6377276.345 +b=6356075.413140239 +units=m +no_defs  no_defs", # Kalianpur 1937 / India zone IIb
-  24376 => "+proj=lcc +lat_1=32.5 +lat_0=32.5 +lon_0=68 +k_0=0.99878641 +x_0=2743196.4 +y_0=914398.8 +a=6377301.243 +b=6356100.230165385 +towgs84=283,682,231,0,0,0,0 +units=m +no_defs  no_defs", # Kalianpur 1962 / India zone I
-  24377 => "+proj=lcc +lat_1=26 +lat_0=26 +lon_0=74 +k_0=0.99878641 +x_0=2743196.4 +y_0=914398.8 +a=6377301.243 +b=6356100.230165385 +towgs84=283,682,231,0,0,0,0 +units=m +no_defs  no_defs", # Kalianpur 1962 / India zone IIa
-  24378 => "+proj=lcc +lat_1=32.5 +lat_0=32.5 +lon_0=68 +k_0=0.99878641 +x_0=2743195.5 +y_0=914398.5 +a=6377299.151 +b=6356098.145120132 +towgs84=295,736,257,0,0,0,0 +units=m +no_defs  no_defs", # Kalianpur 1975 / India zone I
-  24379 => "+proj=lcc +lat_1=26 +lat_0=26 +lon_0=74 +k_0=0.99878641 +x_0=2743195.5 +y_0=914398.5 +a=6377299.151 +b=6356098.145120132 +towgs84=295,736,257,0,0,0,0 +units=m +no_defs  no_defs", # Kalianpur 1975 / India zone IIa
-  24380 => "+proj=lcc +lat_1=26 +lat_0=26 +lon_0=90 +k_0=0.99878641 +x_0=2743195.5 +y_0=914398.5 +a=6377299.151 +b=6356098.145120132 +towgs84=295,736,257,0,0,0,0 +units=m +no_defs  no_defs", # Kalianpur 1975 / India zone IIb
-  24381 => "+proj=lcc +lat_1=19 +lat_0=19 +lon_0=80 +k_0=0.99878641 +x_0=2743195.5 +y_0=914398.5 +a=6377299.151 +b=6356098.145120132 +towgs84=295,736,257,0,0,0,0 +units=m +no_defs  no_defs", # Kalianpur 1975 / India zone III
-  24382 => "+proj=lcc +lat_1=26 +lat_0=26 +lon_0=90 +k_0=0.99878641 +x_0=2743195.592233322 +y_0=914398.5307444407 +a=6377299.36559538 +b=6356098.357204817 +to_meter=0.9143985307444408 +no_defs  no_defs", # Kalianpur 1880 / India zone IIb
-  24383 => "+proj=lcc +lat_1=12 +lat_0=12 +lon_0=80 +k_0=0.99878641 +x_0=2743195.5 +y_0=914398.5 +a=6377299.151 +b=6356098.145120132 +towgs84=295,736,257,0,0,0,0 +units=m +no_defs  no_defs", # Kalianpur 1975 / India zone IV
-  24500 => "+proj=cass +lat_0=1.287646666666667 +lon_0=103.8530022222222 +x_0=30000 +y_0=30000 +a=6377304.063 +b=6356103.038993155 +towgs84=-11,851,5,0,0,0,0 +units=m +no_defs  no_defs", # Kertau / Singapore Grid
-  24547 => "+proj=utm +zone=47 +a=6377304.063 +b=6356103.038993155 +towgs84=-11,851,5,0,0,0,0 +units=m +no_defs  no_defs", # Kertau / UTM zone 47N
-  24548 => "+proj=utm +zone=48 +a=6377304.063 +b=6356103.038993155 +towgs84=-11,851,5,0,0,0,0 +units=m +no_defs  no_defs", # Kertau / UTM zone 48N
-  24571 => "+proj=omerc +lat_0=4 +lonc=102.25 +alpha=323.0257905 +k=0.99984 +x_0=804671.2997750348 +y_0=0 +a=6377304.063 +b=6356103.038993155 +towgs84=-11,851,5,0,0,0,0 +to_meter=20.11678249437587 +no_defs  no_defs", # Kertau / R.S.O. Malaya (ch)
-  24600 => "+proj=lcc +lat_1=32.5 +lat_0=32.5 +lon_0=45 +k_0=0.9987864078000001 +x_0=1500000 +y_0=1166200 +ellps=clrk80 +units=m +no_defs  no_defs", # KOC Lambert
-  24718 => "+proj=utm +zone=18 +ellps=intl +towgs84=-273.5,110.6,-357.9,0,0,0,0 +units=m +no_defs  no_defs", # La Canoa / UTM zone 18N
-  24719 => "+proj=utm +zone=19 +ellps=intl +towgs84=-273.5,110.6,-357.9,0,0,0,0 +units=m +no_defs  no_defs", # La Canoa / UTM zone 19N
-  24720 => "+proj=utm +zone=20 +ellps=intl +towgs84=-273.5,110.6,-357.9,0,0,0,0 +units=m +no_defs  no_defs", # La Canoa / UTM zone 20N
-  24818 => "+proj=utm +zone=18 +ellps=intl +units=m +no_defs  no_defs", # PSAD56 / UTM zone 18N
-  24819 => "+proj=utm +zone=19 +ellps=intl +units=m +no_defs  no_defs", # PSAD56 / UTM zone 19N
-  24820 => "+proj=utm +zone=20 +ellps=intl +units=m +no_defs  no_defs", # PSAD56 / UTM zone 20N
-  24821 => "+proj=utm +zone=21 +ellps=intl +units=m +no_defs  no_defs", # PSAD56 / UTM zone 21N
-  24877 => "+proj=utm +zone=17 +south +ellps=intl +units=m +no_defs  no_defs", # PSAD56 / UTM zone 17S
-  24878 => "+proj=utm +zone=18 +south +ellps=intl +units=m +no_defs  no_defs", # PSAD56 / UTM zone 18S
-  24879 => "+proj=utm +zone=19 +south +ellps=intl +units=m +no_defs  no_defs", # PSAD56 / UTM zone 19S
-  24880 => "+proj=utm +zone=20 +south +ellps=intl +units=m +no_defs  no_defs", # PSAD56 / UTM zone 20S
-  24882 => "+proj=utm +zone=22 +south +ellps=intl +units=m +no_defs  no_defs", # PSAD56 / UTM zone 22S
-  24891 => "+proj=tmerc +lat_0=-6 +lon_0=-80.5 +k=0.999830 +x_0=222000 +y_0=1426834.743 +ellps=intl +units=m +no_defs  no_defs", # PSAD56 / Peru west zone
-  24892 => "+proj=tmerc +lat_0=-9.5 +lon_0=-76 +k=0.999330 +x_0=720000 +y_0=1039979.159 +ellps=intl +units=m +no_defs  no_defs", # PSAD56 / Peru central zone
-  24893 => "+proj=tmerc +lat_0=-9.5 +lon_0=-70.5 +k=0.999530 +x_0=1324000 +y_0=1040084.558 +ellps=intl +units=m +no_defs  no_defs", # PSAD56 / Peru east zone
-  25000 => "+proj=tmerc +lat_0=4.666666666666667 +lon_0=-1 +k=0.999750 +x_0=274319.51 +y_0=0 +ellps=clrk80 +towgs84=-130,29,364,0,0,0,0 +units=m +no_defs  no_defs", # Leigon / Ghana Metre Grid
-  25231 => "+proj=utm +zone=31 +a=6378249.2 +b=6356515 +units=m +no_defs  no_defs", # Lome / UTM zone 31N
-  25391 => "+proj=tmerc +lat_0=0 +lon_0=117 +k=0.999950 +x_0=500000 +y_0=0 +ellps=clrk66 +units=m +no_defs  no_defs", # Luzon 1911 / Philippines zone I
-  25392 => "+proj=tmerc +lat_0=0 +lon_0=119 +k=0.999950 +x_0=500000 +y_0=0 +ellps=clrk66 +units=m +no_defs  no_defs", # Luzon 1911 / Philippines zone II
-  25393 => "+proj=tmerc +lat_0=0 +lon_0=121 +k=0.999950 +x_0=500000 +y_0=0 +ellps=clrk66 +units=m +no_defs  no_defs", # Luzon 1911 / Philippines zone III
-  25394 => "+proj=tmerc +lat_0=0 +lon_0=123 +k=0.999950 +x_0=500000 +y_0=0 +ellps=clrk66 +units=m +no_defs  no_defs", # Luzon 1911 / Philippines zone IV
-  25395 => "+proj=tmerc +lat_0=0 +lon_0=125 +k=0.999950 +x_0=500000 +y_0=0 +ellps=clrk66 +units=m +no_defs  no_defs", # Luzon 1911 / Philippines zone V
-  25700 => "+proj=merc +lat_ts=0 +lon_0=216.8077194444444 +k=0.997000 +x_0=3900000 +y_0=900000 +ellps=bessel +towgs84=-587.8,519.75,145.76,0,0,0,0 +pm=jakarta +units=m +no_defs  no_defs", # Makassar (Jakarta) / NEIEZ
-  25828 => "+proj=utm +zone=28 +ellps=GRS80 +units=m +no_defs  no_defs", # ETRS89 / UTM zone 28N
-  25829 => "+proj=utm +zone=29 +ellps=GRS80 +units=m +no_defs  no_defs", # ETRS89 / UTM zone 29N
-  25830 => "+proj=utm +zone=30 +ellps=GRS80 +units=m +no_defs  no_defs", # ETRS89 / UTM zone 30N
-  25831 => "+proj=utm +zone=31 +ellps=GRS80 +units=m +no_defs  no_defs", # ETRS89 / UTM zone 31N
-  25832 => "+proj=utm +zone=32 +ellps=GRS80 +units=m +no_defs  no_defs", # ETRS89 / UTM zone 32N
-  25833 => "+proj=utm +zone=33 +ellps=GRS80 +units=m +no_defs  no_defs", # ETRS89 / UTM zone 33N
-  25834 => "+proj=utm +zone=34 +ellps=GRS80 +units=m +no_defs  no_defs", # ETRS89 / UTM zone 34N
-  25835 => "+proj=utm +zone=35 +ellps=GRS80 +units=m +no_defs  no_defs", # ETRS89 / UTM zone 35N
-  25836 => "+proj=utm +zone=36 +ellps=GRS80 +units=m +no_defs  no_defs", # ETRS89 / UTM zone 36N
-  25837 => "+proj=utm +zone=37 +ellps=GRS80 +units=m +no_defs  no_defs", # ETRS89 / UTM zone 37N
-  25838 => "+proj=utm +zone=38 +ellps=GRS80 +units=m +no_defs  no_defs", # ETRS89 / UTM zone 38N
-  25884 => "+proj=tmerc +lat_0=0 +lon_0=24 +k=0.999600 +x_0=500000 +y_0=0 +ellps=GRS80 +units=m +no_defs  no_defs", # ETRS89 / TM Baltic93
-  25932 => "+proj=utm +zone=32 +south +ellps=intl +units=m +no_defs  no_defs", # Malongo 1987 / UTM zone 32S
-  26191 => "+proj=lcc +lat_1=33.3 +lat_0=33.3 +lon_0=-5.4 +k_0=0.999625769 +x_0=500000 +y_0=300000 +a=6378249.2 +b=6356515 +towgs84=31,146,47,0,0,0,0 +units=m +no_defs  no_defs", # Merchich / Nord Maroc
-  26192 => "+proj=lcc +lat_1=29.7 +lat_0=29.7 +lon_0=-5.4 +k_0=0.9996155960000001 +x_0=500000 +y_0=300000 +a=6378249.2 +b=6356515 +towgs84=31,146,47,0,0,0,0 +units=m +no_defs  no_defs", # Merchich / Sud Maroc
-  26193 => "+proj=lcc +lat_1=26.1 +lat_0=26.1 +lon_0=-5.4 +k_0=0.9996 +x_0=1200000 +y_0=400000 +a=6378249.2 +b=6356515 +towgs84=31,146,47,0,0,0,0 +units=m +no_defs  no_defs", # Merchich / Sahara
-  26237 => "+proj=utm +zone=37 +ellps=bessel +towgs84=639,405,60,0,0,0,0 +units=m +no_defs  no_defs", # Massawa / UTM zone 37N
-  26331 => "+proj=utm +zone=31 +ellps=clrk80 +units=m +no_defs  no_defs", # Minna / UTM zone 31N
-  26332 => "+proj=utm +zone=32 +ellps=clrk80 +units=m +no_defs  no_defs", # Minna / UTM zone 32N
-  26391 => "+proj=tmerc +lat_0=4 +lon_0=4.5 +k=0.999750 +x_0=230738.26 +y_0=0 +ellps=clrk80 +units=m +no_defs  no_defs", # Minna / Nigeria West Belt
-  26392 => "+proj=tmerc +lat_0=4 +lon_0=8.5 +k=0.999750 +x_0=670553.98 +y_0=0 +ellps=clrk80 +units=m +no_defs  no_defs", # Minna / Nigeria Mid Belt
-  26393 => "+proj=tmerc +lat_0=4 +lon_0=12.5 +k=0.999750 +x_0=1110369.7 +y_0=0 +ellps=clrk80 +units=m +no_defs  no_defs", # Minna / Nigeria East Belt
-  26432 => "+proj=utm +zone=32 +south +ellps=intl +towgs84=-252.95,-4.11,-96.38,0,0,0,0 +units=m +no_defs  no_defs", # Mhast / UTM zone 32S
-  26591 => "+proj=tmerc +lat_0=0 +lon_0=21.45233333333333 +k=0.999600 +x_0=1500000 +y_0=0 +ellps=intl +pm=rome +units=m +no_defs  no_defs", # Monte Mario (Rome) / Italy zone 1
-  26592 => "+proj=tmerc +lat_0=0 +lon_0=27.45233333333333 +k=0.999600 +x_0=2520000 +y_0=0 +ellps=intl +pm=rome +units=m +no_defs  no_defs", # Monte Mario (Rome) / Italy zone 2
-  26632 => "+proj=utm +zone=32 +a=6378249.2 +b=6356515 +units=m +no_defs  no_defs", # M'poraloko / UTM zone 32N
-  26692 => "+proj=utm +zone=32 +south +a=6378249.2 +b=6356515 +units=m +no_defs  no_defs", # M'poraloko / UTM zone 32S
-  26703 => "+proj=utm +zone=3 +ellps=clrk66 +datum=NAD27 +units=m +no_defs  no_defs", # NAD27 / UTM zone 3N
-  26704 => "+proj=utm +zone=4 +ellps=clrk66 +datum=NAD27 +units=m +no_defs  no_defs", # NAD27 / UTM zone 4N
-  26705 => "+proj=utm +zone=5 +ellps=clrk66 +datum=NAD27 +units=m +no_defs  no_defs", # NAD27 / UTM zone 5N
-  26706 => "+proj=utm +zone=6 +ellps=clrk66 +datum=NAD27 +units=m +no_defs  no_defs", # NAD27 / UTM zone 6N
-  26707 => "+proj=utm +zone=7 +ellps=clrk66 +datum=NAD27 +units=m +no_defs  no_defs", # NAD27 / UTM zone 7N
-  26708 => "+proj=utm +zone=8 +ellps=clrk66 +datum=NAD27 +units=m +no_defs  no_defs", # NAD27 / UTM zone 8N
-  26709 => "+proj=utm +zone=9 +ellps=clrk66 +datum=NAD27 +units=m +no_defs  no_defs", # NAD27 / UTM zone 9N
-  26710 => "+proj=utm +zone=10 +ellps=clrk66 +datum=NAD27 +units=m +no_defs  no_defs", # NAD27 / UTM zone 10N
-  26711 => "+proj=utm +zone=11 +ellps=clrk66 +datum=NAD27 +units=m +no_defs  no_defs", # NAD27 / UTM zone 11N
-  26712 => "+proj=utm +zone=12 +ellps=clrk66 +datum=NAD27 +units=m +no_defs  no_defs", # NAD27 / UTM zone 12N
-  26713 => "+proj=utm +zone=13 +ellps=clrk66 +datum=NAD27 +units=m +no_defs  no_defs", # NAD27 / UTM zone 13N
-  26714 => "+proj=utm +zone=14 +ellps=clrk66 +datum=NAD27 +units=m +no_defs  no_defs", # NAD27 / UTM zone 14N
-  26715 => "+proj=utm +zone=15 +ellps=clrk66 +datum=NAD27 +units=m +no_defs  no_defs", # NAD27 / UTM zone 15N
-  26716 => "+proj=utm +zone=16 +ellps=clrk66 +datum=NAD27 +units=m +no_defs  no_defs", # NAD27 / UTM zone 16N
-  26717 => "+proj=utm +zone=17 +ellps=clrk66 +datum=NAD27 +units=m +no_defs  no_defs", # NAD27 / UTM zone 17N
-  26718 => "+proj=utm +zone=18 +ellps=clrk66 +datum=NAD27 +units=m +no_defs  no_defs", # NAD27 / UTM zone 18N
-  26719 => "+proj=utm +zone=19 +ellps=clrk66 +datum=NAD27 +units=m +no_defs  no_defs", # NAD27 / UTM zone 19N
-  26720 => "+proj=utm +zone=20 +ellps=clrk66 +datum=NAD27 +units=m +no_defs  no_defs", # NAD27 / UTM zone 20N
-  26721 => "+proj=utm +zone=21 +ellps=clrk66 +datum=NAD27 +units=m +no_defs  no_defs", # NAD27 / UTM zone 21N
-  26722 => "+proj=utm +zone=22 +ellps=clrk66 +datum=NAD27 +units=m +no_defs  no_defs", # NAD27 / UTM zone 22N
-  26729 => "+proj=tmerc +lat_0=30.5 +lon_0=-85.83333333333333 +k=0.999960 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Alabama East
-  26730 => "+proj=tmerc +lat_0=30 +lon_0=-87.5 +k=0.999933 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Alabama West
-  26731 => "+proj=omerc +lat_0=57 +lonc=-133.6666666666667 +alpha=323.1301023611111 +k=0.9999 +x_0=5000000.001016002 +y_0=-5000000.001016002 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Alaska zone 1
-  26732 => "+proj=tmerc +lat_0=54 +lon_0=-142 +k=0.999900 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Alaska zone 2
-  26733 => "+proj=tmerc +lat_0=54 +lon_0=-146 +k=0.999900 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Alaska zone 3
-  26734 => "+proj=tmerc +lat_0=54 +lon_0=-150 +k=0.999900 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Alaska zone 4
-  26735 => "+proj=tmerc +lat_0=54 +lon_0=-154 +k=0.999900 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Alaska zone 5
-  26736 => "+proj=tmerc +lat_0=54 +lon_0=-158 +k=0.999900 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Alaska zone 6
-  26737 => "+proj=tmerc +lat_0=54 +lon_0=-162 +k=0.999900 +x_0=213360.4267208534 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Alaska zone 7
-  26738 => "+proj=tmerc +lat_0=54 +lon_0=-166 +k=0.999900 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Alaska zone 8
-  26739 => "+proj=tmerc +lat_0=54 +lon_0=-170 +k=0.999900 +x_0=182880.3657607315 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Alaska zone 9
-  26740 => "+proj=lcc +lat_1=53.83333333333334 +lat_2=51.83333333333334 +lat_0=51 +lon_0=-176 +x_0=914401.8288036576 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Alaska zone 10
-  26741 => "+proj=lcc +lat_1=41.66666666666666 +lat_2=40 +lat_0=39.33333333333334 +lon_0=-122 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / California zone I
-  26742 => "+proj=lcc +lat_1=39.83333333333334 +lat_2=38.33333333333334 +lat_0=37.66666666666666 +lon_0=-122 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / California zone II
-  26743 => "+proj=lcc +lat_1=38.43333333333333 +lat_2=37.06666666666667 +lat_0=36.5 +lon_0=-120.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / California zone III
-  26744 => "+proj=lcc +lat_1=37.25 +lat_2=36 +lat_0=35.33333333333334 +lon_0=-119 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / California zone IV
-  26745 => "+proj=lcc +lat_1=35.46666666666667 +lat_2=34.03333333333333 +lat_0=33.5 +lon_0=-118 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / California zone V
-  26746 => "+proj=lcc +lat_1=33.88333333333333 +lat_2=32.78333333333333 +lat_0=32.16666666666666 +lon_0=-116.25 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / California zone VI
-  26747 => "+proj=lcc +lat_1=34.41666666666666 +lat_2=33.86666666666667 +lat_0=34.13333333333333 +lon_0=-118.3333333333333 +x_0=1276106.450596901 +y_0=127079.524511049 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / California zone VII
-  26748 => "+proj=tmerc +lat_0=31 +lon_0=-110.1666666666667 +k=0.999900 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Arizona East
-  26749 => "+proj=tmerc +lat_0=31 +lon_0=-111.9166666666667 +k=0.999900 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Arizona Central
-  26750 => "+proj=tmerc +lat_0=31 +lon_0=-113.75 +k=0.999933 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Arizona West
-  26751 => "+proj=lcc +lat_1=36.23333333333333 +lat_2=34.93333333333333 +lat_0=34.33333333333334 +lon_0=-92 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Arkansas North
-  26752 => "+proj=lcc +lat_1=34.76666666666667 +lat_2=33.3 +lat_0=32.66666666666666 +lon_0=-92 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Arkansas South
-  26753 => "+proj=lcc +lat_1=39.71666666666667 +lat_2=40.78333333333333 +lat_0=39.33333333333334 +lon_0=-105.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Colorado North
-  26754 => "+proj=lcc +lat_1=39.75 +lat_2=38.45 +lat_0=37.83333333333334 +lon_0=-105.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Colorado Central
-  26755 => "+proj=lcc +lat_1=38.43333333333333 +lat_2=37.23333333333333 +lat_0=36.66666666666666 +lon_0=-105.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Colorado South
-  26756 => "+proj=lcc +lat_1=41.86666666666667 +lat_2=41.2 +lat_0=40.83333333333334 +lon_0=-72.75 +x_0=182880.3657607315 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Connecticut
-  26757 => "+proj=tmerc +lat_0=38 +lon_0=-75.41666666666667 +k=0.999995 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Delaware
-  26758 => "+proj=tmerc +lat_0=24.33333333333333 +lon_0=-81 +k=0.999941 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Florida East
-  26759 => "+proj=tmerc +lat_0=24.33333333333333 +lon_0=-82 +k=0.999941 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Florida West
-  26760 => "+proj=lcc +lat_1=30.75 +lat_2=29.58333333333333 +lat_0=29 +lon_0=-84.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Florida North
-  26766 => "+proj=tmerc +lat_0=30 +lon_0=-82.16666666666667 +k=0.999900 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Georgia East
-  26767 => "+proj=tmerc +lat_0=30 +lon_0=-84.16666666666667 +k=0.999900 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Georgia West
-  26768 => "+proj=tmerc +lat_0=41.66666666666666 +lon_0=-112.1666666666667 +k=0.999947 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Idaho East
-  26769 => "+proj=tmerc +lat_0=41.66666666666666 +lon_0=-114 +k=0.999947 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Idaho Central
-  26770 => "+proj=tmerc +lat_0=41.66666666666666 +lon_0=-115.75 +k=0.999933 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Idaho West
-  26771 => "+proj=tmerc +lat_0=36.66666666666666 +lon_0=-88.33333333333333 +k=0.999975 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Illinois East
-  26772 => "+proj=tmerc +lat_0=36.66666666666666 +lon_0=-90.16666666666667 +k=0.999941 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Illinois West
-  26773 => "+proj=tmerc +lat_0=37.5 +lon_0=-85.66666666666667 +k=0.999967 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Indiana East
-  26774 => "+proj=tmerc +lat_0=37.5 +lon_0=-87.08333333333333 +k=0.999967 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Indiana West
-  26775 => "+proj=lcc +lat_1=43.26666666666667 +lat_2=42.06666666666667 +lat_0=41.5 +lon_0=-93.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Iowa North
-  26776 => "+proj=lcc +lat_1=41.78333333333333 +lat_2=40.61666666666667 +lat_0=40 +lon_0=-93.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Iowa South
-  26777 => "+proj=lcc +lat_1=39.78333333333333 +lat_2=38.71666666666667 +lat_0=38.33333333333334 +lon_0=-98 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Kansas North
-  26778 => "+proj=lcc +lat_1=38.56666666666667 +lat_2=37.26666666666667 +lat_0=36.66666666666666 +lon_0=-98.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Kansas South
-  26779 => "+proj=lcc +lat_1=37.96666666666667 +lat_2=38.96666666666667 +lat_0=37.5 +lon_0=-84.25 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Kentucky North
-  26780 => "+proj=lcc +lat_1=36.73333333333333 +lat_2=37.93333333333333 +lat_0=36.33333333333334 +lon_0=-85.75 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Kentucky South
-  26781 => "+proj=lcc +lat_1=31.16666666666667 +lat_2=32.66666666666666 +lat_0=30.66666666666667 +lon_0=-92.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Louisiana North
-  26782 => "+proj=lcc +lat_1=29.3 +lat_2=30.7 +lat_0=28.66666666666667 +lon_0=-91.33333333333333 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Louisiana South
-  26783 => "+proj=tmerc +lat_0=43.83333333333334 +lon_0=-68.5 +k=0.999900 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Maine East
-  26784 => "+proj=tmerc +lat_0=42.83333333333334 +lon_0=-70.16666666666667 +k=0.999967 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Maine West
-  26785 => "+proj=lcc +lat_1=38.3 +lat_2=39.45 +lat_0=37.83333333333334 +lon_0=-77 +x_0=243840.4876809754 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Maryland
-  26786 => "+proj=lcc +lat_1=41.71666666666667 +lat_2=42.68333333333333 +lat_0=41 +lon_0=-71.5 +x_0=182880.3657607315 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Massachusetts Mainland
-  26787 => "+proj=lcc +lat_1=41.28333333333333 +lat_2=41.48333333333333 +lat_0=41 +lon_0=-70.5 +x_0=60960.12192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Massachusetts Island
-  26791 => "+proj=lcc +lat_1=47.03333333333333 +lat_2=48.63333333333333 +lat_0=46.5 +lon_0=-93.09999999999999 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Minnesota North
-  26792 => "+proj=lcc +lat_1=45.61666666666667 +lat_2=47.05 +lat_0=45 +lon_0=-94.25 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Minnesota Central
-  26793 => "+proj=lcc +lat_1=43.78333333333333 +lat_2=45.21666666666667 +lat_0=43 +lon_0=-94 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Minnesota South
-  26794 => "+proj=tmerc +lat_0=29.66666666666667 +lon_0=-88.83333333333333 +k=0.999960 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Mississippi East
-  26795 => "+proj=tmerc +lat_0=30.5 +lon_0=-90.33333333333333 +k=0.999941 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Mississippi West
-  26796 => "+proj=tmerc +lat_0=35.83333333333334 +lon_0=-90.5 +k=0.999933 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Missouri East
-  26797 => "+proj=tmerc +lat_0=35.83333333333334 +lon_0=-92.5 +k=0.999933 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Missouri Central
-  26798 => "+proj=tmerc +lat_0=36.16666666666666 +lon_0=-94.5 +k=0.999941 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Missouri West
-  26801 => "+proj=tmerc +lat_0=41.5 +lon_0=-83.66666666666667 +k=0.999943 +x_0=152400.3048006096 +y_0=0 +a=6378450.047548896 +b=6356826.621488444 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD Michigan / Michigan East
-  26802 => "+proj=tmerc +lat_0=41.5 +lon_0=-85.75 +k=0.999909 +x_0=152400.3048006096 +y_0=0 +a=6378450.047548896 +b=6356826.621488444 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD Michigan / Michigan Old Central
-  26803 => "+proj=tmerc +lat_0=41.5 +lon_0=-88.75 +k=0.999909 +x_0=152400.3048006096 +y_0=0 +a=6378450.047548896 +b=6356826.621488444 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD Michigan / Michigan West
-  26811 => "+proj=lcc +lat_1=45.48333333333333 +lat_2=47.08333333333334 +lat_0=44.78333333333333 +lon_0=-87 +x_0=609601.2192024384 +y_0=0 +a=6378450.047548896 +b=6356826.621488444 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD Michigan / Michigan North
-  26812 => "+proj=lcc +lat_1=44.18333333333333 +lat_2=45.7 +lat_0=43.31666666666667 +lon_0=-84.33333333333333 +x_0=609601.2192024384 +y_0=0 +a=6378450.047548896 +b=6356826.621488444 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD Michigan / Michigan Central
-  26813 => "+proj=lcc +lat_1=42.1 +lat_2=43.66666666666666 +lat_0=41.5 +lon_0=-84.33333333333333 +x_0=609601.2192024384 +y_0=0 +a=6378450.047548896 +b=6356826.621488444 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD Michigan / Michigan South
-  26903 => "+proj=utm +zone=3 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / UTM zone 3N
-  26904 => "+proj=utm +zone=4 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / UTM zone 4N
-  26905 => "+proj=utm +zone=5 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / UTM zone 5N
-  26906 => "+proj=utm +zone=6 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / UTM zone 6N
-  26907 => "+proj=utm +zone=7 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / UTM zone 7N
-  26908 => "+proj=utm +zone=8 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / UTM zone 8N
-  26909 => "+proj=utm +zone=9 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / UTM zone 9N
-  26910 => "+proj=utm +zone=10 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / UTM zone 10N
-  26911 => "+proj=utm +zone=11 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / UTM zone 11N
-  26912 => "+proj=utm +zone=12 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / UTM zone 12N
-  26913 => "+proj=utm +zone=13 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / UTM zone 13N
-  26914 => "+proj=utm +zone=14 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / UTM zone 14N
-  26915 => "+proj=utm +zone=15 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / UTM zone 15N
-  26916 => "+proj=utm +zone=16 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / UTM zone 16N
-  26917 => "+proj=utm +zone=17 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / UTM zone 17N
-  26918 => "+proj=utm +zone=18 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / UTM zone 18N
-  26919 => "+proj=utm +zone=19 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / UTM zone 19N
-  26920 => "+proj=utm +zone=20 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / UTM zone 20N
-  26921 => "+proj=utm +zone=21 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / UTM zone 21N
-  26922 => "+proj=utm +zone=22 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / UTM zone 22N
-  26923 => "+proj=utm +zone=23 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / UTM zone 23N
-  26929 => "+proj=tmerc +lat_0=30.5 +lon_0=-85.83333333333333 +k=0.999960 +x_0=200000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Alabama East
-  26930 => "+proj=tmerc +lat_0=30 +lon_0=-87.5 +k=0.999933 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Alabama West
-  26931 => "+proj=omerc +lat_0=57 +lonc=-133.6666666666667 +alpha=323.1301023611111 +k=0.9999 +x_0=5000000 +y_0=-5000000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Alaska zone 1
-  26932 => "+proj=tmerc +lat_0=54 +lon_0=-142 +k=0.999900 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Alaska zone 2
-  26933 => "+proj=tmerc +lat_0=54 +lon_0=-146 +k=0.999900 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Alaska zone 3
-  26934 => "+proj=tmerc +lat_0=54 +lon_0=-150 +k=0.999900 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Alaska zone 4
-  26935 => "+proj=tmerc +lat_0=54 +lon_0=-154 +k=0.999900 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Alaska zone 5
-  26936 => "+proj=tmerc +lat_0=54 +lon_0=-158 +k=0.999900 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Alaska zone 6
-  26937 => "+proj=tmerc +lat_0=54 +lon_0=-162 +k=0.999900 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Alaska zone 7
-  26938 => "+proj=tmerc +lat_0=54 +lon_0=-166 +k=0.999900 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Alaska zone 8
-  26939 => "+proj=tmerc +lat_0=54 +lon_0=-170 +k=0.999900 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Alaska zone 9
-  26940 => "+proj=lcc +lat_1=53.83333333333334 +lat_2=51.83333333333334 +lat_0=51 +lon_0=-176 +x_0=1000000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Alaska zone 10
-  26941 => "+proj=lcc +lat_1=41.66666666666666 +lat_2=40 +lat_0=39.33333333333334 +lon_0=-122 +x_0=2000000 +y_0=500000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / California zone 1
-  26942 => "+proj=lcc +lat_1=39.83333333333334 +lat_2=38.33333333333334 +lat_0=37.66666666666666 +lon_0=-122 +x_0=2000000 +y_0=500000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / California zone 2
-  26943 => "+proj=lcc +lat_1=38.43333333333333 +lat_2=37.06666666666667 +lat_0=36.5 +lon_0=-120.5 +x_0=2000000 +y_0=500000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / California zone 3
-  26944 => "+proj=lcc +lat_1=37.25 +lat_2=36 +lat_0=35.33333333333334 +lon_0=-119 +x_0=2000000 +y_0=500000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / California zone 4
-  26945 => "+proj=lcc +lat_1=35.46666666666667 +lat_2=34.03333333333333 +lat_0=33.5 +lon_0=-118 +x_0=2000000 +y_0=500000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / California zone 5
-  26946 => "+proj=lcc +lat_1=33.88333333333333 +lat_2=32.78333333333333 +lat_0=32.16666666666666 +lon_0=-116.25 +x_0=2000000 +y_0=500000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / California zone 6
-  26948 => "+proj=tmerc +lat_0=31 +lon_0=-110.1666666666667 +k=0.999900 +x_0=213360 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Arizona East
-  26949 => "+proj=tmerc +lat_0=31 +lon_0=-111.9166666666667 +k=0.999900 +x_0=213360 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Arizona Central
-  26950 => "+proj=tmerc +lat_0=31 +lon_0=-113.75 +k=0.999933 +x_0=213360 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Arizona West
-  26951 => "+proj=lcc +lat_1=36.23333333333333 +lat_2=34.93333333333333 +lat_0=34.33333333333334 +lon_0=-92 +x_0=400000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Arkansas North
-  26952 => "+proj=lcc +lat_1=34.76666666666667 +lat_2=33.3 +lat_0=32.66666666666666 +lon_0=-92 +x_0=400000 +y_0=400000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Arkansas South
-  26953 => "+proj=lcc +lat_1=40.78333333333333 +lat_2=39.71666666666667 +lat_0=39.33333333333334 +lon_0=-105.5 +x_0=914401.8289 +y_0=304800.6096 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Colorado North
-  26954 => "+proj=lcc +lat_1=39.75 +lat_2=38.45 +lat_0=37.83333333333334 +lon_0=-105.5 +x_0=914401.8289 +y_0=304800.6096 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Colorado Central
-  26955 => "+proj=lcc +lat_1=38.43333333333333 +lat_2=37.23333333333333 +lat_0=36.66666666666666 +lon_0=-105.5 +x_0=914401.8289 +y_0=304800.6096 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Colorado South
-  26956 => "+proj=lcc +lat_1=41.86666666666667 +lat_2=41.2 +lat_0=40.83333333333334 +lon_0=-72.75 +x_0=304800.6096 +y_0=152400.3048 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Connecticut
-  26957 => "+proj=tmerc +lat_0=38 +lon_0=-75.41666666666667 +k=0.999995 +x_0=200000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Delaware
-  26958 => "+proj=tmerc +lat_0=24.33333333333333 +lon_0=-81 +k=0.999941 +x_0=200000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Florida East
-  26959 => "+proj=tmerc +lat_0=24.33333333333333 +lon_0=-82 +k=0.999941 +x_0=200000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Florida West
-  26960 => "+proj=lcc +lat_1=30.75 +lat_2=29.58333333333333 +lat_0=29 +lon_0=-84.5 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Florida North
-  26961 => "+proj=tmerc +lat_0=18.83333333333333 +lon_0=-155.5 +k=0.999967 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Hawaii zone 1
-  26962 => "+proj=tmerc +lat_0=20.33333333333333 +lon_0=-156.6666666666667 +k=0.999967 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Hawaii zone 2
-  26963 => "+proj=tmerc +lat_0=21.16666666666667 +lon_0=-158 +k=0.999990 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Hawaii zone 3
-  26964 => "+proj=tmerc +lat_0=21.83333333333333 +lon_0=-159.5 +k=0.999990 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Hawaii zone 4
-  26965 => "+proj=tmerc +lat_0=21.66666666666667 +lon_0=-160.1666666666667 +k=1.000000 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Hawaii zone 5
-  26966 => "+proj=tmerc +lat_0=30 +lon_0=-82.16666666666667 +k=0.999900 +x_0=200000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Georgia East
-  26967 => "+proj=tmerc +lat_0=30 +lon_0=-84.16666666666667 +k=0.999900 +x_0=700000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Georgia West
-  26968 => "+proj=tmerc +lat_0=41.66666666666666 +lon_0=-112.1666666666667 +k=0.999947 +x_0=200000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Idaho East
-  26969 => "+proj=tmerc +lat_0=41.66666666666666 +lon_0=-114 +k=0.999947 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Idaho Central
-  26970 => "+proj=tmerc +lat_0=41.66666666666666 +lon_0=-115.75 +k=0.999933 +x_0=800000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Idaho West
-  26971 => "+proj=tmerc +lat_0=36.66666666666666 +lon_0=-88.33333333333333 +k=0.999975 +x_0=300000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Illinois East
-  26972 => "+proj=tmerc +lat_0=36.66666666666666 +lon_0=-90.16666666666667 +k=0.999941 +x_0=700000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Illinois West
-  26973 => "+proj=tmerc +lat_0=37.5 +lon_0=-85.66666666666667 +k=0.999967 +x_0=100000 +y_0=250000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Indiana East
-  26974 => "+proj=tmerc +lat_0=37.5 +lon_0=-87.08333333333333 +k=0.999967 +x_0=900000 +y_0=250000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Indiana West
-  26975 => "+proj=lcc +lat_1=43.26666666666667 +lat_2=42.06666666666667 +lat_0=41.5 +lon_0=-93.5 +x_0=1500000 +y_0=1000000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Iowa North
-  26976 => "+proj=lcc +lat_1=41.78333333333333 +lat_2=40.61666666666667 +lat_0=40 +lon_0=-93.5 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Iowa South
-  26977 => "+proj=lcc +lat_1=39.78333333333333 +lat_2=38.71666666666667 +lat_0=38.33333333333334 +lon_0=-98 +x_0=400000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Kansas North
-  26978 => "+proj=lcc +lat_1=38.56666666666667 +lat_2=37.26666666666667 +lat_0=36.66666666666666 +lon_0=-98.5 +x_0=400000 +y_0=400000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Kansas South
-  26979 => "+proj=lcc +lat_1=37.96666666666667 +lat_2=37.96666666666667 +lat_0=37.5 +lon_0=-84.25 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Kentucky North
-  26980 => "+proj=lcc +lat_1=37.93333333333333 +lat_2=36.73333333333333 +lat_0=36.33333333333334 +lon_0=-85.75 +x_0=500000 +y_0=500000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Kentucky South
-  26981 => "+proj=lcc +lat_1=32.66666666666666 +lat_2=31.16666666666667 +lat_0=30.5 +lon_0=-92.5 +x_0=1000000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Louisiana North
-  26982 => "+proj=lcc +lat_1=30.7 +lat_2=29.3 +lat_0=28.5 +lon_0=-91.33333333333333 +x_0=1000000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Louisiana South
-  26983 => "+proj=tmerc +lat_0=43.66666666666666 +lon_0=-68.5 +k=0.999900 +x_0=300000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Maine East
-  26984 => "+proj=tmerc +lat_0=42.83333333333334 +lon_0=-70.16666666666667 +k=0.999967 +x_0=900000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Maine West
-  26985 => "+proj=lcc +lat_1=39.45 +lat_2=38.3 +lat_0=37.66666666666666 +lon_0=-77 +x_0=400000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Maryland
-  26986 => "+proj=lcc +lat_1=42.68333333333333 +lat_2=41.71666666666667 +lat_0=41 +lon_0=-71.5 +x_0=200000 +y_0=750000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Massachusetts Mainland
-  26987 => "+proj=lcc +lat_1=41.48333333333333 +lat_2=41.28333333333333 +lat_0=41 +lon_0=-70.5 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Massachusetts Island
-  26988 => "+proj=lcc +lat_1=47.08333333333334 +lat_2=45.48333333333333 +lat_0=44.78333333333333 +lon_0=-87 +x_0=8000000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Michigan North
-  26989 => "+proj=lcc +lat_1=45.7 +lat_2=44.18333333333333 +lat_0=43.31666666666667 +lon_0=-84.36666666666666 +x_0=6000000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Michigan Central
-  26990 => "+proj=lcc +lat_1=43.66666666666666 +lat_2=42.1 +lat_0=41.5 +lon_0=-84.36666666666666 +x_0=4000000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Michigan South
-  26991 => "+proj=lcc +lat_1=48.63333333333333 +lat_2=47.03333333333333 +lat_0=46.5 +lon_0=-93.09999999999999 +x_0=800000 +y_0=100000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Minnesota North
-  26992 => "+proj=lcc +lat_1=47.05 +lat_2=45.61666666666667 +lat_0=45 +lon_0=-94.25 +x_0=800000 +y_0=100000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Minnesota Central
-  26993 => "+proj=lcc +lat_1=45.21666666666667 +lat_2=43.78333333333333 +lat_0=43 +lon_0=-94 +x_0=800000 +y_0=100000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Minnesota South
-  26994 => "+proj=tmerc +lat_0=29.5 +lon_0=-88.83333333333333 +k=0.999950 +x_0=300000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Mississippi East
-  26995 => "+proj=tmerc +lat_0=29.5 +lon_0=-90.33333333333333 +k=0.999950 +x_0=700000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Mississippi West
-  26996 => "+proj=tmerc +lat_0=35.83333333333334 +lon_0=-90.5 +k=0.999933 +x_0=250000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Missouri East
-  26997 => "+proj=tmerc +lat_0=35.83333333333334 +lon_0=-92.5 +k=0.999933 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Missouri Central
-  26998 => "+proj=tmerc +lat_0=36.16666666666666 +lon_0=-94.5 +k=0.999941 +x_0=850000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Missouri West
-  27038 => "+proj=utm +zone=38 +ellps=clrk80 +units=m +no_defs  no_defs", # Nahrwan 1967 / UTM zone 38N
-  27039 => "+proj=utm +zone=39 +ellps=clrk80 +units=m +no_defs  no_defs", # Nahrwan 1967 / UTM zone 39N
-  27040 => "+proj=utm +zone=40 +ellps=clrk80 +units=m +no_defs  no_defs", # Nahrwan 1967 / UTM zone 40N
-  27120 => "+proj=utm +zone=20 +ellps=intl +units=m +no_defs  no_defs", # Naparima 1972 / UTM zone 20N
-  27200 => "+proj=nzmg +lat_0=-41 +lon_0=173 +x_0=2510000 +y_0=6023150 +ellps=intl +units=m +no_defs  no_defs", # NZGD49 / New Zealand Map Grid
-  27205 => "+proj=tmerc +lat_0=-36.87986527777778 +lon_0=174.7643393611111 +k=0.999900 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs  no_defs", # NZGD49 / Mount Eden Circuit
-  27206 => "+proj=tmerc +lat_0=-37.76124980555556 +lon_0=176.46619725 +k=1.000000 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs  no_defs", # NZGD49 / Bay of Plenty Circuit
-  27207 => "+proj=tmerc +lat_0=-38.62470277777778 +lon_0=177.8856362777778 +k=1.000000 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs  no_defs", # NZGD49 / Poverty Bay Circuit
-  27208 => "+proj=tmerc +lat_0=-39.65092930555556 +lon_0=176.6736805277778 +k=1.000000 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs  no_defs", # NZGD49 / Hawkes Bay Circuit
-  27209 => "+proj=tmerc +lat_0=-39.13575830555556 +lon_0=174.22801175 +k=1.000000 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs  no_defs", # NZGD49 / Taranaki Circuit
-  27210 => "+proj=tmerc +lat_0=-39.51247038888889 +lon_0=175.6400368055556 +k=1.000000 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs  no_defs", # NZGD49 / Tuhirangi Circuit
-  27211 => "+proj=tmerc +lat_0=-40.24194713888889 +lon_0=175.4880996111111 +k=1.000000 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs  no_defs", # NZGD49 / Wanganui Circuit
-  27212 => "+proj=tmerc +lat_0=-40.92553263888889 +lon_0=175.6473496666667 +k=1.000000 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs  no_defs", # NZGD49 / Wairarapa Circuit
-  27213 => "+proj=tmerc +lat_0=-41.30131963888888 +lon_0=174.7766231111111 +k=1.000000 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs  no_defs", # NZGD49 / Wellington Circuit
-  27214 => "+proj=tmerc +lat_0=-40.71475905555556 +lon_0=172.6720465 +k=1.000000 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs  no_defs", # NZGD49 / Collingwood Circuit
-  27215 => "+proj=tmerc +lat_0=-41.27454472222222 +lon_0=173.2993168055555 +k=1.000000 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs  no_defs", # NZGD49 / Nelson Circuit
-  27216 => "+proj=tmerc +lat_0=-41.28991152777778 +lon_0=172.1090281944444 +k=1.000000 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs  no_defs", # NZGD49 / Karamea Circuit
-  27217 => "+proj=tmerc +lat_0=-41.81080286111111 +lon_0=171.5812600555556 +k=1.000000 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs  no_defs", # NZGD49 / Buller Circuit
-  27218 => "+proj=tmerc +lat_0=-42.33369427777778 +lon_0=171.5497713055556 +k=1.000000 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs  no_defs", # NZGD49 / Grey Circuit
-  27219 => "+proj=tmerc +lat_0=-42.68911658333333 +lon_0=173.0101333888889 +k=1.000000 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs  no_defs", # NZGD49 / Amuri Circuit
-  27220 => "+proj=tmerc +lat_0=-41.54448666666666 +lon_0=173.8020741111111 +k=1.000000 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs  no_defs", # NZGD49 / Marlborough Circuit
-  27221 => "+proj=tmerc +lat_0=-42.88632236111111 +lon_0=170.9799935 +k=1.000000 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs  no_defs", # NZGD49 / Hokitika Circuit
-  27222 => "+proj=tmerc +lat_0=-43.11012813888889 +lon_0=170.2609258333333 +k=1.000000 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs  no_defs", # NZGD49 / Okarito Circuit
-  27223 => "+proj=tmerc +lat_0=-43.97780288888889 +lon_0=168.606267 +k=1.000000 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs  no_defs", # NZGD49 / Jacksons Bay Circuit
-  27224 => "+proj=tmerc +lat_0=-43.59063758333333 +lon_0=172.7271935833333 +k=1.000000 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs  no_defs", # NZGD49 / Mount Pleasant Circuit
-  27225 => "+proj=tmerc +lat_0=-43.74871155555556 +lon_0=171.3607484722222 +k=1.000000 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs  no_defs", # NZGD49 / Gawler Circuit
-  27226 => "+proj=tmerc +lat_0=-44.40222036111111 +lon_0=171.0572508333333 +k=1.000000 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs  no_defs", # NZGD49 / Timaru Circuit
-  27227 => "+proj=tmerc +lat_0=-44.73526797222222 +lon_0=169.4677550833333 +k=1.000000 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs  no_defs", # NZGD49 / Lindis Peak Circuit
-  27228 => "+proj=tmerc +lat_0=-45.13290258333333 +lon_0=168.3986411944444 +k=1.000000 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs  no_defs", # NZGD49 / Mount Nicholas Circuit
-  27229 => "+proj=tmerc +lat_0=-45.56372616666666 +lon_0=167.7388617777778 +k=1.000000 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs  no_defs", # NZGD49 / Mount York Circuit
-  27230 => "+proj=tmerc +lat_0=-45.81619661111111 +lon_0=170.6285951666667 +k=1.000000 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs  no_defs", # NZGD49 / Observation Point Circuit
-  27231 => "+proj=tmerc +lat_0=-45.86151336111111 +lon_0=170.2825891111111 +k=0.999960 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs  no_defs", # NZGD49 / North Taieri Circuit
-  27232 => "+proj=tmerc +lat_0=-46.60000961111111 +lon_0=168.342872 +k=1.000000 +x_0=300002.66 +y_0=699999.58 +ellps=intl +units=m +no_defs  no_defs", # NZGD49 / Bluff Circuit
-  27258 => "+proj=utm +zone=58 +south +ellps=intl +units=m +no_defs  no_defs", # NZGD49 / UTM zone 58S
-  27259 => "+proj=utm +zone=59 +south +ellps=intl +units=m +no_defs  no_defs", # NZGD49 / UTM zone 59S
-  27260 => "+proj=utm +zone=60 +south +ellps=intl +units=m +no_defs  no_defs", # NZGD49 / UTM zone 60S
-  27291 => "+proj=tmerc +lat_0=-39 +lon_0=175.5 +k=1.000000 +x_0=274319.5243848086 +y_0=365759.3658464114 +ellps=intl +to_meter=0.9143984146160287 +no_defs  no_defs", # NZGD49 / North Island Grid
-  27292 => "+proj=tmerc +lat_0=-44 +lon_0=171.5 +k=1.000000 +x_0=457199.2073080143 +y_0=457199.2073080143 +ellps=intl +to_meter=0.9143984146160287 +no_defs  no_defs", # NZGD49 / South Island Grid
-  27391 => "+proj=tmerc +lat_0=58 +lon_0=6.056250000000003 +k=1.000000 +x_0=0 +y_0=0 +a=6377492.018 +b=6356173.508712696 +towgs84=278.3,93,474.5,7.889,0.05,-6.61,6.21 +pm=oslo +units=m +no_defs  no_defs", # NGO 1948 (Oslo) / NGO zone I
-  27392 => "+proj=tmerc +lat_0=58 +lon_0=8.389583333333336 +k=1.000000 +x_0=0 +y_0=0 +a=6377492.018 +b=6356173.508712696 +towgs84=278.3,93,474.5,7.889,0.05,-6.61,6.21 +pm=oslo +units=m +no_defs  no_defs", # NGO 1948 (Oslo) / NGO zone II
-  27393 => "+proj=tmerc +lat_0=58 +lon_0=10.72291666666667 +k=1.000000 +x_0=0 +y_0=0 +a=6377492.018 +b=6356173.508712696 +towgs84=278.3,93,474.5,7.889,0.05,-6.61,6.21 +pm=oslo +units=m +no_defs  no_defs", # NGO 1948 (Oslo) / NGO zone III
-  27394 => "+proj=tmerc +lat_0=58 +lon_0=13.22291666666667 +k=1.000000 +x_0=0 +y_0=0 +a=6377492.018 +b=6356173.508712696 +towgs84=278.3,93,474.5,7.889,0.05,-6.61,6.21 +pm=oslo +units=m +no_defs  no_defs", # NGO 1948 (Oslo) / NGO zone IV
-  27395 => "+proj=tmerc +lat_0=58 +lon_0=16.88958333333334 +k=1.000000 +x_0=0 +y_0=0 +a=6377492.018 +b=6356173.508712696 +towgs84=278.3,93,474.5,7.889,0.05,-6.61,6.21 +pm=oslo +units=m +no_defs  no_defs", # NGO 1948 (Oslo) / NGO zone V
-  27396 => "+proj=tmerc +lat_0=58 +lon_0=20.88958333333333 +k=1.000000 +x_0=0 +y_0=0 +a=6377492.018 +b=6356173.508712696 +towgs84=278.3,93,474.5,7.889,0.05,-6.61,6.21 +pm=oslo +units=m +no_defs  no_defs", # NGO 1948 (Oslo) / NGO zone VI
-  27397 => "+proj=tmerc +lat_0=58 +lon_0=24.88958333333333 +k=1.000000 +x_0=0 +y_0=0 +a=6377492.018 +b=6356173.508712696 +towgs84=278.3,93,474.5,7.889,0.05,-6.61,6.21 +pm=oslo +units=m +no_defs  no_defs", # NGO 1948 (Oslo) / NGO zone VII
-  27398 => "+proj=tmerc +lat_0=58 +lon_0=29.05625 +k=1.000000 +x_0=0 +y_0=0 +a=6377492.018 +b=6356173.508712696 +towgs84=278.3,93,474.5,7.889,0.05,-6.61,6.21 +pm=oslo +units=m +no_defs  no_defs", # NGO 1948 (Oslo) / NGO zone VIII
-  27429 => "+proj=utm +zone=29 +ellps=intl +units=m +no_defs  no_defs", # Datum 73 / UTM zone 29N
-  27492 => "+proj=tmerc +lat_0=39.66666666666666 +lon_0=-8.131906111111112 +k=1.000000 +x_0=180.598 +y_0=-86.98999999999999 +ellps=intl +units=m +no_defs  no_defs", # Datum 73 / Modified Portuguese Grid
-  27500 => "+proj=lcc +lat_1=49.50000000000001 +lat_0=49.50000000000001 +lon_0=7.737229170000001 +k_0=0.99950908 +x_0=500000 +y_0=300000 +a=6376523 +b=6355862.933255573 +pm=paris +units=m +no_defs  no_defs", # ATF (Paris) / Nord de Guerre
-  27561 => "+proj=lcc +lat_1=49.50000000000001 +lat_0=49.50000000000001 +lon_0=2.33722917 +k_0=0.999877341 +x_0=600000 +y_0=200000 +a=6378249.2 +b=6356515 +towgs84=-168,-60,320,0,0,0,0 +pm=paris +units=m +no_defs  no_defs", # NTF (Paris) / Lambert Nord France
-  27562 => "+proj=lcc +lat_1=46.8 +lat_0=46.8 +lon_0=2.33722917 +k_0=0.99987742 +x_0=600000 +y_0=200000 +a=6378249.2 +b=6356515 +towgs84=-168,-60,320,0,0,0,0 +pm=paris +units=m +no_defs  no_defs", # NTF (Paris) / Lambert Centre France
-  27563 => "+proj=lcc +lat_1=44.10000000000001 +lat_0=44.10000000000001 +lon_0=2.33722917 +k_0=0.999877499 +x_0=600000 +y_0=200000 +a=6378249.2 +b=6356515 +towgs84=-168,-60,320,0,0,0,0 +pm=paris +units=m +no_defs  no_defs", # NTF (Paris) / Lambert Sud France
-  27564 => "+proj=lcc +lat_1=42.16500000000001 +lat_0=42.16500000000001 +lon_0=2.33722917 +k_0=0.99994471 +x_0=234.358 +y_0=185861.369 +a=6378249.2 +b=6356515 +towgs84=-168,-60,320,0,0,0,0 +pm=paris +units=m +no_defs  no_defs", # NTF (Paris) / Lambert Corse
-  27571 => "+proj=lcc +lat_1=49.50000000000001 +lat_0=49.50000000000001 +lon_0=2.33722917 +k_0=0.999877341 +x_0=600000 +y_0=1200000 +a=6378249.2 +b=6356515 +towgs84=-168,-60,320,0,0,0,0 +pm=paris +units=m +no_defs  no_defs", # NTF (Paris) / Lambert zone I
-  27572 => "+proj=lcc +lat_1=46.8 +lat_0=46.8 +lon_0=2.33722917 +k_0=0.99987742 +x_0=600000 +y_0=2200000 +a=6378249.2 +b=6356515 +towgs84=-168,-60,320,0,0,0,0 +pm=paris +units=m +no_defs  no_defs", # NTF (Paris) / Lambert zone II
-  27573 => "+proj=lcc +lat_1=44.10000000000001 +lat_0=44.10000000000001 +lon_0=2.33722917 +k_0=0.999877499 +x_0=600000 +y_0=3200000 +a=6378249.2 +b=6356515 +towgs84=-168,-60,320,0,0,0,0 +pm=paris +units=m +no_defs  no_defs", # NTF (Paris) / Lambert zone III
-  27574 => "+proj=lcc +lat_1=42.16500000000001 +lat_0=42.16500000000001 +lon_0=2.33722917 +k_0=0.99994471 +x_0=234.358 +y_0=4185861.369 +a=6378249.2 +b=6356515 +towgs84=-168,-60,320,0,0,0,0 +pm=paris +units=m +no_defs  no_defs", # NTF (Paris) / Lambert zone IV
-  27581 => "+proj=lcc +lat_1=49.50000000000001 +lat_0=49.50000000000001 +lon_0=2.33722917 +k_0=0.999877341 +x_0=600000 +y_0=1200000 +a=6378249.2 +b=6356515 +towgs84=-168,-60,320,0,0,0,0 +pm=paris +units=m +no_defs  no_defs", # NTF (Paris) / France I
-  27582 => "+proj=lcc +lat_1=46.8 +lat_0=46.8 +lon_0=2.33722917 +k_0=0.99987742 +x_0=600000 +y_0=2200000 +a=6378249.2 +b=6356515 +towgs84=-168,-60,320,0,0,0,0 +pm=paris +units=m +no_defs  no_defs", # NTF (Paris) / France II
-  27583 => "+proj=lcc +lat_1=44.10000000000001 +lat_0=44.10000000000001 +lon_0=2.33722917 +k_0=0.999877499 +x_0=600000 +y_0=3200000 +a=6378249.2 +b=6356515 +towgs84=-168,-60,320,0,0,0,0 +pm=paris +units=m +no_defs  no_defs", # NTF (Paris) / France III
-  27584 => "+proj=lcc +lat_1=42.16500000000001 +lat_0=42.16500000000001 +lon_0=2.33722917 +k_0=0.99994471 +x_0=234.358 +y_0=4185861.369 +a=6378249.2 +b=6356515 +towgs84=-168,-60,320,0,0,0,0 +pm=paris +units=m +no_defs  no_defs", # NTF (Paris) / France IV
-  27591 => "+proj=lcc +lat_1=49.50000000000001 +lat_0=49.50000000000001 +lon_0=2.33722917 +k_0=0.999877341 +x_0=600000 +y_0=200000 +a=6378249.2 +b=6356515 +towgs84=-168,-60,320,0,0,0,0 +pm=paris +units=m +no_defs  no_defs", # NTF (Paris) / Nord France
-  27592 => "+proj=lcc +lat_1=46.8 +lat_0=46.8 +lon_0=2.33722917 +k_0=0.99987742 +x_0=600000 +y_0=200000 +a=6378249.2 +b=6356515 +towgs84=-168,-60,320,0,0,0,0 +pm=paris +units=m +no_defs  no_defs", # NTF (Paris) / Centre France
-  27593 => "+proj=lcc +lat_1=44.10000000000001 +lat_0=44.10000000000001 +lon_0=2.33722917 +k_0=0.999877499 +x_0=600000 +y_0=200000 +a=6378249.2 +b=6356515 +towgs84=-168,-60,320,0,0,0,0 +pm=paris +units=m +no_defs  no_defs", # NTF (Paris) / Sud France
-  27594 => "+proj=lcc +lat_1=42.16500000000001 +lat_0=42.16500000000001 +lon_0=2.33722917 +k_0=0.99994471 +x_0=234.358 +y_0=185861.369 +a=6378249.2 +b=6356515 +towgs84=-168,-60,320,0,0,0,0 +pm=paris +units=m +no_defs  no_defs", # NTF (Paris) / Corse
-  27700 => "+proj=tmerc +lat_0=49 +lon_0=-2 +k=0.999601 +x_0=400000 +y_0=-100000 +ellps=airy +units=m +no_defs  no_defs", # OSGB 1936 / British National Grid
-  28191 => "+proj=cass +lat_0=31.73409694444445 +lon_0=35.21208055555556 +x_0=170251.555 +y_0=126867.909 +a=6378300.789 +b=6356566.435 +units=m +no_defs  no_defs", # Palestine 1923 / Palestine Grid
-  28192 => "+proj=tmerc +lat_0=31.73409694444445 +lon_0=35.21208055555556 +k=1.000000 +x_0=170251.555 +y_0=1126867.909 +a=6378300.789 +b=6356566.435 +units=m +no_defs  no_defs", # Palestine 1923 / Palestine Belt
-  28193 => "+proj=cass +lat_0=31.73409694444445 +lon_0=35.21208055555556 +x_0=170251.555 +y_0=1126867.909 +a=6378300.789 +b=6356566.435 +units=m +no_defs  no_defs", # Palestine 1923 / Israeli CS Grid
-  28232 => "+proj=utm +zone=32 +south +a=6378249.2 +b=6356515 +units=m +no_defs  no_defs", # Pointe Noire / UTM zone 32S
-  28348 => "+proj=utm +zone=48 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # GDA94 / MGA zone 48
-  28349 => "+proj=utm +zone=49 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # GDA94 / MGA zone 49
-  28350 => "+proj=utm +zone=50 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # GDA94 / MGA zone 50
-  28351 => "+proj=utm +zone=51 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # GDA94 / MGA zone 51
-  28352 => "+proj=utm +zone=52 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # GDA94 / MGA zone 52
-  28353 => "+proj=utm +zone=53 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # GDA94 / MGA zone 53
-  28354 => "+proj=utm +zone=54 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # GDA94 / MGA zone 54
-  28355 => "+proj=utm +zone=55 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # GDA94 / MGA zone 55
-  28356 => "+proj=utm +zone=56 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # GDA94 / MGA zone 56
-  28357 => "+proj=utm +zone=57 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # GDA94 / MGA zone 57
-  28358 => "+proj=utm +zone=58 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # GDA94 / MGA zone 58
-  28402 => "+proj=tmerc +lat_0=0 +lon_0=9 +k=1.000000 +x_0=2500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger zone 2
-  28403 => "+proj=tmerc +lat_0=0 +lon_0=15 +k=1.000000 +x_0=3500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger zone 3
-  28404 => "+proj=tmerc +lat_0=0 +lon_0=21 +k=1.000000 +x_0=4500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger zone 4
-  28405 => "+proj=tmerc +lat_0=0 +lon_0=27 +k=1.000000 +x_0=5500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger zone 5
-  28406 => "+proj=tmerc +lat_0=0 +lon_0=33 +k=1.000000 +x_0=6500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger zone 6
-  28407 => "+proj=tmerc +lat_0=0 +lon_0=39 +k=1.000000 +x_0=7500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger zone 7
-  28408 => "+proj=tmerc +lat_0=0 +lon_0=45 +k=1.000000 +x_0=8500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger zone 8
-  28409 => "+proj=tmerc +lat_0=0 +lon_0=51 +k=1.000000 +x_0=9500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger zone 9
-  28410 => "+proj=tmerc +lat_0=0 +lon_0=57 +k=1.000000 +x_0=10500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger zone 10
-  28411 => "+proj=tmerc +lat_0=0 +lon_0=63 +k=1.000000 +x_0=11500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger zone 11
-  28412 => "+proj=tmerc +lat_0=0 +lon_0=69 +k=1.000000 +x_0=12500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger zone 12
-  28413 => "+proj=tmerc +lat_0=0 +lon_0=75 +k=1.000000 +x_0=13500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger zone 13
-  28414 => "+proj=tmerc +lat_0=0 +lon_0=81 +k=1.000000 +x_0=14500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger zone 14
-  28415 => "+proj=tmerc +lat_0=0 +lon_0=87 +k=1.000000 +x_0=15500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger zone 15
-  28416 => "+proj=tmerc +lat_0=0 +lon_0=93 +k=1.000000 +x_0=16500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger zone 16
-  28417 => "+proj=tmerc +lat_0=0 +lon_0=99 +k=1.000000 +x_0=17500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger zone 17
-  28418 => "+proj=tmerc +lat_0=0 +lon_0=105 +k=1.000000 +x_0=18500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger zone 18
-  28419 => "+proj=tmerc +lat_0=0 +lon_0=111 +k=1.000000 +x_0=19500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger zone 19
-  28420 => "+proj=tmerc +lat_0=0 +lon_0=117 +k=1.000000 +x_0=20500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger zone 20
-  28421 => "+proj=tmerc +lat_0=0 +lon_0=123 +k=1.000000 +x_0=21500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger zone 21
-  28422 => "+proj=tmerc +lat_0=0 +lon_0=129 +k=1.000000 +x_0=22500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger zone 22
-  28423 => "+proj=tmerc +lat_0=0 +lon_0=135 +k=1.000000 +x_0=23500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger zone 23
-  28424 => "+proj=tmerc +lat_0=0 +lon_0=141 +k=1.000000 +x_0=24500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger zone 24
-  28425 => "+proj=tmerc +lat_0=0 +lon_0=147 +k=1.000000 +x_0=25500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger zone 25
-  28426 => "+proj=tmerc +lat_0=0 +lon_0=153 +k=1.000000 +x_0=26500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger zone 26
-  28427 => "+proj=tmerc +lat_0=0 +lon_0=159 +k=1.000000 +x_0=27500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger zone 27
-  28428 => "+proj=tmerc +lat_0=0 +lon_0=165 +k=1.000000 +x_0=28500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger zone 28
-  28429 => "+proj=tmerc +lat_0=0 +lon_0=171 +k=1.000000 +x_0=29500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger zone 29
-  28430 => "+proj=tmerc +lat_0=0 +lon_0=177 +k=1.000000 +x_0=30500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger zone 30
-  28431 => "+proj=tmerc +lat_0=0 +lon_0=-177 +k=1.000000 +x_0=31500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger zone 31
-  28432 => "+proj=tmerc +lat_0=0 +lon_0=-171 +k=1.000000 +x_0=32500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger zone 32
-  28462 => "+proj=tmerc +lat_0=0 +lon_0=9 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger 2N
-  28463 => "+proj=tmerc +lat_0=0 +lon_0=15 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger 3N
-  28464 => "+proj=tmerc +lat_0=0 +lon_0=21 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger 4N
-  28465 => "+proj=tmerc +lat_0=0 +lon_0=27 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger 5N
-  28466 => "+proj=tmerc +lat_0=0 +lon_0=33 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger 6N
-  28467 => "+proj=tmerc +lat_0=0 +lon_0=39 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger 7N
-  28468 => "+proj=tmerc +lat_0=0 +lon_0=45 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger 8N
-  28469 => "+proj=tmerc +lat_0=0 +lon_0=51 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger 9N
-  28470 => "+proj=tmerc +lat_0=0 +lon_0=57 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger 10N
-  28471 => "+proj=tmerc +lat_0=0 +lon_0=63 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger 11N
-  28472 => "+proj=tmerc +lat_0=0 +lon_0=69 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger 12N
-  28473 => "+proj=tmerc +lat_0=0 +lon_0=75 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger 13N
-  28474 => "+proj=tmerc +lat_0=0 +lon_0=81 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger 14N
-  28475 => "+proj=tmerc +lat_0=0 +lon_0=87 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger 15N
-  28476 => "+proj=tmerc +lat_0=0 +lon_0=93 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger 16N
-  28477 => "+proj=tmerc +lat_0=0 +lon_0=99 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger 17N
-  28478 => "+proj=tmerc +lat_0=0 +lon_0=105 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger 18N
-  28479 => "+proj=tmerc +lat_0=0 +lon_0=111 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger 19N
-  28480 => "+proj=tmerc +lat_0=0 +lon_0=117 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger 20N
-  28481 => "+proj=tmerc +lat_0=0 +lon_0=123 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger 21N
-  28482 => "+proj=tmerc +lat_0=0 +lon_0=129 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger 22N
-  28483 => "+proj=tmerc +lat_0=0 +lon_0=135 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger 23N
-  28484 => "+proj=tmerc +lat_0=0 +lon_0=141 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger 24N
-  28485 => "+proj=tmerc +lat_0=0 +lon_0=147 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger 25N
-  28486 => "+proj=tmerc +lat_0=0 +lon_0=153 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger 26N
-  28487 => "+proj=tmerc +lat_0=0 +lon_0=159 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger 27N
-  28488 => "+proj=tmerc +lat_0=0 +lon_0=165 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger 28N
-  28489 => "+proj=tmerc +lat_0=0 +lon_0=171 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger 29N
-  28490 => "+proj=tmerc +lat_0=0 +lon_0=177 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger 30N
-  28491 => "+proj=tmerc +lat_0=0 +lon_0=-177 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger 31N
-  28492 => "+proj=tmerc +lat_0=0 +lon_0=-171 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs  no_defs", # Pulkovo 1942 / Gauss-Kruger 32N
-  28600 => "+proj=tmerc +lat_0=24.45 +lon_0=51.21666666666667 +k=0.999990 +x_0=200000 +y_0=300000 +ellps=intl +units=m +no_defs  no_defs", # Qatar 1974 / Qatar National Grid
-  28991 => "+proj=stere +lat_0=52.15616055555555 +lon_0=5.38763888888889 +k=0.999908 +x_0=0 +y_0=0 +ellps=bessel +units=m +no_defs  no_defs", # Amersfoort / RD Old
-  28992 => "+proj=stere +lat_0=52.15616055555555 +lon_0=5.38763888888889 +k=0.999908 +x_0=155000 +y_0=463000 +ellps=bessel +units=m +no_defs  no_defs", # Amersfoort / RD New
-  29100 => "+proj=poly +lat_0=0 +lon_0=-54 +x_0=5000000 +y_0=10000000 +ellps=GRS67 +units=m +no_defs  no_defs", # SAD69 / Brazil Polyconic
-  29118 => "+proj=utm +zone=18 +ellps=GRS67 +units=m +no_defs  no_defs", # SAD69 / UTM zone 18N
-  29119 => "+proj=utm +zone=19 +ellps=GRS67 +units=m +no_defs  no_defs", # SAD69 / UTM zone 19N
-  29120 => "+proj=utm +zone=20 +ellps=GRS67 +units=m +no_defs  no_defs", # SAD69 / UTM zone 20N
-  29121 => "+proj=utm +zone=21 +ellps=GRS67 +units=m +no_defs  no_defs", # SAD69 / UTM zone 21N
-  29122 => "+proj=utm +zone=22 +ellps=GRS67 +units=m +no_defs  no_defs", # SAD69 / UTM zone 22N
-  29177 => "+proj=utm +zone=17 +south +ellps=GRS67 +units=m +no_defs  no_defs", # SAD69 / UTM zone 17S
-  29178 => "+proj=utm +zone=18 +south +ellps=GRS67 +units=m +no_defs  no_defs", # SAD69 / UTM zone 18S
-  29179 => "+proj=utm +zone=19 +south +ellps=GRS67 +units=m +no_defs  no_defs", # SAD69 / UTM zone 19S
-  29180 => "+proj=utm +zone=20 +south +ellps=GRS67 +units=m +no_defs  no_defs", # SAD69 / UTM zone 20S
-  29181 => "+proj=utm +zone=21 +south +ellps=GRS67 +units=m +no_defs  no_defs", # SAD69 / UTM zone 21S
-  29182 => "+proj=utm +zone=22 +south +ellps=GRS67 +units=m +no_defs  no_defs", # SAD69 / UTM zone 22S
-  29183 => "+proj=utm +zone=23 +south +ellps=GRS67 +units=m +no_defs  no_defs", # SAD69 / UTM zone 23S
-  29184 => "+proj=utm +zone=24 +south +ellps=GRS67 +units=m +no_defs  no_defs", # SAD69 / UTM zone 24S
-  29185 => "+proj=utm +zone=25 +south +ellps=GRS67 +units=m +no_defs  no_defs", # SAD69 / UTM zone 25S
-  29220 => "+proj=utm +zone=20 +south +ellps=intl +towgs84=-355,21,72,0,0,0,0 +units=m +no_defs  no_defs", # Sapper Hill 1943 / UTM zone 20S
-  29221 => "+proj=utm +zone=21 +south +ellps=intl +towgs84=-355,21,72,0,0,0,0 +units=m +no_defs  no_defs", # Sapper Hill 1943 / UTM zone 21S
-  29333 => "+proj=utm +zone=33 +south +ellps=bess_nam +units=m +no_defs  no_defs", # Schwarzeck / UTM zone 33S
-  29635 => "+proj=utm +zone=35 +a=6378249.2 +b=6356515 +units=m +no_defs  no_defs", # Sudan / UTM zone 35N
-  29636 => "+proj=utm +zone=36 +a=6378249.2 +b=6356515 +units=m +no_defs  no_defs", # Sudan / UTM zone 36N
-  29700 => "+proj=omerc +lat_0=-18.9 +lonc=46.43722917000001 +alpha=18.9 +k=0.9995000000000001 +x_0=400000 +y_0=800000 +ellps=intl +towgs84=-189,-242,-91,0,0,0,0 +pm=paris +units=m +no_defs  no_defs", # Tananarive (Paris) / Laborde Grid
-  29738 => "+proj=utm +zone=38 +south +ellps=intl +towgs84=-189,-242,-91,0,0,0,0 +units=m +no_defs  no_defs", # Tananarive / UTM zone 38S
-  29739 => "+proj=utm +zone=39 +south +ellps=intl +towgs84=-189,-242,-91,0,0,0,0 +units=m +no_defs  no_defs", # Tananarive / UTM zone 39S
-  29849 => "+proj=utm +zone=49 +ellps=evrstSS +units=m +no_defs  no_defs", # Timbalai 1948 / UTM zone 49N
-  29850 => "+proj=utm +zone=50 +ellps=evrstSS +units=m +no_defs  no_defs", # Timbalai 1948 / UTM zone 50N
-  29871 => "+proj=omerc +lat_0=4 +lonc=115 +alpha=53.31582047222222 +k=0.99984 +x_0=590476.8714630401 +y_0=442857.653094361 +ellps=evrstSS +to_meter=20.11676512155263 +no_defs  no_defs", # Timbalai 1948 / R.S.O. Borneo (ch)
-  29872 => "+proj=omerc +lat_0=4 +lonc=115 +alpha=53.31582047222222 +k=0.99984 +x_0=590476.8727431979 +y_0=442857.6545573985 +ellps=evrstSS +to_meter=0.3047994715386762 +no_defs  no_defs", # Timbalai 1948 / R.S.O. Borneo (ft)
-  29873 => "+proj=omerc +lat_0=4 +lonc=115 +alpha=53.31582047222222 +k=0.99984 +x_0=590476.87 +y_0=442857.65 +ellps=evrstSS +units=m +no_defs  no_defs", # Timbalai 1948 / R.S.O. Borneo (m)
-  29900 => "+proj=tmerc +lat_0=53.5 +lon_0=-8 +k=1.000035 +x_0=200000 +y_0=250000 +a=6377340.189 +b=6356034.447938534 +units=m +no_defs  no_defs", # TM65 / Irish National Grid
-  29901 => "+proj=tmerc +lat_0=53.5 +lon_0=-8 +k=1.000000 +x_0=200000 +y_0=250000 +ellps=airy +units=m +no_defs  no_defs", # OSNI 1952 / Irish National Grid
-  29902 => "+proj=tmerc +lat_0=53.5 +lon_0=-8 +k=1.000035 +x_0=200000 +y_0=250000 +a=6377340.189 +b=6356034.447938534 +units=m +no_defs  no_defs", # TM65 / Irish Grid
-  29903 => "+proj=tmerc +lat_0=53.5 +lon_0=-8 +k=1.000035 +x_0=200000 +y_0=250000 +a=6377340.189 +b=6356034.447938534 +units=m +no_defs  no_defs", # TM75 / Irish Grid
-  30161 => "+proj=tmerc +lat_0=33 +lon_0=129.5 +k=0.999900 +x_0=0 +y_0=0 +ellps=bessel +units=m +no_defs  no_defs", # Tokyo / Japan Plane Rectangular CS I
-  30162 => "+proj=tmerc +lat_0=33 +lon_0=131 +k=0.999900 +x_0=0 +y_0=0 +ellps=bessel +units=m +no_defs  no_defs", # Tokyo / Japan Plane Rectangular CS II
-  30163 => "+proj=tmerc +lat_0=36 +lon_0=132.1666666666667 +k=0.999900 +x_0=0 +y_0=0 +ellps=bessel +units=m +no_defs  no_defs", # Tokyo / Japan Plane Rectangular CS III
-  30164 => "+proj=tmerc +lat_0=33 +lon_0=133.5 +k=0.999900 +x_0=0 +y_0=0 +ellps=bessel +units=m +no_defs  no_defs", # Tokyo / Japan Plane Rectangular CS IV
-  30165 => "+proj=tmerc +lat_0=36 +lon_0=134.3333333333333 +k=0.999900 +x_0=0 +y_0=0 +ellps=bessel +units=m +no_defs  no_defs", # Tokyo / Japan Plane Rectangular CS V
-  30166 => "+proj=tmerc +lat_0=36 +lon_0=136 +k=0.999900 +x_0=0 +y_0=0 +ellps=bessel +units=m +no_defs  no_defs", # Tokyo / Japan Plane Rectangular CS VI
-  30167 => "+proj=tmerc +lat_0=36 +lon_0=137.1666666666667 +k=0.999900 +x_0=0 +y_0=0 +ellps=bessel +units=m +no_defs  no_defs", # Tokyo / Japan Plane Rectangular CS VII
-  30168 => "+proj=tmerc +lat_0=36 +lon_0=138.5 +k=0.999900 +x_0=0 +y_0=0 +ellps=bessel +units=m +no_defs  no_defs", # Tokyo / Japan Plane Rectangular CS VIII
-  30169 => "+proj=tmerc +lat_0=36 +lon_0=139.8333333333333 +k=0.999900 +x_0=0 +y_0=0 +ellps=bessel +units=m +no_defs  no_defs", # Tokyo / Japan Plane Rectangular CS IX
-  30170 => "+proj=tmerc +lat_0=40 +lon_0=140.8333333333333 +k=0.999900 +x_0=0 +y_0=0 +ellps=bessel +units=m +no_defs  no_defs", # Tokyo / Japan Plane Rectangular CS X
-  30171 => "+proj=tmerc +lat_0=44 +lon_0=140.25 +k=0.999900 +x_0=0 +y_0=0 +ellps=bessel +units=m +no_defs  no_defs", # Tokyo / Japan Plane Rectangular CS XI
-  30172 => "+proj=tmerc +lat_0=44 +lon_0=142.25 +k=0.999900 +x_0=0 +y_0=0 +ellps=bessel +units=m +no_defs  no_defs", # Tokyo / Japan Plane Rectangular CS XII
-  30173 => "+proj=tmerc +lat_0=44 +lon_0=144.25 +k=0.999900 +x_0=0 +y_0=0 +ellps=bessel +units=m +no_defs  no_defs", # Tokyo / Japan Plane Rectangular CS XIII
-  30174 => "+proj=tmerc +lat_0=26 +lon_0=142 +k=0.999900 +x_0=0 +y_0=0 +ellps=bessel +units=m +no_defs  no_defs", # Tokyo / Japan Plane Rectangular CS XIV
-  30175 => "+proj=tmerc +lat_0=26 +lon_0=127.5 +k=0.999900 +x_0=0 +y_0=0 +ellps=bessel +units=m +no_defs  no_defs", # Tokyo / Japan Plane Rectangular CS XV
-  30176 => "+proj=tmerc +lat_0=26 +lon_0=124 +k=0.999900 +x_0=0 +y_0=0 +ellps=bessel +units=m +no_defs  no_defs", # Tokyo / Japan Plane Rectangular CS XVI
-  30177 => "+proj=tmerc +lat_0=26 +lon_0=131 +k=0.999900 +x_0=0 +y_0=0 +ellps=bessel +units=m +no_defs  no_defs", # Tokyo / Japan Plane Rectangular CS XVII
-  30178 => "+proj=tmerc +lat_0=20 +lon_0=136 +k=0.999900 +x_0=0 +y_0=0 +ellps=bessel +units=m +no_defs  no_defs", # Tokyo / Japan Plane Rectangular CS XVIII
-  30179 => "+proj=tmerc +lat_0=26 +lon_0=154 +k=0.999900 +x_0=0 +y_0=0 +ellps=bessel +units=m +no_defs  no_defs", # Tokyo / Japan Plane Rectangular CS XIX
-  30200 => "+proj=cass +lat_0=10.44166666666667 +lon_0=-61.33333333333334 +x_0=86501.46380700001 +y_0=65379.0133425 +a=6378293.63683822 +b=6356617.979337744 +towgs84=-61.702,284.488,472.052,0,0,0,0 +to_meter=0.2011661949 +no_defs  no_defs", # Trinidad 1903 / Trinidad Grid
-  30339 => "+proj=utm +zone=39 +ellps=helmert +units=m +no_defs  no_defs", # TC(1948) / UTM zone 39N
-  30340 => "+proj=utm +zone=40 +ellps=helmert +units=m +no_defs  no_defs", # TC(1948) / UTM zone 40N
-  30491 => "+proj=lcc +lat_1=36 +lat_0=36 +lon_0=2.7 +k_0=0.999625544 +x_0=500000 +y_0=300000 +a=6378249.2 +b=6356515 +towgs84=-73,-247,227,0,0,0,0 +units=m +no_defs  no_defs", # Voirol 1875 / Nord Algerie (ancienne)
-  30492 => "+proj=lcc +lat_1=33.3 +lat_0=33.3 +lon_0=2.7 +k_0=0.999625769 +x_0=500000 +y_0=300000 +a=6378249.2 +b=6356515 +towgs84=-73,-247,227,0,0,0,0 +units=m +no_defs  no_defs", # Voirol 1875 / Sud Algerie (ancienne)
-  30729 => "+proj=utm +zone=29 +ellps=clrk80 +units=m +no_defs  no_defs", # Nord Sahara 1959 / UTM zone 29N
-  30730 => "+proj=utm +zone=30 +ellps=clrk80 +units=m +no_defs  no_defs", # Nord Sahara 1959 / UTM zone 30N
-  30731 => "+proj=utm +zone=31 +ellps=clrk80 +units=m +no_defs  no_defs", # Nord Sahara 1959 / UTM zone 31N
-  30732 => "+proj=utm +zone=32 +ellps=clrk80 +units=m +no_defs  no_defs", # Nord Sahara 1959 / UTM zone 32N
-  30791 => "+proj=lcc +lat_1=36 +lat_0=36 +lon_0=2.7 +k_0=0.999625544 +x_0=500135 +y_0=300090 +ellps=clrk80 +units=m +no_defs  no_defs", # Nord Sahara 1959 / Voirol Unifie Nord
-  30792 => "+proj=lcc +lat_1=33.3 +lat_0=33.3 +lon_0=2.7 +k_0=0.999625769 +x_0=500135 +y_0=300090 +ellps=clrk80 +units=m +no_defs  no_defs", # Nord Sahara 1959 / Voirol Unifie Sud
-  30800 => "+proj=tmerc +lat_0=0 +lon_0=15.80827777777778 +k=1.000000 +x_0=1500000 +y_0=0 +ellps=bessel +units=m +no_defs  no_defs", # RT38 2.5 gon W
-  31028 => "+proj=utm +zone=28 +a=6378249.2 +b=6356515 +units=m +no_defs  no_defs", # Yoff / UTM zone 28N
-  31121 => "+proj=utm +zone=21 +ellps=intl +towgs84=-265,120,-358,0,0,0,0 +units=m +no_defs  no_defs", # Zanderij / UTM zone 21N
-  31154 => "+proj=tmerc +lat_0=0 +lon_0=-54 +k=0.999600 +x_0=500000 +y_0=0 +ellps=intl +towgs84=-265,120,-358,0,0,0,0 +units=m +no_defs  no_defs", # Zanderij / TM 54 NW
-  31170 => "+proj=tmerc +lat_0=0 +lon_0=-55.68333333333333 +k=0.999600 +x_0=500000 +y_0=0 +ellps=intl +towgs84=-265,120,-358,0,0,0,0 +units=m +no_defs  no_defs", # Zanderij / Suriname Old TM
-  31171 => "+proj=tmerc +lat_0=0 +lon_0=-55.68333333333333 +k=0.999900 +x_0=500000 +y_0=0 +ellps=intl +towgs84=-265,120,-358,0,0,0,0 +units=m +no_defs  no_defs", # Zanderij / Suriname TM
-  31265 => "+proj=tmerc +lat_0=0 +lon_0=15 +k=1.000000 +x_0=5500000 +y_0=0 +ellps=bessel +units=m +no_defs  no_defs", # MGI / 3-degree Gauss zone 5
-  31266 => "+proj=tmerc +lat_0=0 +lon_0=18 +k=1.000000 +x_0=6500000 +y_0=0 +ellps=bessel +units=m +no_defs  no_defs", # MGI / 3-degree Gauss zone 6
-  31267 => "+proj=tmerc +lat_0=0 +lon_0=21 +k=1.000000 +x_0=7500000 +y_0=0 +ellps=bessel +units=m +no_defs  no_defs", # MGI / 3-degree Gauss zone 7
-  31268 => "+proj=tmerc +lat_0=0 +lon_0=24 +k=1.000000 +x_0=8500000 +y_0=0 +ellps=bessel +units=m +no_defs  no_defs", # MGI / 3-degree Gauss zone 8
-  31275 => "+proj=tmerc +lat_0=0 +lon_0=15 +k=0.999900 +x_0=5500000 +y_0=0 +ellps=bessel +units=m +no_defs  no_defs", # MGI / Balkans zone 5
-  31276 => "+proj=tmerc +lat_0=0 +lon_0=18 +k=0.999900 +x_0=6500000 +y_0=0 +ellps=bessel +units=m +no_defs  no_defs", # MGI / Balkans zone 6
-  31277 => "+proj=tmerc +lat_0=0 +lon_0=21 +k=0.999900 +x_0=7500000 +y_0=0 +ellps=bessel +units=m +no_defs  no_defs", # MGI / Balkans zone 7
-  31278 => "+proj=tmerc +lat_0=0 +lon_0=21 +k=0.999900 +x_0=7500000 +y_0=0 +ellps=bessel +units=m +no_defs  no_defs", # MGI / Balkans zone 8
-  31279 => "+proj=tmerc +lat_0=0 +lon_0=24 +k=0.999900 +x_0=8500000 +y_0=0 +ellps=bessel +units=m +no_defs  no_defs", # MGI / Balkans zone 8
-  31281 => "+proj=tmerc +lat_0=0 +lon_0=10.33333333333333 +k=1.000000 +x_0=0 +y_0=0 +ellps=bessel +pm=ferro +units=m +no_defs  no_defs", # MGI (Ferro) / Austria West Zone
-  31282 => "+proj=tmerc +lat_0=0 +lon_0=13.33333333333333 +k=1.000000 +x_0=0 +y_0=0 +ellps=bessel +pm=ferro +units=m +no_defs  no_defs", # MGI (Ferro) / Austria Central Zone
-  31283 => "+proj=tmerc +lat_0=0 +lon_0=16.33333333333333 +k=1.000000 +x_0=0 +y_0=0 +ellps=bessel +pm=ferro +units=m +no_defs  no_defs", # MGI (Ferro) / Austria East Zone
-  31284 => "+proj=tmerc +lat_0=0 +lon_0=10.33333333333333 +k=1.000000 +x_0=150000 +y_0=0 +ellps=bessel +units=m +no_defs  no_defs", # MGI / M28
-  31285 => "+proj=tmerc +lat_0=0 +lon_0=13.33333333333333 +k=1.000000 +x_0=450000 +y_0=0 +ellps=bessel +units=m +no_defs  no_defs", # MGI / M31
-  31286 => "+proj=tmerc +lat_0=0 +lon_0=16.33333333333333 +k=1.000000 +x_0=750000 +y_0=0 +ellps=bessel +units=m +no_defs  no_defs", # MGI / M34
-  31287 => "+proj=lcc +lat_1=49 +lat_2=46 +lat_0=47.5 +lon_0=13.33333333333333 +x_0=400000 +y_0=400000 +ellps=bessel +units=m +no_defs  no_defs", # MGI / Austria Lambert
-  31291 => "+proj=tmerc +lat_0=0 +lon_0=10.33333333333333 +k=1.000000 +x_0=0 +y_0=0 +ellps=bessel +pm=ferro +units=m +no_defs  no_defs", # MGI (Ferro) / Austria West Zone
-  31292 => "+proj=tmerc +lat_0=0 +lon_0=13.33333333333333 +k=1.000000 +x_0=0 +y_0=0 +ellps=bessel +pm=ferro +units=m +no_defs  no_defs", # MGI (Ferro) / Austria Central Zone
-  31293 => "+proj=tmerc +lat_0=0 +lon_0=16.33333333333333 +k=1.000000 +x_0=0 +y_0=0 +ellps=bessel +pm=ferro +units=m +no_defs  no_defs", # MGI (Ferro) / Austria East Zone
-  31294 => "+proj=tmerc +lat_0=0 +lon_0=10.33333333333333 +k=1.000000 +x_0=150000 +y_0=0 +ellps=bessel +units=m +no_defs  no_defs", # MGI / M28
-  31295 => "+proj=tmerc +lat_0=0 +lon_0=13.33333333333333 +k=1.000000 +x_0=450000 +y_0=0 +ellps=bessel +units=m +no_defs  no_defs", # MGI / M31
-  31296 => "+proj=tmerc +lat_0=0 +lon_0=16.33333333333333 +k=1.000000 +x_0=750000 +y_0=0 +ellps=bessel +units=m +no_defs  no_defs", # MGI / M34
-  31297 => "+proj=lcc +lat_1=49 +lat_2=46 +lat_0=47.5 +lon_0=13.33333333333333 +x_0=400000 +y_0=400000 +ellps=bessel +units=m +no_defs  no_defs", # MGI / Austria Lambert
-  31300 => "+proj=lcc +lat_1=49.83333333333334 +lat_2=51.16666666666666 +lat_0=90 +lon_0=4.356939722222222 +x_0=150000.01256 +y_0=5400088.4378 +ellps=intl +units=m +no_defs  no_defs", # Belge 1972 / Belge Lambert 72
-  31370 => "+proj=lcc +lat_1=51.16666723333333 +lat_2=49.8333339 +lat_0=90 +lon_0=4.367486666666666 +x_0=150000.013 +y_0=5400088.438 +ellps=intl +units=m +no_defs  no_defs", # Belge 1972 / Belgian Lambert 72
-  31461 => "+proj=tmerc +lat_0=0 +lon_0=3 +k=1.000000 +x_0=1500000 +y_0=0 +ellps=bessel +units=m +no_defs  no_defs", # DHDN / 3-degree Gauss zone 1
-  31462 => "+proj=tmerc +lat_0=0 +lon_0=6 +k=1.000000 +x_0=2500000 +y_0=0 +ellps=bessel +units=m +no_defs  no_defs", # DHDN / 3-degree Gauss zone 2
-  31463 => "+proj=tmerc +lat_0=0 +lon_0=9 +k=1.000000 +x_0=3500000 +y_0=0 +ellps=bessel +units=m +no_defs  no_defs", # DHDN / 3-degree Gauss zone 3
-  31464 => "+proj=tmerc +lat_0=0 +lon_0=12 +k=1.000000 +x_0=4500000 +y_0=0 +ellps=bessel +units=m +no_defs  no_defs", # DHDN / 3-degree Gauss zone 4
-  31465 => "+proj=tmerc +lat_0=0 +lon_0=15 +k=1.000000 +x_0=5500000 +y_0=0 +ellps=bessel +units=m +no_defs  no_defs", # DHDN / 3-degree Gauss zone 5
-  31466 => "+proj=tmerc +lat_0=0 +lon_0=6 +k=1.000000 +x_0=2500000 +y_0=0 +ellps=bessel +units=m +no_defs  no_defs", # DHDN / Gauss-Kruger zone 2
-  31467 => "+proj=tmerc +lat_0=0 +lon_0=9 +k=1.000000 +x_0=3500000 +y_0=0 +ellps=bessel +units=m +no_defs  no_defs", # DHDN / Gauss-Kruger zone 3
-  31468 => "+proj=tmerc +lat_0=0 +lon_0=12 +k=1.000000 +x_0=4500000 +y_0=0 +ellps=bessel +units=m +no_defs  no_defs", # DHDN / Gauss-Kruger zone 4
-  31469 => "+proj=tmerc +lat_0=0 +lon_0=15 +k=1.000000 +x_0=5500000 +y_0=0 +ellps=bessel +units=m +no_defs  no_defs", # DHDN / Gauss-Kruger zone 5
-  31528 => "+proj=utm +zone=28 +a=6378249.2 +b=6356515 +towgs84=-23,259,-9,0,0,0,0 +units=m +no_defs  no_defs", # Conakry 1905 / UTM zone 28N
-  31529 => "+proj=utm +zone=29 +a=6378249.2 +b=6356515 +towgs84=-23,259,-9,0,0,0,0 +units=m +no_defs  no_defs", # Conakry 1905 / UTM zone 29N
-  31600 => "+proj=stere +lat_0=45.9 +lon_0=25.39246588888889 +k=0.999667 +x_0=500000 +y_0=500000 +ellps=intl +towgs84=103.25,-100.4,-307.19,0,0,0,0 +units=m +no_defs  no_defs", # Dealul Piscului 1933/ Stereo 33
-  31700 => "+proj=stere +lat_0=46 +lon_0=25 +k=0.999750 +x_0=500000 +y_0=500000 +ellps=krass +units=m +no_defs  no_defs", # Dealul Piscului 1970/ Stereo 70
-  31838 => "+proj=utm +zone=38 +ellps=WGS84 +units=m +no_defs  no_defs", # NGN / UTM zone 38N
-  31839 => "+proj=utm +zone=39 +ellps=WGS84 +units=m +no_defs  no_defs", # NGN / UTM zone 39N
-  31900 => "+proj=tmerc +lat_0=0 +lon_0=48 +k=0.999600 +x_0=500000 +y_0=0 +ellps=GRS80 +units=m +no_defs  no_defs", # KUDAMS / KTM
-  31986 => "+proj=utm +zone=17 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # SIRGAS / UTM zone 17N
-  31987 => "+proj=utm +zone=18 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # SIRGAS / UTM zone 18N
-  31988 => "+proj=utm +zone=19 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # SIRGAS / UTM zone 19N
-  31989 => "+proj=utm +zone=20 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # SIRGAS / UTM zone 20N
-  31990 => "+proj=utm +zone=21 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # SIRGAS / UTM zone 21N
-  31991 => "+proj=utm +zone=22 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # SIRGAS / UTM zone 22N
-  31992 => "+proj=utm +zone=17 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # SIRGAS / UTM zone 17S
-  31993 => "+proj=utm +zone=18 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # SIRGAS / UTM zone 18S
-  31994 => "+proj=utm +zone=19 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # SIRGAS / UTM zone 19S
-  31995 => "+proj=utm +zone=20 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # SIRGAS / UTM zone 20S
-  31996 => "+proj=utm +zone=21 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # SIRGAS / UTM zone 21S
-  31997 => "+proj=utm +zone=22 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # SIRGAS / UTM zone 22S
-  31998 => "+proj=utm +zone=23 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # SIRGAS / UTM zone 23S
-  31999 => "+proj=utm +zone=24 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # SIRGAS / UTM zone 24S
-  32000 => "+proj=utm +zone=25 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs  no_defs", # SIRGAS / UTM zone 25S
-  32001 => "+proj=lcc +lat_1=48.71666666666667 +lat_2=47.85 +lat_0=47 +lon_0=-109.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Montana North
-  32002 => "+proj=lcc +lat_1=47.88333333333333 +lat_2=46.45 +lat_0=45.83333333333334 +lon_0=-109.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Montana Central
-  32003 => "+proj=lcc +lat_1=46.4 +lat_2=44.86666666666667 +lat_0=44 +lon_0=-109.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Montana South
-  32005 => "+proj=lcc +lat_1=41.85 +lat_2=42.81666666666667 +lat_0=41.33333333333334 +lon_0=-100 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Nebraska North
-  32006 => "+proj=lcc +lat_1=40.28333333333333 +lat_2=41.71666666666667 +lat_0=39.66666666666666 +lon_0=-99.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Nebraska South
-  32007 => "+proj=tmerc +lat_0=34.75 +lon_0=-115.5833333333333 +k=0.999900 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Nevada East
-  32008 => "+proj=tmerc +lat_0=34.75 +lon_0=-116.6666666666667 +k=0.999900 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Nevada Central
-  32009 => "+proj=tmerc +lat_0=34.75 +lon_0=-118.5833333333333 +k=0.999900 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Nevada West
-  32010 => "+proj=tmerc +lat_0=42.5 +lon_0=-71.66666666666667 +k=0.999967 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / New Hampshire
-  32011 => "+proj=tmerc +lat_0=38.83333333333334 +lon_0=-74.66666666666667 +k=0.999975 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / New Jersey
-  32012 => "+proj=tmerc +lat_0=31 +lon_0=-104.3333333333333 +k=0.999909 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / New Mexico East
-  32013 => "+proj=tmerc +lat_0=31 +lon_0=-106.25 +k=0.999900 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / New Mexico Central
-  32014 => "+proj=tmerc +lat_0=31 +lon_0=-107.8333333333333 +k=0.999917 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / New Mexico West
-  32015 => "+proj=tmerc +lat_0=40 +lon_0=-74.33333333333333 +k=0.999967 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / New York East
-  32016 => "+proj=tmerc +lat_0=40 +lon_0=-76.58333333333333 +k=0.999938 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / New York Central
-  32017 => "+proj=tmerc +lat_0=40 +lon_0=-78.58333333333333 +k=0.999938 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / New York West
-  32018 => "+proj=lcc +lat_1=41.03333333333333 +lat_2=40.66666666666666 +lat_0=40.5 +lon_0=-74 +x_0=304800.6096012192 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / New York Long Island
-  32019 => "+proj=lcc +lat_1=34.33333333333334 +lat_2=36.16666666666666 +lat_0=33.75 +lon_0=-79 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / North Carolina
-  32020 => "+proj=lcc +lat_1=47.43333333333333 +lat_2=48.73333333333333 +lat_0=47 +lon_0=-100.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / North Dakota North
-  32021 => "+proj=lcc +lat_1=46.18333333333333 +lat_2=47.48333333333333 +lat_0=45.66666666666666 +lon_0=-100.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / North Dakota South
-  32022 => "+proj=lcc +lat_1=40.43333333333333 +lat_2=41.7 +lat_0=39.66666666666666 +lon_0=-82.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Ohio North
-  32023 => "+proj=lcc +lat_1=38.73333333333333 +lat_2=40.03333333333333 +lat_0=38 +lon_0=-82.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Ohio South
-  32024 => "+proj=lcc +lat_1=35.56666666666667 +lat_2=36.76666666666667 +lat_0=35 +lon_0=-98 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Oklahoma North
-  32025 => "+proj=lcc +lat_1=33.93333333333333 +lat_2=35.23333333333333 +lat_0=33.33333333333334 +lon_0=-98 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Oklahoma South
-  32026 => "+proj=lcc +lat_1=44.33333333333334 +lat_2=46 +lat_0=43.66666666666666 +lon_0=-120.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Oregon North
-  32027 => "+proj=lcc +lat_1=42.33333333333334 +lat_2=44 +lat_0=41.66666666666666 +lon_0=-120.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Oregon South
-  32028 => "+proj=lcc +lat_1=40.88333333333333 +lat_2=41.95 +lat_0=40.16666666666666 +lon_0=-77.75 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Pennsylvania North
-  32029 => "+proj=lcc +lat_1=39.93333333333333 +lat_2=40.8 +lat_0=39.33333333333334 +lon_0=-77.75 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Pennsylvania South
-  32030 => "+proj=tmerc +lat_0=41.08333333333334 +lon_0=-71.5 +k=0.999994 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Rhode Island
-  32031 => "+proj=lcc +lat_1=33.76666666666667 +lat_2=34.96666666666667 +lat_0=33 +lon_0=-81 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / South Carolina North
-  32033 => "+proj=lcc +lat_1=32.33333333333334 +lat_2=33.66666666666666 +lat_0=31.83333333333333 +lon_0=-81 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / South Carolina South
-  32034 => "+proj=lcc +lat_1=44.41666666666666 +lat_2=45.68333333333333 +lat_0=43.83333333333334 +lon_0=-100 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / South Dakota North
-  32035 => "+proj=lcc +lat_1=42.83333333333334 +lat_2=44.4 +lat_0=42.33333333333334 +lon_0=-100.3333333333333 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / South Dakota South
-  32036 => "+proj=lcc +lat_1=35.25 +lat_2=36.41666666666666 +lat_0=34.66666666666666 +lon_0=-86 +x_0=30480.06096012192 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Tennessee
-  32037 => "+proj=lcc +lat_1=34.65 +lat_2=36.18333333333333 +lat_0=34 +lon_0=-101.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Texas North
-  32038 => "+proj=lcc +lat_1=32.13333333333333 +lat_2=33.96666666666667 +lat_0=31.66666666666667 +lon_0=-97.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Texas North Central
-  32039 => "+proj=lcc +lat_1=30.11666666666667 +lat_2=31.88333333333333 +lat_0=29.66666666666667 +lon_0=-100.3333333333333 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Texas Central
-  32040 => "+proj=lcc +lat_1=28.38333333333333 +lat_2=30.28333333333333 +lat_0=27.83333333333333 +lon_0=-99 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Texas South Central
-  32041 => "+proj=lcc +lat_1=26.16666666666667 +lat_2=27.83333333333333 +lat_0=25.66666666666667 +lon_0=-98.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Texas South
-  32042 => "+proj=lcc +lat_1=40.71666666666667 +lat_2=41.78333333333333 +lat_0=40.33333333333334 +lon_0=-111.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Utah North
-  32043 => "+proj=lcc +lat_1=39.01666666666667 +lat_2=40.65 +lat_0=38.33333333333334 +lon_0=-111.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Utah Central
-  32044 => "+proj=lcc +lat_1=37.21666666666667 +lat_2=38.35 +lat_0=36.66666666666666 +lon_0=-111.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Utah South
-  32045 => "+proj=tmerc +lat_0=42.5 +lon_0=-72.5 +k=0.999964 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Vermont
-  32046 => "+proj=lcc +lat_1=38.03333333333333 +lat_2=39.2 +lat_0=37.66666666666666 +lon_0=-78.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Virginia North
-  32047 => "+proj=lcc +lat_1=36.76666666666667 +lat_2=37.96666666666667 +lat_0=36.33333333333334 +lon_0=-78.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Virginia South
-  32048 => "+proj=lcc +lat_1=47.5 +lat_2=48.73333333333333 +lat_0=47 +lon_0=-120.8333333333333 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Washington North
-  32049 => "+proj=lcc +lat_1=45.83333333333334 +lat_2=47.33333333333334 +lat_0=45.33333333333334 +lon_0=-120.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Washington South
-  32050 => "+proj=lcc +lat_1=39 +lat_2=40.25 +lat_0=38.5 +lon_0=-79.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / West Virginia North
-  32051 => "+proj=lcc +lat_1=37.48333333333333 +lat_2=38.88333333333333 +lat_0=37 +lon_0=-81 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / West Virginia South
-  32052 => "+proj=lcc +lat_1=45.56666666666667 +lat_2=46.76666666666667 +lat_0=45.16666666666666 +lon_0=-90 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Wisconsin North
-  32053 => "+proj=lcc +lat_1=44.25 +lat_2=45.5 +lat_0=43.83333333333334 +lon_0=-90 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Wisconsin Central
-  32054 => "+proj=lcc +lat_1=42.73333333333333 +lat_2=44.06666666666667 +lat_0=42 +lon_0=-90 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Wisconsin South
-  32055 => "+proj=tmerc +lat_0=40.66666666666666 +lon_0=-105.1666666666667 +k=0.999941 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Wyoming East
-  32056 => "+proj=tmerc +lat_0=40.66666666666666 +lon_0=-107.3333333333333 +k=0.999941 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Wyoming East Central
-  32057 => "+proj=tmerc +lat_0=40.66666666666666 +lon_0=-108.75 +k=0.999941 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Wyoming West Central
-  32058 => "+proj=tmerc +lat_0=40.66666666666666 +lon_0=-110.0833333333333 +k=0.999941 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / Wyoming West
-  32061 => "+proj=lcc +lat_1=16.81666666666667 +lat_0=16.81666666666667 +lon_0=-90.33333333333333 +k_0=0.99992226 +x_0=500000 +y_0=292209.579 +ellps=clrk66 +datum=NAD27 +units=m +no_defs  no_defs", # NAD27 / Guatemala Norte
-  32062 => "+proj=lcc +lat_1=14.9 +lat_0=14.9 +lon_0=-90.33333333333333 +k_0=0.99989906 +x_0=500000 +y_0=325992.681 +ellps=clrk66 +datum=NAD27 +units=m +no_defs  no_defs", # NAD27 / Guatemala Sur
-  32064 => "+proj=tmerc +lat_0=0 +lon_0=-99 +k=0.999600 +x_0=500000.001016002 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / BLM 14N (ftUS)
-  32065 => "+proj=tmerc +lat_0=0 +lon_0=-93 +k=0.999600 +x_0=500000.001016002 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / BLM 15N (ftUS)
-  32066 => "+proj=tmerc +lat_0=0 +lon_0=-87 +k=0.999600 +x_0=500000.001016002 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / BLM 16N (ftUS)
-  32067 => "+proj=tmerc +lat_0=0 +lon_0=-81 +k=0.999600 +x_0=500000.001016002 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / BLM 17N (ftUS)
-  32074 => "+proj=tmerc +lat_0=0 +lon_0=-99 +k=0.999600 +x_0=500000.001016002 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / BLM 14N (feet)
-  32075 => "+proj=tmerc +lat_0=0 +lon_0=-93 +k=0.999600 +x_0=500000.001016002 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / BLM 15N (feet)
-  32076 => "+proj=tmerc +lat_0=0 +lon_0=-87 +k=0.999600 +x_0=500000.001016002 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / BLM 16N (feet)
-  32077 => "+proj=tmerc +lat_0=0 +lon_0=-81 +k=0.999600 +x_0=500000.001016002 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs  no_defs", # NAD27 / BLM 17N (feet)
-  32081 => "+proj=tmerc +lat_0=0 +lon_0=-53 +k=0.999900 +x_0=304800 +y_0=0 +ellps=clrk66 +datum=NAD27 +units=m +no_defs  no_defs", # NAD27 / MTM zone 1
-  32082 => "+proj=tmerc +lat_0=0 +lon_0=-56 +k=0.999900 +x_0=304800 +y_0=0 +ellps=clrk66 +datum=NAD27 +units=m +no_defs  no_defs", # NAD27 / MTM zone 2
-  32083 => "+proj=tmerc +lat_0=0 +lon_0=-58.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=clrk66 +datum=NAD27 +units=m +no_defs  no_defs", # NAD27 / MTM zone 3
-  32084 => "+proj=tmerc +lat_0=0 +lon_0=-61.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=clrk66 +datum=NAD27 +units=m +no_defs  no_defs", # NAD27 / MTM zone 4
-  32085 => "+proj=tmerc +lat_0=0 +lon_0=-64.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=clrk66 +datum=NAD27 +units=m +no_defs  no_defs", # NAD27 / MTM zone 5
-  32086 => "+proj=tmerc +lat_0=0 +lon_0=-67.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=clrk66 +datum=NAD27 +units=m +no_defs  no_defs", # NAD27 / MTM zone 6
-  32098 => "+proj=lcc +lat_1=60 +lat_2=46 +lat_0=44 +lon_0=-68.5 +x_0=0 +y_0=0 +ellps=clrk66 +datum=NAD27 +units=m +no_defs  no_defs", # NAD27 / Quebec Lambert
-  32100 => "+proj=lcc +lat_1=49 +lat_2=45 +lat_0=44.25 +lon_0=-109.5 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Montana
-  32104 => "+proj=lcc +lat_1=43 +lat_2=40 +lat_0=39.83333333333334 +lon_0=-100 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Nebraska
-  32107 => "+proj=tmerc +lat_0=34.75 +lon_0=-115.5833333333333 +k=0.999900 +x_0=200000 +y_0=8000000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Nevada East
-  32108 => "+proj=tmerc +lat_0=34.75 +lon_0=-116.6666666666667 +k=0.999900 +x_0=500000 +y_0=6000000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Nevada Central
-  32109 => "+proj=tmerc +lat_0=34.75 +lon_0=-118.5833333333333 +k=0.999900 +x_0=800000 +y_0=4000000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Nevada West
-  32110 => "+proj=tmerc +lat_0=42.5 +lon_0=-71.66666666666667 +k=0.999967 +x_0=300000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / New Hampshire
-  32111 => "+proj=tmerc +lat_0=38.83333333333334 +lon_0=-74.5 +k=0.999900 +x_0=150000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / New Jersey
-  32112 => "+proj=tmerc +lat_0=31 +lon_0=-104.3333333333333 +k=0.999909 +x_0=165000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / New Mexico East
-  32113 => "+proj=tmerc +lat_0=31 +lon_0=-106.25 +k=0.999900 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / New Mexico Central
-  32114 => "+proj=tmerc +lat_0=31 +lon_0=-107.8333333333333 +k=0.999917 +x_0=830000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / New Mexico West
-  32115 => "+proj=tmerc +lat_0=38.83333333333334 +lon_0=-74.5 +k=0.999900 +x_0=150000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / New York East
-  32116 => "+proj=tmerc +lat_0=40 +lon_0=-76.58333333333333 +k=0.999938 +x_0=250000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / New York Central
-  32117 => "+proj=tmerc +lat_0=40 +lon_0=-78.58333333333333 +k=0.999938 +x_0=350000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / New York West
-  32118 => "+proj=lcc +lat_1=41.03333333333333 +lat_2=40.66666666666666 +lat_0=40.16666666666666 +lon_0=-74 +x_0=300000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / New York Long Island
-  32119 => "+proj=lcc +lat_1=36.16666666666666 +lat_2=34.33333333333334 +lat_0=33.75 +lon_0=-79 +x_0=609601.22 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / North Carolina
-  32120 => "+proj=lcc +lat_1=48.73333333333333 +lat_2=47.43333333333333 +lat_0=47 +lon_0=-100.5 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / North Dakota North
-  32121 => "+proj=lcc +lat_1=47.48333333333333 +lat_2=46.18333333333333 +lat_0=45.66666666666666 +lon_0=-100.5 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / North Dakota South
-  32122 => "+proj=lcc +lat_1=41.7 +lat_2=40.43333333333333 +lat_0=39.66666666666666 +lon_0=-82.5 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Ohio North
-  32123 => "+proj=lcc +lat_1=40.03333333333333 +lat_2=38.73333333333333 +lat_0=38 +lon_0=-82.5 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Ohio South
-  32124 => "+proj=lcc +lat_1=36.76666666666667 +lat_2=35.56666666666667 +lat_0=35 +lon_0=-98 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Oklahoma North
-  32125 => "+proj=lcc +lat_1=35.23333333333333 +lat_2=33.93333333333333 +lat_0=33.33333333333334 +lon_0=-98 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Oklahoma South
-  32126 => "+proj=lcc +lat_1=46 +lat_2=44.33333333333334 +lat_0=43.66666666666666 +lon_0=-120.5 +x_0=2500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Oregon North
-  32127 => "+proj=lcc +lat_1=44 +lat_2=42.33333333333334 +lat_0=41.66666666666666 +lon_0=-120.5 +x_0=1500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Oregon South
-  32128 => "+proj=lcc +lat_1=41.95 +lat_2=40.88333333333333 +lat_0=40.16666666666666 +lon_0=-77.75 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Pennsylvania North
-  32129 => "+proj=lcc +lat_1=40.96666666666667 +lat_2=39.93333333333333 +lat_0=39.33333333333334 +lon_0=-77.75 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Pennsylvania South
-  32130 => "+proj=tmerc +lat_0=41.08333333333334 +lon_0=-71.5 +k=0.999994 +x_0=100000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Rhode Island
-  32133 => "+proj=lcc +lat_1=34.83333333333334 +lat_2=32.5 +lat_0=31.83333333333333 +lon_0=-81 +x_0=609600 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / South Carolina
-  32134 => "+proj=lcc +lat_1=45.68333333333333 +lat_2=44.41666666666666 +lat_0=43.83333333333334 +lon_0=-100 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / South Dakota North
-  32135 => "+proj=lcc +lat_1=44.4 +lat_2=42.83333333333334 +lat_0=42.33333333333334 +lon_0=-100.3333333333333 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / South Dakota South
-  32136 => "+proj=lcc +lat_1=36.41666666666666 +lat_2=35.25 +lat_0=34.33333333333334 +lon_0=-86 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Tennessee
-  32137 => "+proj=lcc +lat_1=36.18333333333333 +lat_2=34.65 +lat_0=34 +lon_0=-101.5 +x_0=200000 +y_0=1000000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Texas North
-  32138 => "+proj=lcc +lat_1=33.96666666666667 +lat_2=32.13333333333333 +lat_0=31.66666666666667 +lon_0=-98.5 +x_0=600000 +y_0=2000000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Texas North Central
-  32139 => "+proj=lcc +lat_1=31.88333333333333 +lat_2=30.11666666666667 +lat_0=29.66666666666667 +lon_0=-100.3333333333333 +x_0=700000 +y_0=3000000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Texas Central
-  32140 => "+proj=lcc +lat_1=30.28333333333333 +lat_2=28.38333333333333 +lat_0=27.83333333333333 +lon_0=-99 +x_0=600000 +y_0=4000000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Texas South Central
-  32141 => "+proj=lcc +lat_1=27.83333333333333 +lat_2=26.16666666666667 +lat_0=25.66666666666667 +lon_0=-98.5 +x_0=300000 +y_0=5000000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Texas South
-  32142 => "+proj=lcc +lat_1=41.78333333333333 +lat_2=40.71666666666667 +lat_0=40.33333333333334 +lon_0=-111.5 +x_0=500000 +y_0=1000000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Utah North
-  32143 => "+proj=lcc +lat_1=40.65 +lat_2=39.01666666666667 +lat_0=38.33333333333334 +lon_0=-111.5 +x_0=500000 +y_0=2000000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Utah Central
-  32144 => "+proj=lcc +lat_1=38.35 +lat_2=37.21666666666667 +lat_0=36.66666666666666 +lon_0=-111.5 +x_0=500000 +y_0=3000000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Utah South
-  32145 => "+proj=tmerc +lat_0=42.5 +lon_0=-72.5 +k=0.999964 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Vermont
-  32146 => "+proj=lcc +lat_1=39.2 +lat_2=38.03333333333333 +lat_0=37.66666666666666 +lon_0=-78.5 +x_0=3500000 +y_0=2000000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Virginia North
-  32147 => "+proj=lcc +lat_1=37.96666666666667 +lat_2=36.76666666666667 +lat_0=36.33333333333334 +lon_0=-78.5 +x_0=3500000 +y_0=1000000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Virginia South
-  32148 => "+proj=lcc +lat_1=48.73333333333333 +lat_2=47.5 +lat_0=47 +lon_0=-120.8333333333333 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Washington North
-  32149 => "+proj=lcc +lat_1=47.33333333333334 +lat_2=45.83333333333334 +lat_0=45.33333333333334 +lon_0=-120.5 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Washington South
-  32150 => "+proj=lcc +lat_1=40.25 +lat_2=39 +lat_0=38.5 +lon_0=-79.5 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / West Virginia North
-  32151 => "+proj=lcc +lat_1=38.88333333333333 +lat_2=37.48333333333333 +lat_0=37 +lon_0=-81 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / West Virginia South
-  32152 => "+proj=lcc +lat_1=46.76666666666667 +lat_2=45.56666666666667 +lat_0=45.16666666666666 +lon_0=-90 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Wisconsin North
-  32153 => "+proj=lcc +lat_1=45.5 +lat_2=44.25 +lat_0=43.83333333333334 +lon_0=-90 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Wisconsin Central
-  32154 => "+proj=lcc +lat_1=44.06666666666667 +lat_2=42.73333333333333 +lat_0=42 +lon_0=-90 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Wisconsin South
-  32155 => "+proj=tmerc +lat_0=40.5 +lon_0=-105.1666666666667 +k=0.999938 +x_0=200000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Wyoming East
-  32156 => "+proj=tmerc +lat_0=40.5 +lon_0=-107.3333333333333 +k=0.999938 +x_0=400000 +y_0=100000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Wyoming East Central
-  32157 => "+proj=tmerc +lat_0=40.5 +lon_0=-108.75 +k=0.999938 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Wyoming West Central
-  32158 => "+proj=tmerc +lat_0=40.5 +lon_0=-110.0833333333333 +k=0.999938 +x_0=800000 +y_0=100000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Wyoming West
-  32161 => "+proj=lcc +lat_1=18.43333333333333 +lat_2=18.03333333333333 +lat_0=17.83333333333333 +lon_0=-66.43333333333334 +x_0=200000 +y_0=200000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Puerto Rico & Virgin Is.
-  32180 => "+proj=tmerc +lat_0=0 +lon_0=-55.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / SCoPQ zone 2
-  32181 => "+proj=tmerc +lat_0=0 +lon_0=-53 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / MTM zone 1
-  32182 => "+proj=tmerc +lat_0=0 +lon_0=-56 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / MTM zone 2
-  32183 => "+proj=tmerc +lat_0=0 +lon_0=-58.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / MTM zone 3
-  32184 => "+proj=tmerc +lat_0=0 +lon_0=-61.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / MTM zone 4
-  32185 => "+proj=tmerc +lat_0=0 +lon_0=-64.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / MTM zone 5
-  32186 => "+proj=tmerc +lat_0=0 +lon_0=-67.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / MTM zone 6
-  32187 => "+proj=tmerc +lat_0=0 +lon_0=-70.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / MTM zone 7
-  32188 => "+proj=tmerc +lat_0=0 +lon_0=-73.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / MTM zone 8
-  32189 => "+proj=tmerc +lat_0=0 +lon_0=-76.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / MTM zone 9
-  32190 => "+proj=tmerc +lat_0=0 +lon_0=-79.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / MTM zone 10
-  32191 => "+proj=tmerc +lat_0=0 +lon_0=-82.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / MTM zone 11
-  32192 => "+proj=tmerc +lat_0=0 +lon_0=-81 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / MTM zone 12
-  32193 => "+proj=tmerc +lat_0=0 +lon_0=-84 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / MTM zone 13
-  32194 => "+proj=tmerc +lat_0=0 +lon_0=-87 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / MTM zone 14
-  32195 => "+proj=tmerc +lat_0=0 +lon_0=-90 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / MTM zone 15
-  32196 => "+proj=tmerc +lat_0=0 +lon_0=-93 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / MTM zone 16
-  32197 => "+proj=tmerc +lat_0=0 +lon_0=-96 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / MTM zone 17
-  32198 => "+proj=lcc +lat_1=60 +lat_2=46 +lat_0=44 +lon_0=-68.5 +x_0=0 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs", # NAD83 / Quebec Lambert
-  32201 => "+proj=utm +zone=1 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 1N
-  32202 => "+proj=utm +zone=2 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 2N
-  32203 => "+proj=utm +zone=3 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 3N
-  32204 => "+proj=utm +zone=4 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 4N
-  32205 => "+proj=utm +zone=5 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 5N
-  32206 => "+proj=utm +zone=6 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 6N
-  32207 => "+proj=utm +zone=7 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 7N
-  32208 => "+proj=utm +zone=8 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 8N
-  32209 => "+proj=utm +zone=9 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 9N
-  32210 => "+proj=utm +zone=10 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 10N
-  32211 => "+proj=utm +zone=11 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 11N
-  32212 => "+proj=utm +zone=12 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 12N
-  32213 => "+proj=utm +zone=13 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 13N
-  32214 => "+proj=utm +zone=14 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 14N
-  32215 => "+proj=utm +zone=15 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 15N
-  32216 => "+proj=utm +zone=16 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 16N
-  32217 => "+proj=utm +zone=17 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 17N
-  32218 => "+proj=utm +zone=18 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 18N
-  32219 => "+proj=utm +zone=19 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 19N
-  32220 => "+proj=utm +zone=20 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 20N
-  32221 => "+proj=utm +zone=21 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 21N
-  32222 => "+proj=utm +zone=22 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 22N
-  32223 => "+proj=utm +zone=23 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 23N
-  32224 => "+proj=utm +zone=24 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 24N
-  32225 => "+proj=utm +zone=25 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 25N
-  32226 => "+proj=utm +zone=26 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 26N
-  32227 => "+proj=utm +zone=27 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 27N
-  32228 => "+proj=utm +zone=28 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 28N
-  32229 => "+proj=utm +zone=29 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 29N
-  32230 => "+proj=utm +zone=30 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 30N
-  32231 => "+proj=utm +zone=31 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 31N
-  32232 => "+proj=utm +zone=32 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 32N
-  32233 => "+proj=utm +zone=33 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 33N
-  32234 => "+proj=utm +zone=34 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 34N
-  32235 => "+proj=utm +zone=35 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 35N
-  32236 => "+proj=utm +zone=36 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 36N
-  32237 => "+proj=utm +zone=37 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 37N
-  32238 => "+proj=utm +zone=38 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 38N
-  32239 => "+proj=utm +zone=39 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 39N
-  32240 => "+proj=utm +zone=40 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 40N
-  32241 => "+proj=utm +zone=41 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 41N
-  32242 => "+proj=utm +zone=42 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 42N
-  32243 => "+proj=utm +zone=43 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 43N
-  32244 => "+proj=utm +zone=44 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 44N
-  32245 => "+proj=utm +zone=45 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 45N
-  32246 => "+proj=utm +zone=46 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 46N
-  32247 => "+proj=utm +zone=47 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 47N
-  32248 => "+proj=utm +zone=48 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 48N
-  32249 => "+proj=utm +zone=49 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 49N
-  32250 => "+proj=utm +zone=50 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 50N
-  32251 => "+proj=utm +zone=51 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 51N
-  32252 => "+proj=utm +zone=52 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 52N
-  32253 => "+proj=utm +zone=53 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 53N
-  32254 => "+proj=utm +zone=54 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 54N
-  32255 => "+proj=utm +zone=55 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 55N
-  32256 => "+proj=utm +zone=56 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 56N
-  32257 => "+proj=utm +zone=57 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 57N
-  32258 => "+proj=utm +zone=58 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 58N
-  32259 => "+proj=utm +zone=59 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 59N
-  32260 => "+proj=utm +zone=60 +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 60N
-  32301 => "+proj=utm +zone=1 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 1S
-  32302 => "+proj=utm +zone=2 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 2S
-  32303 => "+proj=utm +zone=3 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 3S
-  32304 => "+proj=utm +zone=4 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 4S
-  32305 => "+proj=utm +zone=5 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 5S
-  32306 => "+proj=utm +zone=6 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 6S
-  32307 => "+proj=utm +zone=7 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 7S
-  32308 => "+proj=utm +zone=8 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 8S
-  32309 => "+proj=utm +zone=9 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 9S
-  32310 => "+proj=utm +zone=10 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 10S
-  32311 => "+proj=utm +zone=11 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 11S
-  32312 => "+proj=utm +zone=12 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 12S
-  32313 => "+proj=utm +zone=13 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 13S
-  32314 => "+proj=utm +zone=14 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 14S
-  32315 => "+proj=utm +zone=15 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 15S
-  32316 => "+proj=utm +zone=16 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 16S
-  32317 => "+proj=utm +zone=17 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 17S
-  32318 => "+proj=utm +zone=18 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 18S
-  32319 => "+proj=utm +zone=19 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 19S
-  32320 => "+proj=utm +zone=20 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 20S
-  32321 => "+proj=utm +zone=21 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 21S
-  32322 => "+proj=utm +zone=22 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 22S
-  32323 => "+proj=utm +zone=23 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 23S
-  32324 => "+proj=utm +zone=24 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 24S
-  32325 => "+proj=utm +zone=25 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 25S
-  32326 => "+proj=utm +zone=26 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 26S
-  32327 => "+proj=utm +zone=27 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 27S
-  32328 => "+proj=utm +zone=28 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 28S
-  32329 => "+proj=utm +zone=29 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 29S
-  32330 => "+proj=utm +zone=30 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 30S
-  32331 => "+proj=utm +zone=31 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 31S
-  32332 => "+proj=utm +zone=32 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 32S
-  32333 => "+proj=utm +zone=33 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 33S
-  32334 => "+proj=utm +zone=34 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 34S
-  32335 => "+proj=utm +zone=35 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 35S
-  32336 => "+proj=utm +zone=36 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 36S
-  32337 => "+proj=utm +zone=37 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 37S
-  32338 => "+proj=utm +zone=38 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 38S
-  32339 => "+proj=utm +zone=39 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 39S
-  32340 => "+proj=utm +zone=40 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 40S
-  32341 => "+proj=utm +zone=41 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 41S
-  32342 => "+proj=utm +zone=42 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 42S
-  32343 => "+proj=utm +zone=43 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 43S
-  32344 => "+proj=utm +zone=44 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 44S
-  32345 => "+proj=utm +zone=45 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 45S
-  32346 => "+proj=utm +zone=46 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 46S
-  32347 => "+proj=utm +zone=47 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 47S
-  32348 => "+proj=utm +zone=48 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 48S
-  32349 => "+proj=utm +zone=49 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 49S
-  32350 => "+proj=utm +zone=50 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 50S
-  32351 => "+proj=utm +zone=51 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 51S
-  32352 => "+proj=utm +zone=52 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 52S
-  32353 => "+proj=utm +zone=53 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 53S
-  32354 => "+proj=utm +zone=54 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 54S
-  32355 => "+proj=utm +zone=55 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 55S
-  32356 => "+proj=utm +zone=56 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 56S
-  32357 => "+proj=utm +zone=57 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 57S
-  32358 => "+proj=utm +zone=58 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 58S
-  32359 => "+proj=utm +zone=59 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 59S
-  32360 => "+proj=utm +zone=60 +south +ellps=WGS72 +units=m +no_defs  no_defs", # WGS 72 / UTM zone 60S
-  32401 => "+proj=utm +zone=1 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 1N
-  32402 => "+proj=utm +zone=2 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 2N
-  32403 => "+proj=utm +zone=3 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 3N
-  32404 => "+proj=utm +zone=4 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 4N
-  32405 => "+proj=utm +zone=5 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 5N
-  32406 => "+proj=utm +zone=6 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 6N
-  32407 => "+proj=utm +zone=7 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 7N
-  32408 => "+proj=utm +zone=8 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 8N
-  32409 => "+proj=utm +zone=9 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 9N
-  32410 => "+proj=utm +zone=10 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 10N
-  32411 => "+proj=utm +zone=11 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 11N
-  32412 => "+proj=utm +zone=12 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 12N
-  32413 => "+proj=utm +zone=13 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 13N
-  32414 => "+proj=utm +zone=14 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 14N
-  32415 => "+proj=utm +zone=15 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 15N
-  32416 => "+proj=utm +zone=16 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 16N
-  32417 => "+proj=utm +zone=17 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 17N
-  32418 => "+proj=utm +zone=18 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 18N
-  32419 => "+proj=utm +zone=19 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 19N
-  32420 => "+proj=utm +zone=20 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 20N
-  32421 => "+proj=utm +zone=21 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 21N
-  32422 => "+proj=utm +zone=22 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 22N
-  32423 => "+proj=utm +zone=23 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 23N
-  32424 => "+proj=utm +zone=24 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 24N
-  32425 => "+proj=utm +zone=25 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 25N
-  32426 => "+proj=utm +zone=26 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 26N
-  32427 => "+proj=utm +zone=27 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 27N
-  32428 => "+proj=utm +zone=28 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 28N
-  32429 => "+proj=utm +zone=29 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 29N
-  32430 => "+proj=utm +zone=30 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 30N
-  32431 => "+proj=utm +zone=31 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 31N
-  32432 => "+proj=utm +zone=32 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 32N
-  32433 => "+proj=utm +zone=33 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 33N
-  32434 => "+proj=utm +zone=34 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 34N
-  32435 => "+proj=utm +zone=35 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 35N
-  32436 => "+proj=utm +zone=36 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 36N
-  32437 => "+proj=utm +zone=37 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 37N
-  32438 => "+proj=utm +zone=38 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 38N
-  32439 => "+proj=utm +zone=39 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 39N
-  32440 => "+proj=utm +zone=40 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 40N
-  32441 => "+proj=utm +zone=41 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 41N
-  32442 => "+proj=utm +zone=42 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 42N
-  32443 => "+proj=utm +zone=43 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 43N
-  32444 => "+proj=utm +zone=44 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 44N
-  32445 => "+proj=utm +zone=45 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 45N
-  32446 => "+proj=utm +zone=46 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 46N
-  32447 => "+proj=utm +zone=47 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 47N
-  32448 => "+proj=utm +zone=48 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 48N
-  32449 => "+proj=utm +zone=49 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 49N
-  32450 => "+proj=utm +zone=50 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 50N
-  32451 => "+proj=utm +zone=51 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 51N
-  32452 => "+proj=utm +zone=52 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 52N
-  32453 => "+proj=utm +zone=53 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 53N
-  32454 => "+proj=utm +zone=54 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 54N
-  32455 => "+proj=utm +zone=55 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 55N
-  32456 => "+proj=utm +zone=56 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 56N
-  32457 => "+proj=utm +zone=57 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 57N
-  32458 => "+proj=utm +zone=58 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 58N
-  32459 => "+proj=utm +zone=59 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 59N
-  32460 => "+proj=utm +zone=60 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 60N
-  32501 => "+proj=utm +zone=1 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 1S
-  32502 => "+proj=utm +zone=2 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 2S
-  32503 => "+proj=utm +zone=3 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 3S
-  32504 => "+proj=utm +zone=4 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 4S
-  32505 => "+proj=utm +zone=5 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 5S
-  32506 => "+proj=utm +zone=6 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 6S
-  32507 => "+proj=utm +zone=7 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 7S
-  32508 => "+proj=utm +zone=8 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 8S
-  32509 => "+proj=utm +zone=9 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 9S
-  32510 => "+proj=utm +zone=10 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 10S
-  32511 => "+proj=utm +zone=11 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 11S
-  32512 => "+proj=utm +zone=12 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 12S
-  32513 => "+proj=utm +zone=13 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 13S
-  32514 => "+proj=utm +zone=14 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 14S
-  32515 => "+proj=utm +zone=15 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 15S
-  32516 => "+proj=utm +zone=16 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 16S
-  32517 => "+proj=utm +zone=17 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 17S
-  32518 => "+proj=utm +zone=18 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 18S
-  32519 => "+proj=utm +zone=19 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 19S
-  32520 => "+proj=utm +zone=20 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 20S
-  32521 => "+proj=utm +zone=21 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 21S
-  32522 => "+proj=utm +zone=22 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 22S
-  32523 => "+proj=utm +zone=23 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 23S
-  32524 => "+proj=utm +zone=24 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 24S
-  32525 => "+proj=utm +zone=25 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 25S
-  32526 => "+proj=utm +zone=26 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 26S
-  32527 => "+proj=utm +zone=27 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 27S
-  32528 => "+proj=utm +zone=28 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 28S
-  32529 => "+proj=utm +zone=29 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 29S
-  32530 => "+proj=utm +zone=30 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 30S
-  32531 => "+proj=utm +zone=31 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 31S
-  32532 => "+proj=utm +zone=32 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 32S
-  32533 => "+proj=utm +zone=33 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 33S
-  32534 => "+proj=utm +zone=34 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 34S
-  32535 => "+proj=utm +zone=35 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 35S
-  32536 => "+proj=utm +zone=36 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 36S
-  32537 => "+proj=utm +zone=37 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 37S
-  32538 => "+proj=utm +zone=38 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 38S
-  32539 => "+proj=utm +zone=39 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 39S
-  32540 => "+proj=utm +zone=40 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 40S
-  32541 => "+proj=utm +zone=41 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 41S
-  32542 => "+proj=utm +zone=42 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 42S
-  32543 => "+proj=utm +zone=43 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 43S
-  32544 => "+proj=utm +zone=44 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 44S
-  32545 => "+proj=utm +zone=45 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 45S
-  32546 => "+proj=utm +zone=46 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 46S
-  32547 => "+proj=utm +zone=47 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 47S
-  32548 => "+proj=utm +zone=48 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 48S
-  32549 => "+proj=utm +zone=49 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 49S
-  32550 => "+proj=utm +zone=50 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 50S
-  32551 => "+proj=utm +zone=51 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 51S
-  32552 => "+proj=utm +zone=52 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 52S
-  32553 => "+proj=utm +zone=53 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 53S
-  32554 => "+proj=utm +zone=54 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 54S
-  32555 => "+proj=utm +zone=55 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 55S
-  32556 => "+proj=utm +zone=56 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 56S
-  32557 => "+proj=utm +zone=57 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 57S
-  32558 => "+proj=utm +zone=58 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 58S
-  32559 => "+proj=utm +zone=59 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 59S
-  32560 => "+proj=utm +zone=60 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs  no_defs", # WGS 72BE / UTM zone 60S
-  32601 => "+proj=utm +zone=1 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 1N
-  32602 => "+proj=utm +zone=2 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 2N
-  32603 => "+proj=utm +zone=3 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 3N
-  32604 => "+proj=utm +zone=4 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 4N
-  32605 => "+proj=utm +zone=5 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 5N
-  32606 => "+proj=utm +zone=6 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 6N
-  32607 => "+proj=utm +zone=7 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 7N
-  32608 => "+proj=utm +zone=8 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 8N
-  32609 => "+proj=utm +zone=9 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 9N
-  32610 => "+proj=utm +zone=10 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 10N
-  32611 => "+proj=utm +zone=11 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 11N
-  32612 => "+proj=utm +zone=12 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 12N
-  32613 => "+proj=utm +zone=13 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 13N
-  32614 => "+proj=utm +zone=14 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 14N
-  32615 => "+proj=utm +zone=15 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 15N
-  32616 => "+proj=utm +zone=16 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 16N
-  32617 => "+proj=utm +zone=17 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 17N
-  32618 => "+proj=utm +zone=18 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 18N
-  32619 => "+proj=utm +zone=19 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 19N
-  32620 => "+proj=utm +zone=20 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 20N
-  32621 => "+proj=utm +zone=21 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 21N
-  32622 => "+proj=utm +zone=22 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 22N
-  32623 => "+proj=utm +zone=23 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 23N
-  32624 => "+proj=utm +zone=24 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 24N
-  32625 => "+proj=utm +zone=25 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 25N
-  32626 => "+proj=utm +zone=26 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 26N
-  32627 => "+proj=utm +zone=27 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 27N
-  32628 => "+proj=utm +zone=28 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 28N
-  32629 => "+proj=utm +zone=29 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 29N
-  32630 => "+proj=utm +zone=30 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 30N
-  32631 => "+proj=utm +zone=31 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 31N
-  32632 => "+proj=utm +zone=32 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 32N
-  32633 => "+proj=utm +zone=33 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 33N
-  32634 => "+proj=utm +zone=34 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 34N
-  32635 => "+proj=utm +zone=35 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 35N
-  32636 => "+proj=utm +zone=36 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 36N
-  32637 => "+proj=utm +zone=37 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 37N
-  32638 => "+proj=utm +zone=38 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 38N
-  32639 => "+proj=utm +zone=39 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 39N
-  32640 => "+proj=utm +zone=40 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 40N
-  32641 => "+proj=utm +zone=41 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 41N
-  32642 => "+proj=utm +zone=42 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 42N
-  32643 => "+proj=utm +zone=43 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 43N
-  32644 => "+proj=utm +zone=44 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 44N
-  32645 => "+proj=utm +zone=45 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 45N
-  32646 => "+proj=utm +zone=46 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 46N
-  32647 => "+proj=utm +zone=47 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 47N
-  32648 => "+proj=utm +zone=48 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 48N
-  32649 => "+proj=utm +zone=49 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 49N
-  32650 => "+proj=utm +zone=50 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 50N
-  32651 => "+proj=utm +zone=51 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 51N
-  32652 => "+proj=utm +zone=52 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 52N
-  32653 => "+proj=utm +zone=53 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 53N
-  32654 => "+proj=utm +zone=54 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 54N
-  32655 => "+proj=utm +zone=55 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 55N
-  32656 => "+proj=utm +zone=56 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 56N
-  32657 => "+proj=utm +zone=57 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 57N
-  32658 => "+proj=utm +zone=58 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 58N
-  32659 => "+proj=utm +zone=59 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 59N
-  32660 => "+proj=utm +zone=60 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 60N
-  32661 => "+proj=stere +lat_0=90 +lat_ts=90 +lon_0=0 +k=0.994 +x_0=2000000 +y_0=2000000 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UPS North
-  32701 => "+proj=utm +zone=1 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 1S
-  32702 => "+proj=utm +zone=2 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 2S
-  32703 => "+proj=utm +zone=3 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 3S
-  32704 => "+proj=utm +zone=4 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 4S
-  32705 => "+proj=utm +zone=5 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 5S
-  32706 => "+proj=utm +zone=6 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 6S
-  32707 => "+proj=utm +zone=7 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 7S
-  32708 => "+proj=utm +zone=8 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 8S
-  32709 => "+proj=utm +zone=9 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 9S
-  32710 => "+proj=utm +zone=10 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 10S
-  32711 => "+proj=utm +zone=11 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 11S
-  32712 => "+proj=utm +zone=12 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 12S
-  32713 => "+proj=utm +zone=13 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 13S
-  32714 => "+proj=utm +zone=14 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 14S
-  32715 => "+proj=utm +zone=15 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 15S
-  32716 => "+proj=utm +zone=16 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 16S
-  32717 => "+proj=utm +zone=17 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 17S
-  32718 => "+proj=utm +zone=18 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 18S
-  32719 => "+proj=utm +zone=19 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 19S
-  32720 => "+proj=utm +zone=20 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 20S
-  32721 => "+proj=utm +zone=21 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 21S
-  32722 => "+proj=utm +zone=22 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 22S
-  32723 => "+proj=utm +zone=23 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 23S
-  32724 => "+proj=utm +zone=24 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 24S
-  32725 => "+proj=utm +zone=25 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 25S
-  32726 => "+proj=utm +zone=26 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 26S
-  32727 => "+proj=utm +zone=27 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 27S
-  32728 => "+proj=utm +zone=28 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 28S
-  32729 => "+proj=utm +zone=29 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 29S
-  32730 => "+proj=utm +zone=30 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 30S
-  32731 => "+proj=utm +zone=31 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 31S
-  32732 => "+proj=utm +zone=32 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 32S
-  32733 => "+proj=utm +zone=33 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 33S
-  32734 => "+proj=utm +zone=34 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 34S
-  32735 => "+proj=utm +zone=35 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 35S
-  32736 => "+proj=utm +zone=36 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 36S
-  32737 => "+proj=utm +zone=37 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 37S
-  32738 => "+proj=utm +zone=38 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 38S
-  32739 => "+proj=utm +zone=39 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 39S
-  32740 => "+proj=utm +zone=40 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 40S
-  32741 => "+proj=utm +zone=41 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 41S
-  32742 => "+proj=utm +zone=42 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 42S
-  32743 => "+proj=utm +zone=43 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 43S
-  32744 => "+proj=utm +zone=44 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 44S
-  32745 => "+proj=utm +zone=45 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 45S
-  32746 => "+proj=utm +zone=46 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 46S
-  32747 => "+proj=utm +zone=47 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 47S
-  32748 => "+proj=utm +zone=48 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 48S
-  32749 => "+proj=utm +zone=49 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 49S
-  32750 => "+proj=utm +zone=50 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 50S
-  32751 => "+proj=utm +zone=51 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 51S
-  32752 => "+proj=utm +zone=52 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 52S
-  32753 => "+proj=utm +zone=53 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 53S
-  32754 => "+proj=utm +zone=54 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 54S
-  32755 => "+proj=utm +zone=55 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 55S
-  32756 => "+proj=utm +zone=56 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 56S
-  32757 => "+proj=utm +zone=57 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 57S
-  32758 => "+proj=utm +zone=58 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 58S
-  32759 => "+proj=utm +zone=59 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 59S
-  32760 => "+proj=utm +zone=60 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UTM zone 60S
-  32761 => "+proj=stere +lat_0=-90 +lat_ts=-90 +lon_0=0 +k=0.994 +x_0=2000000 +y_0=2000000 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / UPS South
-  32766 => "+proj=tmerc +lat_0=0 +lon_0=36 +k=0.999600 +x_0=500000 +y_0=10000000 +ellps=WGS84 +datum=WGS84 +units=m +no_defs  no_defs", # WGS 84 / TM 36 SE
-  20002 => "+proj=tmerc +lat_0=0 +lon_0=9 +k=1.000000 +x_0=2500000 +y_0=0 +ellps=krass +units=m  no_defs", # Pulkovo 1995 GK Zone 2
-  20003 => "+proj=tmerc +lat_0=0 +lon_0=15 +k=1.000000 +x_0=3500000 +y_0=0 +ellps=krass +units=m  no_defs", # Pulkovo 1995 GK Zone 3
-  20062 => "+proj=tmerc +lat_0=0 +lon_0=9 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m  no_defs", # Pulkovo 1995 GK Zone 2N
-  20063 => "+proj=tmerc +lat_0=0 +lon_0=15 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m  no_defs", # Pulkovo 1995 GK Zone 3N
-  24721 => "+proj=utm +zone=21 +ellps=intl +units=m  no_defs", # La Canoa UTM Zone 21N
-  26761 => "+proj=tmerc +lat_0=18.83333333333333 +lon_0=-155.5 +k=0.999967 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192  no_defs", # NAD 1927 StatePlane Hawaii 1 FIPS 5101
-  26762 => "+proj=tmerc +lat_0=20.33333333333333 +lon_0=-156.6666666666667 +k=0.999967 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192  no_defs", # NAD 1927 StatePlane Hawaii 2 FIPS 5102
-  26763 => "+proj=tmerc +lat_0=21.16666666666667 +lon_0=-158 +k=0.999990 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192  no_defs", # NAD 1927 StatePlane Hawaii 3 FIPS 5103
-  26764 => "+proj=tmerc +lat_0=21.83333333333333 +lon_0=-159.5 +k=0.999990 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192  no_defs", # NAD 1927 StatePlane Hawaii 4 FIPS 5104
-  26765 => "+proj=tmerc +lat_0=21.66666666666667 +lon_0=-160.1666666666667 +k=1.000000 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192  no_defs", # NAD 1927 StatePlane Hawaii 5 FIPS 5105
-  26788 => "+proj=lcc +lat_1=45.48333333333333 +lat_2=47.08333333333334 +lat_0=44.78333333333333 +lon_0=-87 +x_0=609601.2192024385 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192  no_defs", # NAD 1927 StatePlane Michigan North FIPS 2111
-  26789 => "+proj=lcc +lat_1=44.18333333333333 +lat_2=45.7 +lat_0=43.31666666666667 +lon_0=-84.33333333333333 +x_0=609601.2192024385 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192  no_defs", # NAD 1927 StatePlane Michigan Central FIPS 2112
-  26790 => "+proj=lcc +lat_1=42.1 +lat_2=43.66666666666666 +lat_0=41.5 +lon_0=-84.33333333333333 +x_0=609601.2192024385 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192  no_defs", # NAD 1927 StatePlane Michigan South FIPS 2113
-  30591 => "+proj=lcc +lat_1=36 +lat_0=36 +lon_0=2.7 +k_0=0.999625544 +x_0=500135 +y_0=300090 +ellps=clrk80 +units=m  no_defs", # Nord Algerie
-  30592 => "+proj=lcc +lat_1=33.3 +lat_0=33.3 +lon_0=2.7 +k_0=0.999625769 +x_0=500135 +y_0=300090 +ellps=clrk80 +units=m  no_defs", # Sud Algerie
-  31491 => "+proj=tmerc +lat_0=0 +lon_0=3 +k=1.000000 +x_0=1500000 +y_0=0 +ellps=bessel +units=m  no_defs", # Germany Zone 1
-  31492 => "+proj=tmerc +lat_0=0 +lon_0=6 +k=1.000000 +x_0=2500000 +y_0=0 +ellps=bessel +units=m  no_defs", # Germany Zone 2
-  31493 => "+proj=tmerc +lat_0=0 +lon_0=9 +k=1.000000 +x_0=3500000 +y_0=0 +ellps=bessel +units=m  no_defs", # Germany Zone 3
-  31494 => "+proj=tmerc +lat_0=0 +lon_0=12 +k=1.000000 +x_0=4500000 +y_0=0 +ellps=bessel +units=m  no_defs", # Germany Zone 4
-  31495 => "+proj=tmerc +lat_0=0 +lon_0=15 +k=1.000000 +x_0=5500000 +y_0=0 +ellps=bessel +units=m  no_defs", # Germany Zone 5
-  32059 => "+proj=lcc +lat_1=18.03333333333334 +lat_2=18.43333333333333 +lat_0=17.83333333333333 +lon_0=-66.43333333333334 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192  no_defs", # NAD 1927 StatePlane Puerto Rico FIPS 5201
-  32060 => "+proj=lcc +lat_1=18.03333333333334 +lat_2=18.43333333333333 +lat_0=17.83333333333333 +lon_0=-66.43333333333334 +x_0=152400.3048006096 +y_0=30480.06096012193 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192  no_defs", # NAD 1927 StatePlane Virgin Islands St Croix FIPS 5202
-  53001 => "+a=6371000 +b=6371000 +units=m  no_defs", # Sphere Plate Carree
-  53002 => "+a=6371000 +b=6371000 +units=m  no_defs", # Sphere Equidistant Cylindrical
-  53003 => "+proj=mill +lat_0=0 +lon_0=0 +x_0=0 +y_0=0 +R_A +a=6371000 +b=6371000 +units=m  no_defs", # Sphere Miller Cylindrical
-  53004 => "+proj=merc +lat_ts=0 +lon_0=0 +k=1.000000 +x_0=0 +y_0=0 +a=6371000 +b=6371000 +units=m  no_defs", # Sphere Mercator
-  53008 => "+proj=sinu +lon_0=0 +x_0=0 +y_0=0 +a=6371000 +b=6371000 +units=m  no_defs", # Sphere Sinusoidal
-  53009 => "+proj=moll +lon_0=0 +x_0=0 +y_0=0 +a=6371000 +b=6371000 +units=m  no_defs", # Sphere Mollweide
-  53010 => "+proj=eck6 +lon_0=0 +x_0=0 +y_0=0 +a=6371000 +b=6371000 +units=m  no_defs", # Sphere Eckert VI
-  53011 => "+a=6371000 +b=6371000 +units=m  no_defs", # Sphere Eckert V
-  53012 => "+proj=eck4 +lon_0=0 +x_0=0 +y_0=0 +a=6371000 +b=6371000 +units=m  no_defs", # Sphere Eckert IV
-  53013 => "+a=6371000 +b=6371000 +units=m  no_defs", # Sphere Eckert III
-  53014 => "+a=6371000 +b=6371000 +units=m  no_defs", # Sphere Eckert II
-  53015 => "+a=6371000 +b=6371000 +units=m  no_defs", # Sphere Eckert I
-  53016 => "+proj=gall +lon_0=0 +x_0=0 +y_0=0 +a=6371000 +b=6371000 +units=m  no_defs", # Sphere Gall Stereographic
-  53017 => "+a=6371000 +b=6371000 +units=m  no_defs", # Sphere Behrmann
-  53018 => "+a=6371000 +b=6371000 +units=m  no_defs", # Sphere Winkel I
-  53019 => "+a=6371000 +b=6371000 +units=m  no_defs", # Sphere Winkel II
-  53021 => "+proj=poly +lat_0=0 +lon_0=0 +x_0=0 +y_0=0 +a=6371000 +b=6371000 +units=m  no_defs", # Sphere Polyconic
-  53022 => "+a=6371000 +b=6371000 +units=m  no_defs", # Sphere Quartic Authalic
-  53023 => "+a=6371000 +b=6371000 +units=m  no_defs", # Sphere Loximuthal
-  53024 => "+a=6371000 +b=6371000 +units=m  no_defs", # Sphere Bonne
-  53025 => "+a=6371000 +b=6371000 +units=m  no_defs", # Sphere Hotine
-  53026 => "+proj=stere +lat_0=0 +lon_0=0 +x_0=0 +y_0=0 +a=6371000 +b=6371000 +units=m  no_defs", # Sphere Stereographic
-  53027 => "+proj=eqdc +lat_0=0 +lon_0=0 +lat_1=60 +lat_2=60 +x_0=0 +y_0=0 +a=6371000 +b=6371000 +units=m  no_defs", # Sphere Equidistant Conic
-  53028 => "+proj=cass +lat_0=0 +lon_0=0 +x_0=0 +y_0=0 +a=6371000 +b=6371000 +units=m  no_defs", # Sphere Cassini
-  53029 => "+proj=vandg +lon_0=0 +x_0=0 +y_0=0 +R_A +a=6371000 +b=6371000 +units=m  no_defs", # Sphere Van der Grinten I
-  53030 => "+proj=robin +lon_0=0 +x_0=0 +y_0=0 +a=6371000 +b=6371000 +units=m  no_defs", # Sphere Robinson
-  53031 => "+a=6371000 +b=6371000 +units=m  no_defs", # Sphere Two Point Equidistant
-  53032 => "+proj=aeqd +lat_0=0 +lon_0=0 +x_0=0 +y_0=0 +a=6371000 +b=6371000 +units=m  no_defs", # Sphere Azimuthal Equidistant
-  54001 => "+ellps=WGS84 +datum=WGS84 +units=m  no_defs", # World Plate Carree
-  54002 => "+ellps=WGS84 +datum=WGS84 +units=m  no_defs", # World Equidistant Cylindrical
-  54003 => "+proj=mill +lat_0=0 +lon_0=0 +x_0=0 +y_0=0 +R_A +ellps=WGS84 +datum=WGS84 +units=m  no_defs", # World Miller Cylindrical
-  54004 => "+proj=merc +lat_ts=0 +lon_0=0 +k=1.000000 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m  no_defs", # World Mercator
-  54008 => "+proj=sinu +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m  no_defs", # World Sinusoidal
-  54009 => "+proj=moll +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m  no_defs", # World Mollweide
-  54010 => "+proj=eck6 +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m  no_defs", # World Eckert VI
-  54011 => "+ellps=WGS84 +datum=WGS84 +units=m  no_defs", # World Eckert V
-  54012 => "+proj=eck4 +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m  no_defs", # World Eckert IV
-  54013 => "+ellps=WGS84 +datum=WGS84 +units=m  no_defs", # World Eckert III
-  54014 => "+ellps=WGS84 +datum=WGS84 +units=m  no_defs", # World Eckert II
-  54015 => "+ellps=WGS84 +datum=WGS84 +units=m  no_defs", # World Eckert I
-  54016 => "+proj=gall +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m  no_defs", # World Gall Stereographic
-  54017 => "+ellps=WGS84 +datum=WGS84 +units=m  no_defs", # World Behrmann
-  54018 => "+ellps=WGS84 +datum=WGS84 +units=m  no_defs", # World Winkel I
-  54019 => "+ellps=WGS84 +datum=WGS84 +units=m  no_defs", # World Winkel II
-  54021 => "+proj=poly +lat_0=0 +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m  no_defs", # World Polyconic
-  54022 => "+ellps=WGS84 +datum=WGS84 +units=m  no_defs", # World Quartic Authalic
-  54023 => "+ellps=WGS84 +datum=WGS84 +units=m  no_defs", # World Loximuthal
-  54024 => "+ellps=WGS84 +datum=WGS84 +units=m  no_defs", # World Bonne
-  54025 => "+ellps=WGS84 +datum=WGS84 +units=m  no_defs", # World Hotine
-  54026 => "+proj=stere +lat_0=0 +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m  no_defs", # World Stereographic
-  54027 => "+proj=eqdc +lat_0=0 +lon_0=0 +lat_1=60 +lat_2=60 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m  no_defs", # World Equidistant Conic
-  54028 => "+proj=cass +lat_0=0 +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m  no_defs", # World Cassini
-  54029 => "+proj=vandg +lon_0=0 +x_0=0 +y_0=0 +R_A +ellps=WGS84 +datum=WGS84 +units=m  no_defs", # World Van der Grinten I
-  54030 => "+proj=robin +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m  no_defs", # World Robinson
-  54031 => "+ellps=WGS84 +datum=WGS84 +units=m  no_defs", # World Two Point Equidistant
-  54032 => "+proj=aeqd +lat_0=0 +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m  no_defs", # World Azimuthal Equidistant
-  65061 => "+proj=poly +lat_0=13.47246635277778 +lon_0=-144.7487507055556 +x_0=50000.00000000001 +y_0=50000.00000000001 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192  no_defs", # NAD 1927 StatePlane Guam FIPS 5400
-  65161 => "+proj=poly +lat_0=13.47246635277778 +lon_0=-144.7487507055556 +x_0=50000 +y_0=50000 +ellps=GRS80 +datum=NAD83 +units=m  no_defs", # NAD 1983 StatePlane Guam FIPS 5400
-  102001 => "+proj=aea +lat_1=50 +lat_2=70 +lat_0=40 +lon_0=-96 +x_0=0 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m  no_defs", # Canada Albers Equal Area Conic
-  102002 => "+proj=lcc +lat_1=50 +lat_2=70 +lat_0=40 +lon_0=-96 +x_0=0 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m  no_defs", # Canada Lambert Conformal Conic
-  102003 => "+proj=aea +lat_1=29.5 +lat_2=45.5 +lat_0=37.5 +lon_0=-96 +x_0=0 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m  no_defs", # USA Contiguous Albers Equal Area Conic
-  102004 => "+proj=lcc +lat_1=33 +lat_2=45 +lat_0=39 +lon_0=-96 +x_0=0 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m  no_defs", # USA Contiguous Lambert Conformal Conic
-  102005 => "+proj=eqdc +lat_0=0 +lon_0=0 +lat_1=33 +lat_2=45 +x_0=0 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m  no_defs", # USA Contiguous Equidistant Conic
-  102006 => "+proj=aea +lat_1=55 +lat_2=65 +lat_0=50 +lon_0=-154 +x_0=0 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m  no_defs", # Alaska Albers Equal Area Conic
-  102007 => "+proj=aea +lat_1=8 +lat_2=18 +lat_0=13 +lon_0=-157 +x_0=0 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m  no_defs", # Hawaii Albers Equal Area Conic
-  102008 => "+proj=aea +lat_1=20 +lat_2=60 +lat_0=40 +lon_0=-96 +x_0=0 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m  no_defs", # North America Albers Equal Area Conic
-  102009 => "+proj=lcc +lat_1=20 +lat_2=60 +lat_0=40 +lon_0=-96 +x_0=0 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m  no_defs", # North America Lambert Conformal Conic
-  102010 => "+proj=eqdc +lat_0=0 +lon_0=0 +lat_1=20 +lat_2=60 +x_0=0 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m  no_defs", # North America Equidistant Conic
-  102011 => "+proj=sinu +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m  no_defs", # Africa Sinusoidal
-  102012 => "+proj=lcc +lat_1=30 +lat_2=62 +lat_0=0 +lon_0=105 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m  no_defs", # Asia Lambert Conformal Conic
-  102013 => "+proj=aea +lat_1=43 +lat_2=62 +lat_0=30 +lon_0=10 +x_0=0 +y_0=0 +ellps=intl +units=m  no_defs", # Europe Albers Equal Area Conic
-  102014 => "+proj=lcc +lat_1=43 +lat_2=62 +lat_0=30 +lon_0=10 +x_0=0 +y_0=0 +ellps=intl +units=m  no_defs", # Europe Lambert Conformal Conic
-  102015 => "+proj=lcc +lat_1=-5 +lat_2=-42 +lat_0=-32 +lon_0=-60 +x_0=0 +y_0=0 +ellps=aust_SA +units=m  no_defs", # South America Lambert Conformal Conic
-  102016 => "+proj=aeqd +lat_0=90 +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m  no_defs", # North Pole Azimuthal Equidistant
-  102017 => "+proj=laea +lat_0=90 +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m  no_defs", # North Pole Lambert Azimuthal Equal Area
-  102018 => "+proj=stere +lat_0=90 +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m  no_defs", # North Pole Stereographic
-  102019 => "+proj=aeqd +lat_0=-90 +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m  no_defs", # South Pole Azimuthal Equidistant
-  102020 => "+proj=laea +lat_0=-90 +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m  no_defs", # South Pole Lambert Azimuthal Equal Area
-  102021 => "+proj=stere +lat_0=-90 +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m  no_defs", # South Pole Stereographic
-  102022 => "+proj=aea +lat_1=20 +lat_2=-23 +lat_0=0 +lon_0=25 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m  no_defs", # Africa Albers Equal Area Conic
-  102023 => "+proj=eqdc +lat_0=0 +lon_0=0 +lat_1=20 +lat_2=-23 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m  no_defs", # Africa Equidistant Conic
-  102024 => "+proj=lcc +lat_1=20 +lat_2=-23 +lat_0=0 +lon_0=25 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m  no_defs", # Africa Lambert Conformal Conic
-  102025 => "+proj=aea +lat_1=15 +lat_2=65 +lat_0=30 +lon_0=95 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m  no_defs", # Asia North Albers Equal Area Conic
-  102026 => "+proj=eqdc +lat_0=0 +lon_0=0 +lat_1=15 +lat_2=65 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m  no_defs", # Asia North Equidistant Conic
-  102027 => "+proj=lcc +lat_1=15 +lat_2=65 +lat_0=30 +lon_0=95 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m  no_defs", # Asia North Lambert Conformal Conic
-  102028 => "+proj=aea +lat_1=7 +lat_2=-32 +lat_0=-15 +lon_0=125 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m  no_defs", # Asia South Albers Equal Area Conic
-  102029 => "+proj=eqdc +lat_0=0 +lon_0=0 +lat_1=7 +lat_2=-32 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m  no_defs", # Asia South Equidistant Conic
-  102030 => "+proj=lcc +lat_1=7 +lat_2=-32 +lat_0=-15 +lon_0=125 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m  no_defs", # Asia South Lambert Conformal Conic
-  102031 => "+proj=eqdc +lat_0=0 +lon_0=0 +lat_1=43 +lat_2=62 +x_0=0 +y_0=0 +ellps=intl +units=m  no_defs", # Europe Equidistant Conic
-  102032 => "+proj=eqdc +lat_0=0 +lon_0=0 +lat_1=-5 +lat_2=-42 +x_0=0 +y_0=0 +ellps=aust_SA +units=m  no_defs", # South America Equidistant Conic
-  102033 => "+proj=aea +lat_1=-5 +lat_2=-42 +lat_0=-32 +lon_0=-60 +x_0=0 +y_0=0 +ellps=aust_SA +units=m  no_defs", # South America Albers Equal Area Conic
-  102065 => "+proj=krovak +lat_0=49.5 +lon_0=24.83333333333333 +alpha=30.28813975277778 +k=0.9999 +x_0=0 +y_0=0 +ellps=bessel +units=m  no_defs", # S-JTSK Krovak
-  102066 => "+proj=krovak +lat_0=49.5 +lon_0=24.83333333333333 +alpha=30.28813975277778 +k=0.9999 +x_0=0 +y_0=0 +ellps=bessel +pm=-17.66666666666667 +units=m  no_defs", # S-JTSK Ferro Krovak East North
-  102067 => "+proj=krovak +lat_0=49.5 +lon_0=24.83333333333333 +alpha=30.28813975277778 +k=0.9999 +x_0=0 +y_0=0 +ellps=bessel +units=m  no_defs", # S-JTSK Krovak East North
-  102091 => "+proj=tmerc +lat_0=0 +lon_0=9 +k=0.999600 +x_0=1500000 +y_0=0 +ellps=intl +units=m  no_defs", # Monte Mario Italy 1
-  102092 => "+proj=tmerc +lat_0=0 +lon_0=15 +k=0.999600 +x_0=2520000 +y_0=0 +ellps=intl +units=m  no_defs", # Monte Mario Italy 2
-  102101 => "+proj=tmerc +lat_0=58 +lon_0=6.05625 +k=1.000000 +x_0=0 +y_0=0 +a=6377492.018 +b=6356173.508712696 +units=m  no_defs", # NGO 1948 Norway Zone 1
-  102102 => "+proj=tmerc +lat_0=58 +lon_0=8.389583333333333 +k=1.000000 +x_0=0 +y_0=0 +a=6377492.018 +b=6356173.508712696 +units=m  no_defs", # NGO 1948 Norway Zone 2
-  102103 => "+proj=tmerc +lat_0=58 +lon_0=10.72291666666667 +k=1.000000 +x_0=0 +y_0=0 +a=6377492.018 +b=6356173.508712696 +units=m  no_defs", # NGO 1948 Norway Zone 3
-  102104 => "+proj=tmerc +lat_0=58 +lon_0=13.22291666666667 +k=1.000000 +x_0=0 +y_0=0 +a=6377492.018 +b=6356173.508712696 +units=m  no_defs", # NGO 1948 Norway Zone 4
-  102105 => "+proj=tmerc +lat_0=58 +lon_0=16.88958333333333 +k=1.000000 +x_0=0 +y_0=0 +a=6377492.018 +b=6356173.508712696 +units=m  no_defs", # NGO 1948 Norway Zone 5
-  102106 => "+proj=tmerc +lat_0=58 +lon_0=20.88958333333333 +k=1.000000 +x_0=0 +y_0=0 +a=6377492.018 +b=6356173.508712696 +units=m  no_defs", # NGO 1948 Norway Zone 6
-  102107 => "+proj=tmerc +lat_0=58 +lon_0=24.88958333333333 +k=1.000000 +x_0=0 +y_0=0 +a=6377492.018 +b=6356173.508712696 +units=m  no_defs", # NGO 1948 Norway Zone 7
-  102108 => "+proj=tmerc +lat_0=58 +lon_0=29.05625 +k=1.000000 +x_0=0 +y_0=0 +a=6377492.018 +b=6356173.508712696 +units=m  no_defs", # NGO 1948 Norway Zone 8
-  102110 => "+proj=lcc +lat_1=44 +lat_2=49 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +units=m  no_defs", # RGF 1993 Lambert 93
-  102114 => "+proj=utm +zone=4 +ellps=clrk66 +units=m  no_defs", # Old Hawaiian UTM Zone 4N
-  102115 => "+proj=utm +zone=5 +ellps=clrk66 +units=m  no_defs", # Old Hawaiian UTM Zone 5N
-  102120 => "+proj=omerc +lat_0=45.30916666666666 +lonc=-86 +alpha=337.255555555556 +k=0.9996 +x_0=2546731.495961392 +y_0=-4354009.816002033 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192  no_defs", # NAD 1927 Michigan GeoRef Feet US
-  102121 => "+proj=omerc +lat_0=45.30916666666666 +lonc=-86 +alpha=337.255555555556 +k=0.9996 +x_0=2546731.495961392 +y_0=-4354009.816002033 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 Michigan GeoRef Feet US
-  102122 => "+proj=omerc +lat_0=45.30916666666666 +lonc=-86 +alpha=337.255555555556 +k=0.9996 +x_0=2546731.496 +y_0=-4354009.816 +ellps=clrk66 +datum=NAD27 +units=m  no_defs", # NAD 1927 Michigan GeoRef Meters
-  102123 => "+proj=omerc +lat_0=45.30916666666666 +lonc=-86 +alpha=337.255555555556 +k=0.9996 +x_0=2546731.496 +y_0=-4354009.816 +ellps=GRS80 +datum=NAD83 +units=m  no_defs", # NAD 1983 Michigan GeoRef Meters
-  102132 => "+proj=utm +zone=32 +a=6377492.018 +b=6356173.508712696 +units=m  no_defs", # NGO 1948 UTM Zone 32N
-  102133 => "+proj=utm +zone=33 +a=6377492.018 +b=6356173.508712696 +units=m  no_defs", # NGO 1948 UTM Zone 33N
-  102134 => "+proj=utm +zone=34 +a=6377492.018 +b=6356173.508712696 +units=m  no_defs", # NGO 1948 UTM Zone 34N
-  102135 => "+proj=utm +zone=35 +a=6377492.018 +b=6356173.508712696 +units=m  no_defs", # NGO 1948 UTM Zone 35N
-  102140 => "+proj=tmerc +lat_0=22.31213333333334 +lon_0=114.1785555555556 +k=1.000000 +x_0=836694.05 +y_0=819069.8 +ellps=intl +units=m  no_defs", # Hong Kong 1980 Grid
-  102141 => "+proj=utm +zone=49 +ellps=intl +units=m  no_defs", # Hong Kong 1980 UTM Zone 49N
-  102142 => "+proj=utm +zone=50 +ellps=intl +units=m  no_defs", # Hong Kong 1980 UTM Zone 50N
-  102151 => "+proj=utm +zone=51 +ellps=bessel +units=m  no_defs", # Tokyo UTM Zone 51N
-  102152 => "+proj=utm +zone=52 +ellps=bessel +units=m  no_defs", # Tokyo UTM Zone 52N
-  102153 => "+proj=utm +zone=53 +ellps=bessel +units=m  no_defs", # Tokyo UTM Zone 53N
-  102154 => "+proj=utm +zone=54 +ellps=bessel +units=m  no_defs", # Tokyo UTM Zone 54N
-  102155 => "+proj=utm +zone=55 +ellps=bessel +units=m  no_defs", # Tokyo UTM Zone 55N
-  102156 => "+proj=utm +zone=56 +ellps=bessel +units=m  no_defs", # Tokyo UTM Zone 56N
-  102160 => "+proj=tmerc +lat_0=39.66666666666666 +lon_0=-8.131906111111112 +k=1.000000 +x_0=200180.598 +y_0=299913.01 +ellps=intl +units=m  no_defs", # Datum 73 Hayford Gauss IGeoE
-  102161 => "+proj=tmerc +lat_0=39.66666666666666 +lon_0=-8.131906111111112 +k=1.000000 +x_0=180.598 +y_0=-86.98999999999999 +ellps=intl +units=m  no_defs", # Datum 73 Hayford Gauss IPCC
-  102162 => "+proj=utm +zone=26 +ellps=intl +units=m  no_defs", # Graciosa Base SW 1948 UTM Zone 26N
-  102163 => "+ellps=bessel +units=m  no_defs", # Lisboa Bessel Bonne
-  102164 => "+proj=tmerc +lat_0=39.66666666666666 +lon_0=-8.131906111111112 +k=1.000000 +x_0=200000 +y_0=300000 +ellps=intl +units=m  no_defs", # Lisboa Hayford Gauss IGeoE
-  102165 => "+proj=tmerc +lat_0=39.66666666666666 +lon_0=-8.131906111111112 +k=1.000000 +x_0=0 +y_0=0 +ellps=intl +units=m  no_defs", # Lisboa Hayford Gauss IPCC
-  102166 => "+proj=utm +zone=25 +ellps=intl +units=m  no_defs", # Observ Meteorologico 1939 UTM Zone 25N
-  102167 => "+proj=utm +zone=28 +ellps=intl +units=m  no_defs", # Porto Santo 1936 UTM Zone 28N
-  102168 => "+proj=utm +zone=26 +ellps=intl +units=m  no_defs", # Sao Braz UTM Zone 26N
-  102169 => "+proj=utm +zone=28 +ellps=intl +units=m  no_defs", # Selvagem Grande 1938 UTM Zone 28N
-  102191 => "+proj=lcc +lat_1=33.3 +lat_0=33.3 +lon_0=-5.4 +k_0=0.999625769 +x_0=500000 +y_0=300000 +a=6378249.2 +b=6356514.999904194 +units=m  no_defs", # Nord Maroc Degree
-  102192 => "+proj=lcc +lat_1=29.7 +lat_0=29.7 +lon_0=-5.4 +k_0=0.9996155960000001 +x_0=500000 +y_0=300000 +a=6378249.2 +b=6356514.999904194 +units=m  no_defs", # Sud Maroc Degree
-  102193 => "+proj=lcc +lat_1=26.1 +lat_0=26.1 +lon_0=-5.4 +k_0=0.9996 +x_0=1200000 +y_0=400000 +a=6378249.2 +b=6356514.999904194 +units=m  no_defs", # Sahara Degree
-  102229 => "+proj=tmerc +lat_0=30.5 +lon_0=-85.83333333333333 +k=0.999960 +x_0=200000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Alabama East FIPS 0101
-  102230 => "+proj=tmerc +lat_0=30 +lon_0=-87.5 +k=0.999933 +x_0=600000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Alabama West FIPS 0102
-  102241 => "+proj=lcc +lat_1=40 +lat_2=41.66666666666666 +lat_0=39.33333333333334 +lon_0=-122 +x_0=2000000 +y_0=500000 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane California I FIPS 0401
-  102242 => "+proj=lcc +lat_1=38.33333333333334 +lat_2=39.83333333333334 +lat_0=37.66666666666666 +lon_0=-122 +x_0=2000000 +y_0=500000 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane California II FIPS 0402
-  102243 => "+proj=lcc +lat_1=37.06666666666667 +lat_2=38.43333333333333 +lat_0=36.5 +lon_0=-120.5 +x_0=2000000 +y_0=500000 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane California III FIPS 0403
-  102244 => "+proj=lcc +lat_1=36 +lat_2=37.25 +lat_0=35.33333333333334 +lon_0=-119 +x_0=2000000 +y_0=500000 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane California IV FIPS 0404
-  102245 => "+proj=lcc +lat_1=34.03333333333333 +lat_2=35.46666666666667 +lat_0=33.5 +lon_0=-118 +x_0=2000000 +y_0=500000 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane California V FIPS 0405
-  102246 => "+proj=lcc +lat_1=32.78333333333333 +lat_2=33.88333333333333 +lat_0=32.16666666666666 +lon_0=-116.25 +x_0=2000000 +y_0=500000 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane California VI FIPS 0406
-  102248 => "+proj=tmerc +lat_0=31 +lon_0=-110.1666666666667 +k=0.999900 +x_0=213360 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Arizona East FIPS 0201
-  102249 => "+proj=tmerc +lat_0=31 +lon_0=-111.9166666666667 +k=0.999900 +x_0=213360 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Arizona Central FIPS 0202
-  102250 => "+proj=tmerc +lat_0=31 +lon_0=-113.75 +k=0.999933 +x_0=213360 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Arizona West FIPS 0203
-  102251 => "+proj=lcc +lat_1=34.93333333333333 +lat_2=36.23333333333333 +lat_0=34.33333333333334 +lon_0=-92 +x_0=400000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Arkansas North FIPS 0301
-  102252 => "+proj=lcc +lat_1=33.3 +lat_2=34.76666666666667 +lat_0=32.66666666666666 +lon_0=-92 +x_0=400000 +y_0=400000 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Arkansas South FIPS 0302
-  102253 => "+proj=lcc +lat_1=39.71666666666667 +lat_2=40.78333333333333 +lat_0=39.33333333333334 +lon_0=-105.5 +x_0=914401.8289 +y_0=304800.6096 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Colorado North FIPS 0501
-  102254 => "+proj=lcc +lat_1=38.45 +lat_2=39.75 +lat_0=37.83333333333334 +lon_0=-105.5 +x_0=914401.8289 +y_0=304800.6096 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Colorado Central FIPS 0502
-  102255 => "+proj=lcc +lat_1=37.23333333333333 +lat_2=38.43333333333333 +lat_0=36.66666666666666 +lon_0=-105.5 +x_0=914401.8289 +y_0=304800.6096 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Colorado South FIPS 0503
-  102256 => "+proj=lcc +lat_1=41.2 +lat_2=41.86666666666667 +lat_0=40.83333333333334 +lon_0=-72.75 +x_0=304800.6096 +y_0=152400.3048 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Connecticut FIPS 0600
-  102257 => "+proj=tmerc +lat_0=38 +lon_0=-75.41666666666667 +k=0.999995 +x_0=200000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Delaware FIPS 0700
-  102258 => "+proj=tmerc +lat_0=24.33333333333333 +lon_0=-81 +k=0.999941 +x_0=200000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Florida East FIPS 0901
-  102259 => "+proj=tmerc +lat_0=24.33333333333333 +lon_0=-82 +k=0.999941 +x_0=200000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Florida West FIPS 0902
-  102260 => "+proj=lcc +lat_1=29.58333333333333 +lat_2=30.75 +lat_0=29 +lon_0=-84.5 +x_0=600000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Florida North FIPS 0903
-  102261 => "+proj=tmerc +lat_0=18.83333333333333 +lon_0=-155.5 +k=0.999967 +x_0=500000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Hawaii 1 FIPS 5101
-  102262 => "+proj=tmerc +lat_0=20.33333333333333 +lon_0=-156.6666666666667 +k=0.999967 +x_0=500000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Hawaii 2 FIPS 5102
-  102263 => "+proj=tmerc +lat_0=21.16666666666667 +lon_0=-158 +k=0.999990 +x_0=500000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Hawaii 3 FIPS 5103
-  102264 => "+proj=tmerc +lat_0=21.83333333333333 +lon_0=-159.5 +k=0.999990 +x_0=500000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Hawaii 4 FIPS 5104
-  102265 => "+proj=tmerc +lat_0=21.66666666666667 +lon_0=-160.1666666666667 +k=1.000000 +x_0=500000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Hawaii 5 FIPS 5105
-  102266 => "+proj=tmerc +lat_0=30 +lon_0=-82.16666666666667 +k=0.999900 +x_0=200000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Georgia East FIPS 1001
-  102267 => "+proj=tmerc +lat_0=30 +lon_0=-84.16666666666667 +k=0.999900 +x_0=700000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Georgia West FIPS 1002
-  102268 => "+proj=tmerc +lat_0=41.66666666666666 +lon_0=-112.1666666666667 +k=0.999947 +x_0=200000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Idaho East FIPS 1101
-  102269 => "+proj=tmerc +lat_0=41.66666666666666 +lon_0=-114 +k=0.999947 +x_0=500000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Idaho Central FIPS 1102
-  102270 => "+proj=tmerc +lat_0=41.66666666666666 +lon_0=-115.75 +k=0.999933 +x_0=800000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Idaho West FIPS 1103
-  102271 => "+proj=tmerc +lat_0=36.66666666666666 +lon_0=-88.33333333333333 +k=0.999975 +x_0=300000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Illinois East FIPS 1201
-  102272 => "+proj=tmerc +lat_0=36.66666666666666 +lon_0=-90.16666666666667 +k=0.999941 +x_0=700000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Illinois West FIPS 1202
-  102273 => "+proj=tmerc +lat_0=37.5 +lon_0=-85.66666666666667 +k=0.999967 +x_0=100000 +y_0=250000 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Indiana East FIPS 1301
-  102274 => "+proj=tmerc +lat_0=37.5 +lon_0=-87.08333333333333 +k=0.999967 +x_0=900000 +y_0=250000 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Indiana West FIPS 1302
-  102277 => "+proj=lcc +lat_1=38.71666666666667 +lat_2=39.78333333333333 +lat_0=38.33333333333334 +lon_0=-98 +x_0=400000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Kansas North FIPS 1501
-  102278 => "+proj=lcc +lat_1=37.26666666666667 +lat_2=38.56666666666667 +lat_0=36.66666666666666 +lon_0=-98.5 +x_0=400000 +y_0=400000 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Kansas South FIPS 1502
-  102279 => "+proj=lcc +lat_1=37.96666666666667 +lat_2=38.96666666666667 +lat_0=37.5 +lon_0=-84.25 +x_0=500000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Kentucky North FIPS 1601
-  102280 => "+proj=lcc +lat_1=36.73333333333333 +lat_2=37.93333333333333 +lat_0=36.33333333333334 +lon_0=-85.75 +x_0=500000 +y_0=500000 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Kentucky South FIPS 1602
-  102281 => "+proj=lcc +lat_1=31.16666666666667 +lat_2=32.66666666666666 +lat_0=30.5 +lon_0=-92.5 +x_0=1000000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Louisiana North FIPS 1701
-  102282 => "+proj=lcc +lat_1=29.3 +lat_2=30.7 +lat_0=28.5 +lon_0=-91.33333333333333 +x_0=1000000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Louisiana South FIPS 1702
-  102283 => "+proj=tmerc +lat_0=43.66666666666666 +lon_0=-68.5 +k=0.999900 +x_0=300000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Maine East FIPS 1801
-  102284 => "+proj=tmerc +lat_0=42.83333333333334 +lon_0=-70.16666666666667 +k=0.999967 +x_0=900000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Maine West FIPS 1802
-  102285 => "+proj=lcc +lat_1=38.3 +lat_2=39.45 +lat_0=37.66666666666666 +lon_0=-77 +x_0=400000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Maryland FIPS 1900
-  102286 => "+proj=lcc +lat_1=41.71666666666667 +lat_2=42.68333333333333 +lat_0=41 +lon_0=-71.5 +x_0=200000 +y_0=750000 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Massachusetts Mainland FIPS 2001
-  102287 => "+proj=lcc +lat_1=41.28333333333333 +lat_2=41.48333333333333 +lat_0=41 +lon_0=-70.5 +x_0=500000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Massachusetts Island FIPS 2002
-  102288 => "+proj=lcc +lat_1=45.48333333333333 +lat_2=47.08333333333334 +lat_0=44.78333333333333 +lon_0=-87 +x_0=8000000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Michigan North FIPS 2111
-  102289 => "+proj=lcc +lat_1=44.18333333333333 +lat_2=45.7 +lat_0=43.31666666666667 +lon_0=-84.36666666666666 +x_0=6000000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Michigan Central FIPS 2112
-  102290 => "+proj=lcc +lat_1=42.1 +lat_2=43.66666666666666 +lat_0=41.5 +lon_0=-84.36666666666666 +x_0=4000000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Michigan South FIPS 2113
-  102291 => "+proj=lcc +lat_1=47.03333333333333 +lat_2=48.63333333333333 +lat_0=46.5 +lon_0=-93.09999999999999 +x_0=800000 +y_0=100000 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Minnesota North FIPS 2201
-  102292 => "+proj=lcc +lat_1=45.61666666666667 +lat_2=47.05 +lat_0=45 +lon_0=-94.25 +x_0=800000 +y_0=100000 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Minnesota Central FIPS 2202
-  102293 => "+proj=lcc +lat_1=43.78333333333333 +lat_2=45.21666666666667 +lat_0=43 +lon_0=-94 +x_0=800000 +y_0=100000 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Minnesota South FIPS 2203
-  102294 => "+proj=tmerc +lat_0=29.5 +lon_0=-88.83333333333333 +k=0.999950 +x_0=300000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Mississippi East FIPS 2301
-  102295 => "+proj=tmerc +lat_0=29.5 +lon_0=-90.33333333333333 +k=0.999950 +x_0=700000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Mississippi West FIPS 2302
-  102296 => "+proj=tmerc +lat_0=35.83333333333334 +lon_0=-90.5 +k=0.999933 +x_0=250000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Missouri East FIPS 2401
-  102297 => "+proj=tmerc +lat_0=35.83333333333334 +lon_0=-92.5 +k=0.999933 +x_0=500000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Missouri Central FIPS 2402
-  102298 => "+proj=tmerc +lat_0=36.16666666666666 +lon_0=-94.5 +k=0.999941 +x_0=850000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Missouri West FIPS 2403
-  102300 => "+proj=lcc +lat_1=45 +lat_2=49 +lat_0=44.25 +lon_0=-109.5 +x_0=600000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Montana FIPS 2500
-  102304 => "+proj=lcc +lat_1=40 +lat_2=43 +lat_0=39.83333333333334 +lon_0=-100 +x_0=500000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Nebraska FIPS 2600
-  102307 => "+proj=tmerc +lat_0=34.75 +lon_0=-115.5833333333333 +k=0.999900 +x_0=200000 +y_0=8000000 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Nevada East FIPS 2701
-  102308 => "+proj=tmerc +lat_0=34.75 +lon_0=-116.6666666666667 +k=0.999900 +x_0=500000 +y_0=6000000 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Nevada Central FIPS 2702
-  102309 => "+proj=tmerc +lat_0=34.75 +lon_0=-118.5833333333333 +k=0.999900 +x_0=800000 +y_0=4000000 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Nevada West FIPS 2703
-  102310 => "+proj=tmerc +lat_0=42.5 +lon_0=-71.66666666666667 +k=0.999967 +x_0=300000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane New Hampshire FIPS 2800
-  102311 => "+proj=tmerc +lat_0=38.83333333333334 +lon_0=-74.5 +k=0.999900 +x_0=150000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane New Jersey FIPS 2900
-  102312 => "+proj=tmerc +lat_0=31 +lon_0=-104.3333333333333 +k=0.999909 +x_0=165000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane New Mexico East FIPS 3001
-  102313 => "+proj=tmerc +lat_0=31 +lon_0=-106.25 +k=0.999900 +x_0=500000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane New Mexico Central FIPS 3002
-  102314 => "+proj=tmerc +lat_0=31 +lon_0=-107.8333333333333 +k=0.999917 +x_0=830000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane New Mexico West FIPS 3003
-  102315 => "+proj=tmerc +lat_0=38.83333333333334 +lon_0=-74.5 +k=0.999900 +x_0=150000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane New York East FIPS 3101
-  102316 => "+proj=tmerc +lat_0=40 +lon_0=-76.58333333333333 +k=0.999938 +x_0=250000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane New York Central FIPS 3102
-  102317 => "+proj=tmerc +lat_0=40 +lon_0=-78.58333333333333 +k=0.999938 +x_0=350000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane New York West FIPS 3103
-  102318 => "+proj=lcc +lat_1=40.66666666666666 +lat_2=41.03333333333333 +lat_0=40.16666666666666 +lon_0=-74 +x_0=300000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane New York Long Island FIPS 3104
-  102320 => "+proj=lcc +lat_1=47.43333333333333 +lat_2=48.73333333333333 +lat_0=47 +lon_0=-100.5 +x_0=600000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane North Dakota North FIPS 3301
-  102321 => "+proj=lcc +lat_1=46.18333333333333 +lat_2=47.48333333333333 +lat_0=45.66666666666666 +lon_0=-100.5 +x_0=600000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane North Dakota South FIPS 3302
-  102322 => "+proj=lcc +lat_1=40.43333333333333 +lat_2=41.7 +lat_0=39.66666666666666 +lon_0=-82.5 +x_0=600000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Ohio North FIPS 3401
-  102323 => "+proj=lcc +lat_1=38.73333333333333 +lat_2=40.03333333333333 +lat_0=38 +lon_0=-82.5 +x_0=600000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Ohio South FIPS 3402
-  102324 => "+proj=lcc +lat_1=35.56666666666667 +lat_2=36.76666666666667 +lat_0=35 +lon_0=-98 +x_0=600000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Oklahoma North FIPS 3501
-  102325 => "+proj=lcc +lat_1=33.93333333333333 +lat_2=35.23333333333333 +lat_0=33.33333333333334 +lon_0=-98 +x_0=600000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Oklahoma South FIPS 3502
-  102326 => "+proj=lcc +lat_1=44.33333333333334 +lat_2=46 +lat_0=43.66666666666666 +lon_0=-120.5 +x_0=2500000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Oregon North FIPS 3601
-  102327 => "+proj=lcc +lat_1=42.33333333333334 +lat_2=44 +lat_0=41.66666666666666 +lon_0=-120.5 +x_0=1500000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Oregon South FIPS 3602
-  102330 => "+proj=tmerc +lat_0=41.08333333333334 +lon_0=-71.5 +k=0.999994 +x_0=100000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Rhode Island FIPS 3800
-  102334 => "+proj=lcc +lat_1=44.41666666666666 +lat_2=45.68333333333333 +lat_0=43.83333333333334 +lon_0=-100 +x_0=600000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane South Dakota North FIPS 4001
-  102335 => "+proj=lcc +lat_1=42.83333333333334 +lat_2=44.4 +lat_0=42.33333333333334 +lon_0=-100.3333333333333 +x_0=600000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane South Dakota South FIPS 4002
-  102336 => "+proj=lcc +lat_1=35.25 +lat_2=36.41666666666666 +lat_0=34.33333333333334 +lon_0=-86 +x_0=600000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Tennessee FIPS 4100
-  102337 => "+proj=lcc +lat_1=34.65 +lat_2=36.18333333333333 +lat_0=34 +lon_0=-101.5 +x_0=200000 +y_0=1000000 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Texas North FIPS 4201
-  102338 => "+proj=lcc +lat_1=32.13333333333333 +lat_2=33.96666666666667 +lat_0=31.66666666666667 +lon_0=-98.5 +x_0=600000 +y_0=2000000 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Texas North Central FIPS 4202
-  102339 => "+proj=lcc +lat_1=30.11666666666667 +lat_2=31.88333333333333 +lat_0=29.66666666666667 +lon_0=-100.3333333333333 +x_0=700000 +y_0=3000000 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Texas Central FIPS 4203
-  102340 => "+proj=lcc +lat_1=28.38333333333333 +lat_2=30.28333333333334 +lat_0=27.83333333333333 +lon_0=-99 +x_0=600000 +y_0=4000000 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Texas South Central FIPS 4204
-  102341 => "+proj=lcc +lat_1=26.16666666666667 +lat_2=27.83333333333333 +lat_0=25.66666666666667 +lon_0=-98.5 +x_0=300000 +y_0=5000000 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Texas South FIPS 4205
-  102342 => "+proj=lcc +lat_1=40.71666666666667 +lat_2=41.78333333333333 +lat_0=40.33333333333334 +lon_0=-111.5 +x_0=500000 +y_0=1000000 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Utah North FIPS 4301
-  102343 => "+proj=lcc +lat_1=39.01666666666667 +lat_2=40.65 +lat_0=38.33333333333334 +lon_0=-111.5 +x_0=500000 +y_0=2000000 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Utah Central FIPS 4302
-  102344 => "+proj=lcc +lat_1=37.21666666666667 +lat_2=38.35 +lat_0=36.66666666666666 +lon_0=-111.5 +x_0=500000 +y_0=3000000 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Utah South FIPS 4303
-  102345 => "+proj=tmerc +lat_0=42.5 +lon_0=-72.5 +k=0.999964 +x_0=500000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Vermont FIPS 4400
-  102346 => "+proj=lcc +lat_1=38.03333333333333 +lat_2=39.2 +lat_0=37.66666666666666 +lon_0=-78.5 +x_0=3500000 +y_0=2000000 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Virginia North FIPS 4501
-  102347 => "+proj=lcc +lat_1=36.76666666666667 +lat_2=37.96666666666667 +lat_0=36.33333333333334 +lon_0=-78.5 +x_0=3500000 +y_0=1000000 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Virginia South FIPS 4502
-  102348 => "+proj=lcc +lat_1=47.5 +lat_2=48.73333333333333 +lat_0=47 +lon_0=-120.8333333333333 +x_0=500000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Washington North FIPS 4601
-  102349 => "+proj=lcc +lat_1=45.83333333333334 +lat_2=47.33333333333334 +lat_0=45.33333333333334 +lon_0=-120.5 +x_0=500000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Washington South FIPS 4602
-  102350 => "+proj=lcc +lat_1=39 +lat_2=40.25 +lat_0=38.5 +lon_0=-79.5 +x_0=600000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane West Virginia North FIPS 4701
-  102351 => "+proj=lcc +lat_1=37.48333333333333 +lat_2=38.88333333333333 +lat_0=37 +lon_0=-81 +x_0=600000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane West Virginia South FIPS 4702
-  102352 => "+proj=lcc +lat_1=45.56666666666667 +lat_2=46.76666666666667 +lat_0=45.16666666666666 +lon_0=-90 +x_0=600000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Wisconsin North FIPS 4801
-  102353 => "+proj=lcc +lat_1=44.25 +lat_2=45.5 +lat_0=43.83333333333334 +lon_0=-90 +x_0=600000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Wisconsin Central FIPS 4802
-  102354 => "+proj=lcc +lat_1=42.73333333333333 +lat_2=44.06666666666667 +lat_0=42 +lon_0=-90 +x_0=600000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Wisconsin South FIPS 4803
-  102355 => "+proj=tmerc +lat_0=40.5 +lon_0=-105.1666666666667 +k=0.999938 +x_0=200000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Wyoming East FIPS 4901
-  102356 => "+proj=tmerc +lat_0=40.5 +lon_0=-107.3333333333333 +k=0.999938 +x_0=400000 +y_0=100000 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Wyoming East Central FIPS 4902
-  102357 => "+proj=tmerc +lat_0=40.5 +lon_0=-108.75 +k=0.999938 +x_0=600000 +y_0=0 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Wyoming West Central FIPS 4903
-  102358 => "+proj=tmerc +lat_0=40.5 +lon_0=-110.0833333333333 +k=0.999938 +x_0=800000 +y_0=100000 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Wyoming West FIPS 4904
-  102361 => "+proj=lcc +lat_1=18.03333333333334 +lat_2=18.43333333333333 +lat_0=17.83333333333333 +lon_0=-66.43333333333334 +x_0=200000 +y_0=200000 +ellps=GRS80 +units=m  no_defs", # NAD 1983 HARN StatePlane Puerto Rico Virgin Islands FIPS 5200
-  102491 => "+proj=lcc +lat_1=36 +lat_0=36 +lon_0=2.7 +k_0=0.999625544 +x_0=500000 +y_0=300000 +a=6378249.2 +b=6356514.999904194 +units=m  no_defs", # Nord Algerie Ancienne Degree
-  102492 => "+proj=lcc +lat_1=33.3 +lat_0=33.3 +lon_0=2.7 +k_0=0.999625769 +x_0=500000 +y_0=300000 +a=6378249.2 +b=6356514.999904194 +units=m  no_defs", # Sud Algerie Ancienne Degree
-  102581 => "+proj=lcc +lat_1=49.5 +lat_0=49.5 +lon_0=2.337229166666667 +k_0=0.999877341 +x_0=600000 +y_0=1200000 +a=6378249.2 +b=6356514.999904194 +units=m  no_defs", # NTF France I degrees
-  102582 => "+proj=lcc +lat_1=46.8 +lat_0=46.8 +lon_0=2.337229166666667 +k_0=0.99987742 +x_0=600000 +y_0=2200000 +a=6378249.2 +b=6356514.999904194 +units=m  no_defs", # NTF France II degrees
-  102583 => "+proj=lcc +lat_1=44.1 +lat_0=44.1 +lon_0=2.337229166666667 +k_0=0.999877499 +x_0=600000 +y_0=3200000 +a=6378249.2 +b=6356514.999904194 +units=m  no_defs", # NTF France III degrees
-  102584 => "+proj=lcc +lat_1=42.165 +lat_0=42.165 +lon_0=2.337229166666667 +k_0=0.99994471 +x_0=234.358 +y_0=4185861.369 +a=6378249.2 +b=6356514.999904194 +units=m  no_defs", # NTF France IV degrees
-  102591 => "+proj=lcc +lat_1=36 +lat_0=36 +lon_0=2.7 +k_0=0.999625544 +x_0=500135 +y_0=300090 +ellps=clrk80 +units=m  no_defs", # Nord Algerie Degree
-  102592 => "+proj=lcc +lat_1=33.3 +lat_0=33.3 +lon_0=2.7 +k_0=0.999625769 +x_0=500135 +y_0=300090 +ellps=clrk80 +units=m  no_defs", # Sud Algerie Degree
-  102629 => "+proj=tmerc +lat_0=30.5 +lon_0=-85.83333333333333 +k=0.999960 +x_0=200000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Alabama East FIPS 0101 Feet
-  102630 => "+proj=tmerc +lat_0=30 +lon_0=-87.5 +k=0.999933 +x_0=600000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Alabama West FIPS 0102 Feet
-  102631 => "+proj=omerc +lat_0=57 +lonc=-133.6666666666667 +alpha=-36.86989764583333 +k=0.9999 +x_0=4999999.999999999 +y_0=-4999999.999999999 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Alaska 1 FIPS 5001 Feet
-  102632 => "+proj=tmerc +lat_0=54 +lon_0=-142 +k=0.999900 +x_0=500000.0000000002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Alaska 2 FIPS 5002 Feet
-  102633 => "+proj=tmerc +lat_0=54 +lon_0=-146 +k=0.999900 +x_0=500000.0000000002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Alaska 3 FIPS 5003 Feet
-  102634 => "+proj=tmerc +lat_0=54 +lon_0=-150 +k=0.999900 +x_0=500000.0000000002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Alaska 4 FIPS 5004 Feet
-  102635 => "+proj=tmerc +lat_0=54 +lon_0=-154 +k=0.999900 +x_0=500000.0000000002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Alaska 5 FIPS 5005 Feet
-  102636 => "+proj=tmerc +lat_0=54 +lon_0=-158 +k=0.999900 +x_0=500000.0000000002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Alaska 6 FIPS 5006 Feet
-  102637 => "+proj=tmerc +lat_0=54 +lon_0=-162 +k=0.999900 +x_0=500000.0000000002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Alaska 7 FIPS 5007 Feet
-  102638 => "+proj=tmerc +lat_0=54 +lon_0=-166 +k=0.999900 +x_0=500000.0000000002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Alaska 8 FIPS 5008 Feet
-  102639 => "+proj=tmerc +lat_0=54 +lon_0=-170 +k=0.999900 +x_0=500000.0000000002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Alaska 9 FIPS 5009 Feet
-  102640 => "+proj=lcc +lat_1=51.83333333333334 +lat_2=53.83333333333334 +lat_0=51 +lon_0=-176 +x_0=1000000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Alaska 10 FIPS 5010 Feet
-  102641 => "+proj=lcc +lat_1=40 +lat_2=41.66666666666666 +lat_0=39.33333333333334 +lon_0=-122 +x_0=2000000 +y_0=500000.0000000002 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane California I FIPS 0401 Feet
-  102642 => "+proj=lcc +lat_1=38.33333333333334 +lat_2=39.83333333333334 +lat_0=37.66666666666666 +lon_0=-122 +x_0=2000000 +y_0=500000.0000000002 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane California II FIPS 0402 Feet
-  102643 => "+proj=lcc +lat_1=37.06666666666667 +lat_2=38.43333333333333 +lat_0=36.5 +lon_0=-120.5 +x_0=2000000 +y_0=500000.0000000002 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane California III FIPS 0403 Feet
-  102644 => "+proj=lcc +lat_1=36 +lat_2=37.25 +lat_0=35.33333333333334 +lon_0=-119 +x_0=2000000 +y_0=500000.0000000002 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane California IV FIPS 0404 Feet
-  102645 => "+proj=lcc +lat_1=34.03333333333333 +lat_2=35.46666666666667 +lat_0=33.5 +lon_0=-118 +x_0=2000000 +y_0=500000.0000000002 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane California V FIPS 0405 Feet
-  102646 => "+proj=lcc +lat_1=32.78333333333333 +lat_2=33.88333333333333 +lat_0=32.16666666666666 +lon_0=-116.25 +x_0=2000000 +y_0=500000.0000000002 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane California VI FIPS 0406 Feet
-  102648 => "+proj=tmerc +lat_0=31 +lon_0=-110.1666666666667 +k=0.999900 +x_0=213360 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Arizona East FIPS 0201 Feet
-  102649 => "+proj=tmerc +lat_0=31 +lon_0=-111.9166666666667 +k=0.999900 +x_0=213360 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Arizona Central FIPS 0202 Feet
-  102650 => "+proj=tmerc +lat_0=31 +lon_0=-113.75 +k=0.999933 +x_0=213360 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Arizona West FIPS 0203 Feet
-  102651 => "+proj=lcc +lat_1=34.93333333333333 +lat_2=36.23333333333333 +lat_0=34.33333333333334 +lon_0=-92 +x_0=399999.9999999999 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Arkansas North FIPS 0301 Feet
-  102652 => "+proj=lcc +lat_1=33.3 +lat_2=34.76666666666667 +lat_0=32.66666666666666 +lon_0=-92 +x_0=399999.9999999999 +y_0=399999.9999999999 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Arkansas South FIPS 0302 Feet
-  102653 => "+proj=lcc +lat_1=39.71666666666667 +lat_2=40.78333333333333 +lat_0=39.33333333333334 +lon_0=-105.5 +x_0=914401.8289 +y_0=304800.6096 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Colorado North FIPS 0501 Feet
-  102654 => "+proj=lcc +lat_1=38.45 +lat_2=39.75 +lat_0=37.83333333333334 +lon_0=-105.5 +x_0=914401.8289 +y_0=304800.6096 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Colorado Central FIPS 0502 Feet
-  102655 => "+proj=lcc +lat_1=37.23333333333333 +lat_2=38.43333333333333 +lat_0=36.66666666666666 +lon_0=-105.5 +x_0=914401.8289 +y_0=304800.6096 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Colorado South FIPS 0503 Feet
-  102656 => "+proj=lcc +lat_1=41.2 +lat_2=41.86666666666667 +lat_0=40.83333333333334 +lon_0=-72.75 +x_0=304800.6096 +y_0=152400.3048 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Connecticut FIPS 0600 Feet
-  102657 => "+proj=tmerc +lat_0=38 +lon_0=-75.41666666666667 +k=0.999995 +x_0=200000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Delaware FIPS 0700 Feet
-  102658 => "+proj=tmerc +lat_0=24.33333333333333 +lon_0=-81 +k=0.999941 +x_0=200000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Florida East FIPS 0901 Feet
-  102659 => "+proj=tmerc +lat_0=24.33333333333333 +lon_0=-82 +k=0.999941 +x_0=200000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Florida West FIPS 0902 Feet
-  102660 => "+proj=lcc +lat_1=29.58333333333333 +lat_2=30.75 +lat_0=29 +lon_0=-84.5 +x_0=600000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Florida North FIPS 0903 Feet
-  102661 => "+proj=tmerc +lat_0=18.83333333333333 +lon_0=-155.5 +k=0.999967 +x_0=500000.0000000002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Hawaii 1 FIPS 5101 Feet
-  102662 => "+proj=tmerc +lat_0=20.33333333333333 +lon_0=-156.6666666666667 +k=0.999967 +x_0=500000.0000000002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Hawaii 2 FIPS 5102 Feet
-  102663 => "+proj=tmerc +lat_0=21.16666666666667 +lon_0=-158 +k=0.999990 +x_0=500000.0000000002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Hawaii 3 FIPS 5103 Feet
-  102664 => "+proj=tmerc +lat_0=21.83333333333333 +lon_0=-159.5 +k=0.999990 +x_0=500000.0000000002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Hawaii 4 FIPS 5104 Feet
-  102665 => "+proj=tmerc +lat_0=21.66666666666667 +lon_0=-160.1666666666667 +k=1.000000 +x_0=500000.0000000002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Hawaii 5 FIPS 5105 Feet
-  102666 => "+proj=tmerc +lat_0=30 +lon_0=-82.16666666666667 +k=0.999900 +x_0=200000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Georgia East FIPS 1001 Feet
-  102667 => "+proj=tmerc +lat_0=30 +lon_0=-84.16666666666667 +k=0.999900 +x_0=700000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Georgia West FIPS 1002 Feet
-  102668 => "+proj=tmerc +lat_0=41.66666666666666 +lon_0=-112.1666666666667 +k=0.999947 +x_0=200000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Idaho East FIPS 1101 Feet
-  102669 => "+proj=tmerc +lat_0=41.66666666666666 +lon_0=-114 +k=0.999947 +x_0=500000.0000000002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Idaho Central FIPS 1102 Feet
-  102670 => "+proj=tmerc +lat_0=41.66666666666666 +lon_0=-115.75 +k=0.999933 +x_0=799999.9999999999 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Idaho West FIPS 1103 Feet
-  102671 => "+proj=tmerc +lat_0=36.66666666666666 +lon_0=-88.33333333333333 +k=0.999975 +x_0=300000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Illinois East FIPS 1201 Feet
-  102672 => "+proj=tmerc +lat_0=36.66666666666666 +lon_0=-90.16666666666667 +k=0.999941 +x_0=700000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Illinois West FIPS 1202 Feet
-  102673 => "+proj=tmerc +lat_0=37.5 +lon_0=-85.66666666666667 +k=0.999967 +x_0=100000 +y_0=250000 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Indiana East FIPS 1301 Feet
-  102674 => "+proj=tmerc +lat_0=37.5 +lon_0=-87.08333333333333 +k=0.999967 +x_0=900000.0000000001 +y_0=250000 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Indiana West FIPS 1302 Feet
-  102675 => "+proj=lcc +lat_1=42.06666666666667 +lat_2=43.26666666666667 +lat_0=41.5 +lon_0=-93.5 +x_0=1500000 +y_0=1000000 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Iowa North FIPS 1401 Feet
-  102676 => "+proj=lcc +lat_1=40.61666666666667 +lat_2=41.78333333333333 +lat_0=40 +lon_0=-93.5 +x_0=500000.0000000002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Iowa South FIPS 1402 Feet
-  102677 => "+proj=lcc +lat_1=38.71666666666667 +lat_2=39.78333333333333 +lat_0=38.33333333333334 +lon_0=-98 +x_0=399999.9999999999 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Kansas North FIPS 1501 Feet
-  102678 => "+proj=lcc +lat_1=37.26666666666667 +lat_2=38.56666666666667 +lat_0=36.66666666666666 +lon_0=-98.5 +x_0=399999.9999999999 +y_0=399999.9999999999 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Kansas South FIPS 1502 Feet
-  102679 => "+proj=lcc +lat_1=37.96666666666667 +lat_2=38.96666666666667 +lat_0=37.5 +lon_0=-84.25 +x_0=500000.0000000002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Kentucky North FIPS 1601 Feet
-  102680 => "+proj=lcc +lat_1=36.73333333333333 +lat_2=37.93333333333333 +lat_0=36.33333333333334 +lon_0=-85.75 +x_0=500000.0000000002 +y_0=500000.0000000002 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Kentucky South FIPS 1602 Feet
-  102681 => "+proj=lcc +lat_1=31.16666666666667 +lat_2=32.66666666666666 +lat_0=30.5 +lon_0=-92.5 +x_0=1000000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Louisiana North FIPS 1701 Feet
-  102682 => "+proj=lcc +lat_1=29.3 +lat_2=30.7 +lat_0=28.5 +lon_0=-91.33333333333333 +x_0=1000000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Louisiana South FIPS 1702 Feet
-  102683 => "+proj=tmerc +lat_0=43.66666666666666 +lon_0=-68.5 +k=0.999900 +x_0=300000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Maine East FIPS 1801 Feet
-  102684 => "+proj=tmerc +lat_0=42.83333333333334 +lon_0=-70.16666666666667 +k=0.999967 +x_0=900000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Maine West FIPS 1802 Feet
-  102685 => "+proj=lcc +lat_1=38.3 +lat_2=39.45 +lat_0=37.66666666666666 +lon_0=-77 +x_0=399999.9999999999 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Maryland FIPS 1900 Feet
-  102686 => "+proj=lcc +lat_1=41.71666666666667 +lat_2=42.68333333333333 +lat_0=41 +lon_0=-71.5 +x_0=200000 +y_0=750000.0000000001 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Massachusetts Mainland FIPS 2001 Feet
-  102687 => "+proj=lcc +lat_1=41.28333333333333 +lat_2=41.48333333333333 +lat_0=41 +lon_0=-70.5 +x_0=500000.0000000002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Massachusetts Island FIPS 2002 Feet
-  102688 => "+proj=lcc +lat_1=45.48333333333333 +lat_2=47.08333333333334 +lat_0=44.78333333333333 +lon_0=-87 +x_0=7999999.999999999 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Michigan North FIPS 2111 Feet
-  102689 => "+proj=lcc +lat_1=44.18333333333333 +lat_2=45.7 +lat_0=43.31666666666667 +lon_0=-84.36666666666666 +x_0=6000000.000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Michigan Central FIPS 2112 Feet
-  102690 => "+proj=lcc +lat_1=42.1 +lat_2=43.66666666666666 +lat_0=41.5 +lon_0=-84.36666666666666 +x_0=4000000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Michigan South FIPS 2113 Feet
-  102691 => "+proj=lcc +lat_1=47.03333333333333 +lat_2=48.63333333333333 +lat_0=46.5 +lon_0=-93.09999999999999 +x_0=799999.9999999999 +y_0=100000 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Minnesota North FIPS 2201 Feet
-  102692 => "+proj=lcc +lat_1=45.61666666666667 +lat_2=47.05 +lat_0=45 +lon_0=-94.25 +x_0=799999.9999999999 +y_0=100000 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Minnesota Central FIPS 2202 Feet
-  102693 => "+proj=lcc +lat_1=43.78333333333333 +lat_2=45.21666666666667 +lat_0=43 +lon_0=-94 +x_0=799999.9999999999 +y_0=100000 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Minnesota South FIPS 2203 Feet
-  102694 => "+proj=tmerc +lat_0=29.5 +lon_0=-88.83333333333333 +k=0.999950 +x_0=300000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Mississippi East FIPS 2301 Feet
-  102695 => "+proj=tmerc +lat_0=29.5 +lon_0=-90.33333333333333 +k=0.999950 +x_0=700000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Mississippi West FIPS 2302 Feet
-  102696 => "+proj=tmerc +lat_0=35.83333333333334 +lon_0=-90.5 +k=0.999933 +x_0=250000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Missouri East FIPS 2401 Feet
-  102697 => "+proj=tmerc +lat_0=35.83333333333334 +lon_0=-92.5 +k=0.999933 +x_0=500000.0000000002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Missouri Central FIPS 2402 Feet
-  102698 => "+proj=tmerc +lat_0=36.16666666666666 +lon_0=-94.5 +k=0.999941 +x_0=850000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Missouri West FIPS 2403 Feet
-  102700 => "+proj=lcc +lat_1=45 +lat_2=49 +lat_0=44.25 +lon_0=-109.5 +x_0=600000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Montana FIPS 2500 Feet
-  102704 => "+proj=lcc +lat_1=40 +lat_2=43 +lat_0=39.83333333333334 +lon_0=-100 +x_0=500000.0000000002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Nebraska FIPS 2600 Feet
-  102707 => "+proj=tmerc +lat_0=34.75 +lon_0=-115.5833333333333 +k=0.999900 +x_0=200000 +y_0=7999999.999999999 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Nevada East FIPS 2701 Feet
-  102708 => "+proj=tmerc +lat_0=34.75 +lon_0=-116.6666666666667 +k=0.999900 +x_0=500000.0000000002 +y_0=6000000.000000001 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Nevada Central FIPS 2702 Feet
-  102709 => "+proj=tmerc +lat_0=34.75 +lon_0=-118.5833333333333 +k=0.999900 +x_0=799999.9999999999 +y_0=4000000 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Nevada West FIPS 2703 Feet
-  102710 => "+proj=tmerc +lat_0=42.5 +lon_0=-71.66666666666667 +k=0.999967 +x_0=300000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane New Hampshire FIPS 2800 Feet
-  102711 => "+proj=tmerc +lat_0=38.83333333333334 +lon_0=-74.5 +k=0.999900 +x_0=150000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane New Jersey FIPS 2900 Feet
-  102712 => "+proj=tmerc +lat_0=31 +lon_0=-104.3333333333333 +k=0.999909 +x_0=165000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane New Mexico East FIPS 3001 Feet
-  102713 => "+proj=tmerc +lat_0=31 +lon_0=-106.25 +k=0.999900 +x_0=500000.0000000002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane New Mexico Central FIPS 3002 Feet
-  102714 => "+proj=tmerc +lat_0=31 +lon_0=-107.8333333333333 +k=0.999917 +x_0=829999.9999999999 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane New Mexico West FIPS 3003 Feet
-  102715 => "+proj=tmerc +lat_0=38.83333333333334 +lon_0=-74.5 +k=0.999900 +x_0=150000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane New York East FIPS 3101 Feet
-  102716 => "+proj=tmerc +lat_0=40 +lon_0=-76.58333333333333 +k=0.999938 +x_0=250000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane New York Central FIPS 3102 Feet
-  102717 => "+proj=tmerc +lat_0=40 +lon_0=-78.58333333333333 +k=0.999938 +x_0=350000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane New York West FIPS 3103 Feet
-  102718 => "+proj=lcc +lat_1=40.66666666666666 +lat_2=41.03333333333333 +lat_0=40.16666666666666 +lon_0=-74 +x_0=300000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane New York Long Island FIPS 3104 Feet
-  102719 => "+proj=lcc +lat_1=34.33333333333334 +lat_2=36.16666666666666 +lat_0=33.75 +lon_0=-79 +x_0=609601.2199999999 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane North Carolina FIPS 3200 Feet
-  102720 => "+proj=lcc +lat_1=47.43333333333333 +lat_2=48.73333333333333 +lat_0=47 +lon_0=-100.5 +x_0=600000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane North Dakota North FIPS 3301 Feet
-  102721 => "+proj=lcc +lat_1=46.18333333333333 +lat_2=47.48333333333333 +lat_0=45.66666666666666 +lon_0=-100.5 +x_0=600000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane North Dakota South FIPS 3302 Feet
-  102722 => "+proj=lcc +lat_1=40.43333333333333 +lat_2=41.7 +lat_0=39.66666666666666 +lon_0=-82.5 +x_0=600000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Ohio North FIPS 3401 Feet
-  102723 => "+proj=lcc +lat_1=38.73333333333333 +lat_2=40.03333333333333 +lat_0=38 +lon_0=-82.5 +x_0=600000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Ohio South FIPS 3402 Feet
-  102724 => "+proj=lcc +lat_1=35.56666666666667 +lat_2=36.76666666666667 +lat_0=35 +lon_0=-98 +x_0=600000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Oklahoma North FIPS 3501 Feet
-  102725 => "+proj=lcc +lat_1=33.93333333333333 +lat_2=35.23333333333333 +lat_0=33.33333333333334 +lon_0=-98 +x_0=600000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Oklahoma South FIPS 3502 Feet
-  102726 => "+proj=lcc +lat_1=44.33333333333334 +lat_2=46 +lat_0=43.66666666666666 +lon_0=-120.5 +x_0=2500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Oregon North FIPS 3601 Feet
-  102727 => "+proj=lcc +lat_1=42.33333333333334 +lat_2=44 +lat_0=41.66666666666666 +lon_0=-120.5 +x_0=1500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Oregon South FIPS 3602 Feet
-  102728 => "+proj=lcc +lat_1=40.88333333333333 +lat_2=41.95 +lat_0=40.16666666666666 +lon_0=-77.75 +x_0=600000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Pennsylvania North FIPS 3701 Feet
-  102729 => "+proj=lcc +lat_1=39.93333333333333 +lat_2=40.96666666666667 +lat_0=39.33333333333334 +lon_0=-77.75 +x_0=600000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Pennsylvania South FIPS 3702 Feet
-  102730 => "+proj=tmerc +lat_0=41.08333333333334 +lon_0=-71.5 +k=0.999994 +x_0=100000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Rhode Island FIPS 3800 Feet
-  102733 => "+proj=lcc +lat_1=32.5 +lat_2=34.83333333333334 +lat_0=31.83333333333333 +lon_0=-81 +x_0=609600.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane South Carolina FIPS 3900 Feet
-  102734 => "+proj=lcc +lat_1=44.41666666666666 +lat_2=45.68333333333333 +lat_0=43.83333333333334 +lon_0=-100 +x_0=600000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane South Dakota North FIPS 4001 Feet
-  102735 => "+proj=lcc +lat_1=42.83333333333334 +lat_2=44.4 +lat_0=42.33333333333334 +lon_0=-100.3333333333333 +x_0=600000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane South Dakota South FIPS 4002 Feet
-  102736 => "+proj=lcc +lat_1=35.25 +lat_2=36.41666666666666 +lat_0=34.33333333333334 +lon_0=-86 +x_0=600000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Tennessee FIPS 4100 Feet
-  102737 => "+proj=lcc +lat_1=34.65 +lat_2=36.18333333333333 +lat_0=34 +lon_0=-101.5 +x_0=200000 +y_0=1000000 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Texas North FIPS 4201 Feet
-  102738 => "+proj=lcc +lat_1=32.13333333333333 +lat_2=33.96666666666667 +lat_0=31.66666666666667 +lon_0=-98.5 +x_0=600000.0000000001 +y_0=2000000 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Texas North Central FIPS 4202 Feet
-  102739 => "+proj=lcc +lat_1=30.11666666666667 +lat_2=31.88333333333333 +lat_0=29.66666666666667 +lon_0=-100.3333333333333 +x_0=700000 +y_0=3000000 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Texas Central FIPS 4203 Feet
-  102740 => "+proj=lcc +lat_1=28.38333333333333 +lat_2=30.28333333333334 +lat_0=27.83333333333333 +lon_0=-99 +x_0=600000.0000000001 +y_0=4000000 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Texas South Central FIPS 4204 Feet
-  102741 => "+proj=lcc +lat_1=26.16666666666667 +lat_2=27.83333333333333 +lat_0=25.66666666666667 +lon_0=-98.5 +x_0=300000 +y_0=4999999.999999999 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Texas South FIPS 4205 Feet
-  102742 => "+proj=lcc +lat_1=40.71666666666667 +lat_2=41.78333333333333 +lat_0=40.33333333333334 +lon_0=-111.5 +x_0=500000.0000000002 +y_0=1000000 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Utah North FIPS 4301 Feet
-  102743 => "+proj=lcc +lat_1=39.01666666666667 +lat_2=40.65 +lat_0=38.33333333333334 +lon_0=-111.5 +x_0=500000.0000000002 +y_0=2000000 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Utah Central FIPS 4302 Feet
-  102744 => "+proj=lcc +lat_1=37.21666666666667 +lat_2=38.35 +lat_0=36.66666666666666 +lon_0=-111.5 +x_0=500000.0000000002 +y_0=3000000 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Utah South FIPS 4303 Feet
-  102745 => "+proj=tmerc +lat_0=42.5 +lon_0=-72.5 +k=0.999964 +x_0=500000.0000000002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Vermont FIPS 4400 Feet
-  102746 => "+proj=lcc +lat_1=38.03333333333333 +lat_2=39.2 +lat_0=37.66666666666666 +lon_0=-78.5 +x_0=3499999.999999999 +y_0=2000000 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Virginia North FIPS 4501 Feet
-  102747 => "+proj=lcc +lat_1=36.76666666666667 +lat_2=37.96666666666667 +lat_0=36.33333333333334 +lon_0=-78.5 +x_0=3499999.999999999 +y_0=1000000 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Virginia South FIPS 4502 Feet
-  102748 => "+proj=lcc +lat_1=47.5 +lat_2=48.73333333333333 +lat_0=47 +lon_0=-120.8333333333333 +x_0=500000.0000000002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Washington North FIPS 4601 Feet
-  102749 => "+proj=lcc +lat_1=45.83333333333334 +lat_2=47.33333333333334 +lat_0=45.33333333333334 +lon_0=-120.5 +x_0=500000.0000000002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Washington South FIPS 4602 Feet
-  102750 => "+proj=lcc +lat_1=39 +lat_2=40.25 +lat_0=38.5 +lon_0=-79.5 +x_0=600000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane West Virginia North FIPS 4701 Feet
-  102751 => "+proj=lcc +lat_1=37.48333333333333 +lat_2=38.88333333333333 +lat_0=37 +lon_0=-81 +x_0=600000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane West Virginia South FIPS 4702 Feet
-  102752 => "+proj=lcc +lat_1=45.56666666666667 +lat_2=46.76666666666667 +lat_0=45.16666666666666 +lon_0=-90 +x_0=600000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Wisconsin North FIPS 4801 Feet
-  102753 => "+proj=lcc +lat_1=44.25 +lat_2=45.5 +lat_0=43.83333333333334 +lon_0=-90 +x_0=600000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Wisconsin Central FIPS 4802 Feet
-  102754 => "+proj=lcc +lat_1=42.73333333333333 +lat_2=44.06666666666667 +lat_0=42 +lon_0=-90 +x_0=600000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Wisconsin South FIPS 4803 Feet
-  102755 => "+proj=tmerc +lat_0=40.5 +lon_0=-105.1666666666667 +k=0.999938 +x_0=200000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Wyoming East FIPS 4901 Feet
-  102756 => "+proj=tmerc +lat_0=40.5 +lon_0=-107.3333333333333 +k=0.999938 +x_0=399999.9999999999 +y_0=100000 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Wyoming East Central FIPS 4902 Feet
-  102757 => "+proj=tmerc +lat_0=40.5 +lon_0=-108.75 +k=0.999938 +x_0=600000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Wyoming West Central FIPS 4903 Feet
-  102758 => "+proj=tmerc +lat_0=40.5 +lon_0=-110.0833333333333 +k=0.999938 +x_0=799999.9999999999 +y_0=100000 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Wyoming West FIPS 4904 Feet
-  102761 => "+proj=lcc +lat_1=18.03333333333334 +lat_2=18.43333333333333 +lat_0=17.83333333333333 +lon_0=-66.43333333333334 +x_0=200000 +y_0=200000 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Puerto Rico Virgin Islands FIPS 5200 Feet
-  102766 => "+proj=poly +lat_0=13.47246635277778 +lon_0=-144.7487507055556 +x_0=49999.99999999999 +y_0=49999.99999999999 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192  no_defs", # NAD 1983 StatePlane Guam FIPS 5400 Feet
-  103300 => "+proj=lcc +lat_1=49.8333339 +lat_2=51.16666733333333 +lat_0=90 +lon_0=4.367486666666666 +x_0=150000.01256 +y_0=5400088.4378 +ellps=intl +units=m  no_defs", # Belge Lambert 1972
-  4023 => "+proj=longlat +ellps=aust_SA  no_defs", # GCS International 1967
-  4217 => "+proj=longlat +ellps=bessel  no_defs", # GCS Bern 1898
-  4305 => "+proj=longlat +ellps=clrk80  no_defs", # GCS Voirol Unifie 1960
-  4404 => "+proj=longlat +ellps=clrk80  no_defs", # GCS Montserrat 1958
-  4812 => "+proj=longlat +ellps=clrk80 +pm=2.337229166666667  no_defs", # GCS Voirol Unifie 1960 Paris
-  37001 => "+proj=longlat +ellps=WGS66  no_defs", # GCS WGS 1966
-  37002 => "+proj=longlat +a=6378166 +b=6356784.283607107  no_defs", # GCS Fischer 1960
-  37003 => "+proj=longlat +a=6378150 +b=6356768.337244385  no_defs", # GCS Fischer 1968
-  37004 => "+proj=longlat +ellps=fschr60m  no_defs", # GCS Fischer Modified
-  37005 => "+proj=longlat +a=6378270 +b=6356794.343434343  no_defs", # GCS Hough 1960
-  37006 => "+proj=longlat +a=6377295.664 +b=6356094.667915204  no_defs", # GCS Everest Modified 1969
-  37007 => "+proj=longlat +a=6376896 +b=6355834.846687363  no_defs", # GCS Walbeck
-  37008 => "+proj=longlat +a=6370997 +b=6370997  no_defs", # GCS Sphere ARC INFO
-  37201 => "+proj=longlat +ellps=intl  no_defs", # GCS European 1979
-  37202 => "+proj=longlat +a=6377276.345 +b=6356075.413140239  no_defs", # GCS Everest Bangladesh
-  37203 => "+proj=longlat +a=6377301.243 +b=6356100.230165385  no_defs", # GCS Everest India Nepal
-  37204 => "+proj=longlat +ellps=intl  no_defs", # GCS Hjorsey 1955
-  37205 => "+proj=longlat +ellps=intl  no_defs", # GCS Hong Kong 1963
-  37206 => "+proj=longlat +ellps=clrk80  no_defs", # GCS Oman
-  37207 => "+proj=longlat +ellps=fschr60m  no_defs", # GCS South Asia Singapore
-  37208 => "+proj=longlat +ellps=clrk80  no_defs", # GCS Ayabelle
-  37211 => "+proj=longlat +ellps=clrk80  no_defs", # GCS Point 58
-  37212 => "+proj=longlat +ellps=intl  no_defs", # GCS Beacon E 1945
-  37213 => "+proj=longlat +ellps=intl  no_defs", # GCS Tern Island 1961
-  37214 => "+proj=longlat +ellps=intl  no_defs", # GCS Astro 1952
-  37215 => "+proj=longlat +ellps=intl  no_defs", # GCS Bellevue IGN
-  37216 => "+proj=longlat +ellps=intl  no_defs", # GCS Canton 1966
-  37217 => "+proj=longlat +ellps=intl  no_defs", # GCS Chatham Island 1971
-  37218 => "+proj=longlat +ellps=intl  no_defs", # GCS DOS 1968
-  37219 => "+proj=longlat +ellps=intl  no_defs", # GCS Easter Island 1967
-  37220 => "+proj=longlat +ellps=clrk66  no_defs", # GCS Guam 1963
-  37221 => "+proj=longlat +ellps=intl  no_defs", # GCS GUX 1
-  37222 => "+proj=longlat +ellps=intl  no_defs", # GCS Johnston Island 1961
-  37223 => "+proj=longlat +a=6378249.2 +b=6356514.999904194  no_defs", # GCS Carthage Degree
-  37224 => "+proj=longlat +ellps=intl  no_defs", # GCS Midway 1961
-  37226 => "+proj=longlat +ellps=intl  no_defs", # GCS Pitcairn 1967
-  37227 => "+proj=longlat +ellps=intl  no_defs", # GCS Santo DOS 1965
-  37228 => "+proj=longlat +ellps=clrk80  no_defs", # GCS Viti Levu 1916
-  37229 => "+proj=longlat +a=6378270 +b=6356794.343434343  no_defs", # GCS Wake Eniwetok 1960
-  37230 => "+proj=longlat +ellps=intl  no_defs", # GCS Wake Island 1952
-  37231 => "+proj=longlat +ellps=aust_SA  no_defs", # GCS Anna 1 1965
-  37232 => "+proj=longlat +ellps=intl  no_defs", # GCS Gan 1970
-  37233 => "+proj=longlat +ellps=intl  no_defs", # GCS ISTS 073 1969
-  37234 => "+proj=longlat +ellps=intl  no_defs", # GCS Kerguelen Island 1949
-  37235 => "+proj=longlat +ellps=intl  no_defs", # GCS Reunion
-  37237 => "+proj=longlat +ellps=intl  no_defs", # GCS Ascension Island 1958
-  37238 => "+proj=longlat +ellps=intl  no_defs", # GCS DOS 71 4
-  37239 => "+proj=longlat +ellps=clrk66  no_defs", # GCS Cape Canaveral
-  37240 => "+proj=longlat +ellps=clrk80  no_defs", # GCS Fort Thomas 1955
-  37241 => "+proj=longlat +ellps=intl  no_defs", # GCS Graciosa Base SW 1948
-  37242 => "+proj=longlat +ellps=intl  no_defs", # GCS ISTS 061 1968
-  37243 => "+proj=longlat +ellps=clrk66  no_defs", # GCS LC5 1961
-  37245 => "+proj=longlat +ellps=intl  no_defs", # GCS Observ Meteorologico 1939
-  37246 => "+proj=longlat +ellps=intl  no_defs", # GCS Pico de Las Nieves
-  37247 => "+proj=longlat +ellps=intl  no_defs", # GCS Porto Santo 1936
-  37249 => "+proj=longlat +ellps=intl  no_defs", # GCS Sao Braz
-  37250 => "+proj=longlat +ellps=intl  no_defs", # GCS Selvagem Grande 1938
-  37251 => "+proj=longlat +ellps=intl  no_defs", # GCS Tristan 1968
-  37252 => "+proj=longlat +ellps=clrk66  no_defs", # GCS Samoa 1962
-  37253 => "+proj=longlat +ellps=intl  no_defs", # GCS Camp Area
-  37254 => "+proj=longlat +ellps=clrk80  no_defs", # GCS Deception Island
-  37255 => "+proj=longlat +ellps=bessel  no_defs", # GCS Gunung Segara
-  37257 => "+proj=longlat +ellps=krass  no_defs", # GCS S42 Hungary
-  37259 => "+proj=longlat +ellps=intl  no_defs", # GCS Kusaie 1951
-  37260 => "+proj=longlat +ellps=clrk66  no_defs", # GCS Alaskan Islands
-  104000 => "+proj=longlat +ellps=clrk66 +datum=NAD27  no_defs", # GCS Assumed Geographic 1
-  104101 => "+proj=longlat +ellps=bessel  no_defs", # GCS Estonia 1937
-  104102 => "+proj=longlat +ellps=bessel  no_defs", # GCS Hermannskogel
-  104103 => "+proj=longlat +ellps=clrk80  no_defs", # GCS Sierra Leone 1960
-  104104 => "+proj=longlat +ellps=intl  no_defs", # GCS Hong Kong 1980
-  104105 => "+proj=longlat +ellps=bessel  no_defs", # GCS Datum Lisboa Bessel
-  104106 => "+proj=longlat +ellps=intl  no_defs", # GCS Datum Lisboa Hayford
-  104107 => "+proj=longlat +ellps=GRS80  no_defs", # GCS RGF 1993
-  104108 => "+proj=longlat +ellps=GRS80  no_defs", # GCS NZGD 2000
-  104261 => "+proj=longlat +a=6378249.2 +b=6356514.999904194  no_defs", # GCS Merchich Degree
-  104304 => "+proj=longlat +a=6378249.2 +b=6356514.999904194  no_defs", # GCS Voirol 1875 Degree
-  104305 => "+proj=longlat +ellps=clrk80  no_defs", # GCS Voirol Unifie 1960 Degree
+  2000 => "+proj=tmerc +lat_0=0 +lon_0=-62 +k=0.999500 +x_0=400000 +y_0=0 +ellps=clrk80 +units=m +no_defs", # Anguilla 1957 / British West Indies Grid
+  2001 => "+proj=tmerc +lat_0=0 +lon_0=-62 +k=0.999500 +x_0=400000 +y_0=0 +ellps=clrk80 +towgs84=-255,-15,71,0,0,0,0 +units=m +no_defs", # Antigua 1943 / British West Indies Grid
+  2002 => "+proj=tmerc +lat_0=0 +lon_0=-62 +k=0.999500 +x_0=400000 +y_0=0 +ellps=clrk80 +towgs84=725,685,536,0,0,0,0 +units=m +no_defs", # Dominica 1945 / British West Indies Grid
+  2003 => "+proj=tmerc +lat_0=0 +lon_0=-62 +k=0.999500 +x_0=400000 +y_0=0 +ellps=clrk80 +towgs84=72,213.7,93,0,0,0,0 +units=m +no_defs", # Grenada 1953 / British West Indies Grid
+  2004 => "+proj=tmerc +lat_0=0 +lon_0=-62 +k=0.999500 +x_0=400000 +y_0=0 +ellps=clrk80 +towgs84=174,359,365,0,0,0,0 +units=m +no_defs", # Montserrat 58 / British West Indies Grid
+  2005 => "+proj=tmerc +lat_0=0 +lon_0=-62 +k=0.999500 +x_0=400000 +y_0=0 +ellps=clrk80 +towgs84=9,183,236,0,0,0,0 +units=m +no_defs", # St Kitts 1955 / British West Indies Grid
+  2006 => "+proj=tmerc +lat_0=0 +lon_0=-62 +k=0.999500 +x_0=400000 +y_0=0 +ellps=clrk80 +towgs84=-149,128,296,0,0,0,0 +units=m +no_defs", # St Lucia 1955 / British West Indies Grid
+  2007 => "+proj=tmerc +lat_0=0 +lon_0=-62 +k=0.999500 +x_0=400000 +y_0=0 +ellps=clrk80 +units=m +no_defs", # St Vincent 45 / British West Indies Grid
+  2008 => "+proj=tmerc +lat_0=0 +lon_0=-55.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=clrk66 +units=m +no_defs", # NAD27(CGQ77) / SCoPQ zone 2
+  2009 => "+proj=tmerc +lat_0=0 +lon_0=-58.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=clrk66 +units=m +no_defs", # NAD27(CGQ77) / SCoPQ zone 3
+  2010 => "+proj=tmerc +lat_0=0 +lon_0=-61.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=clrk66 +units=m +no_defs", # NAD27(CGQ77) / SCoPQ zone 4
+  2011 => "+proj=tmerc +lat_0=0 +lon_0=-64.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=clrk66 +units=m +no_defs", # NAD27(CGQ77) / SCoPQ zone 5
+  2012 => "+proj=tmerc +lat_0=0 +lon_0=-67.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=clrk66 +units=m +no_defs", # NAD27(CGQ77) / SCoPQ zone 6
+  2013 => "+proj=tmerc +lat_0=0 +lon_0=-70.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=clrk66 +units=m +no_defs", # NAD27(CGQ77) / SCoPQ zone 7
+  2014 => "+proj=tmerc +lat_0=0 +lon_0=-73.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=clrk66 +units=m +no_defs", # NAD27(CGQ77) / SCoPQ zone 8
+  2015 => "+proj=tmerc +lat_0=0 +lon_0=-76.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=clrk66 +units=m +no_defs", # NAD27(CGQ77) / SCoPQ zone 9
+  2016 => "+proj=tmerc +lat_0=0 +lon_0=-79.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=clrk66 +units=m +no_defs", # NAD27(CGQ77) / SCoPQ zone 10
+  2017 => "+proj=tmerc +lat_0=0 +lon_0=-73.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=clrk66 +units=m +no_defs", # NAD27(76) / MTM zone 8
+  2018 => "+proj=tmerc +lat_0=0 +lon_0=-76.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=clrk66 +units=m +no_defs", # NAD27(76) / MTM zone 9
+  2019 => "+proj=tmerc +lat_0=0 +lon_0=-79.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=clrk66 +units=m +no_defs", # NAD27(76) / MTM zone 10
+  2020 => "+proj=tmerc +lat_0=0 +lon_0=-82.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=clrk66 +units=m +no_defs", # NAD27(76) / MTM zone 11
+  2021 => "+proj=tmerc +lat_0=0 +lon_0=-81 +k=0.999900 +x_0=304800 +y_0=0 +ellps=clrk66 +units=m +no_defs", # NAD27(76) / MTM zone 12
+  2022 => "+proj=tmerc +lat_0=0 +lon_0=-84 +k=0.999900 +x_0=304800 +y_0=0 +ellps=clrk66 +units=m +no_defs", # NAD27(76) / MTM zone 13
+  2023 => "+proj=tmerc +lat_0=0 +lon_0=-87 +k=0.999900 +x_0=304800 +y_0=0 +ellps=clrk66 +units=m +no_defs", # NAD27(76) / MTM zone 14
+  2024 => "+proj=tmerc +lat_0=0 +lon_0=-90 +k=0.999900 +x_0=304800 +y_0=0 +ellps=clrk66 +units=m +no_defs", # NAD27(76) / MTM zone 15
+  2025 => "+proj=tmerc +lat_0=0 +lon_0=-93 +k=0.999900 +x_0=304800 +y_0=0 +ellps=clrk66 +units=m +no_defs", # NAD27(76) / MTM zone 16
+  2026 => "+proj=tmerc +lat_0=0 +lon_0=-96 +k=0.999900 +x_0=304800 +y_0=0 +ellps=clrk66 +units=m +no_defs", # NAD27(76) / MTM zone 17
+  2027 => "+proj=utm +zone=15 +ellps=clrk66 +units=m +no_defs", # NAD27(76) / UTM zone 15N
+  2028 => "+proj=utm +zone=16 +ellps=clrk66 +units=m +no_defs", # NAD27(76) / UTM zone 16N
+  2029 => "+proj=utm +zone=17 +ellps=clrk66 +units=m +no_defs", # NAD27(76) / UTM zone 17N
+  2030 => "+proj=utm +zone=18 +ellps=clrk66 +units=m +no_defs", # NAD27(76) / UTM zone 18N
+  2031 => "+proj=utm +zone=17 +ellps=clrk66 +units=m +no_defs", # NAD27(CGQ77) / UTM zone 17N
+  2032 => "+proj=utm +zone=18 +ellps=clrk66 +units=m +no_defs", # NAD27(CGQ77) / UTM zone 18N
+  2033 => "+proj=utm +zone=19 +ellps=clrk66 +units=m +no_defs", # NAD27(CGQ77) / UTM zone 19N
+  2034 => "+proj=utm +zone=20 +ellps=clrk66 +units=m +no_defs", # NAD27(CGQ77) / UTM zone 20N
+  2035 => "+proj=utm +zone=21 +ellps=clrk66 +units=m +no_defs", # NAD27(CGQ77) / UTM zone 21N
+  2036 => "+proj=stere +lat_0=46.5 +lon_0=-66.5 +k=0.999912 +x_0=2500000 +y_0=7500000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(CSRS98) / New Brunswick Stereo
+  2037 => "+proj=utm +zone=19 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(CSRS98) / UTM zone 19N
+  2038 => "+proj=utm +zone=20 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(CSRS98) / UTM zone 20N
+  2039 => "+proj=tmerc +lat_0=31.73439361111111 +lon_0=35.20451694444445 +k=1.000007 +x_0=219529.584 +y_0=626907.39 +ellps=GRS80 +units=m +no_defs", # Israel / Israeli TM Grid
+  2040 => "+proj=utm +zone=30 +ellps=clrk80 +towgs84=-125,53,467,0,0,0,0 +units=m +no_defs", # Locodjo 1965 / UTM zone 30N
+  2041 => "+proj=utm +zone=30 +ellps=clrk80 +towgs84=-124.76,53,466.79,0,0,0,0 +units=m +no_defs", # Abidjan 1987 / UTM zone 30N
+  2042 => "+proj=utm +zone=29 +ellps=clrk80 +towgs84=-125,53,467,0,0,0,0 +units=m +no_defs", # Locodjo 1965 / UTM zone 29N
+  2043 => "+proj=utm +zone=29 +ellps=clrk80 +towgs84=-124.76,53,466.79,0,0,0,0 +units=m +no_defs", # Abidjan 1987 / UTM zone 29N
+  2044 => "+proj=tmerc +lat_0=0 +lon_0=105 +k=1.000000 +x_0=18500000 +y_0=0 +ellps=krass +towgs84=-17.51,-108.32,-62.39,0,0,0,0 +units=m +no_defs", # Hanoi 1972 / Gauss-Kruger zone 18
+  2045 => "+proj=tmerc +lat_0=0 +lon_0=111 +k=1.000000 +x_0=19500000 +y_0=0 +ellps=krass +towgs84=-17.51,-108.32,-62.39,0,0,0,0 +units=m +no_defs", # Hanoi 1972 / Gauss-Kruger zone 19
+  2056 => "+proj=omerc +lat_0=46.95240555555556 +lonc=7.439583333333333 +alpha=90 +k=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs", # CH1903+ / LV95
+  2057 => "+proj=omerc +lat_0=27.51882880555555 +lonc=52.60353916666667 +alpha=0.5716611944444444 +k=0.999895934 +x_0=658377.437 +y_0=3044969.194 +ellps=intl +towgs84=-133.63,-157.5,-158.62,0,0,0,0 +units=m +no_defs", # Rassadiran / Nakhl e Taqi
+  2058 => "+proj=utm +zone=38 +ellps=intl +units=m +no_defs", # ED50(ED77) / UTM zone 38N
+  2059 => "+proj=utm +zone=39 +ellps=intl +units=m +no_defs", # ED50(ED77) / UTM zone 39N
+  2060 => "+proj=utm +zone=40 +ellps=intl +units=m +no_defs", # ED50(ED77) / UTM zone 40N
+  2061 => "+proj=utm +zone=41 +ellps=intl +units=m +no_defs", # ED50(ED77) / UTM zone 41N
+  2062 => "+proj=lcc +lat_1=40 +lat_0=40 +lon_0=-3.687938888888889 +k_0=0.9988085293 +x_0=600000 +y_0=600000 +a=6378298.3 +b=6356657.142669562 +pm=madrid +units=m +no_defs", # Madrid 1870 (Madrid) / Spain
+  2063 => "+proj=utm +zone=28 +a=6378249.2 +b=6356515 +towgs84=-23,259,-9,0,0,0,0 +units=m +no_defs", # Dabola 1981 / UTM zone 28N
+  2064 => "+proj=utm +zone=29 +a=6378249.2 +b=6356515 +towgs84=-23,259,-9,0,0,0,0 +units=m +no_defs", # Dabola 1981 / UTM zone 29N
+  2065 => "+proj=krovak +lat_0=49.5 +lon_0=24.83333333333333 +alpha=30.28813972222222 +k=0.9999 +x_0=0 +y_0=0 +ellps=bessel +pm=ferro +units=m +no_defs", # S-JTSK (Ferro) / Krovak
+  2066 => "+proj=cass +lat_0=11.25217861111111 +lon_0=-60.68600888888889 +x_0=37718.66154375 +y_0=36209.915082 +a=6378293.63683822 +b=6356617.979337744 +to_meter=0.2011661949 +no_defs", # Mount Dillon / Tobago Grid
+  2067 => "+proj=utm +zone=20 +ellps=intl +units=m +no_defs", # Naparima 1955 / UTM zone 20N
+  2068 => "+proj=tmerc +lat_0=0 +lon_0=9 +k=0.999900 +x_0=200000 +y_0=0 +ellps=intl +units=m +no_defs", # ELD79 / Libya zone 5
+  2069 => "+proj=tmerc +lat_0=0 +lon_0=11 +k=0.999900 +x_0=200000 +y_0=0 +ellps=intl +units=m +no_defs", # ELD79 / Libya zone 6
+  2070 => "+proj=tmerc +lat_0=0 +lon_0=13 +k=0.999900 +x_0=200000 +y_0=0 +ellps=intl +units=m +no_defs", # ELD79 / Libya zone 7
+  2071 => "+proj=tmerc +lat_0=0 +lon_0=15 +k=0.999900 +x_0=200000 +y_0=0 +ellps=intl +units=m +no_defs", # ELD79 / Libya zone 8
+  2072 => "+proj=tmerc +lat_0=0 +lon_0=17 +k=0.999900 +x_0=200000 +y_0=0 +ellps=intl +units=m +no_defs", # ELD79 / Libya zone 9
+  2073 => "+proj=tmerc +lat_0=0 +lon_0=19 +k=0.999900 +x_0=200000 +y_0=0 +ellps=intl +units=m +no_defs", # ELD79 / Libya zone 10
+  2074 => "+proj=tmerc +lat_0=0 +lon_0=21 +k=0.999900 +x_0=200000 +y_0=0 +ellps=intl +units=m +no_defs", # ELD79 / Libya zone 11
+  2075 => "+proj=tmerc +lat_0=0 +lon_0=23 +k=0.999900 +x_0=200000 +y_0=0 +ellps=intl +units=m +no_defs", # ELD79 / Libya zone 12
+  2076 => "+proj=tmerc +lat_0=0 +lon_0=25 +k=0.999900 +x_0=200000 +y_0=0 +ellps=intl +units=m +no_defs", # ELD79 / Libya zone 13
+  2077 => "+proj=utm +zone=32 +ellps=intl +units=m +no_defs", # ELD79 / UTM zone 32N
+  2078 => "+proj=utm +zone=33 +ellps=intl +units=m +no_defs", # ELD79 / UTM zone 33N
+  2079 => "+proj=utm +zone=34 +ellps=intl +units=m +no_defs", # ELD79 / UTM zone 34N
+  2080 => "+proj=utm +zone=35 +ellps=intl +units=m +no_defs", # ELD79 / UTM zone 35N
+  2081 => "+proj=tmerc +lat_0=-90 +lon_0=-69 +k=1.000000 +x_0=2500000 +y_0=0 +ellps=intl +units=m +no_defs", # Chos Malal 1914 / Argentina zone 2
+  2082 => "+proj=tmerc +lat_0=-90 +lon_0=-69 +k=1.000000 +x_0=2500000 +y_0=0 +ellps=intl +units=m +no_defs", # Pampa del Castillo / Argentina zone 2
+  2083 => "+proj=tmerc +lat_0=-90 +lon_0=-69 +k=1.000000 +x_0=2500000 +y_0=0 +ellps=intl +towgs84=18.38,192.45,96.82,0.056,-0.142,-0.2,-0.0013 +units=m +no_defs", # Hito XVIII 1963 / Argentina zone 2
+  2084 => "+proj=utm +zone=19 +south +ellps=intl +towgs84=18.38,192.45,96.82,0.056,-0.142,-0.2,-0.0013 +units=m +no_defs", # Hito XVIII 1963 / UTM zone 19S
+  2085 => "+proj=lcc +lat_1=22.35 +lat_0=22.35 +lon_0=-81 +k_0=0.99993602 +x_0=500000 +y_0=280296.016 +ellps=clrk66 +datum=NAD27 +units=m +no_defs", # NAD27 / Cuba Norte
+  2086 => "+proj=lcc +lat_1=20.71666666666667 +lat_0=20.71666666666667 +lon_0=-76.83333333333333 +k_0=0.99994848 +x_0=500000 +y_0=229126.939 +ellps=clrk66 +datum=NAD27 +units=m +no_defs", # NAD27 / Cuba Sur
+  2087 => "+proj=tmerc +lat_0=0 +lon_0=12 +k=0.999600 +x_0=500000 +y_0=0 +ellps=intl +units=m +no_defs", # ELD79 / TM 12 NE
+  2088 => "+proj=tmerc +lat_0=0 +lon_0=11 +k=0.999600 +x_0=500000 +y_0=0 +a=6378249.2 +b=6356515 +units=m +no_defs", # Carthage / TM 11 NE
+  2089 => "+proj=utm +zone=38 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # Yemen NGN96 / UTM zone 38N
+  2090 => "+proj=utm +zone=39 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # Yemen NGN96 / UTM zone 39N
+  2091 => "+proj=tmerc +lat_0=0 +lon_0=45 +k=1.000000 +x_0=8500000 +y_0=0 +ellps=krass +towgs84=-76,-138,67,0,0,0,0 +units=m +no_defs", # South Yemen / Gauss Kruger zone 8
+  2092 => "+proj=tmerc +lat_0=0 +lon_0=51 +k=1.000000 +x_0=9500000 +y_0=0 +ellps=krass +towgs84=-76,-138,67,0,0,0,0 +units=m +no_defs", # South Yemen / Gauss Kruger zone 9
+  2093 => "+proj=tmerc +lat_0=0 +lon_0=106 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +towgs84=-17.51,-108.32,-62.39,0,0,0,0 +units=m +no_defs", # Hanoi 1972 / GK 106 NE
+  2094 => "+proj=tmerc +lat_0=0 +lon_0=106 +k=0.999600 +x_0=500000 +y_0=0 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / TM 106 NE
+  2095 => "+proj=utm +zone=28 +ellps=intl +towgs84=-173,253,27,0,0,0,0 +units=m +no_defs", # Bissau / UTM zone 28N
+  2096 => "+proj=tmerc +lat_0=38 +lon_0=129 +k=1.000000 +x_0=200000 +y_0=500000 +ellps=bessel +units=m +no_defs", # Korean 1985 / Korea East Belt
+  2097 => "+proj=tmerc +lat_0=38 +lon_0=127 +k=1.000000 +x_0=200000 +y_0=500000 +ellps=bessel +units=m +no_defs", # Korean 1985 / Korea Central Belt
+  2098 => "+proj=tmerc +lat_0=38 +lon_0=125 +k=1.000000 +x_0=200000 +y_0=500000 +ellps=bessel +units=m +no_defs", # Korean 1985 / Korea West Belt
+  2099 => "+proj=cass +lat_0=25.38236111111111 +lon_0=50.76138888888889 +x_0=100000 +y_0=100000 +ellps=helmert +units=m +no_defs", # Qatar 1948 / Qatar Grid
+  2100 => "+proj=tmerc +lat_0=0 +lon_0=24 +k=0.999600 +x_0=500000 +y_0=0 +ellps=GRS80 +towgs84=-199.87,74.79,246.62,0,0,0,0 +units=m +no_defs", # GGRS87 / Greek Grid
+  2101 => "+proj=lcc +lat_1=10.16666666666667 +lat_0=10.16666666666667 +lon_0=-71.60561777777777 +k_0=1 +x_0=0 +y_0=-52684.972 +ellps=intl +units=m +no_defs", # Lake / Maracaibo Grid M1
+  2102 => "+proj=lcc +lat_1=10.16666666666667 +lat_0=10.16666666666667 +lon_0=-71.60561777777777 +k_0=1 +x_0=200000 +y_0=147315.028 +ellps=intl +units=m +no_defs", # Lake / Maracaibo Grid
+  2103 => "+proj=lcc +lat_1=10.16666666666667 +lat_0=10.16666666666667 +lon_0=-71.60561777777777 +k_0=1 +x_0=500000 +y_0=447315.028 +ellps=intl +units=m +no_defs", # Lake / Maracaibo Grid M3
+  2104 => "+proj=lcc +lat_1=10.16666666666667 +lat_0=10.16666666666667 +lon_0=-71.60561777777777 +k_0=1 +x_0=-17044 +y_0=-23139.97 +ellps=intl +units=m +no_defs", # Lake / Maracaibo La Rosa Grid
+  2105 => "+proj=tmerc +lat_0=-36.87972222222222 +lon_0=174.7641666666667 +k=0.999900 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NZGD2000 / Mount Eden Circuit 2000
+  2106 => "+proj=tmerc +lat_0=-37.76111111111111 +lon_0=176.4661111111111 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NZGD2000 / Bay of Plenty Circuit 2000
+  2107 => "+proj=tmerc +lat_0=-38.62444444444444 +lon_0=177.8855555555556 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NZGD2000 / Poverty Bay Circuit 2000
+  2108 => "+proj=tmerc +lat_0=-39.65083333333333 +lon_0=176.6736111111111 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NZGD2000 / Hawkes Bay Circuit 2000
+  2109 => "+proj=tmerc +lat_0=-39.13555555555556 +lon_0=174.2277777777778 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NZGD2000 / Taranaki Circuit 2000
+  2110 => "+proj=tmerc +lat_0=-39.51222222222222 +lon_0=175.64 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NZGD2000 / Tuhirangi Circuit 2000
+  2111 => "+proj=tmerc +lat_0=-40.24194444444444 +lon_0=175.4880555555555 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NZGD2000 / Wanganui Circuit 2000
+  2112 => "+proj=tmerc +lat_0=-40.92527777777777 +lon_0=175.6472222222222 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NZGD2000 / Wairarapa Circuit 2000
+  2113 => "+proj=tmerc +lat_0=-41.3011111111111 +lon_0=174.7763888888889 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NZGD2000 / Wellington Circuit 2000
+  2114 => "+proj=tmerc +lat_0=-40.71472222222223 +lon_0=172.6719444444444 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NZGD2000 / Collingwood Circuit 2000
+  2115 => "+proj=tmerc +lat_0=-41.27444444444444 +lon_0=173.2991666666667 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NZGD2000 / Nelson Circuit 2000
+  2116 => "+proj=tmerc +lat_0=-41.28972222222222 +lon_0=172.1088888888889 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NZGD2000 / Karamea Circuit 2000
+  2117 => "+proj=tmerc +lat_0=-41.81055555555555 +lon_0=171.5811111111111 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NZGD2000 / Buller Circuit 2000
+  2118 => "+proj=tmerc +lat_0=-42.33361111111111 +lon_0=171.5497222222222 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NZGD2000 / Grey Circuit 2000
+  2119 => "+proj=tmerc +lat_0=-42.68888888888888 +lon_0=173.01 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NZGD2000 / Amuri Circuit 2000
+  2120 => "+proj=tmerc +lat_0=-41.54444444444444 +lon_0=173.8019444444444 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NZGD2000 / Marlborough Circuit 2000
+  2121 => "+proj=tmerc +lat_0=-42.88611111111111 +lon_0=170.9797222222222 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NZGD2000 / Hokitika Circuit 2000
+  2122 => "+proj=tmerc +lat_0=-43.11 +lon_0=170.2608333333333 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NZGD2000 / Okarito Circuit 2000
+  2123 => "+proj=tmerc +lat_0=-43.97777777777778 +lon_0=168.6061111111111 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NZGD2000 / Jacksons Bay Circuit 2000
+  2124 => "+proj=tmerc +lat_0=-43.59055555555556 +lon_0=172.7269444444445 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NZGD2000 / Mount Pleasant Circuit 2000
+  2125 => "+proj=tmerc +lat_0=-43.74861111111111 +lon_0=171.3605555555555 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NZGD2000 / Gawler Circuit 2000
+  2126 => "+proj=tmerc +lat_0=-44.40194444444445 +lon_0=171.0572222222222 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NZGD2000 / Timaru Circuit 2000
+  2127 => "+proj=tmerc +lat_0=-44.735 +lon_0=169.4675 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NZGD2000 / Lindis Peak Circuit 2000
+  2128 => "+proj=tmerc +lat_0=-45.13277777777778 +lon_0=168.3986111111111 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NZGD2000 / Mount Nicholas Circuit 2000
+  2129 => "+proj=tmerc +lat_0=-45.56361111111111 +lon_0=167.7386111111111 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NZGD2000 / Mount York Circuit 2000
+  2130 => "+proj=tmerc +lat_0=-45.81611111111111 +lon_0=170.6283333333333 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NZGD2000 / Observation Point Circuit 2000
+  2131 => "+proj=tmerc +lat_0=-45.86138888888889 +lon_0=170.2825 +k=0.999960 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NZGD2000 / North Taieri Circuit 2000
+  2132 => "+proj=tmerc +lat_0=-46.6 +lon_0=168.3427777777778 +k=1.000000 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NZGD2000 / Bluff Circuit 2000
+  2133 => "+proj=utm +zone=58 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NZGD2000 / UTM zone 58S
+  2134 => "+proj=utm +zone=59 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NZGD2000 / UTM zone 59S
+  2135 => "+proj=utm +zone=60 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NZGD2000 / UTM zone 60S
+  2136 => "+proj=tmerc +lat_0=4.666666666666667 +lon_0=-1 +k=0.999750 +x_0=274319.7391633579 +y_0=0 +a=6378300 +b=6356751.689189189 +towgs84=-199,32,322,0,0,0,0 +to_meter=0.3047997101815088 +no_defs", # Accra / Ghana National Grid
+  2137 => "+proj=tmerc +lat_0=0 +lon_0=-1 +k=0.999600 +x_0=500000 +y_0=0 +a=6378300 +b=6356751.689189189 +towgs84=-199,32,322,0,0,0,0 +units=m +no_defs", # Accra / TM 1 NW
+  2138 => "+proj=lcc +lat_1=60 +lat_2=46 +lat_0=44 +lon_0=-68.5 +x_0=0 +y_0=0 +ellps=clrk66 +units=m +no_defs", # NAD27(CGQ77) / Quebec Lambert
+  2139 => "+proj=tmerc +lat_0=0 +lon_0=-55.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(CSRS98) / SCoPQ zone 2
+  2140 => "+proj=tmerc +lat_0=0 +lon_0=-58.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(CSRS98) / MTM zone 3
+  2141 => "+proj=tmerc +lat_0=0 +lon_0=-61.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(CSRS98) / MTM zone 4
+  2142 => "+proj=tmerc +lat_0=0 +lon_0=-64.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(CSRS98) / MTM zone 5
+  2143 => "+proj=tmerc +lat_0=0 +lon_0=-67.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(CSRS98) / MTM zone 6
+  2144 => "+proj=tmerc +lat_0=0 +lon_0=-70.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(CSRS98) / MTM zone 7
+  2145 => "+proj=tmerc +lat_0=0 +lon_0=-73.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(CSRS98) / MTM zone 8
+  2146 => "+proj=tmerc +lat_0=0 +lon_0=-76.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(CSRS98) / MTM zone 9
+  2147 => "+proj=tmerc +lat_0=0 +lon_0=-79.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(CSRS98) / MTM zone 10
+  2148 => "+proj=utm +zone=21 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(CSRS98) / UTM zone 21N
+  2149 => "+proj=utm +zone=18 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(CSRS98) / UTM zone 18N
+  2150 => "+proj=utm +zone=17 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(CSRS98) / UTM zone 17N
+  2151 => "+proj=utm +zone=13 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(CSRS98) / UTM zone 13N
+  2152 => "+proj=utm +zone=12 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(CSRS98) / UTM zone 12N
+  2153 => "+proj=utm +zone=11 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(CSRS98) / UTM zone 11N
+  2154 => "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # RGF93 / Lambert-93
+  2155 => "+proj=lcc +lat_1=-14.26666666666667 +lat_0=-14.26666666666667 +lon_0=170 +k_0=1 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +towgs84=-115,118,426,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # American Samoa 1962 / American Samoa Lambert
+  2156 => "+proj=utm +zone=59 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / UTM zone 59S
+  2157 => "+proj=tmerc +lat_0=53.5 +lon_0=-8 +k=0.999820 +x_0=600000 +y_0=750000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # IRENET95 / Irish Transverse Mercator
+  2158 => "+proj=utm +zone=29 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # IRENET95 / UTM zone 29N
+  2159 => "+proj=tmerc +lat_0=6.666666666666667 +lon_0=-12 +k=1.000000 +x_0=152399.8550907544 +y_0=0 +a=6378300 +b=6356751.689189189 +to_meter=0.3047997101815088 +no_defs", # Sierra Leone 1924 / New Colony Grid
+  2160 => "+proj=tmerc +lat_0=6.666666666666667 +lon_0=-12 +k=1.000000 +x_0=243839.7681452071 +y_0=182879.8261089053 +a=6378300 +b=6356751.689189189 +to_meter=0.3047997101815088 +no_defs", # Sierra Leone 1924 / New War Office Grid
+  2161 => "+proj=utm +zone=28 +ellps=clrk80 +towgs84=-88,4,101,0,0,0,0 +units=m +no_defs", # Sierra Leone 1968 / UTM zone 28N
+  2162 => "+proj=utm +zone=29 +ellps=clrk80 +towgs84=-88,4,101,0,0,0,0 +units=m +no_defs", # Sierra Leone 1968 / UTM zone 29N
+  2163 => "+proj=laea +lat_0=45 +lon_0=-100 +x_0=0 +y_0=0 +a=6370997 +b=6370997 +units=m +no_defs", # US National Atlas Equal Area
+  2164 => "+proj=tmerc +lat_0=0 +lon_0=-5 +k=0.999600 +x_0=500000 +y_0=0 +ellps=clrk80 +towgs84=-125,53,467,0,0,0,0 +units=m +no_defs", # Locodjo 1965 / TM 5 NW
+  2165 => "+proj=tmerc +lat_0=0 +lon_0=-5 +k=0.999600 +x_0=500000 +y_0=0 +ellps=clrk80 +towgs84=-124.76,53,466.79,0,0,0,0 +units=m +no_defs", # Abidjan 1987 / TM 5 NW
+  2166 => "+proj=tmerc +lat_0=0 +lon_0=9 +k=1.000000 +x_0=3500000 +y_0=0 +ellps=krass +towgs84=24,-123,-94,0.02,-0.25,-0.13,1.1 +units=m +no_defs", # Pulkovo 1942(83) / Gauss Kruger zone 3
+  2167 => "+proj=tmerc +lat_0=0 +lon_0=12 +k=1.000000 +x_0=4500000 +y_0=0 +ellps=krass +towgs84=24,-123,-94,0.02,-0.25,-0.13,1.1 +units=m +no_defs", # Pulkovo 1942(83) / Gauss Kruger zone 4
+  2168 => "+proj=tmerc +lat_0=0 +lon_0=15 +k=1.000000 +x_0=5500000 +y_0=0 +ellps=krass +towgs84=24,-123,-94,0.02,-0.25,-0.13,1.1 +units=m +no_defs", # Pulkovo 1942(83) / Gauss Kruger zone 5
+  2169 => "+proj=tmerc +lat_0=49.83333333333334 +lon_0=6.166666666666667 +k=1.000000 +x_0=80000 +y_0=100000 +ellps=intl +towgs84=-193,13.7,-39.3,-0.41,-2.933,2.688,0.43 +units=m +no_defs", # Luxembourg 1930 / Gauss
+  2170 => "+proj=tmerc +lat_0=0 +lon_0=15 +k=0.999900 +x_0=500000 +y_0=0 +ellps=bessel +units=m +no_defs", # MGI / Slovenia Grid
+  2171 => "+proj=stere +lat_0=50.625 +lon_0=21.08333333333333 +k=0.999800 +x_0=4637000 +y_0=5647000 +ellps=krass +towgs84=33.4,-146.6,-76.3,-0.359,-0.053,0.844,-0.84 +units=m +no_defs", # Pulkovo 1942(58) / Poland zone I
+  2172 => "+proj=stere +lat_0=53.00194444444445 +lon_0=21.50277777777778 +k=0.999800 +x_0=4603000 +y_0=5806000 +ellps=krass +towgs84=33.4,-146.6,-76.3,-0.359,-0.053,0.844,-0.84 +units=m +no_defs", # Pulkovo 1942(58) / Poland zone II
+  2173 => "+proj=stere +lat_0=53.58333333333334 +lon_0=17.00833333333333 +k=0.999800 +x_0=3501000 +y_0=5999000 +ellps=krass +towgs84=33.4,-146.6,-76.3,-0.359,-0.053,0.844,-0.84 +units=m +no_defs", # Pulkovo 1942(58) / Poland zone III
+  2174 => "+proj=stere +lat_0=51.67083333333333 +lon_0=16.67222222222222 +k=0.999800 +x_0=3703000 +y_0=5627000 +ellps=krass +towgs84=33.4,-146.6,-76.3,-0.359,-0.053,0.844,-0.84 +units=m +no_defs", # Pulkovo 1942(58) / Poland zone IV
+  2175 => "+proj=tmerc +lat_0=0 +lon_0=18.95833333333333 +k=0.999983 +x_0=237000 +y_0=-4700000 +ellps=krass +towgs84=33.4,-146.6,-76.3,-0.359,-0.053,0.844,-0.84 +units=m +no_defs", # Pulkovo 1942(58) / Poland zone V
+  2176 => "+proj=tmerc +lat_0=0 +lon_0=15 +k=0.999923 +x_0=5500000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # ETRS89 / Poland CS2000 zone 5
+  2177 => "+proj=tmerc +lat_0=0 +lon_0=18 +k=0.999923 +x_0=6500000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # ETRS89 / Poland CS2000 zone 6
+  2178 => "+proj=tmerc +lat_0=0 +lon_0=21 +k=0.999923 +x_0=7500000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # ETRS89 / Poland CS2000 zone 7
+  2179 => "+proj=tmerc +lat_0=0 +lon_0=24 +k=0.999923 +x_0=8500000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # ETRS89 / Poland CS2000 zone 8
+  2180 => "+proj=tmerc +lat_0=0 +lon_0=19 +k=0.999300 +x_0=500000 +y_0=-5300000 +ellps=GRS80 +units=m +no_defs", # ETRS89 / Poland CS92
+  2188 => "+proj=utm +zone=25 +ellps=intl +units=m +no_defs", # Azores Occidental 1939 / UTM zone 25N
+  2189 => "+proj=utm +zone=26 +ellps=intl +units=m +no_defs", # Azores Central 1948 / UTM zone 26N
+  2190 => "+proj=utm +zone=26 +ellps=intl +units=m +no_defs", # Azores Oriental 1940 / UTM zone 26N
+  2191 => "+proj=utm +zone=28 +ellps=intl +units=m +no_defs", # Madeira 1936 / UTM zone 28N
+  2192 => "+proj=lcc +lat_1=46.8 +lat_0=46.8 +lon_0=2.337229166666667 +k_0=0.99987742 +x_0=600000 +y_0=2200000 +ellps=intl +units=m +no_defs", # ED50 / France EuroLambert
+  2193 => "+proj=tmerc +lat_0=0 +lon_0=173 +k=0.999600 +x_0=1600000 +y_0=10000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NZGD2000 / New Zealand Transverse Mercator
+  2194 => "+proj=lcc +lat_1=-14.26666666666667 +lat_0=-14.26666666666667 +lon_0=-170 +k_0=1 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +towgs84=-115,118,426,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # American Samoa 1962 / American Samoa Lambert
+  2195 => "+proj=utm +zone=2 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / UTM zone 2S
+  2196 => "+proj=tmerc +lat_0=0 +lon_0=9.5 +k=0.999950 +x_0=200000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # ETRS89 / Kp2000 Jutland
+  2197 => "+proj=tmerc +lat_0=0 +lon_0=12 +k=0.999950 +x_0=500000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # ETRS89 / Kp2000 Zealand
+  2198 => "+proj=tmerc +lat_0=0 +lon_0=15 +k=1.000000 +x_0=900000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # ETRS89 / Kp2000 Bornholm
+  2199 => "+proj=tmerc +lat_0=0 +lon_0=21 +k=1.000000 +x_0=4500000 +y_0=0 +ellps=krass +units=m +no_defs", # Albanian 1987 / Gauss Kruger zone 4
+  2200 => "+proj=stere +lat_0=46.5 +lon_0=-66.5 +k=0.999912 +x_0=300000 +y_0=800000 +a=6378135 +b=6356750.304921594 +units=m +no_defs", # ATS77 / New Brunswick Stereographic (ATS77)
+  2201 => "+proj=utm +zone=18 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # REGVEN / UTM zone 18N
+  2202 => "+proj=utm +zone=19 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # REGVEN / UTM zone 19N
+  2203 => "+proj=utm +zone=20 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # REGVEN / UTM zone 20N
+  2204 => "+proj=lcc +lat_1=35.25 +lat_2=36.41666666666666 +lat_0=34.66666666666666 +lon_0=-86 +x_0=609601.2192024384 +y_0=30480.06096012192 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Tennessee
+  2205 => "+proj=lcc +lat_1=37.96666666666667 +lat_2=38.96666666666667 +lat_0=37.5 +lon_0=-84.25 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Kentucky North
+  2206 => "+proj=tmerc +lat_0=0 +lon_0=27 +k=1.000000 +x_0=9500000 +y_0=0 +ellps=intl +units=m +no_defs", # ED50 / 3-degree Gauss-Kruger zone 9
+  2207 => "+proj=tmerc +lat_0=0 +lon_0=30 +k=1.000000 +x_0=10500000 +y_0=0 +ellps=intl +units=m +no_defs", # ED50 / 3-degree Gauss-Kruger zone 10
+  2208 => "+proj=tmerc +lat_0=0 +lon_0=33 +k=1.000000 +x_0=11500000 +y_0=0 +ellps=intl +units=m +no_defs", # ED50 / 3-degree Gauss-Kruger zone 11
+  2209 => "+proj=tmerc +lat_0=0 +lon_0=36 +k=1.000000 +x_0=12500000 +y_0=0 +ellps=intl +units=m +no_defs", # ED50 / 3-degree Gauss-Kruger zone 12
+  2210 => "+proj=tmerc +lat_0=0 +lon_0=39 +k=1.000000 +x_0=13500000 +y_0=0 +ellps=intl +units=m +no_defs", # ED50 / 3-degree Gauss-Kruger zone 13
+  2211 => "+proj=tmerc +lat_0=0 +lon_0=42 +k=1.000000 +x_0=14500000 +y_0=0 +ellps=intl +units=m +no_defs", # ED50 / 3-degree Gauss-Kruger zone 14
+  2212 => "+proj=tmerc +lat_0=0 +lon_0=45 +k=1.000000 +x_0=15500000 +y_0=0 +ellps=intl +units=m +no_defs", # ED50 / 3-degree Gauss-Kruger zone 15
+  2213 => "+proj=tmerc +lat_0=0 +lon_0=30 +k=0.999600 +x_0=500000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # ETRS89 / TM 30 NE
+  2214 => "+proj=tmerc +lat_0=0 +lon_0=10.5 +k=0.999000 +x_0=1000000 +y_0=1000000 +ellps=intl +units=m +no_defs", # Douala 1948 / AOF west
+  2215 => "+proj=utm +zone=32 +a=6378249.2 +b=6356515 +towgs84=-70.9,-151.8,-41.4,0,0,0,0 +units=m +no_defs", # Manoca 1962 / UTM zone 32N
+  2216 => "+proj=utm +zone=22 +ellps=intl +units=m +no_defs", # Qornoq 1927 / UTM zone 22N
+  2217 => "+proj=utm +zone=23 +ellps=intl +units=m +no_defs", # Qornoq 1927 / UTM zone 23N
+  2219 => "+proj=utm +zone=19 +a=6378135 +b=6356750.304921594 +units=m +no_defs", # ATS77 / UTM zone 19N
+  2220 => "+proj=utm +zone=20 +a=6378135 +b=6356750.304921594 +units=m +no_defs", # ATS77 / UTM zone 20N
+  2222 => "+proj=tmerc +lat_0=31 +lon_0=-110.1666666666667 +k=0.999900 +x_0=213360 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048 +no_defs", # NAD83 / Arizona East (ft)
+  2223 => "+proj=tmerc +lat_0=31 +lon_0=-111.9166666666667 +k=0.999900 +x_0=213360 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048 +no_defs", # NAD83 / Arizona Central (ft)
+  2224 => "+proj=tmerc +lat_0=31 +lon_0=-113.75 +k=0.999933 +x_0=213360 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048 +no_defs", # NAD83 / Arizona West (ft)
+  2225 => "+proj=lcc +lat_1=41.66666666666666 +lat_2=40 +lat_0=39.33333333333334 +lon_0=-122 +x_0=2000000.0001016 +y_0=500000.0001016001 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / California zone 1 (ftUS)
+  2226 => "+proj=lcc +lat_1=39.83333333333334 +lat_2=38.33333333333334 +lat_0=37.66666666666666 +lon_0=-122 +x_0=2000000.0001016 +y_0=500000.0001016001 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / California zone 2 (ftUS)
+  2227 => "+proj=lcc +lat_1=38.43333333333333 +lat_2=37.06666666666667 +lat_0=36.5 +lon_0=-120.5 +x_0=2000000.0001016 +y_0=500000.0001016001 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / California zone 3 (ftUS)
+  2228 => "+proj=lcc +lat_1=37.25 +lat_2=36 +lat_0=35.33333333333334 +lon_0=-119 +x_0=2000000.0001016 +y_0=500000.0001016001 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / California zone 4 (ftUS)
+  2229 => "+proj=lcc +lat_1=35.46666666666667 +lat_2=34.03333333333333 +lat_0=33.5 +lon_0=-118 +x_0=2000000.0001016 +y_0=500000.0001016001 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / California zone 5 (ftUS)
+  2230 => "+proj=lcc +lat_1=33.88333333333333 +lat_2=32.78333333333333 +lat_0=32.16666666666666 +lon_0=-116.25 +x_0=2000000.0001016 +y_0=500000.0001016001 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / California zone 6 (ftUS)
+  2231 => "+proj=lcc +lat_1=40.78333333333333 +lat_2=39.71666666666667 +lat_0=39.33333333333334 +lon_0=-105.5 +x_0=914401.8288036576 +y_0=304800.6096012192 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / Colorado North (ftUS)
+  2232 => "+proj=lcc +lat_1=39.75 +lat_2=38.45 +lat_0=37.83333333333334 +lon_0=-105.5 +x_0=914401.8288036576 +y_0=304800.6096012192 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / Colorado Central (ftUS)
+  2233 => "+proj=lcc +lat_1=38.43333333333333 +lat_2=37.23333333333333 +lat_0=36.66666666666666 +lon_0=-105.5 +x_0=914401.8288036576 +y_0=304800.6096012192 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / Colorado South (ftUS)
+  2234 => "+proj=lcc +lat_1=41.86666666666667 +lat_2=41.2 +lat_0=40.83333333333334 +lon_0=-72.75 +x_0=304800.6096012192 +y_0=152400.3048006096 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / Connecticut (ftUS)
+  2235 => "+proj=tmerc +lat_0=38 +lon_0=-75.41666666666667 +k=0.999995 +x_0=200000.0001016002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / Delaware (ftUS)
+  2236 => "+proj=tmerc +lat_0=24.33333333333333 +lon_0=-81 +k=0.999941 +x_0=200000.0001016002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / Florida East (ftUS)
+  2237 => "+proj=tmerc +lat_0=24.33333333333333 +lon_0=-82 +k=0.999941 +x_0=200000.0001016002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / Florida West (ftUS)
+  2238 => "+proj=lcc +lat_1=30.75 +lat_2=29.58333333333333 +lat_0=29 +lon_0=-84.5 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / Florida North (ftUS)
+  2239 => "+proj=tmerc +lat_0=30 +lon_0=-82.16666666666667 +k=0.999900 +x_0=200000.0001016002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / Georgia East (ftUS)
+  2240 => "+proj=tmerc +lat_0=30 +lon_0=-84.16666666666667 +k=0.999900 +x_0=699999.9998983998 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / Georgia West (ftUS)
+  2241 => "+proj=tmerc +lat_0=41.66666666666666 +lon_0=-112.1666666666667 +k=0.999947 +x_0=200000.0001016002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / Idaho East (ftUS)
+  2242 => "+proj=tmerc +lat_0=41.66666666666666 +lon_0=-114 +k=0.999947 +x_0=500000.0001016001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / Idaho Central (ftUS)
+  2243 => "+proj=tmerc +lat_0=41.66666666666666 +lon_0=-115.75 +k=0.999933 +x_0=800000.0001016001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / Idaho West (ftUS)
+  2244 => "+proj=tmerc +lat_0=37.5 +lon_0=-85.66666666666667 +k=0.999967 +x_0=99999.99989839978 +y_0=249364.9987299975 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / Indiana East (ftUS)
+  2245 => "+proj=tmerc +lat_0=37.5 +lon_0=-87.08333333333333 +k=0.999967 +x_0=900000 +y_0=249364.9987299975 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / Indiana West (ftUS)
+  2246 => "+proj=lcc +lat_1=37.96666666666667 +lat_2=38.96666666666667 +lat_0=37.5 +lon_0=-84.25 +x_0=500000.0001016001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / Kentucky North (ftUS)
+  2247 => "+proj=lcc +lat_1=37.93333333333333 +lat_2=36.73333333333333 +lat_0=36.33333333333334 +lon_0=-85.75 +x_0=500000.0001016001 +y_0=500000.0001016001 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / Kentucky South (ftUS)
+  2248 => "+proj=lcc +lat_1=39.45 +lat_2=38.3 +lat_0=37.66666666666666 +lon_0=-77 +x_0=399999.9998983998 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / Maryland (ftUS)
+  2249 => "+proj=lcc +lat_1=42.68333333333333 +lat_2=41.71666666666667 +lat_0=41 +lon_0=-71.5 +x_0=200000.0001016002 +y_0=750000 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / Massachusetts Mainland (ftUS)
+  2250 => "+proj=lcc +lat_1=41.48333333333333 +lat_2=41.28333333333333 +lat_0=41 +lon_0=-70.5 +x_0=500000.0001016001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / Massachusetts Island (ftUS)
+  2251 => "+proj=lcc +lat_1=47.08333333333334 +lat_2=45.48333333333333 +lat_0=44.78333333333333 +lon_0=-87 +x_0=7999999.999968001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048 +no_defs", # NAD83 / Michigan North (ft)
+  2252 => "+proj=lcc +lat_1=45.7 +lat_2=44.18333333333333 +lat_0=43.31666666666667 +lon_0=-84.36666666666666 +x_0=5999999.999976001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048 +no_defs", # NAD83 / Michigan Central (ft)
+  2253 => "+proj=lcc +lat_1=43.66666666666666 +lat_2=42.1 +lat_0=41.5 +lon_0=-84.36666666666666 +x_0=3999999.999984 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048 +no_defs", # NAD83 / Michigan South (ft)
+  2254 => "+proj=tmerc +lat_0=29.5 +lon_0=-88.83333333333333 +k=0.999950 +x_0=300000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / Mississippi East (ftUS)
+  2255 => "+proj=tmerc +lat_0=29.5 +lon_0=-90.33333333333333 +k=0.999950 +x_0=699999.9998983998 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / Mississippi West (ftUS)
+  2256 => "+proj=lcc +lat_1=49 +lat_2=45 +lat_0=44.25 +lon_0=-109.5 +x_0=599999.9999976 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048 +no_defs", # NAD83 / Montana (ft)
+  2257 => "+proj=tmerc +lat_0=31 +lon_0=-104.3333333333333 +k=0.999909 +x_0=165000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / New Mexico East (ftUS)
+  2258 => "+proj=tmerc +lat_0=31 +lon_0=-106.25 +k=0.999900 +x_0=500000.0001016001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / New Mexico Central (ftUS)
+  2259 => "+proj=tmerc +lat_0=31 +lon_0=-107.8333333333333 +k=0.999917 +x_0=830000.0001016001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / New Mexico West (ftUS)
+  2260 => "+proj=tmerc +lat_0=38.83333333333334 +lon_0=-74.5 +k=0.999900 +x_0=150000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / New York East (ftUS)
+  2261 => "+proj=tmerc +lat_0=40 +lon_0=-76.58333333333333 +k=0.999938 +x_0=249999.9998983998 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / New York Central (ftUS)
+  2262 => "+proj=tmerc +lat_0=40 +lon_0=-78.58333333333333 +k=0.999938 +x_0=350000.0001016001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / New York West (ftUS)
+  2263 => "+proj=lcc +lat_1=41.03333333333333 +lat_2=40.66666666666666 +lat_0=40.16666666666666 +lon_0=-74 +x_0=300000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / New York Long Island (ftUS)
+  2264 => "+proj=lcc +lat_1=36.16666666666666 +lat_2=34.33333333333334 +lat_0=33.75 +lon_0=-79 +x_0=609601.2192024384 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / North Carolina (ftUS)
+  2265 => "+proj=lcc +lat_1=48.73333333333333 +lat_2=47.43333333333333 +lat_0=47 +lon_0=-100.5 +x_0=599999.9999976 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048 +no_defs", # NAD83 / North Dakota North (ft)
+  2266 => "+proj=lcc +lat_1=47.48333333333333 +lat_2=46.18333333333333 +lat_0=45.66666666666666 +lon_0=-100.5 +x_0=599999.9999976 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048 +no_defs", # NAD83 / North Dakota South (ft)
+  2267 => "+proj=lcc +lat_1=36.76666666666667 +lat_2=35.56666666666667 +lat_0=35 +lon_0=-98 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / Oklahoma North (ftUS)
+  2268 => "+proj=lcc +lat_1=35.23333333333333 +lat_2=33.93333333333333 +lat_0=33.33333333333334 +lon_0=-98 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / Oklahoma South (ftUS)
+  2269 => "+proj=lcc +lat_1=46 +lat_2=44.33333333333334 +lat_0=43.66666666666666 +lon_0=-120.5 +x_0=2500000.0001424 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048 +no_defs", # NAD83 / Oregon North (ft)
+  2270 => "+proj=lcc +lat_1=44 +lat_2=42.33333333333334 +lat_0=41.66666666666666 +lon_0=-120.5 +x_0=1500000.0001464 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048 +no_defs", # NAD83 / Oregon South (ft)
+  2271 => "+proj=lcc +lat_1=41.95 +lat_2=40.88333333333333 +lat_0=40.16666666666666 +lon_0=-77.75 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / Pennsylvania North (ftUS)
+  2272 => "+proj=lcc +lat_1=40.96666666666667 +lat_2=39.93333333333333 +lat_0=39.33333333333334 +lon_0=-77.75 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / Pennsylvania South (ftUS)
+  2273 => "+proj=lcc +lat_1=34.83333333333334 +lat_2=32.5 +lat_0=31.83333333333333 +lon_0=-81 +x_0=609600 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048 +no_defs", # NAD83 / South Carolina (ft)
+  2274 => "+proj=lcc +lat_1=36.41666666666666 +lat_2=35.25 +lat_0=34.33333333333334 +lon_0=-86 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / Tennessee (ftUS)
+  2275 => "+proj=lcc +lat_1=36.18333333333333 +lat_2=34.65 +lat_0=34 +lon_0=-101.5 +x_0=200000.0001016002 +y_0=999999.9998983998 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / Texas North (ftUS)
+  2276 => "+proj=lcc +lat_1=33.96666666666667 +lat_2=32.13333333333333 +lat_0=31.66666666666667 +lon_0=-98.5 +x_0=600000 +y_0=2000000.0001016 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / Texas North Central (ftUS)
+  2277 => "+proj=lcc +lat_1=31.88333333333333 +lat_2=30.11666666666667 +lat_0=29.66666666666667 +lon_0=-100.3333333333333 +x_0=699999.9998983998 +y_0=3000000 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / Texas Central (ftUS)
+  2278 => "+proj=lcc +lat_1=30.28333333333333 +lat_2=28.38333333333333 +lat_0=27.83333333333333 +lon_0=-99 +x_0=600000 +y_0=3999999.9998984 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / Texas South Central (ftUS)
+  2279 => "+proj=lcc +lat_1=27.83333333333333 +lat_2=26.16666666666667 +lat_0=25.66666666666667 +lon_0=-98.5 +x_0=300000.0000000001 +y_0=5000000.0001016 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / Texas South (ftUS)
+  2280 => "+proj=lcc +lat_1=41.78333333333333 +lat_2=40.71666666666667 +lat_0=40.33333333333334 +lon_0=-111.5 +x_0=500000.0001504 +y_0=999999.9999960001 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048 +no_defs", # NAD83 / Utah North (ft)
+  2281 => "+proj=lcc +lat_1=40.65 +lat_2=39.01666666666667 +lat_0=38.33333333333334 +lon_0=-111.5 +x_0=500000.0001504 +y_0=1999999.999992 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048 +no_defs", # NAD83 / Utah Central (ft)
+  2282 => "+proj=lcc +lat_1=38.35 +lat_2=37.21666666666667 +lat_0=36.66666666666666 +lon_0=-111.5 +x_0=500000.0001504 +y_0=2999999.999988 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048 +no_defs", # NAD83 / Utah South (ft)
+  2283 => "+proj=lcc +lat_1=39.2 +lat_2=38.03333333333333 +lat_0=37.66666666666666 +lon_0=-78.5 +x_0=3500000.0001016 +y_0=2000000.0001016 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / Virginia North (ftUS)
+  2284 => "+proj=lcc +lat_1=37.96666666666667 +lat_2=36.76666666666667 +lat_0=36.33333333333334 +lon_0=-78.5 +x_0=3500000.0001016 +y_0=999999.9998983998 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / Virginia South (ftUS)
+  2285 => "+proj=lcc +lat_1=48.73333333333333 +lat_2=47.5 +lat_0=47 +lon_0=-120.8333333333333 +x_0=500000.0001016001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / Washington North (ftUS)
+  2286 => "+proj=lcc +lat_1=47.33333333333334 +lat_2=45.83333333333334 +lat_0=45.33333333333334 +lon_0=-120.5 +x_0=500000.0001016001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / Washington South (ftUS)
+  2287 => "+proj=lcc +lat_1=46.76666666666667 +lat_2=45.56666666666667 +lat_0=45.16666666666666 +lon_0=-90 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / Wisconsin North (ftUS)
+  2288 => "+proj=lcc +lat_1=45.5 +lat_2=44.25 +lat_0=43.83333333333334 +lon_0=-90 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / Wisconsin Central (ftUS)
+  2289 => "+proj=lcc +lat_1=44.06666666666667 +lat_2=42.73333333333333 +lat_0=42 +lon_0=-90 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD83 / Wisconsin South (ftUS)
+  2290 => "+proj=stere +lat_0=47.25 +lon_0=-63 +k=0.999912 +x_0=700000 +y_0=400000 +a=6378135 +b=6356750.304921594 +units=m +no_defs", # ATS77 / Prince Edward Isl. Stereographic (ATS77)
+  2291 => "+proj=stere +lat_0=47.25 +lon_0=-63 +k=0.999912 +x_0=400000 +y_0=800000 +a=6378135 +b=6356750.304921594 +units=m +no_defs", # NAD83(CSRS98) / Prince Edward Isl. Stereographic (NAD83)
+  2292 => "+proj=stere +lat_0=47.25 +lon_0=-63 +k=0.999912 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(CSRS98) / Prince Edward Isl. Stereographic (NAD83)
+  2294 => "+proj=tmerc +lat_0=0 +lon_0=-61.5 +k=0.999900 +x_0=4500000 +y_0=0 +a=6378135 +b=6356750.304921594 +units=m +no_defs", # ATS77 / MTM Nova Scotia zone 4
+  2295 => "+proj=tmerc +lat_0=0 +lon_0=-64.5 +k=0.999900 +x_0=5500000 +y_0=0 +a=6378135 +b=6356750.304921594 +units=m +no_defs", # ATS77 / MTM Nova Scotia zone 5
+  2308 => "+proj=tmerc +lat_0=0 +lon_0=109 +k=0.999600 +x_0=500000 +y_0=10000000 +ellps=bessel +units=m +no_defs", # Batavia / TM 109 SE
+  2309 => "+proj=tmerc +lat_0=0 +lon_0=116 +k=0.999600 +x_0=500000 +y_0=10000000 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / TM 116 SE
+  2310 => "+proj=tmerc +lat_0=0 +lon_0=132 +k=0.999600 +x_0=500000 +y_0=10000000 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / TM 132 SE
+  2311 => "+proj=tmerc +lat_0=0 +lon_0=6 +k=0.999600 +x_0=500000 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / TM 6 NE
+  2312 => "+proj=utm +zone=33 +ellps=clrk80 +units=m +no_defs", # Garoua / UTM zone 33N
+  2313 => "+proj=utm +zone=33 +ellps=clrk80 +units=m +no_defs", # Kousseri / UTM zone 33N
+  2314 => "+proj=cass +lat_0=10.44166666666667 +lon_0=-61.33333333333334 +x_0=86501.46380699999 +y_0=65379.01334249999 +a=6378293.63683822 +b=6356617.979337744 +towgs84=-61.702,284.488,472.052,0,0,0,0 +to_meter=0.304797265 +no_defs", # Trinidad 1903 / Trinidad Grid (ftCla)
+  2315 => "+proj=utm +zone=19 +south +ellps=intl +units=m +no_defs", # Campo Inchauspe / UTM zone 19S
+  2316 => "+proj=utm +zone=20 +south +ellps=intl +units=m +no_defs", # Campo Inchauspe / UTM zone 20S
+  2317 => "+proj=lcc +lat_1=9 +lat_2=3 +lat_0=6 +lon_0=-66 +x_0=1000000 +y_0=1000000 +ellps=intl +units=m +no_defs", # PSAD56 / ICN Regional
+  2318 => "+proj=lcc +lat_1=17 +lat_2=33 +lat_0=25.08951 +lon_0=48 +x_0=0 +y_0=0 +ellps=intl +units=m +no_defs", # Ain el Abd / Aramco Lambert
+  2319 => "+proj=tmerc +lat_0=0 +lon_0=27 +k=1.000000 +x_0=500000 +y_0=0 +ellps=intl +units=m +no_defs", # ED50 / TM27
+  2320 => "+proj=tmerc +lat_0=0 +lon_0=30 +k=1.000000 +x_0=500000 +y_0=0 +ellps=intl +units=m +no_defs", # ED50 / TM30
+  2321 => "+proj=tmerc +lat_0=0 +lon_0=33 +k=1.000000 +x_0=500000 +y_0=0 +ellps=intl +units=m +no_defs", # ED50 / TM33
+  2322 => "+proj=tmerc +lat_0=0 +lon_0=36 +k=1.000000 +x_0=500000 +y_0=0 +ellps=intl +units=m +no_defs", # ED50 / TM36
+  2323 => "+proj=tmerc +lat_0=0 +lon_0=39 +k=1.000000 +x_0=500000 +y_0=0 +ellps=intl +units=m +no_defs", # ED50 / TM39
+  2324 => "+proj=tmerc +lat_0=0 +lon_0=42 +k=1.000000 +x_0=500000 +y_0=0 +ellps=intl +units=m +no_defs", # ED50 / TM42
+  2325 => "+proj=tmerc +lat_0=0 +lon_0=45 +k=1.000000 +x_0=500000 +y_0=0 +ellps=intl +units=m +no_defs", # ED50 / TM45
+  2326 => "+proj=tmerc +lat_0=22.31213333333334 +lon_0=114.1785555555556 +k=1.000000 +x_0=836694.05 +y_0=819069.8 +ellps=intl +towgs84=-162.619,-276.959,-161.764,0.067753,-2.24365,-1.15883,-1.09425 +units=m +no_defs", # Hong Kong 1980 Grid System
+  2327 => "+proj=tmerc +lat_0=0 +lon_0=75 +k=1.000000 +x_0=13500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / Gauss-Kruger zone 13
+  2328 => "+proj=tmerc +lat_0=0 +lon_0=81 +k=1.000000 +x_0=14500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / Gauss-Kruger zone 14
+  2329 => "+proj=tmerc +lat_0=0 +lon_0=87 +k=1.000000 +x_0=15500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / Gauss-Kruger zone 15
+  2330 => "+proj=tmerc +lat_0=0 +lon_0=93 +k=1.000000 +x_0=16500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / Gauss-Kruger zone 16
+  2331 => "+proj=tmerc +lat_0=0 +lon_0=99 +k=1.000000 +x_0=17500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / Gauss-Kruger zone 17
+  2332 => "+proj=tmerc +lat_0=0 +lon_0=105 +k=1.000000 +x_0=18500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / Gauss-Kruger zone 18
+  2333 => "+proj=tmerc +lat_0=0 +lon_0=111 +k=1.000000 +x_0=19500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / Gauss-Kruger zone 19
+  2334 => "+proj=tmerc +lat_0=0 +lon_0=117 +k=1.000000 +x_0=20500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / Gauss-Kruger zone 20
+  2335 => "+proj=tmerc +lat_0=0 +lon_0=123 +k=1.000000 +x_0=21500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / Gauss-Kruger zone 21
+  2336 => "+proj=tmerc +lat_0=0 +lon_0=129 +k=1.000000 +x_0=22500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / Gauss-Kruger zone 22
+  2337 => "+proj=tmerc +lat_0=0 +lon_0=135 +k=1.000000 +x_0=23500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / Gauss-Kruger zone 23
+  2338 => "+proj=tmerc +lat_0=0 +lon_0=75 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / Gauss-Kruger CM 75E
+  2339 => "+proj=tmerc +lat_0=0 +lon_0=81 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / Gauss-Kruger CM 81E
+  2340 => "+proj=tmerc +lat_0=0 +lon_0=87 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / Gauss-Kruger CM 87E
+  2341 => "+proj=tmerc +lat_0=0 +lon_0=93 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / Gauss-Kruger CM 93E
+  2342 => "+proj=tmerc +lat_0=0 +lon_0=99 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / Gauss-Kruger CM 99E
+  2343 => "+proj=tmerc +lat_0=0 +lon_0=105 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / Gauss-Kruger CM 105E
+  2344 => "+proj=tmerc +lat_0=0 +lon_0=111 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / Gauss-Kruger CM 111E
+  2345 => "+proj=tmerc +lat_0=0 +lon_0=117 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / Gauss-Kruger CM 117E
+  2346 => "+proj=tmerc +lat_0=0 +lon_0=123 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / Gauss-Kruger CM 123E
+  2347 => "+proj=tmerc +lat_0=0 +lon_0=129 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / Gauss-Kruger CM 129E
+  2348 => "+proj=tmerc +lat_0=0 +lon_0=135 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / Gauss-Kruger CM 135E
+  2349 => "+proj=tmerc +lat_0=0 +lon_0=75 +k=1.000000 +x_0=25500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / 3-degree Gauss-Kruger zone 25
+  2350 => "+proj=tmerc +lat_0=0 +lon_0=78 +k=1.000000 +x_0=26500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / 3-degree Gauss-Kruger zone 26
+  2351 => "+proj=tmerc +lat_0=0 +lon_0=81 +k=1.000000 +x_0=27500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / 3-degree Gauss-Kruger zone 27
+  2352 => "+proj=tmerc +lat_0=0 +lon_0=84 +k=1.000000 +x_0=28500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / 3-degree Gauss-Kruger zone 28
+  2353 => "+proj=tmerc +lat_0=0 +lon_0=87 +k=1.000000 +x_0=29500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / 3-degree Gauss-Kruger zone 29
+  2354 => "+proj=tmerc +lat_0=0 +lon_0=90 +k=1.000000 +x_0=30500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / 3-degree Gauss-Kruger zone 30
+  2355 => "+proj=tmerc +lat_0=0 +lon_0=93 +k=1.000000 +x_0=31500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / 3-degree Gauss-Kruger zone 31
+  2356 => "+proj=tmerc +lat_0=0 +lon_0=96 +k=1.000000 +x_0=32500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / 3-degree Gauss-Kruger zone 32
+  2357 => "+proj=tmerc +lat_0=0 +lon_0=99 +k=1.000000 +x_0=33500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / 3-degree Gauss-Kruger zone 33
+  2358 => "+proj=tmerc +lat_0=0 +lon_0=102 +k=1.000000 +x_0=34500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / 3-degree Gauss-Kruger zone 34
+  2359 => "+proj=tmerc +lat_0=0 +lon_0=105 +k=1.000000 +x_0=35500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / 3-degree Gauss-Kruger zone 35
+  2360 => "+proj=tmerc +lat_0=0 +lon_0=108 +k=1.000000 +x_0=36500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / 3-degree Gauss-Kruger zone 36
+  2361 => "+proj=tmerc +lat_0=0 +lon_0=111 +k=1.000000 +x_0=37500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / 3-degree Gauss-Kruger zone 37
+  2362 => "+proj=tmerc +lat_0=0 +lon_0=114 +k=1.000000 +x_0=38500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / 3-degree Gauss-Kruger zone 38
+  2363 => "+proj=tmerc +lat_0=0 +lon_0=117 +k=1.000000 +x_0=39500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / 3-degree Gauss-Kruger zone 39
+  2364 => "+proj=tmerc +lat_0=0 +lon_0=120 +k=1.000000 +x_0=40500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / 3-degree Gauss-Kruger zone 40
+  2365 => "+proj=tmerc +lat_0=0 +lon_0=123 +k=1.000000 +x_0=41500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / 3-degree Gauss-Kruger zone 41
+  2366 => "+proj=tmerc +lat_0=0 +lon_0=126 +k=1.000000 +x_0=42500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / 3-degree Gauss-Kruger zone 42
+  2367 => "+proj=tmerc +lat_0=0 +lon_0=129 +k=1.000000 +x_0=43500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / 3-degree Gauss-Kruger zone 43
+  2368 => "+proj=tmerc +lat_0=0 +lon_0=132 +k=1.000000 +x_0=44500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / 3-degree Gauss-Kruger zone 44
+  2369 => "+proj=tmerc +lat_0=0 +lon_0=135 +k=1.000000 +x_0=45500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / 3-degree Gauss-Kruger zone 45
+  2370 => "+proj=tmerc +lat_0=0 +lon_0=75 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / 3-degree Gauss-Kruger CM 75E
+  2371 => "+proj=tmerc +lat_0=0 +lon_0=78 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / 3-degree Gauss-Kruger CM 78E
+  2372 => "+proj=tmerc +lat_0=0 +lon_0=81 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / 3-degree Gauss-Kruger CM 81E
+  2373 => "+proj=tmerc +lat_0=0 +lon_0=84 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / 3-degree Gauss-Kruger CM 84E
+  2374 => "+proj=tmerc +lat_0=0 +lon_0=87 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / 3-degree Gauss-Kruger CM 87E
+  2375 => "+proj=tmerc +lat_0=0 +lon_0=90 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / 3-degree Gauss-Kruger CM 90E
+  2376 => "+proj=tmerc +lat_0=0 +lon_0=93 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / 3-degree Gauss-Kruger CM 93E
+  2377 => "+proj=tmerc +lat_0=0 +lon_0=96 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / 3-degree Gauss-Kruger CM 96E
+  2378 => "+proj=tmerc +lat_0=0 +lon_0=99 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / 3-degree Gauss-Kruger CM 99E
+  2379 => "+proj=tmerc +lat_0=0 +lon_0=102 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / 3-degree Gauss-Kruger CM 102E
+  2380 => "+proj=tmerc +lat_0=0 +lon_0=105 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / 3-degree Gauss-Kruger CM 105E
+  2381 => "+proj=tmerc +lat_0=0 +lon_0=108 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / 3-degree Gauss-Kruger CM 108E
+  2382 => "+proj=tmerc +lat_0=0 +lon_0=111 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / 3-degree Gauss-Kruger CM 111E
+  2383 => "+proj=tmerc +lat_0=0 +lon_0=114 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / 3-degree Gauss-Kruger CM 114E
+  2384 => "+proj=tmerc +lat_0=0 +lon_0=117 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / 3-degree Gauss-Kruger CM 117E
+  2385 => "+proj=tmerc +lat_0=0 +lon_0=120 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / 3-degree Gauss-Kruger CM 120E
+  2386 => "+proj=tmerc +lat_0=0 +lon_0=123 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / 3-degree Gauss-Kruger CM 123E
+  2387 => "+proj=tmerc +lat_0=0 +lon_0=126 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / 3-degree Gauss-Kruger CM 126E
+  2388 => "+proj=tmerc +lat_0=0 +lon_0=129 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / 3-degree Gauss-Kruger CM 129E
+  2389 => "+proj=tmerc +lat_0=0 +lon_0=132 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / 3-degree Gauss-Kruger CM 132E
+  2390 => "+proj=tmerc +lat_0=0 +lon_0=135 +k=1.000000 +x_0=500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs", # Xian 1980 / 3-degree Gauss-Kruger CM 135E
+  2391 => "+proj=tmerc +lat_0=0 +lon_0=21 +k=1.000000 +x_0=1500000 +y_0=0 +ellps=intl +towgs84=-90.7,-106.1,-119.2,4.09,0.218,-1.05,1.37 +units=m +no_defs", # KKJ / Finland zone 1
+  2392 => "+proj=tmerc +lat_0=0 +lon_0=24 +k=1.000000 +x_0=2500000 +y_0=0 +ellps=intl +towgs84=-90.7,-106.1,-119.2,4.09,0.218,-1.05,1.37 +units=m +no_defs", # KKJ / Finland zone 2
+  2393 => "+proj=tmerc +lat_0=0 +lon_0=27 +k=1.000000 +x_0=3500000 +y_0=0 +ellps=intl +towgs84=-90.7,-106.1,-119.2,4.09,0.218,-1.05,1.37 +units=m +no_defs", # KKJ / Finland Uniform Coordinate System
+  2394 => "+proj=tmerc +lat_0=0 +lon_0=30 +k=1.000000 +x_0=4500000 +y_0=0 +ellps=intl +towgs84=-90.7,-106.1,-119.2,4.09,0.218,-1.05,1.37 +units=m +no_defs", # KKJ / Finland zone 4
+  2395 => "+proj=tmerc +lat_0=0 +lon_0=45 +k=1.000000 +x_0=8500000 +y_0=0 +ellps=krass +towgs84=-76,-138,67,0,0,0,0 +units=m +no_defs", # South Yemen / Gauss-Kruger zone 8
+  2396 => "+proj=tmerc +lat_0=0 +lon_0=51 +k=1.000000 +x_0=9500000 +y_0=0 +ellps=krass +towgs84=-76,-138,67,0,0,0,0 +units=m +no_defs", # South Yemen / Gauss-Kruger zone 9
+  2397 => "+proj=tmerc +lat_0=0 +lon_0=9 +k=1.000000 +x_0=3500000 +y_0=0 +ellps=krass +towgs84=24,-123,-94,0.02,-0.25,-0.13,1.1 +units=m +no_defs", # Pulkovo 1942(83) / Gauss-Kruger zone 3
+  2398 => "+proj=tmerc +lat_0=0 +lon_0=12 +k=1.000000 +x_0=4500000 +y_0=0 +ellps=krass +towgs84=24,-123,-94,0.02,-0.25,-0.13,1.1 +units=m +no_defs", # Pulkovo 1942(83) / Gauss-Kruger zone 4
+  2399 => "+proj=tmerc +lat_0=0 +lon_0=15 +k=1.000000 +x_0=5500000 +y_0=0 +ellps=krass +towgs84=24,-123,-94,0.02,-0.25,-0.13,1.1 +units=m +no_defs", # Pulkovo 1942(83) / Gauss-Kruger zone 5
+  2400 => "+proj=tmerc +lat_0=0 +lon_0=15.80827777777778 +k=1.000000 +x_0=1500000 +y_0=0 +ellps=bessel +units=m +no_defs", # RT90 2.5 gon W
+  2401 => "+proj=tmerc +lat_0=0 +lon_0=75 +k=1.000000 +x_0=25500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / 3-degree Gauss-Kruger zone 25
+  2402 => "+proj=tmerc +lat_0=0 +lon_0=78 +k=1.000000 +x_0=26500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / 3-degree Gauss-Kruger zone 26
+  2403 => "+proj=tmerc +lat_0=0 +lon_0=81 +k=1.000000 +x_0=27500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / 3-degree Gauss-Kruger zone 27
+  2404 => "+proj=tmerc +lat_0=0 +lon_0=84 +k=1.000000 +x_0=28500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / 3-degree Gauss-Kruger zone 28
+  2405 => "+proj=tmerc +lat_0=0 +lon_0=87 +k=1.000000 +x_0=29500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / 3-degree Gauss-Kruger zone 29
+  2406 => "+proj=tmerc +lat_0=0 +lon_0=90 +k=1.000000 +x_0=30500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / 3-degree Gauss-Kruger zone 30
+  2407 => "+proj=tmerc +lat_0=0 +lon_0=93 +k=1.000000 +x_0=31500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / 3-degree Gauss-Kruger zone 31
+  2408 => "+proj=tmerc +lat_0=0 +lon_0=96 +k=1.000000 +x_0=32500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / 3-degree Gauss-Kruger zone 32
+  2409 => "+proj=tmerc +lat_0=0 +lon_0=99 +k=1.000000 +x_0=33500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / 3-degree Gauss-Kruger zone 33
+  2410 => "+proj=tmerc +lat_0=0 +lon_0=102 +k=1.000000 +x_0=34500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / 3-degree Gauss-Kruger zone 34
+  2411 => "+proj=tmerc +lat_0=0 +lon_0=105 +k=1.000000 +x_0=35500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / 3-degree Gauss-Kruger zone 35
+  2412 => "+proj=tmerc +lat_0=0 +lon_0=108 +k=1.000000 +x_0=36500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / 3-degree Gauss-Kruger zone 36
+  2413 => "+proj=tmerc +lat_0=0 +lon_0=111 +k=1.000000 +x_0=37500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / 3-degree Gauss-Kruger zone 37
+  2414 => "+proj=tmerc +lat_0=0 +lon_0=114 +k=1.000000 +x_0=38500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / 3-degree Gauss-Kruger zone 38
+  2415 => "+proj=tmerc +lat_0=0 +lon_0=117 +k=1.000000 +x_0=39500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / 3-degree Gauss-Kruger zone 39
+  2416 => "+proj=tmerc +lat_0=0 +lon_0=120 +k=1.000000 +x_0=40500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / 3-degree Gauss-Kruger zone 40
+  2417 => "+proj=tmerc +lat_0=0 +lon_0=123 +k=1.000000 +x_0=41500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / 3-degree Gauss-Kruger zone 41
+  2418 => "+proj=tmerc +lat_0=0 +lon_0=126 +k=1.000000 +x_0=42500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / 3-degree Gauss-Kruger zone 42
+  2419 => "+proj=tmerc +lat_0=0 +lon_0=129 +k=1.000000 +x_0=43500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / 3-degree Gauss-Kruger zone 43
+  2420 => "+proj=tmerc +lat_0=0 +lon_0=132 +k=1.000000 +x_0=44500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / 3-degree Gauss-Kruger zone 44
+  2421 => "+proj=tmerc +lat_0=0 +lon_0=135 +k=1.000000 +x_0=45500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / 3-degree Gauss-Kruger zone 45
+  2422 => "+proj=tmerc +lat_0=0 +lon_0=75 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / 3-degree Gauss-Kruger CM 75E
+  2423 => "+proj=tmerc +lat_0=0 +lon_0=78 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / 3-degree Gauss-Kruger CM 78E
+  2424 => "+proj=tmerc +lat_0=0 +lon_0=81 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / 3-degree Gauss-Kruger CM 81E
+  2425 => "+proj=tmerc +lat_0=0 +lon_0=84 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / 3-degree Gauss-Kruger CM 84E
+  2426 => "+proj=tmerc +lat_0=0 +lon_0=87 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / 3-degree Gauss-Kruger CM 87E
+  2427 => "+proj=tmerc +lat_0=0 +lon_0=90 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / 3-degree Gauss-Kruger CM 90E
+  2428 => "+proj=tmerc +lat_0=0 +lon_0=93 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / 3-degree Gauss-Kruger CM 93E
+  2429 => "+proj=tmerc +lat_0=0 +lon_0=96 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / 3-degree Gauss-Kruger CM 96E
+  2430 => "+proj=tmerc +lat_0=0 +lon_0=99 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / 3-degree Gauss-Kruger CM 99E
+  2431 => "+proj=tmerc +lat_0=0 +lon_0=102 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / 3-degree Gauss-Kruger CM 102E
+  2432 => "+proj=tmerc +lat_0=0 +lon_0=105 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / 3-degree Gauss-Kruger CM 105E
+  2433 => "+proj=tmerc +lat_0=0 +lon_0=108 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / 3-degree Gauss-Kruger CM 108E
+  2434 => "+proj=tmerc +lat_0=0 +lon_0=111 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / 3-degree Gauss-Kruger CM 111E
+  2435 => "+proj=tmerc +lat_0=0 +lon_0=114 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / 3-degree Gauss-Kruger CM 114E
+  2436 => "+proj=tmerc +lat_0=0 +lon_0=117 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / 3-degree Gauss-Kruger CM 117E
+  2437 => "+proj=tmerc +lat_0=0 +lon_0=120 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / 3-degree Gauss-Kruger CM 120E
+  2438 => "+proj=tmerc +lat_0=0 +lon_0=123 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / 3-degree Gauss-Kruger CM 123E
+  2439 => "+proj=tmerc +lat_0=0 +lon_0=126 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / 3-degree Gauss-Kruger CM 126E
+  2440 => "+proj=tmerc +lat_0=0 +lon_0=129 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / 3-degree Gauss-Kruger CM 129E
+  2441 => "+proj=tmerc +lat_0=0 +lon_0=132 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / 3-degree Gauss-Kruger CM 132E
+  2442 => "+proj=tmerc +lat_0=0 +lon_0=135 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / 3-degree Gauss-Kruger CM 135E
+  2443 => "+proj=tmerc +lat_0=33 +lon_0=129.5 +k=0.999900 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # JGD2000 / Japan Plane Rectangular CS I
+  2444 => "+proj=tmerc +lat_0=33 +lon_0=131 +k=0.999900 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # JGD2000 / Japan Plane Rectangular CS II
+  2445 => "+proj=tmerc +lat_0=36 +lon_0=132.1666666666667 +k=0.999900 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # JGD2000 / Japan Plane Rectangular CS III
+  2446 => "+proj=tmerc +lat_0=33 +lon_0=133.5 +k=0.999900 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # JGD2000 / Japan Plane Rectangular CS IV
+  2447 => "+proj=tmerc +lat_0=36 +lon_0=134.3333333333333 +k=0.999900 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # JGD2000 / Japan Plane Rectangular CS V
+  2448 => "+proj=tmerc +lat_0=36 +lon_0=136 +k=0.999900 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # JGD2000 / Japan Plane Rectangular CS VI
+  2449 => "+proj=tmerc +lat_0=36 +lon_0=137.1666666666667 +k=0.999900 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # JGD2000 / Japan Plane Rectangular CS VII
+  2450 => "+proj=tmerc +lat_0=36 +lon_0=138.5 +k=0.999900 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # JGD2000 / Japan Plane Rectangular CS VIII
+  2451 => "+proj=tmerc +lat_0=36 +lon_0=139.8333333333333 +k=0.999900 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # JGD2000 / Japan Plane Rectangular CS IX
+  2452 => "+proj=tmerc +lat_0=40 +lon_0=140.8333333333333 +k=0.999900 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # JGD2000 / Japan Plane Rectangular CS X
+  2453 => "+proj=tmerc +lat_0=44 +lon_0=140.25 +k=0.999900 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # JGD2000 / Japan Plane Rectangular CS XI
+  2454 => "+proj=tmerc +lat_0=44 +lon_0=142.25 +k=0.999900 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # JGD2000 / Japan Plane Rectangular CS XII
+  2455 => "+proj=tmerc +lat_0=44 +lon_0=144.25 +k=0.999900 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # JGD2000 / Japan Plane Rectangular CS XIII
+  2456 => "+proj=tmerc +lat_0=26 +lon_0=142 +k=0.999900 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # JGD2000 / Japan Plane Rectangular CS XIV
+  2457 => "+proj=tmerc +lat_0=26 +lon_0=127.5 +k=0.999900 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # JGD2000 / Japan Plane Rectangular CS XV
+  2458 => "+proj=tmerc +lat_0=26 +lon_0=124 +k=0.999900 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # JGD2000 / Japan Plane Rectangular CS XVI
+  2459 => "+proj=tmerc +lat_0=26 +lon_0=131 +k=0.999900 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # JGD2000 / Japan Plane Rectangular CS XVII
+  2460 => "+proj=tmerc +lat_0=20 +lon_0=136 +k=0.999900 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # JGD2000 / Japan Plane Rectangular CS XVIII
+  2461 => "+proj=tmerc +lat_0=26 +lon_0=154 +k=0.999900 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # JGD2000 / Japan Plane Rectangular CS XIX
+  2462 => "+proj=tmerc +lat_0=0 +lon_0=21 +k=1.000000 +x_0=4500000 +y_0=0 +ellps=krass +units=m +no_defs", # Albanian 1987 / Gauss-Kruger zone 4
+  2463 => "+proj=tmerc +lat_0=0 +lon_0=21 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger CM 21E
+  2464 => "+proj=tmerc +lat_0=0 +lon_0=27 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger CM 27E
+  2465 => "+proj=tmerc +lat_0=0 +lon_0=33 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger CM 33E
+  2466 => "+proj=tmerc +lat_0=0 +lon_0=39 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger CM 39E
+  2467 => "+proj=tmerc +lat_0=0 +lon_0=45 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger CM 45E
+  2468 => "+proj=tmerc +lat_0=0 +lon_0=51 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger CM 51E
+  2469 => "+proj=tmerc +lat_0=0 +lon_0=57 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger CM 57E
+  2470 => "+proj=tmerc +lat_0=0 +lon_0=63 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger CM 63E
+  2471 => "+proj=tmerc +lat_0=0 +lon_0=69 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger CM 69E
+  2472 => "+proj=tmerc +lat_0=0 +lon_0=75 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger CM 75E
+  2473 => "+proj=tmerc +lat_0=0 +lon_0=81 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger CM 81E
+  2474 => "+proj=tmerc +lat_0=0 +lon_0=87 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger CM 87E
+  2475 => "+proj=tmerc +lat_0=0 +lon_0=93 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger CM 93E
+  2476 => "+proj=tmerc +lat_0=0 +lon_0=99 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger CM 99E
+  2477 => "+proj=tmerc +lat_0=0 +lon_0=105 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger CM 105E
+  2478 => "+proj=tmerc +lat_0=0 +lon_0=111 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger CM 111E
+  2479 => "+proj=tmerc +lat_0=0 +lon_0=117 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger CM 117E
+  2480 => "+proj=tmerc +lat_0=0 +lon_0=123 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger CM 123E
+  2481 => "+proj=tmerc +lat_0=0 +lon_0=129 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger CM 129E
+  2482 => "+proj=tmerc +lat_0=0 +lon_0=135 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger CM 135E
+  2483 => "+proj=tmerc +lat_0=0 +lon_0=141 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger CM 141E
+  2484 => "+proj=tmerc +lat_0=0 +lon_0=147 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger CM 147E
+  2485 => "+proj=tmerc +lat_0=0 +lon_0=153 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger CM 153E
+  2486 => "+proj=tmerc +lat_0=0 +lon_0=159 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger CM 159E
+  2487 => "+proj=tmerc +lat_0=0 +lon_0=165 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger CM 165E
+  2488 => "+proj=tmerc +lat_0=0 +lon_0=171 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger CM 171E
+  2489 => "+proj=tmerc +lat_0=0 +lon_0=177 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger CM 177E
+  2490 => "+proj=tmerc +lat_0=0 +lon_0=-177 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger CM 177W
+  2491 => "+proj=tmerc +lat_0=0 +lon_0=-171 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger CM 171W
+  2492 => "+proj=tmerc +lat_0=0 +lon_0=9 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger CM 9E
+  2493 => "+proj=tmerc +lat_0=0 +lon_0=15 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger CM 15E
+  2494 => "+proj=tmerc +lat_0=0 +lon_0=21 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger CM 21E
+  2495 => "+proj=tmerc +lat_0=0 +lon_0=27 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger CM 27E
+  2496 => "+proj=tmerc +lat_0=0 +lon_0=33 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger CM 33E
+  2497 => "+proj=tmerc +lat_0=0 +lon_0=39 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger CM 39E
+  2498 => "+proj=tmerc +lat_0=0 +lon_0=45 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger CM 45E
+  2499 => "+proj=tmerc +lat_0=0 +lon_0=51 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger CM 51E
+  2500 => "+proj=tmerc +lat_0=0 +lon_0=57 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger CM 57E
+  2501 => "+proj=tmerc +lat_0=0 +lon_0=63 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger CM 63E
+  2502 => "+proj=tmerc +lat_0=0 +lon_0=69 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger CM 69E
+  2503 => "+proj=tmerc +lat_0=0 +lon_0=75 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger CM 75E
+  2504 => "+proj=tmerc +lat_0=0 +lon_0=81 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger CM 81E
+  2505 => "+proj=tmerc +lat_0=0 +lon_0=87 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger CM 87E
+  2506 => "+proj=tmerc +lat_0=0 +lon_0=93 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger CM 93E
+  2507 => "+proj=tmerc +lat_0=0 +lon_0=99 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger CM 99E
+  2508 => "+proj=tmerc +lat_0=0 +lon_0=105 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger CM 105E
+  2509 => "+proj=tmerc +lat_0=0 +lon_0=111 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger CM 111E
+  2510 => "+proj=tmerc +lat_0=0 +lon_0=117 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger CM 117E
+  2511 => "+proj=tmerc +lat_0=0 +lon_0=123 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger CM 123E
+  2512 => "+proj=tmerc +lat_0=0 +lon_0=129 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger CM 129E
+  2513 => "+proj=tmerc +lat_0=0 +lon_0=135 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger CM 135E
+  2514 => "+proj=tmerc +lat_0=0 +lon_0=141 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger CM 141E
+  2515 => "+proj=tmerc +lat_0=0 +lon_0=147 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger CM 147E
+  2516 => "+proj=tmerc +lat_0=0 +lon_0=153 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger CM 153E
+  2517 => "+proj=tmerc +lat_0=0 +lon_0=159 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger CM 159E
+  2518 => "+proj=tmerc +lat_0=0 +lon_0=165 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger CM 165E
+  2519 => "+proj=tmerc +lat_0=0 +lon_0=171 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger CM 171E
+  2520 => "+proj=tmerc +lat_0=0 +lon_0=177 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger CM 177E
+  2521 => "+proj=tmerc +lat_0=0 +lon_0=-177 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger CM 177W
+  2522 => "+proj=tmerc +lat_0=0 +lon_0=-171 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger CM 171W
+  2523 => "+proj=tmerc +lat_0=0 +lon_0=21 +k=1.000000 +x_0=7500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 7
+  2524 => "+proj=tmerc +lat_0=0 +lon_0=24 +k=1.000000 +x_0=8500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 8
+  2525 => "+proj=tmerc +lat_0=0 +lon_0=27 +k=1.000000 +x_0=9500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 9
+  2526 => "+proj=tmerc +lat_0=0 +lon_0=30 +k=1.000000 +x_0=10500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 10
+  2527 => "+proj=tmerc +lat_0=0 +lon_0=33 +k=1.000000 +x_0=11500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 11
+  2528 => "+proj=tmerc +lat_0=0 +lon_0=36 +k=1.000000 +x_0=12500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 12
+  2529 => "+proj=tmerc +lat_0=0 +lon_0=39 +k=1.000000 +x_0=13500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 13
+  2530 => "+proj=tmerc +lat_0=0 +lon_0=42 +k=1.000000 +x_0=14500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 14
+  2531 => "+proj=tmerc +lat_0=0 +lon_0=45 +k=1.000000 +x_0=15500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 15
+  2532 => "+proj=tmerc +lat_0=0 +lon_0=48 +k=1.000000 +x_0=16500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 16
+  2533 => "+proj=tmerc +lat_0=0 +lon_0=51 +k=1.000000 +x_0=17500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 17
+  2534 => "+proj=tmerc +lat_0=0 +lon_0=54 +k=1.000000 +x_0=18500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 18
+  2535 => "+proj=tmerc +lat_0=0 +lon_0=57 +k=1.000000 +x_0=19500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 19
+  2536 => "+proj=tmerc +lat_0=0 +lon_0=60 +k=1.000000 +x_0=20500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 20
+  2537 => "+proj=tmerc +lat_0=0 +lon_0=63 +k=1.000000 +x_0=21500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 21
+  2538 => "+proj=tmerc +lat_0=0 +lon_0=66 +k=1.000000 +x_0=22500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 22
+  2539 => "+proj=tmerc +lat_0=0 +lon_0=69 +k=1.000000 +x_0=23500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 23
+  2540 => "+proj=tmerc +lat_0=0 +lon_0=72 +k=1.000000 +x_0=24500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 24
+  2541 => "+proj=tmerc +lat_0=0 +lon_0=75 +k=1.000000 +x_0=25500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 25
+  2542 => "+proj=tmerc +lat_0=0 +lon_0=78 +k=1.000000 +x_0=26500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 26
+  2543 => "+proj=tmerc +lat_0=0 +lon_0=81 +k=1.000000 +x_0=27500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 27
+  2544 => "+proj=tmerc +lat_0=0 +lon_0=84 +k=1.000000 +x_0=28500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 28
+  2545 => "+proj=tmerc +lat_0=0 +lon_0=87 +k=1.000000 +x_0=29500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 29
+  2546 => "+proj=tmerc +lat_0=0 +lon_0=90 +k=1.000000 +x_0=30500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 30
+  2547 => "+proj=tmerc +lat_0=0 +lon_0=93 +k=1.000000 +x_0=31500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 31
+  2548 => "+proj=tmerc +lat_0=0 +lon_0=96 +k=1.000000 +x_0=32500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 32
+  2549 => "+proj=tmerc +lat_0=0 +lon_0=99 +k=1.000000 +x_0=33500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 33
+  2550 => "+proj=utm +zone=50 +south +ellps=bessel +towgs84=-404.78,685.68,45.47,0,0,0,0 +units=m +no_defs", # Samboja / UTM zone 50S
+  2551 => "+proj=tmerc +lat_0=0 +lon_0=102 +k=1.000000 +x_0=34500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 34
+  2552 => "+proj=tmerc +lat_0=0 +lon_0=105 +k=1.000000 +x_0=35500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 35
+  2553 => "+proj=tmerc +lat_0=0 +lon_0=108 +k=1.000000 +x_0=36500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 36
+  2554 => "+proj=tmerc +lat_0=0 +lon_0=111 +k=1.000000 +x_0=37500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 37
+  2555 => "+proj=tmerc +lat_0=0 +lon_0=114 +k=1.000000 +x_0=38500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 38
+  2556 => "+proj=tmerc +lat_0=0 +lon_0=117 +k=1.000000 +x_0=39500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 39
+  2557 => "+proj=tmerc +lat_0=0 +lon_0=120 +k=1.000000 +x_0=40500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 40
+  2558 => "+proj=tmerc +lat_0=0 +lon_0=123 +k=1.000000 +x_0=41500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 41
+  2559 => "+proj=tmerc +lat_0=0 +lon_0=126 +k=1.000000 +x_0=42500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 42
+  2560 => "+proj=tmerc +lat_0=0 +lon_0=129 +k=1.000000 +x_0=43500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 43
+  2561 => "+proj=tmerc +lat_0=0 +lon_0=132 +k=1.000000 +x_0=44500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 44
+  2562 => "+proj=tmerc +lat_0=0 +lon_0=135 +k=1.000000 +x_0=45500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 45
+  2563 => "+proj=tmerc +lat_0=0 +lon_0=138 +k=1.000000 +x_0=46500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 46
+  2564 => "+proj=tmerc +lat_0=0 +lon_0=141 +k=1.000000 +x_0=47500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 47
+  2565 => "+proj=tmerc +lat_0=0 +lon_0=144 +k=1.000000 +x_0=48500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 48
+  2566 => "+proj=tmerc +lat_0=0 +lon_0=147 +k=1.000000 +x_0=49500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 49
+  2567 => "+proj=tmerc +lat_0=0 +lon_0=150 +k=1.000000 +x_0=50500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 50
+  2568 => "+proj=tmerc +lat_0=0 +lon_0=153 +k=1.000000 +x_0=51500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 51
+  2569 => "+proj=tmerc +lat_0=0 +lon_0=156 +k=1.000000 +x_0=52500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 52
+  2570 => "+proj=tmerc +lat_0=0 +lon_0=159 +k=1.000000 +x_0=53500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 53
+  2571 => "+proj=tmerc +lat_0=0 +lon_0=162 +k=1.000000 +x_0=54500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 54
+  2572 => "+proj=tmerc +lat_0=0 +lon_0=165 +k=1.000000 +x_0=55500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 55
+  2573 => "+proj=tmerc +lat_0=0 +lon_0=168 +k=1.000000 +x_0=56500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 56
+  2574 => "+proj=tmerc +lat_0=0 +lon_0=171 +k=1.000000 +x_0=57500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 57
+  2575 => "+proj=tmerc +lat_0=0 +lon_0=174 +k=1.000000 +x_0=58500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 58
+  2576 => "+proj=tmerc +lat_0=0 +lon_0=177 +k=1.000000 +x_0=59500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 59
+  2577 => "+proj=tmerc +lat_0=0 +lon_0=180 +k=1.000000 +x_0=60000000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 60
+  2578 => "+proj=tmerc +lat_0=0 +lon_0=-177 +k=1.000000 +x_0=61500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 61
+  2579 => "+proj=tmerc +lat_0=0 +lon_0=-174 +k=1.000000 +x_0=62500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 62
+  2580 => "+proj=tmerc +lat_0=0 +lon_0=-171 +k=1.000000 +x_0=63500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 63
+  2581 => "+proj=tmerc +lat_0=0 +lon_0=-168 +k=1.000000 +x_0=64500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger zone 64
+  2582 => "+proj=tmerc +lat_0=0 +lon_0=21 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 21E
+  2583 => "+proj=tmerc +lat_0=0 +lon_0=24 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 24E
+  2584 => "+proj=tmerc +lat_0=0 +lon_0=27 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 27E
+  2585 => "+proj=tmerc +lat_0=0 +lon_0=30 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 30E
+  2586 => "+proj=tmerc +lat_0=0 +lon_0=33 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 33E
+  2587 => "+proj=tmerc +lat_0=0 +lon_0=36 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 36E
+  2588 => "+proj=tmerc +lat_0=0 +lon_0=39 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 39E
+  2589 => "+proj=tmerc +lat_0=0 +lon_0=42 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 42E
+  2590 => "+proj=tmerc +lat_0=0 +lon_0=45 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 45E
+  2591 => "+proj=tmerc +lat_0=0 +lon_0=48 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 48E
+  2592 => "+proj=tmerc +lat_0=0 +lon_0=51 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 51E
+  2593 => "+proj=tmerc +lat_0=0 +lon_0=54 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 54E
+  2594 => "+proj=tmerc +lat_0=0 +lon_0=57 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 57E
+  2595 => "+proj=tmerc +lat_0=0 +lon_0=60 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 60E
+  2596 => "+proj=tmerc +lat_0=0 +lon_0=63 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 63E
+  2597 => "+proj=tmerc +lat_0=0 +lon_0=66 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 66E
+  2598 => "+proj=tmerc +lat_0=0 +lon_0=69 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 69E
+  2599 => "+proj=tmerc +lat_0=0 +lon_0=72 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 72E
+  2600 => "+proj=tmerc +lat_0=0 +lon_0=24 +k=0.999800 +x_0=500000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # Lietuvos Koordinoei Sistema 1994
+  2601 => "+proj=tmerc +lat_0=0 +lon_0=75 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 75E
+  2602 => "+proj=tmerc +lat_0=0 +lon_0=78 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 78E
+  2603 => "+proj=tmerc +lat_0=0 +lon_0=81 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 81E
+  2604 => "+proj=tmerc +lat_0=0 +lon_0=84 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 84E
+  2605 => "+proj=tmerc +lat_0=0 +lon_0=87 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 87E
+  2606 => "+proj=tmerc +lat_0=0 +lon_0=90 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 90E
+  2607 => "+proj=tmerc +lat_0=0 +lon_0=93 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 93E
+  2608 => "+proj=tmerc +lat_0=0 +lon_0=96 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 96E
+  2609 => "+proj=tmerc +lat_0=0 +lon_0=99 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 99E
+  2610 => "+proj=tmerc +lat_0=0 +lon_0=102 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 102E
+  2611 => "+proj=tmerc +lat_0=0 +lon_0=105 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 105E
+  2612 => "+proj=tmerc +lat_0=0 +lon_0=108 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 108E
+  2613 => "+proj=tmerc +lat_0=0 +lon_0=111 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 111E
+  2614 => "+proj=tmerc +lat_0=0 +lon_0=114 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 114E
+  2615 => "+proj=tmerc +lat_0=0 +lon_0=117 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 117E
+  2616 => "+proj=tmerc +lat_0=0 +lon_0=120 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 120E
+  2617 => "+proj=tmerc +lat_0=0 +lon_0=123 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 123E
+  2618 => "+proj=tmerc +lat_0=0 +lon_0=126 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 126E
+  2619 => "+proj=tmerc +lat_0=0 +lon_0=129 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 129E
+  2620 => "+proj=tmerc +lat_0=0 +lon_0=132 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 132E
+  2621 => "+proj=tmerc +lat_0=0 +lon_0=135 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 135E
+  2622 => "+proj=tmerc +lat_0=0 +lon_0=138 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 138E
+  2623 => "+proj=tmerc +lat_0=0 +lon_0=141 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 141E
+  2624 => "+proj=tmerc +lat_0=0 +lon_0=144 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 144E
+  2625 => "+proj=tmerc +lat_0=0 +lon_0=147 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 147E
+  2626 => "+proj=tmerc +lat_0=0 +lon_0=150 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 150E
+  2627 => "+proj=tmerc +lat_0=0 +lon_0=153 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 153E
+  2628 => "+proj=tmerc +lat_0=0 +lon_0=156 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 156E
+  2629 => "+proj=tmerc +lat_0=0 +lon_0=159 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 159E
+  2630 => "+proj=tmerc +lat_0=0 +lon_0=162 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 162E
+  2631 => "+proj=tmerc +lat_0=0 +lon_0=165 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 165E
+  2632 => "+proj=tmerc +lat_0=0 +lon_0=168 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 168E
+  2633 => "+proj=tmerc +lat_0=0 +lon_0=171 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 171E
+  2634 => "+proj=tmerc +lat_0=0 +lon_0=174 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 174E
+  2635 => "+proj=tmerc +lat_0=0 +lon_0=177 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 177E
+  2636 => "+proj=tmerc +lat_0=0 +lon_0=180 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 180E
+  2637 => "+proj=tmerc +lat_0=0 +lon_0=-177 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 177W
+  2638 => "+proj=tmerc +lat_0=0 +lon_0=-174 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 174W
+  2639 => "+proj=tmerc +lat_0=0 +lon_0=-171 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 171W
+  2640 => "+proj=tmerc +lat_0=0 +lon_0=-168 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / 3-degree Gauss-Kruger CM 168W
+  2641 => "+proj=tmerc +lat_0=0 +lon_0=21 +k=1.000000 +x_0=7500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 7
+  2642 => "+proj=tmerc +lat_0=0 +lon_0=24 +k=1.000000 +x_0=8500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 8
+  2643 => "+proj=tmerc +lat_0=0 +lon_0=27 +k=1.000000 +x_0=9500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 9
+  2644 => "+proj=tmerc +lat_0=0 +lon_0=30 +k=1.000000 +x_0=10500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 10
+  2645 => "+proj=tmerc +lat_0=0 +lon_0=33 +k=1.000000 +x_0=11500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 11
+  2646 => "+proj=tmerc +lat_0=0 +lon_0=36 +k=1.000000 +x_0=12500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 12
+  2647 => "+proj=tmerc +lat_0=0 +lon_0=39 +k=1.000000 +x_0=13500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 13
+  2648 => "+proj=tmerc +lat_0=0 +lon_0=42 +k=1.000000 +x_0=14500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 14
+  2649 => "+proj=tmerc +lat_0=0 +lon_0=45 +k=1.000000 +x_0=15500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 15
+  2650 => "+proj=tmerc +lat_0=0 +lon_0=48 +k=1.000000 +x_0=16500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 16
+  2651 => "+proj=tmerc +lat_0=0 +lon_0=51 +k=1.000000 +x_0=17500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 17
+  2652 => "+proj=tmerc +lat_0=0 +lon_0=54 +k=1.000000 +x_0=18500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 18
+  2653 => "+proj=tmerc +lat_0=0 +lon_0=57 +k=1.000000 +x_0=19500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 19
+  2654 => "+proj=tmerc +lat_0=0 +lon_0=60 +k=1.000000 +x_0=20500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 20
+  2655 => "+proj=tmerc +lat_0=0 +lon_0=63 +k=1.000000 +x_0=21500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 21
+  2656 => "+proj=tmerc +lat_0=0 +lon_0=66 +k=1.000000 +x_0=22500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 22
+  2657 => "+proj=tmerc +lat_0=0 +lon_0=69 +k=1.000000 +x_0=23500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 23
+  2658 => "+proj=tmerc +lat_0=0 +lon_0=72 +k=1.000000 +x_0=24500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 24
+  2659 => "+proj=tmerc +lat_0=0 +lon_0=75 +k=1.000000 +x_0=25500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 25
+  2660 => "+proj=tmerc +lat_0=0 +lon_0=78 +k=1.000000 +x_0=26500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 26
+  2661 => "+proj=tmerc +lat_0=0 +lon_0=81 +k=1.000000 +x_0=27500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 27
+  2662 => "+proj=tmerc +lat_0=0 +lon_0=84 +k=1.000000 +x_0=28500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 28
+  2663 => "+proj=tmerc +lat_0=0 +lon_0=87 +k=1.000000 +x_0=29500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 29
+  2664 => "+proj=tmerc +lat_0=0 +lon_0=90 +k=1.000000 +x_0=30500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 30
+  2665 => "+proj=tmerc +lat_0=0 +lon_0=93 +k=1.000000 +x_0=31500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 31
+  2666 => "+proj=tmerc +lat_0=0 +lon_0=96 +k=1.000000 +x_0=32500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 32
+  2667 => "+proj=tmerc +lat_0=0 +lon_0=99 +k=1.000000 +x_0=33500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 33
+  2668 => "+proj=tmerc +lat_0=0 +lon_0=102 +k=1.000000 +x_0=34500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 34
+  2669 => "+proj=tmerc +lat_0=0 +lon_0=105 +k=1.000000 +x_0=35500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 35
+  2670 => "+proj=tmerc +lat_0=0 +lon_0=108 +k=1.000000 +x_0=36500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 36
+  2671 => "+proj=tmerc +lat_0=0 +lon_0=111 +k=1.000000 +x_0=37500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 37
+  2672 => "+proj=tmerc +lat_0=0 +lon_0=114 +k=1.000000 +x_0=38500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 38
+  2673 => "+proj=tmerc +lat_0=0 +lon_0=117 +k=1.000000 +x_0=39500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 39
+  2674 => "+proj=tmerc +lat_0=0 +lon_0=120 +k=1.000000 +x_0=40500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 40
+  2675 => "+proj=tmerc +lat_0=0 +lon_0=123 +k=1.000000 +x_0=41500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 41
+  2676 => "+proj=tmerc +lat_0=0 +lon_0=126 +k=1.000000 +x_0=42500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 42
+  2677 => "+proj=tmerc +lat_0=0 +lon_0=129 +k=1.000000 +x_0=43500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 43
+  2678 => "+proj=tmerc +lat_0=0 +lon_0=132 +k=1.000000 +x_0=44500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 44
+  2679 => "+proj=tmerc +lat_0=0 +lon_0=135 +k=1.000000 +x_0=45500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 45
+  2680 => "+proj=tmerc +lat_0=0 +lon_0=138 +k=1.000000 +x_0=46500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 46
+  2681 => "+proj=tmerc +lat_0=0 +lon_0=141 +k=1.000000 +x_0=47500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 47
+  2682 => "+proj=tmerc +lat_0=0 +lon_0=144 +k=1.000000 +x_0=48500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 48
+  2683 => "+proj=tmerc +lat_0=0 +lon_0=147 +k=1.000000 +x_0=49500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 49
+  2684 => "+proj=tmerc +lat_0=0 +lon_0=150 +k=1.000000 +x_0=50500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 50
+  2685 => "+proj=tmerc +lat_0=0 +lon_0=153 +k=1.000000 +x_0=51500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 51
+  2686 => "+proj=tmerc +lat_0=0 +lon_0=156 +k=1.000000 +x_0=52500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 52
+  2687 => "+proj=tmerc +lat_0=0 +lon_0=159 +k=1.000000 +x_0=53500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 53
+  2688 => "+proj=tmerc +lat_0=0 +lon_0=162 +k=1.000000 +x_0=54500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 54
+  2689 => "+proj=tmerc +lat_0=0 +lon_0=165 +k=1.000000 +x_0=55500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 55
+  2690 => "+proj=tmerc +lat_0=0 +lon_0=168 +k=1.000000 +x_0=56500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 56
+  2691 => "+proj=tmerc +lat_0=0 +lon_0=171 +k=1.000000 +x_0=57500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 57
+  2692 => "+proj=tmerc +lat_0=0 +lon_0=174 +k=1.000000 +x_0=58500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 58
+  2693 => "+proj=tmerc +lat_0=0 +lon_0=177 +k=1.000000 +x_0=59500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 59
+  2694 => "+proj=tmerc +lat_0=0 +lon_0=180 +k=1.000000 +x_0=60000000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 60
+  2695 => "+proj=tmerc +lat_0=0 +lon_0=-177 +k=1.000000 +x_0=61500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 61
+  2696 => "+proj=tmerc +lat_0=0 +lon_0=-174 +k=1.000000 +x_0=62500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 62
+  2697 => "+proj=tmerc +lat_0=0 +lon_0=-171 +k=1.000000 +x_0=63500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 63
+  2698 => "+proj=tmerc +lat_0=0 +lon_0=-168 +k=1.000000 +x_0=64500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger zone 64
+  2699 => "+proj=tmerc +lat_0=0 +lon_0=21 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 21E
+  2700 => "+proj=tmerc +lat_0=0 +lon_0=24 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 24E
+  2701 => "+proj=tmerc +lat_0=0 +lon_0=27 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 27E
+  2702 => "+proj=tmerc +lat_0=0 +lon_0=30 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 30E
+  2703 => "+proj=tmerc +lat_0=0 +lon_0=33 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 33E
+  2704 => "+proj=tmerc +lat_0=0 +lon_0=36 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 36E
+  2705 => "+proj=tmerc +lat_0=0 +lon_0=39 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 39E
+  2706 => "+proj=tmerc +lat_0=0 +lon_0=42 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 42E
+  2707 => "+proj=tmerc +lat_0=0 +lon_0=45 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 45E
+  2708 => "+proj=tmerc +lat_0=0 +lon_0=48 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 48E
+  2709 => "+proj=tmerc +lat_0=0 +lon_0=51 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 51E
+  2710 => "+proj=tmerc +lat_0=0 +lon_0=54 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 54E
+  2711 => "+proj=tmerc +lat_0=0 +lon_0=57 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 57E
+  2712 => "+proj=tmerc +lat_0=0 +lon_0=60 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 60E
+  2713 => "+proj=tmerc +lat_0=0 +lon_0=63 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 63E
+  2714 => "+proj=tmerc +lat_0=0 +lon_0=66 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 66E
+  2715 => "+proj=tmerc +lat_0=0 +lon_0=69 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 69E
+  2716 => "+proj=tmerc +lat_0=0 +lon_0=72 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 72E
+  2717 => "+proj=tmerc +lat_0=0 +lon_0=75 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 75E
+  2718 => "+proj=tmerc +lat_0=0 +lon_0=78 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 78E
+  2719 => "+proj=tmerc +lat_0=0 +lon_0=81 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 81E
+  2720 => "+proj=tmerc +lat_0=0 +lon_0=84 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 84E
+  2721 => "+proj=tmerc +lat_0=0 +lon_0=87 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 87E
+  2722 => "+proj=tmerc +lat_0=0 +lon_0=90 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 90E
+  2723 => "+proj=tmerc +lat_0=0 +lon_0=93 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 93E
+  2724 => "+proj=tmerc +lat_0=0 +lon_0=96 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 96E
+  2725 => "+proj=tmerc +lat_0=0 +lon_0=99 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 99E
+  2726 => "+proj=tmerc +lat_0=0 +lon_0=102 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 102E
+  2727 => "+proj=tmerc +lat_0=0 +lon_0=105 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 105E
+  2728 => "+proj=tmerc +lat_0=0 +lon_0=108 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 108E
+  2729 => "+proj=tmerc +lat_0=0 +lon_0=111 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 111E
+  2730 => "+proj=tmerc +lat_0=0 +lon_0=114 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 114E
+  2731 => "+proj=tmerc +lat_0=0 +lon_0=117 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 117E
+  2732 => "+proj=tmerc +lat_0=0 +lon_0=120 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 120E
+  2733 => "+proj=tmerc +lat_0=0 +lon_0=123 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 123E
+  2734 => "+proj=tmerc +lat_0=0 +lon_0=126 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 126E
+  2735 => "+proj=tmerc +lat_0=0 +lon_0=129 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 129E
+  2736 => "+proj=utm +zone=36 +south +ellps=clrk66 +units=m +no_defs", # Tete / UTM zone 36S
+  2737 => "+proj=utm +zone=37 +south +ellps=clrk66 +units=m +no_defs", # Tete / UTM zone 37S
+  2738 => "+proj=tmerc +lat_0=0 +lon_0=132 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 132E
+  2739 => "+proj=tmerc +lat_0=0 +lon_0=135 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 135E
+  2740 => "+proj=tmerc +lat_0=0 +lon_0=138 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 138E
+  2741 => "+proj=tmerc +lat_0=0 +lon_0=141 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 141E
+  2742 => "+proj=tmerc +lat_0=0 +lon_0=144 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 144E
+  2743 => "+proj=tmerc +lat_0=0 +lon_0=147 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 147E
+  2744 => "+proj=tmerc +lat_0=0 +lon_0=150 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 150E
+  2745 => "+proj=tmerc +lat_0=0 +lon_0=153 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 153E
+  2746 => "+proj=tmerc +lat_0=0 +lon_0=156 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 156E
+  2747 => "+proj=tmerc +lat_0=0 +lon_0=159 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 159E
+  2748 => "+proj=tmerc +lat_0=0 +lon_0=162 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 162E
+  2749 => "+proj=tmerc +lat_0=0 +lon_0=165 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 165E
+  2750 => "+proj=tmerc +lat_0=0 +lon_0=168 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 168E
+  2751 => "+proj=tmerc +lat_0=0 +lon_0=171 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 171E
+  2752 => "+proj=tmerc +lat_0=0 +lon_0=174 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 174E
+  2753 => "+proj=tmerc +lat_0=0 +lon_0=177 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 177E
+  2754 => "+proj=tmerc +lat_0=0 +lon_0=180 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 180E
+  2755 => "+proj=tmerc +lat_0=0 +lon_0=-177 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 177W
+  2756 => "+proj=tmerc +lat_0=0 +lon_0=-174 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 174W
+  2757 => "+proj=tmerc +lat_0=0 +lon_0=-171 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 171W
+  2758 => "+proj=tmerc +lat_0=0 +lon_0=-168 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / 3-degree Gauss-Kruger CM 168W
+  2759 => "+proj=tmerc +lat_0=30.5 +lon_0=-85.83333333333333 +k=0.999960 +x_0=200000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Alabama East
+  2760 => "+proj=tmerc +lat_0=30 +lon_0=-87.5 +k=0.999933 +x_0=600000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Alabama West
+  2761 => "+proj=tmerc +lat_0=31 +lon_0=-110.1666666666667 +k=0.999900 +x_0=213360 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Arizona East
+  2762 => "+proj=tmerc +lat_0=31 +lon_0=-111.9166666666667 +k=0.999900 +x_0=213360 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Arizona Central
+  2763 => "+proj=tmerc +lat_0=31 +lon_0=-113.75 +k=0.999933 +x_0=213360 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Arizona West
+  2764 => "+proj=lcc +lat_1=36.23333333333333 +lat_2=34.93333333333333 +lat_0=34.33333333333334 +lon_0=-92 +x_0=400000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Arkansas North
+  2765 => "+proj=lcc +lat_1=34.76666666666667 +lat_2=33.3 +lat_0=32.66666666666666 +lon_0=-92 +x_0=400000 +y_0=400000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Arkansas South
+  2766 => "+proj=lcc +lat_1=41.66666666666666 +lat_2=40 +lat_0=39.33333333333334 +lon_0=-122 +x_0=2000000 +y_0=500000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / California zone 1
+  2767 => "+proj=lcc +lat_1=39.83333333333334 +lat_2=38.33333333333334 +lat_0=37.66666666666666 +lon_0=-122 +x_0=2000000 +y_0=500000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / California zone 2
+  2768 => "+proj=lcc +lat_1=38.43333333333333 +lat_2=37.06666666666667 +lat_0=36.5 +lon_0=-120.5 +x_0=2000000 +y_0=500000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / California zone 3
+  2769 => "+proj=lcc +lat_1=37.25 +lat_2=36 +lat_0=35.33333333333334 +lon_0=-119 +x_0=2000000 +y_0=500000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / California zone 4
+  2770 => "+proj=lcc +lat_1=35.46666666666667 +lat_2=34.03333333333333 +lat_0=33.5 +lon_0=-118 +x_0=2000000 +y_0=500000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / California zone 5
+  2771 => "+proj=lcc +lat_1=33.88333333333333 +lat_2=32.78333333333333 +lat_0=32.16666666666666 +lon_0=-116.25 +x_0=2000000 +y_0=500000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / California zone 6
+  2772 => "+proj=lcc +lat_1=40.78333333333333 +lat_2=39.71666666666667 +lat_0=39.33333333333334 +lon_0=-105.5 +x_0=914401.8289 +y_0=304800.6096 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Colorado North
+  2773 => "+proj=lcc +lat_1=39.75 +lat_2=38.45 +lat_0=37.83333333333334 +lon_0=-105.5 +x_0=914401.8289 +y_0=304800.6096 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Colorado Central
+  2774 => "+proj=lcc +lat_1=38.43333333333333 +lat_2=37.23333333333333 +lat_0=36.66666666666666 +lon_0=-105.5 +x_0=914401.8289 +y_0=304800.6096 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Colorado South
+  2775 => "+proj=lcc +lat_1=41.86666666666667 +lat_2=41.2 +lat_0=40.83333333333334 +lon_0=-72.75 +x_0=304800.6096 +y_0=152400.3048 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Connecticut
+  2776 => "+proj=tmerc +lat_0=38 +lon_0=-75.41666666666667 +k=0.999995 +x_0=200000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Delaware
+  2777 => "+proj=tmerc +lat_0=24.33333333333333 +lon_0=-81 +k=0.999941 +x_0=200000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Florida East
+  2778 => "+proj=tmerc +lat_0=24.33333333333333 +lon_0=-82 +k=0.999941 +x_0=200000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Florida West
+  2779 => "+proj=lcc +lat_1=30.75 +lat_2=29.58333333333333 +lat_0=29 +lon_0=-84.5 +x_0=600000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Florida North
+  2780 => "+proj=tmerc +lat_0=30 +lon_0=-82.16666666666667 +k=0.999900 +x_0=200000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Georgia East
+  2781 => "+proj=tmerc +lat_0=30 +lon_0=-84.16666666666667 +k=0.999900 +x_0=700000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Georgia West
+  2782 => "+proj=tmerc +lat_0=18.83333333333333 +lon_0=-155.5 +k=0.999967 +x_0=500000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Hawaii zone 1
+  2783 => "+proj=tmerc +lat_0=20.33333333333333 +lon_0=-156.6666666666667 +k=0.999967 +x_0=500000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Hawaii zone 2
+  2784 => "+proj=tmerc +lat_0=21.16666666666667 +lon_0=-158 +k=0.999990 +x_0=500000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Hawaii zone 3
+  2785 => "+proj=tmerc +lat_0=21.83333333333333 +lon_0=-159.5 +k=0.999990 +x_0=500000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Hawaii zone 4
+  2786 => "+proj=tmerc +lat_0=21.66666666666667 +lon_0=-160.1666666666667 +k=1.000000 +x_0=500000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Hawaii zone 5
+  2787 => "+proj=tmerc +lat_0=41.66666666666666 +lon_0=-112.1666666666667 +k=0.999947 +x_0=200000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Idaho East
+  2788 => "+proj=tmerc +lat_0=41.66666666666666 +lon_0=-114 +k=0.999947 +x_0=500000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Idaho Central
+  2789 => "+proj=tmerc +lat_0=41.66666666666666 +lon_0=-115.75 +k=0.999933 +x_0=800000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Idaho West
+  2790 => "+proj=tmerc +lat_0=36.66666666666666 +lon_0=-88.33333333333333 +k=0.999975 +x_0=300000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Illinois East
+  2791 => "+proj=tmerc +lat_0=36.66666666666666 +lon_0=-90.16666666666667 +k=0.999941 +x_0=700000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Illinois West
+  2792 => "+proj=tmerc +lat_0=37.5 +lon_0=-85.66666666666667 +k=0.999967 +x_0=100000 +y_0=250000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Indiana East
+  2793 => "+proj=tmerc +lat_0=37.5 +lon_0=-87.08333333333333 +k=0.999967 +x_0=900000 +y_0=250000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Indiana West
+  2794 => "+proj=lcc +lat_1=43.26666666666667 +lat_2=42.06666666666667 +lat_0=41.5 +lon_0=-93.5 +x_0=1500000 +y_0=1000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Iowa North
+  2795 => "+proj=lcc +lat_1=41.78333333333333 +lat_2=40.61666666666667 +lat_0=40 +lon_0=-93.5 +x_0=500000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Iowa South
+  2796 => "+proj=lcc +lat_1=39.78333333333333 +lat_2=38.71666666666667 +lat_0=38.33333333333334 +lon_0=-98 +x_0=400000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Kansas North
+  2797 => "+proj=lcc +lat_1=38.56666666666667 +lat_2=37.26666666666667 +lat_0=36.66666666666666 +lon_0=-98.5 +x_0=400000 +y_0=400000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Kansas South
+  2798 => "+proj=lcc +lat_1=37.96666666666667 +lat_2=38.96666666666667 +lat_0=37.5 +lon_0=-84.25 +x_0=500000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Kentucky North
+  2799 => "+proj=lcc +lat_1=37.93333333333333 +lat_2=36.73333333333333 +lat_0=36.33333333333334 +lon_0=-85.75 +x_0=500000 +y_0=500000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Kentucky South
+  2800 => "+proj=lcc +lat_1=32.66666666666666 +lat_2=31.16666666666667 +lat_0=30.5 +lon_0=-92.5 +x_0=1000000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Louisiana North
+  2801 => "+proj=lcc +lat_1=30.7 +lat_2=29.3 +lat_0=28.5 +lon_0=-91.33333333333333 +x_0=1000000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Louisiana South
+  2802 => "+proj=tmerc +lat_0=43.66666666666666 +lon_0=-68.5 +k=0.999900 +x_0=300000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Maine East
+  2803 => "+proj=tmerc +lat_0=42.83333333333334 +lon_0=-70.16666666666667 +k=0.999967 +x_0=900000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Maine West
+  2804 => "+proj=lcc +lat_1=39.45 +lat_2=38.3 +lat_0=37.66666666666666 +lon_0=-77 +x_0=400000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Maryland
+  2805 => "+proj=lcc +lat_1=42.68333333333333 +lat_2=41.71666666666667 +lat_0=41 +lon_0=-71.5 +x_0=200000 +y_0=750000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Massachusetts Mainland
+  2806 => "+proj=lcc +lat_1=41.48333333333333 +lat_2=41.28333333333333 +lat_0=41 +lon_0=-70.5 +x_0=500000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Massachusetts Island
+  2807 => "+proj=lcc +lat_1=47.08333333333334 +lat_2=45.48333333333333 +lat_0=44.78333333333333 +lon_0=-87 +x_0=8000000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Michigan North
+  2808 => "+proj=lcc +lat_1=45.7 +lat_2=44.18333333333333 +lat_0=43.31666666666667 +lon_0=-84.36666666666666 +x_0=6000000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Michigan Central
+  2809 => "+proj=lcc +lat_1=43.66666666666666 +lat_2=42.1 +lat_0=41.5 +lon_0=-84.36666666666666 +x_0=4000000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Michigan South
+  2810 => "+proj=lcc +lat_1=48.63333333333333 +lat_2=47.03333333333333 +lat_0=46.5 +lon_0=-93.09999999999999 +x_0=800000 +y_0=100000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Minnesota North
+  2811 => "+proj=lcc +lat_1=47.05 +lat_2=45.61666666666667 +lat_0=45 +lon_0=-94.25 +x_0=800000 +y_0=100000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Minnesota Central
+  2812 => "+proj=lcc +lat_1=45.21666666666667 +lat_2=43.78333333333333 +lat_0=43 +lon_0=-94 +x_0=800000 +y_0=100000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Minnesota South
+  2813 => "+proj=tmerc +lat_0=29.5 +lon_0=-88.83333333333333 +k=0.999950 +x_0=300000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Mississippi East
+  2814 => "+proj=tmerc +lat_0=29.5 +lon_0=-90.33333333333333 +k=0.999950 +x_0=700000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Mississippi West
+  2815 => "+proj=tmerc +lat_0=35.83333333333334 +lon_0=-90.5 +k=0.999933 +x_0=250000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Missouri East
+  2816 => "+proj=tmerc +lat_0=35.83333333333334 +lon_0=-92.5 +k=0.999933 +x_0=500000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Missouri Central
+  2817 => "+proj=tmerc +lat_0=36.16666666666666 +lon_0=-94.5 +k=0.999941 +x_0=850000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Missouri West
+  2818 => "+proj=lcc +lat_1=49 +lat_2=45 +lat_0=44.25 +lon_0=-109.5 +x_0=600000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Montana
+  2819 => "+proj=lcc +lat_1=43 +lat_2=40 +lat_0=39.83333333333334 +lon_0=-100 +x_0=500000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Nebraska
+  2820 => "+proj=tmerc +lat_0=34.75 +lon_0=-115.5833333333333 +k=0.999900 +x_0=200000 +y_0=8000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Nevada East
+  2821 => "+proj=tmerc +lat_0=34.75 +lon_0=-116.6666666666667 +k=0.999900 +x_0=500000 +y_0=6000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Nevada Central
+  2822 => "+proj=tmerc +lat_0=34.75 +lon_0=-118.5833333333333 +k=0.999900 +x_0=800000 +y_0=4000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Nevada West
+  2823 => "+proj=tmerc +lat_0=42.5 +lon_0=-71.66666666666667 +k=0.999967 +x_0=300000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / New Hampshire
+  2824 => "+proj=tmerc +lat_0=38.83333333333334 +lon_0=-74.5 +k=0.999900 +x_0=150000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / New Jersey
+  2825 => "+proj=tmerc +lat_0=31 +lon_0=-104.3333333333333 +k=0.999909 +x_0=165000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / New Mexico East
+  2826 => "+proj=tmerc +lat_0=31 +lon_0=-106.25 +k=0.999900 +x_0=500000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / New Mexico Central
+  2827 => "+proj=tmerc +lat_0=31 +lon_0=-107.8333333333333 +k=0.999917 +x_0=830000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / New Mexico West
+  2828 => "+proj=tmerc +lat_0=38.83333333333334 +lon_0=-74.5 +k=0.999900 +x_0=150000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / New York East
+  2829 => "+proj=tmerc +lat_0=40 +lon_0=-76.58333333333333 +k=0.999938 +x_0=250000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / New York Central
+  2830 => "+proj=tmerc +lat_0=40 +lon_0=-78.58333333333333 +k=0.999938 +x_0=350000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / New York West
+  2831 => "+proj=lcc +lat_1=41.03333333333333 +lat_2=40.66666666666666 +lat_0=40.16666666666666 +lon_0=-74 +x_0=300000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / New York Long Island
+  2832 => "+proj=lcc +lat_1=48.73333333333333 +lat_2=47.43333333333333 +lat_0=47 +lon_0=-100.5 +x_0=600000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / North Dakota North
+  2833 => "+proj=lcc +lat_1=47.48333333333333 +lat_2=46.18333333333333 +lat_0=45.66666666666666 +lon_0=-100.5 +x_0=600000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / North Dakota South
+  2834 => "+proj=lcc +lat_1=41.7 +lat_2=40.43333333333333 +lat_0=39.66666666666666 +lon_0=-82.5 +x_0=600000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Ohio North
+  2835 => "+proj=lcc +lat_1=40.03333333333333 +lat_2=38.73333333333333 +lat_0=38 +lon_0=-82.5 +x_0=600000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Ohio South
+  2836 => "+proj=lcc +lat_1=36.76666666666667 +lat_2=35.56666666666667 +lat_0=35 +lon_0=-98 +x_0=600000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Oklahoma North
+  2837 => "+proj=lcc +lat_1=35.23333333333333 +lat_2=33.93333333333333 +lat_0=33.33333333333334 +lon_0=-98 +x_0=600000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Oklahoma South
+  2838 => "+proj=lcc +lat_1=46 +lat_2=44.33333333333334 +lat_0=43.66666666666666 +lon_0=-120.5 +x_0=2500000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Oregon North
+  2839 => "+proj=lcc +lat_1=44 +lat_2=42.33333333333334 +lat_0=41.66666666666666 +lon_0=-120.5 +x_0=1500000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Oregon South
+  2840 => "+proj=tmerc +lat_0=41.08333333333334 +lon_0=-71.5 +k=0.999994 +x_0=100000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Rhode Island
+  2841 => "+proj=lcc +lat_1=45.68333333333333 +lat_2=44.41666666666666 +lat_0=43.83333333333334 +lon_0=-100 +x_0=600000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / South Dakota North
+  2842 => "+proj=lcc +lat_1=44.4 +lat_2=42.83333333333334 +lat_0=42.33333333333334 +lon_0=-100.3333333333333 +x_0=600000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / South Dakota South
+  2843 => "+proj=lcc +lat_1=36.41666666666666 +lat_2=35.25 +lat_0=34.33333333333334 +lon_0=-86 +x_0=600000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Tennessee
+  2844 => "+proj=lcc +lat_1=36.18333333333333 +lat_2=34.65 +lat_0=34 +lon_0=-101.5 +x_0=200000 +y_0=1000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Texas North
+  2845 => "+proj=lcc +lat_1=33.96666666666667 +lat_2=32.13333333333333 +lat_0=31.66666666666667 +lon_0=-98.5 +x_0=600000 +y_0=2000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Texas North Central
+  2846 => "+proj=lcc +lat_1=31.88333333333333 +lat_2=30.11666666666667 +lat_0=29.66666666666667 +lon_0=-100.3333333333333 +x_0=700000 +y_0=3000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Texas Central
+  2847 => "+proj=lcc +lat_1=30.28333333333333 +lat_2=28.38333333333333 +lat_0=27.83333333333333 +lon_0=-99 +x_0=600000 +y_0=4000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Texas South Central
+  2848 => "+proj=lcc +lat_1=27.83333333333333 +lat_2=26.16666666666667 +lat_0=25.66666666666667 +lon_0=-98.5 +x_0=300000 +y_0=5000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Texas South
+  2849 => "+proj=lcc +lat_1=41.78333333333333 +lat_2=40.71666666666667 +lat_0=40.33333333333334 +lon_0=-111.5 +x_0=500000 +y_0=1000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Utah North
+  2850 => "+proj=lcc +lat_1=40.65 +lat_2=39.01666666666667 +lat_0=38.33333333333334 +lon_0=-111.5 +x_0=500000 +y_0=2000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Utah Central
+  2851 => "+proj=lcc +lat_1=38.35 +lat_2=37.21666666666667 +lat_0=36.66666666666666 +lon_0=-111.5 +x_0=500000 +y_0=3000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Utah South
+  2852 => "+proj=tmerc +lat_0=42.5 +lon_0=-72.5 +k=0.999964 +x_0=500000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Vermont
+  2853 => "+proj=lcc +lat_1=39.2 +lat_2=38.03333333333333 +lat_0=37.66666666666666 +lon_0=-78.5 +x_0=3500000 +y_0=2000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Virginia North
+  2854 => "+proj=lcc +lat_1=37.96666666666667 +lat_2=36.76666666666667 +lat_0=36.33333333333334 +lon_0=-78.5 +x_0=3500000 +y_0=1000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Virginia South
+  2855 => "+proj=lcc +lat_1=48.73333333333333 +lat_2=47.5 +lat_0=47 +lon_0=-120.8333333333333 +x_0=500000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Washington North
+  2856 => "+proj=lcc +lat_1=47.33333333333334 +lat_2=45.83333333333334 +lat_0=45.33333333333334 +lon_0=-120.5 +x_0=500000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Washington South
+  2857 => "+proj=lcc +lat_1=40.25 +lat_2=39 +lat_0=38.5 +lon_0=-79.5 +x_0=600000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / West Virginia North
+  2858 => "+proj=lcc +lat_1=38.88333333333333 +lat_2=37.48333333333333 +lat_0=37 +lon_0=-81 +x_0=600000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / West Virginia South
+  2859 => "+proj=lcc +lat_1=46.76666666666667 +lat_2=45.56666666666667 +lat_0=45.16666666666666 +lon_0=-90 +x_0=600000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Wisconsin North
+  2860 => "+proj=lcc +lat_1=45.5 +lat_2=44.25 +lat_0=43.83333333333334 +lon_0=-90 +x_0=600000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Wisconsin Central
+  2861 => "+proj=lcc +lat_1=44.06666666666667 +lat_2=42.73333333333333 +lat_0=42 +lon_0=-90 +x_0=600000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Wisconsin South
+  2862 => "+proj=tmerc +lat_0=40.5 +lon_0=-105.1666666666667 +k=0.999938 +x_0=200000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Wyoming East
+  2863 => "+proj=tmerc +lat_0=40.5 +lon_0=-107.3333333333333 +k=0.999938 +x_0=400000 +y_0=100000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Wyoming East Central
+  2864 => "+proj=tmerc +lat_0=40.5 +lon_0=-108.75 +k=0.999938 +x_0=600000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Wyoming West Central
+  2865 => "+proj=tmerc +lat_0=40.5 +lon_0=-110.0833333333333 +k=0.999938 +x_0=800000 +y_0=100000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Wyoming West
+  2866 => "+proj=lcc +lat_1=18.43333333333333 +lat_2=18.03333333333333 +lat_0=17.83333333333333 +lon_0=-66.43333333333334 +x_0=200000 +y_0=200000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(HARN) / Puerto Rico & Virgin Is.
+  2867 => "+proj=tmerc +lat_0=31 +lon_0=-110.1666666666667 +k=0.999900 +x_0=213360 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048 +no_defs", # NAD83(HARN) / Arizona East (ft)
+  2868 => "+proj=tmerc +lat_0=31 +lon_0=-111.9166666666667 +k=0.999900 +x_0=213360 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048 +no_defs", # NAD83(HARN) / Arizona Central (ft)
+  2869 => "+proj=tmerc +lat_0=31 +lon_0=-113.75 +k=0.999933 +x_0=213360 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048 +no_defs", # NAD83(HARN) / Arizona West (ft)
+  2870 => "+proj=lcc +lat_1=41.66666666666666 +lat_2=40 +lat_0=39.33333333333334 +lon_0=-122 +x_0=2000000.0001016 +y_0=500000.0001016001 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # NAD83(HARN) / California zone 1 (ftUS)
+  2871 => "+proj=lcc +lat_1=39.83333333333334 +lat_2=38.33333333333334 +lat_0=37.66666666666666 +lon_0=-122 +x_0=2000000.0001016 +y_0=500000.0001016001 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # NAD83(HARN) / California zone 2 (ftUS)
+  2872 => "+proj=lcc +lat_1=38.43333333333333 +lat_2=37.06666666666667 +lat_0=36.5 +lon_0=-120.5 +x_0=2000000.0001016 +y_0=500000.0001016001 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # NAD83(HARN) / California zone 3 (ftUS)
+  2873 => "+proj=lcc +lat_1=37.25 +lat_2=36 +lat_0=35.33333333333334 +lon_0=-119 +x_0=2000000.0001016 +y_0=500000.0001016001 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # NAD83(HARN) / California zone 4 (ftUS)
+  2874 => "+proj=lcc +lat_1=35.46666666666667 +lat_2=34.03333333333333 +lat_0=33.5 +lon_0=-118 +x_0=2000000.0001016 +y_0=500000.0001016001 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # NAD83(HARN) / California zone 5 (ftUS)
+  2875 => "+proj=lcc +lat_1=33.88333333333333 +lat_2=32.78333333333333 +lat_0=32.16666666666666 +lon_0=-116.25 +x_0=2000000.0001016 +y_0=500000.0001016001 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # NAD83(HARN) / California zone 6 (ftUS)
+  2876 => "+proj=lcc +lat_1=40.78333333333333 +lat_2=39.71666666666667 +lat_0=39.33333333333334 +lon_0=-105.5 +x_0=914401.8288036576 +y_0=304800.6096012192 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # NAD83(HARN) / Colorado North (ftUS)
+  2877 => "+proj=lcc +lat_1=39.75 +lat_2=38.45 +lat_0=37.83333333333334 +lon_0=-105.5 +x_0=914401.8288036576 +y_0=304800.6096012192 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # NAD83(HARN) / Colorado Central (ftUS)
+  2878 => "+proj=lcc +lat_1=38.43333333333333 +lat_2=37.23333333333333 +lat_0=36.66666666666666 +lon_0=-105.5 +x_0=914401.8288036576 +y_0=304800.6096012192 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # NAD83(HARN) / Colorado South (ftUS)
+  2879 => "+proj=lcc +lat_1=41.86666666666667 +lat_2=41.2 +lat_0=40.83333333333334 +lon_0=-72.75 +x_0=304800.6096012192 +y_0=152400.3048006096 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # NAD83(HARN) / Connecticut (ftUS)
+  2880 => "+proj=tmerc +lat_0=38 +lon_0=-75.41666666666667 +k=0.999995 +x_0=200000.0001016002 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # NAD83(HARN) / Delaware (ftUS)
+  2881 => "+proj=tmerc +lat_0=24.33333333333333 +lon_0=-81 +k=0.999941 +x_0=200000.0001016002 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # NAD83(HARN) / Florida East (ftUS)
+  2882 => "+proj=tmerc +lat_0=24.33333333333333 +lon_0=-82 +k=0.999941 +x_0=200000.0001016002 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # NAD83(HARN) / Florida West (ftUS)
+  2883 => "+proj=lcc +lat_1=30.75 +lat_2=29.58333333333333 +lat_0=29 +lon_0=-84.5 +x_0=600000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # NAD83(HARN) / Florida North (ftUS)
+  2884 => "+proj=tmerc +lat_0=30 +lon_0=-82.16666666666667 +k=0.999900 +x_0=200000.0001016002 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # NAD83(HARN) / Georgia East (ftUS)
+  2885 => "+proj=tmerc +lat_0=30 +lon_0=-84.16666666666667 +k=0.999900 +x_0=699999.9998983998 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # NAD83(HARN) / Georgia West (ftUS)
+  2886 => "+proj=tmerc +lat_0=41.66666666666666 +lon_0=-112.1666666666667 +k=0.999947 +x_0=200000.0001016002 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # NAD83(HARN) / Idaho East (ftUS)
+  2887 => "+proj=tmerc +lat_0=41.66666666666666 +lon_0=-114 +k=0.999947 +x_0=500000.0001016001 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # NAD83(HARN) / Idaho Central (ftUS)
+  2888 => "+proj=tmerc +lat_0=41.66666666666666 +lon_0=-115.75 +k=0.999933 +x_0=800000.0001016001 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # NAD83(HARN) / Idaho West (ftUS)
+  2889 => "+proj=tmerc +lat_0=37.5 +lon_0=-85.66666666666667 +k=0.999967 +x_0=99999.99989839978 +y_0=249364.9987299975 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # NAD83(HARN) / Indiana East (ftUS)
+  2890 => "+proj=tmerc +lat_0=37.5 +lon_0=-87.08333333333333 +k=0.999967 +x_0=900000 +y_0=249364.9987299975 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # NAD83(HARN) / Indiana West (ftUS)
+  2891 => "+proj=lcc +lat_1=37.96666666666667 +lat_2=38.96666666666667 +lat_0=37.5 +lon_0=-84.25 +x_0=500000.0001016001 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # NAD83(HARN) / Kentucky North (ftUS)
+  2892 => "+proj=lcc +lat_1=37.93333333333333 +lat_2=36.73333333333333 +lat_0=36.33333333333334 +lon_0=-85.75 +x_0=500000.0001016001 +y_0=500000.0001016001 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # NAD83(HARN) / Kentucky South (ftUS)
+  2893 => "+proj=lcc +lat_1=39.45 +lat_2=38.3 +lat_0=37.66666666666666 +lon_0=-77 +x_0=399999.9998983998 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # NAD83(HARN) / Maryland (ftUS)
+  2894 => "+proj=lcc +lat_1=42.68333333333333 +lat_2=41.71666666666667 +lat_0=41 +lon_0=-71.5 +x_0=200000.0001016002 +y_0=750000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # NAD83(HARN) / Massachusetts Mainland (ftUS)
+  2895 => "+proj=lcc +lat_1=41.48333333333333 +lat_2=41.28333333333333 +lat_0=41 +lon_0=-70.5 +x_0=500000.0001016001 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # NAD83(HARN) / Massachusetts Island (ftUS)
+  2896 => "+proj=lcc +lat_1=47.08333333333334 +lat_2=45.48333333333333 +lat_0=44.78333333333333 +lon_0=-87 +x_0=7999999.999968001 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048 +no_defs", # NAD83(HARN) / Michigan North (ft)
+  2897 => "+proj=lcc +lat_1=45.7 +lat_2=44.18333333333333 +lat_0=43.31666666666667 +lon_0=-84.36666666666666 +x_0=5999999.999976001 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048 +no_defs", # NAD83(HARN) / Michigan Central (ft)
+  2898 => "+proj=lcc +lat_1=43.66666666666666 +lat_2=42.1 +lat_0=41.5 +lon_0=-84.36666666666666 +x_0=3999999.999984 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048 +no_defs", # NAD83(HARN) / Michigan South (ft)
+  2899 => "+proj=tmerc +lat_0=29.5 +lon_0=-88.83333333333333 +k=0.999950 +x_0=300000.0000000001 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # NAD83(HARN) / Mississippi East (ftUS)
+  2900 => "+proj=tmerc +lat_0=29.5 +lon_0=-90.33333333333333 +k=0.999950 +x_0=699999.9998983998 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # NAD83(HARN) / Mississippi West (ftUS)
+  2901 => "+proj=lcc +lat_1=49 +lat_2=45 +lat_0=44.25 +lon_0=-109.5 +x_0=599999.9999976 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048 +no_defs", # NAD83(HARN) / Montana (ft)
+  2902 => "+proj=tmerc +lat_0=31 +lon_0=-104.3333333333333 +k=0.999909 +x_0=165000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # NAD83(HARN) / New Mexico East (ftUS)
+  2903 => "+proj=tmerc +lat_0=31 +lon_0=-106.25 +k=0.999900 +x_0=500000.0001016001 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # NAD83(HARN) / New Mexico Central (ftUS)
+  2904 => "+proj=tmerc +lat_0=31 +lon_0=-107.8333333333333 +k=0.999917 +x_0=830000.0001016001 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # NAD83(HARN) / New Mexico West (ftUS)
+  2905 => "+proj=tmerc +lat_0=38.83333333333334 +lon_0=-74.5 +k=0.999900 +x_0=150000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # NAD83(HARN) / New York East (ftUS)
+  2906 => "+proj=tmerc +lat_0=40 +lon_0=-76.58333333333333 +k=0.999938 +x_0=249999.9998983998 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # NAD83(HARN) / New York Central (ftUS)
+  2907 => "+proj=tmerc +lat_0=40 +lon_0=-78.58333333333333 +k=0.999938 +x_0=350000.0001016001 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # NAD83(HARN) / New York West (ftUS)
+  2908 => "+proj=lcc +lat_1=41.03333333333333 +lat_2=40.66666666666666 +lat_0=40.16666666666666 +lon_0=-74 +x_0=300000.0000000001 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # NAD83(HARN) / New York Long Island (ftUS)
+  2909 => "+proj=lcc +lat_1=48.73333333333333 +lat_2=47.43333333333333 +lat_0=47 +lon_0=-100.5 +x_0=599999.9999976 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048 +no_defs", # NAD83(HARN) / North Dakota North (ft)
+  2910 => "+proj=lcc +lat_1=47.48333333333333 +lat_2=46.18333333333333 +lat_0=45.66666666666666 +lon_0=-100.5 +x_0=599999.9999976 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048 +no_defs", # NAD83(HARN) / North Dakota South (ft)
+  2911 => "+proj=lcc +lat_1=36.76666666666667 +lat_2=35.56666666666667 +lat_0=35 +lon_0=-98 +x_0=600000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # NAD83(HARN) / Oklahoma North (ftUS)
+  2912 => "+proj=lcc +lat_1=35.23333333333333 +lat_2=33.93333333333333 +lat_0=33.33333333333334 +lon_0=-98 +x_0=600000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # NAD83(HARN) / Oklahoma South (ftUS)
+  2913 => "+proj=lcc +lat_1=46 +lat_2=44.33333333333334 +lat_0=43.66666666666666 +lon_0=-120.5 +x_0=2500000.0001424 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048 +no_defs", # NAD83(HARN) / Oregon North (ft)
+  2914 => "+proj=lcc +lat_1=44 +lat_2=42.33333333333334 +lat_0=41.66666666666666 +lon_0=-120.5 +x_0=1500000.0001464 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048 +no_defs", # NAD83(HARN) / Oregon South (ft)
+  2915 => "+proj=lcc +lat_1=36.41666666666666 +lat_2=35.25 +lat_0=34.33333333333334 +lon_0=-86 +x_0=600000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # NAD83(HARN) / Tennessee (ftUS)
+  2916 => "+proj=lcc +lat_1=36.18333333333333 +lat_2=34.65 +lat_0=34 +lon_0=-101.5 +x_0=200000.0001016002 +y_0=999999.9998983998 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # NAD83(HARN) / Texas North (ftUS)
+  2917 => "+proj=lcc +lat_1=33.96666666666667 +lat_2=32.13333333333333 +lat_0=31.66666666666667 +lon_0=-98.5 +x_0=600000 +y_0=2000000.0001016 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # NAD83(HARN) / Texas North Central (ftUS)
+  2918 => "+proj=lcc +lat_1=31.88333333333333 +lat_2=30.11666666666667 +lat_0=29.66666666666667 +lon_0=-100.3333333333333 +x_0=699999.9998983998 +y_0=3000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # NAD83(HARN) / Texas Central (ftUS)
+  2919 => "+proj=lcc +lat_1=30.28333333333333 +lat_2=28.38333333333333 +lat_0=27.83333333333333 +lon_0=-99 +x_0=600000 +y_0=3999999.9998984 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # NAD83(HARN) / Texas South Central (ftUS)
+  2920 => "+proj=lcc +lat_1=27.83333333333333 +lat_2=26.16666666666667 +lat_0=25.66666666666667 +lon_0=-98.5 +x_0=300000.0000000001 +y_0=5000000.0001016 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # NAD83(HARN) / Texas South (ftUS)
+  2921 => "+proj=lcc +lat_1=41.78333333333333 +lat_2=40.71666666666667 +lat_0=40.33333333333334 +lon_0=-111.5 +x_0=500000.0001504 +y_0=999999.9999960001 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048 +no_defs", # NAD83(HARN) / Utah North (ft)
+  2922 => "+proj=lcc +lat_1=40.65 +lat_2=39.01666666666667 +lat_0=38.33333333333334 +lon_0=-111.5 +x_0=500000.0001504 +y_0=1999999.999992 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048 +no_defs", # NAD83(HARN) / Utah Central (ft)
+  2923 => "+proj=lcc +lat_1=38.35 +lat_2=37.21666666666667 +lat_0=36.66666666666666 +lon_0=-111.5 +x_0=500000.0001504 +y_0=2999999.999988 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048 +no_defs", # NAD83(HARN) / Utah South (ft)
+  2924 => "+proj=lcc +lat_1=39.2 +lat_2=38.03333333333333 +lat_0=37.66666666666666 +lon_0=-78.5 +x_0=3500000.0001016 +y_0=2000000.0001016 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # NAD83(HARN) / Virginia North (ftUS)
+  2925 => "+proj=lcc +lat_1=37.96666666666667 +lat_2=36.76666666666667 +lat_0=36.33333333333334 +lon_0=-78.5 +x_0=3500000.0001016 +y_0=999999.9998983998 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # NAD83(HARN) / Virginia South (ftUS)
+  2926 => "+proj=lcc +lat_1=48.73333333333333 +lat_2=47.5 +lat_0=47 +lon_0=-120.8333333333333 +x_0=500000.0001016001 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # NAD83(HARN) / Washington North (ftUS)
+  2927 => "+proj=lcc +lat_1=47.33333333333334 +lat_2=45.83333333333334 +lat_0=45.33333333333334 +lon_0=-120.5 +x_0=500000.0001016001 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # NAD83(HARN) / Washington South (ftUS)
+  2928 => "+proj=lcc +lat_1=46.76666666666667 +lat_2=45.56666666666667 +lat_0=45.16666666666666 +lon_0=-90 +x_0=600000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # NAD83(HARN) / Wisconsin North (ftUS)
+  2929 => "+proj=lcc +lat_1=45.5 +lat_2=44.25 +lat_0=43.83333333333334 +lon_0=-90 +x_0=600000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # NAD83(HARN) / Wisconsin Central (ftUS)
+  2930 => "+proj=lcc +lat_1=44.06666666666667 +lat_2=42.73333333333333 +lat_0=42 +lon_0=-90 +x_0=600000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +to_meter=0.3048006096012192 +no_defs", # NAD83(HARN) / Wisconsin South (ftUS)
+  2931 => "+proj=tmerc +lat_0=0 +lon_0=13 +k=0.999600 +x_0=500000.0000000001 +y_0=0 +a=6378249.2 +b=6356515 +to_meter=0.3048006096012192 +no_defs", # Beduaram / TM 13 NE
+  2932 => "+proj=tmerc +lat_0=24.45 +lon_0=51.21666666666667 +k=0.999990 +x_0=200000 +y_0=300000 +ellps=intl +towgs84=-119.425,-303.659,-11.0006,1.1643,0.174458,1.09626,3.65706 +units=m +no_defs", # QND95 / Qatar National Grid
+  2933 => "+proj=utm +zone=50 +south +ellps=bessel +towgs84=-404.78,685.68,45.47,0,0,0,0 +units=m +no_defs", # Segara / UTM zone 50S
+  2934 => "+proj=merc +lat_ts=0 +lon_0=216.8077194444444 +k=0.997000 +x_0=3900000 +y_0=900000 +ellps=bessel +pm=jakarta +units=m +no_defs", # Segara (Jakarta) / NEIEZ
+  2935 => "+proj=tmerc +lat_0=0.1166666666666667 +lon_0=41.53333333333333 +k=1.000000 +x_0=1300000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / CS63 zone A1
+  2936 => "+proj=tmerc +lat_0=0.1166666666666667 +lon_0=44.53333333333333 +k=1.000000 +x_0=2300000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / CS63 zone A2
+  2937 => "+proj=tmerc +lat_0=0.1166666666666667 +lon_0=47.53333333333333 +k=1.000000 +x_0=3300000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / CS63 zone A3
+  2938 => "+proj=tmerc +lat_0=0.1166666666666667 +lon_0=50.53333333333333 +k=1.000000 +x_0=4300000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / CS63 zone A4
+  2939 => "+proj=tmerc +lat_0=0.1333333333333333 +lon_0=50.76666666666667 +k=1.000000 +x_0=2300000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / CS63 zone K2
+  2940 => "+proj=tmerc +lat_0=0.1333333333333333 +lon_0=53.76666666666667 +k=1.000000 +x_0=3300000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / CS63 zone K3
+  2941 => "+proj=tmerc +lat_0=0.1333333333333333 +lon_0=56.76666666666667 +k=1.000000 +x_0=4300000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / CS63 zone K4
+  2942 => "+proj=utm +zone=28 +ellps=intl +units=m +no_defs", # Porto Santo / UTM zone 28N
+  2943 => "+proj=utm +zone=28 +ellps=intl +units=m +no_defs", # Selvagem Grande / UTM zone 28N
+  2944 => "+proj=tmerc +lat_0=0 +lon_0=-55.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(CSRS) / SCoPQ zone 2
+  2945 => "+proj=tmerc +lat_0=0 +lon_0=-58.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(CSRS) / MTM zone 3
+  2946 => "+proj=tmerc +lat_0=0 +lon_0=-61.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(CSRS) / MTM zone 4
+  2947 => "+proj=tmerc +lat_0=0 +lon_0=-64.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(CSRS) / MTM zone 5
+  2948 => "+proj=tmerc +lat_0=0 +lon_0=-67.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(CSRS) / MTM zone 6
+  2949 => "+proj=tmerc +lat_0=0 +lon_0=-70.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(CSRS) / MTM zone 7
+  2950 => "+proj=tmerc +lat_0=0 +lon_0=-73.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(CSRS) / MTM zone 8
+  2951 => "+proj=tmerc +lat_0=0 +lon_0=-76.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(CSRS) / MTM zone 9
+  2952 => "+proj=tmerc +lat_0=0 +lon_0=-79.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(CSRS) / MTM zone 10
+  2953 => "+proj=stere +lat_0=46.5 +lon_0=-66.5 +k=0.999912 +x_0=2500000 +y_0=7500000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(CSRS) / New Brunswick Stereo
+  2954 => "+proj=stere +lat_0=47.25 +lon_0=-63 +k=0.999912 +x_0=400000 +y_0=800000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(CSRS) / Prince Edward Isl. Stereographic (NAD83)
+  2955 => "+proj=utm +zone=11 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(CSRS) / UTM zone 11N
+  2956 => "+proj=utm +zone=12 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(CSRS) / UTM zone 12N
+  2957 => "+proj=utm +zone=13 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(CSRS) / UTM zone 13N
+  2958 => "+proj=utm +zone=17 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(CSRS) / UTM zone 17N
+  2959 => "+proj=utm +zone=18 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(CSRS) / UTM zone 18N
+  2960 => "+proj=utm +zone=19 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(CSRS) / UTM zone 19N
+  2961 => "+proj=utm +zone=20 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(CSRS) / UTM zone 20N
+  2962 => "+proj=utm +zone=21 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # NAD83(CSRS) / UTM zone 21N
+  3036 => "+proj=utm +zone=36 +south +ellps=WGS84 +towgs84=0,0,0,-0,-0,-0,0 +units=m +no_defs", # Moznet / UTM zone 36S
+  3037 => "+proj=utm +zone=37 +south +ellps=WGS84 +towgs84=0,0,0,-0,-0,-0,0 +units=m +no_defs", # Moznet / UTM zone 37S
+  3148 => "+proj=utm +zone=48 +a=6377276.345 +b=6356075.413140239 +units=m +no_defs", # Indian 1960 / UTM zone 48N
+  3149 => "+proj=utm +zone=49 +a=6377276.345 +b=6356075.413140239 +units=m +no_defs", # Indian 1960 / UTM zone 49N
+  3176 => "+proj=tmerc +lat_0=0 +lon_0=106 +k=0.999600 +x_0=500000 +y_0=0 +a=6377276.345 +b=6356075.413140239 +units=m +no_defs", # Indian 1960 / TM 106 NE
+  3200 => "+proj=lcc +lat_1=32.5 +lat_0=32.5 +lon_0=45 +k_0=0.9987864078000001 +x_0=1500000 +y_0=1166200 +ellps=clrk80 +units=m +no_defs", # FD58 / Iraq zone
+  3300 => "+proj=lcc +lat_1=59.33333333333334 +lat_2=58 +lat_0=57.51755393055556 +lon_0=24 +x_0=500000 +y_0=6375000 +ellps=GRS80 +towgs84=0.055,-0.541,-0.185,0.0183,-0.0003,-0.007,-0.014 +units=m +no_defs", # Estonian Coordinate System of 1992
+  3301 => "+proj=lcc +lat_1=59.33333333333334 +lat_2=58 +lat_0=57.51755393055556 +lon_0=24 +x_0=500000 +y_0=6375000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # Estonian Coordinate System of 1997
+  3439 => "+proj=utm +zone=39 +ellps=clrk80 +units=m +no_defs", # PSD93 / UTM zone 39N
+  3440 => "+proj=utm +zone=40 +ellps=clrk80 +units=m +no_defs", # PSD93 / UTM zone 40N
+  3561 => "+proj=tmerc +lat_0=18.83333333333333 +lon_0=-155.5 +k=0.999967 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +to_meter=0.3048006096012192 +no_defs", # Old Hawaiian / Hawaii zone 1
+  3562 => "+proj=tmerc +lat_0=20.33333333333333 +lon_0=-156.6666666666667 +k=0.999967 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +to_meter=0.3048006096012192 +no_defs", # Old Hawaiian / Hawaii zone 2
+  3563 => "+proj=tmerc +lat_0=21.16666666666667 +lon_0=-158 +k=0.999990 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +to_meter=0.3048006096012192 +no_defs", # Old Hawaiian / Hawaii zone 3
+  3564 => "+proj=tmerc +lat_0=21.83333333333333 +lon_0=-159.5 +k=0.999990 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +to_meter=0.3048006096012192 +no_defs", # Old Hawaiian / Hawaii zone 4
+  3565 => "+proj=tmerc +lat_0=21.66666666666667 +lon_0=-160.1666666666667 +k=1.000000 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +to_meter=0.3048006096012192 +no_defs", # Old Hawaiian / Hawaii zone 5
+  3920 => "+proj=utm +zone=20 +ellps=clrk66 +units=m +no_defs", # Puerto Rico / UTM zone 20N
+  3991 => "+proj=lcc +lat_1=18.43333333333333 +lat_2=18.03333333333333 +lat_0=17.83333333333333 +lon_0=-66.43333333333334 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +to_meter=0.3048006096012192 +no_defs", # Puerto Rico State Plane CS of 1927
+  3992 => "+proj=lcc +lat_1=18.43333333333333 +lat_2=18.03333333333333 +lat_0=17.83333333333333 +lon_0=-66.43333333333334 +x_0=152400.3048006096 +y_0=30480.06096012192 +ellps=clrk66 +to_meter=0.3048006096012192 +no_defs", # Puerto Rico / St. Croix
+  4001 => "+proj=longlat +ellps=airy +no_defs", # Unknown datum based upon the Airy 1830 ellipsoid
+  4002 => "+proj=longlat +a=6377340.189 +b=6356034.447938534 +no_defs", # Unknown datum based upon the Airy Modified 1849 ellipsoid
+  4003 => "+proj=longlat +ellps=aust_SA +no_defs", # Unknown datum based upon the Australian National Spheroid
+  4004 => "+proj=longlat +ellps=bessel +no_defs", # Unknown datum based upon the Bessel 1841 ellipsoid
+  4005 => "+proj=longlat +a=6377492.018 +b=6356173.508712696 +no_defs", # Unknown datum based upon the Bessel Modified ellipsoid
+  4006 => "+proj=longlat +ellps=bess_nam +no_defs", # Unknown datum based upon the Bessel Namibia ellipsoid
+  4007 => "+proj=longlat +a=6378293.63683822 +b=6356617.979337744 +no_defs", # Unknown datum based upon the Clarke 1858 ellipsoid
+  4008 => "+proj=longlat +ellps=clrk66 +no_defs", # Unknown datum based upon the Clarke 1866 ellipsoid
+  4009 => "+proj=longlat +a=6378450.047548896 +b=6356826.621488444 +no_defs", # Unknown datum based upon the Clarke 1866 Michigan ellipsoid
+  4010 => "+proj=longlat +a=6378300.789 +b=6356566.435 +no_defs", # Unknown datum based upon the Clarke 1880 (Benoit) ellipsoid
+  4011 => "+proj=longlat +a=6378249.2 +b=6356515 +no_defs", # Unknown datum based upon the Clarke 1880 (IGN) ellipsoid
+  4012 => "+proj=longlat +ellps=clrk80 +no_defs", # Unknown datum based upon the Clarke 1880 (RGS) ellipsoid
+  4013 => "+proj=longlat +a=6378249.145 +b=6356514.966398753 +no_defs", # Unknown datum based upon the Clarke 1880 (Arc) ellipsoid
+  4014 => "+proj=longlat +a=6378249.2 +b=6356514.996941779 +no_defs", # Unknown datum based upon the Clarke 1880 (SGA 1922) ellipsoid
+  4015 => "+proj=longlat +a=6377276.345 +b=6356075.413140239 +no_defs", # Unknown datum based upon the Everest 1830 (1937 Adjustment) ellipsoid
+  4016 => "+proj=longlat +ellps=evrstSS +no_defs", # Unknown datum based upon the Everest 1830 (1967 Definition) ellipsoid
+  4018 => "+proj=longlat +a=6377304.063 +b=6356103.038993155 +no_defs", # Unknown datum based upon the Everest 1830 Modified ellipsoid
+  4019 => "+proj=longlat +ellps=GRS80 +no_defs", # Unknown datum based upon the GRS 1980 ellipsoid
+  4020 => "+proj=longlat +ellps=helmert +no_defs", # Unknown datum based upon the Helmert 1906 ellipsoid
+  4021 => "+proj=longlat +a=6378160 +b=6356774.50408554 +no_defs", # Unknown datum based upon the Indonesian National Spheroid
+  4022 => "+proj=longlat +ellps=intl +no_defs", # Unknown datum based upon the International 1924 ellipsoid
+  4024 => "+proj=longlat +ellps=krass +no_defs", # Unknown datum based upon the Krassowsky 1940 ellipsoid
+  4025 => "+proj=longlat +ellps=WGS66 +no_defs", # Unknown datum based upon the NWL 9D ellipsoid
+  4027 => "+proj=longlat +a=6376523 +b=6355862.933255573 +no_defs", # Unknown datum based upon the Plessis 1817 ellipsoid
+  4028 => "+proj=longlat +a=6378298.3 +b=6356657.142669562 +no_defs", # Unknown datum based upon the Struve 1860 ellipsoid
+  4029 => "+proj=longlat +a=6378300 +b=6356751.689189189 +no_defs", # Unknown datum based upon the War Office ellipsoid
+  4030 => "+proj=longlat +ellps=WGS84 +no_defs", # Unknown datum based upon the WGS 84 ellipsoid
+  4031 => "+proj=longlat +ellps=WGS84 +no_defs", # Unknown datum based upon the GEM 10C ellipsoid
+  4032 => "+proj=longlat +a=6378136.2 +b=6356751.516927429 +no_defs", # Unknown datum based upon the OSU86F ellipsoid
+  4033 => "+proj=longlat +a=6378136.3 +b=6356751.616592146 +no_defs", # Unknown datum based upon the OSU91A ellipsoid
+  4034 => "+proj=longlat +ellps=clrk80 +no_defs", # Unknown datum based upon the Clarke 1880 ellipsoid
+  4035 => "+proj=longlat +a=6371000 +b=6371000 +no_defs", # Unknown datum based upon the Authalic Sphere
+  4036 => "+proj=longlat +ellps=GRS67 +no_defs", # Unknown datum based upon the GRS 1967 ellipsoid
+  4041 => "+proj=longlat +a=6378135 +b=6356750.304921594 +no_defs", # Unknown datum based upon the Average Terrestrial System 1977 ellipsoid
+  4042 => "+proj=longlat +a=6377299.36559538 +b=6356098.357204817 +no_defs", # Unknown datum based upon the Everest (1830 Definition) ellipsoid
+  4043 => "+proj=longlat +ellps=WGS72 +no_defs", # Unknown datum based upon the WGS 72 ellipsoid
+  4044 => "+proj=longlat +a=6377301.243 +b=6356100.230165385 +no_defs", # Unknown datum based upon the Everest 1830 (1962 Definition) ellipsoid
+  4045 => "+proj=longlat +a=6377299.151 +b=6356098.145120132 +no_defs", # Unknown datum based upon the Everest 1830 (1975 Definition) ellipsoid
+  4047 => "+proj=longlat +a=6370997 +b=6370997 +no_defs", # Unspecified based upon the GRS 1980 Authalic Sphere
+  4120 => "+proj=longlat +ellps=bessel +no_defs", # Greek
+  4121 => "+proj=longlat +ellps=GRS80 +towgs84=-199.87,74.79,246.62,0,0,0,0 +no_defs", # GGRS87
+  4122 => "+proj=longlat +a=6378135 +b=6356750.304921594 +no_defs", # ATS77
+  4123 => "+proj=longlat +ellps=intl +towgs84=-90.7,-106.1,-119.2,4.09,0.218,-1.05,1.37 +no_defs", # KKJ
+  4124 => "+proj=longlat +ellps=bessel +no_defs", # RT90
+  4125 => "+proj=longlat +ellps=bessel +towgs84=-404.78,685.68,45.47,0,0,0,0 +no_defs", # Samboja
+  4126 => "+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs", # LKS94 (ETRS89)
+  4127 => "+proj=longlat +ellps=clrk66 +no_defs", # Tete
+  4128 => "+proj=longlat +ellps=clrk66 +no_defs", # Madzansua
+  4129 => "+proj=longlat +ellps=clrk66 +no_defs", # Observatario
+  4130 => "+proj=longlat +ellps=WGS84 +towgs84=0,0,0,-0,-0,-0,0 +no_defs", # Moznet
+  4131 => "+proj=longlat +a=6377276.345 +b=6356075.413140239 +no_defs", # Indian 1960
+  4132 => "+proj=longlat +ellps=clrk80 +no_defs", # FD58
+  4133 => "+proj=longlat +ellps=GRS80 +towgs84=0.055,-0.541,-0.185,0.0183,-0.0003,-0.007,-0.014 +no_defs", # EST92
+  4134 => "+proj=longlat +ellps=clrk80 +no_defs", # PDO Survey Datum 1993
+  4135 => "+proj=longlat +ellps=clrk66 +no_defs", # Old Hawaiian
+  4136 => "+proj=longlat +ellps=clrk66 +no_defs", # St. Lawrence Island
+  4137 => "+proj=longlat +ellps=clrk66 +no_defs", # St. Paul Island
+  4138 => "+proj=longlat +ellps=clrk66 +no_defs", # St. George Island
+  4139 => "+proj=longlat +ellps=clrk66 +no_defs", # Puerto Rico
+  4140 => "+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs", # NAD83(CSRS98)
+  4141 => "+proj=longlat +ellps=GRS80 +no_defs", # Israel
+  4142 => "+proj=longlat +ellps=clrk80 +towgs84=-125,53,467,0,0,0,0 +no_defs", # Locodjo 1965
+  4143 => "+proj=longlat +ellps=clrk80 +towgs84=-124.76,53,466.79,0,0,0,0 +no_defs", # Abidjan 1987
+  4144 => "+proj=longlat +a=6377276.345 +b=6356075.413140239 +no_defs", # Kalianpur 1937
+  4145 => "+proj=longlat +a=6377301.243 +b=6356100.230165385 +towgs84=283,682,231,0,0,0,0 +no_defs", # Kalianpur 1962
+  4146 => "+proj=longlat +a=6377299.151 +b=6356098.145120132 +towgs84=295,736,257,0,0,0,0 +no_defs", # Kalianpur 1975
+  4147 => "+proj=longlat +ellps=krass +towgs84=-17.51,-108.32,-62.39,0,0,0,0 +no_defs", # Hanoi 1972
+  4148 => "+proj=longlat +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +no_defs", # Hartebeesthoek94
+  4149 => "+proj=longlat +ellps=bessel +no_defs", # CH1903
+  4150 => "+proj=longlat +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +no_defs", # CH1903+
+  4151 => "+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs", # CHTRF95
+  4152 => "+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs", # NAD83(HARN)
+  4153 => "+proj=longlat +ellps=intl +towgs84=-133.63,-157.5,-158.62,0,0,0,0 +no_defs", # Rassadiran
+  4154 => "+proj=longlat +ellps=intl +no_defs", # ED50(ED77)
+  4155 => "+proj=longlat +a=6378249.2 +b=6356515 +towgs84=-83,37,124,0,0,0,0 +no_defs", # Dabola 1981
+  4156 => "+proj=longlat +ellps=bessel +no_defs", # S-JTSK
+  4157 => "+proj=longlat +a=6378293.63683822 +b=6356617.979337744 +no_defs", # Mount Dillon
+  4158 => "+proj=longlat +ellps=intl +no_defs", # Naparima 1955
+  4159 => "+proj=longlat +ellps=intl +no_defs", # ELD79
+  4160 => "+proj=longlat +ellps=intl +no_defs", # Chos Malal 1914
+  4161 => "+proj=longlat +ellps=intl +no_defs", # Pampa del Castillo
+  4162 => "+proj=longlat +ellps=bessel +no_defs", # Korean 1985
+  4163 => "+proj=longlat +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +no_defs", # Yemen NGN96
+  4164 => "+proj=longlat +ellps=krass +towgs84=-76,-138,67,0,0,0,0 +no_defs", # South Yemen
+  4165 => "+proj=longlat +ellps=intl +towgs84=-173,253,27,0,0,0,0 +no_defs", # Bissau
+  4166 => "+proj=longlat +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +no_defs", # Korean 1995
+  4167 => "+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs", # NZGD2000
+  4168 => "+proj=longlat +a=6378300 +b=6356751.689189189 +towgs84=-199,32,322,0,0,0,0 +no_defs", # Accra
+  4169 => "+proj=longlat +ellps=clrk66 +towgs84=-115,118,426,0,0,0,0 +no_defs", # American Samoa 1962
+  4170 => "+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs", # SIRGAS
+  4171 => "+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs", # RGF93
+  4172 => "+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs", # POSGAR
+  4173 => "+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs", # IRENET95
+  4174 => "+proj=longlat +a=6378300 +b=6356751.689189189 +no_defs", # Sierra Leone 1924
+  4175 => "+proj=longlat +ellps=clrk80 +towgs84=-88,4,101,0,0,0,0 +no_defs", # Sierra Leone 1968
+  4176 => "+proj=longlat +ellps=GRS80 +no_defs", # Australian Antarctic
+  4178 => "+proj=longlat +ellps=krass +towgs84=24,-123,-94,0.02,-0.25,-0.13,1.1 +no_defs", # Pulkovo 1942(83)
+  4179 => "+proj=longlat +ellps=krass +towgs84=33.4,-146.6,-76.3,-0.359,-0.053,0.844,-0.84 +no_defs", # Pulkovo 1942(58)
+  4180 => "+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs", # EST97
+  4181 => "+proj=longlat +ellps=intl +towgs84=-193,13.7,-39.3,-0.41,-2.933,2.688,0.43 +no_defs", # Luxembourg 1930
+  4182 => "+proj=longlat +ellps=intl +no_defs", # Azores Occidental 1939
+  4183 => "+proj=longlat +ellps=intl +no_defs", # Azores Central 1948
+  4184 => "+proj=longlat +ellps=intl +no_defs", # Azores Oriental 1940
+  4185 => "+proj=longlat +ellps=intl +no_defs", # Madeira 1936
+  4188 => "+proj=longlat +ellps=airy +no_defs", # OSNI 1952
+  4189 => "+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs", # REGVEN
+  4190 => "+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs", # POSGAR 98
+  4191 => "+proj=longlat +ellps=krass +no_defs", # Albanian 1987
+  4192 => "+proj=longlat +ellps=intl +no_defs", # Douala 1948
+  4193 => "+proj=longlat +a=6378249.2 +b=6356515 +towgs84=-70.9,-151.8,-41.4,0,0,0,0 +no_defs", # Manoca 1962
+  4194 => "+proj=longlat +ellps=intl +no_defs", # Qornoq 1927
+  4195 => "+proj=longlat +ellps=intl +towgs84=105,326,-102.5,0,0,0.814,-0.6 +no_defs", # Scoresbysund 1952
+  4196 => "+proj=longlat +ellps=intl +towgs84=-45,417,-3.5,0,0,0.814,-0.6 +no_defs", # Ammassalik 1958
+  4197 => "+proj=longlat +ellps=clrk80 +no_defs", # Garoua
+  4198 => "+proj=longlat +ellps=clrk80 +no_defs", # Kousseri
+  4199 => "+proj=longlat +ellps=intl +no_defs", # Egypt 1930
+  4200 => "+proj=longlat +ellps=krass +no_defs", # Pulkovo 1995
+  4201 => "+proj=longlat +ellps=clrk80 +no_defs", # Adindan
+  4202 => "+proj=longlat +ellps=aust_SA +no_defs", # AGD66
+  4203 => "+proj=longlat +ellps=aust_SA +no_defs", # AGD84
+  4204 => "+proj=longlat +ellps=intl +no_defs", # Ain el Abd
+  4205 => "+proj=longlat +ellps=krass +towgs84=-43,-163,45,0,0,0,0 +no_defs", # Afgooye
+  4206 => "+proj=longlat +a=6378249.2 +b=6356515 +no_defs", # Agadez
+  4207 => "+proj=longlat +ellps=intl +no_defs", # Lisbon
+  4208 => "+proj=longlat +ellps=intl +no_defs", # Aratu
+  4209 => "+proj=longlat +a=6378249.145 +b=6356514.966398753 +no_defs", # Arc 1950
+  4210 => "+proj=longlat +ellps=clrk80 +no_defs", # Arc 1960
+  4211 => "+proj=longlat +ellps=bessel +no_defs", # Batavia
+  4212 => "+proj=longlat +ellps=clrk80 +no_defs", # Barbados 1938
+  4213 => "+proj=longlat +a=6378249.2 +b=6356515 +no_defs", # Beduaram
+  4214 => "+proj=longlat +ellps=krass +no_defs", # Beijing 1954
+  4215 => "+proj=longlat +ellps=intl +no_defs", # Belge 1950
+  4216 => "+proj=longlat +ellps=clrk66 +towgs84=-73,213,296,0,0,0,0 +no_defs", # Bermuda 1957
+  4218 => "+proj=longlat +ellps=intl +no_defs", # Bogota 1975
+  4219 => "+proj=longlat +ellps=bessel +towgs84=-384,664,-48,0,0,0,0 +no_defs", # Bukit Rimpah
+  4220 => "+proj=longlat +ellps=clrk80 +no_defs", # Camacupa
+  4221 => "+proj=longlat +ellps=intl +no_defs", # Campo Inchauspe
+  4222 => "+proj=longlat +a=6378249.145 +b=6356514.966398753 +no_defs", # Cape
+  4223 => "+proj=longlat +a=6378249.2 +b=6356515 +no_defs", # Carthage
+  4224 => "+proj=longlat +ellps=intl +towgs84=-134,229,-29,0,0,0,0 +no_defs", # Chua
+  4225 => "+proj=longlat +ellps=intl +towgs84=-206,172,-6,0,0,0,0 +no_defs", # Corrego Alegre
+  4226 => "+proj=longlat +a=6378249.2 +b=6356515 +no_defs", # Cote d'Ivoire
+  4227 => "+proj=longlat +a=6378249.2 +b=6356515 +no_defs", # Deir ez Zor
+  4228 => "+proj=longlat +a=6378249.2 +b=6356515 +no_defs", # Douala
+  4229 => "+proj=longlat +ellps=helmert +no_defs", # Egypt 1907
+  4230 => "+proj=longlat +ellps=intl +no_defs", # ED50
+  4231 => "+proj=longlat +ellps=intl +towgs84=-82.981,-99.719,-110.709,-0.5076,0.1503,0.3898,-0.3143 +no_defs", # ED87
+  4232 => "+proj=longlat +ellps=clrk80 +no_defs", # Fahud
+  4233 => "+proj=longlat +ellps=intl +no_defs", # Gandajika 1970
+  4234 => "+proj=longlat +a=6378249.2 +b=6356515 +no_defs", # Garoua
+  4235 => "+proj=longlat +ellps=intl +no_defs", # Guyane Francaise
+  4236 => "+proj=longlat +ellps=intl +towgs84=-637,-549,-203,0,0,0,0 +no_defs", # Hu Tzu Shan
+  4237 => "+proj=longlat +ellps=GRS67 +no_defs", # HD72
+  4238 => "+proj=longlat +a=6378160 +b=6356774.50408554 +no_defs", # ID74
+  4239 => "+proj=longlat +a=6377276.345 +b=6356075.413140239 +towgs84=217,823,299,0,0,0,0 +no_defs", # Indian 1954
+  4240 => "+proj=longlat +a=6377276.345 +b=6356075.413140239 +no_defs", # Indian 1975
+  4241 => "+proj=longlat +ellps=clrk80 +no_defs", # Jamaica 1875
+  4242 => "+proj=longlat +ellps=clrk66 +no_defs", # JAD69
+  4243 => "+proj=longlat +a=6377299.36559538 +b=6356098.357204817 +no_defs", # Kalianpur 1880
+  4244 => "+proj=longlat +a=6377276.345 +b=6356075.413140239 +towgs84=-97,787,86,0,0,0,0 +no_defs", # Kandawala
+  4245 => "+proj=longlat +a=6377304.063 +b=6356103.038993155 +towgs84=-11,851,5,0,0,0,0 +no_defs", # Kertau
+  4246 => "+proj=longlat +ellps=clrk80 +no_defs", # KOC
+  4247 => "+proj=longlat +ellps=intl +towgs84=-273.5,110.6,-357.9,0,0,0,0 +no_defs", # La Canoa
+  4248 => "+proj=longlat +ellps=intl +no_defs", # PSAD56
+  4249 => "+proj=longlat +ellps=intl +no_defs", # Lake
+  4250 => "+proj=longlat +ellps=clrk80 +towgs84=-130,29,364,0,0,0,0 +no_defs", # Leigon
+  4251 => "+proj=longlat +ellps=clrk80 +towgs84=-90,40,88,0,0,0,0 +no_defs", # Liberia 1964
+  4252 => "+proj=longlat +a=6378249.2 +b=6356515 +no_defs", # Lome
+  4253 => "+proj=longlat +ellps=clrk66 +no_defs", # Luzon 1911
+  4254 => "+proj=longlat +ellps=intl +towgs84=18.38,192.45,96.82,0.056,-0.142,-0.2,-0.0013 +no_defs", # Hito XVIII 1963
+  4255 => "+proj=longlat +ellps=intl +towgs84=-333,-222,114,0,0,0,0 +no_defs", # Herat North
+  4256 => "+proj=longlat +ellps=clrk80 +towgs84=41,-220,-134,0,0,0,0 +no_defs", # Mahe 1971
+  4257 => "+proj=longlat +ellps=bessel +towgs84=-587.8,519.75,145.76,0,0,0,0 +no_defs", # Makassar
+  4258 => "+proj=longlat +ellps=GRS80 +no_defs", # ETRS89
+  4259 => "+proj=longlat +ellps=intl +no_defs", # Malongo 1987
+  4260 => "+proj=longlat +ellps=clrk80 +towgs84=-70.9,-151.8,-41.4,0,0,0,0 +no_defs", # Manoca
+  4261 => "+proj=longlat +a=6378249.2 +b=6356515 +towgs84=31,146,47,0,0,0,0 +no_defs", # Merchich
+  4262 => "+proj=longlat +ellps=bessel +towgs84=639,405,60,0,0,0,0 +no_defs", # Massawa
+  4263 => "+proj=longlat +ellps=clrk80 +no_defs", # Minna
+  4264 => "+proj=longlat +ellps=intl +towgs84=-252.95,-4.11,-96.38,0,0,0,0 +no_defs", # Mhast
+  4265 => "+proj=longlat +ellps=intl +no_defs", # Monte Mario
+  4266 => "+proj=longlat +a=6378249.2 +b=6356515 +no_defs", # M'poraloko
+  4267 => "+proj=longlat +ellps=clrk66 +datum=NAD27 +no_defs", # NAD27
+  4268 => "+proj=longlat +a=6378450.047548896 +b=6356826.621488444 +no_defs", # NAD27 Michigan
+  4269 => "+proj=longlat +ellps=GRS80 +datum=NAD83 +no_defs", # NAD83
+  4270 => "+proj=longlat +ellps=clrk80 +no_defs", # Nahrwan 1967
+  4271 => "+proj=longlat +ellps=intl +no_defs", # Naparima 1972
+  4272 => "+proj=longlat +ellps=intl +no_defs", # NZGD49
+  4273 => "+proj=longlat +a=6377492.018 +b=6356173.508712696 +towgs84=278.3,93,474.5,7.889,0.05,-6.61,6.21 +no_defs", # NGO 1948
+  4274 => "+proj=longlat +ellps=intl +no_defs", # Datum 73
+  4275 => "+proj=longlat +a=6378249.2 +b=6356515 +towgs84=-168,-60,320,0,0,0,0 +no_defs", # NTF
+  4276 => "+proj=longlat +ellps=WGS66 +no_defs", # NSWC 9Z-2
+  4277 => "+proj=longlat +ellps=airy +no_defs", # OSGB 1936
+  4278 => "+proj=longlat +ellps=airy +no_defs", # OSGB70
+  4279 => "+proj=longlat +ellps=airy +no_defs", # OS(SN)80
+  4280 => "+proj=longlat +ellps=bessel +no_defs", # Padang
+  4281 => "+proj=longlat +a=6378300.789 +b=6356566.435 +no_defs", # Palestine 1923
+  4282 => "+proj=longlat +a=6378249.2 +b=6356515 +no_defs", # Pointe Noire
+  4283 => "+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs", # GDA94
+  4284 => "+proj=longlat +ellps=krass +no_defs", # Pulkovo 1942
+  4285 => "+proj=longlat +ellps=intl +no_defs", # Qatar 1974
+  4286 => "+proj=longlat +ellps=helmert +no_defs", # Qatar 1948
+  4287 => "+proj=longlat +ellps=intl +towgs84=164,138,-189,0,0,0,0 +no_defs", # Qornoq
+  4288 => "+proj=longlat +ellps=intl +no_defs", # Loma Quintana
+  4289 => "+proj=longlat +ellps=bessel +no_defs", # Amersfoort
+  4291 => "+proj=longlat +ellps=GRS67 +no_defs", # SAD69
+  4292 => "+proj=longlat +ellps=intl +towgs84=-355,21,72,0,0,0,0 +no_defs", # Sapper Hill 1943
+  4293 => "+proj=longlat +ellps=bess_nam +no_defs", # Schwarzeck
+  4294 => "+proj=longlat +ellps=bessel +no_defs", # Segora
+  4295 => "+proj=longlat +ellps=bessel +no_defs", # Serindung
+  4296 => "+proj=longlat +a=6378249.2 +b=6356515 +no_defs", # Sudan
+  4297 => "+proj=longlat +ellps=intl +towgs84=-189,-242,-91,0,0,0,0 +no_defs", # Tananarive
+  4298 => "+proj=longlat +ellps=evrstSS +no_defs", # Timbalai 1948
+  4299 => "+proj=longlat +a=6377340.189 +b=6356034.447938534 +no_defs", # TM65
+  4300 => "+proj=longlat +a=6377340.189 +b=6356034.447938534 +no_defs", # TM75
+  4301 => "+proj=longlat +ellps=bessel +no_defs", # Tokyo
+  4302 => "+proj=longlat +a=6378293.63683822 +b=6356617.979337744 +towgs84=-61.702,284.488,472.052,0,0,0,0 +no_defs", # Trinidad 1903
+  4303 => "+proj=longlat +ellps=helmert +no_defs", # TC(1948)
+  4304 => "+proj=longlat +a=6378249.2 +b=6356515 +towgs84=-73,-247,227,0,0,0,0 +no_defs", # Voirol 1875
+  4306 => "+proj=longlat +ellps=bessel +no_defs", # Bern 1938
+  4307 => "+proj=longlat +ellps=clrk80 +no_defs", # Nord Sahara 1959
+  4308 => "+proj=longlat +ellps=bessel +no_defs", # RT38
+  4309 => "+proj=longlat +ellps=intl +towgs84=-155,171,37,0,0,0,0 +no_defs", # Yacare
+  4310 => "+proj=longlat +a=6378249.2 +b=6356515 +no_defs", # Yoff
+  4311 => "+proj=longlat +ellps=intl +towgs84=-265,120,-358,0,0,0,0 +no_defs", # Zanderij
+  4312 => "+proj=longlat +ellps=bessel +no_defs", # MGI
+  4313 => "+proj=longlat +ellps=intl +no_defs", # Belge 1972
+  4314 => "+proj=longlat +ellps=bessel +no_defs", # DHDN
+  4315 => "+proj=longlat +a=6378249.2 +b=6356515 +towgs84=-23,259,-9,0,0,0,0 +no_defs", # Conakry 1905
+  4316 => "+proj=longlat +ellps=intl +towgs84=103.25,-100.4,-307.19,0,0,0,0 +no_defs", # Dealul Piscului 1933
+  4317 => "+proj=longlat +ellps=krass +no_defs", # Dealul Piscului 1970
+  4318 => "+proj=longlat +ellps=WGS84 +no_defs", # NGN
+  4319 => "+proj=longlat +ellps=GRS80 +no_defs", # KUDAMS
+  4322 => "+proj=longlat +ellps=WGS72 +no_defs", # WGS 72
+  4324 => "+proj=longlat +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +no_defs", # WGS 72BE
+  4326 => "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs", # WGS 84
+  4600 => "+proj=longlat +ellps=clrk80 +no_defs", # Anguilla 1957
+  4601 => "+proj=longlat +ellps=clrk80 +towgs84=-255,-15,71,0,0,0,0 +no_defs", # Antigua 1943
+  4602 => "+proj=longlat +ellps=clrk80 +towgs84=725,685,536,0,0,0,0 +no_defs", # Dominica 1945
+  4603 => "+proj=longlat +ellps=clrk80 +towgs84=72,213.7,93,0,0,0,0 +no_defs", # Grenada 1953
+  4604 => "+proj=longlat +ellps=clrk80 +towgs84=174,359,365,0,0,0,0 +no_defs", # Montserrat 1958
+  4605 => "+proj=longlat +ellps=clrk80 +towgs84=9,183,236,0,0,0,0 +no_defs", # St. Kitts 1955
+  4606 => "+proj=longlat +ellps=clrk80 +towgs84=-149,128,296,0,0,0,0 +no_defs", # St. Lucia 1955
+  4607 => "+proj=longlat +ellps=clrk80 +no_defs", # St. Vincent 1945
+  4608 => "+proj=longlat +ellps=clrk66 +no_defs", # NAD27(76)
+  4609 => "+proj=longlat +ellps=clrk66 +no_defs", # NAD27(CGQ77)
+  4610 => "+proj=longlat +a=6378140 +b=6356755.288157528 +no_defs", # Xian 1980
+  4611 => "+proj=longlat +ellps=intl +towgs84=-162.619,-276.959,-161.764,0.067753,-2.24365,-1.15883,-1.09425 +no_defs", # Hong Kong 1980
+  4612 => "+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs", # JGD2000
+  4613 => "+proj=longlat +ellps=bessel +towgs84=-404.78,685.68,45.47,0,0,0,0 +no_defs", # Segara
+  4614 => "+proj=longlat +ellps=intl +towgs84=-119.425,-303.659,-11.0006,1.1643,0.174458,1.09626,3.65706 +no_defs", # QND95
+  4615 => "+proj=longlat +ellps=intl +no_defs", # Porto Santo
+  4616 => "+proj=longlat +ellps=intl +no_defs", # Selvagem Grande
+  4617 => "+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs", # NAD83(CSRS)
+  4801 => "+proj=longlat +ellps=bessel +pm=bern +no_defs", # Bern 1898 (Bern)
+  4802 => "+proj=longlat +ellps=intl +pm=bogota +no_defs", # Bogota 1975 (Bogota)
+  4803 => "+proj=longlat +ellps=intl +pm=lisbon +no_defs", # Lisbon (Lisbon)
+  4804 => "+proj=longlat +ellps=bessel +towgs84=-587.8,519.75,145.76,0,0,0,0 +pm=jakarta +no_defs", # Makassar (Jakarta)
+  4805 => "+proj=longlat +ellps=bessel +pm=ferro +no_defs", # MGI (Ferro)
+  4806 => "+proj=longlat +ellps=intl +pm=rome +no_defs", # Monte Mario (Rome)
+  4807 => "+proj=longlat +a=6378249.2 +b=6356515 +towgs84=-168,-60,320,0,0,0,0 +pm=paris +no_defs", # NTF (Paris)
+  4808 => "+proj=longlat +ellps=bessel +pm=jakarta +no_defs", # Padang (Jakarta)
+  4809 => "+proj=longlat +ellps=intl +pm=brussels +no_defs", # Belge 1950 (Brussels)
+  4810 => "+proj=longlat +ellps=intl +towgs84=-189,-242,-91,0,0,0,0 +pm=paris +no_defs", # Tananarive (Paris)
+  4811 => "+proj=longlat +a=6378249.2 +b=6356515 +towgs84=-73,-247,227,0,0,0,0 +pm=paris +no_defs", # Voirol 1875 (Paris)
+  4813 => "+proj=longlat +ellps=bessel +pm=jakarta +no_defs", # Batavia (Jakarta)
+  4814 => "+proj=longlat +ellps=bessel +pm=stockholm +no_defs", # RT38 (Stockholm)
+  4815 => "+proj=longlat +ellps=bessel +pm=athens +no_defs", # Greek (Athens)
+  4816 => "+proj=longlat +a=6378249.2 +b=6356515 +pm=paris +no_defs", # Carthage (Paris)
+  4817 => "+proj=longlat +a=6377492.018 +b=6356173.508712696 +towgs84=278.3,93,474.5,7.889,0.05,-6.61,6.21 +pm=oslo +no_defs", # NGO 1948 (Oslo)
+  4818 => "+proj=longlat +ellps=bessel +pm=ferro +no_defs", # S-JTSK (Ferro)
+  4819 => "+proj=longlat +ellps=clrk80 +pm=paris +no_defs", # Nord Sahara 1959 (Paris)
+  4820 => "+proj=longlat +ellps=bessel +pm=jakarta +no_defs", # Segara (Jakarta)
+  4901 => "+proj=longlat +a=6376523 +b=6355862.933255573 +pm=paris +no_defs", # ATF (Paris)
+  4902 => "+proj=longlat +a=6376523 +b=6355862.933255573 +pm=paris +no_defs", # NDG (Paris)
+  4903 => "+proj=longlat +a=6378298.3 +b=6356657.142669562 +pm=madrid +no_defs", # Madrid 1870 (Madrid)
+  4904 => "+proj=longlat +ellps=bessel +pm=lisbon +no_defs", # Lisbon 1890 (Lisbon)
+  20004 => "+proj=tmerc +lat_0=0 +lon_0=21 +k=1.000000 +x_0=4500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger zone 4
+  20005 => "+proj=tmerc +lat_0=0 +lon_0=27 +k=1.000000 +x_0=5500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger zone 5
+  20006 => "+proj=tmerc +lat_0=0 +lon_0=33 +k=1.000000 +x_0=6500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger zone 6
+  20007 => "+proj=tmerc +lat_0=0 +lon_0=39 +k=1.000000 +x_0=7500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger zone 7
+  20008 => "+proj=tmerc +lat_0=0 +lon_0=45 +k=1.000000 +x_0=8500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger zone 8
+  20009 => "+proj=tmerc +lat_0=0 +lon_0=51 +k=1.000000 +x_0=9500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger zone 9
+  20010 => "+proj=tmerc +lat_0=0 +lon_0=57 +k=1.000000 +x_0=10500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger zone 10
+  20011 => "+proj=tmerc +lat_0=0 +lon_0=63 +k=1.000000 +x_0=11500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger zone 11
+  20012 => "+proj=tmerc +lat_0=0 +lon_0=69 +k=1.000000 +x_0=12500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger zone 12
+  20013 => "+proj=tmerc +lat_0=0 +lon_0=75 +k=1.000000 +x_0=13500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger zone 13
+  20014 => "+proj=tmerc +lat_0=0 +lon_0=81 +k=1.000000 +x_0=14500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger zone 14
+  20015 => "+proj=tmerc +lat_0=0 +lon_0=87 +k=1.000000 +x_0=15500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger zone 15
+  20016 => "+proj=tmerc +lat_0=0 +lon_0=93 +k=1.000000 +x_0=16500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger zone 16
+  20017 => "+proj=tmerc +lat_0=0 +lon_0=99 +k=1.000000 +x_0=17500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger zone 17
+  20018 => "+proj=tmerc +lat_0=0 +lon_0=105 +k=1.000000 +x_0=18500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger zone 18
+  20019 => "+proj=tmerc +lat_0=0 +lon_0=111 +k=1.000000 +x_0=19500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger zone 19
+  20020 => "+proj=tmerc +lat_0=0 +lon_0=117 +k=1.000000 +x_0=20500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger zone 20
+  20021 => "+proj=tmerc +lat_0=0 +lon_0=123 +k=1.000000 +x_0=21500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger zone 21
+  20022 => "+proj=tmerc +lat_0=0 +lon_0=129 +k=1.000000 +x_0=22500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger zone 22
+  20023 => "+proj=tmerc +lat_0=0 +lon_0=135 +k=1.000000 +x_0=23500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger zone 23
+  20024 => "+proj=tmerc +lat_0=0 +lon_0=141 +k=1.000000 +x_0=24500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger zone 24
+  20025 => "+proj=tmerc +lat_0=0 +lon_0=147 +k=1.000000 +x_0=25500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger zone 25
+  20026 => "+proj=tmerc +lat_0=0 +lon_0=153 +k=1.000000 +x_0=26500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger zone 26
+  20027 => "+proj=tmerc +lat_0=0 +lon_0=159 +k=1.000000 +x_0=27500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger zone 27
+  20028 => "+proj=tmerc +lat_0=0 +lon_0=165 +k=1.000000 +x_0=28500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger zone 28
+  20029 => "+proj=tmerc +lat_0=0 +lon_0=171 +k=1.000000 +x_0=29500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger zone 29
+  20030 => "+proj=tmerc +lat_0=0 +lon_0=177 +k=1.000000 +x_0=30500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger zone 30
+  20031 => "+proj=tmerc +lat_0=0 +lon_0=-177 +k=1.000000 +x_0=31500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger zone 31
+  20032 => "+proj=tmerc +lat_0=0 +lon_0=-171 +k=1.000000 +x_0=32500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger zone 32
+  20064 => "+proj=tmerc +lat_0=0 +lon_0=21 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger 4N
+  20065 => "+proj=tmerc +lat_0=0 +lon_0=27 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger 5N
+  20066 => "+proj=tmerc +lat_0=0 +lon_0=33 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger 6N
+  20067 => "+proj=tmerc +lat_0=0 +lon_0=39 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger 7N
+  20068 => "+proj=tmerc +lat_0=0 +lon_0=45 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger 8N
+  20069 => "+proj=tmerc +lat_0=0 +lon_0=51 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger 9N
+  20070 => "+proj=tmerc +lat_0=0 +lon_0=57 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger 10N
+  20071 => "+proj=tmerc +lat_0=0 +lon_0=63 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger 11N
+  20072 => "+proj=tmerc +lat_0=0 +lon_0=69 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger 12N
+  20073 => "+proj=tmerc +lat_0=0 +lon_0=75 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger 13N
+  20074 => "+proj=tmerc +lat_0=0 +lon_0=81 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger 14N
+  20075 => "+proj=tmerc +lat_0=0 +lon_0=87 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger 15N
+  20076 => "+proj=tmerc +lat_0=0 +lon_0=93 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger 16N
+  20077 => "+proj=tmerc +lat_0=0 +lon_0=99 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger 17N
+  20078 => "+proj=tmerc +lat_0=0 +lon_0=105 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger 18N
+  20079 => "+proj=tmerc +lat_0=0 +lon_0=111 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger 19N
+  20080 => "+proj=tmerc +lat_0=0 +lon_0=117 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger 20N
+  20081 => "+proj=tmerc +lat_0=0 +lon_0=123 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger 21N
+  20082 => "+proj=tmerc +lat_0=0 +lon_0=129 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger 22N
+  20083 => "+proj=tmerc +lat_0=0 +lon_0=135 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger 23N
+  20084 => "+proj=tmerc +lat_0=0 +lon_0=141 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger 24N
+  20085 => "+proj=tmerc +lat_0=0 +lon_0=147 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger 25N
+  20086 => "+proj=tmerc +lat_0=0 +lon_0=153 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger 26N
+  20087 => "+proj=tmerc +lat_0=0 +lon_0=159 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger 27N
+  20088 => "+proj=tmerc +lat_0=0 +lon_0=165 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger 28N
+  20089 => "+proj=tmerc +lat_0=0 +lon_0=171 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger 29N
+  20090 => "+proj=tmerc +lat_0=0 +lon_0=177 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger 30N
+  20091 => "+proj=tmerc +lat_0=0 +lon_0=-177 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger 31N
+  20092 => "+proj=tmerc +lat_0=0 +lon_0=-171 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 / Gauss-Kruger 32N
+  20137 => "+proj=utm +zone=37 +ellps=clrk80 +units=m +no_defs", # Adindan / UTM zone 37N
+  20138 => "+proj=utm +zone=38 +ellps=clrk80 +units=m +no_defs", # Adindan / UTM zone 38N
+  20248 => "+proj=utm +zone=48 +south +ellps=aust_SA +units=m +no_defs", # AGD66 / AMG zone 48
+  20249 => "+proj=utm +zone=49 +south +ellps=aust_SA +units=m +no_defs", # AGD66 / AMG zone 49
+  20250 => "+proj=utm +zone=50 +south +ellps=aust_SA +units=m +no_defs", # AGD66 / AMG zone 50
+  20251 => "+proj=utm +zone=51 +south +ellps=aust_SA +units=m +no_defs", # AGD66 / AMG zone 51
+  20252 => "+proj=utm +zone=52 +south +ellps=aust_SA +units=m +no_defs", # AGD66 / AMG zone 52
+  20253 => "+proj=utm +zone=53 +south +ellps=aust_SA +units=m +no_defs", # AGD66 / AMG zone 53
+  20254 => "+proj=utm +zone=54 +south +ellps=aust_SA +units=m +no_defs", # AGD66 / AMG zone 54
+  20255 => "+proj=utm +zone=55 +south +ellps=aust_SA +units=m +no_defs", # AGD66 / AMG zone 55
+  20256 => "+proj=utm +zone=56 +south +ellps=aust_SA +units=m +no_defs", # AGD66 / AMG zone 56
+  20257 => "+proj=utm +zone=57 +south +ellps=aust_SA +units=m +no_defs", # AGD66 / AMG zone 57
+  20258 => "+proj=utm +zone=58 +south +ellps=aust_SA +units=m +no_defs", # AGD66 / AMG zone 58
+  20348 => "+proj=utm +zone=48 +south +ellps=aust_SA +units=m +no_defs", # AGD84 / AMG zone 48
+  20349 => "+proj=utm +zone=49 +south +ellps=aust_SA +units=m +no_defs", # AGD84 / AMG zone 49
+  20350 => "+proj=utm +zone=50 +south +ellps=aust_SA +units=m +no_defs", # AGD84 / AMG zone 50
+  20351 => "+proj=utm +zone=51 +south +ellps=aust_SA +units=m +no_defs", # AGD84 / AMG zone 51
+  20352 => "+proj=utm +zone=52 +south +ellps=aust_SA +units=m +no_defs", # AGD84 / AMG zone 52
+  20353 => "+proj=utm +zone=53 +south +ellps=aust_SA +units=m +no_defs", # AGD84 / AMG zone 53
+  20354 => "+proj=utm +zone=54 +south +ellps=aust_SA +units=m +no_defs", # AGD84 / AMG zone 54
+  20355 => "+proj=utm +zone=55 +south +ellps=aust_SA +units=m +no_defs", # AGD84 / AMG zone 55
+  20356 => "+proj=utm +zone=56 +south +ellps=aust_SA +units=m +no_defs", # AGD84 / AMG zone 56
+  20357 => "+proj=utm +zone=57 +south +ellps=aust_SA +units=m +no_defs", # AGD84 / AMG zone 57
+  20358 => "+proj=utm +zone=58 +south +ellps=aust_SA +units=m +no_defs", # AGD84 / AMG zone 58
+  20437 => "+proj=utm +zone=37 +ellps=intl +units=m +no_defs", # Ain el Abd / UTM zone 37N
+  20438 => "+proj=utm +zone=38 +ellps=intl +units=m +no_defs", # Ain el Abd / UTM zone 38N
+  20439 => "+proj=utm +zone=39 +ellps=intl +units=m +no_defs", # Ain el Abd / UTM zone 39N
+  20499 => "+proj=utm +zone=39 +ellps=intl +units=m +no_defs", # Ain el Abd / Bahrain Grid
+  20538 => "+proj=utm +zone=38 +ellps=krass +towgs84=-43,-163,45,0,0,0,0 +units=m +no_defs", # Afgooye / UTM zone 38N
+  20539 => "+proj=utm +zone=39 +ellps=krass +towgs84=-43,-163,45,0,0,0,0 +units=m +no_defs", # Afgooye / UTM zone 39N
+  20790 => "+proj=tmerc +lat_0=39.66666666666666 +lon_0=-8.131906111111112 +k=1.000000 +x_0=200000 +y_0=300000 +ellps=intl +pm=lisbon +units=m +no_defs", # Lisbon (Lisbon)/Portuguese National Grid
+  20791 => "+proj=tmerc +lat_0=39.66666666666666 +lon_0=-8.131906111111112 +k=1.000000 +x_0=0 +y_0=0 +ellps=intl +pm=lisbon +units=m +no_defs", # Lisbon (Lisbon)/Portuguese Grid
+  20822 => "+proj=utm +zone=22 +south +ellps=intl +units=m +no_defs", # Aratu / UTM zone 22S
+  20823 => "+proj=utm +zone=23 +south +ellps=intl +units=m +no_defs", # Aratu / UTM zone 23S
+  20824 => "+proj=utm +zone=24 +south +ellps=intl +units=m +no_defs", # Aratu / UTM zone 24S
+  20934 => "+proj=utm +zone=34 +south +a=6378249.145 +b=6356514.966398753 +units=m +no_defs", # Arc 1950 / UTM zone 34S
+  20935 => "+proj=utm +zone=35 +south +a=6378249.145 +b=6356514.966398753 +units=m +no_defs", # Arc 1950 / UTM zone 35S
+  20936 => "+proj=utm +zone=36 +south +a=6378249.145 +b=6356514.966398753 +units=m +no_defs", # Arc 1950 / UTM zone 36S
+  21035 => "+proj=utm +zone=35 +south +ellps=clrk80 +units=m +no_defs", # Arc 1960 / UTM zone 35S
+  21036 => "+proj=utm +zone=36 +south +ellps=clrk80 +units=m +no_defs", # Arc 1960 / UTM zone 36S
+  21037 => "+proj=utm +zone=37 +south +ellps=clrk80 +units=m +no_defs", # Arc 1960 / UTM zone 37S
+  21095 => "+proj=utm +zone=35 +ellps=clrk80 +units=m +no_defs", # Arc 1960 / UTM zone 35N
+  21096 => "+proj=utm +zone=36 +ellps=clrk80 +units=m +no_defs", # Arc 1960 / UTM zone 36N
+  21097 => "+proj=utm +zone=37 +ellps=clrk80 +units=m +no_defs", # Arc 1960 / UTM zone 37N
+  21100 => "+proj=merc +lat_ts=0 +lon_0=216.8077194444444 +k=0.997000 +x_0=3900000 +y_0=900000 +ellps=bessel +pm=jakarta +units=m +no_defs", # Batavia (Jakarta) / NEIEZ
+  21148 => "+proj=utm +zone=48 +south +ellps=bessel +units=m +no_defs", # Batavia / UTM zone 48S
+  21149 => "+proj=utm +zone=49 +south +ellps=bessel +units=m +no_defs", # Batavia / UTM zone 49S
+  21150 => "+proj=utm +zone=50 +south +ellps=bessel +units=m +no_defs", # Batavia / UTM zone 50S
+  21291 => "+proj=tmerc +lat_0=0 +lon_0=-62 +k=0.999500 +x_0=400000 +y_0=0 +ellps=clrk80 +units=m +no_defs", # Barbados 1938 / British West Indies Grid
+  21292 => "+proj=tmerc +lat_0=13.17638888888889 +lon_0=-59.55972222222222 +k=0.999999 +x_0=30000 +y_0=75000 +ellps=clrk80 +units=m +no_defs", # Barbados 1938 / Barbados National Grid
+  21413 => "+proj=tmerc +lat_0=0 +lon_0=75 +k=1.000000 +x_0=13500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / Gauss-Kruger zone 13
+  21414 => "+proj=tmerc +lat_0=0 +lon_0=81 +k=1.000000 +x_0=14500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / Gauss-Kruger zone 14
+  21415 => "+proj=tmerc +lat_0=0 +lon_0=87 +k=1.000000 +x_0=15500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / Gauss-Kruger zone 15
+  21416 => "+proj=tmerc +lat_0=0 +lon_0=93 +k=1.000000 +x_0=16500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / Gauss-Kruger zone 16
+  21417 => "+proj=tmerc +lat_0=0 +lon_0=99 +k=1.000000 +x_0=17500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / Gauss-Kruger zone 17
+  21418 => "+proj=tmerc +lat_0=0 +lon_0=105 +k=1.000000 +x_0=18500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / Gauss-Kruger zone 18
+  21419 => "+proj=tmerc +lat_0=0 +lon_0=111 +k=1.000000 +x_0=19500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / Gauss-Kruger zone 19
+  21420 => "+proj=tmerc +lat_0=0 +lon_0=117 +k=1.000000 +x_0=20500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / Gauss-Kruger zone 20
+  21421 => "+proj=tmerc +lat_0=0 +lon_0=123 +k=1.000000 +x_0=21500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / Gauss-Kruger zone 21
+  21422 => "+proj=tmerc +lat_0=0 +lon_0=129 +k=1.000000 +x_0=22500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / Gauss-Kruger zone 22
+  21423 => "+proj=tmerc +lat_0=0 +lon_0=135 +k=1.000000 +x_0=23500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / Gauss-Kruger zone 23
+  21453 => "+proj=tmerc +lat_0=0 +lon_0=75 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / Gauss-Kruger CM 75E
+  21454 => "+proj=tmerc +lat_0=0 +lon_0=81 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / Gauss-Kruger CM 81E
+  21455 => "+proj=tmerc +lat_0=0 +lon_0=87 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / Gauss-Kruger CM 87E
+  21456 => "+proj=tmerc +lat_0=0 +lon_0=93 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / Gauss-Kruger CM 93E
+  21457 => "+proj=tmerc +lat_0=0 +lon_0=99 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / Gauss-Kruger CM 99E
+  21458 => "+proj=tmerc +lat_0=0 +lon_0=105 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / Gauss-Kruger CM 105E
+  21459 => "+proj=tmerc +lat_0=0 +lon_0=111 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / Gauss-Kruger CM 111E
+  21460 => "+proj=tmerc +lat_0=0 +lon_0=117 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / Gauss-Kruger CM 117E
+  21461 => "+proj=tmerc +lat_0=0 +lon_0=123 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / Gauss-Kruger CM 123E
+  21462 => "+proj=tmerc +lat_0=0 +lon_0=129 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / Gauss-Kruger CM 129E
+  21463 => "+proj=tmerc +lat_0=0 +lon_0=135 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / Gauss-Kruger CM 135E
+  21473 => "+proj=tmerc +lat_0=0 +lon_0=75 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / Gauss-Kruger 13N
+  21474 => "+proj=tmerc +lat_0=0 +lon_0=81 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / Gauss-Kruger 14N
+  21475 => "+proj=tmerc +lat_0=0 +lon_0=87 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / Gauss-Kruger 15N
+  21476 => "+proj=tmerc +lat_0=0 +lon_0=93 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / Gauss-Kruger 16N
+  21477 => "+proj=tmerc +lat_0=0 +lon_0=99 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / Gauss-Kruger 17N
+  21478 => "+proj=tmerc +lat_0=0 +lon_0=105 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / Gauss-Kruger 18N
+  21479 => "+proj=tmerc +lat_0=0 +lon_0=111 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / Gauss-Kruger 19N
+  21480 => "+proj=tmerc +lat_0=0 +lon_0=117 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / Gauss-Kruger 20N
+  21481 => "+proj=tmerc +lat_0=0 +lon_0=123 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / Gauss-Kruger 21N
+  21482 => "+proj=tmerc +lat_0=0 +lon_0=129 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / Gauss-Kruger 22N
+  21483 => "+proj=tmerc +lat_0=0 +lon_0=135 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Beijing 1954 / Gauss-Kruger 23N
+  21500 => "+proj=lcc +lat_1=49.83333333333334 +lat_2=51.16666666666666 +lat_0=90 +lon_0=4.367975 +x_0=150000 +y_0=5400000 +ellps=intl +pm=brussels +units=m +no_defs", # Belge 1950 (Brussels) / Belge Lambert 50
+  21780 => "+proj=omerc +lat_0=46.95240555555556 +lonc=7.439583333333333 +alpha=90 +k=1 +x_0=0 +y_0=0 +ellps=bessel +pm=bern +units=m +no_defs", # Bern 1898 (Bern) / LV03C
+  21781 => "+proj=omerc +lat_0=46.95240555555556 +lonc=7.439583333333333 +alpha=90 +k=1 +x_0=600000 +y_0=200000 +ellps=bessel +units=m +no_defs", # CH1903 / LV03
+  21817 => "+proj=utm +zone=17 +ellps=intl +units=m +no_defs", # Bogota 1975 / UTM zone 17N
+  21818 => "+proj=utm +zone=18 +ellps=intl +units=m +no_defs", # Bogota 1975 / UTM zone 18N
+  21891 => "+proj=tmerc +lat_0=4.599047222222222 +lon_0=-77.08091666666667 +k=1.000000 +x_0=1000000 +y_0=1000000 +ellps=intl +units=m +no_defs", # Bogota 1975 / Colombia West zone
+  21892 => "+proj=tmerc +lat_0=4.599047222222222 +lon_0=-74.08091666666667 +k=1.000000 +x_0=1000000 +y_0=1000000 +ellps=intl +units=m +no_defs", # Bogota 1975 / Colombia Bogota zone
+  21893 => "+proj=tmerc +lat_0=4.599047222222222 +lon_0=-71.08091666666667 +k=1.000000 +x_0=1000000 +y_0=1000000 +ellps=intl +units=m +no_defs", # Bogota 1975 / Colombia East Central zone
+  21894 => "+proj=tmerc +lat_0=4.599047222222222 +lon_0=-68.08091666666667 +k=1.000000 +x_0=1000000 +y_0=1000000 +ellps=intl +units=m +no_defs", # Bogota 1975 / Colombia East
+  22032 => "+proj=utm +zone=32 +south +ellps=clrk80 +units=m +no_defs", # Camacupa / UTM zone 32S
+  22033 => "+proj=utm +zone=33 +south +ellps=clrk80 +units=m +no_defs", # Camacupa / UTM zone 33S
+  22091 => "+proj=tmerc +lat_0=0 +lon_0=11.5 +k=0.999600 +x_0=500000 +y_0=10000000 +ellps=clrk80 +units=m +no_defs", # Camacupa / TM 11.30 SE
+  22092 => "+proj=tmerc +lat_0=0 +lon_0=12 +k=0.999600 +x_0=500000 +y_0=10000000 +ellps=clrk80 +units=m +no_defs", # Camacupa / TM 12 SE
+  22191 => "+proj=tmerc +lat_0=-90 +lon_0=-72 +k=1.000000 +x_0=1500000 +y_0=0 +ellps=intl +units=m +no_defs", # Campo Inchauspe / Argentina 1
+  22192 => "+proj=tmerc +lat_0=-90 +lon_0=-69 +k=1.000000 +x_0=2500000 +y_0=0 +ellps=intl +units=m +no_defs", # Campo Inchauspe / Argentina 2
+  22193 => "+proj=tmerc +lat_0=-90 +lon_0=-66 +k=1.000000 +x_0=3500000 +y_0=0 +ellps=intl +units=m +no_defs", # Campo Inchauspe / Argentina 3
+  22194 => "+proj=tmerc +lat_0=-90 +lon_0=-63 +k=1.000000 +x_0=4500000 +y_0=0 +ellps=intl +units=m +no_defs", # Campo Inchauspe / Argentina 4
+  22195 => "+proj=tmerc +lat_0=-90 +lon_0=-60 +k=1.000000 +x_0=5500000 +y_0=0 +ellps=intl +units=m +no_defs", # Campo Inchauspe / Argentina 5
+  22196 => "+proj=tmerc +lat_0=-90 +lon_0=-57 +k=1.000000 +x_0=6500000 +y_0=0 +ellps=intl +units=m +no_defs", # Campo Inchauspe / Argentina 6
+  22197 => "+proj=tmerc +lat_0=-90 +lon_0=-54 +k=1.000000 +x_0=7500000 +y_0=0 +ellps=intl +units=m +no_defs", # Campo Inchauspe / Argentina 7
+  22234 => "+proj=utm +zone=34 +south +a=6378249.145 +b=6356514.966398753 +units=m +no_defs", # Cape / UTM zone 34S
+  22235 => "+proj=utm +zone=35 +south +a=6378249.145 +b=6356514.966398753 +units=m +no_defs", # Cape / UTM zone 35S
+  22236 => "+proj=utm +zone=36 +south +a=6378249.145 +b=6356514.966398753 +units=m +no_defs", # Cape / UTM zone 36S
+  22332 => "+proj=utm +zone=32 +a=6378249.2 +b=6356515 +units=m +no_defs", # Carthage / UTM zone 32N
+  22391 => "+proj=lcc +lat_1=36 +lat_0=36 +lon_0=9.9 +k_0=0.999625544 +x_0=500000 +y_0=300000 +a=6378249.2 +b=6356515 +units=m +no_defs", # Carthage / Nord Tunisie
+  22392 => "+proj=lcc +lat_1=33.3 +lat_0=33.3 +lon_0=9.9 +k_0=0.999625769 +x_0=500000 +y_0=300000 +a=6378249.2 +b=6356515 +units=m +no_defs", # Carthage / Sud Tunisie
+  22523 => "+proj=utm +zone=23 +south +ellps=intl +towgs84=-206,172,-6,0,0,0,0 +units=m +no_defs", # Corrego Alegre / UTM zone 23S
+  22524 => "+proj=utm +zone=24 +south +ellps=intl +towgs84=-206,172,-6,0,0,0,0 +units=m +no_defs", # Corrego Alegre / UTM zone 24S
+  22700 => "+proj=lcc +lat_1=34.65 +lat_0=34.65 +lon_0=37.35 +k_0=0.9996256 +x_0=300000 +y_0=300000 +a=6378249.2 +b=6356515 +units=m +no_defs", # Deir ez Zor / Levant Zone
+  22770 => "+proj=lcc +lat_1=34.65 +lat_0=34.65 +lon_0=37.35 +k_0=0.9996256 +x_0=300000 +y_0=300000 +a=6378249.2 +b=6356515 +units=m +no_defs", # Deir ez Zor / Syria Lambert
+  22780 => "+proj=stere +lat_0=34.2 +lon_0=39.15 +k=0.999534 +x_0=0 +y_0=0 +a=6378249.2 +b=6356515 +units=m +no_defs", # Deir ez Zor / Levant Stereographic
+  22832 => "+proj=utm +zone=32 +a=6378249.2 +b=6356515 +units=m +no_defs", # Douala / UTM zone 32N
+  22991 => "+proj=tmerc +lat_0=30 +lon_0=35 +k=1.000000 +x_0=300000 +y_0=1100000 +ellps=helmert +units=m +no_defs", # Egypt 1907 / Blue Belt
+  22992 => "+proj=tmerc +lat_0=30 +lon_0=31 +k=1.000000 +x_0=615000 +y_0=810000 +ellps=helmert +units=m +no_defs", # Egypt 1907 / Red Belt
+  22993 => "+proj=tmerc +lat_0=30 +lon_0=27 +k=1.000000 +x_0=700000 +y_0=200000 +ellps=helmert +units=m +no_defs", # Egypt 1907 / Purple Belt
+  22994 => "+proj=tmerc +lat_0=30 +lon_0=27 +k=1.000000 +x_0=700000 +y_0=1200000 +ellps=helmert +units=m +no_defs", # Egypt 1907 / Extended Purple Belt
+  23028 => "+proj=utm +zone=28 +ellps=intl +units=m +no_defs", # ED50 / UTM zone 28N
+  23029 => "+proj=utm +zone=29 +ellps=intl +units=m +no_defs", # ED50 / UTM zone 29N
+  23030 => "+proj=utm +zone=30 +ellps=intl +units=m +no_defs", # ED50 / UTM zone 30N
+  23031 => "+proj=utm +zone=31 +ellps=intl +units=m +no_defs", # ED50 / UTM zone 31N
+  23032 => "+proj=utm +zone=32 +ellps=intl +units=m +no_defs", # ED50 / UTM zone 32N
+  23033 => "+proj=utm +zone=33 +ellps=intl +units=m +no_defs", # ED50 / UTM zone 33N
+  23034 => "+proj=utm +zone=34 +ellps=intl +units=m +no_defs", # ED50 / UTM zone 34N
+  23035 => "+proj=utm +zone=35 +ellps=intl +units=m +no_defs", # ED50 / UTM zone 35N
+  23036 => "+proj=utm +zone=36 +ellps=intl +units=m +no_defs", # ED50 / UTM zone 36N
+  23037 => "+proj=utm +zone=37 +ellps=intl +units=m +no_defs", # ED50 / UTM zone 37N
+  23038 => "+proj=utm +zone=38 +ellps=intl +units=m +no_defs", # ED50 / UTM zone 38N
+  23090 => "+proj=tmerc +lat_0=0 +lon_0=0 +k=0.999600 +x_0=500000 +y_0=0 +ellps=intl +units=m +no_defs", # ED50 / TM 0 N
+  23095 => "+proj=tmerc +lat_0=0 +lon_0=5 +k=0.999600 +x_0=500000 +y_0=0 +ellps=intl +units=m +no_defs", # ED50 / TM 5 NE
+  23239 => "+proj=utm +zone=39 +ellps=clrk80 +units=m +no_defs", # Fahud / UTM zone 39N
+  23240 => "+proj=utm +zone=40 +ellps=clrk80 +units=m +no_defs", # Fahud / UTM zone 40N
+  23433 => "+proj=utm +zone=33 +a=6378249.2 +b=6356515 +units=m +no_defs", # Garoua / UTM zone 33N
+  23700 => "+proj=omerc +lat_0=47.14439372222222 +lonc=19.04857177777778 +alpha=90 +k=0.99993 +x_0=650000 +y_0=200000 +ellps=GRS67 +units=m +no_defs", # HD72 / EOV
+  23846 => "+proj=utm +zone=46 +a=6378160 +b=6356774.50408554 +units=m +no_defs", # ID74 / UTM zone 46N
+  23847 => "+proj=utm +zone=47 +a=6378160 +b=6356774.50408554 +units=m +no_defs", # ID74 / UTM zone 47N
+  23848 => "+proj=utm +zone=48 +a=6378160 +b=6356774.50408554 +units=m +no_defs", # ID74 / UTM zone 48N
+  23849 => "+proj=utm +zone=49 +a=6378160 +b=6356774.50408554 +units=m +no_defs", # ID74 / UTM zone 49N
+  23850 => "+proj=utm +zone=50 +a=6378160 +b=6356774.50408554 +units=m +no_defs", # ID74 / UTM zone 50N
+  23851 => "+proj=utm +zone=51 +a=6378160 +b=6356774.50408554 +units=m +no_defs", # ID74 / UTM zone 51N
+  23852 => "+proj=utm +zone=52 +a=6378160 +b=6356774.50408554 +units=m +no_defs", # ID74 / UTM zone 52N
+  23853 => "+proj=utm +zone=53 +a=6378160 +b=6356774.50408554 +units=m +no_defs", # ID74 / UTM zone 53N
+  23886 => "+proj=utm +zone=46 +south +a=6378160 +b=6356774.50408554 +units=m +no_defs", # ID74 / UTM zone 46S
+  23887 => "+proj=utm +zone=47 +south +a=6378160 +b=6356774.50408554 +units=m +no_defs", # ID74 / UTM zone 47S
+  23888 => "+proj=utm +zone=48 +south +a=6378160 +b=6356774.50408554 +units=m +no_defs", # ID74 / UTM zone 48S
+  23889 => "+proj=utm +zone=49 +south +a=6378160 +b=6356774.50408554 +units=m +no_defs", # ID74 / UTM zone 49S
+  23890 => "+proj=utm +zone=50 +south +a=6378160 +b=6356774.50408554 +units=m +no_defs", # ID74 / UTM zone 50S
+  23891 => "+proj=utm +zone=51 +south +a=6378160 +b=6356774.50408554 +units=m +no_defs", # ID74 / UTM zone 51S
+  23892 => "+proj=utm +zone=52 +south +a=6378160 +b=6356774.50408554 +units=m +no_defs", # ID74 / UTM zone 52S
+  23893 => "+proj=utm +zone=53 +south +a=6378160 +b=6356774.50408554 +units=m +no_defs", # ID74 / UTM zone 53S
+  23894 => "+proj=utm +zone=54 +south +a=6378160 +b=6356774.50408554 +units=m +no_defs", # ID74 / UTM zone 54S
+  23946 => "+proj=utm +zone=46 +a=6377276.345 +b=6356075.413140239 +towgs84=217,823,299,0,0,0,0 +units=m +no_defs", # Indian 1954 / UTM zone 46N
+  23947 => "+proj=utm +zone=47 +a=6377276.345 +b=6356075.413140239 +towgs84=217,823,299,0,0,0,0 +units=m +no_defs", # Indian 1954 / UTM zone 47N
+  23948 => "+proj=utm +zone=48 +a=6377276.345 +b=6356075.413140239 +towgs84=217,823,299,0,0,0,0 +units=m +no_defs", # Indian 1954 / UTM zone 48N
+  24047 => "+proj=utm +zone=47 +a=6377276.345 +b=6356075.413140239 +units=m +no_defs", # Indian 1975 / UTM zone 47N
+  24048 => "+proj=utm +zone=48 +a=6377276.345 +b=6356075.413140239 +units=m +no_defs", # Indian 1975 / UTM zone 48N
+  24100 => "+proj=lcc +lat_1=18 +lat_0=18 +lon_0=-77 +k_0=1 +x_0=167638.49575 +y_0=121918.906 +ellps=clrk80 +to_meter=0.304797265 +no_defs", # Jamaica 1875 / Jamaica (Old Grid)
+  24200 => "+proj=lcc +lat_1=18 +lat_0=18 +lon_0=-77 +k_0=1 +x_0=250000 +y_0=150000 +ellps=clrk66 +units=m +no_defs", # JAD69 / Jamaica National Grid
+  24305 => "+proj=utm +zone=45 +a=6377276.345 +b=6356075.413140239 +units=m +no_defs", # Kalianpur 1937 / UTM zone 45N
+  24306 => "+proj=utm +zone=46 +a=6377276.345 +b=6356075.413140239 +units=m +no_defs", # Kalianpur 1937 / UTM zone 46N
+  24311 => "+proj=utm +zone=41 +a=6377301.243 +b=6356100.230165385 +towgs84=283,682,231,0,0,0,0 +units=m +no_defs", # Kalianpur 1962 / UTM zone 41N
+  24312 => "+proj=utm +zone=42 +a=6377301.243 +b=6356100.230165385 +towgs84=283,682,231,0,0,0,0 +units=m +no_defs", # Kalianpur 1962 / UTM zone 42N
+  24313 => "+proj=utm +zone=43 +a=6377301.243 +b=6356100.230165385 +towgs84=283,682,231,0,0,0,0 +units=m +no_defs", # Kalianpur 1962 / UTM zone 43N
+  24342 => "+proj=utm +zone=42 +a=6377299.151 +b=6356098.145120132 +towgs84=295,736,257,0,0,0,0 +units=m +no_defs", # Kalianpur 1975 / UTM zone 42N
+  24343 => "+proj=utm +zone=43 +a=6377299.151 +b=6356098.145120132 +towgs84=295,736,257,0,0,0,0 +units=m +no_defs", # Kalianpur 1975 / UTM zone 43N
+  24344 => "+proj=utm +zone=44 +a=6377299.151 +b=6356098.145120132 +towgs84=295,736,257,0,0,0,0 +units=m +no_defs", # Kalianpur 1975 / UTM zone 44N
+  24345 => "+proj=utm +zone=45 +a=6377299.151 +b=6356098.145120132 +towgs84=295,736,257,0,0,0,0 +units=m +no_defs", # Kalianpur 1975 / UTM zone 45N
+  24346 => "+proj=utm +zone=46 +a=6377299.151 +b=6356098.145120132 +towgs84=295,736,257,0,0,0,0 +units=m +no_defs", # Kalianpur 1975 / UTM zone 46N
+  24347 => "+proj=utm +zone=47 +a=6377299.151 +b=6356098.145120132 +towgs84=295,736,257,0,0,0,0 +units=m +no_defs", # Kalianpur 1975 / UTM zone 47N
+  24370 => "+proj=lcc +lat_1=39.5 +lat_0=39.5 +lon_0=68 +k_0=0.99846154 +x_0=2153865.73916853 +y_0=2368292.194628102 +a=6377299.36559538 +b=6356098.357204817 +to_meter=0.9143985307444408 +no_defs", # Kalianpur 1880 / India zone 0
+  24371 => "+proj=lcc +lat_1=32.5 +lat_0=32.5 +lon_0=68 +k_0=0.99878641 +x_0=2743195.592233322 +y_0=914398.5307444407 +a=6377299.36559538 +b=6356098.357204817 +to_meter=0.9143985307444408 +no_defs", # Kalianpur 1880 / India zone I
+  24372 => "+proj=lcc +lat_1=26 +lat_0=26 +lon_0=74 +k_0=0.99878641 +x_0=2743195.592233322 +y_0=914398.5307444407 +a=6377299.36559538 +b=6356098.357204817 +to_meter=0.9143985307444408 +no_defs", # Kalianpur 1880 / India zone IIa
+  24373 => "+proj=lcc +lat_1=19 +lat_0=19 +lon_0=80 +k_0=0.99878641 +x_0=2743195.592233322 +y_0=914398.5307444407 +a=6377299.36559538 +b=6356098.357204817 +to_meter=0.9143985307444408 +no_defs", # Kalianpur 1880 / India zone III
+  24374 => "+proj=lcc +lat_1=12 +lat_0=12 +lon_0=80 +k_0=0.99878641 +x_0=2743195.592233322 +y_0=914398.5307444407 +a=6377299.36559538 +b=6356098.357204817 +to_meter=0.9143985307444408 +no_defs", # Kalianpur 1880 / India zone IV
+  24375 => "+proj=lcc +lat_1=26 +lat_0=26 +lon_0=90 +k_0=0.99878641 +x_0=2743185.69 +y_0=914395.23 +a=6377276.345 +b=6356075.413140239 +units=m +no_defs", # Kalianpur 1937 / India zone IIb
+  24376 => "+proj=lcc +lat_1=32.5 +lat_0=32.5 +lon_0=68 +k_0=0.99878641 +x_0=2743196.4 +y_0=914398.8 +a=6377301.243 +b=6356100.230165385 +towgs84=283,682,231,0,0,0,0 +units=m +no_defs", # Kalianpur 1962 / India zone I
+  24377 => "+proj=lcc +lat_1=26 +lat_0=26 +lon_0=74 +k_0=0.99878641 +x_0=2743196.4 +y_0=914398.8 +a=6377301.243 +b=6356100.230165385 +towgs84=283,682,231,0,0,0,0 +units=m +no_defs", # Kalianpur 1962 / India zone IIa
+  24378 => "+proj=lcc +lat_1=32.5 +lat_0=32.5 +lon_0=68 +k_0=0.99878641 +x_0=2743195.5 +y_0=914398.5 +a=6377299.151 +b=6356098.145120132 +towgs84=295,736,257,0,0,0,0 +units=m +no_defs", # Kalianpur 1975 / India zone I
+  24379 => "+proj=lcc +lat_1=26 +lat_0=26 +lon_0=74 +k_0=0.99878641 +x_0=2743195.5 +y_0=914398.5 +a=6377299.151 +b=6356098.145120132 +towgs84=295,736,257,0,0,0,0 +units=m +no_defs", # Kalianpur 1975 / India zone IIa
+  24380 => "+proj=lcc +lat_1=26 +lat_0=26 +lon_0=90 +k_0=0.99878641 +x_0=2743195.5 +y_0=914398.5 +a=6377299.151 +b=6356098.145120132 +towgs84=295,736,257,0,0,0,0 +units=m +no_defs", # Kalianpur 1975 / India zone IIb
+  24381 => "+proj=lcc +lat_1=19 +lat_0=19 +lon_0=80 +k_0=0.99878641 +x_0=2743195.5 +y_0=914398.5 +a=6377299.151 +b=6356098.145120132 +towgs84=295,736,257,0,0,0,0 +units=m +no_defs", # Kalianpur 1975 / India zone III
+  24382 => "+proj=lcc +lat_1=26 +lat_0=26 +lon_0=90 +k_0=0.99878641 +x_0=2743195.592233322 +y_0=914398.5307444407 +a=6377299.36559538 +b=6356098.357204817 +to_meter=0.9143985307444408 +no_defs", # Kalianpur 1880 / India zone IIb
+  24383 => "+proj=lcc +lat_1=12 +lat_0=12 +lon_0=80 +k_0=0.99878641 +x_0=2743195.5 +y_0=914398.5 +a=6377299.151 +b=6356098.145120132 +towgs84=295,736,257,0,0,0,0 +units=m +no_defs", # Kalianpur 1975 / India zone IV
+  24500 => "+proj=cass +lat_0=1.287646666666667 +lon_0=103.8530022222222 +x_0=30000 +y_0=30000 +a=6377304.063 +b=6356103.038993155 +towgs84=-11,851,5,0,0,0,0 +units=m +no_defs", # Kertau / Singapore Grid
+  24547 => "+proj=utm +zone=47 +a=6377304.063 +b=6356103.038993155 +towgs84=-11,851,5,0,0,0,0 +units=m +no_defs", # Kertau / UTM zone 47N
+  24548 => "+proj=utm +zone=48 +a=6377304.063 +b=6356103.038993155 +towgs84=-11,851,5,0,0,0,0 +units=m +no_defs", # Kertau / UTM zone 48N
+  24571 => "+proj=omerc +lat_0=4 +lonc=102.25 +alpha=323.0257905 +k=0.99984 +x_0=804671.2997750348 +y_0=0 +a=6377304.063 +b=6356103.038993155 +towgs84=-11,851,5,0,0,0,0 +to_meter=20.11678249437587 +no_defs", # Kertau / R.S.O. Malaya (ch)
+  24600 => "+proj=lcc +lat_1=32.5 +lat_0=32.5 +lon_0=45 +k_0=0.9987864078000001 +x_0=1500000 +y_0=1166200 +ellps=clrk80 +units=m +no_defs", # KOC Lambert
+  24718 => "+proj=utm +zone=18 +ellps=intl +towgs84=-273.5,110.6,-357.9,0,0,0,0 +units=m +no_defs", # La Canoa / UTM zone 18N
+  24719 => "+proj=utm +zone=19 +ellps=intl +towgs84=-273.5,110.6,-357.9,0,0,0,0 +units=m +no_defs", # La Canoa / UTM zone 19N
+  24720 => "+proj=utm +zone=20 +ellps=intl +towgs84=-273.5,110.6,-357.9,0,0,0,0 +units=m +no_defs", # La Canoa / UTM zone 20N
+  24818 => "+proj=utm +zone=18 +ellps=intl +units=m +no_defs", # PSAD56 / UTM zone 18N
+  24819 => "+proj=utm +zone=19 +ellps=intl +units=m +no_defs", # PSAD56 / UTM zone 19N
+  24820 => "+proj=utm +zone=20 +ellps=intl +units=m +no_defs", # PSAD56 / UTM zone 20N
+  24821 => "+proj=utm +zone=21 +ellps=intl +units=m +no_defs", # PSAD56 / UTM zone 21N
+  24877 => "+proj=utm +zone=17 +south +ellps=intl +units=m +no_defs", # PSAD56 / UTM zone 17S
+  24878 => "+proj=utm +zone=18 +south +ellps=intl +units=m +no_defs", # PSAD56 / UTM zone 18S
+  24879 => "+proj=utm +zone=19 +south +ellps=intl +units=m +no_defs", # PSAD56 / UTM zone 19S
+  24880 => "+proj=utm +zone=20 +south +ellps=intl +units=m +no_defs", # PSAD56 / UTM zone 20S
+  24882 => "+proj=utm +zone=22 +south +ellps=intl +units=m +no_defs", # PSAD56 / UTM zone 22S
+  24891 => "+proj=tmerc +lat_0=-6 +lon_0=-80.5 +k=0.999830 +x_0=222000 +y_0=1426834.743 +ellps=intl +units=m +no_defs", # PSAD56 / Peru west zone
+  24892 => "+proj=tmerc +lat_0=-9.5 +lon_0=-76 +k=0.999330 +x_0=720000 +y_0=1039979.159 +ellps=intl +units=m +no_defs", # PSAD56 / Peru central zone
+  24893 => "+proj=tmerc +lat_0=-9.5 +lon_0=-70.5 +k=0.999530 +x_0=1324000 +y_0=1040084.558 +ellps=intl +units=m +no_defs", # PSAD56 / Peru east zone
+  25000 => "+proj=tmerc +lat_0=4.666666666666667 +lon_0=-1 +k=0.999750 +x_0=274319.51 +y_0=0 +ellps=clrk80 +towgs84=-130,29,364,0,0,0,0 +units=m +no_defs", # Leigon / Ghana Metre Grid
+  25231 => "+proj=utm +zone=31 +a=6378249.2 +b=6356515 +units=m +no_defs", # Lome / UTM zone 31N
+  25391 => "+proj=tmerc +lat_0=0 +lon_0=117 +k=0.999950 +x_0=500000 +y_0=0 +ellps=clrk66 +units=m +no_defs", # Luzon 1911 / Philippines zone I
+  25392 => "+proj=tmerc +lat_0=0 +lon_0=119 +k=0.999950 +x_0=500000 +y_0=0 +ellps=clrk66 +units=m +no_defs", # Luzon 1911 / Philippines zone II
+  25393 => "+proj=tmerc +lat_0=0 +lon_0=121 +k=0.999950 +x_0=500000 +y_0=0 +ellps=clrk66 +units=m +no_defs", # Luzon 1911 / Philippines zone III
+  25394 => "+proj=tmerc +lat_0=0 +lon_0=123 +k=0.999950 +x_0=500000 +y_0=0 +ellps=clrk66 +units=m +no_defs", # Luzon 1911 / Philippines zone IV
+  25395 => "+proj=tmerc +lat_0=0 +lon_0=125 +k=0.999950 +x_0=500000 +y_0=0 +ellps=clrk66 +units=m +no_defs", # Luzon 1911 / Philippines zone V
+  25700 => "+proj=merc +lat_ts=0 +lon_0=216.8077194444444 +k=0.997000 +x_0=3900000 +y_0=900000 +ellps=bessel +towgs84=-587.8,519.75,145.76,0,0,0,0 +pm=jakarta +units=m +no_defs", # Makassar (Jakarta) / NEIEZ
+  25828 => "+proj=utm +zone=28 +ellps=GRS80 +units=m +no_defs", # ETRS89 / UTM zone 28N
+  25829 => "+proj=utm +zone=29 +ellps=GRS80 +units=m +no_defs", # ETRS89 / UTM zone 29N
+  25830 => "+proj=utm +zone=30 +ellps=GRS80 +units=m +no_defs", # ETRS89 / UTM zone 30N
+  25831 => "+proj=utm +zone=31 +ellps=GRS80 +units=m +no_defs", # ETRS89 / UTM zone 31N
+  25832 => "+proj=utm +zone=32 +ellps=GRS80 +units=m +no_defs", # ETRS89 / UTM zone 32N
+  25833 => "+proj=utm +zone=33 +ellps=GRS80 +units=m +no_defs", # ETRS89 / UTM zone 33N
+  25834 => "+proj=utm +zone=34 +ellps=GRS80 +units=m +no_defs", # ETRS89 / UTM zone 34N
+  25835 => "+proj=utm +zone=35 +ellps=GRS80 +units=m +no_defs", # ETRS89 / UTM zone 35N
+  25836 => "+proj=utm +zone=36 +ellps=GRS80 +units=m +no_defs", # ETRS89 / UTM zone 36N
+  25837 => "+proj=utm +zone=37 +ellps=GRS80 +units=m +no_defs", # ETRS89 / UTM zone 37N
+  25838 => "+proj=utm +zone=38 +ellps=GRS80 +units=m +no_defs", # ETRS89 / UTM zone 38N
+  25884 => "+proj=tmerc +lat_0=0 +lon_0=24 +k=0.999600 +x_0=500000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # ETRS89 / TM Baltic93
+  25932 => "+proj=utm +zone=32 +south +ellps=intl +units=m +no_defs", # Malongo 1987 / UTM zone 32S
+  26191 => "+proj=lcc +lat_1=33.3 +lat_0=33.3 +lon_0=-5.4 +k_0=0.999625769 +x_0=500000 +y_0=300000 +a=6378249.2 +b=6356515 +towgs84=31,146,47,0,0,0,0 +units=m +no_defs", # Merchich / Nord Maroc
+  26192 => "+proj=lcc +lat_1=29.7 +lat_0=29.7 +lon_0=-5.4 +k_0=0.9996155960000001 +x_0=500000 +y_0=300000 +a=6378249.2 +b=6356515 +towgs84=31,146,47,0,0,0,0 +units=m +no_defs", # Merchich / Sud Maroc
+  26193 => "+proj=lcc +lat_1=26.1 +lat_0=26.1 +lon_0=-5.4 +k_0=0.9996 +x_0=1200000 +y_0=400000 +a=6378249.2 +b=6356515 +towgs84=31,146,47,0,0,0,0 +units=m +no_defs", # Merchich / Sahara
+  26237 => "+proj=utm +zone=37 +ellps=bessel +towgs84=639,405,60,0,0,0,0 +units=m +no_defs", # Massawa / UTM zone 37N
+  26331 => "+proj=utm +zone=31 +ellps=clrk80 +units=m +no_defs", # Minna / UTM zone 31N
+  26332 => "+proj=utm +zone=32 +ellps=clrk80 +units=m +no_defs", # Minna / UTM zone 32N
+  26391 => "+proj=tmerc +lat_0=4 +lon_0=4.5 +k=0.999750 +x_0=230738.26 +y_0=0 +ellps=clrk80 +units=m +no_defs", # Minna / Nigeria West Belt
+  26392 => "+proj=tmerc +lat_0=4 +lon_0=8.5 +k=0.999750 +x_0=670553.98 +y_0=0 +ellps=clrk80 +units=m +no_defs", # Minna / Nigeria Mid Belt
+  26393 => "+proj=tmerc +lat_0=4 +lon_0=12.5 +k=0.999750 +x_0=1110369.7 +y_0=0 +ellps=clrk80 +units=m +no_defs", # Minna / Nigeria East Belt
+  26432 => "+proj=utm +zone=32 +south +ellps=intl +towgs84=-252.95,-4.11,-96.38,0,0,0,0 +units=m +no_defs", # Mhast / UTM zone 32S
+  26591 => "+proj=tmerc +lat_0=0 +lon_0=21.45233333333333 +k=0.999600 +x_0=1500000 +y_0=0 +ellps=intl +pm=rome +units=m +no_defs", # Monte Mario (Rome) / Italy zone 1
+  26592 => "+proj=tmerc +lat_0=0 +lon_0=27.45233333333333 +k=0.999600 +x_0=2520000 +y_0=0 +ellps=intl +pm=rome +units=m +no_defs", # Monte Mario (Rome) / Italy zone 2
+  26632 => "+proj=utm +zone=32 +a=6378249.2 +b=6356515 +units=m +no_defs", # M'poraloko / UTM zone 32N
+  26692 => "+proj=utm +zone=32 +south +a=6378249.2 +b=6356515 +units=m +no_defs", # M'poraloko / UTM zone 32S
+  26703 => "+proj=utm +zone=3 +ellps=clrk66 +datum=NAD27 +units=m +no_defs", # NAD27 / UTM zone 3N
+  26704 => "+proj=utm +zone=4 +ellps=clrk66 +datum=NAD27 +units=m +no_defs", # NAD27 / UTM zone 4N
+  26705 => "+proj=utm +zone=5 +ellps=clrk66 +datum=NAD27 +units=m +no_defs", # NAD27 / UTM zone 5N
+  26706 => "+proj=utm +zone=6 +ellps=clrk66 +datum=NAD27 +units=m +no_defs", # NAD27 / UTM zone 6N
+  26707 => "+proj=utm +zone=7 +ellps=clrk66 +datum=NAD27 +units=m +no_defs", # NAD27 / UTM zone 7N
+  26708 => "+proj=utm +zone=8 +ellps=clrk66 +datum=NAD27 +units=m +no_defs", # NAD27 / UTM zone 8N
+  26709 => "+proj=utm +zone=9 +ellps=clrk66 +datum=NAD27 +units=m +no_defs", # NAD27 / UTM zone 9N
+  26710 => "+proj=utm +zone=10 +ellps=clrk66 +datum=NAD27 +units=m +no_defs", # NAD27 / UTM zone 10N
+  26711 => "+proj=utm +zone=11 +ellps=clrk66 +datum=NAD27 +units=m +no_defs", # NAD27 / UTM zone 11N
+  26712 => "+proj=utm +zone=12 +ellps=clrk66 +datum=NAD27 +units=m +no_defs", # NAD27 / UTM zone 12N
+  26713 => "+proj=utm +zone=13 +ellps=clrk66 +datum=NAD27 +units=m +no_defs", # NAD27 / UTM zone 13N
+  26714 => "+proj=utm +zone=14 +ellps=clrk66 +datum=NAD27 +units=m +no_defs", # NAD27 / UTM zone 14N
+  26715 => "+proj=utm +zone=15 +ellps=clrk66 +datum=NAD27 +units=m +no_defs", # NAD27 / UTM zone 15N
+  26716 => "+proj=utm +zone=16 +ellps=clrk66 +datum=NAD27 +units=m +no_defs", # NAD27 / UTM zone 16N
+  26717 => "+proj=utm +zone=17 +ellps=clrk66 +datum=NAD27 +units=m +no_defs", # NAD27 / UTM zone 17N
+  26718 => "+proj=utm +zone=18 +ellps=clrk66 +datum=NAD27 +units=m +no_defs", # NAD27 / UTM zone 18N
+  26719 => "+proj=utm +zone=19 +ellps=clrk66 +datum=NAD27 +units=m +no_defs", # NAD27 / UTM zone 19N
+  26720 => "+proj=utm +zone=20 +ellps=clrk66 +datum=NAD27 +units=m +no_defs", # NAD27 / UTM zone 20N
+  26721 => "+proj=utm +zone=21 +ellps=clrk66 +datum=NAD27 +units=m +no_defs", # NAD27 / UTM zone 21N
+  26722 => "+proj=utm +zone=22 +ellps=clrk66 +datum=NAD27 +units=m +no_defs", # NAD27 / UTM zone 22N
+  26729 => "+proj=tmerc +lat_0=30.5 +lon_0=-85.83333333333333 +k=0.999960 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Alabama East
+  26730 => "+proj=tmerc +lat_0=30 +lon_0=-87.5 +k=0.999933 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Alabama West
+  26731 => "+proj=omerc +lat_0=57 +lonc=-133.6666666666667 +alpha=323.1301023611111 +k=0.9999 +x_0=5000000.001016002 +y_0=-5000000.001016002 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Alaska zone 1
+  26732 => "+proj=tmerc +lat_0=54 +lon_0=-142 +k=0.999900 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Alaska zone 2
+  26733 => "+proj=tmerc +lat_0=54 +lon_0=-146 +k=0.999900 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Alaska zone 3
+  26734 => "+proj=tmerc +lat_0=54 +lon_0=-150 +k=0.999900 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Alaska zone 4
+  26735 => "+proj=tmerc +lat_0=54 +lon_0=-154 +k=0.999900 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Alaska zone 5
+  26736 => "+proj=tmerc +lat_0=54 +lon_0=-158 +k=0.999900 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Alaska zone 6
+  26737 => "+proj=tmerc +lat_0=54 +lon_0=-162 +k=0.999900 +x_0=213360.4267208534 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Alaska zone 7
+  26738 => "+proj=tmerc +lat_0=54 +lon_0=-166 +k=0.999900 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Alaska zone 8
+  26739 => "+proj=tmerc +lat_0=54 +lon_0=-170 +k=0.999900 +x_0=182880.3657607315 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Alaska zone 9
+  26740 => "+proj=lcc +lat_1=53.83333333333334 +lat_2=51.83333333333334 +lat_0=51 +lon_0=-176 +x_0=914401.8288036576 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Alaska zone 10
+  26741 => "+proj=lcc +lat_1=41.66666666666666 +lat_2=40 +lat_0=39.33333333333334 +lon_0=-122 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / California zone I
+  26742 => "+proj=lcc +lat_1=39.83333333333334 +lat_2=38.33333333333334 +lat_0=37.66666666666666 +lon_0=-122 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / California zone II
+  26743 => "+proj=lcc +lat_1=38.43333333333333 +lat_2=37.06666666666667 +lat_0=36.5 +lon_0=-120.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / California zone III
+  26744 => "+proj=lcc +lat_1=37.25 +lat_2=36 +lat_0=35.33333333333334 +lon_0=-119 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / California zone IV
+  26745 => "+proj=lcc +lat_1=35.46666666666667 +lat_2=34.03333333333333 +lat_0=33.5 +lon_0=-118 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / California zone V
+  26746 => "+proj=lcc +lat_1=33.88333333333333 +lat_2=32.78333333333333 +lat_0=32.16666666666666 +lon_0=-116.25 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / California zone VI
+  26747 => "+proj=lcc +lat_1=34.41666666666666 +lat_2=33.86666666666667 +lat_0=34.13333333333333 +lon_0=-118.3333333333333 +x_0=1276106.450596901 +y_0=127079.524511049 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / California zone VII
+  26748 => "+proj=tmerc +lat_0=31 +lon_0=-110.1666666666667 +k=0.999900 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Arizona East
+  26749 => "+proj=tmerc +lat_0=31 +lon_0=-111.9166666666667 +k=0.999900 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Arizona Central
+  26750 => "+proj=tmerc +lat_0=31 +lon_0=-113.75 +k=0.999933 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Arizona West
+  26751 => "+proj=lcc +lat_1=36.23333333333333 +lat_2=34.93333333333333 +lat_0=34.33333333333334 +lon_0=-92 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Arkansas North
+  26752 => "+proj=lcc +lat_1=34.76666666666667 +lat_2=33.3 +lat_0=32.66666666666666 +lon_0=-92 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Arkansas South
+  26753 => "+proj=lcc +lat_1=39.71666666666667 +lat_2=40.78333333333333 +lat_0=39.33333333333334 +lon_0=-105.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Colorado North
+  26754 => "+proj=lcc +lat_1=39.75 +lat_2=38.45 +lat_0=37.83333333333334 +lon_0=-105.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Colorado Central
+  26755 => "+proj=lcc +lat_1=38.43333333333333 +lat_2=37.23333333333333 +lat_0=36.66666666666666 +lon_0=-105.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Colorado South
+  26756 => "+proj=lcc +lat_1=41.86666666666667 +lat_2=41.2 +lat_0=40.83333333333334 +lon_0=-72.75 +x_0=182880.3657607315 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Connecticut
+  26757 => "+proj=tmerc +lat_0=38 +lon_0=-75.41666666666667 +k=0.999995 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Delaware
+  26758 => "+proj=tmerc +lat_0=24.33333333333333 +lon_0=-81 +k=0.999941 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Florida East
+  26759 => "+proj=tmerc +lat_0=24.33333333333333 +lon_0=-82 +k=0.999941 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Florida West
+  26760 => "+proj=lcc +lat_1=30.75 +lat_2=29.58333333333333 +lat_0=29 +lon_0=-84.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Florida North
+  26766 => "+proj=tmerc +lat_0=30 +lon_0=-82.16666666666667 +k=0.999900 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Georgia East
+  26767 => "+proj=tmerc +lat_0=30 +lon_0=-84.16666666666667 +k=0.999900 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Georgia West
+  26768 => "+proj=tmerc +lat_0=41.66666666666666 +lon_0=-112.1666666666667 +k=0.999947 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Idaho East
+  26769 => "+proj=tmerc +lat_0=41.66666666666666 +lon_0=-114 +k=0.999947 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Idaho Central
+  26770 => "+proj=tmerc +lat_0=41.66666666666666 +lon_0=-115.75 +k=0.999933 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Idaho West
+  26771 => "+proj=tmerc +lat_0=36.66666666666666 +lon_0=-88.33333333333333 +k=0.999975 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Illinois East
+  26772 => "+proj=tmerc +lat_0=36.66666666666666 +lon_0=-90.16666666666667 +k=0.999941 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Illinois West
+  26773 => "+proj=tmerc +lat_0=37.5 +lon_0=-85.66666666666667 +k=0.999967 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Indiana East
+  26774 => "+proj=tmerc +lat_0=37.5 +lon_0=-87.08333333333333 +k=0.999967 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Indiana West
+  26775 => "+proj=lcc +lat_1=43.26666666666667 +lat_2=42.06666666666667 +lat_0=41.5 +lon_0=-93.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Iowa North
+  26776 => "+proj=lcc +lat_1=41.78333333333333 +lat_2=40.61666666666667 +lat_0=40 +lon_0=-93.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Iowa South
+  26777 => "+proj=lcc +lat_1=39.78333333333333 +lat_2=38.71666666666667 +lat_0=38.33333333333334 +lon_0=-98 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Kansas North
+  26778 => "+proj=lcc +lat_1=38.56666666666667 +lat_2=37.26666666666667 +lat_0=36.66666666666666 +lon_0=-98.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Kansas South
+  26779 => "+proj=lcc +lat_1=37.96666666666667 +lat_2=38.96666666666667 +lat_0=37.5 +lon_0=-84.25 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Kentucky North
+  26780 => "+proj=lcc +lat_1=36.73333333333333 +lat_2=37.93333333333333 +lat_0=36.33333333333334 +lon_0=-85.75 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Kentucky South
+  26781 => "+proj=lcc +lat_1=31.16666666666667 +lat_2=32.66666666666666 +lat_0=30.66666666666667 +lon_0=-92.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Louisiana North
+  26782 => "+proj=lcc +lat_1=29.3 +lat_2=30.7 +lat_0=28.66666666666667 +lon_0=-91.33333333333333 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Louisiana South
+  26783 => "+proj=tmerc +lat_0=43.83333333333334 +lon_0=-68.5 +k=0.999900 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Maine East
+  26784 => "+proj=tmerc +lat_0=42.83333333333334 +lon_0=-70.16666666666667 +k=0.999967 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Maine West
+  26785 => "+proj=lcc +lat_1=38.3 +lat_2=39.45 +lat_0=37.83333333333334 +lon_0=-77 +x_0=243840.4876809754 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Maryland
+  26786 => "+proj=lcc +lat_1=41.71666666666667 +lat_2=42.68333333333333 +lat_0=41 +lon_0=-71.5 +x_0=182880.3657607315 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Massachusetts Mainland
+  26787 => "+proj=lcc +lat_1=41.28333333333333 +lat_2=41.48333333333333 +lat_0=41 +lon_0=-70.5 +x_0=60960.12192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Massachusetts Island
+  26791 => "+proj=lcc +lat_1=47.03333333333333 +lat_2=48.63333333333333 +lat_0=46.5 +lon_0=-93.09999999999999 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Minnesota North
+  26792 => "+proj=lcc +lat_1=45.61666666666667 +lat_2=47.05 +lat_0=45 +lon_0=-94.25 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Minnesota Central
+  26793 => "+proj=lcc +lat_1=43.78333333333333 +lat_2=45.21666666666667 +lat_0=43 +lon_0=-94 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Minnesota South
+  26794 => "+proj=tmerc +lat_0=29.66666666666667 +lon_0=-88.83333333333333 +k=0.999960 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Mississippi East
+  26795 => "+proj=tmerc +lat_0=30.5 +lon_0=-90.33333333333333 +k=0.999941 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Mississippi West
+  26796 => "+proj=tmerc +lat_0=35.83333333333334 +lon_0=-90.5 +k=0.999933 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Missouri East
+  26797 => "+proj=tmerc +lat_0=35.83333333333334 +lon_0=-92.5 +k=0.999933 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Missouri Central
+  26798 => "+proj=tmerc +lat_0=36.16666666666666 +lon_0=-94.5 +k=0.999941 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Missouri West
+  26801 => "+proj=tmerc +lat_0=41.5 +lon_0=-83.66666666666667 +k=0.999943 +x_0=152400.3048006096 +y_0=0 +a=6378450.047548896 +b=6356826.621488444 +to_meter=0.3048006096012192 +no_defs", # NAD Michigan / Michigan East
+  26802 => "+proj=tmerc +lat_0=41.5 +lon_0=-85.75 +k=0.999909 +x_0=152400.3048006096 +y_0=0 +a=6378450.047548896 +b=6356826.621488444 +to_meter=0.3048006096012192 +no_defs", # NAD Michigan / Michigan Old Central
+  26803 => "+proj=tmerc +lat_0=41.5 +lon_0=-88.75 +k=0.999909 +x_0=152400.3048006096 +y_0=0 +a=6378450.047548896 +b=6356826.621488444 +to_meter=0.3048006096012192 +no_defs", # NAD Michigan / Michigan West
+  26811 => "+proj=lcc +lat_1=45.48333333333333 +lat_2=47.08333333333334 +lat_0=44.78333333333333 +lon_0=-87 +x_0=609601.2192024384 +y_0=0 +a=6378450.047548896 +b=6356826.621488444 +to_meter=0.3048006096012192 +no_defs", # NAD Michigan / Michigan North
+  26812 => "+proj=lcc +lat_1=44.18333333333333 +lat_2=45.7 +lat_0=43.31666666666667 +lon_0=-84.33333333333333 +x_0=609601.2192024384 +y_0=0 +a=6378450.047548896 +b=6356826.621488444 +to_meter=0.3048006096012192 +no_defs", # NAD Michigan / Michigan Central
+  26813 => "+proj=lcc +lat_1=42.1 +lat_2=43.66666666666666 +lat_0=41.5 +lon_0=-84.33333333333333 +x_0=609601.2192024384 +y_0=0 +a=6378450.047548896 +b=6356826.621488444 +to_meter=0.3048006096012192 +no_defs", # NAD Michigan / Michigan South
+  26903 => "+proj=utm +zone=3 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / UTM zone 3N
+  26904 => "+proj=utm +zone=4 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / UTM zone 4N
+  26905 => "+proj=utm +zone=5 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / UTM zone 5N
+  26906 => "+proj=utm +zone=6 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / UTM zone 6N
+  26907 => "+proj=utm +zone=7 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / UTM zone 7N
+  26908 => "+proj=utm +zone=8 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / UTM zone 8N
+  26909 => "+proj=utm +zone=9 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / UTM zone 9N
+  26910 => "+proj=utm +zone=10 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / UTM zone 10N
+  26911 => "+proj=utm +zone=11 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / UTM zone 11N
+  26912 => "+proj=utm +zone=12 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / UTM zone 12N
+  26913 => "+proj=utm +zone=13 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / UTM zone 13N
+  26914 => "+proj=utm +zone=14 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / UTM zone 14N
+  26915 => "+proj=utm +zone=15 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / UTM zone 15N
+  26916 => "+proj=utm +zone=16 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / UTM zone 16N
+  26917 => "+proj=utm +zone=17 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / UTM zone 17N
+  26918 => "+proj=utm +zone=18 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / UTM zone 18N
+  26919 => "+proj=utm +zone=19 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / UTM zone 19N
+  26920 => "+proj=utm +zone=20 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / UTM zone 20N
+  26921 => "+proj=utm +zone=21 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / UTM zone 21N
+  26922 => "+proj=utm +zone=22 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / UTM zone 22N
+  26923 => "+proj=utm +zone=23 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / UTM zone 23N
+  26929 => "+proj=tmerc +lat_0=30.5 +lon_0=-85.83333333333333 +k=0.999960 +x_0=200000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Alabama East
+  26930 => "+proj=tmerc +lat_0=30 +lon_0=-87.5 +k=0.999933 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Alabama West
+  26931 => "+proj=omerc +lat_0=57 +lonc=-133.6666666666667 +alpha=323.1301023611111 +k=0.9999 +x_0=5000000 +y_0=-5000000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Alaska zone 1
+  26932 => "+proj=tmerc +lat_0=54 +lon_0=-142 +k=0.999900 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Alaska zone 2
+  26933 => "+proj=tmerc +lat_0=54 +lon_0=-146 +k=0.999900 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Alaska zone 3
+  26934 => "+proj=tmerc +lat_0=54 +lon_0=-150 +k=0.999900 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Alaska zone 4
+  26935 => "+proj=tmerc +lat_0=54 +lon_0=-154 +k=0.999900 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Alaska zone 5
+  26936 => "+proj=tmerc +lat_0=54 +lon_0=-158 +k=0.999900 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Alaska zone 6
+  26937 => "+proj=tmerc +lat_0=54 +lon_0=-162 +k=0.999900 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Alaska zone 7
+  26938 => "+proj=tmerc +lat_0=54 +lon_0=-166 +k=0.999900 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Alaska zone 8
+  26939 => "+proj=tmerc +lat_0=54 +lon_0=-170 +k=0.999900 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Alaska zone 9
+  26940 => "+proj=lcc +lat_1=53.83333333333334 +lat_2=51.83333333333334 +lat_0=51 +lon_0=-176 +x_0=1000000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Alaska zone 10
+  26941 => "+proj=lcc +lat_1=41.66666666666666 +lat_2=40 +lat_0=39.33333333333334 +lon_0=-122 +x_0=2000000 +y_0=500000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / California zone 1
+  26942 => "+proj=lcc +lat_1=39.83333333333334 +lat_2=38.33333333333334 +lat_0=37.66666666666666 +lon_0=-122 +x_0=2000000 +y_0=500000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / California zone 2
+  26943 => "+proj=lcc +lat_1=38.43333333333333 +lat_2=37.06666666666667 +lat_0=36.5 +lon_0=-120.5 +x_0=2000000 +y_0=500000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / California zone 3
+  26944 => "+proj=lcc +lat_1=37.25 +lat_2=36 +lat_0=35.33333333333334 +lon_0=-119 +x_0=2000000 +y_0=500000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / California zone 4
+  26945 => "+proj=lcc +lat_1=35.46666666666667 +lat_2=34.03333333333333 +lat_0=33.5 +lon_0=-118 +x_0=2000000 +y_0=500000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / California zone 5
+  26946 => "+proj=lcc +lat_1=33.88333333333333 +lat_2=32.78333333333333 +lat_0=32.16666666666666 +lon_0=-116.25 +x_0=2000000 +y_0=500000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / California zone 6
+  26948 => "+proj=tmerc +lat_0=31 +lon_0=-110.1666666666667 +k=0.999900 +x_0=213360 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Arizona East
+  26949 => "+proj=tmerc +lat_0=31 +lon_0=-111.9166666666667 +k=0.999900 +x_0=213360 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Arizona Central
+  26950 => "+proj=tmerc +lat_0=31 +lon_0=-113.75 +k=0.999933 +x_0=213360 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Arizona West
+  26951 => "+proj=lcc +lat_1=36.23333333333333 +lat_2=34.93333333333333 +lat_0=34.33333333333334 +lon_0=-92 +x_0=400000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Arkansas North
+  26952 => "+proj=lcc +lat_1=34.76666666666667 +lat_2=33.3 +lat_0=32.66666666666666 +lon_0=-92 +x_0=400000 +y_0=400000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Arkansas South
+  26953 => "+proj=lcc +lat_1=40.78333333333333 +lat_2=39.71666666666667 +lat_0=39.33333333333334 +lon_0=-105.5 +x_0=914401.8289 +y_0=304800.6096 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Colorado North
+  26954 => "+proj=lcc +lat_1=39.75 +lat_2=38.45 +lat_0=37.83333333333334 +lon_0=-105.5 +x_0=914401.8289 +y_0=304800.6096 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Colorado Central
+  26955 => "+proj=lcc +lat_1=38.43333333333333 +lat_2=37.23333333333333 +lat_0=36.66666666666666 +lon_0=-105.5 +x_0=914401.8289 +y_0=304800.6096 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Colorado South
+  26956 => "+proj=lcc +lat_1=41.86666666666667 +lat_2=41.2 +lat_0=40.83333333333334 +lon_0=-72.75 +x_0=304800.6096 +y_0=152400.3048 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Connecticut
+  26957 => "+proj=tmerc +lat_0=38 +lon_0=-75.41666666666667 +k=0.999995 +x_0=200000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Delaware
+  26958 => "+proj=tmerc +lat_0=24.33333333333333 +lon_0=-81 +k=0.999941 +x_0=200000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Florida East
+  26959 => "+proj=tmerc +lat_0=24.33333333333333 +lon_0=-82 +k=0.999941 +x_0=200000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Florida West
+  26960 => "+proj=lcc +lat_1=30.75 +lat_2=29.58333333333333 +lat_0=29 +lon_0=-84.5 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Florida North
+  26961 => "+proj=tmerc +lat_0=18.83333333333333 +lon_0=-155.5 +k=0.999967 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Hawaii zone 1
+  26962 => "+proj=tmerc +lat_0=20.33333333333333 +lon_0=-156.6666666666667 +k=0.999967 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Hawaii zone 2
+  26963 => "+proj=tmerc +lat_0=21.16666666666667 +lon_0=-158 +k=0.999990 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Hawaii zone 3
+  26964 => "+proj=tmerc +lat_0=21.83333333333333 +lon_0=-159.5 +k=0.999990 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Hawaii zone 4
+  26965 => "+proj=tmerc +lat_0=21.66666666666667 +lon_0=-160.1666666666667 +k=1.000000 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Hawaii zone 5
+  26966 => "+proj=tmerc +lat_0=30 +lon_0=-82.16666666666667 +k=0.999900 +x_0=200000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Georgia East
+  26967 => "+proj=tmerc +lat_0=30 +lon_0=-84.16666666666667 +k=0.999900 +x_0=700000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Georgia West
+  26968 => "+proj=tmerc +lat_0=41.66666666666666 +lon_0=-112.1666666666667 +k=0.999947 +x_0=200000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Idaho East
+  26969 => "+proj=tmerc +lat_0=41.66666666666666 +lon_0=-114 +k=0.999947 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Idaho Central
+  26970 => "+proj=tmerc +lat_0=41.66666666666666 +lon_0=-115.75 +k=0.999933 +x_0=800000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Idaho West
+  26971 => "+proj=tmerc +lat_0=36.66666666666666 +lon_0=-88.33333333333333 +k=0.999975 +x_0=300000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Illinois East
+  26972 => "+proj=tmerc +lat_0=36.66666666666666 +lon_0=-90.16666666666667 +k=0.999941 +x_0=700000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Illinois West
+  26973 => "+proj=tmerc +lat_0=37.5 +lon_0=-85.66666666666667 +k=0.999967 +x_0=100000 +y_0=250000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Indiana East
+  26974 => "+proj=tmerc +lat_0=37.5 +lon_0=-87.08333333333333 +k=0.999967 +x_0=900000 +y_0=250000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Indiana West
+  26975 => "+proj=lcc +lat_1=43.26666666666667 +lat_2=42.06666666666667 +lat_0=41.5 +lon_0=-93.5 +x_0=1500000 +y_0=1000000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Iowa North
+  26976 => "+proj=lcc +lat_1=41.78333333333333 +lat_2=40.61666666666667 +lat_0=40 +lon_0=-93.5 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Iowa South
+  26977 => "+proj=lcc +lat_1=39.78333333333333 +lat_2=38.71666666666667 +lat_0=38.33333333333334 +lon_0=-98 +x_0=400000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Kansas North
+  26978 => "+proj=lcc +lat_1=38.56666666666667 +lat_2=37.26666666666667 +lat_0=36.66666666666666 +lon_0=-98.5 +x_0=400000 +y_0=400000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Kansas South
+  26979 => "+proj=lcc +lat_1=37.96666666666667 +lat_2=37.96666666666667 +lat_0=37.5 +lon_0=-84.25 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Kentucky North
+  26980 => "+proj=lcc +lat_1=37.93333333333333 +lat_2=36.73333333333333 +lat_0=36.33333333333334 +lon_0=-85.75 +x_0=500000 +y_0=500000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Kentucky South
+  26981 => "+proj=lcc +lat_1=32.66666666666666 +lat_2=31.16666666666667 +lat_0=30.5 +lon_0=-92.5 +x_0=1000000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Louisiana North
+  26982 => "+proj=lcc +lat_1=30.7 +lat_2=29.3 +lat_0=28.5 +lon_0=-91.33333333333333 +x_0=1000000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Louisiana South
+  26983 => "+proj=tmerc +lat_0=43.66666666666666 +lon_0=-68.5 +k=0.999900 +x_0=300000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Maine East
+  26984 => "+proj=tmerc +lat_0=42.83333333333334 +lon_0=-70.16666666666667 +k=0.999967 +x_0=900000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Maine West
+  26985 => "+proj=lcc +lat_1=39.45 +lat_2=38.3 +lat_0=37.66666666666666 +lon_0=-77 +x_0=400000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Maryland
+  26986 => "+proj=lcc +lat_1=42.68333333333333 +lat_2=41.71666666666667 +lat_0=41 +lon_0=-71.5 +x_0=200000 +y_0=750000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Massachusetts Mainland
+  26987 => "+proj=lcc +lat_1=41.48333333333333 +lat_2=41.28333333333333 +lat_0=41 +lon_0=-70.5 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Massachusetts Island
+  26988 => "+proj=lcc +lat_1=47.08333333333334 +lat_2=45.48333333333333 +lat_0=44.78333333333333 +lon_0=-87 +x_0=8000000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Michigan North
+  26989 => "+proj=lcc +lat_1=45.7 +lat_2=44.18333333333333 +lat_0=43.31666666666667 +lon_0=-84.36666666666666 +x_0=6000000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Michigan Central
+  26990 => "+proj=lcc +lat_1=43.66666666666666 +lat_2=42.1 +lat_0=41.5 +lon_0=-84.36666666666666 +x_0=4000000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Michigan South
+  26991 => "+proj=lcc +lat_1=48.63333333333333 +lat_2=47.03333333333333 +lat_0=46.5 +lon_0=-93.09999999999999 +x_0=800000 +y_0=100000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Minnesota North
+  26992 => "+proj=lcc +lat_1=47.05 +lat_2=45.61666666666667 +lat_0=45 +lon_0=-94.25 +x_0=800000 +y_0=100000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Minnesota Central
+  26993 => "+proj=lcc +lat_1=45.21666666666667 +lat_2=43.78333333333333 +lat_0=43 +lon_0=-94 +x_0=800000 +y_0=100000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Minnesota South
+  26994 => "+proj=tmerc +lat_0=29.5 +lon_0=-88.83333333333333 +k=0.999950 +x_0=300000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Mississippi East
+  26995 => "+proj=tmerc +lat_0=29.5 +lon_0=-90.33333333333333 +k=0.999950 +x_0=700000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Mississippi West
+  26996 => "+proj=tmerc +lat_0=35.83333333333334 +lon_0=-90.5 +k=0.999933 +x_0=250000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Missouri East
+  26997 => "+proj=tmerc +lat_0=35.83333333333334 +lon_0=-92.5 +k=0.999933 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Missouri Central
+  26998 => "+proj=tmerc +lat_0=36.16666666666666 +lon_0=-94.5 +k=0.999941 +x_0=850000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Missouri West
+  27038 => "+proj=utm +zone=38 +ellps=clrk80 +units=m +no_defs", # Nahrwan 1967 / UTM zone 38N
+  27039 => "+proj=utm +zone=39 +ellps=clrk80 +units=m +no_defs", # Nahrwan 1967 / UTM zone 39N
+  27040 => "+proj=utm +zone=40 +ellps=clrk80 +units=m +no_defs", # Nahrwan 1967 / UTM zone 40N
+  27120 => "+proj=utm +zone=20 +ellps=intl +units=m +no_defs", # Naparima 1972 / UTM zone 20N
+  27200 => "+proj=nzmg +lat_0=-41 +lon_0=173 +x_0=2510000 +y_0=6023150 +ellps=intl +units=m +no_defs", # NZGD49 / New Zealand Map Grid
+  27205 => "+proj=tmerc +lat_0=-36.87986527777778 +lon_0=174.7643393611111 +k=0.999900 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs", # NZGD49 / Mount Eden Circuit
+  27206 => "+proj=tmerc +lat_0=-37.76124980555556 +lon_0=176.46619725 +k=1.000000 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs", # NZGD49 / Bay of Plenty Circuit
+  27207 => "+proj=tmerc +lat_0=-38.62470277777778 +lon_0=177.8856362777778 +k=1.000000 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs", # NZGD49 / Poverty Bay Circuit
+  27208 => "+proj=tmerc +lat_0=-39.65092930555556 +lon_0=176.6736805277778 +k=1.000000 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs", # NZGD49 / Hawkes Bay Circuit
+  27209 => "+proj=tmerc +lat_0=-39.13575830555556 +lon_0=174.22801175 +k=1.000000 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs", # NZGD49 / Taranaki Circuit
+  27210 => "+proj=tmerc +lat_0=-39.51247038888889 +lon_0=175.6400368055556 +k=1.000000 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs", # NZGD49 / Tuhirangi Circuit
+  27211 => "+proj=tmerc +lat_0=-40.24194713888889 +lon_0=175.4880996111111 +k=1.000000 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs", # NZGD49 / Wanganui Circuit
+  27212 => "+proj=tmerc +lat_0=-40.92553263888889 +lon_0=175.6473496666667 +k=1.000000 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs", # NZGD49 / Wairarapa Circuit
+  27213 => "+proj=tmerc +lat_0=-41.30131963888888 +lon_0=174.7766231111111 +k=1.000000 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs", # NZGD49 / Wellington Circuit
+  27214 => "+proj=tmerc +lat_0=-40.71475905555556 +lon_0=172.6720465 +k=1.000000 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs", # NZGD49 / Collingwood Circuit
+  27215 => "+proj=tmerc +lat_0=-41.27454472222222 +lon_0=173.2993168055555 +k=1.000000 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs", # NZGD49 / Nelson Circuit
+  27216 => "+proj=tmerc +lat_0=-41.28991152777778 +lon_0=172.1090281944444 +k=1.000000 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs", # NZGD49 / Karamea Circuit
+  27217 => "+proj=tmerc +lat_0=-41.81080286111111 +lon_0=171.5812600555556 +k=1.000000 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs", # NZGD49 / Buller Circuit
+  27218 => "+proj=tmerc +lat_0=-42.33369427777778 +lon_0=171.5497713055556 +k=1.000000 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs", # NZGD49 / Grey Circuit
+  27219 => "+proj=tmerc +lat_0=-42.68911658333333 +lon_0=173.0101333888889 +k=1.000000 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs", # NZGD49 / Amuri Circuit
+  27220 => "+proj=tmerc +lat_0=-41.54448666666666 +lon_0=173.8020741111111 +k=1.000000 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs", # NZGD49 / Marlborough Circuit
+  27221 => "+proj=tmerc +lat_0=-42.88632236111111 +lon_0=170.9799935 +k=1.000000 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs", # NZGD49 / Hokitika Circuit
+  27222 => "+proj=tmerc +lat_0=-43.11012813888889 +lon_0=170.2609258333333 +k=1.000000 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs", # NZGD49 / Okarito Circuit
+  27223 => "+proj=tmerc +lat_0=-43.97780288888889 +lon_0=168.606267 +k=1.000000 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs", # NZGD49 / Jacksons Bay Circuit
+  27224 => "+proj=tmerc +lat_0=-43.59063758333333 +lon_0=172.7271935833333 +k=1.000000 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs", # NZGD49 / Mount Pleasant Circuit
+  27225 => "+proj=tmerc +lat_0=-43.74871155555556 +lon_0=171.3607484722222 +k=1.000000 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs", # NZGD49 / Gawler Circuit
+  27226 => "+proj=tmerc +lat_0=-44.40222036111111 +lon_0=171.0572508333333 +k=1.000000 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs", # NZGD49 / Timaru Circuit
+  27227 => "+proj=tmerc +lat_0=-44.73526797222222 +lon_0=169.4677550833333 +k=1.000000 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs", # NZGD49 / Lindis Peak Circuit
+  27228 => "+proj=tmerc +lat_0=-45.13290258333333 +lon_0=168.3986411944444 +k=1.000000 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs", # NZGD49 / Mount Nicholas Circuit
+  27229 => "+proj=tmerc +lat_0=-45.56372616666666 +lon_0=167.7388617777778 +k=1.000000 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs", # NZGD49 / Mount York Circuit
+  27230 => "+proj=tmerc +lat_0=-45.81619661111111 +lon_0=170.6285951666667 +k=1.000000 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs", # NZGD49 / Observation Point Circuit
+  27231 => "+proj=tmerc +lat_0=-45.86151336111111 +lon_0=170.2825891111111 +k=0.999960 +x_0=300000 +y_0=700000 +ellps=intl +units=m +no_defs", # NZGD49 / North Taieri Circuit
+  27232 => "+proj=tmerc +lat_0=-46.60000961111111 +lon_0=168.342872 +k=1.000000 +x_0=300002.66 +y_0=699999.58 +ellps=intl +units=m +no_defs", # NZGD49 / Bluff Circuit
+  27258 => "+proj=utm +zone=58 +south +ellps=intl +units=m +no_defs", # NZGD49 / UTM zone 58S
+  27259 => "+proj=utm +zone=59 +south +ellps=intl +units=m +no_defs", # NZGD49 / UTM zone 59S
+  27260 => "+proj=utm +zone=60 +south +ellps=intl +units=m +no_defs", # NZGD49 / UTM zone 60S
+  27291 => "+proj=tmerc +lat_0=-39 +lon_0=175.5 +k=1.000000 +x_0=274319.5243848086 +y_0=365759.3658464114 +ellps=intl +to_meter=0.9143984146160287 +no_defs", # NZGD49 / North Island Grid
+  27292 => "+proj=tmerc +lat_0=-44 +lon_0=171.5 +k=1.000000 +x_0=457199.2073080143 +y_0=457199.2073080143 +ellps=intl +to_meter=0.9143984146160287 +no_defs", # NZGD49 / South Island Grid
+  27391 => "+proj=tmerc +lat_0=58 +lon_0=6.056250000000003 +k=1.000000 +x_0=0 +y_0=0 +a=6377492.018 +b=6356173.508712696 +towgs84=278.3,93,474.5,7.889,0.05,-6.61,6.21 +pm=oslo +units=m +no_defs", # NGO 1948 (Oslo) / NGO zone I
+  27392 => "+proj=tmerc +lat_0=58 +lon_0=8.389583333333336 +k=1.000000 +x_0=0 +y_0=0 +a=6377492.018 +b=6356173.508712696 +towgs84=278.3,93,474.5,7.889,0.05,-6.61,6.21 +pm=oslo +units=m +no_defs", # NGO 1948 (Oslo) / NGO zone II
+  27393 => "+proj=tmerc +lat_0=58 +lon_0=10.72291666666667 +k=1.000000 +x_0=0 +y_0=0 +a=6377492.018 +b=6356173.508712696 +towgs84=278.3,93,474.5,7.889,0.05,-6.61,6.21 +pm=oslo +units=m +no_defs", # NGO 1948 (Oslo) / NGO zone III
+  27394 => "+proj=tmerc +lat_0=58 +lon_0=13.22291666666667 +k=1.000000 +x_0=0 +y_0=0 +a=6377492.018 +b=6356173.508712696 +towgs84=278.3,93,474.5,7.889,0.05,-6.61,6.21 +pm=oslo +units=m +no_defs", # NGO 1948 (Oslo) / NGO zone IV
+  27395 => "+proj=tmerc +lat_0=58 +lon_0=16.88958333333334 +k=1.000000 +x_0=0 +y_0=0 +a=6377492.018 +b=6356173.508712696 +towgs84=278.3,93,474.5,7.889,0.05,-6.61,6.21 +pm=oslo +units=m +no_defs", # NGO 1948 (Oslo) / NGO zone V
+  27396 => "+proj=tmerc +lat_0=58 +lon_0=20.88958333333333 +k=1.000000 +x_0=0 +y_0=0 +a=6377492.018 +b=6356173.508712696 +towgs84=278.3,93,474.5,7.889,0.05,-6.61,6.21 +pm=oslo +units=m +no_defs", # NGO 1948 (Oslo) / NGO zone VI
+  27397 => "+proj=tmerc +lat_0=58 +lon_0=24.88958333333333 +k=1.000000 +x_0=0 +y_0=0 +a=6377492.018 +b=6356173.508712696 +towgs84=278.3,93,474.5,7.889,0.05,-6.61,6.21 +pm=oslo +units=m +no_defs", # NGO 1948 (Oslo) / NGO zone VII
+  27398 => "+proj=tmerc +lat_0=58 +lon_0=29.05625 +k=1.000000 +x_0=0 +y_0=0 +a=6377492.018 +b=6356173.508712696 +towgs84=278.3,93,474.5,7.889,0.05,-6.61,6.21 +pm=oslo +units=m +no_defs", # NGO 1948 (Oslo) / NGO zone VIII
+  27429 => "+proj=utm +zone=29 +ellps=intl +units=m +no_defs", # Datum 73 / UTM zone 29N
+  27492 => "+proj=tmerc +lat_0=39.66666666666666 +lon_0=-8.131906111111112 +k=1.000000 +x_0=180.598 +y_0=-86.98999999999999 +ellps=intl +units=m +no_defs", # Datum 73 / Modified Portuguese Grid
+  27500 => "+proj=lcc +lat_1=49.50000000000001 +lat_0=49.50000000000001 +lon_0=7.737229170000001 +k_0=0.99950908 +x_0=500000 +y_0=300000 +a=6376523 +b=6355862.933255573 +pm=paris +units=m +no_defs", # ATF (Paris) / Nord de Guerre
+  27561 => "+proj=lcc +lat_1=49.50000000000001 +lat_0=49.50000000000001 +lon_0=2.33722917 +k_0=0.999877341 +x_0=600000 +y_0=200000 +a=6378249.2 +b=6356515 +towgs84=-168,-60,320,0,0,0,0 +pm=paris +units=m +no_defs", # NTF (Paris) / Lambert Nord France
+  27562 => "+proj=lcc +lat_1=46.8 +lat_0=46.8 +lon_0=2.33722917 +k_0=0.99987742 +x_0=600000 +y_0=200000 +a=6378249.2 +b=6356515 +towgs84=-168,-60,320,0,0,0,0 +pm=paris +units=m +no_defs", # NTF (Paris) / Lambert Centre France
+  27563 => "+proj=lcc +lat_1=44.10000000000001 +lat_0=44.10000000000001 +lon_0=2.33722917 +k_0=0.999877499 +x_0=600000 +y_0=200000 +a=6378249.2 +b=6356515 +towgs84=-168,-60,320,0,0,0,0 +pm=paris +units=m +no_defs", # NTF (Paris) / Lambert Sud France
+  27564 => "+proj=lcc +lat_1=42.16500000000001 +lat_0=42.16500000000001 +lon_0=2.33722917 +k_0=0.99994471 +x_0=234.358 +y_0=185861.369 +a=6378249.2 +b=6356515 +towgs84=-168,-60,320,0,0,0,0 +pm=paris +units=m +no_defs", # NTF (Paris) / Lambert Corse
+  27571 => "+proj=lcc +lat_1=49.50000000000001 +lat_0=49.50000000000001 +lon_0=2.33722917 +k_0=0.999877341 +x_0=600000 +y_0=1200000 +a=6378249.2 +b=6356515 +towgs84=-168,-60,320,0,0,0,0 +pm=paris +units=m +no_defs", # NTF (Paris) / Lambert zone I
+  27572 => "+proj=lcc +lat_1=46.8 +lat_0=46.8 +lon_0=2.33722917 +k_0=0.99987742 +x_0=600000 +y_0=2200000 +a=6378249.2 +b=6356515 +towgs84=-168,-60,320,0,0,0,0 +pm=paris +units=m +no_defs", # NTF (Paris) / Lambert zone II
+  27573 => "+proj=lcc +lat_1=44.10000000000001 +lat_0=44.10000000000001 +lon_0=2.33722917 +k_0=0.999877499 +x_0=600000 +y_0=3200000 +a=6378249.2 +b=6356515 +towgs84=-168,-60,320,0,0,0,0 +pm=paris +units=m +no_defs", # NTF (Paris) / Lambert zone III
+  27574 => "+proj=lcc +lat_1=42.16500000000001 +lat_0=42.16500000000001 +lon_0=2.33722917 +k_0=0.99994471 +x_0=234.358 +y_0=4185861.369 +a=6378249.2 +b=6356515 +towgs84=-168,-60,320,0,0,0,0 +pm=paris +units=m +no_defs", # NTF (Paris) / Lambert zone IV
+  27581 => "+proj=lcc +lat_1=49.50000000000001 +lat_0=49.50000000000001 +lon_0=2.33722917 +k_0=0.999877341 +x_0=600000 +y_0=1200000 +a=6378249.2 +b=6356515 +towgs84=-168,-60,320,0,0,0,0 +pm=paris +units=m +no_defs", # NTF (Paris) / France I
+  27582 => "+proj=lcc +lat_1=46.8 +lat_0=46.8 +lon_0=2.33722917 +k_0=0.99987742 +x_0=600000 +y_0=2200000 +a=6378249.2 +b=6356515 +towgs84=-168,-60,320,0,0,0,0 +pm=paris +units=m +no_defs", # NTF (Paris) / France II
+  27583 => "+proj=lcc +lat_1=44.10000000000001 +lat_0=44.10000000000001 +lon_0=2.33722917 +k_0=0.999877499 +x_0=600000 +y_0=3200000 +a=6378249.2 +b=6356515 +towgs84=-168,-60,320,0,0,0,0 +pm=paris +units=m +no_defs", # NTF (Paris) / France III
+  27584 => "+proj=lcc +lat_1=42.16500000000001 +lat_0=42.16500000000001 +lon_0=2.33722917 +k_0=0.99994471 +x_0=234.358 +y_0=4185861.369 +a=6378249.2 +b=6356515 +towgs84=-168,-60,320,0,0,0,0 +pm=paris +units=m +no_defs", # NTF (Paris) / France IV
+  27591 => "+proj=lcc +lat_1=49.50000000000001 +lat_0=49.50000000000001 +lon_0=2.33722917 +k_0=0.999877341 +x_0=600000 +y_0=200000 +a=6378249.2 +b=6356515 +towgs84=-168,-60,320,0,0,0,0 +pm=paris +units=m +no_defs", # NTF (Paris) / Nord France
+  27592 => "+proj=lcc +lat_1=46.8 +lat_0=46.8 +lon_0=2.33722917 +k_0=0.99987742 +x_0=600000 +y_0=200000 +a=6378249.2 +b=6356515 +towgs84=-168,-60,320,0,0,0,0 +pm=paris +units=m +no_defs", # NTF (Paris) / Centre France
+  27593 => "+proj=lcc +lat_1=44.10000000000001 +lat_0=44.10000000000001 +lon_0=2.33722917 +k_0=0.999877499 +x_0=600000 +y_0=200000 +a=6378249.2 +b=6356515 +towgs84=-168,-60,320,0,0,0,0 +pm=paris +units=m +no_defs", # NTF (Paris) / Sud France
+  27594 => "+proj=lcc +lat_1=42.16500000000001 +lat_0=42.16500000000001 +lon_0=2.33722917 +k_0=0.99994471 +x_0=234.358 +y_0=185861.369 +a=6378249.2 +b=6356515 +towgs84=-168,-60,320,0,0,0,0 +pm=paris +units=m +no_defs", # NTF (Paris) / Corse
+  27700 => "+proj=tmerc +lat_0=49 +lon_0=-2 +k=0.999601 +x_0=400000 +y_0=-100000 +ellps=airy +units=m +no_defs", # OSGB 1936 / British National Grid
+  28191 => "+proj=cass +lat_0=31.73409694444445 +lon_0=35.21208055555556 +x_0=170251.555 +y_0=126867.909 +a=6378300.789 +b=6356566.435 +units=m +no_defs", # Palestine 1923 / Palestine Grid
+  28192 => "+proj=tmerc +lat_0=31.73409694444445 +lon_0=35.21208055555556 +k=1.000000 +x_0=170251.555 +y_0=1126867.909 +a=6378300.789 +b=6356566.435 +units=m +no_defs", # Palestine 1923 / Palestine Belt
+  28193 => "+proj=cass +lat_0=31.73409694444445 +lon_0=35.21208055555556 +x_0=170251.555 +y_0=1126867.909 +a=6378300.789 +b=6356566.435 +units=m +no_defs", # Palestine 1923 / Israeli CS Grid
+  28232 => "+proj=utm +zone=32 +south +a=6378249.2 +b=6356515 +units=m +no_defs", # Pointe Noire / UTM zone 32S
+  28348 => "+proj=utm +zone=48 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # GDA94 / MGA zone 48
+  28349 => "+proj=utm +zone=49 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # GDA94 / MGA zone 49
+  28350 => "+proj=utm +zone=50 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # GDA94 / MGA zone 50
+  28351 => "+proj=utm +zone=51 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # GDA94 / MGA zone 51
+  28352 => "+proj=utm +zone=52 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # GDA94 / MGA zone 52
+  28353 => "+proj=utm +zone=53 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # GDA94 / MGA zone 53
+  28354 => "+proj=utm +zone=54 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # GDA94 / MGA zone 54
+  28355 => "+proj=utm +zone=55 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # GDA94 / MGA zone 55
+  28356 => "+proj=utm +zone=56 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # GDA94 / MGA zone 56
+  28357 => "+proj=utm +zone=57 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # GDA94 / MGA zone 57
+  28358 => "+proj=utm +zone=58 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # GDA94 / MGA zone 58
+  28402 => "+proj=tmerc +lat_0=0 +lon_0=9 +k=1.000000 +x_0=2500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger zone 2
+  28403 => "+proj=tmerc +lat_0=0 +lon_0=15 +k=1.000000 +x_0=3500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger zone 3
+  28404 => "+proj=tmerc +lat_0=0 +lon_0=21 +k=1.000000 +x_0=4500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger zone 4
+  28405 => "+proj=tmerc +lat_0=0 +lon_0=27 +k=1.000000 +x_0=5500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger zone 5
+  28406 => "+proj=tmerc +lat_0=0 +lon_0=33 +k=1.000000 +x_0=6500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger zone 6
+  28407 => "+proj=tmerc +lat_0=0 +lon_0=39 +k=1.000000 +x_0=7500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger zone 7
+  28408 => "+proj=tmerc +lat_0=0 +lon_0=45 +k=1.000000 +x_0=8500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger zone 8
+  28409 => "+proj=tmerc +lat_0=0 +lon_0=51 +k=1.000000 +x_0=9500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger zone 9
+  28410 => "+proj=tmerc +lat_0=0 +lon_0=57 +k=1.000000 +x_0=10500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger zone 10
+  28411 => "+proj=tmerc +lat_0=0 +lon_0=63 +k=1.000000 +x_0=11500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger zone 11
+  28412 => "+proj=tmerc +lat_0=0 +lon_0=69 +k=1.000000 +x_0=12500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger zone 12
+  28413 => "+proj=tmerc +lat_0=0 +lon_0=75 +k=1.000000 +x_0=13500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger zone 13
+  28414 => "+proj=tmerc +lat_0=0 +lon_0=81 +k=1.000000 +x_0=14500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger zone 14
+  28415 => "+proj=tmerc +lat_0=0 +lon_0=87 +k=1.000000 +x_0=15500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger zone 15
+  28416 => "+proj=tmerc +lat_0=0 +lon_0=93 +k=1.000000 +x_0=16500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger zone 16
+  28417 => "+proj=tmerc +lat_0=0 +lon_0=99 +k=1.000000 +x_0=17500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger zone 17
+  28418 => "+proj=tmerc +lat_0=0 +lon_0=105 +k=1.000000 +x_0=18500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger zone 18
+  28419 => "+proj=tmerc +lat_0=0 +lon_0=111 +k=1.000000 +x_0=19500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger zone 19
+  28420 => "+proj=tmerc +lat_0=0 +lon_0=117 +k=1.000000 +x_0=20500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger zone 20
+  28421 => "+proj=tmerc +lat_0=0 +lon_0=123 +k=1.000000 +x_0=21500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger zone 21
+  28422 => "+proj=tmerc +lat_0=0 +lon_0=129 +k=1.000000 +x_0=22500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger zone 22
+  28423 => "+proj=tmerc +lat_0=0 +lon_0=135 +k=1.000000 +x_0=23500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger zone 23
+  28424 => "+proj=tmerc +lat_0=0 +lon_0=141 +k=1.000000 +x_0=24500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger zone 24
+  28425 => "+proj=tmerc +lat_0=0 +lon_0=147 +k=1.000000 +x_0=25500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger zone 25
+  28426 => "+proj=tmerc +lat_0=0 +lon_0=153 +k=1.000000 +x_0=26500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger zone 26
+  28427 => "+proj=tmerc +lat_0=0 +lon_0=159 +k=1.000000 +x_0=27500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger zone 27
+  28428 => "+proj=tmerc +lat_0=0 +lon_0=165 +k=1.000000 +x_0=28500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger zone 28
+  28429 => "+proj=tmerc +lat_0=0 +lon_0=171 +k=1.000000 +x_0=29500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger zone 29
+  28430 => "+proj=tmerc +lat_0=0 +lon_0=177 +k=1.000000 +x_0=30500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger zone 30
+  28431 => "+proj=tmerc +lat_0=0 +lon_0=-177 +k=1.000000 +x_0=31500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger zone 31
+  28432 => "+proj=tmerc +lat_0=0 +lon_0=-171 +k=1.000000 +x_0=32500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger zone 32
+  28462 => "+proj=tmerc +lat_0=0 +lon_0=9 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger 2N
+  28463 => "+proj=tmerc +lat_0=0 +lon_0=15 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger 3N
+  28464 => "+proj=tmerc +lat_0=0 +lon_0=21 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger 4N
+  28465 => "+proj=tmerc +lat_0=0 +lon_0=27 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger 5N
+  28466 => "+proj=tmerc +lat_0=0 +lon_0=33 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger 6N
+  28467 => "+proj=tmerc +lat_0=0 +lon_0=39 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger 7N
+  28468 => "+proj=tmerc +lat_0=0 +lon_0=45 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger 8N
+  28469 => "+proj=tmerc +lat_0=0 +lon_0=51 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger 9N
+  28470 => "+proj=tmerc +lat_0=0 +lon_0=57 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger 10N
+  28471 => "+proj=tmerc +lat_0=0 +lon_0=63 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger 11N
+  28472 => "+proj=tmerc +lat_0=0 +lon_0=69 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger 12N
+  28473 => "+proj=tmerc +lat_0=0 +lon_0=75 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger 13N
+  28474 => "+proj=tmerc +lat_0=0 +lon_0=81 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger 14N
+  28475 => "+proj=tmerc +lat_0=0 +lon_0=87 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger 15N
+  28476 => "+proj=tmerc +lat_0=0 +lon_0=93 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger 16N
+  28477 => "+proj=tmerc +lat_0=0 +lon_0=99 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger 17N
+  28478 => "+proj=tmerc +lat_0=0 +lon_0=105 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger 18N
+  28479 => "+proj=tmerc +lat_0=0 +lon_0=111 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger 19N
+  28480 => "+proj=tmerc +lat_0=0 +lon_0=117 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger 20N
+  28481 => "+proj=tmerc +lat_0=0 +lon_0=123 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger 21N
+  28482 => "+proj=tmerc +lat_0=0 +lon_0=129 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger 22N
+  28483 => "+proj=tmerc +lat_0=0 +lon_0=135 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger 23N
+  28484 => "+proj=tmerc +lat_0=0 +lon_0=141 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger 24N
+  28485 => "+proj=tmerc +lat_0=0 +lon_0=147 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger 25N
+  28486 => "+proj=tmerc +lat_0=0 +lon_0=153 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger 26N
+  28487 => "+proj=tmerc +lat_0=0 +lon_0=159 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger 27N
+  28488 => "+proj=tmerc +lat_0=0 +lon_0=165 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger 28N
+  28489 => "+proj=tmerc +lat_0=0 +lon_0=171 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger 29N
+  28490 => "+proj=tmerc +lat_0=0 +lon_0=177 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger 30N
+  28491 => "+proj=tmerc +lat_0=0 +lon_0=-177 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger 31N
+  28492 => "+proj=tmerc +lat_0=0 +lon_0=-171 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1942 / Gauss-Kruger 32N
+  28600 => "+proj=tmerc +lat_0=24.45 +lon_0=51.21666666666667 +k=0.999990 +x_0=200000 +y_0=300000 +ellps=intl +units=m +no_defs", # Qatar 1974 / Qatar National Grid
+  28991 => "+proj=stere +lat_0=52.15616055555555 +lon_0=5.38763888888889 +k=0.999908 +x_0=0 +y_0=0 +ellps=bessel +units=m +no_defs", # Amersfoort / RD Old
+  28992 => "+proj=stere +lat_0=52.15616055555555 +lon_0=5.38763888888889 +k=0.999908 +x_0=155000 +y_0=463000 +ellps=bessel +units=m +no_defs", # Amersfoort / RD New
+  29100 => "+proj=poly +lat_0=0 +lon_0=-54 +x_0=5000000 +y_0=10000000 +ellps=GRS67 +units=m +no_defs", # SAD69 / Brazil Polyconic
+  29118 => "+proj=utm +zone=18 +ellps=GRS67 +units=m +no_defs", # SAD69 / UTM zone 18N
+  29119 => "+proj=utm +zone=19 +ellps=GRS67 +units=m +no_defs", # SAD69 / UTM zone 19N
+  29120 => "+proj=utm +zone=20 +ellps=GRS67 +units=m +no_defs", # SAD69 / UTM zone 20N
+  29121 => "+proj=utm +zone=21 +ellps=GRS67 +units=m +no_defs", # SAD69 / UTM zone 21N
+  29122 => "+proj=utm +zone=22 +ellps=GRS67 +units=m +no_defs", # SAD69 / UTM zone 22N
+  29177 => "+proj=utm +zone=17 +south +ellps=GRS67 +units=m +no_defs", # SAD69 / UTM zone 17S
+  29178 => "+proj=utm +zone=18 +south +ellps=GRS67 +units=m +no_defs", # SAD69 / UTM zone 18S
+  29179 => "+proj=utm +zone=19 +south +ellps=GRS67 +units=m +no_defs", # SAD69 / UTM zone 19S
+  29180 => "+proj=utm +zone=20 +south +ellps=GRS67 +units=m +no_defs", # SAD69 / UTM zone 20S
+  29181 => "+proj=utm +zone=21 +south +ellps=GRS67 +units=m +no_defs", # SAD69 / UTM zone 21S
+  29182 => "+proj=utm +zone=22 +south +ellps=GRS67 +units=m +no_defs", # SAD69 / UTM zone 22S
+  29183 => "+proj=utm +zone=23 +south +ellps=GRS67 +units=m +no_defs", # SAD69 / UTM zone 23S
+  29184 => "+proj=utm +zone=24 +south +ellps=GRS67 +units=m +no_defs", # SAD69 / UTM zone 24S
+  29185 => "+proj=utm +zone=25 +south +ellps=GRS67 +units=m +no_defs", # SAD69 / UTM zone 25S
+  29220 => "+proj=utm +zone=20 +south +ellps=intl +towgs84=-355,21,72,0,0,0,0 +units=m +no_defs", # Sapper Hill 1943 / UTM zone 20S
+  29221 => "+proj=utm +zone=21 +south +ellps=intl +towgs84=-355,21,72,0,0,0,0 +units=m +no_defs", # Sapper Hill 1943 / UTM zone 21S
+  29333 => "+proj=utm +zone=33 +south +ellps=bess_nam +units=m +no_defs", # Schwarzeck / UTM zone 33S
+  29635 => "+proj=utm +zone=35 +a=6378249.2 +b=6356515 +units=m +no_defs", # Sudan / UTM zone 35N
+  29636 => "+proj=utm +zone=36 +a=6378249.2 +b=6356515 +units=m +no_defs", # Sudan / UTM zone 36N
+  29700 => "+proj=omerc +lat_0=-18.9 +lonc=46.43722917000001 +alpha=18.9 +k=0.9995000000000001 +x_0=400000 +y_0=800000 +ellps=intl +towgs84=-189,-242,-91,0,0,0,0 +pm=paris +units=m +no_defs", # Tananarive (Paris) / Laborde Grid
+  29738 => "+proj=utm +zone=38 +south +ellps=intl +towgs84=-189,-242,-91,0,0,0,0 +units=m +no_defs", # Tananarive / UTM zone 38S
+  29739 => "+proj=utm +zone=39 +south +ellps=intl +towgs84=-189,-242,-91,0,0,0,0 +units=m +no_defs", # Tananarive / UTM zone 39S
+  29849 => "+proj=utm +zone=49 +ellps=evrstSS +units=m +no_defs", # Timbalai 1948 / UTM zone 49N
+  29850 => "+proj=utm +zone=50 +ellps=evrstSS +units=m +no_defs", # Timbalai 1948 / UTM zone 50N
+  29871 => "+proj=omerc +lat_0=4 +lonc=115 +alpha=53.31582047222222 +k=0.99984 +x_0=590476.8714630401 +y_0=442857.653094361 +ellps=evrstSS +to_meter=20.11676512155263 +no_defs", # Timbalai 1948 / R.S.O. Borneo (ch)
+  29872 => "+proj=omerc +lat_0=4 +lonc=115 +alpha=53.31582047222222 +k=0.99984 +x_0=590476.8727431979 +y_0=442857.6545573985 +ellps=evrstSS +to_meter=0.3047994715386762 +no_defs", # Timbalai 1948 / R.S.O. Borneo (ft)
+  29873 => "+proj=omerc +lat_0=4 +lonc=115 +alpha=53.31582047222222 +k=0.99984 +x_0=590476.87 +y_0=442857.65 +ellps=evrstSS +units=m +no_defs", # Timbalai 1948 / R.S.O. Borneo (m)
+  29900 => "+proj=tmerc +lat_0=53.5 +lon_0=-8 +k=1.000035 +x_0=200000 +y_0=250000 +a=6377340.189 +b=6356034.447938534 +units=m +no_defs", # TM65 / Irish National Grid
+  29901 => "+proj=tmerc +lat_0=53.5 +lon_0=-8 +k=1.000000 +x_0=200000 +y_0=250000 +ellps=airy +units=m +no_defs", # OSNI 1952 / Irish National Grid
+  29902 => "+proj=tmerc +lat_0=53.5 +lon_0=-8 +k=1.000035 +x_0=200000 +y_0=250000 +a=6377340.189 +b=6356034.447938534 +units=m +no_defs", # TM65 / Irish Grid
+  29903 => "+proj=tmerc +lat_0=53.5 +lon_0=-8 +k=1.000035 +x_0=200000 +y_0=250000 +a=6377340.189 +b=6356034.447938534 +units=m +no_defs", # TM75 / Irish Grid
+  30161 => "+proj=tmerc +lat_0=33 +lon_0=129.5 +k=0.999900 +x_0=0 +y_0=0 +ellps=bessel +units=m +no_defs", # Tokyo / Japan Plane Rectangular CS I
+  30162 => "+proj=tmerc +lat_0=33 +lon_0=131 +k=0.999900 +x_0=0 +y_0=0 +ellps=bessel +units=m +no_defs", # Tokyo / Japan Plane Rectangular CS II
+  30163 => "+proj=tmerc +lat_0=36 +lon_0=132.1666666666667 +k=0.999900 +x_0=0 +y_0=0 +ellps=bessel +units=m +no_defs", # Tokyo / Japan Plane Rectangular CS III
+  30164 => "+proj=tmerc +lat_0=33 +lon_0=133.5 +k=0.999900 +x_0=0 +y_0=0 +ellps=bessel +units=m +no_defs", # Tokyo / Japan Plane Rectangular CS IV
+  30165 => "+proj=tmerc +lat_0=36 +lon_0=134.3333333333333 +k=0.999900 +x_0=0 +y_0=0 +ellps=bessel +units=m +no_defs", # Tokyo / Japan Plane Rectangular CS V
+  30166 => "+proj=tmerc +lat_0=36 +lon_0=136 +k=0.999900 +x_0=0 +y_0=0 +ellps=bessel +units=m +no_defs", # Tokyo / Japan Plane Rectangular CS VI
+  30167 => "+proj=tmerc +lat_0=36 +lon_0=137.1666666666667 +k=0.999900 +x_0=0 +y_0=0 +ellps=bessel +units=m +no_defs", # Tokyo / Japan Plane Rectangular CS VII
+  30168 => "+proj=tmerc +lat_0=36 +lon_0=138.5 +k=0.999900 +x_0=0 +y_0=0 +ellps=bessel +units=m +no_defs", # Tokyo / Japan Plane Rectangular CS VIII
+  30169 => "+proj=tmerc +lat_0=36 +lon_0=139.8333333333333 +k=0.999900 +x_0=0 +y_0=0 +ellps=bessel +units=m +no_defs", # Tokyo / Japan Plane Rectangular CS IX
+  30170 => "+proj=tmerc +lat_0=40 +lon_0=140.8333333333333 +k=0.999900 +x_0=0 +y_0=0 +ellps=bessel +units=m +no_defs", # Tokyo / Japan Plane Rectangular CS X
+  30171 => "+proj=tmerc +lat_0=44 +lon_0=140.25 +k=0.999900 +x_0=0 +y_0=0 +ellps=bessel +units=m +no_defs", # Tokyo / Japan Plane Rectangular CS XI
+  30172 => "+proj=tmerc +lat_0=44 +lon_0=142.25 +k=0.999900 +x_0=0 +y_0=0 +ellps=bessel +units=m +no_defs", # Tokyo / Japan Plane Rectangular CS XII
+  30173 => "+proj=tmerc +lat_0=44 +lon_0=144.25 +k=0.999900 +x_0=0 +y_0=0 +ellps=bessel +units=m +no_defs", # Tokyo / Japan Plane Rectangular CS XIII
+  30174 => "+proj=tmerc +lat_0=26 +lon_0=142 +k=0.999900 +x_0=0 +y_0=0 +ellps=bessel +units=m +no_defs", # Tokyo / Japan Plane Rectangular CS XIV
+  30175 => "+proj=tmerc +lat_0=26 +lon_0=127.5 +k=0.999900 +x_0=0 +y_0=0 +ellps=bessel +units=m +no_defs", # Tokyo / Japan Plane Rectangular CS XV
+  30176 => "+proj=tmerc +lat_0=26 +lon_0=124 +k=0.999900 +x_0=0 +y_0=0 +ellps=bessel +units=m +no_defs", # Tokyo / Japan Plane Rectangular CS XVI
+  30177 => "+proj=tmerc +lat_0=26 +lon_0=131 +k=0.999900 +x_0=0 +y_0=0 +ellps=bessel +units=m +no_defs", # Tokyo / Japan Plane Rectangular CS XVII
+  30178 => "+proj=tmerc +lat_0=20 +lon_0=136 +k=0.999900 +x_0=0 +y_0=0 +ellps=bessel +units=m +no_defs", # Tokyo / Japan Plane Rectangular CS XVIII
+  30179 => "+proj=tmerc +lat_0=26 +lon_0=154 +k=0.999900 +x_0=0 +y_0=0 +ellps=bessel +units=m +no_defs", # Tokyo / Japan Plane Rectangular CS XIX
+  30200 => "+proj=cass +lat_0=10.44166666666667 +lon_0=-61.33333333333334 +x_0=86501.46380700001 +y_0=65379.0133425 +a=6378293.63683822 +b=6356617.979337744 +towgs84=-61.702,284.488,472.052,0,0,0,0 +to_meter=0.2011661949 +no_defs", # Trinidad 1903 / Trinidad Grid
+  30339 => "+proj=utm +zone=39 +ellps=helmert +units=m +no_defs", # TC(1948) / UTM zone 39N
+  30340 => "+proj=utm +zone=40 +ellps=helmert +units=m +no_defs", # TC(1948) / UTM zone 40N
+  30491 => "+proj=lcc +lat_1=36 +lat_0=36 +lon_0=2.7 +k_0=0.999625544 +x_0=500000 +y_0=300000 +a=6378249.2 +b=6356515 +towgs84=-73,-247,227,0,0,0,0 +units=m +no_defs", # Voirol 1875 / Nord Algerie (ancienne)
+  30492 => "+proj=lcc +lat_1=33.3 +lat_0=33.3 +lon_0=2.7 +k_0=0.999625769 +x_0=500000 +y_0=300000 +a=6378249.2 +b=6356515 +towgs84=-73,-247,227,0,0,0,0 +units=m +no_defs", # Voirol 1875 / Sud Algerie (ancienne)
+  30729 => "+proj=utm +zone=29 +ellps=clrk80 +units=m +no_defs", # Nord Sahara 1959 / UTM zone 29N
+  30730 => "+proj=utm +zone=30 +ellps=clrk80 +units=m +no_defs", # Nord Sahara 1959 / UTM zone 30N
+  30731 => "+proj=utm +zone=31 +ellps=clrk80 +units=m +no_defs", # Nord Sahara 1959 / UTM zone 31N
+  30732 => "+proj=utm +zone=32 +ellps=clrk80 +units=m +no_defs", # Nord Sahara 1959 / UTM zone 32N
+  30791 => "+proj=lcc +lat_1=36 +lat_0=36 +lon_0=2.7 +k_0=0.999625544 +x_0=500135 +y_0=300090 +ellps=clrk80 +units=m +no_defs", # Nord Sahara 1959 / Voirol Unifie Nord
+  30792 => "+proj=lcc +lat_1=33.3 +lat_0=33.3 +lon_0=2.7 +k_0=0.999625769 +x_0=500135 +y_0=300090 +ellps=clrk80 +units=m +no_defs", # Nord Sahara 1959 / Voirol Unifie Sud
+  30800 => "+proj=tmerc +lat_0=0 +lon_0=15.80827777777778 +k=1.000000 +x_0=1500000 +y_0=0 +ellps=bessel +units=m +no_defs", # RT38 2.5 gon W
+  31028 => "+proj=utm +zone=28 +a=6378249.2 +b=6356515 +units=m +no_defs", # Yoff / UTM zone 28N
+  31121 => "+proj=utm +zone=21 +ellps=intl +towgs84=-265,120,-358,0,0,0,0 +units=m +no_defs", # Zanderij / UTM zone 21N
+  31154 => "+proj=tmerc +lat_0=0 +lon_0=-54 +k=0.999600 +x_0=500000 +y_0=0 +ellps=intl +towgs84=-265,120,-358,0,0,0,0 +units=m +no_defs", # Zanderij / TM 54 NW
+  31170 => "+proj=tmerc +lat_0=0 +lon_0=-55.68333333333333 +k=0.999600 +x_0=500000 +y_0=0 +ellps=intl +towgs84=-265,120,-358,0,0,0,0 +units=m +no_defs", # Zanderij / Suriname Old TM
+  31171 => "+proj=tmerc +lat_0=0 +lon_0=-55.68333333333333 +k=0.999900 +x_0=500000 +y_0=0 +ellps=intl +towgs84=-265,120,-358,0,0,0,0 +units=m +no_defs", # Zanderij / Suriname TM
+  31265 => "+proj=tmerc +lat_0=0 +lon_0=15 +k=1.000000 +x_0=5500000 +y_0=0 +ellps=bessel +units=m +no_defs", # MGI / 3-degree Gauss zone 5
+  31266 => "+proj=tmerc +lat_0=0 +lon_0=18 +k=1.000000 +x_0=6500000 +y_0=0 +ellps=bessel +units=m +no_defs", # MGI / 3-degree Gauss zone 6
+  31267 => "+proj=tmerc +lat_0=0 +lon_0=21 +k=1.000000 +x_0=7500000 +y_0=0 +ellps=bessel +units=m +no_defs", # MGI / 3-degree Gauss zone 7
+  31268 => "+proj=tmerc +lat_0=0 +lon_0=24 +k=1.000000 +x_0=8500000 +y_0=0 +ellps=bessel +units=m +no_defs", # MGI / 3-degree Gauss zone 8
+  31275 => "+proj=tmerc +lat_0=0 +lon_0=15 +k=0.999900 +x_0=5500000 +y_0=0 +ellps=bessel +units=m +no_defs", # MGI / Balkans zone 5
+  31276 => "+proj=tmerc +lat_0=0 +lon_0=18 +k=0.999900 +x_0=6500000 +y_0=0 +ellps=bessel +units=m +no_defs", # MGI / Balkans zone 6
+  31277 => "+proj=tmerc +lat_0=0 +lon_0=21 +k=0.999900 +x_0=7500000 +y_0=0 +ellps=bessel +units=m +no_defs", # MGI / Balkans zone 7
+  31278 => "+proj=tmerc +lat_0=0 +lon_0=21 +k=0.999900 +x_0=7500000 +y_0=0 +ellps=bessel +units=m +no_defs", # MGI / Balkans zone 8
+  31279 => "+proj=tmerc +lat_0=0 +lon_0=24 +k=0.999900 +x_0=8500000 +y_0=0 +ellps=bessel +units=m +no_defs", # MGI / Balkans zone 8
+  31281 => "+proj=tmerc +lat_0=0 +lon_0=10.33333333333333 +k=1.000000 +x_0=0 +y_0=0 +ellps=bessel +pm=ferro +units=m +no_defs", # MGI (Ferro) / Austria West Zone
+  31282 => "+proj=tmerc +lat_0=0 +lon_0=13.33333333333333 +k=1.000000 +x_0=0 +y_0=0 +ellps=bessel +pm=ferro +units=m +no_defs", # MGI (Ferro) / Austria Central Zone
+  31283 => "+proj=tmerc +lat_0=0 +lon_0=16.33333333333333 +k=1.000000 +x_0=0 +y_0=0 +ellps=bessel +pm=ferro +units=m +no_defs", # MGI (Ferro) / Austria East Zone
+  31284 => "+proj=tmerc +lat_0=0 +lon_0=10.33333333333333 +k=1.000000 +x_0=150000 +y_0=0 +ellps=bessel +units=m +no_defs", # MGI / M28
+  31285 => "+proj=tmerc +lat_0=0 +lon_0=13.33333333333333 +k=1.000000 +x_0=450000 +y_0=0 +ellps=bessel +units=m +no_defs", # MGI / M31
+  31286 => "+proj=tmerc +lat_0=0 +lon_0=16.33333333333333 +k=1.000000 +x_0=750000 +y_0=0 +ellps=bessel +units=m +no_defs", # MGI / M34
+  31287 => "+proj=lcc +lat_1=49 +lat_2=46 +lat_0=47.5 +lon_0=13.33333333333333 +x_0=400000 +y_0=400000 +ellps=bessel +units=m +no_defs", # MGI / Austria Lambert
+  31291 => "+proj=tmerc +lat_0=0 +lon_0=10.33333333333333 +k=1.000000 +x_0=0 +y_0=0 +ellps=bessel +pm=ferro +units=m +no_defs", # MGI (Ferro) / Austria West Zone
+  31292 => "+proj=tmerc +lat_0=0 +lon_0=13.33333333333333 +k=1.000000 +x_0=0 +y_0=0 +ellps=bessel +pm=ferro +units=m +no_defs", # MGI (Ferro) / Austria Central Zone
+  31293 => "+proj=tmerc +lat_0=0 +lon_0=16.33333333333333 +k=1.000000 +x_0=0 +y_0=0 +ellps=bessel +pm=ferro +units=m +no_defs", # MGI (Ferro) / Austria East Zone
+  31294 => "+proj=tmerc +lat_0=0 +lon_0=10.33333333333333 +k=1.000000 +x_0=150000 +y_0=0 +ellps=bessel +units=m +no_defs", # MGI / M28
+  31295 => "+proj=tmerc +lat_0=0 +lon_0=13.33333333333333 +k=1.000000 +x_0=450000 +y_0=0 +ellps=bessel +units=m +no_defs", # MGI / M31
+  31296 => "+proj=tmerc +lat_0=0 +lon_0=16.33333333333333 +k=1.000000 +x_0=750000 +y_0=0 +ellps=bessel +units=m +no_defs", # MGI / M34
+  31297 => "+proj=lcc +lat_1=49 +lat_2=46 +lat_0=47.5 +lon_0=13.33333333333333 +x_0=400000 +y_0=400000 +ellps=bessel +units=m +no_defs", # MGI / Austria Lambert
+  31300 => "+proj=lcc +lat_1=49.83333333333334 +lat_2=51.16666666666666 +lat_0=90 +lon_0=4.356939722222222 +x_0=150000.01256 +y_0=5400088.4378 +ellps=intl +units=m +no_defs", # Belge 1972 / Belge Lambert 72
+  31370 => "+proj=lcc +lat_1=51.16666723333333 +lat_2=49.8333339 +lat_0=90 +lon_0=4.367486666666666 +x_0=150000.013 +y_0=5400088.438 +ellps=intl +units=m +no_defs", # Belge 1972 / Belgian Lambert 72
+  31461 => "+proj=tmerc +lat_0=0 +lon_0=3 +k=1.000000 +x_0=1500000 +y_0=0 +ellps=bessel +units=m +no_defs", # DHDN / 3-degree Gauss zone 1
+  31462 => "+proj=tmerc +lat_0=0 +lon_0=6 +k=1.000000 +x_0=2500000 +y_0=0 +ellps=bessel +units=m +no_defs", # DHDN / 3-degree Gauss zone 2
+  31463 => "+proj=tmerc +lat_0=0 +lon_0=9 +k=1.000000 +x_0=3500000 +y_0=0 +ellps=bessel +units=m +no_defs", # DHDN / 3-degree Gauss zone 3
+  31464 => "+proj=tmerc +lat_0=0 +lon_0=12 +k=1.000000 +x_0=4500000 +y_0=0 +ellps=bessel +units=m +no_defs", # DHDN / 3-degree Gauss zone 4
+  31465 => "+proj=tmerc +lat_0=0 +lon_0=15 +k=1.000000 +x_0=5500000 +y_0=0 +ellps=bessel +units=m +no_defs", # DHDN / 3-degree Gauss zone 5
+  31466 => "+proj=tmerc +lat_0=0 +lon_0=6 +k=1.000000 +x_0=2500000 +y_0=0 +ellps=bessel +units=m +no_defs", # DHDN / Gauss-Kruger zone 2
+  31467 => "+proj=tmerc +lat_0=0 +lon_0=9 +k=1.000000 +x_0=3500000 +y_0=0 +ellps=bessel +units=m +no_defs", # DHDN / Gauss-Kruger zone 3
+  31468 => "+proj=tmerc +lat_0=0 +lon_0=12 +k=1.000000 +x_0=4500000 +y_0=0 +ellps=bessel +units=m +no_defs", # DHDN / Gauss-Kruger zone 4
+  31469 => "+proj=tmerc +lat_0=0 +lon_0=15 +k=1.000000 +x_0=5500000 +y_0=0 +ellps=bessel +units=m +no_defs", # DHDN / Gauss-Kruger zone 5
+  31528 => "+proj=utm +zone=28 +a=6378249.2 +b=6356515 +towgs84=-23,259,-9,0,0,0,0 +units=m +no_defs", # Conakry 1905 / UTM zone 28N
+  31529 => "+proj=utm +zone=29 +a=6378249.2 +b=6356515 +towgs84=-23,259,-9,0,0,0,0 +units=m +no_defs", # Conakry 1905 / UTM zone 29N
+  31600 => "+proj=stere +lat_0=45.9 +lon_0=25.39246588888889 +k=0.999667 +x_0=500000 +y_0=500000 +ellps=intl +towgs84=103.25,-100.4,-307.19,0,0,0,0 +units=m +no_defs", # Dealul Piscului 1933/ Stereo 33
+  31700 => "+proj=stere +lat_0=46 +lon_0=25 +k=0.999750 +x_0=500000 +y_0=500000 +ellps=krass +units=m +no_defs", # Dealul Piscului 1970/ Stereo 70
+  31838 => "+proj=utm +zone=38 +ellps=WGS84 +units=m +no_defs", # NGN / UTM zone 38N
+  31839 => "+proj=utm +zone=39 +ellps=WGS84 +units=m +no_defs", # NGN / UTM zone 39N
+  31900 => "+proj=tmerc +lat_0=0 +lon_0=48 +k=0.999600 +x_0=500000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # KUDAMS / KTM
+  31986 => "+proj=utm +zone=17 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # SIRGAS / UTM zone 17N
+  31987 => "+proj=utm +zone=18 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # SIRGAS / UTM zone 18N
+  31988 => "+proj=utm +zone=19 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # SIRGAS / UTM zone 19N
+  31989 => "+proj=utm +zone=20 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # SIRGAS / UTM zone 20N
+  31990 => "+proj=utm +zone=21 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # SIRGAS / UTM zone 21N
+  31991 => "+proj=utm +zone=22 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # SIRGAS / UTM zone 22N
+  31992 => "+proj=utm +zone=17 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # SIRGAS / UTM zone 17S
+  31993 => "+proj=utm +zone=18 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # SIRGAS / UTM zone 18S
+  31994 => "+proj=utm +zone=19 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # SIRGAS / UTM zone 19S
+  31995 => "+proj=utm +zone=20 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # SIRGAS / UTM zone 20S
+  31996 => "+proj=utm +zone=21 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # SIRGAS / UTM zone 21S
+  31997 => "+proj=utm +zone=22 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # SIRGAS / UTM zone 22S
+  31998 => "+proj=utm +zone=23 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # SIRGAS / UTM zone 23S
+  31999 => "+proj=utm +zone=24 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # SIRGAS / UTM zone 24S
+  32000 => "+proj=utm +zone=25 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs", # SIRGAS / UTM zone 25S
+  32001 => "+proj=lcc +lat_1=48.71666666666667 +lat_2=47.85 +lat_0=47 +lon_0=-109.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Montana North
+  32002 => "+proj=lcc +lat_1=47.88333333333333 +lat_2=46.45 +lat_0=45.83333333333334 +lon_0=-109.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Montana Central
+  32003 => "+proj=lcc +lat_1=46.4 +lat_2=44.86666666666667 +lat_0=44 +lon_0=-109.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Montana South
+  32005 => "+proj=lcc +lat_1=41.85 +lat_2=42.81666666666667 +lat_0=41.33333333333334 +lon_0=-100 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Nebraska North
+  32006 => "+proj=lcc +lat_1=40.28333333333333 +lat_2=41.71666666666667 +lat_0=39.66666666666666 +lon_0=-99.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Nebraska South
+  32007 => "+proj=tmerc +lat_0=34.75 +lon_0=-115.5833333333333 +k=0.999900 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Nevada East
+  32008 => "+proj=tmerc +lat_0=34.75 +lon_0=-116.6666666666667 +k=0.999900 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Nevada Central
+  32009 => "+proj=tmerc +lat_0=34.75 +lon_0=-118.5833333333333 +k=0.999900 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Nevada West
+  32010 => "+proj=tmerc +lat_0=42.5 +lon_0=-71.66666666666667 +k=0.999967 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / New Hampshire
+  32011 => "+proj=tmerc +lat_0=38.83333333333334 +lon_0=-74.66666666666667 +k=0.999975 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / New Jersey
+  32012 => "+proj=tmerc +lat_0=31 +lon_0=-104.3333333333333 +k=0.999909 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / New Mexico East
+  32013 => "+proj=tmerc +lat_0=31 +lon_0=-106.25 +k=0.999900 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / New Mexico Central
+  32014 => "+proj=tmerc +lat_0=31 +lon_0=-107.8333333333333 +k=0.999917 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / New Mexico West
+  32015 => "+proj=tmerc +lat_0=40 +lon_0=-74.33333333333333 +k=0.999967 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / New York East
+  32016 => "+proj=tmerc +lat_0=40 +lon_0=-76.58333333333333 +k=0.999938 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / New York Central
+  32017 => "+proj=tmerc +lat_0=40 +lon_0=-78.58333333333333 +k=0.999938 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / New York West
+  32018 => "+proj=lcc +lat_1=41.03333333333333 +lat_2=40.66666666666666 +lat_0=40.5 +lon_0=-74 +x_0=304800.6096012192 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / New York Long Island
+  32019 => "+proj=lcc +lat_1=34.33333333333334 +lat_2=36.16666666666666 +lat_0=33.75 +lon_0=-79 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / North Carolina
+  32020 => "+proj=lcc +lat_1=47.43333333333333 +lat_2=48.73333333333333 +lat_0=47 +lon_0=-100.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / North Dakota North
+  32021 => "+proj=lcc +lat_1=46.18333333333333 +lat_2=47.48333333333333 +lat_0=45.66666666666666 +lon_0=-100.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / North Dakota South
+  32022 => "+proj=lcc +lat_1=40.43333333333333 +lat_2=41.7 +lat_0=39.66666666666666 +lon_0=-82.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Ohio North
+  32023 => "+proj=lcc +lat_1=38.73333333333333 +lat_2=40.03333333333333 +lat_0=38 +lon_0=-82.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Ohio South
+  32024 => "+proj=lcc +lat_1=35.56666666666667 +lat_2=36.76666666666667 +lat_0=35 +lon_0=-98 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Oklahoma North
+  32025 => "+proj=lcc +lat_1=33.93333333333333 +lat_2=35.23333333333333 +lat_0=33.33333333333334 +lon_0=-98 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Oklahoma South
+  32026 => "+proj=lcc +lat_1=44.33333333333334 +lat_2=46 +lat_0=43.66666666666666 +lon_0=-120.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Oregon North
+  32027 => "+proj=lcc +lat_1=42.33333333333334 +lat_2=44 +lat_0=41.66666666666666 +lon_0=-120.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Oregon South
+  32028 => "+proj=lcc +lat_1=40.88333333333333 +lat_2=41.95 +lat_0=40.16666666666666 +lon_0=-77.75 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Pennsylvania North
+  32029 => "+proj=lcc +lat_1=39.93333333333333 +lat_2=40.8 +lat_0=39.33333333333334 +lon_0=-77.75 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Pennsylvania South
+  32030 => "+proj=tmerc +lat_0=41.08333333333334 +lon_0=-71.5 +k=0.999994 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Rhode Island
+  32031 => "+proj=lcc +lat_1=33.76666666666667 +lat_2=34.96666666666667 +lat_0=33 +lon_0=-81 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / South Carolina North
+  32033 => "+proj=lcc +lat_1=32.33333333333334 +lat_2=33.66666666666666 +lat_0=31.83333333333333 +lon_0=-81 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / South Carolina South
+  32034 => "+proj=lcc +lat_1=44.41666666666666 +lat_2=45.68333333333333 +lat_0=43.83333333333334 +lon_0=-100 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / South Dakota North
+  32035 => "+proj=lcc +lat_1=42.83333333333334 +lat_2=44.4 +lat_0=42.33333333333334 +lon_0=-100.3333333333333 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / South Dakota South
+  32036 => "+proj=lcc +lat_1=35.25 +lat_2=36.41666666666666 +lat_0=34.66666666666666 +lon_0=-86 +x_0=30480.06096012192 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Tennessee
+  32037 => "+proj=lcc +lat_1=34.65 +lat_2=36.18333333333333 +lat_0=34 +lon_0=-101.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Texas North
+  32038 => "+proj=lcc +lat_1=32.13333333333333 +lat_2=33.96666666666667 +lat_0=31.66666666666667 +lon_0=-97.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Texas North Central
+  32039 => "+proj=lcc +lat_1=30.11666666666667 +lat_2=31.88333333333333 +lat_0=29.66666666666667 +lon_0=-100.3333333333333 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Texas Central
+  32040 => "+proj=lcc +lat_1=28.38333333333333 +lat_2=30.28333333333333 +lat_0=27.83333333333333 +lon_0=-99 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Texas South Central
+  32041 => "+proj=lcc +lat_1=26.16666666666667 +lat_2=27.83333333333333 +lat_0=25.66666666666667 +lon_0=-98.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Texas South
+  32042 => "+proj=lcc +lat_1=40.71666666666667 +lat_2=41.78333333333333 +lat_0=40.33333333333334 +lon_0=-111.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Utah North
+  32043 => "+proj=lcc +lat_1=39.01666666666667 +lat_2=40.65 +lat_0=38.33333333333334 +lon_0=-111.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Utah Central
+  32044 => "+proj=lcc +lat_1=37.21666666666667 +lat_2=38.35 +lat_0=36.66666666666666 +lon_0=-111.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Utah South
+  32045 => "+proj=tmerc +lat_0=42.5 +lon_0=-72.5 +k=0.999964 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Vermont
+  32046 => "+proj=lcc +lat_1=38.03333333333333 +lat_2=39.2 +lat_0=37.66666666666666 +lon_0=-78.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Virginia North
+  32047 => "+proj=lcc +lat_1=36.76666666666667 +lat_2=37.96666666666667 +lat_0=36.33333333333334 +lon_0=-78.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Virginia South
+  32048 => "+proj=lcc +lat_1=47.5 +lat_2=48.73333333333333 +lat_0=47 +lon_0=-120.8333333333333 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Washington North
+  32049 => "+proj=lcc +lat_1=45.83333333333334 +lat_2=47.33333333333334 +lat_0=45.33333333333334 +lon_0=-120.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Washington South
+  32050 => "+proj=lcc +lat_1=39 +lat_2=40.25 +lat_0=38.5 +lon_0=-79.5 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / West Virginia North
+  32051 => "+proj=lcc +lat_1=37.48333333333333 +lat_2=38.88333333333333 +lat_0=37 +lon_0=-81 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / West Virginia South
+  32052 => "+proj=lcc +lat_1=45.56666666666667 +lat_2=46.76666666666667 +lat_0=45.16666666666666 +lon_0=-90 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Wisconsin North
+  32053 => "+proj=lcc +lat_1=44.25 +lat_2=45.5 +lat_0=43.83333333333334 +lon_0=-90 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Wisconsin Central
+  32054 => "+proj=lcc +lat_1=42.73333333333333 +lat_2=44.06666666666667 +lat_0=42 +lon_0=-90 +x_0=609601.2192024384 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Wisconsin South
+  32055 => "+proj=tmerc +lat_0=40.66666666666666 +lon_0=-105.1666666666667 +k=0.999941 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Wyoming East
+  32056 => "+proj=tmerc +lat_0=40.66666666666666 +lon_0=-107.3333333333333 +k=0.999941 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Wyoming East Central
+  32057 => "+proj=tmerc +lat_0=40.66666666666666 +lon_0=-108.75 +k=0.999941 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Wyoming West Central
+  32058 => "+proj=tmerc +lat_0=40.66666666666666 +lon_0=-110.0833333333333 +k=0.999941 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / Wyoming West
+  32061 => "+proj=lcc +lat_1=16.81666666666667 +lat_0=16.81666666666667 +lon_0=-90.33333333333333 +k_0=0.99992226 +x_0=500000 +y_0=292209.579 +ellps=clrk66 +datum=NAD27 +units=m +no_defs", # NAD27 / Guatemala Norte
+  32062 => "+proj=lcc +lat_1=14.9 +lat_0=14.9 +lon_0=-90.33333333333333 +k_0=0.99989906 +x_0=500000 +y_0=325992.681 +ellps=clrk66 +datum=NAD27 +units=m +no_defs", # NAD27 / Guatemala Sur
+  32064 => "+proj=tmerc +lat_0=0 +lon_0=-99 +k=0.999600 +x_0=500000.001016002 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / BLM 14N (ftUS)
+  32065 => "+proj=tmerc +lat_0=0 +lon_0=-93 +k=0.999600 +x_0=500000.001016002 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / BLM 15N (ftUS)
+  32066 => "+proj=tmerc +lat_0=0 +lon_0=-87 +k=0.999600 +x_0=500000.001016002 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / BLM 16N (ftUS)
+  32067 => "+proj=tmerc +lat_0=0 +lon_0=-81 +k=0.999600 +x_0=500000.001016002 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / BLM 17N (ftUS)
+  32074 => "+proj=tmerc +lat_0=0 +lon_0=-99 +k=0.999600 +x_0=500000.001016002 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / BLM 14N (feet)
+  32075 => "+proj=tmerc +lat_0=0 +lon_0=-93 +k=0.999600 +x_0=500000.001016002 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / BLM 15N (feet)
+  32076 => "+proj=tmerc +lat_0=0 +lon_0=-87 +k=0.999600 +x_0=500000.001016002 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / BLM 16N (feet)
+  32077 => "+proj=tmerc +lat_0=0 +lon_0=-81 +k=0.999600 +x_0=500000.001016002 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD27 / BLM 17N (feet)
+  32081 => "+proj=tmerc +lat_0=0 +lon_0=-53 +k=0.999900 +x_0=304800 +y_0=0 +ellps=clrk66 +datum=NAD27 +units=m +no_defs", # NAD27 / MTM zone 1
+  32082 => "+proj=tmerc +lat_0=0 +lon_0=-56 +k=0.999900 +x_0=304800 +y_0=0 +ellps=clrk66 +datum=NAD27 +units=m +no_defs", # NAD27 / MTM zone 2
+  32083 => "+proj=tmerc +lat_0=0 +lon_0=-58.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=clrk66 +datum=NAD27 +units=m +no_defs", # NAD27 / MTM zone 3
+  32084 => "+proj=tmerc +lat_0=0 +lon_0=-61.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=clrk66 +datum=NAD27 +units=m +no_defs", # NAD27 / MTM zone 4
+  32085 => "+proj=tmerc +lat_0=0 +lon_0=-64.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=clrk66 +datum=NAD27 +units=m +no_defs", # NAD27 / MTM zone 5
+  32086 => "+proj=tmerc +lat_0=0 +lon_0=-67.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=clrk66 +datum=NAD27 +units=m +no_defs", # NAD27 / MTM zone 6
+  32098 => "+proj=lcc +lat_1=60 +lat_2=46 +lat_0=44 +lon_0=-68.5 +x_0=0 +y_0=0 +ellps=clrk66 +datum=NAD27 +units=m +no_defs", # NAD27 / Quebec Lambert
+  32100 => "+proj=lcc +lat_1=49 +lat_2=45 +lat_0=44.25 +lon_0=-109.5 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Montana
+  32104 => "+proj=lcc +lat_1=43 +lat_2=40 +lat_0=39.83333333333334 +lon_0=-100 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Nebraska
+  32107 => "+proj=tmerc +lat_0=34.75 +lon_0=-115.5833333333333 +k=0.999900 +x_0=200000 +y_0=8000000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Nevada East
+  32108 => "+proj=tmerc +lat_0=34.75 +lon_0=-116.6666666666667 +k=0.999900 +x_0=500000 +y_0=6000000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Nevada Central
+  32109 => "+proj=tmerc +lat_0=34.75 +lon_0=-118.5833333333333 +k=0.999900 +x_0=800000 +y_0=4000000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Nevada West
+  32110 => "+proj=tmerc +lat_0=42.5 +lon_0=-71.66666666666667 +k=0.999967 +x_0=300000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / New Hampshire
+  32111 => "+proj=tmerc +lat_0=38.83333333333334 +lon_0=-74.5 +k=0.999900 +x_0=150000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / New Jersey
+  32112 => "+proj=tmerc +lat_0=31 +lon_0=-104.3333333333333 +k=0.999909 +x_0=165000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / New Mexico East
+  32113 => "+proj=tmerc +lat_0=31 +lon_0=-106.25 +k=0.999900 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / New Mexico Central
+  32114 => "+proj=tmerc +lat_0=31 +lon_0=-107.8333333333333 +k=0.999917 +x_0=830000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / New Mexico West
+  32115 => "+proj=tmerc +lat_0=38.83333333333334 +lon_0=-74.5 +k=0.999900 +x_0=150000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / New York East
+  32116 => "+proj=tmerc +lat_0=40 +lon_0=-76.58333333333333 +k=0.999938 +x_0=250000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / New York Central
+  32117 => "+proj=tmerc +lat_0=40 +lon_0=-78.58333333333333 +k=0.999938 +x_0=350000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / New York West
+  32118 => "+proj=lcc +lat_1=41.03333333333333 +lat_2=40.66666666666666 +lat_0=40.16666666666666 +lon_0=-74 +x_0=300000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / New York Long Island
+  32119 => "+proj=lcc +lat_1=36.16666666666666 +lat_2=34.33333333333334 +lat_0=33.75 +lon_0=-79 +x_0=609601.22 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / North Carolina
+  32120 => "+proj=lcc +lat_1=48.73333333333333 +lat_2=47.43333333333333 +lat_0=47 +lon_0=-100.5 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / North Dakota North
+  32121 => "+proj=lcc +lat_1=47.48333333333333 +lat_2=46.18333333333333 +lat_0=45.66666666666666 +lon_0=-100.5 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / North Dakota South
+  32122 => "+proj=lcc +lat_1=41.7 +lat_2=40.43333333333333 +lat_0=39.66666666666666 +lon_0=-82.5 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Ohio North
+  32123 => "+proj=lcc +lat_1=40.03333333333333 +lat_2=38.73333333333333 +lat_0=38 +lon_0=-82.5 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Ohio South
+  32124 => "+proj=lcc +lat_1=36.76666666666667 +lat_2=35.56666666666667 +lat_0=35 +lon_0=-98 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Oklahoma North
+  32125 => "+proj=lcc +lat_1=35.23333333333333 +lat_2=33.93333333333333 +lat_0=33.33333333333334 +lon_0=-98 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Oklahoma South
+  32126 => "+proj=lcc +lat_1=46 +lat_2=44.33333333333334 +lat_0=43.66666666666666 +lon_0=-120.5 +x_0=2500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Oregon North
+  32127 => "+proj=lcc +lat_1=44 +lat_2=42.33333333333334 +lat_0=41.66666666666666 +lon_0=-120.5 +x_0=1500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Oregon South
+  32128 => "+proj=lcc +lat_1=41.95 +lat_2=40.88333333333333 +lat_0=40.16666666666666 +lon_0=-77.75 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Pennsylvania North
+  32129 => "+proj=lcc +lat_1=40.96666666666667 +lat_2=39.93333333333333 +lat_0=39.33333333333334 +lon_0=-77.75 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Pennsylvania South
+  32130 => "+proj=tmerc +lat_0=41.08333333333334 +lon_0=-71.5 +k=0.999994 +x_0=100000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Rhode Island
+  32133 => "+proj=lcc +lat_1=34.83333333333334 +lat_2=32.5 +lat_0=31.83333333333333 +lon_0=-81 +x_0=609600 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / South Carolina
+  32134 => "+proj=lcc +lat_1=45.68333333333333 +lat_2=44.41666666666666 +lat_0=43.83333333333334 +lon_0=-100 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / South Dakota North
+  32135 => "+proj=lcc +lat_1=44.4 +lat_2=42.83333333333334 +lat_0=42.33333333333334 +lon_0=-100.3333333333333 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / South Dakota South
+  32136 => "+proj=lcc +lat_1=36.41666666666666 +lat_2=35.25 +lat_0=34.33333333333334 +lon_0=-86 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Tennessee
+  32137 => "+proj=lcc +lat_1=36.18333333333333 +lat_2=34.65 +lat_0=34 +lon_0=-101.5 +x_0=200000 +y_0=1000000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Texas North
+  32138 => "+proj=lcc +lat_1=33.96666666666667 +lat_2=32.13333333333333 +lat_0=31.66666666666667 +lon_0=-98.5 +x_0=600000 +y_0=2000000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Texas North Central
+  32139 => "+proj=lcc +lat_1=31.88333333333333 +lat_2=30.11666666666667 +lat_0=29.66666666666667 +lon_0=-100.3333333333333 +x_0=700000 +y_0=3000000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Texas Central
+  32140 => "+proj=lcc +lat_1=30.28333333333333 +lat_2=28.38333333333333 +lat_0=27.83333333333333 +lon_0=-99 +x_0=600000 +y_0=4000000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Texas South Central
+  32141 => "+proj=lcc +lat_1=27.83333333333333 +lat_2=26.16666666666667 +lat_0=25.66666666666667 +lon_0=-98.5 +x_0=300000 +y_0=5000000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Texas South
+  32142 => "+proj=lcc +lat_1=41.78333333333333 +lat_2=40.71666666666667 +lat_0=40.33333333333334 +lon_0=-111.5 +x_0=500000 +y_0=1000000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Utah North
+  32143 => "+proj=lcc +lat_1=40.65 +lat_2=39.01666666666667 +lat_0=38.33333333333334 +lon_0=-111.5 +x_0=500000 +y_0=2000000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Utah Central
+  32144 => "+proj=lcc +lat_1=38.35 +lat_2=37.21666666666667 +lat_0=36.66666666666666 +lon_0=-111.5 +x_0=500000 +y_0=3000000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Utah South
+  32145 => "+proj=tmerc +lat_0=42.5 +lon_0=-72.5 +k=0.999964 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Vermont
+  32146 => "+proj=lcc +lat_1=39.2 +lat_2=38.03333333333333 +lat_0=37.66666666666666 +lon_0=-78.5 +x_0=3500000 +y_0=2000000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Virginia North
+  32147 => "+proj=lcc +lat_1=37.96666666666667 +lat_2=36.76666666666667 +lat_0=36.33333333333334 +lon_0=-78.5 +x_0=3500000 +y_0=1000000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Virginia South
+  32148 => "+proj=lcc +lat_1=48.73333333333333 +lat_2=47.5 +lat_0=47 +lon_0=-120.8333333333333 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Washington North
+  32149 => "+proj=lcc +lat_1=47.33333333333334 +lat_2=45.83333333333334 +lat_0=45.33333333333334 +lon_0=-120.5 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Washington South
+  32150 => "+proj=lcc +lat_1=40.25 +lat_2=39 +lat_0=38.5 +lon_0=-79.5 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / West Virginia North
+  32151 => "+proj=lcc +lat_1=38.88333333333333 +lat_2=37.48333333333333 +lat_0=37 +lon_0=-81 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / West Virginia South
+  32152 => "+proj=lcc +lat_1=46.76666666666667 +lat_2=45.56666666666667 +lat_0=45.16666666666666 +lon_0=-90 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Wisconsin North
+  32153 => "+proj=lcc +lat_1=45.5 +lat_2=44.25 +lat_0=43.83333333333334 +lon_0=-90 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Wisconsin Central
+  32154 => "+proj=lcc +lat_1=44.06666666666667 +lat_2=42.73333333333333 +lat_0=42 +lon_0=-90 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Wisconsin South
+  32155 => "+proj=tmerc +lat_0=40.5 +lon_0=-105.1666666666667 +k=0.999938 +x_0=200000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Wyoming East
+  32156 => "+proj=tmerc +lat_0=40.5 +lon_0=-107.3333333333333 +k=0.999938 +x_0=400000 +y_0=100000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Wyoming East Central
+  32157 => "+proj=tmerc +lat_0=40.5 +lon_0=-108.75 +k=0.999938 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Wyoming West Central
+  32158 => "+proj=tmerc +lat_0=40.5 +lon_0=-110.0833333333333 +k=0.999938 +x_0=800000 +y_0=100000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Wyoming West
+  32161 => "+proj=lcc +lat_1=18.43333333333333 +lat_2=18.03333333333333 +lat_0=17.83333333333333 +lon_0=-66.43333333333334 +x_0=200000 +y_0=200000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Puerto Rico & Virgin Is.
+  32180 => "+proj=tmerc +lat_0=0 +lon_0=-55.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / SCoPQ zone 2
+  32181 => "+proj=tmerc +lat_0=0 +lon_0=-53 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / MTM zone 1
+  32182 => "+proj=tmerc +lat_0=0 +lon_0=-56 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / MTM zone 2
+  32183 => "+proj=tmerc +lat_0=0 +lon_0=-58.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / MTM zone 3
+  32184 => "+proj=tmerc +lat_0=0 +lon_0=-61.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / MTM zone 4
+  32185 => "+proj=tmerc +lat_0=0 +lon_0=-64.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / MTM zone 5
+  32186 => "+proj=tmerc +lat_0=0 +lon_0=-67.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / MTM zone 6
+  32187 => "+proj=tmerc +lat_0=0 +lon_0=-70.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / MTM zone 7
+  32188 => "+proj=tmerc +lat_0=0 +lon_0=-73.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / MTM zone 8
+  32189 => "+proj=tmerc +lat_0=0 +lon_0=-76.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / MTM zone 9
+  32190 => "+proj=tmerc +lat_0=0 +lon_0=-79.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / MTM zone 10
+  32191 => "+proj=tmerc +lat_0=0 +lon_0=-82.5 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / MTM zone 11
+  32192 => "+proj=tmerc +lat_0=0 +lon_0=-81 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / MTM zone 12
+  32193 => "+proj=tmerc +lat_0=0 +lon_0=-84 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / MTM zone 13
+  32194 => "+proj=tmerc +lat_0=0 +lon_0=-87 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / MTM zone 14
+  32195 => "+proj=tmerc +lat_0=0 +lon_0=-90 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / MTM zone 15
+  32196 => "+proj=tmerc +lat_0=0 +lon_0=-93 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / MTM zone 16
+  32197 => "+proj=tmerc +lat_0=0 +lon_0=-96 +k=0.999900 +x_0=304800 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / MTM zone 17
+  32198 => "+proj=lcc +lat_1=60 +lat_2=46 +lat_0=44 +lon_0=-68.5 +x_0=0 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD83 / Quebec Lambert
+  32201 => "+proj=utm +zone=1 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 1N
+  32202 => "+proj=utm +zone=2 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 2N
+  32203 => "+proj=utm +zone=3 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 3N
+  32204 => "+proj=utm +zone=4 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 4N
+  32205 => "+proj=utm +zone=5 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 5N
+  32206 => "+proj=utm +zone=6 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 6N
+  32207 => "+proj=utm +zone=7 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 7N
+  32208 => "+proj=utm +zone=8 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 8N
+  32209 => "+proj=utm +zone=9 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 9N
+  32210 => "+proj=utm +zone=10 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 10N
+  32211 => "+proj=utm +zone=11 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 11N
+  32212 => "+proj=utm +zone=12 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 12N
+  32213 => "+proj=utm +zone=13 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 13N
+  32214 => "+proj=utm +zone=14 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 14N
+  32215 => "+proj=utm +zone=15 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 15N
+  32216 => "+proj=utm +zone=16 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 16N
+  32217 => "+proj=utm +zone=17 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 17N
+  32218 => "+proj=utm +zone=18 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 18N
+  32219 => "+proj=utm +zone=19 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 19N
+  32220 => "+proj=utm +zone=20 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 20N
+  32221 => "+proj=utm +zone=21 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 21N
+  32222 => "+proj=utm +zone=22 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 22N
+  32223 => "+proj=utm +zone=23 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 23N
+  32224 => "+proj=utm +zone=24 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 24N
+  32225 => "+proj=utm +zone=25 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 25N
+  32226 => "+proj=utm +zone=26 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 26N
+  32227 => "+proj=utm +zone=27 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 27N
+  32228 => "+proj=utm +zone=28 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 28N
+  32229 => "+proj=utm +zone=29 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 29N
+  32230 => "+proj=utm +zone=30 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 30N
+  32231 => "+proj=utm +zone=31 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 31N
+  32232 => "+proj=utm +zone=32 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 32N
+  32233 => "+proj=utm +zone=33 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 33N
+  32234 => "+proj=utm +zone=34 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 34N
+  32235 => "+proj=utm +zone=35 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 35N
+  32236 => "+proj=utm +zone=36 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 36N
+  32237 => "+proj=utm +zone=37 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 37N
+  32238 => "+proj=utm +zone=38 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 38N
+  32239 => "+proj=utm +zone=39 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 39N
+  32240 => "+proj=utm +zone=40 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 40N
+  32241 => "+proj=utm +zone=41 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 41N
+  32242 => "+proj=utm +zone=42 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 42N
+  32243 => "+proj=utm +zone=43 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 43N
+  32244 => "+proj=utm +zone=44 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 44N
+  32245 => "+proj=utm +zone=45 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 45N
+  32246 => "+proj=utm +zone=46 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 46N
+  32247 => "+proj=utm +zone=47 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 47N
+  32248 => "+proj=utm +zone=48 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 48N
+  32249 => "+proj=utm +zone=49 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 49N
+  32250 => "+proj=utm +zone=50 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 50N
+  32251 => "+proj=utm +zone=51 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 51N
+  32252 => "+proj=utm +zone=52 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 52N
+  32253 => "+proj=utm +zone=53 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 53N
+  32254 => "+proj=utm +zone=54 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 54N
+  32255 => "+proj=utm +zone=55 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 55N
+  32256 => "+proj=utm +zone=56 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 56N
+  32257 => "+proj=utm +zone=57 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 57N
+  32258 => "+proj=utm +zone=58 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 58N
+  32259 => "+proj=utm +zone=59 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 59N
+  32260 => "+proj=utm +zone=60 +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 60N
+  32301 => "+proj=utm +zone=1 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 1S
+  32302 => "+proj=utm +zone=2 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 2S
+  32303 => "+proj=utm +zone=3 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 3S
+  32304 => "+proj=utm +zone=4 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 4S
+  32305 => "+proj=utm +zone=5 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 5S
+  32306 => "+proj=utm +zone=6 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 6S
+  32307 => "+proj=utm +zone=7 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 7S
+  32308 => "+proj=utm +zone=8 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 8S
+  32309 => "+proj=utm +zone=9 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 9S
+  32310 => "+proj=utm +zone=10 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 10S
+  32311 => "+proj=utm +zone=11 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 11S
+  32312 => "+proj=utm +zone=12 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 12S
+  32313 => "+proj=utm +zone=13 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 13S
+  32314 => "+proj=utm +zone=14 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 14S
+  32315 => "+proj=utm +zone=15 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 15S
+  32316 => "+proj=utm +zone=16 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 16S
+  32317 => "+proj=utm +zone=17 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 17S
+  32318 => "+proj=utm +zone=18 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 18S
+  32319 => "+proj=utm +zone=19 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 19S
+  32320 => "+proj=utm +zone=20 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 20S
+  32321 => "+proj=utm +zone=21 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 21S
+  32322 => "+proj=utm +zone=22 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 22S
+  32323 => "+proj=utm +zone=23 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 23S
+  32324 => "+proj=utm +zone=24 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 24S
+  32325 => "+proj=utm +zone=25 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 25S
+  32326 => "+proj=utm +zone=26 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 26S
+  32327 => "+proj=utm +zone=27 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 27S
+  32328 => "+proj=utm +zone=28 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 28S
+  32329 => "+proj=utm +zone=29 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 29S
+  32330 => "+proj=utm +zone=30 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 30S
+  32331 => "+proj=utm +zone=31 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 31S
+  32332 => "+proj=utm +zone=32 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 32S
+  32333 => "+proj=utm +zone=33 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 33S
+  32334 => "+proj=utm +zone=34 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 34S
+  32335 => "+proj=utm +zone=35 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 35S
+  32336 => "+proj=utm +zone=36 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 36S
+  32337 => "+proj=utm +zone=37 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 37S
+  32338 => "+proj=utm +zone=38 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 38S
+  32339 => "+proj=utm +zone=39 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 39S
+  32340 => "+proj=utm +zone=40 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 40S
+  32341 => "+proj=utm +zone=41 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 41S
+  32342 => "+proj=utm +zone=42 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 42S
+  32343 => "+proj=utm +zone=43 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 43S
+  32344 => "+proj=utm +zone=44 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 44S
+  32345 => "+proj=utm +zone=45 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 45S
+  32346 => "+proj=utm +zone=46 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 46S
+  32347 => "+proj=utm +zone=47 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 47S
+  32348 => "+proj=utm +zone=48 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 48S
+  32349 => "+proj=utm +zone=49 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 49S
+  32350 => "+proj=utm +zone=50 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 50S
+  32351 => "+proj=utm +zone=51 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 51S
+  32352 => "+proj=utm +zone=52 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 52S
+  32353 => "+proj=utm +zone=53 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 53S
+  32354 => "+proj=utm +zone=54 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 54S
+  32355 => "+proj=utm +zone=55 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 55S
+  32356 => "+proj=utm +zone=56 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 56S
+  32357 => "+proj=utm +zone=57 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 57S
+  32358 => "+proj=utm +zone=58 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 58S
+  32359 => "+proj=utm +zone=59 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 59S
+  32360 => "+proj=utm +zone=60 +south +ellps=WGS72 +units=m +no_defs", # WGS 72 / UTM zone 60S
+  32401 => "+proj=utm +zone=1 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 1N
+  32402 => "+proj=utm +zone=2 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 2N
+  32403 => "+proj=utm +zone=3 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 3N
+  32404 => "+proj=utm +zone=4 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 4N
+  32405 => "+proj=utm +zone=5 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 5N
+  32406 => "+proj=utm +zone=6 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 6N
+  32407 => "+proj=utm +zone=7 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 7N
+  32408 => "+proj=utm +zone=8 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 8N
+  32409 => "+proj=utm +zone=9 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 9N
+  32410 => "+proj=utm +zone=10 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 10N
+  32411 => "+proj=utm +zone=11 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 11N
+  32412 => "+proj=utm +zone=12 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 12N
+  32413 => "+proj=utm +zone=13 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 13N
+  32414 => "+proj=utm +zone=14 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 14N
+  32415 => "+proj=utm +zone=15 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 15N
+  32416 => "+proj=utm +zone=16 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 16N
+  32417 => "+proj=utm +zone=17 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 17N
+  32418 => "+proj=utm +zone=18 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 18N
+  32419 => "+proj=utm +zone=19 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 19N
+  32420 => "+proj=utm +zone=20 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 20N
+  32421 => "+proj=utm +zone=21 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 21N
+  32422 => "+proj=utm +zone=22 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 22N
+  32423 => "+proj=utm +zone=23 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 23N
+  32424 => "+proj=utm +zone=24 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 24N
+  32425 => "+proj=utm +zone=25 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 25N
+  32426 => "+proj=utm +zone=26 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 26N
+  32427 => "+proj=utm +zone=27 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 27N
+  32428 => "+proj=utm +zone=28 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 28N
+  32429 => "+proj=utm +zone=29 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 29N
+  32430 => "+proj=utm +zone=30 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 30N
+  32431 => "+proj=utm +zone=31 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 31N
+  32432 => "+proj=utm +zone=32 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 32N
+  32433 => "+proj=utm +zone=33 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 33N
+  32434 => "+proj=utm +zone=34 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 34N
+  32435 => "+proj=utm +zone=35 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 35N
+  32436 => "+proj=utm +zone=36 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 36N
+  32437 => "+proj=utm +zone=37 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 37N
+  32438 => "+proj=utm +zone=38 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 38N
+  32439 => "+proj=utm +zone=39 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 39N
+  32440 => "+proj=utm +zone=40 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 40N
+  32441 => "+proj=utm +zone=41 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 41N
+  32442 => "+proj=utm +zone=42 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 42N
+  32443 => "+proj=utm +zone=43 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 43N
+  32444 => "+proj=utm +zone=44 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 44N
+  32445 => "+proj=utm +zone=45 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 45N
+  32446 => "+proj=utm +zone=46 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 46N
+  32447 => "+proj=utm +zone=47 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 47N
+  32448 => "+proj=utm +zone=48 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 48N
+  32449 => "+proj=utm +zone=49 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 49N
+  32450 => "+proj=utm +zone=50 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 50N
+  32451 => "+proj=utm +zone=51 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 51N
+  32452 => "+proj=utm +zone=52 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 52N
+  32453 => "+proj=utm +zone=53 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 53N
+  32454 => "+proj=utm +zone=54 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 54N
+  32455 => "+proj=utm +zone=55 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 55N
+  32456 => "+proj=utm +zone=56 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 56N
+  32457 => "+proj=utm +zone=57 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 57N
+  32458 => "+proj=utm +zone=58 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 58N
+  32459 => "+proj=utm +zone=59 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 59N
+  32460 => "+proj=utm +zone=60 +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 60N
+  32501 => "+proj=utm +zone=1 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 1S
+  32502 => "+proj=utm +zone=2 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 2S
+  32503 => "+proj=utm +zone=3 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 3S
+  32504 => "+proj=utm +zone=4 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 4S
+  32505 => "+proj=utm +zone=5 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 5S
+  32506 => "+proj=utm +zone=6 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 6S
+  32507 => "+proj=utm +zone=7 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 7S
+  32508 => "+proj=utm +zone=8 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 8S
+  32509 => "+proj=utm +zone=9 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 9S
+  32510 => "+proj=utm +zone=10 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 10S
+  32511 => "+proj=utm +zone=11 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 11S
+  32512 => "+proj=utm +zone=12 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 12S
+  32513 => "+proj=utm +zone=13 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 13S
+  32514 => "+proj=utm +zone=14 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 14S
+  32515 => "+proj=utm +zone=15 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 15S
+  32516 => "+proj=utm +zone=16 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 16S
+  32517 => "+proj=utm +zone=17 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 17S
+  32518 => "+proj=utm +zone=18 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 18S
+  32519 => "+proj=utm +zone=19 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 19S
+  32520 => "+proj=utm +zone=20 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 20S
+  32521 => "+proj=utm +zone=21 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 21S
+  32522 => "+proj=utm +zone=22 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 22S
+  32523 => "+proj=utm +zone=23 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 23S
+  32524 => "+proj=utm +zone=24 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 24S
+  32525 => "+proj=utm +zone=25 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 25S
+  32526 => "+proj=utm +zone=26 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 26S
+  32527 => "+proj=utm +zone=27 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 27S
+  32528 => "+proj=utm +zone=28 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 28S
+  32529 => "+proj=utm +zone=29 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 29S
+  32530 => "+proj=utm +zone=30 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 30S
+  32531 => "+proj=utm +zone=31 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 31S
+  32532 => "+proj=utm +zone=32 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 32S
+  32533 => "+proj=utm +zone=33 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 33S
+  32534 => "+proj=utm +zone=34 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 34S
+  32535 => "+proj=utm +zone=35 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 35S
+  32536 => "+proj=utm +zone=36 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 36S
+  32537 => "+proj=utm +zone=37 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 37S
+  32538 => "+proj=utm +zone=38 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 38S
+  32539 => "+proj=utm +zone=39 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 39S
+  32540 => "+proj=utm +zone=40 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 40S
+  32541 => "+proj=utm +zone=41 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 41S
+  32542 => "+proj=utm +zone=42 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 42S
+  32543 => "+proj=utm +zone=43 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 43S
+  32544 => "+proj=utm +zone=44 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 44S
+  32545 => "+proj=utm +zone=45 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 45S
+  32546 => "+proj=utm +zone=46 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 46S
+  32547 => "+proj=utm +zone=47 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 47S
+  32548 => "+proj=utm +zone=48 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 48S
+  32549 => "+proj=utm +zone=49 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 49S
+  32550 => "+proj=utm +zone=50 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 50S
+  32551 => "+proj=utm +zone=51 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 51S
+  32552 => "+proj=utm +zone=52 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 52S
+  32553 => "+proj=utm +zone=53 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 53S
+  32554 => "+proj=utm +zone=54 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 54S
+  32555 => "+proj=utm +zone=55 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 55S
+  32556 => "+proj=utm +zone=56 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 56S
+  32557 => "+proj=utm +zone=57 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 57S
+  32558 => "+proj=utm +zone=58 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 58S
+  32559 => "+proj=utm +zone=59 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 59S
+  32560 => "+proj=utm +zone=60 +south +ellps=WGS72 +towgs84=0,0,1.9,0,0,0.814,-0.38 +units=m +no_defs", # WGS 72BE / UTM zone 60S
+  32601 => "+proj=utm +zone=1 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 1N
+  32602 => "+proj=utm +zone=2 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 2N
+  32603 => "+proj=utm +zone=3 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 3N
+  32604 => "+proj=utm +zone=4 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 4N
+  32605 => "+proj=utm +zone=5 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 5N
+  32606 => "+proj=utm +zone=6 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 6N
+  32607 => "+proj=utm +zone=7 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 7N
+  32608 => "+proj=utm +zone=8 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 8N
+  32609 => "+proj=utm +zone=9 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 9N
+  32610 => "+proj=utm +zone=10 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 10N
+  32611 => "+proj=utm +zone=11 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 11N
+  32612 => "+proj=utm +zone=12 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 12N
+  32613 => "+proj=utm +zone=13 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 13N
+  32614 => "+proj=utm +zone=14 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 14N
+  32615 => "+proj=utm +zone=15 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 15N
+  32616 => "+proj=utm +zone=16 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 16N
+  32617 => "+proj=utm +zone=17 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 17N
+  32618 => "+proj=utm +zone=18 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 18N
+  32619 => "+proj=utm +zone=19 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 19N
+  32620 => "+proj=utm +zone=20 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 20N
+  32621 => "+proj=utm +zone=21 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 21N
+  32622 => "+proj=utm +zone=22 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 22N
+  32623 => "+proj=utm +zone=23 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 23N
+  32624 => "+proj=utm +zone=24 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 24N
+  32625 => "+proj=utm +zone=25 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 25N
+  32626 => "+proj=utm +zone=26 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 26N
+  32627 => "+proj=utm +zone=27 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 27N
+  32628 => "+proj=utm +zone=28 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 28N
+  32629 => "+proj=utm +zone=29 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 29N
+  32630 => "+proj=utm +zone=30 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 30N
+  32631 => "+proj=utm +zone=31 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 31N
+  32632 => "+proj=utm +zone=32 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 32N
+  32633 => "+proj=utm +zone=33 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 33N
+  32634 => "+proj=utm +zone=34 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 34N
+  32635 => "+proj=utm +zone=35 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 35N
+  32636 => "+proj=utm +zone=36 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 36N
+  32637 => "+proj=utm +zone=37 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 37N
+  32638 => "+proj=utm +zone=38 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 38N
+  32639 => "+proj=utm +zone=39 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 39N
+  32640 => "+proj=utm +zone=40 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 40N
+  32641 => "+proj=utm +zone=41 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 41N
+  32642 => "+proj=utm +zone=42 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 42N
+  32643 => "+proj=utm +zone=43 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 43N
+  32644 => "+proj=utm +zone=44 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 44N
+  32645 => "+proj=utm +zone=45 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 45N
+  32646 => "+proj=utm +zone=46 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 46N
+  32647 => "+proj=utm +zone=47 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 47N
+  32648 => "+proj=utm +zone=48 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 48N
+  32649 => "+proj=utm +zone=49 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 49N
+  32650 => "+proj=utm +zone=50 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 50N
+  32651 => "+proj=utm +zone=51 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 51N
+  32652 => "+proj=utm +zone=52 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 52N
+  32653 => "+proj=utm +zone=53 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 53N
+  32654 => "+proj=utm +zone=54 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 54N
+  32655 => "+proj=utm +zone=55 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 55N
+  32656 => "+proj=utm +zone=56 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 56N
+  32657 => "+proj=utm +zone=57 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 57N
+  32658 => "+proj=utm +zone=58 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 58N
+  32659 => "+proj=utm +zone=59 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 59N
+  32660 => "+proj=utm +zone=60 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 60N
+  32661 => "+proj=stere +lat_0=90 +lat_ts=90 +lon_0=0 +k=0.994 +x_0=2000000 +y_0=2000000 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UPS North
+  32701 => "+proj=utm +zone=1 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 1S
+  32702 => "+proj=utm +zone=2 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 2S
+  32703 => "+proj=utm +zone=3 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 3S
+  32704 => "+proj=utm +zone=4 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 4S
+  32705 => "+proj=utm +zone=5 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 5S
+  32706 => "+proj=utm +zone=6 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 6S
+  32707 => "+proj=utm +zone=7 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 7S
+  32708 => "+proj=utm +zone=8 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 8S
+  32709 => "+proj=utm +zone=9 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 9S
+  32710 => "+proj=utm +zone=10 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 10S
+  32711 => "+proj=utm +zone=11 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 11S
+  32712 => "+proj=utm +zone=12 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 12S
+  32713 => "+proj=utm +zone=13 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 13S
+  32714 => "+proj=utm +zone=14 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 14S
+  32715 => "+proj=utm +zone=15 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 15S
+  32716 => "+proj=utm +zone=16 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 16S
+  32717 => "+proj=utm +zone=17 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 17S
+  32718 => "+proj=utm +zone=18 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 18S
+  32719 => "+proj=utm +zone=19 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 19S
+  32720 => "+proj=utm +zone=20 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 20S
+  32721 => "+proj=utm +zone=21 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 21S
+  32722 => "+proj=utm +zone=22 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 22S
+  32723 => "+proj=utm +zone=23 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 23S
+  32724 => "+proj=utm +zone=24 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 24S
+  32725 => "+proj=utm +zone=25 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 25S
+  32726 => "+proj=utm +zone=26 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 26S
+  32727 => "+proj=utm +zone=27 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 27S
+  32728 => "+proj=utm +zone=28 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 28S
+  32729 => "+proj=utm +zone=29 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 29S
+  32730 => "+proj=utm +zone=30 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 30S
+  32731 => "+proj=utm +zone=31 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 31S
+  32732 => "+proj=utm +zone=32 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 32S
+  32733 => "+proj=utm +zone=33 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 33S
+  32734 => "+proj=utm +zone=34 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 34S
+  32735 => "+proj=utm +zone=35 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 35S
+  32736 => "+proj=utm +zone=36 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 36S
+  32737 => "+proj=utm +zone=37 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 37S
+  32738 => "+proj=utm +zone=38 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 38S
+  32739 => "+proj=utm +zone=39 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 39S
+  32740 => "+proj=utm +zone=40 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 40S
+  32741 => "+proj=utm +zone=41 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 41S
+  32742 => "+proj=utm +zone=42 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 42S
+  32743 => "+proj=utm +zone=43 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 43S
+  32744 => "+proj=utm +zone=44 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 44S
+  32745 => "+proj=utm +zone=45 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 45S
+  32746 => "+proj=utm +zone=46 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 46S
+  32747 => "+proj=utm +zone=47 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 47S
+  32748 => "+proj=utm +zone=48 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 48S
+  32749 => "+proj=utm +zone=49 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 49S
+  32750 => "+proj=utm +zone=50 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 50S
+  32751 => "+proj=utm +zone=51 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 51S
+  32752 => "+proj=utm +zone=52 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 52S
+  32753 => "+proj=utm +zone=53 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 53S
+  32754 => "+proj=utm +zone=54 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 54S
+  32755 => "+proj=utm +zone=55 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 55S
+  32756 => "+proj=utm +zone=56 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 56S
+  32757 => "+proj=utm +zone=57 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 57S
+  32758 => "+proj=utm +zone=58 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 58S
+  32759 => "+proj=utm +zone=59 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 59S
+  32760 => "+proj=utm +zone=60 +south +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UTM zone 60S
+  32761 => "+proj=stere +lat_0=-90 +lat_ts=-90 +lon_0=0 +k=0.994 +x_0=2000000 +y_0=2000000 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / UPS South
+  32766 => "+proj=tmerc +lat_0=0 +lon_0=36 +k=0.999600 +x_0=500000 +y_0=10000000 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # WGS 84 / TM 36 SE
+  20002 => "+proj=tmerc +lat_0=0 +lon_0=9 +k=1.000000 +x_0=2500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 GK Zone 2
+  20003 => "+proj=tmerc +lat_0=0 +lon_0=15 +k=1.000000 +x_0=3500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 GK Zone 3
+  20062 => "+proj=tmerc +lat_0=0 +lon_0=9 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 GK Zone 2N
+  20063 => "+proj=tmerc +lat_0=0 +lon_0=15 +k=1.000000 +x_0=500000 +y_0=0 +ellps=krass +units=m +no_defs", # Pulkovo 1995 GK Zone 3N
+  24721 => "+proj=utm +zone=21 +ellps=intl +units=m +no_defs", # La Canoa UTM Zone 21N
+  26761 => "+proj=tmerc +lat_0=18.83333333333333 +lon_0=-155.5 +k=0.999967 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD 1927 StatePlane Hawaii 1 FIPS 5101
+  26762 => "+proj=tmerc +lat_0=20.33333333333333 +lon_0=-156.6666666666667 +k=0.999967 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD 1927 StatePlane Hawaii 2 FIPS 5102
+  26763 => "+proj=tmerc +lat_0=21.16666666666667 +lon_0=-158 +k=0.999990 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD 1927 StatePlane Hawaii 3 FIPS 5103
+  26764 => "+proj=tmerc +lat_0=21.83333333333333 +lon_0=-159.5 +k=0.999990 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD 1927 StatePlane Hawaii 4 FIPS 5104
+  26765 => "+proj=tmerc +lat_0=21.66666666666667 +lon_0=-160.1666666666667 +k=1.000000 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD 1927 StatePlane Hawaii 5 FIPS 5105
+  26788 => "+proj=lcc +lat_1=45.48333333333333 +lat_2=47.08333333333334 +lat_0=44.78333333333333 +lon_0=-87 +x_0=609601.2192024385 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD 1927 StatePlane Michigan North FIPS 2111
+  26789 => "+proj=lcc +lat_1=44.18333333333333 +lat_2=45.7 +lat_0=43.31666666666667 +lon_0=-84.33333333333333 +x_0=609601.2192024385 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD 1927 StatePlane Michigan Central FIPS 2112
+  26790 => "+proj=lcc +lat_1=42.1 +lat_2=43.66666666666666 +lat_0=41.5 +lon_0=-84.33333333333333 +x_0=609601.2192024385 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD 1927 StatePlane Michigan South FIPS 2113
+  30591 => "+proj=lcc +lat_1=36 +lat_0=36 +lon_0=2.7 +k_0=0.999625544 +x_0=500135 +y_0=300090 +ellps=clrk80 +units=m +no_defs", # Nord Algerie
+  30592 => "+proj=lcc +lat_1=33.3 +lat_0=33.3 +lon_0=2.7 +k_0=0.999625769 +x_0=500135 +y_0=300090 +ellps=clrk80 +units=m +no_defs", # Sud Algerie
+  31491 => "+proj=tmerc +lat_0=0 +lon_0=3 +k=1.000000 +x_0=1500000 +y_0=0 +ellps=bessel +units=m +no_defs", # Germany Zone 1
+  31492 => "+proj=tmerc +lat_0=0 +lon_0=6 +k=1.000000 +x_0=2500000 +y_0=0 +ellps=bessel +units=m +no_defs", # Germany Zone 2
+  31493 => "+proj=tmerc +lat_0=0 +lon_0=9 +k=1.000000 +x_0=3500000 +y_0=0 +ellps=bessel +units=m +no_defs", # Germany Zone 3
+  31494 => "+proj=tmerc +lat_0=0 +lon_0=12 +k=1.000000 +x_0=4500000 +y_0=0 +ellps=bessel +units=m +no_defs", # Germany Zone 4
+  31495 => "+proj=tmerc +lat_0=0 +lon_0=15 +k=1.000000 +x_0=5500000 +y_0=0 +ellps=bessel +units=m +no_defs", # Germany Zone 5
+  32059 => "+proj=lcc +lat_1=18.03333333333334 +lat_2=18.43333333333333 +lat_0=17.83333333333333 +lon_0=-66.43333333333334 +x_0=152400.3048006096 +y_0=0 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD 1927 StatePlane Puerto Rico FIPS 5201
+  32060 => "+proj=lcc +lat_1=18.03333333333334 +lat_2=18.43333333333333 +lat_0=17.83333333333333 +lon_0=-66.43333333333334 +x_0=152400.3048006096 +y_0=30480.06096012193 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD 1927 StatePlane Virgin Islands St Croix FIPS 5202
+  53001 => "+a=6371000 +b=6371000 +units=m +no_defs", # Sphere Plate Carree
+  53002 => "+a=6371000 +b=6371000 +units=m +no_defs", # Sphere Equidistant Cylindrical
+  53003 => "+proj=mill +lat_0=0 +lon_0=0 +x_0=0 +y_0=0 +R_A +a=6371000 +b=6371000 +units=m +no_defs", # Sphere Miller Cylindrical
+  53004 => "+proj=merc +lat_ts=0 +lon_0=0 +k=1.000000 +x_0=0 +y_0=0 +a=6371000 +b=6371000 +units=m +no_defs", # Sphere Mercator
+  53008 => "+proj=sinu +lon_0=0 +x_0=0 +y_0=0 +a=6371000 +b=6371000 +units=m +no_defs", # Sphere Sinusoidal
+  53009 => "+proj=moll +lon_0=0 +x_0=0 +y_0=0 +a=6371000 +b=6371000 +units=m +no_defs", # Sphere Mollweide
+  53010 => "+proj=eck6 +lon_0=0 +x_0=0 +y_0=0 +a=6371000 +b=6371000 +units=m +no_defs", # Sphere Eckert VI
+  53011 => "+a=6371000 +b=6371000 +units=m +no_defs", # Sphere Eckert V
+  53012 => "+proj=eck4 +lon_0=0 +x_0=0 +y_0=0 +a=6371000 +b=6371000 +units=m +no_defs", # Sphere Eckert IV
+  53013 => "+a=6371000 +b=6371000 +units=m +no_defs", # Sphere Eckert III
+  53014 => "+a=6371000 +b=6371000 +units=m +no_defs", # Sphere Eckert II
+  53015 => "+a=6371000 +b=6371000 +units=m +no_defs", # Sphere Eckert I
+  53016 => "+proj=gall +lon_0=0 +x_0=0 +y_0=0 +a=6371000 +b=6371000 +units=m +no_defs", # Sphere Gall Stereographic
+  53017 => "+a=6371000 +b=6371000 +units=m +no_defs", # Sphere Behrmann
+  53018 => "+a=6371000 +b=6371000 +units=m +no_defs", # Sphere Winkel I
+  53019 => "+a=6371000 +b=6371000 +units=m +no_defs", # Sphere Winkel II
+  53021 => "+proj=poly +lat_0=0 +lon_0=0 +x_0=0 +y_0=0 +a=6371000 +b=6371000 +units=m +no_defs", # Sphere Polyconic
+  53022 => "+a=6371000 +b=6371000 +units=m +no_defs", # Sphere Quartic Authalic
+  53023 => "+a=6371000 +b=6371000 +units=m +no_defs", # Sphere Loximuthal
+  53024 => "+a=6371000 +b=6371000 +units=m +no_defs", # Sphere Bonne
+  53025 => "+a=6371000 +b=6371000 +units=m +no_defs", # Sphere Hotine
+  53026 => "+proj=stere +lat_0=0 +lon_0=0 +x_0=0 +y_0=0 +a=6371000 +b=6371000 +units=m +no_defs", # Sphere Stereographic
+  53027 => "+proj=eqdc +lat_0=0 +lon_0=0 +lat_1=60 +lat_2=60 +x_0=0 +y_0=0 +a=6371000 +b=6371000 +units=m +no_defs", # Sphere Equidistant Conic
+  53028 => "+proj=cass +lat_0=0 +lon_0=0 +x_0=0 +y_0=0 +a=6371000 +b=6371000 +units=m +no_defs", # Sphere Cassini
+  53029 => "+proj=vandg +lon_0=0 +x_0=0 +y_0=0 +R_A +a=6371000 +b=6371000 +units=m +no_defs", # Sphere Van der Grinten I
+  53030 => "+proj=robin +lon_0=0 +x_0=0 +y_0=0 +a=6371000 +b=6371000 +units=m +no_defs", # Sphere Robinson
+  53031 => "+a=6371000 +b=6371000 +units=m +no_defs", # Sphere Two Point Equidistant
+  53032 => "+proj=aeqd +lat_0=0 +lon_0=0 +x_0=0 +y_0=0 +a=6371000 +b=6371000 +units=m +no_defs", # Sphere Azimuthal Equidistant
+  54001 => "+ellps=WGS84 +datum=WGS84 +units=m +no_defs", # World Plate Carree
+  54002 => "+ellps=WGS84 +datum=WGS84 +units=m +no_defs", # World Equidistant Cylindrical
+  54003 => "+proj=mill +lat_0=0 +lon_0=0 +x_0=0 +y_0=0 +R_A +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # World Miller Cylindrical
+  54004 => "+proj=merc +lat_ts=0 +lon_0=0 +k=1.000000 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # World Mercator
+  54008 => "+proj=sinu +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # World Sinusoidal
+  54009 => "+proj=moll +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # World Mollweide
+  54010 => "+proj=eck6 +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # World Eckert VI
+  54011 => "+ellps=WGS84 +datum=WGS84 +units=m +no_defs", # World Eckert V
+  54012 => "+proj=eck4 +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # World Eckert IV
+  54013 => "+ellps=WGS84 +datum=WGS84 +units=m +no_defs", # World Eckert III
+  54014 => "+ellps=WGS84 +datum=WGS84 +units=m +no_defs", # World Eckert II
+  54015 => "+ellps=WGS84 +datum=WGS84 +units=m +no_defs", # World Eckert I
+  54016 => "+proj=gall +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # World Gall Stereographic
+  54017 => "+ellps=WGS84 +datum=WGS84 +units=m +no_defs", # World Behrmann
+  54018 => "+ellps=WGS84 +datum=WGS84 +units=m +no_defs", # World Winkel I
+  54019 => "+ellps=WGS84 +datum=WGS84 +units=m +no_defs", # World Winkel II
+  54021 => "+proj=poly +lat_0=0 +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # World Polyconic
+  54022 => "+ellps=WGS84 +datum=WGS84 +units=m +no_defs", # World Quartic Authalic
+  54023 => "+ellps=WGS84 +datum=WGS84 +units=m +no_defs", # World Loximuthal
+  54024 => "+ellps=WGS84 +datum=WGS84 +units=m +no_defs", # World Bonne
+  54025 => "+ellps=WGS84 +datum=WGS84 +units=m +no_defs", # World Hotine
+  54026 => "+proj=stere +lat_0=0 +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # World Stereographic
+  54027 => "+proj=eqdc +lat_0=0 +lon_0=0 +lat_1=60 +lat_2=60 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # World Equidistant Conic
+  54028 => "+proj=cass +lat_0=0 +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # World Cassini
+  54029 => "+proj=vandg +lon_0=0 +x_0=0 +y_0=0 +R_A +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # World Van der Grinten I
+  54030 => "+proj=robin +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # World Robinson
+  54031 => "+ellps=WGS84 +datum=WGS84 +units=m +no_defs", # World Two Point Equidistant
+  54032 => "+proj=aeqd +lat_0=0 +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # World Azimuthal Equidistant
+  65061 => "+proj=poly +lat_0=13.47246635277778 +lon_0=-144.7487507055556 +x_0=50000.00000000001 +y_0=50000.00000000001 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD 1927 StatePlane Guam FIPS 5400
+  65161 => "+proj=poly +lat_0=13.47246635277778 +lon_0=-144.7487507055556 +x_0=50000 +y_0=50000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD 1983 StatePlane Guam FIPS 5400
+  102001 => "+proj=aea +lat_1=50 +lat_2=70 +lat_0=40 +lon_0=-96 +x_0=0 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # Canada Albers Equal Area Conic
+  102002 => "+proj=lcc +lat_1=50 +lat_2=70 +lat_0=40 +lon_0=-96 +x_0=0 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # Canada Lambert Conformal Conic
+  102003 => "+proj=aea +lat_1=29.5 +lat_2=45.5 +lat_0=37.5 +lon_0=-96 +x_0=0 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # USA Contiguous Albers Equal Area Conic
+  102004 => "+proj=lcc +lat_1=33 +lat_2=45 +lat_0=39 +lon_0=-96 +x_0=0 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # USA Contiguous Lambert Conformal Conic
+  102005 => "+proj=eqdc +lat_0=0 +lon_0=0 +lat_1=33 +lat_2=45 +x_0=0 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # USA Contiguous Equidistant Conic
+  102006 => "+proj=aea +lat_1=55 +lat_2=65 +lat_0=50 +lon_0=-154 +x_0=0 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # Alaska Albers Equal Area Conic
+  102007 => "+proj=aea +lat_1=8 +lat_2=18 +lat_0=13 +lon_0=-157 +x_0=0 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # Hawaii Albers Equal Area Conic
+  102008 => "+proj=aea +lat_1=20 +lat_2=60 +lat_0=40 +lon_0=-96 +x_0=0 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # North America Albers Equal Area Conic
+  102009 => "+proj=lcc +lat_1=20 +lat_2=60 +lat_0=40 +lon_0=-96 +x_0=0 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # North America Lambert Conformal Conic
+  102010 => "+proj=eqdc +lat_0=0 +lon_0=0 +lat_1=20 +lat_2=60 +x_0=0 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # North America Equidistant Conic
+  102011 => "+proj=sinu +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # Africa Sinusoidal
+  102012 => "+proj=lcc +lat_1=30 +lat_2=62 +lat_0=0 +lon_0=105 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # Asia Lambert Conformal Conic
+  102013 => "+proj=aea +lat_1=43 +lat_2=62 +lat_0=30 +lon_0=10 +x_0=0 +y_0=0 +ellps=intl +units=m +no_defs", # Europe Albers Equal Area Conic
+  102014 => "+proj=lcc +lat_1=43 +lat_2=62 +lat_0=30 +lon_0=10 +x_0=0 +y_0=0 +ellps=intl +units=m +no_defs", # Europe Lambert Conformal Conic
+  102015 => "+proj=lcc +lat_1=-5 +lat_2=-42 +lat_0=-32 +lon_0=-60 +x_0=0 +y_0=0 +ellps=aust_SA +units=m +no_defs", # South America Lambert Conformal Conic
+  102016 => "+proj=aeqd +lat_0=90 +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # North Pole Azimuthal Equidistant
+  102017 => "+proj=laea +lat_0=90 +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # North Pole Lambert Azimuthal Equal Area
+  102018 => "+proj=stere +lat_0=90 +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # North Pole Stereographic
+  102019 => "+proj=aeqd +lat_0=-90 +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # South Pole Azimuthal Equidistant
+  102020 => "+proj=laea +lat_0=-90 +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # South Pole Lambert Azimuthal Equal Area
+  102021 => "+proj=stere +lat_0=-90 +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # South Pole Stereographic
+  102022 => "+proj=aea +lat_1=20 +lat_2=-23 +lat_0=0 +lon_0=25 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # Africa Albers Equal Area Conic
+  102023 => "+proj=eqdc +lat_0=0 +lon_0=0 +lat_1=20 +lat_2=-23 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # Africa Equidistant Conic
+  102024 => "+proj=lcc +lat_1=20 +lat_2=-23 +lat_0=0 +lon_0=25 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # Africa Lambert Conformal Conic
+  102025 => "+proj=aea +lat_1=15 +lat_2=65 +lat_0=30 +lon_0=95 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # Asia North Albers Equal Area Conic
+  102026 => "+proj=eqdc +lat_0=0 +lon_0=0 +lat_1=15 +lat_2=65 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # Asia North Equidistant Conic
+  102027 => "+proj=lcc +lat_1=15 +lat_2=65 +lat_0=30 +lon_0=95 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # Asia North Lambert Conformal Conic
+  102028 => "+proj=aea +lat_1=7 +lat_2=-32 +lat_0=-15 +lon_0=125 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # Asia South Albers Equal Area Conic
+  102029 => "+proj=eqdc +lat_0=0 +lon_0=0 +lat_1=7 +lat_2=-32 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # Asia South Equidistant Conic
+  102030 => "+proj=lcc +lat_1=7 +lat_2=-32 +lat_0=-15 +lon_0=125 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs", # Asia South Lambert Conformal Conic
+  102031 => "+proj=eqdc +lat_0=0 +lon_0=0 +lat_1=43 +lat_2=62 +x_0=0 +y_0=0 +ellps=intl +units=m +no_defs", # Europe Equidistant Conic
+  102032 => "+proj=eqdc +lat_0=0 +lon_0=0 +lat_1=-5 +lat_2=-42 +x_0=0 +y_0=0 +ellps=aust_SA +units=m +no_defs", # South America Equidistant Conic
+  102033 => "+proj=aea +lat_1=-5 +lat_2=-42 +lat_0=-32 +lon_0=-60 +x_0=0 +y_0=0 +ellps=aust_SA +units=m +no_defs", # South America Albers Equal Area Conic
+  102065 => "+proj=krovak +lat_0=49.5 +lon_0=24.83333333333333 +alpha=30.28813975277778 +k=0.9999 +x_0=0 +y_0=0 +ellps=bessel +units=m +no_defs", # S-JTSK Krovak
+  102066 => "+proj=krovak +lat_0=49.5 +lon_0=24.83333333333333 +alpha=30.28813975277778 +k=0.9999 +x_0=0 +y_0=0 +ellps=bessel +pm=-17.66666666666667 +units=m +no_defs", # S-JTSK Ferro Krovak East North
+  102067 => "+proj=krovak +lat_0=49.5 +lon_0=24.83333333333333 +alpha=30.28813975277778 +k=0.9999 +x_0=0 +y_0=0 +ellps=bessel +units=m +no_defs", # S-JTSK Krovak East North
+  102091 => "+proj=tmerc +lat_0=0 +lon_0=9 +k=0.999600 +x_0=1500000 +y_0=0 +ellps=intl +units=m +no_defs", # Monte Mario Italy 1
+  102092 => "+proj=tmerc +lat_0=0 +lon_0=15 +k=0.999600 +x_0=2520000 +y_0=0 +ellps=intl +units=m +no_defs", # Monte Mario Italy 2
+  102101 => "+proj=tmerc +lat_0=58 +lon_0=6.05625 +k=1.000000 +x_0=0 +y_0=0 +a=6377492.018 +b=6356173.508712696 +units=m +no_defs", # NGO 1948 Norway Zone 1
+  102102 => "+proj=tmerc +lat_0=58 +lon_0=8.389583333333333 +k=1.000000 +x_0=0 +y_0=0 +a=6377492.018 +b=6356173.508712696 +units=m +no_defs", # NGO 1948 Norway Zone 2
+  102103 => "+proj=tmerc +lat_0=58 +lon_0=10.72291666666667 +k=1.000000 +x_0=0 +y_0=0 +a=6377492.018 +b=6356173.508712696 +units=m +no_defs", # NGO 1948 Norway Zone 3
+  102104 => "+proj=tmerc +lat_0=58 +lon_0=13.22291666666667 +k=1.000000 +x_0=0 +y_0=0 +a=6377492.018 +b=6356173.508712696 +units=m +no_defs", # NGO 1948 Norway Zone 4
+  102105 => "+proj=tmerc +lat_0=58 +lon_0=16.88958333333333 +k=1.000000 +x_0=0 +y_0=0 +a=6377492.018 +b=6356173.508712696 +units=m +no_defs", # NGO 1948 Norway Zone 5
+  102106 => "+proj=tmerc +lat_0=58 +lon_0=20.88958333333333 +k=1.000000 +x_0=0 +y_0=0 +a=6377492.018 +b=6356173.508712696 +units=m +no_defs", # NGO 1948 Norway Zone 6
+  102107 => "+proj=tmerc +lat_0=58 +lon_0=24.88958333333333 +k=1.000000 +x_0=0 +y_0=0 +a=6377492.018 +b=6356173.508712696 +units=m +no_defs", # NGO 1948 Norway Zone 7
+  102108 => "+proj=tmerc +lat_0=58 +lon_0=29.05625 +k=1.000000 +x_0=0 +y_0=0 +a=6377492.018 +b=6356173.508712696 +units=m +no_defs", # NGO 1948 Norway Zone 8
+  102110 => "+proj=lcc +lat_1=44 +lat_2=49 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +units=m +no_defs", # RGF 1993 Lambert 93
+  102114 => "+proj=utm +zone=4 +ellps=clrk66 +units=m +no_defs", # Old Hawaiian UTM Zone 4N
+  102115 => "+proj=utm +zone=5 +ellps=clrk66 +units=m +no_defs", # Old Hawaiian UTM Zone 5N
+  102120 => "+proj=omerc +lat_0=45.30916666666666 +lonc=-86 +alpha=337.255555555556 +k=0.9996 +x_0=2546731.495961392 +y_0=-4354009.816002033 +ellps=clrk66 +datum=NAD27 +to_meter=0.3048006096012192 +no_defs", # NAD 1927 Michigan GeoRef Feet US
+  102121 => "+proj=omerc +lat_0=45.30916666666666 +lonc=-86 +alpha=337.255555555556 +k=0.9996 +x_0=2546731.495961392 +y_0=-4354009.816002033 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 Michigan GeoRef Feet US
+  102122 => "+proj=omerc +lat_0=45.30916666666666 +lonc=-86 +alpha=337.255555555556 +k=0.9996 +x_0=2546731.496 +y_0=-4354009.816 +ellps=clrk66 +datum=NAD27 +units=m +no_defs", # NAD 1927 Michigan GeoRef Meters
+  102123 => "+proj=omerc +lat_0=45.30916666666666 +lonc=-86 +alpha=337.255555555556 +k=0.9996 +x_0=2546731.496 +y_0=-4354009.816 +ellps=GRS80 +datum=NAD83 +units=m +no_defs", # NAD 1983 Michigan GeoRef Meters
+  102132 => "+proj=utm +zone=32 +a=6377492.018 +b=6356173.508712696 +units=m +no_defs", # NGO 1948 UTM Zone 32N
+  102133 => "+proj=utm +zone=33 +a=6377492.018 +b=6356173.508712696 +units=m +no_defs", # NGO 1948 UTM Zone 33N
+  102134 => "+proj=utm +zone=34 +a=6377492.018 +b=6356173.508712696 +units=m +no_defs", # NGO 1948 UTM Zone 34N
+  102135 => "+proj=utm +zone=35 +a=6377492.018 +b=6356173.508712696 +units=m +no_defs", # NGO 1948 UTM Zone 35N
+  102140 => "+proj=tmerc +lat_0=22.31213333333334 +lon_0=114.1785555555556 +k=1.000000 +x_0=836694.05 +y_0=819069.8 +ellps=intl +units=m +no_defs", # Hong Kong 1980 Grid
+  102141 => "+proj=utm +zone=49 +ellps=intl +units=m +no_defs", # Hong Kong 1980 UTM Zone 49N
+  102142 => "+proj=utm +zone=50 +ellps=intl +units=m +no_defs", # Hong Kong 1980 UTM Zone 50N
+  102151 => "+proj=utm +zone=51 +ellps=bessel +units=m +no_defs", # Tokyo UTM Zone 51N
+  102152 => "+proj=utm +zone=52 +ellps=bessel +units=m +no_defs", # Tokyo UTM Zone 52N
+  102153 => "+proj=utm +zone=53 +ellps=bessel +units=m +no_defs", # Tokyo UTM Zone 53N
+  102154 => "+proj=utm +zone=54 +ellps=bessel +units=m +no_defs", # Tokyo UTM Zone 54N
+  102155 => "+proj=utm +zone=55 +ellps=bessel +units=m +no_defs", # Tokyo UTM Zone 55N
+  102156 => "+proj=utm +zone=56 +ellps=bessel +units=m +no_defs", # Tokyo UTM Zone 56N
+  102160 => "+proj=tmerc +lat_0=39.66666666666666 +lon_0=-8.131906111111112 +k=1.000000 +x_0=200180.598 +y_0=299913.01 +ellps=intl +units=m +no_defs", # Datum 73 Hayford Gauss IGeoE
+  102161 => "+proj=tmerc +lat_0=39.66666666666666 +lon_0=-8.131906111111112 +k=1.000000 +x_0=180.598 +y_0=-86.98999999999999 +ellps=intl +units=m +no_defs", # Datum 73 Hayford Gauss IPCC
+  102162 => "+proj=utm +zone=26 +ellps=intl +units=m +no_defs", # Graciosa Base SW 1948 UTM Zone 26N
+  102163 => "+ellps=bessel +units=m +no_defs", # Lisboa Bessel Bonne
+  102164 => "+proj=tmerc +lat_0=39.66666666666666 +lon_0=-8.131906111111112 +k=1.000000 +x_0=200000 +y_0=300000 +ellps=intl +units=m +no_defs", # Lisboa Hayford Gauss IGeoE
+  102165 => "+proj=tmerc +lat_0=39.66666666666666 +lon_0=-8.131906111111112 +k=1.000000 +x_0=0 +y_0=0 +ellps=intl +units=m +no_defs", # Lisboa Hayford Gauss IPCC
+  102166 => "+proj=utm +zone=25 +ellps=intl +units=m +no_defs", # Observ Meteorologico 1939 UTM Zone 25N
+  102167 => "+proj=utm +zone=28 +ellps=intl +units=m +no_defs", # Porto Santo 1936 UTM Zone 28N
+  102168 => "+proj=utm +zone=26 +ellps=intl +units=m +no_defs", # Sao Braz UTM Zone 26N
+  102169 => "+proj=utm +zone=28 +ellps=intl +units=m +no_defs", # Selvagem Grande 1938 UTM Zone 28N
+  102191 => "+proj=lcc +lat_1=33.3 +lat_0=33.3 +lon_0=-5.4 +k_0=0.999625769 +x_0=500000 +y_0=300000 +a=6378249.2 +b=6356514.999904194 +units=m +no_defs", # Nord Maroc Degree
+  102192 => "+proj=lcc +lat_1=29.7 +lat_0=29.7 +lon_0=-5.4 +k_0=0.9996155960000001 +x_0=500000 +y_0=300000 +a=6378249.2 +b=6356514.999904194 +units=m +no_defs", # Sud Maroc Degree
+  102193 => "+proj=lcc +lat_1=26.1 +lat_0=26.1 +lon_0=-5.4 +k_0=0.9996 +x_0=1200000 +y_0=400000 +a=6378249.2 +b=6356514.999904194 +units=m +no_defs", # Sahara Degree
+  102229 => "+proj=tmerc +lat_0=30.5 +lon_0=-85.83333333333333 +k=0.999960 +x_0=200000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Alabama East FIPS 0101
+  102230 => "+proj=tmerc +lat_0=30 +lon_0=-87.5 +k=0.999933 +x_0=600000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Alabama West FIPS 0102
+  102241 => "+proj=lcc +lat_1=40 +lat_2=41.66666666666666 +lat_0=39.33333333333334 +lon_0=-122 +x_0=2000000 +y_0=500000 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane California I FIPS 0401
+  102242 => "+proj=lcc +lat_1=38.33333333333334 +lat_2=39.83333333333334 +lat_0=37.66666666666666 +lon_0=-122 +x_0=2000000 +y_0=500000 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane California II FIPS 0402
+  102243 => "+proj=lcc +lat_1=37.06666666666667 +lat_2=38.43333333333333 +lat_0=36.5 +lon_0=-120.5 +x_0=2000000 +y_0=500000 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane California III FIPS 0403
+  102244 => "+proj=lcc +lat_1=36 +lat_2=37.25 +lat_0=35.33333333333334 +lon_0=-119 +x_0=2000000 +y_0=500000 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane California IV FIPS 0404
+  102245 => "+proj=lcc +lat_1=34.03333333333333 +lat_2=35.46666666666667 +lat_0=33.5 +lon_0=-118 +x_0=2000000 +y_0=500000 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane California V FIPS 0405
+  102246 => "+proj=lcc +lat_1=32.78333333333333 +lat_2=33.88333333333333 +lat_0=32.16666666666666 +lon_0=-116.25 +x_0=2000000 +y_0=500000 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane California VI FIPS 0406
+  102248 => "+proj=tmerc +lat_0=31 +lon_0=-110.1666666666667 +k=0.999900 +x_0=213360 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Arizona East FIPS 0201
+  102249 => "+proj=tmerc +lat_0=31 +lon_0=-111.9166666666667 +k=0.999900 +x_0=213360 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Arizona Central FIPS 0202
+  102250 => "+proj=tmerc +lat_0=31 +lon_0=-113.75 +k=0.999933 +x_0=213360 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Arizona West FIPS 0203
+  102251 => "+proj=lcc +lat_1=34.93333333333333 +lat_2=36.23333333333333 +lat_0=34.33333333333334 +lon_0=-92 +x_0=400000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Arkansas North FIPS 0301
+  102252 => "+proj=lcc +lat_1=33.3 +lat_2=34.76666666666667 +lat_0=32.66666666666666 +lon_0=-92 +x_0=400000 +y_0=400000 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Arkansas South FIPS 0302
+  102253 => "+proj=lcc +lat_1=39.71666666666667 +lat_2=40.78333333333333 +lat_0=39.33333333333334 +lon_0=-105.5 +x_0=914401.8289 +y_0=304800.6096 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Colorado North FIPS 0501
+  102254 => "+proj=lcc +lat_1=38.45 +lat_2=39.75 +lat_0=37.83333333333334 +lon_0=-105.5 +x_0=914401.8289 +y_0=304800.6096 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Colorado Central FIPS 0502
+  102255 => "+proj=lcc +lat_1=37.23333333333333 +lat_2=38.43333333333333 +lat_0=36.66666666666666 +lon_0=-105.5 +x_0=914401.8289 +y_0=304800.6096 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Colorado South FIPS 0503
+  102256 => "+proj=lcc +lat_1=41.2 +lat_2=41.86666666666667 +lat_0=40.83333333333334 +lon_0=-72.75 +x_0=304800.6096 +y_0=152400.3048 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Connecticut FIPS 0600
+  102257 => "+proj=tmerc +lat_0=38 +lon_0=-75.41666666666667 +k=0.999995 +x_0=200000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Delaware FIPS 0700
+  102258 => "+proj=tmerc +lat_0=24.33333333333333 +lon_0=-81 +k=0.999941 +x_0=200000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Florida East FIPS 0901
+  102259 => "+proj=tmerc +lat_0=24.33333333333333 +lon_0=-82 +k=0.999941 +x_0=200000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Florida West FIPS 0902
+  102260 => "+proj=lcc +lat_1=29.58333333333333 +lat_2=30.75 +lat_0=29 +lon_0=-84.5 +x_0=600000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Florida North FIPS 0903
+  102261 => "+proj=tmerc +lat_0=18.83333333333333 +lon_0=-155.5 +k=0.999967 +x_0=500000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Hawaii 1 FIPS 5101
+  102262 => "+proj=tmerc +lat_0=20.33333333333333 +lon_0=-156.6666666666667 +k=0.999967 +x_0=500000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Hawaii 2 FIPS 5102
+  102263 => "+proj=tmerc +lat_0=21.16666666666667 +lon_0=-158 +k=0.999990 +x_0=500000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Hawaii 3 FIPS 5103
+  102264 => "+proj=tmerc +lat_0=21.83333333333333 +lon_0=-159.5 +k=0.999990 +x_0=500000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Hawaii 4 FIPS 5104
+  102265 => "+proj=tmerc +lat_0=21.66666666666667 +lon_0=-160.1666666666667 +k=1.000000 +x_0=500000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Hawaii 5 FIPS 5105
+  102266 => "+proj=tmerc +lat_0=30 +lon_0=-82.16666666666667 +k=0.999900 +x_0=200000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Georgia East FIPS 1001
+  102267 => "+proj=tmerc +lat_0=30 +lon_0=-84.16666666666667 +k=0.999900 +x_0=700000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Georgia West FIPS 1002
+  102268 => "+proj=tmerc +lat_0=41.66666666666666 +lon_0=-112.1666666666667 +k=0.999947 +x_0=200000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Idaho East FIPS 1101
+  102269 => "+proj=tmerc +lat_0=41.66666666666666 +lon_0=-114 +k=0.999947 +x_0=500000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Idaho Central FIPS 1102
+  102270 => "+proj=tmerc +lat_0=41.66666666666666 +lon_0=-115.75 +k=0.999933 +x_0=800000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Idaho West FIPS 1103
+  102271 => "+proj=tmerc +lat_0=36.66666666666666 +lon_0=-88.33333333333333 +k=0.999975 +x_0=300000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Illinois East FIPS 1201
+  102272 => "+proj=tmerc +lat_0=36.66666666666666 +lon_0=-90.16666666666667 +k=0.999941 +x_0=700000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Illinois West FIPS 1202
+  102273 => "+proj=tmerc +lat_0=37.5 +lon_0=-85.66666666666667 +k=0.999967 +x_0=100000 +y_0=250000 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Indiana East FIPS 1301
+  102274 => "+proj=tmerc +lat_0=37.5 +lon_0=-87.08333333333333 +k=0.999967 +x_0=900000 +y_0=250000 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Indiana West FIPS 1302
+  102277 => "+proj=lcc +lat_1=38.71666666666667 +lat_2=39.78333333333333 +lat_0=38.33333333333334 +lon_0=-98 +x_0=400000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Kansas North FIPS 1501
+  102278 => "+proj=lcc +lat_1=37.26666666666667 +lat_2=38.56666666666667 +lat_0=36.66666666666666 +lon_0=-98.5 +x_0=400000 +y_0=400000 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Kansas South FIPS 1502
+  102279 => "+proj=lcc +lat_1=37.96666666666667 +lat_2=38.96666666666667 +lat_0=37.5 +lon_0=-84.25 +x_0=500000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Kentucky North FIPS 1601
+  102280 => "+proj=lcc +lat_1=36.73333333333333 +lat_2=37.93333333333333 +lat_0=36.33333333333334 +lon_0=-85.75 +x_0=500000 +y_0=500000 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Kentucky South FIPS 1602
+  102281 => "+proj=lcc +lat_1=31.16666666666667 +lat_2=32.66666666666666 +lat_0=30.5 +lon_0=-92.5 +x_0=1000000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Louisiana North FIPS 1701
+  102282 => "+proj=lcc +lat_1=29.3 +lat_2=30.7 +lat_0=28.5 +lon_0=-91.33333333333333 +x_0=1000000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Louisiana South FIPS 1702
+  102283 => "+proj=tmerc +lat_0=43.66666666666666 +lon_0=-68.5 +k=0.999900 +x_0=300000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Maine East FIPS 1801
+  102284 => "+proj=tmerc +lat_0=42.83333333333334 +lon_0=-70.16666666666667 +k=0.999967 +x_0=900000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Maine West FIPS 1802
+  102285 => "+proj=lcc +lat_1=38.3 +lat_2=39.45 +lat_0=37.66666666666666 +lon_0=-77 +x_0=400000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Maryland FIPS 1900
+  102286 => "+proj=lcc +lat_1=41.71666666666667 +lat_2=42.68333333333333 +lat_0=41 +lon_0=-71.5 +x_0=200000 +y_0=750000 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Massachusetts Mainland FIPS 2001
+  102287 => "+proj=lcc +lat_1=41.28333333333333 +lat_2=41.48333333333333 +lat_0=41 +lon_0=-70.5 +x_0=500000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Massachusetts Island FIPS 2002
+  102288 => "+proj=lcc +lat_1=45.48333333333333 +lat_2=47.08333333333334 +lat_0=44.78333333333333 +lon_0=-87 +x_0=8000000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Michigan North FIPS 2111
+  102289 => "+proj=lcc +lat_1=44.18333333333333 +lat_2=45.7 +lat_0=43.31666666666667 +lon_0=-84.36666666666666 +x_0=6000000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Michigan Central FIPS 2112
+  102290 => "+proj=lcc +lat_1=42.1 +lat_2=43.66666666666666 +lat_0=41.5 +lon_0=-84.36666666666666 +x_0=4000000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Michigan South FIPS 2113
+  102291 => "+proj=lcc +lat_1=47.03333333333333 +lat_2=48.63333333333333 +lat_0=46.5 +lon_0=-93.09999999999999 +x_0=800000 +y_0=100000 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Minnesota North FIPS 2201
+  102292 => "+proj=lcc +lat_1=45.61666666666667 +lat_2=47.05 +lat_0=45 +lon_0=-94.25 +x_0=800000 +y_0=100000 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Minnesota Central FIPS 2202
+  102293 => "+proj=lcc +lat_1=43.78333333333333 +lat_2=45.21666666666667 +lat_0=43 +lon_0=-94 +x_0=800000 +y_0=100000 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Minnesota South FIPS 2203
+  102294 => "+proj=tmerc +lat_0=29.5 +lon_0=-88.83333333333333 +k=0.999950 +x_0=300000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Mississippi East FIPS 2301
+  102295 => "+proj=tmerc +lat_0=29.5 +lon_0=-90.33333333333333 +k=0.999950 +x_0=700000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Mississippi West FIPS 2302
+  102296 => "+proj=tmerc +lat_0=35.83333333333334 +lon_0=-90.5 +k=0.999933 +x_0=250000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Missouri East FIPS 2401
+  102297 => "+proj=tmerc +lat_0=35.83333333333334 +lon_0=-92.5 +k=0.999933 +x_0=500000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Missouri Central FIPS 2402
+  102298 => "+proj=tmerc +lat_0=36.16666666666666 +lon_0=-94.5 +k=0.999941 +x_0=850000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Missouri West FIPS 2403
+  102300 => "+proj=lcc +lat_1=45 +lat_2=49 +lat_0=44.25 +lon_0=-109.5 +x_0=600000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Montana FIPS 2500
+  102304 => "+proj=lcc +lat_1=40 +lat_2=43 +lat_0=39.83333333333334 +lon_0=-100 +x_0=500000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Nebraska FIPS 2600
+  102307 => "+proj=tmerc +lat_0=34.75 +lon_0=-115.5833333333333 +k=0.999900 +x_0=200000 +y_0=8000000 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Nevada East FIPS 2701
+  102308 => "+proj=tmerc +lat_0=34.75 +lon_0=-116.6666666666667 +k=0.999900 +x_0=500000 +y_0=6000000 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Nevada Central FIPS 2702
+  102309 => "+proj=tmerc +lat_0=34.75 +lon_0=-118.5833333333333 +k=0.999900 +x_0=800000 +y_0=4000000 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Nevada West FIPS 2703
+  102310 => "+proj=tmerc +lat_0=42.5 +lon_0=-71.66666666666667 +k=0.999967 +x_0=300000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane New Hampshire FIPS 2800
+  102311 => "+proj=tmerc +lat_0=38.83333333333334 +lon_0=-74.5 +k=0.999900 +x_0=150000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane New Jersey FIPS 2900
+  102312 => "+proj=tmerc +lat_0=31 +lon_0=-104.3333333333333 +k=0.999909 +x_0=165000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane New Mexico East FIPS 3001
+  102313 => "+proj=tmerc +lat_0=31 +lon_0=-106.25 +k=0.999900 +x_0=500000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane New Mexico Central FIPS 3002
+  102314 => "+proj=tmerc +lat_0=31 +lon_0=-107.8333333333333 +k=0.999917 +x_0=830000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane New Mexico West FIPS 3003
+  102315 => "+proj=tmerc +lat_0=38.83333333333334 +lon_0=-74.5 +k=0.999900 +x_0=150000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane New York East FIPS 3101
+  102316 => "+proj=tmerc +lat_0=40 +lon_0=-76.58333333333333 +k=0.999938 +x_0=250000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane New York Central FIPS 3102
+  102317 => "+proj=tmerc +lat_0=40 +lon_0=-78.58333333333333 +k=0.999938 +x_0=350000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane New York West FIPS 3103
+  102318 => "+proj=lcc +lat_1=40.66666666666666 +lat_2=41.03333333333333 +lat_0=40.16666666666666 +lon_0=-74 +x_0=300000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane New York Long Island FIPS 3104
+  102320 => "+proj=lcc +lat_1=47.43333333333333 +lat_2=48.73333333333333 +lat_0=47 +lon_0=-100.5 +x_0=600000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane North Dakota North FIPS 3301
+  102321 => "+proj=lcc +lat_1=46.18333333333333 +lat_2=47.48333333333333 +lat_0=45.66666666666666 +lon_0=-100.5 +x_0=600000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane North Dakota South FIPS 3302
+  102322 => "+proj=lcc +lat_1=40.43333333333333 +lat_2=41.7 +lat_0=39.66666666666666 +lon_0=-82.5 +x_0=600000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Ohio North FIPS 3401
+  102323 => "+proj=lcc +lat_1=38.73333333333333 +lat_2=40.03333333333333 +lat_0=38 +lon_0=-82.5 +x_0=600000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Ohio South FIPS 3402
+  102324 => "+proj=lcc +lat_1=35.56666666666667 +lat_2=36.76666666666667 +lat_0=35 +lon_0=-98 +x_0=600000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Oklahoma North FIPS 3501
+  102325 => "+proj=lcc +lat_1=33.93333333333333 +lat_2=35.23333333333333 +lat_0=33.33333333333334 +lon_0=-98 +x_0=600000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Oklahoma South FIPS 3502
+  102326 => "+proj=lcc +lat_1=44.33333333333334 +lat_2=46 +lat_0=43.66666666666666 +lon_0=-120.5 +x_0=2500000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Oregon North FIPS 3601
+  102327 => "+proj=lcc +lat_1=42.33333333333334 +lat_2=44 +lat_0=41.66666666666666 +lon_0=-120.5 +x_0=1500000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Oregon South FIPS 3602
+  102330 => "+proj=tmerc +lat_0=41.08333333333334 +lon_0=-71.5 +k=0.999994 +x_0=100000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Rhode Island FIPS 3800
+  102334 => "+proj=lcc +lat_1=44.41666666666666 +lat_2=45.68333333333333 +lat_0=43.83333333333334 +lon_0=-100 +x_0=600000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane South Dakota North FIPS 4001
+  102335 => "+proj=lcc +lat_1=42.83333333333334 +lat_2=44.4 +lat_0=42.33333333333334 +lon_0=-100.3333333333333 +x_0=600000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane South Dakota South FIPS 4002
+  102336 => "+proj=lcc +lat_1=35.25 +lat_2=36.41666666666666 +lat_0=34.33333333333334 +lon_0=-86 +x_0=600000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Tennessee FIPS 4100
+  102337 => "+proj=lcc +lat_1=34.65 +lat_2=36.18333333333333 +lat_0=34 +lon_0=-101.5 +x_0=200000 +y_0=1000000 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Texas North FIPS 4201
+  102338 => "+proj=lcc +lat_1=32.13333333333333 +lat_2=33.96666666666667 +lat_0=31.66666666666667 +lon_0=-98.5 +x_0=600000 +y_0=2000000 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Texas North Central FIPS 4202
+  102339 => "+proj=lcc +lat_1=30.11666666666667 +lat_2=31.88333333333333 +lat_0=29.66666666666667 +lon_0=-100.3333333333333 +x_0=700000 +y_0=3000000 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Texas Central FIPS 4203
+  102340 => "+proj=lcc +lat_1=28.38333333333333 +lat_2=30.28333333333334 +lat_0=27.83333333333333 +lon_0=-99 +x_0=600000 +y_0=4000000 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Texas South Central FIPS 4204
+  102341 => "+proj=lcc +lat_1=26.16666666666667 +lat_2=27.83333333333333 +lat_0=25.66666666666667 +lon_0=-98.5 +x_0=300000 +y_0=5000000 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Texas South FIPS 4205
+  102342 => "+proj=lcc +lat_1=40.71666666666667 +lat_2=41.78333333333333 +lat_0=40.33333333333334 +lon_0=-111.5 +x_0=500000 +y_0=1000000 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Utah North FIPS 4301
+  102343 => "+proj=lcc +lat_1=39.01666666666667 +lat_2=40.65 +lat_0=38.33333333333334 +lon_0=-111.5 +x_0=500000 +y_0=2000000 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Utah Central FIPS 4302
+  102344 => "+proj=lcc +lat_1=37.21666666666667 +lat_2=38.35 +lat_0=36.66666666666666 +lon_0=-111.5 +x_0=500000 +y_0=3000000 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Utah South FIPS 4303
+  102345 => "+proj=tmerc +lat_0=42.5 +lon_0=-72.5 +k=0.999964 +x_0=500000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Vermont FIPS 4400
+  102346 => "+proj=lcc +lat_1=38.03333333333333 +lat_2=39.2 +lat_0=37.66666666666666 +lon_0=-78.5 +x_0=3500000 +y_0=2000000 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Virginia North FIPS 4501
+  102347 => "+proj=lcc +lat_1=36.76666666666667 +lat_2=37.96666666666667 +lat_0=36.33333333333334 +lon_0=-78.5 +x_0=3500000 +y_0=1000000 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Virginia South FIPS 4502
+  102348 => "+proj=lcc +lat_1=47.5 +lat_2=48.73333333333333 +lat_0=47 +lon_0=-120.8333333333333 +x_0=500000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Washington North FIPS 4601
+  102349 => "+proj=lcc +lat_1=45.83333333333334 +lat_2=47.33333333333334 +lat_0=45.33333333333334 +lon_0=-120.5 +x_0=500000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Washington South FIPS 4602
+  102350 => "+proj=lcc +lat_1=39 +lat_2=40.25 +lat_0=38.5 +lon_0=-79.5 +x_0=600000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane West Virginia North FIPS 4701
+  102351 => "+proj=lcc +lat_1=37.48333333333333 +lat_2=38.88333333333333 +lat_0=37 +lon_0=-81 +x_0=600000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane West Virginia South FIPS 4702
+  102352 => "+proj=lcc +lat_1=45.56666666666667 +lat_2=46.76666666666667 +lat_0=45.16666666666666 +lon_0=-90 +x_0=600000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Wisconsin North FIPS 4801
+  102353 => "+proj=lcc +lat_1=44.25 +lat_2=45.5 +lat_0=43.83333333333334 +lon_0=-90 +x_0=600000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Wisconsin Central FIPS 4802
+  102354 => "+proj=lcc +lat_1=42.73333333333333 +lat_2=44.06666666666667 +lat_0=42 +lon_0=-90 +x_0=600000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Wisconsin South FIPS 4803
+  102355 => "+proj=tmerc +lat_0=40.5 +lon_0=-105.1666666666667 +k=0.999938 +x_0=200000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Wyoming East FIPS 4901
+  102356 => "+proj=tmerc +lat_0=40.5 +lon_0=-107.3333333333333 +k=0.999938 +x_0=400000 +y_0=100000 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Wyoming East Central FIPS 4902
+  102357 => "+proj=tmerc +lat_0=40.5 +lon_0=-108.75 +k=0.999938 +x_0=600000 +y_0=0 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Wyoming West Central FIPS 4903
+  102358 => "+proj=tmerc +lat_0=40.5 +lon_0=-110.0833333333333 +k=0.999938 +x_0=800000 +y_0=100000 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Wyoming West FIPS 4904
+  102361 => "+proj=lcc +lat_1=18.03333333333334 +lat_2=18.43333333333333 +lat_0=17.83333333333333 +lon_0=-66.43333333333334 +x_0=200000 +y_0=200000 +ellps=GRS80 +units=m +no_defs", # NAD 1983 HARN StatePlane Puerto Rico Virgin Islands FIPS 5200
+  102491 => "+proj=lcc +lat_1=36 +lat_0=36 +lon_0=2.7 +k_0=0.999625544 +x_0=500000 +y_0=300000 +a=6378249.2 +b=6356514.999904194 +units=m +no_defs", # Nord Algerie Ancienne Degree
+  102492 => "+proj=lcc +lat_1=33.3 +lat_0=33.3 +lon_0=2.7 +k_0=0.999625769 +x_0=500000 +y_0=300000 +a=6378249.2 +b=6356514.999904194 +units=m +no_defs", # Sud Algerie Ancienne Degree
+  102581 => "+proj=lcc +lat_1=49.5 +lat_0=49.5 +lon_0=2.337229166666667 +k_0=0.999877341 +x_0=600000 +y_0=1200000 +a=6378249.2 +b=6356514.999904194 +units=m +no_defs", # NTF France I degrees
+  102582 => "+proj=lcc +lat_1=46.8 +lat_0=46.8 +lon_0=2.337229166666667 +k_0=0.99987742 +x_0=600000 +y_0=2200000 +a=6378249.2 +b=6356514.999904194 +units=m +no_defs", # NTF France II degrees
+  102583 => "+proj=lcc +lat_1=44.1 +lat_0=44.1 +lon_0=2.337229166666667 +k_0=0.999877499 +x_0=600000 +y_0=3200000 +a=6378249.2 +b=6356514.999904194 +units=m +no_defs", # NTF France III degrees
+  102584 => "+proj=lcc +lat_1=42.165 +lat_0=42.165 +lon_0=2.337229166666667 +k_0=0.99994471 +x_0=234.358 +y_0=4185861.369 +a=6378249.2 +b=6356514.999904194 +units=m +no_defs", # NTF France IV degrees
+  102591 => "+proj=lcc +lat_1=36 +lat_0=36 +lon_0=2.7 +k_0=0.999625544 +x_0=500135 +y_0=300090 +ellps=clrk80 +units=m +no_defs", # Nord Algerie Degree
+  102592 => "+proj=lcc +lat_1=33.3 +lat_0=33.3 +lon_0=2.7 +k_0=0.999625769 +x_0=500135 +y_0=300090 +ellps=clrk80 +units=m +no_defs", # Sud Algerie Degree
+  102629 => "+proj=tmerc +lat_0=30.5 +lon_0=-85.83333333333333 +k=0.999960 +x_0=200000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Alabama East FIPS 0101 Feet
+  102630 => "+proj=tmerc +lat_0=30 +lon_0=-87.5 +k=0.999933 +x_0=600000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Alabama West FIPS 0102 Feet
+  102631 => "+proj=omerc +lat_0=57 +lonc=-133.6666666666667 +alpha=-36.86989764583333 +k=0.9999 +x_0=4999999.999999999 +y_0=-4999999.999999999 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Alaska 1 FIPS 5001 Feet
+  102632 => "+proj=tmerc +lat_0=54 +lon_0=-142 +k=0.999900 +x_0=500000.0000000002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Alaska 2 FIPS 5002 Feet
+  102633 => "+proj=tmerc +lat_0=54 +lon_0=-146 +k=0.999900 +x_0=500000.0000000002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Alaska 3 FIPS 5003 Feet
+  102634 => "+proj=tmerc +lat_0=54 +lon_0=-150 +k=0.999900 +x_0=500000.0000000002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Alaska 4 FIPS 5004 Feet
+  102635 => "+proj=tmerc +lat_0=54 +lon_0=-154 +k=0.999900 +x_0=500000.0000000002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Alaska 5 FIPS 5005 Feet
+  102636 => "+proj=tmerc +lat_0=54 +lon_0=-158 +k=0.999900 +x_0=500000.0000000002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Alaska 6 FIPS 5006 Feet
+  102637 => "+proj=tmerc +lat_0=54 +lon_0=-162 +k=0.999900 +x_0=500000.0000000002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Alaska 7 FIPS 5007 Feet
+  102638 => "+proj=tmerc +lat_0=54 +lon_0=-166 +k=0.999900 +x_0=500000.0000000002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Alaska 8 FIPS 5008 Feet
+  102639 => "+proj=tmerc +lat_0=54 +lon_0=-170 +k=0.999900 +x_0=500000.0000000002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Alaska 9 FIPS 5009 Feet
+  102640 => "+proj=lcc +lat_1=51.83333333333334 +lat_2=53.83333333333334 +lat_0=51 +lon_0=-176 +x_0=1000000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Alaska 10 FIPS 5010 Feet
+  102641 => "+proj=lcc +lat_1=40 +lat_2=41.66666666666666 +lat_0=39.33333333333334 +lon_0=-122 +x_0=2000000 +y_0=500000.0000000002 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane California I FIPS 0401 Feet
+  102642 => "+proj=lcc +lat_1=38.33333333333334 +lat_2=39.83333333333334 +lat_0=37.66666666666666 +lon_0=-122 +x_0=2000000 +y_0=500000.0000000002 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane California II FIPS 0402 Feet
+  102643 => "+proj=lcc +lat_1=37.06666666666667 +lat_2=38.43333333333333 +lat_0=36.5 +lon_0=-120.5 +x_0=2000000 +y_0=500000.0000000002 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane California III FIPS 0403 Feet
+  102644 => "+proj=lcc +lat_1=36 +lat_2=37.25 +lat_0=35.33333333333334 +lon_0=-119 +x_0=2000000 +y_0=500000.0000000002 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane California IV FIPS 0404 Feet
+  102645 => "+proj=lcc +lat_1=34.03333333333333 +lat_2=35.46666666666667 +lat_0=33.5 +lon_0=-118 +x_0=2000000 +y_0=500000.0000000002 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane California V FIPS 0405 Feet
+  102646 => "+proj=lcc +lat_1=32.78333333333333 +lat_2=33.88333333333333 +lat_0=32.16666666666666 +lon_0=-116.25 +x_0=2000000 +y_0=500000.0000000002 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane California VI FIPS 0406 Feet
+  102648 => "+proj=tmerc +lat_0=31 +lon_0=-110.1666666666667 +k=0.999900 +x_0=213360 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Arizona East FIPS 0201 Feet
+  102649 => "+proj=tmerc +lat_0=31 +lon_0=-111.9166666666667 +k=0.999900 +x_0=213360 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Arizona Central FIPS 0202 Feet
+  102650 => "+proj=tmerc +lat_0=31 +lon_0=-113.75 +k=0.999933 +x_0=213360 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Arizona West FIPS 0203 Feet
+  102651 => "+proj=lcc +lat_1=34.93333333333333 +lat_2=36.23333333333333 +lat_0=34.33333333333334 +lon_0=-92 +x_0=399999.9999999999 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Arkansas North FIPS 0301 Feet
+  102652 => "+proj=lcc +lat_1=33.3 +lat_2=34.76666666666667 +lat_0=32.66666666666666 +lon_0=-92 +x_0=399999.9999999999 +y_0=399999.9999999999 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Arkansas South FIPS 0302 Feet
+  102653 => "+proj=lcc +lat_1=39.71666666666667 +lat_2=40.78333333333333 +lat_0=39.33333333333334 +lon_0=-105.5 +x_0=914401.8289 +y_0=304800.6096 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Colorado North FIPS 0501 Feet
+  102654 => "+proj=lcc +lat_1=38.45 +lat_2=39.75 +lat_0=37.83333333333334 +lon_0=-105.5 +x_0=914401.8289 +y_0=304800.6096 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Colorado Central FIPS 0502 Feet
+  102655 => "+proj=lcc +lat_1=37.23333333333333 +lat_2=38.43333333333333 +lat_0=36.66666666666666 +lon_0=-105.5 +x_0=914401.8289 +y_0=304800.6096 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Colorado South FIPS 0503 Feet
+  102656 => "+proj=lcc +lat_1=41.2 +lat_2=41.86666666666667 +lat_0=40.83333333333334 +lon_0=-72.75 +x_0=304800.6096 +y_0=152400.3048 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Connecticut FIPS 0600 Feet
+  102657 => "+proj=tmerc +lat_0=38 +lon_0=-75.41666666666667 +k=0.999995 +x_0=200000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Delaware FIPS 0700 Feet
+  102658 => "+proj=tmerc +lat_0=24.33333333333333 +lon_0=-81 +k=0.999941 +x_0=200000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Florida East FIPS 0901 Feet
+  102659 => "+proj=tmerc +lat_0=24.33333333333333 +lon_0=-82 +k=0.999941 +x_0=200000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Florida West FIPS 0902 Feet
+  102660 => "+proj=lcc +lat_1=29.58333333333333 +lat_2=30.75 +lat_0=29 +lon_0=-84.5 +x_0=600000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Florida North FIPS 0903 Feet
+  102661 => "+proj=tmerc +lat_0=18.83333333333333 +lon_0=-155.5 +k=0.999967 +x_0=500000.0000000002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Hawaii 1 FIPS 5101 Feet
+  102662 => "+proj=tmerc +lat_0=20.33333333333333 +lon_0=-156.6666666666667 +k=0.999967 +x_0=500000.0000000002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Hawaii 2 FIPS 5102 Feet
+  102663 => "+proj=tmerc +lat_0=21.16666666666667 +lon_0=-158 +k=0.999990 +x_0=500000.0000000002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Hawaii 3 FIPS 5103 Feet
+  102664 => "+proj=tmerc +lat_0=21.83333333333333 +lon_0=-159.5 +k=0.999990 +x_0=500000.0000000002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Hawaii 4 FIPS 5104 Feet
+  102665 => "+proj=tmerc +lat_0=21.66666666666667 +lon_0=-160.1666666666667 +k=1.000000 +x_0=500000.0000000002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Hawaii 5 FIPS 5105 Feet
+  102666 => "+proj=tmerc +lat_0=30 +lon_0=-82.16666666666667 +k=0.999900 +x_0=200000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Georgia East FIPS 1001 Feet
+  102667 => "+proj=tmerc +lat_0=30 +lon_0=-84.16666666666667 +k=0.999900 +x_0=700000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Georgia West FIPS 1002 Feet
+  102668 => "+proj=tmerc +lat_0=41.66666666666666 +lon_0=-112.1666666666667 +k=0.999947 +x_0=200000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Idaho East FIPS 1101 Feet
+  102669 => "+proj=tmerc +lat_0=41.66666666666666 +lon_0=-114 +k=0.999947 +x_0=500000.0000000002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Idaho Central FIPS 1102 Feet
+  102670 => "+proj=tmerc +lat_0=41.66666666666666 +lon_0=-115.75 +k=0.999933 +x_0=799999.9999999999 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Idaho West FIPS 1103 Feet
+  102671 => "+proj=tmerc +lat_0=36.66666666666666 +lon_0=-88.33333333333333 +k=0.999975 +x_0=300000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Illinois East FIPS 1201 Feet
+  102672 => "+proj=tmerc +lat_0=36.66666666666666 +lon_0=-90.16666666666667 +k=0.999941 +x_0=700000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Illinois West FIPS 1202 Feet
+  102673 => "+proj=tmerc +lat_0=37.5 +lon_0=-85.66666666666667 +k=0.999967 +x_0=100000 +y_0=250000 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Indiana East FIPS 1301 Feet
+  102674 => "+proj=tmerc +lat_0=37.5 +lon_0=-87.08333333333333 +k=0.999967 +x_0=900000.0000000001 +y_0=250000 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Indiana West FIPS 1302 Feet
+  102675 => "+proj=lcc +lat_1=42.06666666666667 +lat_2=43.26666666666667 +lat_0=41.5 +lon_0=-93.5 +x_0=1500000 +y_0=1000000 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Iowa North FIPS 1401 Feet
+  102676 => "+proj=lcc +lat_1=40.61666666666667 +lat_2=41.78333333333333 +lat_0=40 +lon_0=-93.5 +x_0=500000.0000000002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Iowa South FIPS 1402 Feet
+  102677 => "+proj=lcc +lat_1=38.71666666666667 +lat_2=39.78333333333333 +lat_0=38.33333333333334 +lon_0=-98 +x_0=399999.9999999999 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Kansas North FIPS 1501 Feet
+  102678 => "+proj=lcc +lat_1=37.26666666666667 +lat_2=38.56666666666667 +lat_0=36.66666666666666 +lon_0=-98.5 +x_0=399999.9999999999 +y_0=399999.9999999999 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Kansas South FIPS 1502 Feet
+  102679 => "+proj=lcc +lat_1=37.96666666666667 +lat_2=38.96666666666667 +lat_0=37.5 +lon_0=-84.25 +x_0=500000.0000000002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Kentucky North FIPS 1601 Feet
+  102680 => "+proj=lcc +lat_1=36.73333333333333 +lat_2=37.93333333333333 +lat_0=36.33333333333334 +lon_0=-85.75 +x_0=500000.0000000002 +y_0=500000.0000000002 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Kentucky South FIPS 1602 Feet
+  102681 => "+proj=lcc +lat_1=31.16666666666667 +lat_2=32.66666666666666 +lat_0=30.5 +lon_0=-92.5 +x_0=1000000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Louisiana North FIPS 1701 Feet
+  102682 => "+proj=lcc +lat_1=29.3 +lat_2=30.7 +lat_0=28.5 +lon_0=-91.33333333333333 +x_0=1000000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Louisiana South FIPS 1702 Feet
+  102683 => "+proj=tmerc +lat_0=43.66666666666666 +lon_0=-68.5 +k=0.999900 +x_0=300000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Maine East FIPS 1801 Feet
+  102684 => "+proj=tmerc +lat_0=42.83333333333334 +lon_0=-70.16666666666667 +k=0.999967 +x_0=900000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Maine West FIPS 1802 Feet
+  102685 => "+proj=lcc +lat_1=38.3 +lat_2=39.45 +lat_0=37.66666666666666 +lon_0=-77 +x_0=399999.9999999999 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Maryland FIPS 1900 Feet
+  102686 => "+proj=lcc +lat_1=41.71666666666667 +lat_2=42.68333333333333 +lat_0=41 +lon_0=-71.5 +x_0=200000 +y_0=750000.0000000001 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Massachusetts Mainland FIPS 2001 Feet
+  102687 => "+proj=lcc +lat_1=41.28333333333333 +lat_2=41.48333333333333 +lat_0=41 +lon_0=-70.5 +x_0=500000.0000000002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Massachusetts Island FIPS 2002 Feet
+  102688 => "+proj=lcc +lat_1=45.48333333333333 +lat_2=47.08333333333334 +lat_0=44.78333333333333 +lon_0=-87 +x_0=7999999.999999999 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Michigan North FIPS 2111 Feet
+  102689 => "+proj=lcc +lat_1=44.18333333333333 +lat_2=45.7 +lat_0=43.31666666666667 +lon_0=-84.36666666666666 +x_0=6000000.000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Michigan Central FIPS 2112 Feet
+  102690 => "+proj=lcc +lat_1=42.1 +lat_2=43.66666666666666 +lat_0=41.5 +lon_0=-84.36666666666666 +x_0=4000000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Michigan South FIPS 2113 Feet
+  102691 => "+proj=lcc +lat_1=47.03333333333333 +lat_2=48.63333333333333 +lat_0=46.5 +lon_0=-93.09999999999999 +x_0=799999.9999999999 +y_0=100000 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Minnesota North FIPS 2201 Feet
+  102692 => "+proj=lcc +lat_1=45.61666666666667 +lat_2=47.05 +lat_0=45 +lon_0=-94.25 +x_0=799999.9999999999 +y_0=100000 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Minnesota Central FIPS 2202 Feet
+  102693 => "+proj=lcc +lat_1=43.78333333333333 +lat_2=45.21666666666667 +lat_0=43 +lon_0=-94 +x_0=799999.9999999999 +y_0=100000 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Minnesota South FIPS 2203 Feet
+  102694 => "+proj=tmerc +lat_0=29.5 +lon_0=-88.83333333333333 +k=0.999950 +x_0=300000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Mississippi East FIPS 2301 Feet
+  102695 => "+proj=tmerc +lat_0=29.5 +lon_0=-90.33333333333333 +k=0.999950 +x_0=700000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Mississippi West FIPS 2302 Feet
+  102696 => "+proj=tmerc +lat_0=35.83333333333334 +lon_0=-90.5 +k=0.999933 +x_0=250000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Missouri East FIPS 2401 Feet
+  102697 => "+proj=tmerc +lat_0=35.83333333333334 +lon_0=-92.5 +k=0.999933 +x_0=500000.0000000002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Missouri Central FIPS 2402 Feet
+  102698 => "+proj=tmerc +lat_0=36.16666666666666 +lon_0=-94.5 +k=0.999941 +x_0=850000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Missouri West FIPS 2403 Feet
+  102700 => "+proj=lcc +lat_1=45 +lat_2=49 +lat_0=44.25 +lon_0=-109.5 +x_0=600000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Montana FIPS 2500 Feet
+  102704 => "+proj=lcc +lat_1=40 +lat_2=43 +lat_0=39.83333333333334 +lon_0=-100 +x_0=500000.0000000002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Nebraska FIPS 2600 Feet
+  102707 => "+proj=tmerc +lat_0=34.75 +lon_0=-115.5833333333333 +k=0.999900 +x_0=200000 +y_0=7999999.999999999 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Nevada East FIPS 2701 Feet
+  102708 => "+proj=tmerc +lat_0=34.75 +lon_0=-116.6666666666667 +k=0.999900 +x_0=500000.0000000002 +y_0=6000000.000000001 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Nevada Central FIPS 2702 Feet
+  102709 => "+proj=tmerc +lat_0=34.75 +lon_0=-118.5833333333333 +k=0.999900 +x_0=799999.9999999999 +y_0=4000000 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Nevada West FIPS 2703 Feet
+  102710 => "+proj=tmerc +lat_0=42.5 +lon_0=-71.66666666666667 +k=0.999967 +x_0=300000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane New Hampshire FIPS 2800 Feet
+  102711 => "+proj=tmerc +lat_0=38.83333333333334 +lon_0=-74.5 +k=0.999900 +x_0=150000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane New Jersey FIPS 2900 Feet
+  102712 => "+proj=tmerc +lat_0=31 +lon_0=-104.3333333333333 +k=0.999909 +x_0=165000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane New Mexico East FIPS 3001 Feet
+  102713 => "+proj=tmerc +lat_0=31 +lon_0=-106.25 +k=0.999900 +x_0=500000.0000000002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane New Mexico Central FIPS 3002 Feet
+  102714 => "+proj=tmerc +lat_0=31 +lon_0=-107.8333333333333 +k=0.999917 +x_0=829999.9999999999 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane New Mexico West FIPS 3003 Feet
+  102715 => "+proj=tmerc +lat_0=38.83333333333334 +lon_0=-74.5 +k=0.999900 +x_0=150000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane New York East FIPS 3101 Feet
+  102716 => "+proj=tmerc +lat_0=40 +lon_0=-76.58333333333333 +k=0.999938 +x_0=250000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane New York Central FIPS 3102 Feet
+  102717 => "+proj=tmerc +lat_0=40 +lon_0=-78.58333333333333 +k=0.999938 +x_0=350000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane New York West FIPS 3103 Feet
+  102718 => "+proj=lcc +lat_1=40.66666666666666 +lat_2=41.03333333333333 +lat_0=40.16666666666666 +lon_0=-74 +x_0=300000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane New York Long Island FIPS 3104 Feet
+  102719 => "+proj=lcc +lat_1=34.33333333333334 +lat_2=36.16666666666666 +lat_0=33.75 +lon_0=-79 +x_0=609601.2199999999 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane North Carolina FIPS 3200 Feet
+  102720 => "+proj=lcc +lat_1=47.43333333333333 +lat_2=48.73333333333333 +lat_0=47 +lon_0=-100.5 +x_0=600000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane North Dakota North FIPS 3301 Feet
+  102721 => "+proj=lcc +lat_1=46.18333333333333 +lat_2=47.48333333333333 +lat_0=45.66666666666666 +lon_0=-100.5 +x_0=600000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane North Dakota South FIPS 3302 Feet
+  102722 => "+proj=lcc +lat_1=40.43333333333333 +lat_2=41.7 +lat_0=39.66666666666666 +lon_0=-82.5 +x_0=600000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Ohio North FIPS 3401 Feet
+  102723 => "+proj=lcc +lat_1=38.73333333333333 +lat_2=40.03333333333333 +lat_0=38 +lon_0=-82.5 +x_0=600000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Ohio South FIPS 3402 Feet
+  102724 => "+proj=lcc +lat_1=35.56666666666667 +lat_2=36.76666666666667 +lat_0=35 +lon_0=-98 +x_0=600000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Oklahoma North FIPS 3501 Feet
+  102725 => "+proj=lcc +lat_1=33.93333333333333 +lat_2=35.23333333333333 +lat_0=33.33333333333334 +lon_0=-98 +x_0=600000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Oklahoma South FIPS 3502 Feet
+  102726 => "+proj=lcc +lat_1=44.33333333333334 +lat_2=46 +lat_0=43.66666666666666 +lon_0=-120.5 +x_0=2500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Oregon North FIPS 3601 Feet
+  102727 => "+proj=lcc +lat_1=42.33333333333334 +lat_2=44 +lat_0=41.66666666666666 +lon_0=-120.5 +x_0=1500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Oregon South FIPS 3602 Feet
+  102728 => "+proj=lcc +lat_1=40.88333333333333 +lat_2=41.95 +lat_0=40.16666666666666 +lon_0=-77.75 +x_0=600000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Pennsylvania North FIPS 3701 Feet
+  102729 => "+proj=lcc +lat_1=39.93333333333333 +lat_2=40.96666666666667 +lat_0=39.33333333333334 +lon_0=-77.75 +x_0=600000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Pennsylvania South FIPS 3702 Feet
+  102730 => "+proj=tmerc +lat_0=41.08333333333334 +lon_0=-71.5 +k=0.999994 +x_0=100000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Rhode Island FIPS 3800 Feet
+  102733 => "+proj=lcc +lat_1=32.5 +lat_2=34.83333333333334 +lat_0=31.83333333333333 +lon_0=-81 +x_0=609600.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane South Carolina FIPS 3900 Feet
+  102734 => "+proj=lcc +lat_1=44.41666666666666 +lat_2=45.68333333333333 +lat_0=43.83333333333334 +lon_0=-100 +x_0=600000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane South Dakota North FIPS 4001 Feet
+  102735 => "+proj=lcc +lat_1=42.83333333333334 +lat_2=44.4 +lat_0=42.33333333333334 +lon_0=-100.3333333333333 +x_0=600000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane South Dakota South FIPS 4002 Feet
+  102736 => "+proj=lcc +lat_1=35.25 +lat_2=36.41666666666666 +lat_0=34.33333333333334 +lon_0=-86 +x_0=600000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Tennessee FIPS 4100 Feet
+  102737 => "+proj=lcc +lat_1=34.65 +lat_2=36.18333333333333 +lat_0=34 +lon_0=-101.5 +x_0=200000 +y_0=1000000 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Texas North FIPS 4201 Feet
+  102738 => "+proj=lcc +lat_1=32.13333333333333 +lat_2=33.96666666666667 +lat_0=31.66666666666667 +lon_0=-98.5 +x_0=600000.0000000001 +y_0=2000000 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Texas North Central FIPS 4202 Feet
+  102739 => "+proj=lcc +lat_1=30.11666666666667 +lat_2=31.88333333333333 +lat_0=29.66666666666667 +lon_0=-100.3333333333333 +x_0=700000 +y_0=3000000 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Texas Central FIPS 4203 Feet
+  102740 => "+proj=lcc +lat_1=28.38333333333333 +lat_2=30.28333333333334 +lat_0=27.83333333333333 +lon_0=-99 +x_0=600000.0000000001 +y_0=4000000 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Texas South Central FIPS 4204 Feet
+  102741 => "+proj=lcc +lat_1=26.16666666666667 +lat_2=27.83333333333333 +lat_0=25.66666666666667 +lon_0=-98.5 +x_0=300000 +y_0=4999999.999999999 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Texas South FIPS 4205 Feet
+  102742 => "+proj=lcc +lat_1=40.71666666666667 +lat_2=41.78333333333333 +lat_0=40.33333333333334 +lon_0=-111.5 +x_0=500000.0000000002 +y_0=1000000 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Utah North FIPS 4301 Feet
+  102743 => "+proj=lcc +lat_1=39.01666666666667 +lat_2=40.65 +lat_0=38.33333333333334 +lon_0=-111.5 +x_0=500000.0000000002 +y_0=2000000 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Utah Central FIPS 4302 Feet
+  102744 => "+proj=lcc +lat_1=37.21666666666667 +lat_2=38.35 +lat_0=36.66666666666666 +lon_0=-111.5 +x_0=500000.0000000002 +y_0=3000000 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Utah South FIPS 4303 Feet
+  102745 => "+proj=tmerc +lat_0=42.5 +lon_0=-72.5 +k=0.999964 +x_0=500000.0000000002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Vermont FIPS 4400 Feet
+  102746 => "+proj=lcc +lat_1=38.03333333333333 +lat_2=39.2 +lat_0=37.66666666666666 +lon_0=-78.5 +x_0=3499999.999999999 +y_0=2000000 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Virginia North FIPS 4501 Feet
+  102747 => "+proj=lcc +lat_1=36.76666666666667 +lat_2=37.96666666666667 +lat_0=36.33333333333334 +lon_0=-78.5 +x_0=3499999.999999999 +y_0=1000000 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Virginia South FIPS 4502 Feet
+  102748 => "+proj=lcc +lat_1=47.5 +lat_2=48.73333333333333 +lat_0=47 +lon_0=-120.8333333333333 +x_0=500000.0000000002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Washington North FIPS 4601 Feet
+  102749 => "+proj=lcc +lat_1=45.83333333333334 +lat_2=47.33333333333334 +lat_0=45.33333333333334 +lon_0=-120.5 +x_0=500000.0000000002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Washington South FIPS 4602 Feet
+  102750 => "+proj=lcc +lat_1=39 +lat_2=40.25 +lat_0=38.5 +lon_0=-79.5 +x_0=600000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane West Virginia North FIPS 4701 Feet
+  102751 => "+proj=lcc +lat_1=37.48333333333333 +lat_2=38.88333333333333 +lat_0=37 +lon_0=-81 +x_0=600000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane West Virginia South FIPS 4702 Feet
+  102752 => "+proj=lcc +lat_1=45.56666666666667 +lat_2=46.76666666666667 +lat_0=45.16666666666666 +lon_0=-90 +x_0=600000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Wisconsin North FIPS 4801 Feet
+  102753 => "+proj=lcc +lat_1=44.25 +lat_2=45.5 +lat_0=43.83333333333334 +lon_0=-90 +x_0=600000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Wisconsin Central FIPS 4802 Feet
+  102754 => "+proj=lcc +lat_1=42.73333333333333 +lat_2=44.06666666666667 +lat_0=42 +lon_0=-90 +x_0=600000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Wisconsin South FIPS 4803 Feet
+  102755 => "+proj=tmerc +lat_0=40.5 +lon_0=-105.1666666666667 +k=0.999938 +x_0=200000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Wyoming East FIPS 4901 Feet
+  102756 => "+proj=tmerc +lat_0=40.5 +lon_0=-107.3333333333333 +k=0.999938 +x_0=399999.9999999999 +y_0=100000 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Wyoming East Central FIPS 4902 Feet
+  102757 => "+proj=tmerc +lat_0=40.5 +lon_0=-108.75 +k=0.999938 +x_0=600000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Wyoming West Central FIPS 4903 Feet
+  102758 => "+proj=tmerc +lat_0=40.5 +lon_0=-110.0833333333333 +k=0.999938 +x_0=799999.9999999999 +y_0=100000 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Wyoming West FIPS 4904 Feet
+  102761 => "+proj=lcc +lat_1=18.03333333333334 +lat_2=18.43333333333333 +lat_0=17.83333333333333 +lon_0=-66.43333333333334 +x_0=200000 +y_0=200000 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Puerto Rico Virgin Islands FIPS 5200 Feet
+  102766 => "+proj=poly +lat_0=13.47246635277778 +lon_0=-144.7487507055556 +x_0=49999.99999999999 +y_0=49999.99999999999 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs", # NAD 1983 StatePlane Guam FIPS 5400 Feet
+  103300 => "+proj=lcc +lat_1=49.8333339 +lat_2=51.16666733333333 +lat_0=90 +lon_0=4.367486666666666 +x_0=150000.01256 +y_0=5400088.4378 +ellps=intl +units=m +no_defs", # Belge Lambert 1972
+  4023 => "+proj=longlat +ellps=aust_SA +no_defs", # GCS International 1967
+  4217 => "+proj=longlat +ellps=bessel +no_defs", # GCS Bern 1898
+  4305 => "+proj=longlat +ellps=clrk80 +no_defs", # GCS Voirol Unifie 1960
+  4404 => "+proj=longlat +ellps=clrk80 +no_defs", # GCS Montserrat 1958
+  4812 => "+proj=longlat +ellps=clrk80 +pm=2.337229166666667 +no_defs", # GCS Voirol Unifie 1960 Paris
+  37001 => "+proj=longlat +ellps=WGS66 +no_defs", # GCS WGS 1966
+  37002 => "+proj=longlat +a=6378166 +b=6356784.283607107 +no_defs", # GCS Fischer 1960
+  37003 => "+proj=longlat +a=6378150 +b=6356768.337244385 +no_defs", # GCS Fischer 1968
+  37004 => "+proj=longlat +ellps=fschr60m +no_defs", # GCS Fischer Modified
+  37005 => "+proj=longlat +a=6378270 +b=6356794.343434343 +no_defs", # GCS Hough 1960
+  37006 => "+proj=longlat +a=6377295.664 +b=6356094.667915204 +no_defs", # GCS Everest Modified 1969
+  37007 => "+proj=longlat +a=6376896 +b=6355834.846687363 +no_defs", # GCS Walbeck
+  37008 => "+proj=longlat +a=6370997 +b=6370997 +no_defs", # GCS Sphere ARC INFO
+  37201 => "+proj=longlat +ellps=intl +no_defs", # GCS European 1979
+  37202 => "+proj=longlat +a=6377276.345 +b=6356075.413140239 +no_defs", # GCS Everest Bangladesh
+  37203 => "+proj=longlat +a=6377301.243 +b=6356100.230165385 +no_defs", # GCS Everest India Nepal
+  37204 => "+proj=longlat +ellps=intl +no_defs", # GCS Hjorsey 1955
+  37205 => "+proj=longlat +ellps=intl +no_defs", # GCS Hong Kong 1963
+  37206 => "+proj=longlat +ellps=clrk80 +no_defs", # GCS Oman
+  37207 => "+proj=longlat +ellps=fschr60m +no_defs", # GCS South Asia Singapore
+  37208 => "+proj=longlat +ellps=clrk80 +no_defs", # GCS Ayabelle
+  37211 => "+proj=longlat +ellps=clrk80 +no_defs", # GCS Point 58
+  37212 => "+proj=longlat +ellps=intl +no_defs", # GCS Beacon E 1945
+  37213 => "+proj=longlat +ellps=intl +no_defs", # GCS Tern Island 1961
+  37214 => "+proj=longlat +ellps=intl +no_defs", # GCS Astro 1952
+  37215 => "+proj=longlat +ellps=intl +no_defs", # GCS Bellevue IGN
+  37216 => "+proj=longlat +ellps=intl +no_defs", # GCS Canton 1966
+  37217 => "+proj=longlat +ellps=intl +no_defs", # GCS Chatham Island 1971
+  37218 => "+proj=longlat +ellps=intl +no_defs", # GCS DOS 1968
+  37219 => "+proj=longlat +ellps=intl +no_defs", # GCS Easter Island 1967
+  37220 => "+proj=longlat +ellps=clrk66 +no_defs", # GCS Guam 1963
+  37221 => "+proj=longlat +ellps=intl +no_defs", # GCS GUX 1
+  37222 => "+proj=longlat +ellps=intl +no_defs", # GCS Johnston Island 1961
+  37223 => "+proj=longlat +a=6378249.2 +b=6356514.999904194 +no_defs", # GCS Carthage Degree
+  37224 => "+proj=longlat +ellps=intl +no_defs", # GCS Midway 1961
+  37226 => "+proj=longlat +ellps=intl +no_defs", # GCS Pitcairn 1967
+  37227 => "+proj=longlat +ellps=intl +no_defs", # GCS Santo DOS 1965
+  37228 => "+proj=longlat +ellps=clrk80 +no_defs", # GCS Viti Levu 1916
+  37229 => "+proj=longlat +a=6378270 +b=6356794.343434343 +no_defs", # GCS Wake Eniwetok 1960
+  37230 => "+proj=longlat +ellps=intl +no_defs", # GCS Wake Island 1952
+  37231 => "+proj=longlat +ellps=aust_SA +no_defs", # GCS Anna 1 1965
+  37232 => "+proj=longlat +ellps=intl +no_defs", # GCS Gan 1970
+  37233 => "+proj=longlat +ellps=intl +no_defs", # GCS ISTS 073 1969
+  37234 => "+proj=longlat +ellps=intl +no_defs", # GCS Kerguelen Island 1949
+  37235 => "+proj=longlat +ellps=intl +no_defs", # GCS Reunion
+  37237 => "+proj=longlat +ellps=intl +no_defs", # GCS Ascension Island 1958
+  37238 => "+proj=longlat +ellps=intl +no_defs", # GCS DOS 71 4
+  37239 => "+proj=longlat +ellps=clrk66 +no_defs", # GCS Cape Canaveral
+  37240 => "+proj=longlat +ellps=clrk80 +no_defs", # GCS Fort Thomas 1955
+  37241 => "+proj=longlat +ellps=intl +no_defs", # GCS Graciosa Base SW 1948
+  37242 => "+proj=longlat +ellps=intl +no_defs", # GCS ISTS 061 1968
+  37243 => "+proj=longlat +ellps=clrk66 +no_defs", # GCS LC5 1961
+  37245 => "+proj=longlat +ellps=intl +no_defs", # GCS Observ Meteorologico 1939
+  37246 => "+proj=longlat +ellps=intl +no_defs", # GCS Pico de Las Nieves
+  37247 => "+proj=longlat +ellps=intl +no_defs", # GCS Porto Santo 1936
+  37249 => "+proj=longlat +ellps=intl +no_defs", # GCS Sao Braz
+  37250 => "+proj=longlat +ellps=intl +no_defs", # GCS Selvagem Grande 1938
+  37251 => "+proj=longlat +ellps=intl +no_defs", # GCS Tristan 1968
+  37252 => "+proj=longlat +ellps=clrk66 +no_defs", # GCS Samoa 1962
+  37253 => "+proj=longlat +ellps=intl +no_defs", # GCS Camp Area
+  37254 => "+proj=longlat +ellps=clrk80 +no_defs", # GCS Deception Island
+  37255 => "+proj=longlat +ellps=bessel +no_defs", # GCS Gunung Segara
+  37257 => "+proj=longlat +ellps=krass +no_defs", # GCS S42 Hungary
+  37259 => "+proj=longlat +ellps=intl +no_defs", # GCS Kusaie 1951
+  37260 => "+proj=longlat +ellps=clrk66 +no_defs", # GCS Alaskan Islands
+  104000 => "+proj=longlat +ellps=clrk66 +datum=NAD27 +no_defs", # GCS Assumed Geographic 1
+  104101 => "+proj=longlat +ellps=bessel +no_defs", # GCS Estonia 1937
+  104102 => "+proj=longlat +ellps=bessel +no_defs", # GCS Hermannskogel
+  104103 => "+proj=longlat +ellps=clrk80 +no_defs", # GCS Sierra Leone 1960
+  104104 => "+proj=longlat +ellps=intl +no_defs", # GCS Hong Kong 1980
+  104105 => "+proj=longlat +ellps=bessel +no_defs", # GCS Datum Lisboa Bessel
+  104106 => "+proj=longlat +ellps=intl +no_defs", # GCS Datum Lisboa Hayford
+  104107 => "+proj=longlat +ellps=GRS80 +no_defs", # GCS RGF 1993
+  104108 => "+proj=longlat +ellps=GRS80 +no_defs", # GCS NZGD 2000
+  104261 => "+proj=longlat +a=6378249.2 +b=6356514.999904194 +no_defs", # GCS Merchich Degree
+  104304 => "+proj=longlat +a=6378249.2 +b=6356514.999904194 +no_defs", # GCS Voirol 1875 Degree
+  104305 => "+proj=longlat +ellps=clrk80 +no_defs", # GCS Voirol Unifie 1960 Degree
 )
 

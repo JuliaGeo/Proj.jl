@@ -1,5 +1,7 @@
 module Proj4
 
+using Libdl
+
 export Projection, # proj_types.jl
        transform, transform!,  # proj_functions.jl
        is_latlong, is_geocent, compare_datums, spheroid_params,
