@@ -1,6 +1,7 @@
 module Proj4
 
 using Libdl
+using CEnum
 
 export Projection, # proj_types.jl
        transform, transform!,  # proj_functions.jl
@@ -22,6 +23,8 @@ end
 
 include("projection_codes.jl") # ESRI and EPSG projection strings
 include("proj_capi.jl") # low-level C-facing functions (corresponding to src/proj_api.h)
+include("proj_common.jl")
+include("proj_c.jl")
 
 function _version()
     m = match(r"(\d+).(\d+).(\d+),.+", _get_release())
