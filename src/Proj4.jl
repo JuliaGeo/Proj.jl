@@ -48,4 +48,23 @@ include("proj_functions.jl") # user-facing proj functions
 "Get a global error string in human readable form"
 error_message() = _strerrno()
 
+"""
+Load a null-terminated list of strings
+
+It takes a `PROJ_STRING_LIST`, which is a `Ptr{Cstring}`, and returns a `Vector{String}`.
+"""
+function unsafe_loadstringlist(ptr::Ptr{Cstring})
+    strings = Vector{String}()
+    (ptr == C_NULL) && return strings
+    i = 1
+    cstring = unsafe_load(ptr, i)
+    while cstring != C_NULL
+        push!(strings, unsafe_string(cstring))
+        i += 1
+        cstring = unsafe_load(ptr, i)
+    end
+    strings
+end
+
+
 end # module
