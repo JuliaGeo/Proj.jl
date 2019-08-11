@@ -194,8 +194,10 @@ const proj_file_finder = Ptr{Cvoid}
 end
 
 
+"Type representing a NULL terminated list of NULL-terminate strings"
 const PROJ_STRING_LIST = Ptr{Cstring}
 
+"Guessed WKT \"dialect\""
 @cenum PJ_GUESSED_WKT_DIALECT::UInt32 begin
     PJ_GUESSED_WKT2_2018 = 0
     PJ_GUESSED_WKT2_2015 = 1
@@ -204,6 +206,8 @@ const PROJ_STRING_LIST = Ptr{Cstring}
     PJ_GUESSED_NOT_WKT = 4
 end
 
+
+"Object category"
 @cenum PJ_CATEGORY::UInt32 begin
     PJ_CATEGORY_ELLIPSOID = 0
     PJ_CATEGORY_PRIME_MERIDIAN = 1
@@ -212,6 +216,8 @@ end
     PJ_CATEGORY_COORDINATE_OPERATION = 4
 end
 
+
+"Object type"
 @cenum PJ_TYPE::UInt32 begin
     PJ_TYPE_UNKNOWN = 0
     PJ_TYPE_ELLIPSOID = 1
@@ -246,6 +252,8 @@ end
     PJ_COMP_EQUIVALENT_EXCEPT_AXIS_ORDER_GEOGCRS = 2
 end
 
+
+"WKT version"
 @cenum PJ_WKT_TYPE::UInt32 begin
     PJ_WKT2_2015 = 0
     PJ_WKT2_2015_SIMPLIFIED = 1
@@ -268,6 +276,8 @@ end
     PROJ_GRID_AVAILABILITY_IGNORED = 2
 end
 
+
+"PROJ string version"
 @cenum PJ_PROJ_STRING_TYPE::UInt32 begin
     PJ_PROJ_5 = 0
     PJ_PROJ_4 = 1
