@@ -14,6 +14,7 @@ Several custom transformations are applied that should make using this package m
 - docstrings are added, created from PROJ Doxygen XML output
 - functions that return a Cstring are wrapped in unsafe_string to return a String
 - functions that return a Ptr{Cstring} are wrapped in unsafe_loadstringlist to return a Vector{String}
+- context arguments become keyword arguments, defaulting to C_NULL meaning default context
 
 These transformations are based on the code developed for GDAL.jl, see
 https://github.com/JuliaGeo/GDAL.jl/blob/master/gen/README.md for more information
@@ -49,11 +50,11 @@ function rewriter(xs::Vector)
         end
         @assert x isa Expr
 
+        x2, ctx = rewriter(x)
         name = cname(x)
         node = findnode(name, doc)
-        docstr = node === nothing ? "" : build_docstring(node)
+        docstr = node === nothing ? "" : build_docstring(node, ctx)
         isempty(docstr) || push!(rewritten, addquotes(docstr))
-        x2 = rewriter(x)
         push!(rewritten, x2)
     end
     rewritten
@@ -68,10 +69,20 @@ function rewriter(x::Expr)
     )
         # it is a function wrapper around a ccall
 
+        # ctx is always the first argument
+        if !isempty(fargs) && fargs[1] === :ctx
+            fargs2 = circshift(fargs, -1)
+            fargs2[end] = Symbol("ctx=C_NULL")
+            ctx = true
+        else
+            fargs2 = fargs
+            ctx = false
+        end
+
         # bind the ccall such that we can easily wrap it
         cc = :(ccall($fname, $rettype, $argtypes, $(argvalues...)))
 
-        cc′ = if rettype == :Cstring
+        cc2 = if rettype == :Cstring
             :(unsafe_string($cc))
         elseif rettype == :(Ptr{Cstring})
             :(unsafe_loadstringlist($cc))
@@ -80,12 +91,13 @@ function rewriter(x::Expr)
         end
 
         # stitch the modified function expression back together
-        :(function $f($(fargs...))
-            $cc′
+        x2 = :(function $f($(fargs2...))
+            $cc2
         end) |> prettify
+        x2, ctx
     else
         # do not modify expressions that are no ccall function wrappers
-        x
+        x, false
     end
 end
 
