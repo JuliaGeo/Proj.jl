@@ -1,15 +1,19 @@
 # this file is included by wrap.jl and provides several functions for building docstrings
 
-"Build docstring for a function from a Doxygen XML node"
-function build_function(node::EzXML.Node)
+"""Build docstring for a function from a Doxygen XML node
+
+If ctx is true, shift the ctx parameter to the last position"""
+function build_function(node::EzXML.Node, ctx::Bool)
     io = IOBuffer()
 
     # code block with function definition
     print(io, "    ", text(node, "name"), "(")
     nspace = position(io)
-    params = findall(node, "param")
+    params = findall("param", node)
     if isempty(params)
         print(io, ")")
+    elseif ctx
+        params = circshift(params, -1)
     end
     for param in params
         param !== first(params) && print(io, " "^nspace) # align
@@ -35,6 +39,9 @@ function build_function(node::EzXML.Node)
     params = findall("detaileddescription/para/parameterlist/parameteritem", node)
     if !isempty(params)
         println(io, "\n### Parameters")
+        if ctx
+            params = circshift(params, -1)
+        end
         for param in params
             print(io, "* **", text(param, "parameternamelist"), "**: ")
             println(io, text(param, "parameterdescription"))
@@ -58,10 +65,10 @@ function brief_description(node::EzXML.Node)
 end
 
 "Compose a Markdown docstring based on a Doxygen XML element"
-function build_docstring(node::EzXML.Node)
+function build_docstring(node::EzXML.Node, ctx::Bool)
     kind = node["kind"]
     if kind == "function"
-        build_function(node)
+        build_function(node, ctx)
     elseif kind in ("enum", "define", "typedef")
         brief_description(node)
     else
@@ -77,12 +84,12 @@ function text(node::EzXML.Node, el::AbstractString)
     s === nothing ? "" : strip(nodecontent(s))
 end
 
-"Wrap the one or multiline docstring in appropriate quotes"
+"Wrap the single- or multi-line docstring in appropriate quotes"
 function addquotes(docstr::AbstractString)
     if '\n' in docstr
         string("\"\"\"\n", docstr, "\"\"\"")
     else
-        # one line docstring
+        # single line docstring
         repr(rstrip(docstr, '.'))
     end
 end
