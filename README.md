@@ -1,9 +1,9 @@
-# Proj4
+# Proj4.jl
 
 [![Build status](https://travis-ci.org/JuliaGeo/Proj4.jl.svg?branch=master)](https://travis-ci.org/JuliaGeo/Proj4.jl)
 [![Build status](https://ci.appveyor.com/api/projects/status/tscgm13l1pvajqqa/branch/master?svg=true)](https://ci.appveyor.com/project/JuliaGeo/proj4-jl/branch/master)
 
-A simple wrapper around the Proj.4 cartographic projections library.
+A simple Julia wrapper around the [PROJ](https://proj.org/) cartographic projections library.
 
 Basic example:
 
@@ -18,4 +18,4 @@ transform(wgs84, utm56, [150 -27 0])
 ```
 
 API documentation for the underlying C API may be found here:
-https://proj.org/
+https://proj.org/development/reference/index.html
