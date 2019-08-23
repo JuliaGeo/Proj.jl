@@ -1,6 +1,23 @@
 using Test
 import Proj4
 
+@testset "New tests" begin
+
+# NOTE(yeesian): example copied from
+#     https://github.com/JuliaGeo/Shapefile.jl/issues/31#issuecomment-523840035
+share_proj = joinpath(dirname(dirname(pathof(Proj4))), "deps/usr/share/proj")
+Proj4.proj_context_set_search_paths(1, [share_proj])
+
+pj_latlon = Proj4.proj_create("EPSG:4326")
+
+esriwkt = """GEOGCS["GCS_WGS_1984",DATUM["D_WGS_1984",SPHEROID["WGS_1984",6378137.0,298.257223563]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433]]"""
+pj2 = Proj4.proj_create(esriwkt)
+
+@test startswith(Proj4.proj_as_wkt(pj2, Proj4.PJ_WKT1_ESRI, C_NULL), "GEOGCS")
+@test startswith(Proj4.proj_as_wkt(pj2, Proj4.PJ_WKT2_2018, C_NULL), "GEOGCRS")
+
+end
+
 @testset "Transformation between CRS" begin
     # taken from http://osgeo-org.1560.x6.nabble.com/PROJ-PROJ-6-0-0-proj-create-operation-factory-context-behavior-td5403470.html
     src = Proj4.proj_create("IGNF:REUN47GAUSSL")   # area : 55.17,-21.42,55.92,-20.76 
@@ -37,21 +54,4 @@ import Proj4
     Proj4.proj_destroy(src)
     Proj4.proj_destroy(tgt)
     # proj_context_destroy(c)
-end
-
-@testset "New tests" begin
-
-# NOTE(yeesian): example copied from
-#     https://github.com/JuliaGeo/Shapefile.jl/issues/31#issuecomment-523840035
-share_proj = joinpath(dirname(dirname(pathof(Proj4))), "deps/usr/share/proj")
-Proj4.proj_context_set_search_paths(1, [share_proj])
-
-pj_latlon = Proj4.proj_create("EPSG:4326")
-
-esriwkt = """GEOGCS["GCS_WGS_1984",DATUM["D_WGS_1984",SPHEROID["WGS_1984",6378137.0,298.257223563]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433]]"""
-pj2 = Proj4.proj_create(esriwkt)
-
-@test startswith(Proj4.proj_as_wkt(pj2, Proj4.PJ_WKT1_ESRI, C_NULL), "GEOGCS")
-@test startswith(Proj4.proj_as_wkt(pj2, Proj4.PJ_WKT2_2018, C_NULL), "GEOGCRS")
-
 end
