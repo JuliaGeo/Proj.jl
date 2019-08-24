@@ -1,8 +1,9 @@
 using Proj4
 using Test
 
-@testset "Proj4" begin
+include("proj6api.jl")
 
+@testset "Proj4" begin
 
 println("""
 C library version: $(Proj4.version)  [\"$(Proj4._get_release())\"]
