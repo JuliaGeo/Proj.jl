@@ -3,11 +3,6 @@ import Proj4
 
 @testset "New tests" begin
 
-# NOTE(yeesian): example copied from
-#     https://github.com/JuliaGeo/Shapefile.jl/issues/31#issuecomment-523840035
-share_proj = joinpath(dirname(dirname(pathof(Proj4))), "deps/usr/share/proj")
-Proj4.proj_context_set_search_paths(1, [share_proj])
-
 pj_latlon = Proj4.proj_create("EPSG:4326")
 
 esriwkt = """GEOGCS["GCS_WGS_1984",DATUM["D_WGS_1984",SPHEROID["WGS_1984",6378137.0,298.257223563]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433]]"""
