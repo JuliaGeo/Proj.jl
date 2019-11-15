@@ -14,15 +14,10 @@ if !isfile(depsjl_path)
 end
 include(depsjl_path)
 
-const PROJ_LIB = Ref{String}()
-
 # Module initialization function
 function __init__()
     # Always check your dependencies from `deps.jl`
     check_deps()
-
-    PROJ_LIB[] = abspath(@__DIR__, "..", "deps", "usr", "share", "proj")
-    proj_context_set_search_paths(1, [PROJ_LIB[]])
 end
 
 include("projection_codes.jl") # ESRI and EPSG projection strings
