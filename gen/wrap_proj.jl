@@ -80,6 +80,15 @@ function rewriter(x::Expr)
                 # keyword arguments must follow positional ones
                 argpos = circshift(argpos, -1)
             end
+            # make all options optional
+            optpos = findfirst(==(:options), fargs)
+            if optpos !== nothing
+                fargs2[optpos] = :(options = C_NULL)
+                # option position in argpos can be different if ctx is already moved
+                argoptpos = findfirst(==(optpos), argpos)
+                splice!(argpos, argoptpos)
+                push!(argpos, optpos)  # add it to the end
+            end
             # apply the argument ordering permutation
             fargs2 = fargs2[argpos]
         end
