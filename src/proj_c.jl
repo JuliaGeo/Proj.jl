@@ -6,23 +6,23 @@ function proj_context_create()
     ccall((:proj_context_create, libproj), Ptr{PJ_CONTEXT}, ())
 end
 
-function proj_context_destroy(ctx=C_NULL)
+function proj_context_destroy(ctx = C_NULL)
     ccall((:proj_context_destroy, libproj), Ptr{PJ_CONTEXT}, (Ptr{PJ_CONTEXT},), ctx)
 end
 
-function proj_context_set_file_finder(finder, user_data, ctx=C_NULL)
+function proj_context_set_file_finder(finder, user_data, ctx = C_NULL)
     ccall((:proj_context_set_file_finder, libproj), Cvoid, (Ptr{PJ_CONTEXT}, proj_file_finder, Ptr{Cvoid}), ctx, finder, user_data)
 end
 
-function proj_context_set_search_paths(count_paths, paths, ctx=C_NULL)
+function proj_context_set_search_paths(count_paths, paths, ctx = C_NULL)
     ccall((:proj_context_set_search_paths, libproj), Cvoid, (Ptr{PJ_CONTEXT}, Cint, Ptr{Cstring}), ctx, count_paths, paths)
 end
 
-function proj_context_use_proj4_init_rules(enable, ctx=C_NULL)
+function proj_context_use_proj4_init_rules(enable, ctx = C_NULL)
     ccall((:proj_context_use_proj4_init_rules, libproj), Cvoid, (Ptr{PJ_CONTEXT}, Cint), ctx, enable)
 end
 
-function proj_context_get_use_proj4_init_rules(from_legacy_code_path, ctx=C_NULL)
+function proj_context_get_use_proj4_init_rules(from_legacy_code_path, ctx = C_NULL)
     ccall((:proj_context_get_use_proj4_init_rules, libproj), Cint, (Ptr{PJ_CONTEXT}, Cint), ctx, from_legacy_code_path)
 end
 
@@ -39,15 +39,15 @@ Instantiate an object from a WKT string, PROJ string or object code (like "EPSG:
 ### Returns
 Object that must be unreferenced with proj_destroy(), or NULL in case of error.
 """
-function proj_create(definition, ctx=C_NULL)
+function proj_create(definition, ctx = C_NULL)
     ccall((:proj_create, libproj), Ptr{PJ}, (Ptr{PJ_CONTEXT}, Cstring), ctx, definition)
 end
 
-function proj_create_argv(argc, argv, ctx=C_NULL)
+function proj_create_argv(argc, argv, ctx = C_NULL)
     ccall((:proj_create_argv, libproj), Ptr{PJ}, (Ptr{PJ_CONTEXT}, Cint, Ptr{Cstring}), ctx, argc, argv)
 end
 
-function proj_create_crs_to_crs(source_crs, target_crs, area, ctx=C_NULL)
+function proj_create_crs_to_crs(source_crs, target_crs, area, ctx = C_NULL)
     ccall((:proj_create_crs_to_crs, libproj), Ptr{PJ}, (Ptr{PJ_CONTEXT}, Cstring, Cstring, Ptr{PJ_AREA}), ctx, source_crs, target_crs, area)
 end
 
@@ -64,7 +64,7 @@ Returns a PJ* object whose axis order is the one expected for visualization purp
 ### Returns
 a new PJ* object to free with proj_destroy() in case of success, or nullptr in case of error
 """
-function proj_normalize_for_visualization(obj, ctx=C_NULL)
+function proj_normalize_for_visualization(obj, ctx = C_NULL)
     ccall((:proj_normalize_for_visualization, libproj), Ptr{PJ}, (Ptr{PJ_CONTEXT}, Ptr{PJ}), ctx, obj)
 end
 
@@ -132,7 +132,7 @@ function proj_geod(P, a, b)
     ccall((:proj_geod, libproj), PJ_COORD, (Ptr{PJ}, PJ_COORD, PJ_COORD), P, a, b)
 end
 
-function proj_context_errno(ctx=C_NULL)
+function proj_context_errno(ctx = C_NULL)
     ccall((:proj_context_errno, libproj), Cint, (Ptr{PJ_CONTEXT},), ctx)
 end
 
@@ -156,11 +156,11 @@ function proj_errno_string(err)
     unsafe_string(ccall((:proj_errno_string, libproj), Cstring, (Cint,), err))
 end
 
-function proj_log_level(log_level, ctx=C_NULL)
+function proj_log_level(log_level, ctx = C_NULL)
     ccall((:proj_log_level, libproj), PJ_LOG_LEVEL, (Ptr{PJ_CONTEXT}, PJ_LOG_LEVEL), ctx, log_level)
 end
 
-function proj_log_func(app_data, logf, ctx=C_NULL)
+function proj_log_func(app_data, logf, ctx = C_NULL)
     ccall((:proj_log_func, libproj), Cvoid, (Ptr{PJ_CONTEXT}, Ptr{Cvoid}, PJ_LOG_FUNCTION), ctx, app_data, logf)
 end
 
@@ -244,7 +244,7 @@ Explicitly point to the main PROJ CRS and coordinate operation definition databa
 ### Returns
 TRUE in case of success
 """
-function proj_context_set_database_path(dbPath, auxDbPaths, options, ctx=C_NULL)
+function proj_context_set_database_path(dbPath, auxDbPaths, options, ctx = C_NULL)
     ccall((:proj_context_set_database_path, libproj), Cint, (Ptr{PJ_CONTEXT}, Cstring, Ptr{Cstring}, Ptr{Cstring}), ctx, dbPath, auxDbPaths, options)
 end
 
@@ -259,7 +259,7 @@ Returns the path to the database.
 ### Returns
 path, or nullptr
 """
-function proj_context_get_database_path(ctx=C_NULL)
+function proj_context_get_database_path(ctx = C_NULL)
     unsafe_string(ccall((:proj_context_get_database_path, libproj), Cstring, (Ptr{PJ_CONTEXT},), ctx))
 end
 
@@ -276,7 +276,7 @@ Return a metadata from the database.
 ### Returns
 value, or nullptr
 """
-function proj_context_get_database_metadata(key, ctx=C_NULL)
+function proj_context_get_database_metadata(key, ctx = C_NULL)
     unsafe_string(ccall((:proj_context_get_database_metadata, libproj), Cstring, (Ptr{PJ_CONTEXT}, Cstring), ctx, key))
 end
 
@@ -290,7 +290,7 @@ Guess the "dialect" of the WKT string.
 * **wkt**: String (must not be NULL)
 * **ctx**: PROJ context, or NULL for default context
 """
-function proj_context_guess_wkt_dialect(wkt, ctx=C_NULL)
+function proj_context_guess_wkt_dialect(wkt, ctx = C_NULL)
     ccall((:proj_context_guess_wkt_dialect, libproj), PJ_GUESSED_WKT_DIALECT, (Ptr{PJ_CONTEXT}, Cstring), ctx, wkt)
 end
 
@@ -315,7 +315,7 @@ STRICT=YES/NO. Defaults to NO. When set to YES, strict validation will be enable
 ### Returns
 Object that must be unreferenced with proj_destroy(), or NULL in case of error.
 """
-function proj_create_from_wkt(wkt, options, out_warnings, out_grammar_errors, ctx=C_NULL)
+function proj_create_from_wkt(wkt, options, out_warnings, out_grammar_errors, ctx = C_NULL)
     ccall((:proj_create_from_wkt, libproj), Ptr{PJ}, (Ptr{PJ_CONTEXT}, Cstring, Ptr{Cstring}, Ptr{PROJ_STRING_LIST}, Ptr{PROJ_STRING_LIST}), ctx, wkt, options, out_warnings, out_grammar_errors)
 end
 
@@ -340,7 +340,7 @@ Instantiate an object from a database lookup.
 ### Returns
 Object that must be unreferenced with proj_destroy(), or NULL in case of error.
 """
-function proj_create_from_database(auth_name, code, category, usePROJAlternativeGridNames, options, ctx=C_NULL)
+function proj_create_from_database(auth_name, code, category, usePROJAlternativeGridNames, options, ctx = C_NULL)
     ccall((:proj_create_from_database, libproj), Ptr{PJ}, (Ptr{PJ_CONTEXT}, Cstring, Cstring, PJ_CATEGORY, Cint, Ptr{Cstring}), ctx, auth_name, code, category, usePROJAlternativeGridNames, options)
 end
 
@@ -365,7 +365,7 @@ Get information for a unit of measure from a database lookup.
 ### Returns
 TRUE in case of success
 """
-function proj_uom_get_info_from_database(auth_name, code, out_name, out_conv_factor, out_category, ctx=C_NULL)
+function proj_uom_get_info_from_database(auth_name, code, out_name, out_conv_factor, out_category, ctx = C_NULL)
     ccall((:proj_uom_get_info_from_database, libproj), Cint, (Ptr{PJ_CONTEXT}, Cstring, Cstring, Ptr{Cstring}, Ptr{Cdouble}, Ptr{Cstring}), ctx, auth_name, code, out_name, out_conv_factor, out_category)
 end
 
@@ -382,7 +382,7 @@ end
 ### Returns
 Object that must be unreferenced with proj_destroy(), or NULL in case of error.
 """
-function proj_clone(obj, ctx=C_NULL)
+function proj_clone(obj, ctx = C_NULL)
     ccall((:proj_clone, libproj), Ptr{PJ}, (Ptr{PJ_CONTEXT}, Ptr{PJ}), ctx, obj)
 end
 
@@ -411,7 +411,7 @@ Return a list of objects by their name.
 ### Returns
 a result set that must be unreferenced with proj_list_destroy(), or NULL in case of error.
 """
-function proj_create_from_name(auth_name, searchedName, types, typesCount, approximateMatch, limitResultCount, options, ctx=C_NULL)
+function proj_create_from_name(auth_name, searchedName, types, typesCount, approximateMatch, limitResultCount, options, ctx = C_NULL)
     ccall((:proj_create_from_name, libproj), Ptr{PJ_OBJ_LIST}, (Ptr{PJ_CONTEXT}, Cstring, Cstring, Ptr{PJ_TYPE}, Csize_t, Cint, Csize_t, Ptr{Cstring}), ctx, auth_name, searchedName, types, typesCount, approximateMatch, limitResultCount, options)
 end
 
@@ -458,7 +458,7 @@ Return a list of non-deprecated objects related to the passed one.
 ### Returns
 a result set that must be unreferenced with proj_list_destroy(), or NULL in case of error.
 """
-function proj_get_non_deprecated(obj, ctx=C_NULL)
+function proj_get_non_deprecated(obj, ctx = C_NULL)
     ccall((:proj_get_non_deprecated, libproj), Ptr{PJ_OBJ_LIST}, (Ptr{PJ_CONTEXT}, Ptr{PJ}), ctx, obj)
 end
 
@@ -565,7 +565,7 @@ Return the area of use of an object.
 ### Returns
 TRUE in case of success, FALSE in case of error or if the area of use is unknown.
 """
-function proj_get_area_of_use(obj, out_west_lon_degree, out_south_lat_degree, out_east_lon_degree, out_north_lat_degree, out_area_name, ctx=C_NULL)
+function proj_get_area_of_use(obj, out_west_lon_degree, out_south_lat_degree, out_east_lon_degree, out_north_lat_degree, out_area_name, ctx = C_NULL)
     ccall((:proj_get_area_of_use, libproj), Cint, (Ptr{PJ_CONTEXT}, Ptr{PJ}, Ptr{Cdouble}, Ptr{Cdouble}, Ptr{Cdouble}, Ptr{Cdouble}, Ptr{Cstring}), ctx, obj, out_west_lon_degree, out_south_lat_degree, out_east_lon_degree, out_north_lat_degree, out_area_name)
 end
 
@@ -594,7 +594,7 @@ OUTPUT_AXIS=AUTO/YES/NO. In AUTO mode, axis will be output for WKT2 variants, fo
 ### Returns
 a string, or NULL in case of error.
 """
-function proj_as_wkt(obj, type, options, ctx=C_NULL)
+function proj_as_wkt(obj, type, options, ctx = C_NULL)
     unsafe_string(ccall((:proj_as_wkt, libproj), Cstring, (Ptr{PJ_CONTEXT}, Ptr{PJ}, PJ_WKT_TYPE, Ptr{Cstring}), ctx, obj, type, options))
 end
 
@@ -615,7 +615,7 @@ Get a PROJ string representation of an object.
 ### Returns
 a string, or NULL in case of error.
 """
-function proj_as_proj_string(obj, type, options, ctx=C_NULL)
+function proj_as_proj_string(obj, type, options, ctx = C_NULL)
     unsafe_string(ccall((:proj_as_proj_string, libproj), Cstring, (Ptr{PJ_CONTEXT}, Ptr{PJ}, PJ_PROJ_STRING_TYPE, Ptr{Cstring}), ctx, obj, type, options))
 end
 
@@ -632,7 +632,7 @@ Return the base CRS of a BoundCRS or a DerivedCRS/ProjectedCRS, or the source CR
 ### Returns
 Object that must be unreferenced with proj_destroy(), or NULL in case of error, or missing source CRS.
 """
-function proj_get_source_crs(obj, ctx=C_NULL)
+function proj_get_source_crs(obj, ctx = C_NULL)
     ccall((:proj_get_source_crs, libproj), Ptr{PJ}, (Ptr{PJ_CONTEXT}, Ptr{PJ}), ctx, obj)
 end
 
@@ -649,7 +649,7 @@ Return the hub CRS of a BoundCRS or the target CRS of a CoordinateOperation.
 ### Returns
 Object that must be unreferenced with proj_destroy(), or NULL in case of error, or missing target CRS.
 """
-function proj_get_target_crs(obj, ctx=C_NULL)
+function proj_get_target_crs(obj, ctx = C_NULL)
     ccall((:proj_get_target_crs, libproj), Ptr{PJ}, (Ptr{PJ_CONTEXT}, Ptr{PJ}), ctx, obj)
 end
 
@@ -672,7 +672,7 @@ Identify the CRS with reference CRSs.
 ### Returns
 a list of matching reference CRS, or nullptr in case of error.
 """
-function proj_identify(obj, auth_name, options, out_confidence, ctx=C_NULL)
+function proj_identify(obj, auth_name, options, out_confidence, ctx = C_NULL)
     ccall((:proj_identify, libproj), Ptr{PJ_OBJ_LIST}, (Ptr{PJ_CONTEXT}, Ptr{PJ}, Cstring, Ptr{Cstring}, Ptr{Ptr{Cint}}), ctx, obj, auth_name, options, out_confidence)
 end
 
@@ -696,7 +696,7 @@ Return the list of authorities used in the database.
 ### Returns
 a NULL terminated list of NUL-terminated strings that must be freed with proj_string_list_destroy(), or NULL in case of error.
 """
-function proj_get_authorities_from_database(ctx=C_NULL)
+function proj_get_authorities_from_database(ctx = C_NULL)
     ccall((:proj_get_authorities_from_database, libproj), PROJ_STRING_LIST, (Ptr{PJ_CONTEXT},), ctx)
 end
 
@@ -717,7 +717,7 @@ Returns the set of authority codes of the given object type.
 ### Returns
 a NULL terminated list of NUL-terminated strings that must be freed with proj_string_list_destroy(), or NULL in case of error.
 """
-function proj_get_codes_from_database(auth_name, type, allow_deprecated, ctx=C_NULL)
+function proj_get_codes_from_database(auth_name, type, allow_deprecated, ctx = C_NULL)
     ccall((:proj_get_codes_from_database, libproj), PROJ_STRING_LIST, (Ptr{PJ_CONTEXT}, Cstring, PJ_TYPE, Cint), ctx, auth_name, type, allow_deprecated)
 end
 
@@ -759,7 +759,7 @@ Enumerate CRS objects from the database, taking into account various criteria.
 ### Returns
 an array of PROJ_CRS_INFO* pointers to be freed with proj_crs_info_list_destroy(), or NULL in case of error.
 """
-function proj_get_crs_info_list_from_database(auth_name, params, out_result_count, ctx=C_NULL)
+function proj_get_crs_info_list_from_database(auth_name, params, out_result_count, ctx = C_NULL)
     ccall((:proj_get_crs_info_list_from_database, libproj), Ptr{Ptr{PROJ_CRS_INFO}}, (Ptr{PJ_CONTEXT}, Cstring, Ptr{PROJ_CRS_LIST_PARAMETERS}, Ptr{Cint}), ctx, auth_name, params, out_result_count)
 end
 
@@ -785,7 +785,7 @@ Instantiate a context for building coordinate operations between two CRS.
 ### Returns
 Object that must be unreferenced with proj_operation_factory_context_destroy(), or NULL in case of error.
 """
-function proj_create_operation_factory_context(authority, ctx=C_NULL)
+function proj_create_operation_factory_context(authority, ctx = C_NULL)
     ccall((:proj_create_operation_factory_context, libproj), Ptr{PJ_OPERATION_FACTORY_CONTEXT}, (Ptr{PJ_CONTEXT}, Cstring), ctx, authority)
 end
 
@@ -797,7 +797,7 @@ Drops a reference on an object.
 ### Parameters
 * **ctx**: Object, or NULL.
 """
-function proj_operation_factory_context_destroy(ctx=C_NULL)
+function proj_operation_factory_context_destroy(ctx = C_NULL)
     ccall((:proj_operation_factory_context_destroy, libproj), Cvoid, (Ptr{PJ_OPERATION_FACTORY_CONTEXT},), ctx)
 end
 
@@ -813,7 +813,7 @@ Set the desired accuracy of the resulting coordinate transformations.
 * **accuracy**: Accuracy in meter (or 0 to disable the filter).
 * **ctx**: PROJ context, or NULL for default context
 """
-function proj_operation_factory_context_set_desired_accuracy(factory_ctx, accuracy, ctx=C_NULL)
+function proj_operation_factory_context_set_desired_accuracy(factory_ctx, accuracy, ctx = C_NULL)
     ccall((:proj_operation_factory_context_set_desired_accuracy, libproj), Cvoid, (Ptr{PJ_CONTEXT}, Ptr{PJ_OPERATION_FACTORY_CONTEXT}, Cdouble), ctx, factory_ctx, accuracy)
 end
 
@@ -835,7 +835,7 @@ Set the desired area of interest for the resulting coordinate transformations.
 * **north_lat_degree**: North latitude (in degrees).
 * **ctx**: PROJ context, or NULL for default context
 """
-function proj_operation_factory_context_set_area_of_interest(factory_ctx, west_lon_degree, south_lat_degree, east_lon_degree, north_lat_degree, ctx=C_NULL)
+function proj_operation_factory_context_set_area_of_interest(factory_ctx, west_lon_degree, south_lat_degree, east_lon_degree, north_lat_degree, ctx = C_NULL)
     ccall((:proj_operation_factory_context_set_area_of_interest, libproj), Cvoid, (Ptr{PJ_CONTEXT}, Ptr{PJ_OPERATION_FACTORY_CONTEXT}, Cdouble, Cdouble, Cdouble, Cdouble), ctx, factory_ctx, west_lon_degree, south_lat_degree, east_lon_degree, north_lat_degree)
 end
 
@@ -851,7 +851,7 @@ Set how source and target CRS extent should be used when considering if a transf
 * **use**: How source and target CRS extent should be used.
 * **ctx**: PROJ context, or NULL for default context
 """
-function proj_operation_factory_context_set_crs_extent_use(factory_ctx, use, ctx=C_NULL)
+function proj_operation_factory_context_set_crs_extent_use(factory_ctx, use, ctx = C_NULL)
     ccall((:proj_operation_factory_context_set_crs_extent_use, libproj), Cvoid, (Ptr{PJ_CONTEXT}, Ptr{PJ_OPERATION_FACTORY_CONTEXT}, PROJ_CRS_EXTENT_USE), ctx, factory_ctx, use)
 end
 
@@ -867,7 +867,7 @@ Set the spatial criterion to use when comparing the area of validity of coordina
 * **criterion**: patial criterion to use
 * **ctx**: PROJ context, or NULL for default context
 """
-function proj_operation_factory_context_set_spatial_criterion(factory_ctx, criterion, ctx=C_NULL)
+function proj_operation_factory_context_set_spatial_criterion(factory_ctx, criterion, ctx = C_NULL)
     ccall((:proj_operation_factory_context_set_spatial_criterion, libproj), Cvoid, (Ptr{PJ_CONTEXT}, Ptr{PJ_OPERATION_FACTORY_CONTEXT}, PROJ_SPATIAL_CRITERION), ctx, factory_ctx, criterion)
 end
 
@@ -883,7 +883,7 @@ Set how grid availability is used.
 * **use**: how grid availability is used.
 * **ctx**: PROJ context, or NULL for default context
 """
-function proj_operation_factory_context_set_grid_availability_use(factory_ctx, use, ctx=C_NULL)
+function proj_operation_factory_context_set_grid_availability_use(factory_ctx, use, ctx = C_NULL)
     ccall((:proj_operation_factory_context_set_grid_availability_use, libproj), Cvoid, (Ptr{PJ_CONTEXT}, Ptr{PJ_OPERATION_FACTORY_CONTEXT}, PROJ_GRID_AVAILABILITY_USE), ctx, factory_ctx, use)
 end
 
@@ -899,7 +899,7 @@ Set whether PROJ alternative grid names should be substituted to the official au
 * **usePROJNames**: whether PROJ alternative grid names should be used
 * **ctx**: PROJ context, or NULL for default context
 """
-function proj_operation_factory_context_set_use_proj_alternative_grid_names(factory_ctx, usePROJNames, ctx=C_NULL)
+function proj_operation_factory_context_set_use_proj_alternative_grid_names(factory_ctx, usePROJNames, ctx = C_NULL)
     ccall((:proj_operation_factory_context_set_use_proj_alternative_grid_names, libproj), Cvoid, (Ptr{PJ_CONTEXT}, Ptr{PJ_OPERATION_FACTORY_CONTEXT}, Cint), ctx, factory_ctx, usePROJNames)
 end
 
@@ -915,7 +915,7 @@ Set whether an intermediate pivot CRS can be used for researching coordinate ope
 * **use**: whether and how intermediate CRS may be used.
 * **ctx**: PROJ context, or NULL for default context
 """
-function proj_operation_factory_context_set_allow_use_intermediate_crs(factory_ctx, use, ctx=C_NULL)
+function proj_operation_factory_context_set_allow_use_intermediate_crs(factory_ctx, use, ctx = C_NULL)
     ccall((:proj_operation_factory_context_set_allow_use_intermediate_crs, libproj), Cvoid, (Ptr{PJ_CONTEXT}, Ptr{PJ_OPERATION_FACTORY_CONTEXT}, PROJ_INTERMEDIATE_CRS_USE), ctx, factory_ctx, use)
 end
 
@@ -931,7 +931,7 @@ Restrict the potential pivot CRSs that can be used when trying to build a coordi
 * **list_of_auth_name_codes**: an array of strings NLL terminated, with the format { "auth_name1", "code1", "auth_name2", "code2", ... NULL }
 * **ctx**: PROJ context, or NULL for default context
 """
-function proj_operation_factory_context_set_allowed_intermediate_crs(factory_ctx, list_of_auth_name_codes, ctx=C_NULL)
+function proj_operation_factory_context_set_allowed_intermediate_crs(factory_ctx, list_of_auth_name_codes, ctx = C_NULL)
     ccall((:proj_operation_factory_context_set_allowed_intermediate_crs, libproj), Cvoid, (Ptr{PJ_CONTEXT}, Ptr{PJ_OPERATION_FACTORY_CONTEXT}, Ptr{Cstring}), ctx, factory_ctx, list_of_auth_name_codes)
 end
 
@@ -952,7 +952,7 @@ Find a list of CoordinateOperation from source_crs to target_crs.
 ### Returns
 a result set that must be unreferenced with proj_list_destroy(), or NULL in case of error.
 """
-function proj_create_operations(source_crs, target_crs, operationContext, ctx=C_NULL)
+function proj_create_operations(source_crs, target_crs, operationContext, ctx = C_NULL)
     ccall((:proj_create_operations, libproj), Ptr{PJ_OBJ_LIST}, (Ptr{PJ_CONTEXT}, Ptr{PJ}, Ptr{PJ}, Ptr{PJ_OPERATION_FACTORY_CONTEXT}), ctx, source_crs, target_crs, operationContext)
 end
 
@@ -983,7 +983,7 @@ Return an object from the result set.
 ### Returns
 a new object that must be unreferenced with proj_destroy(), or nullptr in case of error.
 """
-function proj_list_get(result, index, ctx=C_NULL)
+function proj_list_get(result, index, ctx = C_NULL)
     ccall((:proj_list_get, libproj), Ptr{PJ}, (Ptr{PJ_CONTEXT}, Ptr{PJ_OBJ_LIST}, Cint), ctx, result, index)
 end
 
@@ -1012,7 +1012,7 @@ Get the geodeticCRS / geographicCRS from a CRS.
 ### Returns
 Object that must be unreferenced with proj_destroy(), or NULL in case of error.
 """
-function proj_crs_get_geodetic_crs(crs, ctx=C_NULL)
+function proj_crs_get_geodetic_crs(crs, ctx = C_NULL)
     ccall((:proj_crs_get_geodetic_crs, libproj), Ptr{PJ}, (Ptr{PJ_CONTEXT}, Ptr{PJ}), ctx, crs)
 end
 
@@ -1029,7 +1029,7 @@ Get the horizontal datum from a CRS.
 ### Returns
 Object that must be unreferenced with proj_destroy(), or NULL in case of error.
 """
-function proj_crs_get_horizontal_datum(crs, ctx=C_NULL)
+function proj_crs_get_horizontal_datum(crs, ctx = C_NULL)
     ccall((:proj_crs_get_horizontal_datum, libproj), Ptr{PJ}, (Ptr{PJ_CONTEXT}, Ptr{PJ}), ctx, crs)
 end
 
@@ -1048,7 +1048,7 @@ Get a CRS component from a CompoundCRS.
 ### Returns
 Object that must be unreferenced with proj_destroy(), or NULL in case of error.
 """
-function proj_crs_get_sub_crs(crs, index, ctx=C_NULL)
+function proj_crs_get_sub_crs(crs, index, ctx = C_NULL)
     ccall((:proj_crs_get_sub_crs, libproj), Ptr{PJ}, (Ptr{PJ_CONTEXT}, Ptr{PJ}, Cint), ctx, crs, index)
 end
 
@@ -1065,7 +1065,7 @@ Returns the datum of a SingleCRS.
 ### Returns
 Object that must be unreferenced with proj_destroy(), or NULL in case of error (or if there is no datum)
 """
-function proj_crs_get_datum(crs, ctx=C_NULL)
+function proj_crs_get_datum(crs, ctx = C_NULL)
     ccall((:proj_crs_get_datum, libproj), Ptr{PJ}, (Ptr{PJ_CONTEXT}, Ptr{PJ}), ctx, crs)
 end
 
@@ -1082,7 +1082,7 @@ Returns the coordinate system of a SingleCRS.
 ### Returns
 Object that must be unreferenced with proj_destroy(), or NULL in case of error.
 """
-function proj_crs_get_coordinate_system(crs, ctx=C_NULL)
+function proj_crs_get_coordinate_system(crs, ctx = C_NULL)
     ccall((:proj_crs_get_coordinate_system, libproj), Ptr{PJ}, (Ptr{PJ_CONTEXT}, Ptr{PJ}), ctx, crs)
 end
 
@@ -1099,7 +1099,7 @@ Returns the type of the coordinate system.
 ### Returns
 type, or PJ_CS_TYPE_UNKNOWN in case of error.
 """
-function proj_cs_get_type(cs, ctx=C_NULL)
+function proj_cs_get_type(cs, ctx = C_NULL)
     ccall((:proj_cs_get_type, libproj), PJ_COORDINATE_SYSTEM_TYPE, (Ptr{PJ_CONTEXT}, Ptr{PJ}), ctx, cs)
 end
 
@@ -1116,7 +1116,7 @@ Returns the number of axis of the coordinate system.
 ### Returns
 number of axis, or -1 in case of error.
 """
-function proj_cs_get_axis_count(cs, ctx=C_NULL)
+function proj_cs_get_axis_count(cs, ctx = C_NULL)
     ccall((:proj_cs_get_axis_count, libproj), Cint, (Ptr{PJ_CONTEXT}, Ptr{PJ}), ctx, cs)
 end
 
@@ -1149,7 +1149,7 @@ Returns information on an axis.
 ### Returns
 TRUE in case of success
 """
-function proj_cs_get_axis_info(cs, index, out_name, out_abbrev, out_direction, out_unit_conv_factor, out_unit_name, out_unit_auth_name, out_unit_code, ctx=C_NULL)
+function proj_cs_get_axis_info(cs, index, out_name, out_abbrev, out_direction, out_unit_conv_factor, out_unit_name, out_unit_auth_name, out_unit_code, ctx = C_NULL)
     ccall((:proj_cs_get_axis_info, libproj), Cint, (Ptr{PJ_CONTEXT}, Ptr{PJ}, Cint, Ptr{Cstring}, Ptr{Cstring}, Ptr{Cstring}, Ptr{Cdouble}, Ptr{Cstring}, Ptr{Cstring}, Ptr{Cstring}), ctx, cs, index, out_name, out_abbrev, out_direction, out_unit_conv_factor, out_unit_name, out_unit_auth_name, out_unit_code)
 end
 
@@ -1166,7 +1166,7 @@ Get the ellipsoid from a CRS or a GeodeticReferenceFrame.
 ### Returns
 Object that must be unreferenced with proj_destroy(), or NULL in case of error.
 """
-function proj_get_ellipsoid(obj, ctx=C_NULL)
+function proj_get_ellipsoid(obj, ctx = C_NULL)
     ccall((:proj_get_ellipsoid, libproj), Ptr{PJ}, (Ptr{PJ_CONTEXT}, Ptr{PJ}), ctx, obj)
 end
 
@@ -1191,7 +1191,7 @@ Return ellipsoid parameters.
 ### Returns
 TRUE in case of success.
 """
-function proj_ellipsoid_get_parameters(ellipsoid, out_semi_major_metre, out_semi_minor_metre, out_is_semi_minor_computed, out_inv_flattening, ctx=C_NULL)
+function proj_ellipsoid_get_parameters(ellipsoid, out_semi_major_metre, out_semi_minor_metre, out_is_semi_minor_computed, out_inv_flattening, ctx = C_NULL)
     ccall((:proj_ellipsoid_get_parameters, libproj), Cint, (Ptr{PJ_CONTEXT}, Ptr{PJ}, Ptr{Cdouble}, Ptr{Cdouble}, Ptr{Cint}, Ptr{Cdouble}), ctx, ellipsoid, out_semi_major_metre, out_semi_minor_metre, out_is_semi_minor_computed, out_inv_flattening)
 end
 
@@ -1208,7 +1208,7 @@ Get the prime meridian of a CRS or a GeodeticReferenceFrame.
 ### Returns
 Object that must be unreferenced with proj_destroy(), or NULL in case of error.
 """
-function proj_get_prime_meridian(obj, ctx=C_NULL)
+function proj_get_prime_meridian(obj, ctx = C_NULL)
     ccall((:proj_get_prime_meridian, libproj), Ptr{PJ}, (Ptr{PJ_CONTEXT}, Ptr{PJ}), ctx, obj)
 end
 
@@ -1231,7 +1231,7 @@ Return prime meridian parameters.
 ### Returns
 TRUE in case of success.
 """
-function proj_prime_meridian_get_parameters(prime_meridian, out_longitude, out_unit_conv_factor, out_unit_name, ctx=C_NULL)
+function proj_prime_meridian_get_parameters(prime_meridian, out_longitude, out_unit_conv_factor, out_unit_name, ctx = C_NULL)
     ccall((:proj_prime_meridian_get_parameters, libproj), Cint, (Ptr{PJ_CONTEXT}, Ptr{PJ}, Ptr{Cdouble}, Ptr{Cdouble}, Ptr{Cstring}), ctx, prime_meridian, out_longitude, out_unit_conv_factor, out_unit_name)
 end
 
@@ -1248,7 +1248,7 @@ Return the Conversion of a DerivedCRS (such as a ProjectedCRS), or the Transform
 ### Returns
 Object of type SingleOperation that must be unreferenced with proj_destroy(), or NULL in case of error.
 """
-function proj_crs_get_coordoperation(crs, ctx=C_NULL)
+function proj_crs_get_coordoperation(crs, ctx = C_NULL)
     ccall((:proj_crs_get_coordoperation, libproj), Ptr{PJ}, (Ptr{PJ_CONTEXT}, Ptr{PJ}), ctx, crs)
 end
 
@@ -1271,7 +1271,7 @@ Return information on the operation method of the SingleOperation.
 ### Returns
 TRUE in case of success.
 """
-function proj_coordoperation_get_method_info(coordoperation, out_method_name, out_method_auth_name, out_method_code, ctx=C_NULL)
+function proj_coordoperation_get_method_info(coordoperation, out_method_name, out_method_auth_name, out_method_code, ctx = C_NULL)
     ccall((:proj_coordoperation_get_method_info, libproj), Cint, (Ptr{PJ_CONTEXT}, Ptr{PJ}, Ptr{Cstring}, Ptr{Cstring}, Ptr{Cstring}), ctx, coordoperation, out_method_name, out_method_auth_name, out_method_code)
 end
 
@@ -1288,7 +1288,7 @@ Return whether a coordinate operation can be instantiated as a PROJ pipeline, ch
 ### Returns
 TRUE or FALSE.
 """
-function proj_coordoperation_is_instantiable(coordoperation, ctx=C_NULL)
+function proj_coordoperation_is_instantiable(coordoperation, ctx = C_NULL)
     ccall((:proj_coordoperation_is_instantiable, libproj), Cint, (Ptr{PJ_CONTEXT}, Ptr{PJ}), ctx, coordoperation)
 end
 
@@ -1305,7 +1305,7 @@ Return whether a coordinate operation has a "ballpark" transformation, that is a
 ### Returns
 TRUE or FALSE.
 """
-function proj_coordoperation_has_ballpark_transformation(coordoperation, ctx=C_NULL)
+function proj_coordoperation_has_ballpark_transformation(coordoperation, ctx = C_NULL)
     ccall((:proj_coordoperation_has_ballpark_transformation, libproj), Cint, (Ptr{PJ_CONTEXT}, Ptr{PJ}), ctx, coordoperation)
 end
 
@@ -1319,7 +1319,7 @@ Return the number of parameters of a SingleOperation.
 * **coordoperation**: Object of type SingleOperation or derived classes (must not be NULL)
 * **ctx**: PROJ context, or NULL for default context
 """
-function proj_coordoperation_get_param_count(coordoperation, ctx=C_NULL)
+function proj_coordoperation_get_param_count(coordoperation, ctx = C_NULL)
     ccall((:proj_coordoperation_get_param_count, libproj), Cint, (Ptr{PJ_CONTEXT}, Ptr{PJ}), ctx, coordoperation)
 end
 
@@ -1338,7 +1338,7 @@ Return the index of a parameter of a SingleOperation.
 ### Returns
 index (>=0), or -1 in case of error.
 """
-function proj_coordoperation_get_param_index(coordoperation, name, ctx=C_NULL)
+function proj_coordoperation_get_param_index(coordoperation, name, ctx = C_NULL)
     ccall((:proj_coordoperation_get_param_index, libproj), Cint, (Ptr{PJ_CONTEXT}, Ptr{PJ}, Cstring), ctx, coordoperation, name)
 end
 
@@ -1377,7 +1377,7 @@ Return a parameter of a SingleOperation.
 ### Returns
 TRUE in case of success.
 """
-function proj_coordoperation_get_param(coordoperation, index, out_name, out_auth_name, out_code, out_value, out_value_string, out_unit_conv_factor, out_unit_name, out_unit_auth_name, out_unit_code, out_unit_category, ctx=C_NULL)
+function proj_coordoperation_get_param(coordoperation, index, out_name, out_auth_name, out_code, out_value, out_value_string, out_unit_conv_factor, out_unit_name, out_unit_auth_name, out_unit_code, out_unit_category, ctx = C_NULL)
     ccall((:proj_coordoperation_get_param, libproj), Cint, (Ptr{PJ_CONTEXT}, Ptr{PJ}, Cint, Ptr{Cstring}, Ptr{Cstring}, Ptr{Cstring}, Ptr{Cdouble}, Ptr{Cstring}, Ptr{Cdouble}, Ptr{Cstring}, Ptr{Cstring}, Ptr{Cstring}, Ptr{Cstring}), ctx, coordoperation, index, out_name, out_auth_name, out_code, out_value, out_value_string, out_unit_conv_factor, out_unit_name, out_unit_auth_name, out_unit_code, out_unit_category)
 end
 
@@ -1391,7 +1391,7 @@ Return the number of grids used by a CoordinateOperation.
 * **coordoperation**: Object of type CoordinateOperation or derived classes (must not be NULL)
 * **ctx**: PROJ context, or NULL for default context
 """
-function proj_coordoperation_get_grid_used_count(coordoperation, ctx=C_NULL)
+function proj_coordoperation_get_grid_used_count(coordoperation, ctx = C_NULL)
     ccall((:proj_coordoperation_get_grid_used_count, libproj), Cint, (Ptr{PJ_CONTEXT}, Ptr{PJ}), ctx, coordoperation)
 end
 
@@ -1424,7 +1424,7 @@ Return a parameter of a SingleOperation.
 ### Returns
 TRUE in case of success.
 """
-function proj_coordoperation_get_grid_used(coordoperation, index, out_short_name, out_full_name, out_package_name, out_url, out_direct_download, out_open_license, out_available, ctx=C_NULL)
+function proj_coordoperation_get_grid_used(coordoperation, index, out_short_name, out_full_name, out_package_name, out_url, out_direct_download, out_open_license, out_available, ctx = C_NULL)
     ccall((:proj_coordoperation_get_grid_used, libproj), Cint, (Ptr{PJ_CONTEXT}, Ptr{PJ}, Cint, Ptr{Cstring}, Ptr{Cstring}, Ptr{Cstring}, Ptr{Cstring}, Ptr{Cint}, Ptr{Cint}, Ptr{Cint}), ctx, coordoperation, index, out_short_name, out_full_name, out_package_name, out_url, out_direct_download, out_open_license, out_available)
 end
 
@@ -1441,7 +1441,7 @@ Return the accuracy (in metre) of a coordinate operation.
 ### Returns
 the accuracy, or a negative value if unknown or in case of error.
 """
-function proj_coordoperation_get_accuracy(obj, ctx=C_NULL)
+function proj_coordoperation_get_accuracy(obj, ctx = C_NULL)
     ccall((:proj_coordoperation_get_accuracy, libproj), Cdouble, (Ptr{PJ_CONTEXT}, Ptr{PJ}), ctx, obj)
 end
 
@@ -1464,6 +1464,6 @@ Return the parameters of a Helmert transformation as WKT1 TOWGS84 values.
 ### Returns
 TRUE in case of success, or FALSE if coordoperation is not compatible with a WKT1 TOWGS84 representation.
 """
-function proj_coordoperation_get_towgs84_values(coordoperation, out_values, value_count, emit_error_if_incompatible, ctx=C_NULL)
+function proj_coordoperation_get_towgs84_values(coordoperation, out_values, value_count, emit_error_if_incompatible, ctx = C_NULL)
     ccall((:proj_coordoperation_get_towgs84_values, libproj), Cint, (Ptr{PJ_CONTEXT}, Ptr{PJ}, Ptr{Cdouble}, Cint, Cint), ctx, coordoperation, out_values, value_count, emit_error_if_incompatible)
 end
