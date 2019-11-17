@@ -23,16 +23,14 @@ end
     # Proj4.proj_get_id_code(C_NULL, 0)
 end
 
-@testset "New tests" begin
+@testset "Create" begin
+    pj_latlon = Proj4.proj_create("EPSG:4326")
 
-pj_latlon = Proj4.proj_create("EPSG:4326")
+    esriwkt = """GEOGCS["GCS_WGS_1984",DATUM["D_WGS_1984",SPHEROID["WGS_1984",6378137.0,298.257223563]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433]]"""
+    pj2 = Proj4.proj_create(esriwkt)
 
-esriwkt = """GEOGCS["GCS_WGS_1984",DATUM["D_WGS_1984",SPHEROID["WGS_1984",6378137.0,298.257223563]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433]]"""
-pj2 = Proj4.proj_create(esriwkt)
-
-@test startswith(Proj4.proj_as_wkt(pj2, Proj4.PJ_WKT1_ESRI, C_NULL), "GEOGCS")
-@test startswith(Proj4.proj_as_wkt(pj2, Proj4.PJ_WKT2_2018, C_NULL), "GEOGCRS")
-
+    @test startswith(Proj4.proj_as_wkt(pj2, Proj4.PJ_WKT1_ESRI, C_NULL), "GEOGCS")
+    @test startswith(Proj4.proj_as_wkt(pj2, Proj4.PJ_WKT2_2018, C_NULL), "GEOGCRS")
 end
 
 @testset "Transformation between CRS" begin
