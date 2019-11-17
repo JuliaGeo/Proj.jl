@@ -21,7 +21,7 @@ https://github.com/JuliaGeo/GDAL.jl/blob/master/gen/README.md for more informati
 on how to construct the PROJ Doxygen XML file needed here.
 =#
 
-using Clang
+using Clang  # needs a post 0.9.1 release with #231 and #232
 using MacroTools
 using EzXML
 
@@ -72,7 +72,7 @@ function rewriter(x::Expr)
         # ctx is always the first argument
         if !isempty(fargs) && fargs[1] === :ctx
             fargs2 = circshift(fargs, -1)
-            fargs2[end] = Symbol("ctx=C_NULL")
+            fargs2[end] = :(ctx = C_NULL)
             ctx = true
         else
             fargs2 = fargs
