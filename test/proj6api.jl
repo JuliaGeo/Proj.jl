@@ -18,7 +18,8 @@ end
     Proj4.proj_errno(crs)
     Proj4.proj_get_id_code(crs, 0)
     # The following is wrong, but unfortunately segfaults. How to fix other than adding
-    # a null check before the ccall in this and other functions?
+    # a null check before the ccall in this and other functions? PROJ documentation
+    # clearly states: must not be NULL
     # Proj4.proj_get_id_code(C_NULL, 0)
 end
 

@@ -50,10 +50,10 @@ function rewriter(xs::Vector)
         end
         @assert x isa Expr
 
-        x2, ctx = rewriter(x)
+        x2, argpos = rewriter(x)
         name = cname(x)
         node = findnode(name, doc)
-        docstr = node === nothing ? "" : build_docstring(node, ctx)
+        docstr = node === nothing ? "" : build_docstring(node, argpos)
         isempty(docstr) || push!(rewritten, addquotes(docstr))
         push!(rewritten, x2)
     end
@@ -68,15 +68,20 @@ function rewriter(x::Expr)
         end
     )
         # it is a function wrapper around a ccall
+        n = length(fargs)
+        # keep track of how we order arguments, such that we can do the same in the docs
+        argpos = collect(1:n)
 
-        # ctx is always the first argument
-        if !isempty(fargs) && fargs[1] === :ctx
-            fargs2 = circshift(fargs, -1)
-            fargs2[end] = :(ctx = C_NULL)
-            ctx = true
-        else
-            fargs2 = fargs
-            ctx = false
+        fargs2 = copy(fargs)
+        if !isempty(fargs)
+            # ctx is always the first argument
+            if fargs[1] === :ctx
+                fargs2[1] = :(ctx = C_NULL)
+                # keyword arguments must follow positional ones
+                argpos = circshift(argpos, -1)
+            end
+            # apply the argument ordering permutation
+            fargs2 = fargs2[argpos]
         end
 
         # bind the ccall such that we can easily wrap it
@@ -94,10 +99,12 @@ function rewriter(x::Expr)
         x2 = :(function $f($(fargs2...))
             $cc2
         end) |> prettify
-        x2, ctx
+        x2, argpos
     else
         # do not modify expressions that are no ccall function wrappers
-        x, false
+        # argument positions do not apply, but something still needs to be returned
+        argpos = nothing
+        x, argpos
     end
 end
 
