@@ -2,8 +2,8 @@
 
 """Build docstring for a function from a Doxygen XML node
 
-If ctx is true, shift the ctx parameter to the last position"""
-function build_function(node::EzXML.Node, ctx::Bool)
+Use argpos argument permutation as is used in the rewritten code"""
+function build_function(node::EzXML.Node, argpos::Vector{Int})
     io = IOBuffer()
 
     # code block with function definition
@@ -12,8 +12,8 @@ function build_function(node::EzXML.Node, ctx::Bool)
     params = findall("param", node)
     if isempty(params)
         print(io, ")")
-    elseif ctx
-        params = circshift(params, -1)
+    else
+        params = params[argpos]
     end
     for param in params
         param !== first(params) && print(io, " "^nspace) # align
@@ -38,10 +38,9 @@ function build_function(node::EzXML.Node, ctx::Bool)
     # parameters
     params = findall("detaileddescription/para/parameterlist/parameteritem", node)
     if !isempty(params)
+        params = params[argpos]
         println(io, "\n### Parameters")
-        if ctx
-            params = circshift(params, -1)
-        end
+
         for param in params
             print(io, "* **", text(param, "parameternamelist"), "**: ")
             println(io, text(param, "parameterdescription"))
@@ -65,10 +64,10 @@ function brief_description(node::EzXML.Node)
 end
 
 "Compose a Markdown docstring based on a Doxygen XML element"
-function build_docstring(node::EzXML.Node, ctx::Bool)
+function build_docstring(node::EzXML.Node, argpos::Union{Vector, Nothing})
     kind = node["kind"]
     if kind == "function"
-        build_function(node, ctx)
+        build_function(node, argpos)
     elseif kind in ("enum", "define", "typedef")
         brief_description(node)
     else
