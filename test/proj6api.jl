@@ -14,7 +14,7 @@ import Proj4
 end
 
 @testset "Database" begin
-    crs = Proj4.proj_create_from_database("EPSG", "4326", Proj4.PJ_CATEGORY_CRS, false, C_NULL)
+    crs = Proj4.proj_create_from_database("EPSG", "4326", Proj4.PJ_CATEGORY_CRS, false)
     Proj4.proj_errno(crs)
     Proj4.proj_get_id_code(crs, 0)
     # The following is wrong, but unfortunately segfaults. How to fix other than adding

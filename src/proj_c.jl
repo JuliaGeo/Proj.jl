@@ -230,21 +230,21 @@ end
 """
     proj_context_set_database_path(const char * dbPath,
                                    const char *const * auxDbPaths,
-                                   const char *const * options,
-                                   PJ_CONTEXT * ctx) -> int
+                                   PJ_CONTEXT * ctx,
+                                   const char *const * options) -> int
 
 Explicitly point to the main PROJ CRS and coordinate operation definition database ("proj.db"), and potentially auxiliary databases with same structure.
 
 ### Parameters
 * **dbPath**: Path to main database, or NULL for default.
 * **auxDbPaths**: NULL-terminated list of auxiliary database filenames, or NULL.
-* **options**: should be set to NULL for now
 * **ctx**: PROJ context, or NULL for default context
+* **options**: should be set to NULL for now
 
 ### Returns
 TRUE in case of success
 """
-function proj_context_set_database_path(dbPath, auxDbPaths, options, ctx = C_NULL)
+function proj_context_set_database_path(dbPath, auxDbPaths, ctx = C_NULL, options = C_NULL)
     ccall((:proj_context_set_database_path, libproj), Cint, (Ptr{PJ_CONTEXT}, Cstring, Ptr{Cstring}, Ptr{Cstring}), ctx, dbPath, auxDbPaths, options)
 end
 
@@ -296,26 +296,26 @@ end
 
 """
     proj_create_from_wkt(const char * wkt,
-                         const char *const * options,
                          PROJ_STRING_LIST * out_warnings,
                          PROJ_STRING_LIST * out_grammar_errors,
-                         PJ_CONTEXT * ctx) -> PJ *
+                         PJ_CONTEXT * ctx,
+                         const char *const * options) -> PJ *
 
 Instantiate an object from a WKT string.
 
 ### Parameters
 * **wkt**: WKT string (must not be NULL)
-* **options**: null-terminated list of options, or NULL. Currently supported options are: 
-
-STRICT=YES/NO. Defaults to NO. When set to YES, strict validation will be enabled.
 * **out_warnings**: Pointer to a PROJ_STRING_LIST object, or NULL. If provided, *out_warnings will contain a list of warnings, typically for non recognized projection method or parameters. It must be freed with proj_string_list_destroy().
 * **out_grammar_errors**: Pointer to a PROJ_STRING_LIST object, or NULL. If provided, *out_grammar_errors will contain a list of errors regarding the WKT grammaer. It must be freed with proj_string_list_destroy().
 * **ctx**: PROJ context, or NULL for default context
+* **options**: null-terminated list of options, or NULL. Currently supported options are: 
+
+STRICT=YES/NO. Defaults to NO. When set to YES, strict validation will be enabled.
 
 ### Returns
 Object that must be unreferenced with proj_destroy(), or NULL in case of error.
 """
-function proj_create_from_wkt(wkt, options, out_warnings, out_grammar_errors, ctx = C_NULL)
+function proj_create_from_wkt(wkt, out_warnings, out_grammar_errors, ctx = C_NULL, options = C_NULL)
     ccall((:proj_create_from_wkt, libproj), Ptr{PJ}, (Ptr{PJ_CONTEXT}, Cstring, Ptr{Cstring}, Ptr{PROJ_STRING_LIST}, Ptr{PROJ_STRING_LIST}), ctx, wkt, options, out_warnings, out_grammar_errors)
 end
 
@@ -324,8 +324,8 @@ end
                               const char * code,
                               PJ_CATEGORY category,
                               int usePROJAlternativeGridNames,
-                              const char *const * options,
-                              PJ_CONTEXT * ctx) -> PJ *
+                              PJ_CONTEXT * ctx,
+                              const char *const * options) -> PJ *
 
 Instantiate an object from a database lookup.
 
@@ -334,13 +334,13 @@ Instantiate an object from a database lookup.
 * **code**: Object code (must not be NULL)
 * **category**: Object category
 * **usePROJAlternativeGridNames**: Whether PROJ alternative grid names should be substituted to the official grid names. Only used on transformations
-* **options**: should be set to NULL for now
 * **ctx**: Context, or NULL for default context.
+* **options**: should be set to NULL for now
 
 ### Returns
 Object that must be unreferenced with proj_destroy(), or NULL in case of error.
 """
-function proj_create_from_database(auth_name, code, category, usePROJAlternativeGridNames, options, ctx = C_NULL)
+function proj_create_from_database(auth_name, code, category, usePROJAlternativeGridNames, ctx = C_NULL, options = C_NULL)
     ccall((:proj_create_from_database, libproj), Ptr{PJ}, (Ptr{PJ_CONTEXT}, Cstring, Cstring, PJ_CATEGORY, Cint, Ptr{Cstring}), ctx, auth_name, code, category, usePROJAlternativeGridNames, options)
 end
 
@@ -393,8 +393,8 @@ end
                           size_t typesCount,
                           int approximateMatch,
                           size_t limitResultCount,
-                          const char *const * options,
-                          PJ_CONTEXT * ctx) -> PJ_OBJ_LIST *
+                          PJ_CONTEXT * ctx,
+                          const char *const * options) -> PJ_OBJ_LIST *
 
 Return a list of objects by their name.
 
@@ -405,13 +405,13 @@ Return a list of objects by their name.
 * **typesCount**: Number of elements in types, or 0 if types is NULL
 * **approximateMatch**: Whether approximate name identification is allowed.
 * **limitResultCount**: Maximum number of results to return. Or 0 for unlimited.
-* **options**: should be set to NULL for now
 * **ctx**: Context, or NULL for default context.
+* **options**: should be set to NULL for now
 
 ### Returns
 a result set that must be unreferenced with proj_list_destroy(), or NULL in case of error.
 """
-function proj_create_from_name(auth_name, searchedName, types, typesCount, approximateMatch, limitResultCount, options, ctx = C_NULL)
+function proj_create_from_name(auth_name, searchedName, types, typesCount, approximateMatch, limitResultCount, ctx = C_NULL, options = C_NULL)
     ccall((:proj_create_from_name, libproj), Ptr{PJ_OBJ_LIST}, (Ptr{PJ_CONTEXT}, Cstring, Cstring, Ptr{PJ_TYPE}, Csize_t, Cint, Csize_t, Ptr{Cstring}), ctx, auth_name, searchedName, types, typesCount, approximateMatch, limitResultCount, options)
 end
 
@@ -572,14 +572,15 @@ end
 """
     proj_as_wkt(const PJ * obj,
                 PJ_WKT_TYPE type,
-                const char *const * options,
-                PJ_CONTEXT * ctx) -> const char *
+                PJ_CONTEXT * ctx,
+                const char *const * options) -> const char *
 
 Get a WKT representation of an object.
 
 ### Parameters
 * **obj**: Object (must not be NULL)
 * **type**: WKT version.
+* **ctx**: PROJ context, or NULL for default context
 * **options**: null-terminated list of options, or NULL. Currently supported options are: 
 
 MULTILINE=YES/NO. Defaults to YES, except for WKT1_ESRI 
@@ -589,33 +590,32 @@ INDENTATION_WIDTH=number. Defauls to 4 (when multiline output is on).
 
 
 OUTPUT_AXIS=AUTO/YES/NO. In AUTO mode, axis will be output for WKT2 variants, for WKT1_GDAL for ProjectedCRS with easting/northing ordering (otherwise stripped), but not for WKT1_ESRI. Setting to YES will output them unconditionally, and to NO will omit them unconditionally.
-* **ctx**: PROJ context, or NULL for default context
 
 ### Returns
 a string, or NULL in case of error.
 """
-function proj_as_wkt(obj, type, options, ctx = C_NULL)
+function proj_as_wkt(obj, type, ctx = C_NULL, options = C_NULL)
     aftercare(ccall((:proj_as_wkt, libproj), Cstring, (Ptr{PJ_CONTEXT}, Ptr{PJ}, PJ_WKT_TYPE, Ptr{Cstring}), ctx, obj, type, options))
 end
 
 """
     proj_as_proj_string(const PJ * obj,
                         PJ_PROJ_STRING_TYPE type,
-                        const char *const * options,
-                        PJ_CONTEXT * ctx) -> const char *
+                        PJ_CONTEXT * ctx,
+                        const char *const * options) -> const char *
 
 Get a PROJ string representation of an object.
 
 ### Parameters
 * **obj**: Object (must not be NULL)
 * **type**: PROJ String version.
-* **options**: NULL-terminated list of strings with "KEY=VALUE" format. or NULL. The currently recognized option is USE_APPROX_TMERC=YES to add the +approx flag to +proj=tmerc or +proj=utm
 * **ctx**: PROJ context, or NULL for default context
+* **options**: NULL-terminated list of strings with "KEY=VALUE" format. or NULL. The currently recognized option is USE_APPROX_TMERC=YES to add the +approx flag to +proj=tmerc or +proj=utm
 
 ### Returns
 a string, or NULL in case of error.
 """
-function proj_as_proj_string(obj, type, options, ctx = C_NULL)
+function proj_as_proj_string(obj, type, ctx = C_NULL, options = C_NULL)
     aftercare(ccall((:proj_as_proj_string, libproj), Cstring, (Ptr{PJ_CONTEXT}, Ptr{PJ}, PJ_PROJ_STRING_TYPE, Ptr{Cstring}), ctx, obj, type, options))
 end
 
@@ -656,23 +656,23 @@ end
 """
     proj_identify(const PJ * obj,
                   const char * auth_name,
-                  const char *const * options,
                   int ** out_confidence,
-                  PJ_CONTEXT * ctx) -> PJ_OBJ_LIST *
+                  PJ_CONTEXT * ctx,
+                  const char *const * options) -> PJ_OBJ_LIST *
 
 Identify the CRS with reference CRSs.
 
 ### Parameters
 * **obj**: Object of type CRS. Must not be NULL
 * **auth_name**: Authority name, or NULL for all authorities
-* **options**: Placeholder for future options. Should be set to NULL.
 * **out_confidence**: Output parameter. Pointer to an array of integers that will be allocated by the function and filled with the confidence values (0-100). There are as many elements in this array as proj_list_get_count() returns on the return value of this function. *confidence should be released with proj_int_list_destroy().
 * **ctx**: PROJ context, or NULL for default context
+* **options**: Placeholder for future options. Should be set to NULL.
 
 ### Returns
 a list of matching reference CRS, or nullptr in case of error.
 """
-function proj_identify(obj, auth_name, options, out_confidence, ctx = C_NULL)
+function proj_identify(obj, auth_name, out_confidence, ctx = C_NULL, options = C_NULL)
     ccall((:proj_identify, libproj), Ptr{PJ_OBJ_LIST}, (Ptr{PJ_CONTEXT}, Ptr{PJ}, Cstring, Ptr{Cstring}, Ptr{Ptr{Cint}}), ctx, obj, auth_name, options, out_confidence)
 end
 
