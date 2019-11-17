@@ -60,6 +60,20 @@ function rewriter(xs::Vector)
     rewritten
 end
 
+"Make the arg at position i a keyword and move it to the back in the argpos permutation"
+function keywordify!(fargs2, argpos, i)
+    if i === nothing
+        return nothing
+    else
+        arg = fargs2[i]
+        fargs2[i] = :($arg = C_NULL)
+        # in optpos is does not have to be at i anymore if it already was moved
+        argoptpos = findfirst(==(i), argpos)
+        splice!(argpos, argoptpos)
+        push!(argpos, i)  # add it to the end
+    end
+end
+
 "Rewrite expressions in the ways listed at the top of this file."
 function rewriter(x::Expr)
     if @capture(x,
@@ -76,18 +90,16 @@ function rewriter(x::Expr)
         if !isempty(fargs)
             # ctx is always the first argument
             if fargs[1] === :ctx
-                fargs2[1] = :(ctx = C_NULL)
-                # keyword arguments must follow positional ones
-                argpos = circshift(argpos, -1)
+                keywordify!(fargs2, argpos, 1)
             end
             # make all options optional
             optpos = findfirst(==(:options), fargs)
-            if optpos !== nothing
-                fargs2[optpos] = :(options = C_NULL)
-                # option position in argpos can be different if ctx is already moved
-                argoptpos = findfirst(==(optpos), argpos)
-                splice!(argpos, argoptpos)
-                push!(argpos, optpos)  # add it to the end
+            keywordify!(fargs2, argpos, optpos)
+            if f === :proj_create_from_wkt
+                optpos = findfirst(==(:out_warnings), fargs)
+                keywordify!(fargs2, argpos, optpos)
+                optpos = findfirst(==(:out_grammar_errors), fargs)
+                keywordify!(fargs2, argpos, optpos)
             end
             # apply the argument ordering permutation
             fargs2 = fargs2[argpos]

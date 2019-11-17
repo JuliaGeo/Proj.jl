@@ -296,26 +296,26 @@ end
 
 """
     proj_create_from_wkt(const char * wkt,
-                         PROJ_STRING_LIST * out_warnings,
-                         PROJ_STRING_LIST * out_grammar_errors,
                          PJ_CONTEXT * ctx,
-                         const char *const * options) -> PJ *
+                         const char *const * options,
+                         PROJ_STRING_LIST * out_warnings,
+                         PROJ_STRING_LIST * out_grammar_errors) -> PJ *
 
 Instantiate an object from a WKT string.
 
 ### Parameters
 * **wkt**: WKT string (must not be NULL)
-* **out_warnings**: Pointer to a PROJ_STRING_LIST object, or NULL. If provided, *out_warnings will contain a list of warnings, typically for non recognized projection method or parameters. It must be freed with proj_string_list_destroy().
-* **out_grammar_errors**: Pointer to a PROJ_STRING_LIST object, or NULL. If provided, *out_grammar_errors will contain a list of errors regarding the WKT grammaer. It must be freed with proj_string_list_destroy().
 * **ctx**: PROJ context, or NULL for default context
 * **options**: null-terminated list of options, or NULL. Currently supported options are: 
 
 STRICT=YES/NO. Defaults to NO. When set to YES, strict validation will be enabled.
+* **out_warnings**: Pointer to a PROJ_STRING_LIST object, or NULL. If provided, *out_warnings will contain a list of warnings, typically for non recognized projection method or parameters. It must be freed with proj_string_list_destroy().
+* **out_grammar_errors**: Pointer to a PROJ_STRING_LIST object, or NULL. If provided, *out_grammar_errors will contain a list of errors regarding the WKT grammaer. It must be freed with proj_string_list_destroy().
 
 ### Returns
 Object that must be unreferenced with proj_destroy(), or NULL in case of error.
 """
-function proj_create_from_wkt(wkt, out_warnings, out_grammar_errors, ctx = C_NULL, options = C_NULL)
+function proj_create_from_wkt(wkt, ctx = C_NULL, options = C_NULL, out_warnings = C_NULL, out_grammar_errors = C_NULL)
     ccall((:proj_create_from_wkt, libproj), Ptr{PJ}, (Ptr{PJ_CONTEXT}, Cstring, Ptr{Cstring}, Ptr{PROJ_STRING_LIST}, Ptr{PROJ_STRING_LIST}), ctx, wkt, options, out_warnings, out_grammar_errors)
 end
 
