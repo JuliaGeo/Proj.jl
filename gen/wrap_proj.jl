@@ -83,9 +83,9 @@ function rewriter(x::Expr)
         cc = :(ccall($fname, $rettype, $argtypes, $(argvalues...)))
 
         cc2 = if rettype == :Cstring
-            :(unsafe_string($cc))
+            :(aftercare($cc))
         elseif rettype == :(Ptr{Cstring})
-            :(unsafe_loadstringlist($cc))
+            :(aftercare($cc))
         else
             cc
         end

@@ -2,7 +2,7 @@ using Test
 import Proj4
 
 @testset "Error handling" begin
-    @test_throws ArgumentError Proj4.proj_errno_string(0)
+    @test Proj4.proj_errno_string(0) == nothing
     @test Proj4.proj_errno_string(1) == "Operation not permitted"
     @test Proj4.proj_errno_string(2) == "No such file or directory"
 
@@ -41,9 +41,6 @@ end
     factory = Proj4.proj_create_operation_factory_context(C_NULL)
     @test factory != C_NULL
     @test Proj4.proj_context_errno() == 0
-    # NOTE(yeesian): doesn't work for now. It needs handling for null strings
-    #     like in https://github.com/JuliaGeo/GDAL.jl/pull/75
-    # @test Proj4.proj_errno_string(Proj4.proj_context_errno()) == nothing
     results = Proj4.proj_create_operations(src, tgt, factory)
     @test results != C_NULL
     n = Proj4.proj_list_get_count(results)
