@@ -15,21 +15,11 @@ if !isfile(depsjl_path)
 end
 include(depsjl_path)
 
-const PROJ_LIB = Ref{String}()
-
-# Module initialization function
-function __init__()
-    # Always check your dependencies from `deps.jl`
-    check_deps()
-
-    PROJ_LIB[] = abspath(@__DIR__, "..", "deps", "usr", "share", "proj")
-    proj_context_set_search_paths(1, [PROJ_LIB[]])
-end
-
 include("projection_codes.jl") # ESRI and EPSG projection strings
 include("proj_capi.jl") # low-level C-facing functions (corresponding to src/proj_api.h)
 include("proj_common.jl")
 include("proj_c.jl")
+include("error.jl")
 
 function _version()
     m = match(r"(\d+).(\d+).(\d+),.+", _get_release())
@@ -71,5 +61,19 @@ function unsafe_loadstringlist(ptr::Ptr{Cstring})
     strings
 end
 
+const PROJ_LIB = Ref{String}()
+
+# Module initialization function
+function __init__()
+    # Always check your dependencies from `deps.jl`
+    check_deps()
+
+    # register custom error handler
+    funcptr = @cfunction(log_func, Ptr{Cvoid}, (Ptr{Cvoid}, Cint, Cstring))
+    proj_log_func(C_NULL, funcptr)
+
+    PROJ_LIB[] = abspath(@__DIR__, "..", "deps", "usr", "share", "proj")
+    proj_context_set_search_paths(1, [PROJ_LIB[]])
+end
 
 end # module

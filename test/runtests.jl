@@ -1,14 +1,14 @@
 using Proj4
 using Test
 
-include("proj6api.jl")
-
 @testset "Proj4" begin
 
 println("""
 C library version: $(Proj4.version)  [\"$(Proj4._get_release())\"]
 geodesic support: $(Proj4.has_geodesic_support)
 """)
+
+include("proj6api.jl")
 
 # Some very basic sanity checking
 wgs84 = Projection("+proj=longlat +datum=WGS84 +no_defs")
