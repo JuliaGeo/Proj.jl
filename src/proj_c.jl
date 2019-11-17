@@ -153,7 +153,7 @@ function proj_errno_restore(P, err)
 end
 
 function proj_errno_string(err)
-    unsafe_string(ccall((:proj_errno_string, libproj), Cstring, (Cint,), err))
+    aftercare(ccall((:proj_errno_string, libproj), Cstring, (Cint,), err))
 end
 
 function proj_log_level(log_level, ctx = C_NULL)
@@ -217,7 +217,7 @@ function proj_dmstor(is, rs)
 end
 
 function proj_rtodms(s, r, pos, neg)
-    unsafe_string(ccall((:proj_rtodms, libproj), Cstring, (Cstring, Cdouble, Cint, Cint), s, r, pos, neg))
+    aftercare(ccall((:proj_rtodms, libproj), Cstring, (Cstring, Cdouble, Cint, Cint), s, r, pos, neg))
 end
 
 """
@@ -260,7 +260,7 @@ Returns the path to the database.
 path, or nullptr
 """
 function proj_context_get_database_path(ctx = C_NULL)
-    unsafe_string(ccall((:proj_context_get_database_path, libproj), Cstring, (Ptr{PJ_CONTEXT},), ctx))
+    aftercare(ccall((:proj_context_get_database_path, libproj), Cstring, (Ptr{PJ_CONTEXT},), ctx))
 end
 
 """
@@ -277,7 +277,7 @@ Return a metadata from the database.
 value, or nullptr
 """
 function proj_context_get_database_metadata(key, ctx = C_NULL)
-    unsafe_string(ccall((:proj_context_get_database_metadata, libproj), Cstring, (Ptr{PJ_CONTEXT}, Cstring), ctx, key))
+    aftercare(ccall((:proj_context_get_database_metadata, libproj), Cstring, (Ptr{PJ_CONTEXT}, Cstring), ctx, key))
 end
 
 """
@@ -505,7 +505,7 @@ Get the name of an object.
 a string, or NULL in case of error or missing name.
 """
 function proj_get_name(obj)
-    unsafe_string(ccall((:proj_get_name, libproj), Cstring, (Ptr{PJ},), obj))
+    aftercare(ccall((:proj_get_name, libproj), Cstring, (Ptr{PJ},), obj))
 end
 
 """
@@ -522,7 +522,7 @@ Get the authority name / codespace of an identifier of an object.
 a string, or NULL in case of error or missing name.
 """
 function proj_get_id_auth_name(obj, index)
-    unsafe_string(ccall((:proj_get_id_auth_name, libproj), Cstring, (Ptr{PJ}, Cint), obj, index))
+    aftercare(ccall((:proj_get_id_auth_name, libproj), Cstring, (Ptr{PJ}, Cint), obj, index))
 end
 
 """
@@ -539,7 +539,7 @@ Get the code of an identifier of an object.
 a string, or NULL in case of error or missing name.
 """
 function proj_get_id_code(obj, index)
-    unsafe_string(ccall((:proj_get_id_code, libproj), Cstring, (Ptr{PJ}, Cint), obj, index))
+    aftercare(ccall((:proj_get_id_code, libproj), Cstring, (Ptr{PJ}, Cint), obj, index))
 end
 
 """
@@ -595,7 +595,7 @@ OUTPUT_AXIS=AUTO/YES/NO. In AUTO mode, axis will be output for WKT2 variants, fo
 a string, or NULL in case of error.
 """
 function proj_as_wkt(obj, type, options, ctx = C_NULL)
-    unsafe_string(ccall((:proj_as_wkt, libproj), Cstring, (Ptr{PJ_CONTEXT}, Ptr{PJ}, PJ_WKT_TYPE, Ptr{Cstring}), ctx, obj, type, options))
+    aftercare(ccall((:proj_as_wkt, libproj), Cstring, (Ptr{PJ_CONTEXT}, Ptr{PJ}, PJ_WKT_TYPE, Ptr{Cstring}), ctx, obj, type, options))
 end
 
 """
@@ -616,7 +616,7 @@ Get a PROJ string representation of an object.
 a string, or NULL in case of error.
 """
 function proj_as_proj_string(obj, type, options, ctx = C_NULL)
-    unsafe_string(ccall((:proj_as_proj_string, libproj), Cstring, (Ptr{PJ_CONTEXT}, Ptr{PJ}, PJ_PROJ_STRING_TYPE, Ptr{Cstring}), ctx, obj, type, options))
+    aftercare(ccall((:proj_as_proj_string, libproj), Cstring, (Ptr{PJ_CONTEXT}, Ptr{PJ}, PJ_PROJ_STRING_TYPE, Ptr{Cstring}), ctx, obj, type, options))
 end
 
 """
