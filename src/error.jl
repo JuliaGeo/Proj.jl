@@ -1,8 +1,8 @@
 "Exception type based on PROJ error handling"
 struct PROJError <: Exception
     msg::String
-    # reset PROJ's error stack on construction
     function PROJError(msg)
+        # reset PROJ's error stack on construction
         proj_errno_reset(C_NULL)
         new(msg)
     end

@@ -17,10 +17,6 @@ end
     crs = Proj4.proj_create_from_database("EPSG", "4326", Proj4.PJ_CATEGORY_CRS, false)
     Proj4.proj_errno(crs)
     Proj4.proj_get_id_code(crs, 0)
-    # The following is wrong, but unfortunately segfaults. How to fix other than adding
-    # a null check before the ccall in this and other functions? PROJ documentation
-    # clearly states: must not be NULL
-    # Proj4.proj_get_id_code(C_NULL, 0)
 end
 
 @testset "Create" begin
@@ -65,5 +61,4 @@ end
     Proj4.proj_operation_factory_context_destroy(factory)
     Proj4.proj_destroy(src)
     Proj4.proj_destroy(tgt)
-    # proj_context_destroy(c)
 end
