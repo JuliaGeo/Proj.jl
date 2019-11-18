@@ -63,7 +63,7 @@ end
 
 const PROJ_LIB = Ref{String}()
 
-# Module initialization function
+"Module initialization function"
 function __init__()
     # Always check your dependencies from `deps.jl`
     check_deps()
@@ -72,6 +72,7 @@ function __init__()
     funcptr = @cfunction(log_func, Ptr{Cvoid}, (Ptr{Cvoid}, Cint, Cstring))
     proj_log_func(C_NULL, funcptr)
 
+    # point to the location of the provided shared resources
     PROJ_LIB[] = abspath(@__DIR__, "..", "deps", "usr", "share", "proj")
     proj_context_set_search_paths(1, [PROJ_LIB[]])
 end

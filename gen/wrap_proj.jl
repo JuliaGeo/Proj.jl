@@ -74,7 +74,7 @@ function keywordify!(fargs2, argpos, i)
     end
 end
 
-"Rewrite expressions in the ways listed at the top of this file."
+"Rewrite expressions using the transformations listed at the top of this file"
 function rewriter(x::Expr)
     if @capture(x,
         function f_(fargs__)
