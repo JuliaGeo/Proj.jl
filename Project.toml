@@ -1,5 +1,6 @@
 name = "Proj4"
 uuid = "9a7e659c-8ee8-5706-894e-f68f43bc57ea"
+version = "0.6.0"
 
 [deps]
 BinaryProvider = "b99e7846-7c00-51b0-8f62-c81ae34c0232"
@@ -10,6 +11,6 @@ Printf = "de0858da-6303-5e67-8744-51eddeeeb8d7"
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 
 [compat]
-BinaryProvider = "≥ 0.5.0"
-julia = "≥ 1.0.0"
-CEnum = "≥ 0.2.0"
+BinaryProvider = "0.5"
+CEnum = "0.2"
+julia = "1.0"
