@@ -1,6 +1,6 @@
 module Proj4
 
-using Libdl
+using PROJ_jll
 using CEnum
 
 export Projection, # proj_types.jl
@@ -8,15 +8,12 @@ export Projection, # proj_types.jl
        is_latlong, is_geocent, compare_datums, spheroid_params,
        xy2lonlat, xy2lonlat!, lonlat2xy, lonlat2xy!
 
-# Load in `deps.jl`, complaining if it does not exist
-const depsjl_path = joinpath(@__DIR__, "..", "deps", "deps.jl")
-if !isfile(depsjl_path)
-    error("Proj4 not installed properly, run Pkg.build(\"Proj4\"), restart Julia and try again")
-end
-include(depsjl_path)
+# geodesic support
+export geod_direct, geod_inverse, geod_destination, geod_distance
 
 include("projection_codes.jl") # ESRI and EPSG projection strings
 include("proj_capi.jl") # low-level C-facing functions (corresponding to src/proj_api.h)
+include("proj_geodesic.jl") # low-level C-facing functions (corresponding to src/geodesic.h)
 include("proj_common.jl")
 include("proj_c.jl")
 include("error.jl")
@@ -30,12 +27,7 @@ end
 const version = _version()
 
 # Detect underlying libproj support for geodesic calculations
-const has_geodesic_support = version >= v"4.9.0"
-
-if has_geodesic_support
-    export geod_direct, geod_inverse, geod_destination, geod_distance
-    include("proj_geodesic.jl") # low-level C-facing functions (corresponding to src/geodesic.h)
-end
+const has_geodesic_support = true
 
 include("proj_types.jl") # type definitions for proj objects
 include("proj_functions.jl") # user-facing proj functions
@@ -65,15 +57,12 @@ const PROJ_LIB = Ref{String}()
 
 "Module initialization function"
 function __init__()
-    # Always check your dependencies from `deps.jl`
-    check_deps()
-
     # register custom error handler
     funcptr = @cfunction(log_func, Ptr{Cvoid}, (Ptr{Cvoid}, Cint, Cstring))
     proj_log_func(C_NULL, funcptr)
 
     # point to the location of the provided shared resources
-    PROJ_LIB[] = abspath(@__DIR__, "..", "deps", "usr", "share", "proj")
+    PROJ_LIB[] = joinpath(PROJ_jll.artifact_dir, "share", "proj")
     proj_context_set_search_paths(1, [PROJ_LIB[]])
 end
 
