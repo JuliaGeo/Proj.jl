@@ -1,0 +1,53 @@
+[proj-datumgrid]
+git-tree-sha1 = "aacba15828c4e6c6ec476994b19aa36f63a7f31a"
+
+    [[proj-datumgrid.download]]
+    sha256 = "3ff6618a0acc9f0b9b4f6a62e7ff0f7bf538fb4f74de47ad04da1317408fcc15"
+    url = "https://github.com/OSGeo/proj-datumgrid/releases/download/1.8/proj-datumgrid-1.8.tar.gz"
+    [[proj-datumgrid.download]]
+    sha256 = "3ff6618a0acc9f0b9b4f6a62e7ff0f7bf538fb4f74de47ad04da1317408fcc15"
+    url = "https://download.osgeo.org/proj/proj-datumgrid-1.8.tar.gz"
+
+[proj-datumgrid-europe]
+git-tree-sha1 = "8fda332b7fd53be7c0e3afd35a78cfa323806015"
+lazy = true
+
+    [[proj-datumgrid-europe.download]]
+    sha256 = "70d47c31b6c34a323cd47176ffccf77b439e450e51805646d8560d605eee38df"
+    url = "https://github.com/OSGeo/proj-datumgrid/releases/download/europe-1.5/proj-datumgrid-europe-1.5.tar.gz"
+    [[proj-datumgrid-europe.download]]
+    sha256 = "70d47c31b6c34a323cd47176ffccf77b439e450e51805646d8560d605eee38df"
+    url = "https://download.osgeo.org/proj/proj-datumgrid-europe-1.5.tar.gz"
+
+[proj-datumgrid-north-america]
+git-tree-sha1 = "064da8963da1ed4ef88b35ebeb7c6fb2b0c86de2"
+lazy = true
+
+    [[proj-datumgrid-north-america.download]]
+    sha256 = "d30713ab673038a6add28e98c4e7ce1bfbacd803966d32700d082731268c9910"
+    url = "https://github.com/OSGeo/proj-datumgrid/releases/download/north-america-1.3/proj-datumgrid-north-america-1.3.tar.gz"
+    [[proj-datumgrid-north-america.download]]
+    sha256 = "d30713ab673038a6add28e98c4e7ce1bfbacd803966d32700d082731268c9910"
+    url = "https://download.osgeo.org/proj/proj-datumgrid-north-america-1.3.tar.gz"
+
+[proj-datumgrid-oceania]
+git-tree-sha1 = "5b180df3d21d93c8ff1f9a2902b3917f611d3b02"
+lazy = true
+
+    [[proj-datumgrid-oceania.download]]
+    sha256 = "63a844c294c9f29b29e25eea01d6da0ff3596be7c8660afb17090c3bc4045ae3"
+    url = "https://github.com/OSGeo/proj-datumgrid/releases/download/oceania-1.1/proj-datumgrid-oceania-1.1.tar.gz"
+    [[proj-datumgrid-oceania.download]]
+    sha256 = "63a844c294c9f29b29e25eea01d6da0ff3596be7c8660afb17090c3bc4045ae3"
+    url = "https://download.osgeo.org/proj/proj-datumgrid-oceania-1.1.tar.gz"
+
+[proj-datumgrid-world]
+git-tree-sha1 = "4db21264437234e406cf3e6c6dbc93762fbde886"
+lazy = true
+
+    [[proj-datumgrid-world.download]]
+    sha256 = "a488a5a69d1af6ec2ee83a2c64c52adac52e6dbfafe883f0341340009a9f40ba"
+    url = "https://github.com/OSGeo/proj-datumgrid/releases/download/world-1.0/proj-datumgrid-world-1.0.tar.gz"
+    [[proj-datumgrid-world.download]]
+    sha256 = "a488a5a69d1af6ec2ee83a2c64c52adac52e6dbfafe883f0341340009a9f40ba"
+    url = "https://download.osgeo.org/proj/proj-datumgrid-world-1.0.tar.gz"
