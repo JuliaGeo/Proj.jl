@@ -43,3 +43,6 @@ end
 # Pretty printing
 Base.print(io::IO, proj::Projection) = print(io, strip(_get_def(proj.rep)))
 Base.show(io::IO, proj::Projection) = print(io, "Projection(\"$proj\")")
+
+# Broadcast override
+Base.Broadcast.broadcastable(p::Projection) = Ref(p)
