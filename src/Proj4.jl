@@ -19,7 +19,9 @@ include("projection_codes.jl") # ESRI and EPSG projection strings
 include("proj_capi.jl") # low-level C-facing functions (corresponding to src/proj_api.h)
 include("proj_common.jl")
 include("proj_c.jl")
+include("convenience_projections.jl") # convenience functions to generate projections
 include("error.jl")
+
 
 function _version()
     m = match(r"(\d+).(\d+).(\d+),.+", _get_release())
@@ -39,6 +41,7 @@ end
 
 include("proj_types.jl") # type definitions for proj objects
 include("proj_functions.jl") # user-facing proj functions
+include("utils.jl")
 
 "Get a global error string in human readable form"
 error_message() = _strerrno()
