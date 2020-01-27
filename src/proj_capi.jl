@@ -89,11 +89,12 @@ function _get_def(proj_ptr::Ptr{Cvoid})
     unsafe_string(ccall((:pj_get_def, libproj), Cstring, (Ptr{Cvoid}, Cint), proj_ptr, opts))
 end
 
+const PtrOrVecCdouble = Union{Ptr{Cdouble}, Vector{Cdouble}}
 "Low level interface to libproj transform, C_NULL can be passed in for z, if it's 2-dimensional"
-function _transform!(src_ptr::Ptr{Cvoid}, dest_ptr::Ptr{Cvoid}, point_count::Integer, point_stride::Integer,
-                     x::Ptr{Cdouble}, y::Ptr{Cdouble}, z::Ptr{Cdouble})
+function Proj4._transform!(src_ptr::Ptr{Cvoid}, dest_ptr::Ptr{Cvoid}, point_count::Integer, point_stride::Integer,
+                     x::PtrOrVecCdouble, y::PtrOrVecCdouble, z::PtrOrVecCdouble)
     @assert src_ptr != C_NULL && dest_ptr != C_NULL
-    err = ccall((:pj_transform, libproj), Cint, (Ptr{Cvoid}, Ptr{Cvoid}, Clong, Cint, Ptr{Cdouble}, Ptr{Cdouble},
+    err = ccall((:pj_transform, Proj4.libproj), Cint, (Ptr{Cvoid}, Ptr{Cvoid}, Clong, Cint, Ptr{Cdouble}, Ptr{Cdouble},
                 Ptr{Cdouble}), src_ptr, dest_ptr, point_count, point_stride, x, y, z)
     err != 0 && error("transform error: $(_strerrno(err))")
 end
