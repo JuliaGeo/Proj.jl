@@ -23,9 +23,9 @@ artifacts_toml = joinpath(@__DIR__, "Artifacts.toml")
 
 datumgrids = [
     (name="proj-datumgrid", version=v"1.8", sha256_hash="3ff6618a0acc9f0b9b4f6a62e7ff0f7bf538fb4f74de47ad04da1317408fcc15"),
-    (name="proj-datumgrid-europe", version=v"1.5", sha256_hash="70d47c31b6c34a323cd47176ffccf77b439e450e51805646d8560d605eee38df"),
-    (name="proj-datumgrid-north-america", version=v"1.3", sha256_hash="d30713ab673038a6add28e98c4e7ce1bfbacd803966d32700d082731268c9910"),
-    (name="proj-datumgrid-oceania", version=v"1.1", sha256_hash="63a844c294c9f29b29e25eea01d6da0ff3596be7c8660afb17090c3bc4045ae3"),
+    (name="proj-datumgrid-europe", version=v"1.6", sha256_hash="af2f4f364d84eb9d5ca23403f8540ae8daee54ec900903bc92d48afb1ed285f8"),
+    (name="proj-datumgrid-north-america", version=v"1.4", sha256_hash="95a6cdcdc078caed412ea66d3fdd2f699286336d5ca6c98bffb2d7132585ce40"),
+    (name="proj-datumgrid-oceania", version=v"1.2", sha256_hash="952c43886c9ed6a098c308de61161a00cbe83fbb0f6e9e43c0c25c323bb06a4c"),
     (name="proj-datumgrid-world", version=v"1.0", sha256_hash="a488a5a69d1af6ec2ee83a2c64c52adac52e6dbfafe883f0341340009a9f40ba"),
 ]
 
@@ -35,11 +35,9 @@ for datumgrid in datumgrids
     version = string(datumgrid.version.major, '.', datumgrid.version.minor)
     if name == "proj-datumgrid"
         tag = version
-        lazy = false  # this one is required for a functional proj
     else
         region = replace(name, "proj-datumgrid-"=>"")
         tag = string(region, '-', version)
-        lazy = true
     end
     sha = datumgrid.sha256_hash
     url1 = "https://github.com/OSGeo/proj-datumgrid/releases/download/$tag/$name-$version.tar.gz"
@@ -52,7 +50,7 @@ for datumgrid in datumgrids
     end
 
     # add the new entry to the Artifact.toml together with the download info
-    bind_artifact!(artifacts_toml, name, proj_hash; download_info=download_info, lazy=lazy, force=true)
+    bind_artifact!(artifacts_toml, name, proj_hash; download_info=download_info, lazy=true, force=true)
 
     @info "created artifact" name version proj_hash artifacts_toml
 end
