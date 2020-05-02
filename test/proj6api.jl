@@ -62,3 +62,45 @@ end
     Proj4.proj_destroy(src)
     Proj4.proj_destroy(tgt)
 end
+
+@testset "Quickstart" begin
+    # https://proj.org/development/quickstart.html
+
+    pj = Proj4.proj_create_crs_to_crs(
+        "EPSG:4326",  # source
+        "+proj=utm +zone=32 +datum=WGS84",  # target, also EPSG:32632
+        C_NULL,  # area
+    )
+
+    # This will ensure that the order of coordinates for the input CRS
+    # will be longitude, latitude, whereas EPSG:4326 mandates latitude,
+    # longitude
+    pj_for_gis = Proj4.proj_normalize_for_visualization(pj)
+    Proj4.proj_destroy(pj)
+    pj = pj_for_gis
+
+    # a coordinate union representing Copenhagen: 55d N, 12d E
+    # Given that we have used proj_normalize_for_visualization(), the order of
+    # coordinates is longitude, latitude, and values are expressed in degrees.
+    a = Proj4.proj_coord(12, 55, 0, 0)
+    @test isbits(a)
+    @test a.xyzt.x === 12.0
+    @test a.xyzt.y === 55.0
+    @test a.xyzt.z === 0.0
+    @test a.xyzt.t === 0.0
+
+    # transform to UTM zone 32
+    b = Proj4.proj_trans(pj, Proj4.PJ_FWD, a)
+    @test b.xyzt.x ≈ 691875.632
+    @test b.xyzt.y ≈ 6098907.825
+    @test b.xyzt.z === 0.0
+    @test b.xyzt.t === 0.0
+
+    # inverse transform, back to geographical
+    b = Proj4.proj_trans(pj, Proj4.PJ_INV, b)
+    @test a == b
+
+    # Clean up
+    Proj4.proj_destroy(pj)
+    # TODO julia crashes if proj_destroy is called twice, i.e. on a null pointer
+end
