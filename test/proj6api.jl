@@ -98,7 +98,10 @@ end
 
     # inverse transform, back to geographical
     b = Proj4.proj_trans(pj, Proj4.PJ_INV, b)
-    @test a == b
+    @test b.xyzt.x ≈ 12.0
+    @test b.xyzt.y ≈ 55.0
+    @test b.xyzt.z === 0.0
+    @test b.xyzt.t === 0.0
 
     # Clean up
     Proj4.proj_destroy(pj)
