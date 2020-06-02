@@ -21,7 +21,7 @@ end
 
 const PJ_AREA = Cvoid
 
-struct P5_FACTORS
+struct PJ_FACTORS
     meridional_scale::Cdouble
     parallel_scale::Cdouble
     areal_scale::Cdouble
