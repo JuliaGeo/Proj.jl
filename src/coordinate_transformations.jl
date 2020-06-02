@@ -24,7 +24,7 @@ function CRS2CRS(source::Projection, dest::Projection, direction::PJ_DIRECTION =
         CRS2CRS(pj_normalized, direction)
     end
 
-    finalizer(obj) do
+    finalizer(obj) do obj
         proj_destroy(obj.rep)
     end
 
@@ -48,7 +48,7 @@ function CRS2CRS(source::String, dest::String, direction::PJ_DIRECTION = PJ_FWD;
         CRS2CRS(pj_normalized, direction)
     end
 
-    finalizer(obj) do
+    finalizer(obj) do obj
         proj_destroy(obj.rep)
     end
 
