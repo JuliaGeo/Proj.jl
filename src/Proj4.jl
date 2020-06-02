@@ -1,7 +1,7 @@
 module Proj4
 
 using PROJ_jll
-using CEnum
+using CEnum, CoordinateTransformations
 
 export Projection, # proj_types.jl
        transform, transform!,  # proj_functions.jl
@@ -31,6 +31,7 @@ const has_geodesic_support = true
 
 include("proj_types.jl") # type definitions for proj objects
 include("proj_functions.jl") # user-facing proj functions
+include("coordinate_transformations.jl")
 
 "Get a global error string in human readable form"
 error_message() = _strerrno()
