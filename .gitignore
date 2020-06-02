@@ -3,3 +3,5 @@
 deps/build.log
 deps/deps.jl
 deps/usr
+
+/Manifest.toml
