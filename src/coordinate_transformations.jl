@@ -26,7 +26,6 @@ function CRS2CRS(source::Projection, dest::Projection, direction::PJ_DIRECTION =
 
     finalizer(obj) do
         proj_destroy(obj.rep)
-        _free(proj.rep)
     end
 
     return obj
@@ -51,7 +50,6 @@ function CRS2CRS(source::String, dest::String, direction::PJ_DIRECTION = PJ_FWD;
 
     finalizer(obj) do
         proj_destroy(obj.rep)
-        _free(proj.rep)
     end
 
     return obj
