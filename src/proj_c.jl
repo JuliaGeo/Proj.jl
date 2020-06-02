@@ -47,7 +47,7 @@ function proj_create_argv(argc, argv, ctx = C_NULL)
     ccall((:proj_create_argv, libproj), Ptr{PJ}, (Ptr{PJ_CONTEXT}, Cint, Ptr{Cstring}), ctx, argc, argv)
 end
 
-function proj_create_crs_to_crs(source_crs, target_crs, area, ctx = C_NULL)
+function proj_create_crs_to_crs(source_crs, target_crs, area = C_NULL, ctx = C_NULL)
     ccall((:proj_create_crs_to_crs, libproj), Ptr{PJ}, (Ptr{PJ_CONTEXT}, Cstring, Cstring, Ptr{PJ_AREA}), ctx, source_crs, target_crs, area)
 end
 
