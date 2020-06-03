@@ -33,6 +33,8 @@ include("proj_types.jl") # type definitions for proj objects
 include("proj_functions.jl") # user-facing proj functions
 include("coordinate_transformations.jl")
 
+export CRS2CRS, proj_coord
+
 "Get a global error string in human readable form"
 error_message() = _strerrno()
 
