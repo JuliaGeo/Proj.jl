@@ -106,4 +106,35 @@ end
     # Clean up
     Proj4.proj_destroy(pj)
     # TODO julia crashes if proj_destroy is called twice, i.e. on a null pointer
+
+    # Tests with CRS2CRS
+
+    cs = CRS2CRS(
+        "EPSG:4326",  # source
+        "+proj=utm +zone=32 +datum=WGS84",  # target, also EPSG:32632
+    )
+
+    # test the optional args for proj_coord also
+    a = Proj4.proj_coord(12, 55)
+    @test isbits(a)
+    @test a.xyzt.x === 12.0
+    @test a.xyzt.y === 55.0
+    @test a.xyzt.z === 0.0
+    @test a.xyzt.t === 0.0
+
+    # transform to UTM zone 32
+    b = cs(a)
+    @test b.xyzt.x ≈ 691875.632
+    @test b.xyzt.y ≈ 6098907.825
+    @test b.xyzt.z === 0.0
+    @test b.xyzt.t === 0.0
+
+    # inverse transform, back to geographical
+    b = inv(cs)(b)
+    @test b.xyzt.x ≈ 12.0
+    @test b.xyzt.y ≈ 55.0
+    @test b.xyzt.z === 0.0
+    @test b.xyzt.t === 0.0
+
+    @test cs(Float64[12, 55, 0, 0]) .≈ [691875.632, 6098907.825, 0.0, 0.0]
 end
