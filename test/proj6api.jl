@@ -130,11 +130,11 @@ end
     @test b.xyzt.t === 0.0
 
     # inverse transform, back to geographical
-    b = inv(cs)(b)
-    @test b.xyzt.x ≈ 12.0
-    @test b.xyzt.y ≈ 55.0
-    @test b.xyzt.z === 0.0
-    @test b.xyzt.t === 0.0
+    c = inv(cs)(b)
+    @test c.xyzt.x ≈ 12.0
+    @test c.xyzt.y ≈ 55.0
+    @test c.xyzt.z === 0.0
+    @test c.xyzt.t === 0.0
 
     @test cs(Float64[12, 55, 0, 0]) .≈ [691875.632, 6098907.825, 0.0, 0.0]
 end

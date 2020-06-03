@@ -5,7 +5,8 @@ Constructs a coordinate system transformation from `source` to `target`.  The so
 
 CRS2CRS objects are callable, and transformations are performed by
 calling them on point-like types.  They also satisfy the
-[CoordinateTransformations.jl](https://github.com/JuliaGeometry/CoordinateTransformations.jl) interface.
+[CoordinateTransformations.jl](https://github.com/JuliaGeometry/CoordinateTransformations.jl) interface.  As such, they can be
+inverted through `Base.inv`.
 
 ```julia
 # Construct a projection from lon-lat coordinates
@@ -70,11 +71,11 @@ end
 
 function (transformation::CRS2CRS)(x::T) where T
     coord = if length(x) == 2
-        proj_coord(x..., 0, 0)
+        proj_coord(x[1], x[2],    0,    0)
     elseif length(x) == 3
-        proj_coord(x..., 0)
+        proj_coord(x[1], x[2], x[3],    0)
     elseif length(x) == 4
-        proj_coord(x...)
+        proj_coord(x[1], x[2], x[3], x[4])
     else
         error("Input must have length 2, 3 or 4! Found $(length(x)).")
     end
@@ -86,20 +87,12 @@ function (transformation::CRS2CRS)(x::T) where T
     elseif length(x) == 3
         T(xyzt.x, xyzt.y, xyzt.z)
     elseif length(x) == 4
-        proj_coord(xyzt.x, xyzt.y, xyzt.z, xyzt.t)
+        T(xyzt.x, xyzt.y, xyzt.z, xyzt.t)
     else
         error("Input must have length 2, 3 or 4! Found $(length(x)).")
     end
 end
 
-
-
-function proj_trans_generic(P, direction, x::Vector{Float64}, y::Vector{Float64}, z::Vector{Float64} = zeros(length(x)), t::Vector{Float64} = zeros(length(x)))
-    return proj_trans_generic(
-        P, direction,
-        x, sizeof(Float64), length(x),
-        y, sizeof(Float64), length(y),
-        z, sizeof(Float64), length(z),
-        t, sizeof(Float64), length(t),
-    )
+function (transformation::CRS2CRS)(coord::PJ_COORD)
+    return proj_trans(transformation.rep, transformation.direction, coord)
 end

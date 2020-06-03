@@ -31,7 +31,8 @@ const has_geodesic_support = true
 
 include("proj_types.jl") # type definitions for proj objects
 include("proj_functions.jl") # user-facing proj functions
-include("coordinate_transformations.jl")
+include("overloads.jl") # overloads for a more Julian API
+include("coordinate_transformations.jl") # CRS2CRS interface
 
 export CRS2CRS, proj_coord
 
