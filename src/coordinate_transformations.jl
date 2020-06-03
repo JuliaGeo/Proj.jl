@@ -3,35 +3,6 @@ mutable struct CRS2CRS <: CoordinateTransformations.Transformation
     direction::PJ_DIRECTION
 end
 
-function CRS2CRS(source::Projection, dest::Projection, direction::PJ_DIRECTION = PJ_FWD; area = C_NULL, normalize = true)
-
-    if direction == PJ_IDENT || proj_is_equivalent_to(source.rep, dest.rep, PJ_COMP_EQUIVALENT) == 1
-        return IdentityTransformation()
-    end
-
-    pj_init = ccall(
-        (:proj_create_crs_to_crs_from_pj, PROJ_jll.libproj),
-        Ptr{Cvoid},
-        (Ptr{Cvoid}, Ptr{Cvoid}, Ptr{Cvoid}, Ptr{Cchar}),
-        source.rep,  dest.rep,   area,       C_NULL
-    )
-
-    obj = if normalize
-        pj_normalized = proj_normalize_for_visualization(pj_init)
-        proj_destroy(pj_init)
-        CRS2CRS(pj_normalized, direction)
-    else
-        CRS2CRS(pj_normalized, direction)
-    end
-
-    finalizer(obj) do obj
-        proj_destroy(obj.rep)
-    end
-
-    return obj
-end
-
-
 function CRS2CRS(source::String, dest::String, direction::PJ_DIRECTION = PJ_FWD; area = C_NULL, normalize = true)
 
     if direction == PJ_IDENT || source == direction
