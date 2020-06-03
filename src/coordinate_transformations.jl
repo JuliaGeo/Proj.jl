@@ -1,3 +1,21 @@
+"""
+    CRS2CRS(source, target, [direction = PJ_FWD]; area = C_NULL, normalize = true)
+
+Constructs a coordinate system transformation from `source` to `target`.  The source and target CRS may be Strings or [`Projection`](@ref)s.
+
+CRS2CRS objects are callable, and transformations are performed by
+calling them on point-like types.  They also satisfy the
+[CoordinateTransformations.jl](https://github.com/JuliaGeometry/CoordinateTransformations.jl) interface.
+
+```julia
+# Construct a projection from lon-lat coordinates
+# to the Winkel Tripel projection
+cs = CRS2CRS("+proj=lonlat", "+proj=wintri")
+# construct a projectable coordinate
+a = proj_coord(0, 0)
+b = cs(a) # projected coordinate
+```
+"""
 mutable struct CRS2CRS <: CoordinateTransformations.Transformation
     rep::Ptr{Cvoid}
     direction::PJ_DIRECTION
