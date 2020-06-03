@@ -5,10 +5,6 @@ end
 
 function CRS2CRS(source::String, target::String, direction::PJ_DIRECTION = PJ_FWD; area = C_NULL, normalize = true)
 
-    if direction == PJ_IDENT || source == direction
-        return IdentityTransformation()
-    end
-
     pj_init = proj_create_crs_to_crs(source, target, area)
 
     obj = if normalize
@@ -16,7 +12,7 @@ function CRS2CRS(source::String, target::String, direction::PJ_DIRECTION = PJ_FW
         proj_destroy(pj_init)
         CRS2CRS(pj_normalized, direction)
     else
-        CRS2CRS(pj_normalized, direction)
+        CRS2CRS(pj_init, direction)
     end
 
     finalizer(obj) do obj
@@ -51,7 +47,7 @@ end
 function CoordinateTransformations.transform_deriv(cs::CRS2CRS, x)
     coord = proj_coord(x...)
     factors = proj_factors(cs.rep, coord)
-    return [dx_dlam dx_dphi; dy_dlam dy_dphi]
+    return [factors.dx_dlam factors.dx_dphi; factors.dy_dlam factors.dy_dphi]
 end
 
 function (transformation::CRS2CRS)(x::T) where T
