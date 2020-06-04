@@ -71,11 +71,11 @@ end
 
 function (transformation::CRS2CRS)(x)
     coord = if length(x) == 2
-        proj_coord(x[1], x[2],    0,    0)
+        PJ_COORD(x[1], x[2],    0,    0)
     elseif length(x) == 3
-        proj_coord(x[1], x[2], x[3],    0)
+        PJ_COORD(x[1], x[2], x[3],    0)
     elseif length(x) == 4
-        proj_coord(x[1], x[2], x[3], x[4])
+        PJ_COORD(x[1], x[2], x[3], x[4])
     else
         error("Input must have length 2, 3 or 4! Found $(length(x)).")
     end
