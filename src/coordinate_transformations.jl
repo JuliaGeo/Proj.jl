@@ -69,7 +69,7 @@ function CoordinateTransformations.transform_deriv(cs::CRS2CRS, x)
     return [factors.dx_dlam factors.dx_dphi; factors.dy_dlam factors.dy_dphi]
 end
 
-function (transformation::CRS2CRS)(x::T) where T
+function (transformation::CRS2CRS)(x)
     coord = if length(x) == 2
         proj_coord(x[1], x[2],    0,    0)
     elseif length(x) == 3
