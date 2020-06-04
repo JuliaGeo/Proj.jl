@@ -135,6 +135,4 @@ end
     @test c.xyzt.y ≈ 55.0
     @test c.xyzt.z === 0.0
     @test c.xyzt.t === 0.0
-
-    @test cs(Float64[12, 55, 0, 0]) .≈ [691875.632, 6098907.825, 0.0, 0.0]
 end
