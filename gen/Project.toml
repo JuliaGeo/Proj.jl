@@ -1,0 +1,5 @@
+[deps]
+Clang = "40e3b903-d033-50b4-a0cc-940c62c95e31"
+EzXML = "8f5d6c58-4d21-5cfd-889c-e3ad7ee6a615"
+MacroTools = "1914dd2f-81c6-5fcd-8719-6d5c9610ff09"
+PROJ_jll = "58948b4f-47e0-5654-a9ad-f609743f8632"

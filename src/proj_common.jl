@@ -3,9 +3,9 @@
 
 # Skipping MacroDefinition: PROJ_DLL __attribute__ ( ( visibility ( "default" ) ) )
 
-const PROJ_VERSION_MAJOR = 6
-const PROJ_VERSION_MINOR = 1
-const PROJ_VERSION_PATCH = 0
+const PROJ_VERSION_MAJOR = 7
+const PROJ_VERSION_MINOR = 0
+const PROJ_VERSION_PATCH = 1
 const PJ_DEFAULT_CTX = 0
 
 struct PJ_XYZT
@@ -48,7 +48,7 @@ struct PJ_INFO
     version::Cstring
     searchpath::Cstring
     paths::Ptr{Cstring}
-    path_count::Csize_t
+    path_count::Cint
 end
 
 struct PJ_PROJ_INFO
@@ -186,6 +186,34 @@ const PJ_LOG_FUNCTION = Ptr{Cvoid}
 const projCtx_t = Cvoid
 const PJ_CONTEXT = projCtx_t
 const proj_file_finder = Ptr{Cvoid}
+const PROJ_FILE_HANDLE = Cvoid
+
+@cenum PROJ_OPEN_ACCESS::UInt32 begin
+    PROJ_OPEN_ACCESS_READ_ONLY = 0
+    PROJ_OPEN_ACCESS_READ_UPDATE = 1
+    PROJ_OPEN_ACCESS_CREATE = 2
+end
+
+
+struct PROJ_FILE_API
+    version::Cint
+    open_cbk::Ptr{Cvoid}
+    size_t::Cvoid
+    seek_cbk::Ptr{Cvoid}
+    tell_cbk::Ptr{Cvoid}
+    close_cbk::Ptr{Cvoid}
+    exists_cbk::Ptr{Cvoid}
+    mkdir_cbk::Ptr{Cvoid}
+    unlink_cbk::Ptr{Cvoid}
+    rename_cbk::Ptr{Cvoid}
+end
+
+const PROJ_NETWORK_HANDLE = Cvoid
+const proj_network_open_cbk_type = Ptr{Cvoid}
+const proj_network_close_cbk_type = Ptr{Cvoid}
+const proj_network_get_header_value_cbk_type = Ptr{Cvoid}
+
+# Skipping Typedef: CXType_FunctionProto size_t
 
 @cenum PJ_DIRECTION::Int32 begin
     PJ_FWD = 1
@@ -199,6 +227,7 @@ const PROJ_STRING_LIST = Ptr{Cstring}
 
 "Guessed WKT \"dialect\""
 @cenum PJ_GUESSED_WKT_DIALECT::UInt32 begin
+    PJ_GUESSED_WKT2_2019 = 0
     PJ_GUESSED_WKT2_2018 = 0
     PJ_GUESSED_WKT2_2015 = 1
     PJ_GUESSED_WKT1_GDAL = 2
@@ -257,7 +286,9 @@ end
 @cenum PJ_WKT_TYPE::UInt32 begin
     PJ_WKT2_2015 = 0
     PJ_WKT2_2015_SIMPLIFIED = 1
+    PJ_WKT2_2019 = 2
     PJ_WKT2_2018 = 2
+    PJ_WKT2_2019_SIMPLIFIED = 3
     PJ_WKT2_2018_SIMPLIFIED = 3
     PJ_WKT1_GDAL = 4
     PJ_WKT1_ESRI = 5
@@ -274,6 +305,7 @@ end
     PROJ_GRID_AVAILABILITY_USED_FOR_SORTING = 0
     PROJ_GRID_AVAILABILITY_DISCARD_OPERATION_IF_MISSING_GRID = 1
     PROJ_GRID_AVAILABILITY_IGNORED = 2
+    PROJ_GRID_AVAILABILITY_KNOWN_AVAILABLE = 3
 end
 
 

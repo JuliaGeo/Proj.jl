@@ -24,11 +24,12 @@ on how to construct the PROJ Doxygen XML file needed here.
 using Clang  # needs a post 0.9.1 release with #231 and #232
 using MacroTools
 using EzXML
+using PROJ_jll
 
 const xmlpath = joinpath(@__DIR__, "doxygen.xml")
 
 # several functions for building docstrings
-include(joinpath(@__DIR__, "doc.jl"))
+include("doc.jl")
 
 
 """
@@ -66,7 +67,7 @@ function keywordify!(fargs2, argpos, i)
         return nothing
     else
         arg = fargs2[i]
-        fargs2[i] = :($arg = C_NULL)
+        fargs2[i] = Expr(:kw, :($arg), :C_NULL)
         # in optpos is does not have to be at i anymore if it already was moved
         argoptpos = findfirst(==(i), argpos)
         splice!(argpos, argoptpos)
@@ -86,8 +87,31 @@ function rewriter(x::Expr)
         # keep track of how we order arguments, such that we can do the same in the docs
         argpos = collect(1:n)
 
+        # for some reason this function stopped being wrapped correctly, since it became
+        # function proj_trans_generic()
+        #     ccall((:proj_trans_generic, libproj), Cint, ())
+        # end
+        if f === :proj_trans_generic
+            @assert isempty(fargs)  # check if this workaround is still needed
+            x2 = :(function proj_trans_generic(P, direction, x, sx, nx, y, sy, ny, z, sz, nz, t, st, nt)
+                ccall((:proj_trans_generic, libproj), Csize_t, (Ptr{PJ}, PJ_DIRECTION, Ptr{Cdouble}, Csize_t, Csize_t, Ptr{Cdouble}, Csize_t, Csize_t, Ptr{Cdouble}, Csize_t, Csize_t, Ptr{Cdouble}, Csize_t, Csize_t), P, direction, x, sx, nx, y, sy, ny, z, sz, nz, t, st, nt)
+            end) |> prettify
+            return x2, argpos
+        end    
+
         fargs2 = copy(fargs)
         if !isempty(fargs)
+            # make area optional
+            if f in (:proj_create_crs_to_crs, :proj_create_crs_to_crs_from_pj)
+                optpos = findfirst(==(:area), fargs)
+                keywordify!(fargs2, argpos, optpos)
+            elseif f === :proj_coord
+                # proj_coord(x, y, z, t) to proj_coord(x = 0.0, y = 0.0, z = 0.0, t = 0.0)
+                fargs2[1] = Expr(:kw, :x, 0.0)
+                fargs2[2] = Expr(:kw, :y, 0.0)
+                fargs2[3] = Expr(:kw, :z, 0.0)
+                fargs2[4] = Expr(:kw, :t, 0.0)
+            end
             # ctx is always the first argument
             if fargs[1] === :ctx
                 keywordify!(fargs2, argpos, 1)
@@ -120,20 +144,19 @@ function rewriter(x::Expr)
         x2 = :(function $f($(fargs2...))
             $cc2
         end) |> prettify
-        x2, argpos
+        return x2, argpos
     else
         # do not modify expressions that are no ccall function wrappers
         # argument positions do not apply, but something still needs to be returned
         argpos = nothing
-        x, argpos
+        return x, argpos
     end
 end
 
 # parse GDAL's Doxygen XML file
 const doc = readxml(xmlpath)
 
-# should be here if you pkg> build Proj4
-includedir = normpath(joinpath(@__DIR__, "..", "deps", "usr", "include"))
+includedir = joinpath(PROJ_jll.artifact_dir, "include")
 headerfiles = [joinpath(includedir, "proj.h")]
 
 wc = init(; headers = headerfiles,

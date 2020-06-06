@@ -10,10 +10,34 @@ function proj_context_destroy(ctx = C_NULL)
     ccall((:proj_context_destroy, libproj), Ptr{PJ_CONTEXT}, (Ptr{PJ_CONTEXT},), ctx)
 end
 
+"""
+    proj_context_set_file_finder(proj_file_finder finder,
+                                 void * user_data,
+                                 PJ_CONTEXT * ctx) -> void
+
+Assign a file finder callback to a context.
+
+### Parameters
+* **finder**: Finder callback. May be NULL
+* **user_data**: User data provided to the finder callback. May be NULL.
+* **ctx**: PROJ context, or NULL for the default context.
+"""
 function proj_context_set_file_finder(finder, user_data, ctx = C_NULL)
     ccall((:proj_context_set_file_finder, libproj), Cvoid, (Ptr{PJ_CONTEXT}, proj_file_finder, Ptr{Cvoid}), ctx, finder, user_data)
 end
 
+"""
+    proj_context_set_search_paths(int count_paths,
+                                  const char *const * paths,
+                                  PJ_CONTEXT * ctx) -> void
+
+Sets search paths.
+
+### Parameters
+* **count_paths**: Number of paths. 0 if paths == NULL.
+* **paths**: Paths. May be NULL.
+* **ctx**: PROJ context, or NULL for the default context.
+"""
 function proj_context_set_search_paths(count_paths, paths, ctx = C_NULL)
     ccall((:proj_context_set_search_paths, libproj), Cvoid, (Ptr{PJ_CONTEXT}, Cint, Ptr{Cstring}), ctx, count_paths, paths)
 end
@@ -27,10 +51,198 @@ function proj_context_get_use_proj4_init_rules(from_legacy_code_path, ctx = C_NU
 end
 
 """
+    proj_context_set_fileapi(const PROJ_FILE_API * fileapi,
+                             void * user_data,
+                             PJ_CONTEXT * ctx) -> int
+
+### Parameters
+* **fileapi**: Pointer to file API structure (content will be copied).
+* **user_data**: Arbitrary pointer provided by the user, and passed to the above callbacks. May be NULL.
+* **ctx**: PROJ context, or NULL
+
+### Returns
+TRUE in case of success.
+"""
+function proj_context_set_fileapi(fileapi, user_data, ctx = C_NULL)
+    ccall((:proj_context_set_fileapi, libproj), Cint, (Ptr{PJ_CONTEXT}, Ptr{PROJ_FILE_API}, Ptr{Cvoid}), ctx, fileapi, user_data)
+end
+
+"""
+    proj_context_set_sqlite3_vfs_name(const char * name,
+                                      PJ_CONTEXT * ctx) -> void
+
+### Parameters
+* **name**: SQLite3 VFS name. If NULL is passed, default implementation by SQLite will be used.
+* **ctx**: PROJ context, or NULL
+"""
+function proj_context_set_sqlite3_vfs_name(name, ctx = C_NULL)
+    ccall((:proj_context_set_sqlite3_vfs_name, libproj), Cvoid, (Ptr{PJ_CONTEXT}, Cstring), ctx, name)
+end
+
+"""
+    proj_context_set_network_callbacks(proj_network_open_cbk_type open_cbk,
+                                       proj_network_close_cbk_type close_cbk,
+                                       proj_network_get_header_value_cbk_type get_header_value_cbk,
+                                       proj_network_read_range_type read_range_cbk,
+                                       void * user_data,
+                                       PJ_CONTEXT * ctx) -> int
+
+### Parameters
+* **open_cbk**: Callback to open a remote file given its URL
+* **close_cbk**: Callback to close a remote file.
+* **get_header_value_cbk**: Callback to get HTTP headers
+* **read_range_cbk**: Callback to read a range of bytes inside a remote file.
+* **user_data**: Arbitrary pointer provided by the user, and passed to the above callbacks. May be NULL.
+* **ctx**: PROJ context, or NULL
+
+### Returns
+TRUE in case of success.
+"""
+function proj_context_set_network_callbacks(open_cbk, close_cbk, get_header_value_cbk, read_range_cbk, user_data, ctx = C_NULL)
+    ccall((:proj_context_set_network_callbacks, libproj), Cint, (Ptr{PJ_CONTEXT}, proj_network_open_cbk_type, proj_network_close_cbk_type, proj_network_get_header_value_cbk_type, Cint, Ptr{Cvoid}), ctx, open_cbk, close_cbk, get_header_value_cbk, read_range_cbk, user_data)
+end
+
+"""
+    proj_context_set_enable_network(int enable,
+                                    PJ_CONTEXT * ctx) -> int
+
+### Parameters
+* **enable**: TRUE if network access is allowed.
+* **ctx**: PROJ context, or NULL
+
+### Returns
+TRUE if network access is possible. That is either libcurl is available, or an alternate interface has been set.
+"""
+function proj_context_set_enable_network(enabled, ctx = C_NULL)
+    ccall((:proj_context_set_enable_network, libproj), Cint, (Ptr{PJ_CONTEXT}, Cint), ctx, enabled)
+end
+
+"""
+    proj_context_is_network_enabled(PJ_CONTEXT * ctx) -> int
+
+### Parameters
+* **ctx**: PROJ context, or NULL
+
+### Returns
+TRUE if network access has been enabled
+"""
+function proj_context_is_network_enabled(ctx = C_NULL)
+    ccall((:proj_context_is_network_enabled, libproj), Cint, (Ptr{PJ_CONTEXT},), ctx)
+end
+
+"""
+    proj_context_set_url_endpoint(const char * url,
+                                  PJ_CONTEXT * ctx) -> void
+
+### Parameters
+* **url**: Endpoint URL. Must NOT be NULL.
+* **ctx**: PROJ context, or NULL
+"""
+function proj_context_set_url_endpoint(url, ctx = C_NULL)
+    ccall((:proj_context_set_url_endpoint, libproj), Cvoid, (Ptr{PJ_CONTEXT}, Cstring), ctx, url)
+end
+
+"""
+    proj_grid_cache_set_enable(int enabled,
+                               PJ_CONTEXT * ctx) -> void
+
+### Parameters
+* **enabled**: TRUE if the cache is enabled.
+* **ctx**: PROJ context, or NULL
+"""
+function proj_grid_cache_set_enable(enabled, ctx = C_NULL)
+    ccall((:proj_grid_cache_set_enable, libproj), Cvoid, (Ptr{PJ_CONTEXT}, Cint), ctx, enabled)
+end
+
+"""
+    proj_grid_cache_set_filename(const char * fullname,
+                                 PJ_CONTEXT * ctx) -> void
+
+### Parameters
+* **fullname**: Full name to the cache (encoded in UTF-8). If set to NULL, caching will be disabled.
+* **ctx**: PROJ context, or NULL
+"""
+function proj_grid_cache_set_filename(fullname, ctx = C_NULL)
+    ccall((:proj_grid_cache_set_filename, libproj), Cvoid, (Ptr{PJ_CONTEXT}, Cstring), ctx, fullname)
+end
+
+"""
+    proj_grid_cache_set_max_size(int max_size_MB,
+                                 PJ_CONTEXT * ctx) -> void
+
+### Parameters
+* **max_size_MB**: Maximum size, in mega-bytes (1024*1024 bytes), or negative value to set unlimited size.
+* **ctx**: PROJ context, or NULL
+"""
+function proj_grid_cache_set_max_size(max_size_MB, ctx = C_NULL)
+    ccall((:proj_grid_cache_set_max_size, libproj), Cvoid, (Ptr{PJ_CONTEXT}, Cint), ctx, max_size_MB)
+end
+
+"""
+    proj_grid_cache_set_ttl(int ttl_seconds,
+                            PJ_CONTEXT * ctx) -> void
+
+### Parameters
+* **ttl_seconds**: Delay in seconds. Use negative value for no expiration.
+* **ctx**: PROJ context, or NULL
+"""
+function proj_grid_cache_set_ttl(ttl_seconds, ctx = C_NULL)
+    ccall((:proj_grid_cache_set_ttl, libproj), Cvoid, (Ptr{PJ_CONTEXT}, Cint), ctx, ttl_seconds)
+end
+
+"""
+    proj_grid_cache_clear(PJ_CONTEXT * ctx) -> void
+
+### Parameters
+* **ctx**: PROJ context, or NULL
+"""
+function proj_grid_cache_clear(ctx = C_NULL)
+    ccall((:proj_grid_cache_clear, libproj), Cvoid, (Ptr{PJ_CONTEXT},), ctx)
+end
+
+"""
+    proj_is_download_needed(const char * url_or_filename,
+                            int ignore_ttl_setting,
+                            PJ_CONTEXT * ctx) -> int
+
+### Parameters
+* **url_or_filename**: URL or filename (without directory component)
+* **ignore_ttl_setting**: If set to FALSE, PROJ will only check the recentness of an already downloaded file, if the delay between the last time it has been verified and the current time exceeds the TTL setting. This can save network accesses. If set to TRUE, PROJ will unconditionnally check from the server the recentness of the file.
+* **ctx**: PROJ context, or NULL
+
+### Returns
+TRUE if the file must be downloaded with proj_download_file()
+"""
+function proj_is_download_needed(url_or_filename, ignore_ttl_setting, ctx = C_NULL)
+    ccall((:proj_is_download_needed, libproj), Cint, (Ptr{PJ_CONTEXT}, Cstring, Cint), ctx, url_or_filename, ignore_ttl_setting)
+end
+
+"""
+    proj_download_file(const char * url_or_filename,
+                       int ignore_ttl_setting,
+                       int(*)(PJ_CONTEXT *, double pct, void *user_data) progress_cbk,
+                       void * user_data,
+                       PJ_CONTEXT * ctx) -> int
+
+### Parameters
+* **url_or_filename**: URL or filename (without directory component)
+* **ignore_ttl_setting**: If set to FALSE, PROJ will only check the recentness of an already downloaded file, if the delay between the last time it has been verified and the current time exceeds the TTL setting. This can save network accesses. If set to TRUE, PROJ will unconditionnally check from the server the recentness of the file.
+* **progress_cbk**: Progress callback, or NULL. The passed percentage is in the [0, 1] range. The progress callback must return TRUE if download must be continued.
+* **user_data**: User data to provide to the progress callback, or NULL
+* **ctx**: PROJ context, or NULL
+
+### Returns
+TRUE if the download was successful (or not needed)
+"""
+function proj_download_file(url_or_filename, ignore_ttl_setting, progress_cbk, user_data, ctx = C_NULL)
+    ccall((:proj_download_file, libproj), Cint, (Ptr{PJ_CONTEXT}, Cstring, Cint, Ptr{Cvoid}, Ptr{Cvoid}), ctx, url_or_filename, ignore_ttl_setting, progress_cbk, user_data)
+end
+
+"""
     proj_create(const char * text,
                 PJ_CONTEXT * ctx) -> PJ *
 
-Instantiate an object from a WKT string, PROJ string or object code (like "EPSG:4326", "urn:ogc:def:crs:EPSG::4326", "urn:ogc:def:coordinateOperation:EPSG::1671").
+Instantiate an object from a WKT string, PROJ string, object code (like "EPSG:4326", "urn:ogc:def:crs:EPSG::4326", "urn:ogc:def:coordinateOperation:EPSG::1671") or PROJJSON string.
 
 ### Parameters
 * **text**: String (must not be NULL)
@@ -51,6 +263,10 @@ function proj_create_crs_to_crs(source_crs, target_crs, area = C_NULL, ctx = C_N
     ccall((:proj_create_crs_to_crs, libproj), Ptr{PJ}, (Ptr{PJ_CONTEXT}, Cstring, Cstring, Ptr{PJ_AREA}), ctx, source_crs, target_crs, area)
 end
 
+function proj_create_crs_to_crs_from_pj(source_crs, target_crs, area = C_NULL, ctx = C_NULL, options = C_NULL)
+    ccall((:proj_create_crs_to_crs_from_pj, libproj), Ptr{PJ}, (Ptr{PJ_CONTEXT}, Ptr{PJ}, Ptr{PJ}, Ptr{PJ_AREA}, Ptr{Cstring}), ctx, source_crs, target_crs, area, options)
+end
+
 """
     proj_normalize_for_visualization(const PJ * obj,
                                      PJ_CONTEXT * ctx) -> PJ *
@@ -58,7 +274,7 @@ end
 Returns a PJ* object whose axis order is the one expected for visualization purposes.
 
 ### Parameters
-* **obj**: Object of type CoordinateOperation, created with proj_create_crs_to_crs() (must not be NULL)
+* **obj**: Object of type CRS, or CoordinateOperation created with proj_create_crs_to_crs() (must not be NULL)
 * **ctx**: PROJ context, or NULL for default context
 
 ### Returns
@@ -66,6 +282,10 @@ a new PJ* object to free with proj_destroy() in case of success, or nullptr in c
 """
 function proj_normalize_for_visualization(obj, ctx = C_NULL)
     ccall((:proj_normalize_for_visualization, libproj), Ptr{PJ}, (Ptr{PJ_CONTEXT}, Ptr{PJ}), ctx, obj)
+end
+
+function proj_assign_context(pj, ctx)
+    ccall((:proj_assign_context, libproj), Cvoid, (Ptr{PJ}, Ptr{PJ_CONTEXT}), pj, ctx)
 end
 
 function proj_destroy(P)
@@ -104,7 +324,7 @@ function proj_trans_generic(P, direction, x, sx, nx, y, sy, ny, z, sz, nz, t, st
     ccall((:proj_trans_generic, libproj), Csize_t, (Ptr{PJ}, PJ_DIRECTION, Ptr{Cdouble}, Csize_t, Csize_t, Ptr{Cdouble}, Csize_t, Csize_t, Ptr{Cdouble}, Csize_t, Csize_t, Ptr{Cdouble}, Csize_t, Csize_t), P, direction, x, sx, nx, y, sy, ny, z, sz, nz, t, st, nt)
 end
 
-function proj_coord(x = 0, y = 0, z = 0, t = 0)
+function proj_coord(x = 0.0, y = 0.0, z = 0.0, t = 0.0)
     ccall((:proj_coord, libproj), PJ_COORD, (Cdouble, Cdouble, Cdouble, Cdouble), x, y, z, t)
 end
 
@@ -220,11 +440,29 @@ function proj_rtodms(s, r, pos, neg)
     aftercare(ccall((:proj_rtodms, libproj), Cstring, (Cstring, Cdouble, Cint, Cint), s, r, pos, neg))
 end
 
+function proj_cleanup()
+    ccall((:proj_cleanup, libproj), Cvoid, ())
+end
+
 """
     proj_string_list_destroy(PROJ_STRING_LIST list) -> void
 """
 function proj_string_list_destroy(list)
     ccall((:proj_string_list_destroy, libproj), Cvoid, (PROJ_STRING_LIST,), list)
+end
+
+"""
+    proj_context_set_autoclose_database(int autoclose,
+                                        PJ_CONTEXT * ctx) -> void
+
+Set if the database must be closed after each C API call where it has been openeded, and automatically re-openeded when needed.
+
+### Parameters
+* **autoclose**: Boolean parameter
+* **ctx**: PROJ context, or NULL for default context
+"""
+function proj_context_set_autoclose_database(autoclose, ctx = C_NULL)
+    ccall((:proj_context_set_autoclose_database, libproj), Cvoid, (Ptr{PJ_CONTEXT}, Cint), ctx, autoclose)
 end
 
 """
@@ -310,7 +548,7 @@ Instantiate an object from a WKT string.
 
 STRICT=YES/NO. Defaults to NO. When set to YES, strict validation will be enabled.
 * **out_warnings**: Pointer to a PROJ_STRING_LIST object, or NULL. If provided, *out_warnings will contain a list of warnings, typically for non recognized projection method or parameters. It must be freed with proj_string_list_destroy().
-* **out_grammar_errors**: Pointer to a PROJ_STRING_LIST object, or NULL. If provided, *out_grammar_errors will contain a list of errors regarding the WKT grammaer. It must be freed with proj_string_list_destroy().
+* **out_grammar_errors**: Pointer to a PROJ_STRING_LIST object, or NULL. If provided, *out_grammar_errors will contain a list of errors regarding the WKT grammar. It must be freed with proj_string_list_destroy().
 
 ### Returns
 Object that must be unreferenced with proj_destroy(), or NULL in case of error.
@@ -367,6 +605,35 @@ TRUE in case of success
 """
 function proj_uom_get_info_from_database(auth_name, code, out_name, out_conv_factor, out_category, ctx = C_NULL)
     ccall((:proj_uom_get_info_from_database, libproj), Cint, (Ptr{PJ_CONTEXT}, Cstring, Cstring, Ptr{Cstring}, Ptr{Cdouble}, Ptr{Cstring}), ctx, auth_name, code, out_name, out_conv_factor, out_category)
+end
+
+"""
+    proj_grid_get_info_from_database(const char * grid_name,
+                                     const char ** out_full_name,
+                                     const char ** out_package_name,
+                                     const char ** out_url,
+                                     int * out_direct_download,
+                                     int * out_open_license,
+                                     int * out_available,
+                                     PJ_CONTEXT * ctx) -> int
+
+Get information for a grid from a database lookup.
+
+### Parameters
+* **grid_name**: Grid name (must not be NULL)
+* **out_full_name**: Pointer to a string value to store the grid full filename. or NULL
+* **out_package_name**: Pointer to a string value to store the package name where the grid might be found. or NULL
+* **out_url**: Pointer to a string value to store the grid URL or the package URL where the grid might be found. or NULL
+* **out_direct_download**: Pointer to a int (boolean) value to store whether *out_url can be downloaded directly. or NULL
+* **out_open_license**: Pointer to a int (boolean) value to store whether the grid is released with an open license. or NULL
+* **out_available**: Pointer to a int (boolean) value to store whether the grid is available at runtime. or NULL
+* **ctx**: Context, or NULL for default context.
+
+### Returns
+TRUE in case of success.
+"""
+function proj_grid_get_info_from_database(grid_name, out_full_name, out_package_name, out_url, out_direct_download, out_open_license, out_available, ctx = C_NULL)
+    ccall((:proj_grid_get_info_from_database, libproj), Cint, (Ptr{PJ_CONTEXT}, Cstring, Ptr{Cstring}, Ptr{Cstring}, Ptr{Cstring}, Ptr{Cint}, Ptr{Cint}, Ptr{Cint}), ctx, grid_name, out_full_name, out_package_name, out_url, out_direct_download, out_open_license, out_available)
 end
 
 """
@@ -482,6 +749,27 @@ function proj_is_equivalent_to(obj, other, criterion)
 end
 
 """
+    proj_is_equivalent_to_with_ctx(const PJ * obj,
+                                   const PJ * other,
+                                   PJ_COMPARISON_CRITERION criterion,
+                                   PJ_CONTEXT * ctx) -> int
+
+Return whether two objects are equivalent.
+
+### Parameters
+* **obj**: Object (must not be NULL)
+* **other**: Other object (must not be NULL)
+* **criterion**: Comparison criterion
+* **ctx**: PROJ context, or NULL for default context
+
+### Returns
+TRUE if they are equivalent
+"""
+function proj_is_equivalent_to_with_ctx(obj, other, criterion, ctx = C_NULL)
+    ccall((:proj_is_equivalent_to_with_ctx, libproj), Cint, (Ptr{PJ_CONTEXT}, Ptr{PJ}, Ptr{PJ}, PJ_COMPARISON_CRITERION), ctx, obj, other, criterion)
+end
+
+"""
     proj_is_crs(const PJ * obj) -> int
 
 Return whether an object is a CRS.
@@ -540,6 +828,36 @@ a string, or NULL in case of error or missing name.
 """
 function proj_get_id_code(obj, index)
     aftercare(ccall((:proj_get_id_code, libproj), Cstring, (Ptr{PJ}, Cint), obj, index))
+end
+
+"""
+    proj_get_remarks(const PJ * obj) -> const char *
+
+Get the remarks of an object.
+
+### Parameters
+* **obj**: Object (must not be NULL)
+
+### Returns
+a string, or NULL in case of error.
+"""
+function proj_get_remarks(obj)
+    aftercare(ccall((:proj_get_remarks, libproj), Cstring, (Ptr{PJ},), obj))
+end
+
+"""
+    proj_get_scope(const PJ * obj) -> const char *
+
+Get the scope of an object.
+
+### Parameters
+* **obj**: Object (must not be NULL)
+
+### Returns
+a string, or NULL in case of error or missing scope.
+"""
+function proj_get_scope(obj)
+    aftercare(ccall((:proj_get_scope, libproj), Cstring, (Ptr{PJ},), obj))
 end
 
 """
@@ -617,6 +935,33 @@ a string, or NULL in case of error.
 """
 function proj_as_proj_string(obj, type, ctx = C_NULL, options = C_NULL)
     aftercare(ccall((:proj_as_proj_string, libproj), Cstring, (Ptr{PJ_CONTEXT}, Ptr{PJ}, PJ_PROJ_STRING_TYPE, Ptr{Cstring}), ctx, obj, type, options))
+end
+
+"""
+    proj_as_projjson(const PJ * obj,
+                     PJ_CONTEXT * ctx,
+                     const char *const * options) -> const char *
+
+Get a PROJJSON string representation of an object.
+
+### Parameters
+* **obj**: Object (must not be NULL)
+* **ctx**: PROJ context, or NULL for default context
+* **options**: NULL-terminated list of strings with "KEY=VALUE" format. or NULL. Currently supported options are: 
+
+MULTILINE=YES/NO. Defaults to YES 
+
+
+INDENTATION_WIDTH=number. Defauls to 2 (when multiline output is on). 
+
+
+SCHEMA=string. URL to PROJJSON schema. Can be set to empty string to disable it.
+
+### Returns
+a string, or NULL in case of error.
+"""
+function proj_as_projjson(obj, ctx = C_NULL, options = C_NULL)
+    aftercare(ccall((:proj_as_projjson, libproj), Cstring, (Ptr{PJ_CONTEXT}, Ptr{PJ}, Ptr{Cstring}), ctx, obj, options))
 end
 
 """
@@ -933,6 +1278,22 @@ Restrict the potential pivot CRSs that can be used when trying to build a coordi
 """
 function proj_operation_factory_context_set_allowed_intermediate_crs(factory_ctx, list_of_auth_name_codes, ctx = C_NULL)
     ccall((:proj_operation_factory_context_set_allowed_intermediate_crs, libproj), Cvoid, (Ptr{PJ_CONTEXT}, Ptr{PJ_OPERATION_FACTORY_CONTEXT}, Ptr{Cstring}), ctx, factory_ctx, list_of_auth_name_codes)
+end
+
+"""
+    proj_operation_factory_context_set_discard_superseded(PJ_OPERATION_FACTORY_CONTEXT * factory_ctx,
+                                                          int discard,
+                                                          PJ_CONTEXT * ctx) -> void
+
+Set whether transformations that are superseded (but not deprecated) should be discarded.
+
+### Parameters
+* **factory_ctx**: Operation factory context. must not be NULL
+* **discard**: superseded crs or not
+* **ctx**: PROJ context, or NULL for default context
+"""
+function proj_operation_factory_context_set_discard_superseded(factory_ctx, discard, ctx = C_NULL)
+    ccall((:proj_operation_factory_context_set_discard_superseded, libproj), Cvoid, (Ptr{PJ_CONTEXT}, Ptr{PJ_OPERATION_FACTORY_CONTEXT}, Cint), ctx, factory_ctx, discard)
 end
 
 """
@@ -1466,4 +1827,57 @@ TRUE in case of success, or FALSE if coordoperation is not compatible with a WKT
 """
 function proj_coordoperation_get_towgs84_values(coordoperation, out_values, value_count, emit_error_if_incompatible, ctx = C_NULL)
     ccall((:proj_coordoperation_get_towgs84_values, libproj), Cint, (Ptr{PJ_CONTEXT}, Ptr{PJ}, Ptr{Cdouble}, Cint, Cint), ctx, coordoperation, out_values, value_count, emit_error_if_incompatible)
+end
+
+"""
+    proj_coordoperation_create_inverse(const PJ * obj,
+                                       PJ_CONTEXT * ctx) -> PJ *
+
+Returns a PJ* coordinate operation object which represents the inverse operation of the specified coordinate operation.
+
+### Parameters
+* **obj**: Object of type CoordinateOperation (must not be NULL)
+* **ctx**: PROJ context, or NULL for default context
+
+### Returns
+a new PJ* object to free with proj_destroy() in case of success, or nullptr in case of error
+"""
+function proj_coordoperation_create_inverse(obj, ctx = C_NULL)
+    ccall((:proj_coordoperation_create_inverse, libproj), Ptr{PJ}, (Ptr{PJ_CONTEXT}, Ptr{PJ}), ctx, obj)
+end
+
+"""
+    proj_concatoperation_get_step_count(const PJ * concatoperation,
+                                        PJ_CONTEXT * ctx) -> int
+
+Returns the number of steps of a concatenated operation.
+
+### Parameters
+* **concatoperation**: Concatenated operation (must not be NULL)
+* **ctx**: PROJ context, or NULL for default context
+
+### Returns
+the number of steps, or 0 in case of error.
+"""
+function proj_concatoperation_get_step_count(concatoperation, ctx = C_NULL)
+    ccall((:proj_concatoperation_get_step_count, libproj), Cint, (Ptr{PJ_CONTEXT}, Ptr{PJ}), ctx, concatoperation)
+end
+
+"""
+    proj_concatoperation_get_step(const PJ * concatoperation,
+                                  int i_step,
+                                  PJ_CONTEXT * ctx) -> PJ *
+
+Returns a step of a concatenated operation.
+
+### Parameters
+* **concatoperation**: Concatenated operation (must not be NULL)
+* **i_step**: Index of the step to extract. Between 0 and proj_concatoperation_get_step_count()-1
+* **ctx**: PROJ context, or NULL for default context
+
+### Returns
+Object that must be unreferenced with proj_destroy(), or NULL in case of error.
+"""
+function proj_concatoperation_get_step(concatoperation, i_step, ctx = C_NULL)
+    ccall((:proj_concatoperation_get_step, libproj), Ptr{PJ}, (Ptr{PJ_CONTEXT}, Ptr{PJ}, Cint), ctx, concatoperation, i_step)
 end
