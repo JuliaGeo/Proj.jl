@@ -12,9 +12,11 @@ using Proj4
 
 wgs84 = Projection("+proj=longlat +datum=WGS84 +no_defs")
 utm56 = Projection("+proj=utm +zone=56 +south +datum=WGS84 +units=m +no_defs")
-
-transform(wgs84, utm56, [150 -27 0])
+transformation = CRS2CRS(wgs84, utm56) # transformation from WGS84 -> UTM56
+transformation([150 -27 0])
 # Should result in [202273.913 7010024.033 0.0]
+# alternatively (old API): transform using projections
+transform(wgs84, utm56, [150 -27 0])
 ```
 
 API documentation for the underlying C API may be found here:
