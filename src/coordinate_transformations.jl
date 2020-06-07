@@ -80,7 +80,7 @@ function (transformation::CRS2CRS)(x)
         error("Input must have length 2, 3 or 4! Found $(length(x)).")
     end
 
-    xyzt = proj_trans(transformation.rep, transformation.direction, coord).xyzt
+    xyzt = (proj_trans(transformation.rep, transformation.direction, coord).xyzt)::PJ_XYZT
 
     return if length(x) == 2
         T(xyzt.x, xyzt.y)
@@ -95,4 +95,45 @@ end
 
 function (transformation::CRS2CRS)(coord::PJ_COORD)
     return proj_trans(transformation.rep, transformation.direction, coord)
+end
+
+function (transformation::CRS2CRS)(vec::Vector{T}) where T <: Real
+    l = length(vec)
+    @assert l < 4 "The length of the input vector must be < 4!  Found $l"
+    @assert l > 0 "The length of the input vector must be > 0!  Found $l"
+
+    NewT = promote_type(T, Float64)
+
+    coord = PJ_COORD(vec...)::PJ_COORD
+    xyzt = (transformation(coord).xyzt)::PJ_XYZT
+
+    if l == 1
+        return NewT[xyzt.x]
+    elseif l == 2
+        return NewT[xyzt.x, xyzt.y]
+    elseif l == 3
+        return NewT[xyzt.x, xyzt.y, xyzt.z]
+    elseif l == 4
+        return NewT[xyzt.x, xyzt.y, xyzt.z, xyzt.t]
+    end
+end
+
+function (transformation::CRS2CRS)(vec::NTuple{N, T}) where N where T <: Real
+    @assert N < 4 "The length of the input tuple must be < 4!  Found $l"
+    @assert N > 0 "The length of the input tuple must be > 0!  Found $l"
+
+    coord = PJ_COORD(vec...)::PJ_COORD
+    xyzt = (transformation(coord).xyzt)::PJ_XYZT
+
+    NewT = promote_type(T, Float64)
+
+    if N == 1
+        return NewT.((xyzt.x,))
+    elseif N == 2
+        return NewT.((xyzt.Cx, xyzt.y))
+    elseif N == 3
+        return NewT.((xyzt.x, xyzt.y, xyzt.z))
+    elseif N == 4
+        return NewT.((xyzt.x, xyzt.y, xyzt.z, xyzt.t))
+    end
 end
