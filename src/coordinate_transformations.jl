@@ -53,6 +53,19 @@ end
 
 Base.inv(cs::CRS2CRS) = CRS2CRS(cs.rep, inv(cs.direction))
 
+function Base.show(io::IO, ::MIME"text/plain", cs::CRS2CRS)
+    # info = proj_pj_info(cs.rep)
+    direction = if cs.direction == PJ_FWD
+        "Forward"
+    elseif cs.direction == PJ_INV
+        "Reverse"
+    else
+        "Identity"
+    end
+    println(io, "$(direction)-mode CRS2CRS:")
+    println(io, Proj4.proj_as_proj_string(cs.rep, Proj4.PJ_PROJ_4))
+end
+
 function Base.inv(dir::PJ_DIRECTION)
     return if dir == PJ_IDENT
         PJ_IDENT
