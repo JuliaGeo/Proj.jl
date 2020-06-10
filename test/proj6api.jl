@@ -151,11 +151,14 @@ end
 
         sa = SVector{4, Float64}(12,55,0,0)
         @test_nowarn cs(sa)
+        @test size(cs(sa)) == size(sa)
 
         sa = SVector{3, Float64}(12,55,0)
         @test_nowarn cs(sa)
+        @test size(cs(sa)) == size(sa)
 
         sa = SVector{2, Float64}(12,55)
         @test_nowarn cs(sa)
+        @test size(cs(sa)) == size(sa)
     end
 end
