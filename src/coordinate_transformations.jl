@@ -67,12 +67,6 @@ function Base.inv(dir::PJ_DIRECTION)
 end
 Base.inv(cs::CRS2CRS) = CRS2CRS(cs.rep, inv(cs.direction))
 
-function CoordinateTransformations.transform_deriv(cs::CRS2CRS, x)
-    coord = proj_coord(x...)
-    factors = proj_factors(cs.rep, coord)
-    return [factors.dx_dlam factors.dx_dphi; factors.dy_dlam factors.dy_dphi]
-end
-
 function (transformation::CRS2CRS)(x)
     # if `x` is too long, this will throw
     # a methoderror (there are 0, 1, 2, 3, and 4-arg)
