@@ -67,7 +67,7 @@ function Base.inv(dir::PJ_DIRECTION)
 end
 Base.inv(cs::CRS2CRS) = CRS2CRS(cs.rep, inv(cs.direction))
 
-function (transformation::CRS2CRS)(x)
+function (transformation::CRS2CRS)(x::T) where T
     # if `x` is too long, this will throw
     # a methoderror (there are 0, 1, 2, 3, and 4-arg)
     # versions of the PJ_COORD constructor.
