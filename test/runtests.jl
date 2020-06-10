@@ -1,4 +1,4 @@
-using Proj4
+using Proj4, StaticArrays
 using Test
 
 @testset "Proj4" begin

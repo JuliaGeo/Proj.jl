@@ -135,4 +135,8 @@ end
     @test c.xyzt.y ≈ 55.0
     @test c.xyzt.z === 0.0
     @test c.xyzt.t === 0.0
+
+    # test with staticarrays
+    sa = SVector{4, Float64}(10,0,0,0)
+    @test_nowarn cs(sa)
 end
