@@ -132,3 +132,4 @@ end
 # (these mostly just forward `cs -> cs.rep`)
 
 proj_as_wkt(cs::CRS2CRS, type::PJ_WKT_TYPE, ctx = C_NULL, options = C_NULL) = proj_as_wkt(cs.rep, type, ctx, options)
+proj_factors(cs::CRS2CRS, coord::PJ_COORD) = proj_factors(cs.rep, coord)
