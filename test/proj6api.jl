@@ -106,37 +106,56 @@ end
     # Clean up
     Proj4.proj_destroy(pj)
     # TODO julia crashes if proj_destroy is called twice, i.e. on a null pointer
+end
 
-    # Tests with CRS2CRS
+@testset "CRS2CRS" begin
+    @testset "Quick start" begin
+        # Tests with CRS2CRS
 
-    cs = CRS2CRS(
-        "EPSG:4326",  # source
-        "+proj=utm +zone=32 +datum=WGS84",  # target, also EPSG:32632
-    )
+        cs = CRS2CRS(
+            "EPSG:4326",  # source
+            "+proj=utm +zone=32 +datum=WGS84",  # target, also EPSG:32632
+        )
 
-    # test the optional args for proj_coord also
-    a = Proj4.proj_coord(12, 55)
-    @test isbits(a)
-    @test a.xyzt.x === 12.0
-    @test a.xyzt.y === 55.0
-    @test a.xyzt.z === 0.0
-    @test a.xyzt.t === 0.0
+        # test the optional args for proj_coord also
+        a = Proj4.proj_coord(12, 55)
+        @test isbits(a)
+        @test a.xyzt.x === 12.0
+        @test a.xyzt.y === 55.0
+        @test a.xyzt.z === 0.0
+        @test a.xyzt.t === 0.0
 
-    # transform to UTM zone 32
-    b = cs(a)
-    @test b.xyzt.x ≈ 691875.632
-    @test b.xyzt.y ≈ 6098907.825
-    @test b.xyzt.z === 0.0
-    @test b.xyzt.t === 0.0
+        # transform to UTM zone 32
+        b = cs(a)
+        @test b.xyzt.x ≈ 691875.632
+        @test b.xyzt.y ≈ 6098907.825
+        @test b.xyzt.z === 0.0
+        @test b.xyzt.t === 0.0
 
-    # inverse transform, back to geographical
-    c = inv(cs)(b)
-    @test c.xyzt.x ≈ 12.0
-    @test c.xyzt.y ≈ 55.0
-    @test c.xyzt.z === 0.0
-    @test c.xyzt.t === 0.0
+        # inverse transform, back to geographical
+        c = inv(cs)(b)
+        @test c.xyzt.x ≈ 12.0
+        @test c.xyzt.y ≈ 55.0
+        @test c.xyzt.z === 0.0
+        @test c.xyzt.t === 0.0
+    end
 
-    # test with staticarrays
-    sa = SVector{4, Float64}(10,0,0,0)
-    @test_nowarn cs(sa)
+    @testset "StaticArrays" begin
+
+        using StaticArrays
+
+        cs = CRS2CRS(
+            "EPSG:4326",  # source
+            "+proj=utm +zone=32 +datum=WGS84",  # target, also EPSG:32632
+        )
+
+        sa = SVector{4, Float64}(12,55,0,0)
+        @test_nowarn cs(sa)
+
+        sa = SVector{3, Float64}(12,55,0)
+        @test_nowarn cs(sa)
+
+        sa = SVector{2, Float64}(12,55)
+        @test_nowarn cs(sa)
+    end
 end
