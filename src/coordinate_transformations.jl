@@ -16,6 +16,11 @@ cs = CRS2CRS("+proj=lonlat", "+proj=wintri")
 a = proj_coord(0, 0)
 b = cs(a) # projected coordinate
 ```
+## Extended help
+
+You can get more information on this by calling `Proj4.proj_pj_info(cs.rep)` for a `CRS2CRS` object `cs`.  This will return a `PJ_FACTORS` struct, which you can inspect using `unsafe_string` on its fields.  You can also get a WKT representation
+by calling `Proj4.proj_as_wkt(cs)`
+
 """
 mutable struct CRS2CRS <: CoordinateTransformations.Transformation
     rep::Ptr{Cvoid}
@@ -51,21 +56,6 @@ function CRS2CRS(source::Projection, target::Projection, direction::PJ_DIRECTION
     )
 end
 
-Base.inv(cs::CRS2CRS) = CRS2CRS(cs.rep, inv(cs.direction))
-
-function Base.show(io::IO, ::MIME"text/plain", cs::CRS2CRS)
-    # info = proj_pj_info(cs.rep)
-    direction = if cs.direction == PJ_FWD
-        "Forward"
-    elseif cs.direction == PJ_INV
-        "Reverse"
-    else
-        "Identity"
-    end
-    println(io, "$(direction)-mode CRS2CRS:")
-    println(io, Proj4.proj_as_proj_string(cs.rep, Proj4.PJ_PROJ_4))
-end
-
 function Base.inv(dir::PJ_DIRECTION)
     return if dir == PJ_IDENT
         PJ_IDENT
@@ -75,6 +65,7 @@ function Base.inv(dir::PJ_DIRECTION)
         PJ_FWD
     end
 end
+Base.inv(cs::CRS2CRS) = CRS2CRS(cs.rep, inv(cs.direction))
 
 function CoordinateTransformations.transform_deriv(cs::CRS2CRS, x)
     coord = proj_coord(x...)
@@ -83,15 +74,10 @@ function CoordinateTransformations.transform_deriv(cs::CRS2CRS, x)
 end
 
 function (transformation::CRS2CRS)(x)
-    coord = if length(x) == 2
-        PJ_COORD(x[1], x[2],    0,    0)
-    elseif length(x) == 3
-        PJ_COORD(x[1], x[2], x[3],    0)
-    elseif length(x) == 4
-        PJ_COORD(x[1], x[2], x[3], x[4])
-    else
-        error("Input must have length 2, 3 or 4! Found $(length(x)).")
-    end
+    # if `x` is too long, this will throw
+    # a methoderror (there are 0, 1, 2, 3, and 4-arg)
+    # versions of the PJ_COORD constructor.
+    coord = PJ_COORD(x...)
 
     xyzt = (proj_trans(transformation.rep, transformation.direction, coord).xyzt)::PJ_XYZT
 
@@ -101,52 +87,54 @@ function (transformation::CRS2CRS)(x)
         T(xyzt.x, xyzt.y, xyzt.z)
     elseif length(x) == 4
         T(xyzt.x, xyzt.y, xyzt.z, xyzt.t)
-    else
-        error("Input must have length 2, 3 or 4! Found $(length(x)).")
     end
 end
 
-function (transformation::CRS2CRS)(coord::PJ_COORD)
+function (transformation::CRS2CRS)(coord::PJ_COORD)::PJ_COORD
     return proj_trans(transformation.rep, transformation.direction, coord)
 end
 
+
+# These are specializations for vectors and tuples, which
+# cannot be constructed directly as `f(x...)`.
 function (transformation::CRS2CRS)(vec::Vector{T}) where T <: Real
     l = length(vec)
-    @assert l < 4 "The length of the input vector must be < 4!  Found $l"
-    @assert l > 0 "The length of the input vector must be > 0!  Found $l"
-
-    NewT = promote_type(T, Float64)
+    @assert l ≤ 4 "The length of the input vector must be ≤ 4!  Found $l"
+    @assert l ≥ 1 "The length of the input vector must be ≥ 1!  Found $l"
 
     coord = PJ_COORD(vec...)::PJ_COORD
     xyzt = (transformation(coord).xyzt)::PJ_XYZT
 
     if l == 1
-        return NewT[xyzt.x]
+        return Float64[xyzt.x]
     elseif l == 2
-        return NewT[xyzt.x, xyzt.y]
+        return Float64[xyzt.x, xyzt.y]
     elseif l == 3
-        return NewT[xyzt.x, xyzt.y, xyzt.z]
+        return Float64[xyzt.x, xyzt.y, xyzt.z]
     elseif l == 4
-        return NewT[xyzt.x, xyzt.y, xyzt.z, xyzt.t]
+        return Float64[xyzt.x, xyzt.y, xyzt.z, xyzt.t]
     end
 end
 
 function (transformation::CRS2CRS)(vec::NTuple{N, T}) where N where T <: Real
-    @assert N < 4 "The length of the input tuple must be < 4!  Found $l"
-    @assert N > 0 "The length of the input tuple must be > 0!  Found $l"
+    @assert N ≤ 4 "The length of the input tuple must be ≤ 4!  Found $l"
+    @assert N ≥ 1 "The length of the input tuple must be ≥ 1!  Found $l"
 
     coord = PJ_COORD(vec...)::PJ_COORD
     xyzt = (transformation(coord).xyzt)::PJ_XYZT
 
-    NewT = promote_type(T, Float64)
-
     if N == 1
-        return NewT.((xyzt.x,))
+        return (xyzt.x,)
     elseif N == 2
-        return NewT.((xyzt.Cx, xyzt.y))
+        return (xyzt.x, xyzt.y)
     elseif N == 3
-        return NewT.((xyzt.x, xyzt.y, xyzt.z))
+        return (xyzt.x, xyzt.y, xyzt.z)
     elseif N == 4
-        return NewT.((xyzt.x, xyzt.y, xyzt.z, xyzt.t))
+        return (xyzt.x, xyzt.y, xyzt.z, xyzt.t)
     end
 end
+
+# Dispatches for informational functions
+# (these mostly just forward `cs -> cs.rep`)
+
+proj_as_wkt(cs::CRS2CRS, type::PJ_WKT_TYPE, ctx = C_NULL, options = C_NULL) = proj_as_wkt(cs.rep, type, ctx, options)
