@@ -2,9 +2,10 @@
 
 
 # Skipping MacroDefinition: PROJ_DLL __attribute__ ( ( visibility ( "default" ) ) )
+# Skipping MacroDefinition: PROJ_DEPRECATED ( decl , msg ) decl __attribute__ ( ( deprecated ( msg ) ) )
 
-const PROJ_VERSION_MAJOR = 6
-const PROJ_VERSION_MINOR = 1
+const PROJ_VERSION_MAJOR = 7
+const PROJ_VERSION_MINOR = 2
 const PROJ_VERSION_PATCH = 0
 const PJ_DEFAULT_CTX = 0
 
@@ -186,6 +187,34 @@ const PJ_LOG_FUNCTION = Ptr{Cvoid}
 const projCtx_t = Cvoid
 const PJ_CONTEXT = projCtx_t
 const proj_file_finder = Ptr{Cvoid}
+const PROJ_FILE_HANDLE = Cvoid
+
+@cenum PROJ_OPEN_ACCESS::UInt32 begin
+    PROJ_OPEN_ACCESS_READ_ONLY = 0
+    PROJ_OPEN_ACCESS_READ_UPDATE = 1
+    PROJ_OPEN_ACCESS_CREATE = 2
+end
+
+
+struct PROJ_FILE_API
+    version::Cint
+    open_cbk::Ptr{Cvoid}
+    read_cbk::Ptr{Cvoid}
+    write_cbk::Ptr{Cvoid}
+    seek_cbk::Ptr{Cvoid}
+    tell_cbk::Ptr{Cvoid}
+    close_cbk::Ptr{Cvoid}
+    exists_cbk::Ptr{Cvoid}
+    mkdir_cbk::Ptr{Cvoid}
+    unlink_cbk::Ptr{Cvoid}
+    rename_cbk::Ptr{Cvoid}
+end
+
+const PROJ_NETWORK_HANDLE = Cvoid
+const proj_network_open_cbk_type = Ptr{Cvoid}
+const proj_network_close_cbk_type = Ptr{Cvoid}
+const proj_network_get_header_value_cbk_type = Ptr{Cvoid}
+const proj_network_read_range_type = Ptr{Cvoid}
 
 @cenum PJ_DIRECTION::Int32 begin
     PJ_FWD = 1
@@ -199,6 +228,7 @@ const PROJ_STRING_LIST = Ptr{Cstring}
 
 "Guessed WKT \"dialect\""
 @cenum PJ_GUESSED_WKT_DIALECT::UInt32 begin
+    PJ_GUESSED_WKT2_2019 = 0
     PJ_GUESSED_WKT2_2018 = 0
     PJ_GUESSED_WKT2_2015 = 1
     PJ_GUESSED_WKT1_GDAL = 2
@@ -244,6 +274,9 @@ end
     PJ_TYPE_TRANSFORMATION = 22
     PJ_TYPE_CONCATENATED_OPERATION = 23
     PJ_TYPE_OTHER_COORDINATE_OPERATION = 24
+    PJ_TYPE_TEMPORAL_DATUM = 25
+    PJ_TYPE_ENGINEERING_DATUM = 26
+    PJ_TYPE_PARAMETRIC_DATUM = 27
 end
 
 @cenum PJ_COMPARISON_CRITERION::UInt32 begin
@@ -257,7 +290,9 @@ end
 @cenum PJ_WKT_TYPE::UInt32 begin
     PJ_WKT2_2015 = 0
     PJ_WKT2_2015_SIMPLIFIED = 1
+    PJ_WKT2_2019 = 2
     PJ_WKT2_2018 = 2
+    PJ_WKT2_2019_SIMPLIFIED = 3
     PJ_WKT2_2018_SIMPLIFIED = 3
     PJ_WKT1_GDAL = 4
     PJ_WKT1_ESRI = 5
@@ -274,6 +309,7 @@ end
     PROJ_GRID_AVAILABILITY_USED_FOR_SORTING = 0
     PROJ_GRID_AVAILABILITY_DISCARD_OPERATION_IF_MISSING_GRID = 1
     PROJ_GRID_AVAILABILITY_IGNORED = 2
+    PROJ_GRID_AVAILABILITY_KNOWN_AVAILABLE = 3
 end
 
 
@@ -333,6 +369,16 @@ struct PROJ_CRS_LIST_PARAMETERS
     east_lon_degree::Cdouble
     north_lat_degree::Cdouble
     allow_deprecated::Cint
+end
+
+struct PROJ_UNIT_INFO
+    auth_name::Cstring
+    code::Cstring
+    name::Cstring
+    category::Cstring
+    conv_factor::Cdouble
+    proj_short_name::Cstring
+    deprecated::Cint
 end
 
 const PJ_OBJ_LIST = Cvoid
