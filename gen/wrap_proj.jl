@@ -1,11 +1,8 @@
 #=
 Run this file to regenerate `proj_c.jl` and `proj_common.jl`.
 
-It expects a PROJ install in the deps folder, run `build Proj4` in Pkg mode
-if these are not in place.
-
 The wrapped PROJ version and provided PROJ version should be kept in sync.
-So when updating the PROJBuilder provided version, also rerun this wrapper.
+So when updating the provided PROJ_jll version, also rerun this wrapper.
 This way we ensure that the provided library has the same functions available
 as the wrapped one. Furthermore this makes sure constants in `proj_common.jl`
 like `PROJ_VERSION_PATCH`, which are just literals, are correct.
@@ -19,11 +16,17 @@ Several custom transformations are applied that should make using this package m
 These transformations are based on the code developed for GDAL.jl, see
 https://github.com/JuliaGeo/GDAL.jl/blob/master/gen/README.md for more information
 on how to construct the PROJ Doxygen XML file needed here.
+
+If Doxygen gives errors, it helps to turn off Latex and HTML output:
+    GENERATE_LATEX         = NO
+    GENERATE_HTML          = NO
+    GENERATE_XML           = YES
 =#
 
-using Clang  # needs a post 0.9.1 release with #231 and #232
+using Clang
 using MacroTools
 using EzXML
+using PROJ_jll
 
 const xmlpath = joinpath(@__DIR__, "doxygen.xml")
 
@@ -66,7 +69,7 @@ function keywordify!(fargs2, argpos, i)
         return nothing
     else
         arg = fargs2[i]
-        fargs2[i] = :($arg = C_NULL)
+        fargs2[i] = Expr(:kw, arg, :C_NULL)
         # in optpos is does not have to be at i anymore if it already was moved
         argoptpos = findfirst(==(i), argpos)
         splice!(argpos, argoptpos)
@@ -129,11 +132,10 @@ function rewriter(x::Expr)
     end
 end
 
-# parse GDAL's Doxygen XML file
+# parse PROJ's Doxygen XML file
 const doc = readxml(xmlpath)
 
-# should be here if you pkg> build Proj4
-includedir = normpath(joinpath(@__DIR__, "..", "deps", "usr", "include"))
+includedir = joinpath(PROJ_jll.artifact_dir, "include")
 headerfiles = [joinpath(includedir, "proj.h")]
 
 wc = init(; headers = headerfiles,
