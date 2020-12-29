@@ -1,7 +1,6 @@
 # Proj4.jl
 
-[![Build status](https://travis-ci.com/JuliaGeo/Proj4.jl.svg?branch=master)](https://travis-ci.com/JuliaGeo/Proj4.jl)
-[![Build status](https://ci.appveyor.com/api/projects/status/tscgm13l1pvajqqa/branch/master?svg=true)](https://ci.appveyor.com/project/JuliaGeo/proj4-jl/branch/master)
+[![CI](https://github.com/JuliaGeo/Proj4.jl/workflows/CI/badge.svg)](https://github.com/JuliaGeo/Proj4.jl/actions?query=workflow%3ACI)
 
 A simple Julia wrapper around the [PROJ](https://proj.org/) cartographic projections library.
 
