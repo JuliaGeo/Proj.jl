@@ -305,11 +305,11 @@ function proj_create_argv(argc, argv, ctx = C_NULL)
     ccall((:proj_create_argv, libproj), Ptr{PJ}, (Ptr{PJ_CONTEXT}, Cint, Ptr{Cstring}), ctx, argc, argv)
 end
 
-function proj_create_crs_to_crs(source_crs, target_crs, area, ctx = C_NULL)
+function proj_create_crs_to_crs(source_crs, target_crs, area = C_NULL, ctx = C_NULL)
     ccall((:proj_create_crs_to_crs, libproj), Ptr{PJ}, (Ptr{PJ_CONTEXT}, Cstring, Cstring, Ptr{PJ_AREA}), ctx, source_crs, target_crs, area)
 end
 
-function proj_create_crs_to_crs_from_pj(source_crs, target_crs, area, ctx = C_NULL, options = C_NULL)
+function proj_create_crs_to_crs_from_pj(source_crs, target_crs, area = C_NULL, ctx = C_NULL, options = C_NULL)
     ccall((:proj_create_crs_to_crs_from_pj, libproj), Ptr{PJ}, (Ptr{PJ_CONTEXT}, Ptr{PJ}, Ptr{PJ}, Ptr{PJ_AREA}, Ptr{Cstring}), ctx, source_crs, target_crs, area, options)
 end
 
@@ -378,7 +378,7 @@ function proj_trans_generic(P, direction, x, sx, nx, y, sy, ny, z, sz, nz, t, st
     ccall((:proj_trans_generic, libproj), Csize_t, (Ptr{PJ}, PJ_DIRECTION, Ptr{Cdouble}, Csize_t, Csize_t, Ptr{Cdouble}, Csize_t, Csize_t, Ptr{Cdouble}, Csize_t, Csize_t, Ptr{Cdouble}, Csize_t, Csize_t), P, direction, x, sx, nx, y, sy, ny, z, sz, nz, t, st, nt)
 end
 
-function proj_coord(x, y, z, t)
+function proj_coord(x = 0.0, y = 0.0, z = 0.0, t = 0.0)
     ccall((:proj_coord, libproj), PJ_COORD, (Cdouble, Cdouble, Cdouble, Cdouble), x, y, z, t)
 end
 

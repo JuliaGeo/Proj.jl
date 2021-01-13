@@ -69,7 +69,6 @@ end
     pj = Proj4.proj_create_crs_to_crs(
         "EPSG:4326",  # source
         "+proj=utm +zone=32 +datum=WGS84",  # target, also EPSG:32632
-        C_NULL,  # area
     )
 
     # This will ensure that the order of coordinates for the input CRS
@@ -82,7 +81,7 @@ end
     # a coordinate union representing Copenhagen: 55d N, 12d E
     # Given that we have used proj_normalize_for_visualization(), the order of
     # coordinates is longitude, latitude, and values are expressed in degrees.
-    a = Proj4.proj_coord(12, 55, 0, 0)
+    a = Proj4.proj_coord(12, 55)
     @test isbits(a)
     @test a.xyzt.x === 12.0
     @test a.xyzt.y === 55.0

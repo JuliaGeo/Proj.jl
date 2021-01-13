@@ -91,6 +91,17 @@ function rewriter(x::Expr)
 
         fargs2 = copy(fargs)
         if !isempty(fargs)
+            # make area optional
+            if f in (:proj_create_crs_to_crs, :proj_create_crs_to_crs_from_pj)
+                optpos = findfirst(==(:area), fargs)
+                keywordify!(fargs2, argpos, optpos)
+            elseif f === :proj_coord
+                # proj_coord(x, y, z, t) to proj_coord(x = 0.0, y = 0.0, z = 0.0, t = 0.0)
+                fargs2[1] = Expr(:kw, :x, 0.0)
+                fargs2[2] = Expr(:kw, :y, 0.0)
+                fargs2[3] = Expr(:kw, :z, 0.0)
+                fargs2[4] = Expr(:kw, :t, 0.0)
+            end
             # ctx is always the first argument
             if fargs[1] === :ctx
                 keywordify!(fargs2, argpos, 1)
