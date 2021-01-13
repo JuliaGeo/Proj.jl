@@ -1,4 +1,5 @@
 using Test
+using StaticArrays
 import Proj4
 
 @testset "Error handling" begin
@@ -82,25 +83,32 @@ end
     # Given that we have used proj_normalize_for_visualization(), the order of
     # coordinates is longitude, latitude, and values are expressed in degrees.
     a = Proj4.proj_coord(12, 55)
+    @test a isa AbstractVector
+    @test a isa FieldVector{4, Float64}
+    @test a isa Proj4.PJ_COORD
+    @test eltype(a) == Float64
+    @test length(a) == 4
+    @test sum(a) == 12 + 55
+    @test a[2] === 55.0
     @test isbits(a)
-    @test a.xyzt.x === 12.0
-    @test a.xyzt.y === 55.0
-    @test a.xyzt.z === 0.0
-    @test a.xyzt.t === 0.0
+    @test a.x === 12.0
+    @test a.y === 55.0
+    @test a.z === 0.0
+    @test a.t === 0.0
 
     # transform to UTM zone 32
     b = Proj4.proj_trans(pj, Proj4.PJ_FWD, a)
-    @test b.xyzt.x ≈ 691875.632
-    @test b.xyzt.y ≈ 6098907.825
-    @test b.xyzt.z === 0.0
-    @test b.xyzt.t === 0.0
+    @test b.x ≈ 691875.632
+    @test b.y ≈ 6098907.825
+    @test b.z === 0.0
+    @test b.t === 0.0
 
     # inverse transform, back to geographical
     b = Proj4.proj_trans(pj, Proj4.PJ_INV, b)
-    @test b.xyzt.x ≈ 12.0
-    @test b.xyzt.y ≈ 55.0
-    @test b.xyzt.z === 0.0
-    @test b.xyzt.t === 0.0
+    @test b.x ≈ 12.0
+    @test b.y ≈ 55.0
+    @test b.z === 0.0
+    @test b.t === 0.0
 
     # Clean up
     Proj4.proj_destroy(pj)

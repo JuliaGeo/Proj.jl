@@ -16,8 +16,11 @@ struct PJ_XYZT
     t::Cdouble
 end
 
-struct PJ_COORD
-    xyzt::PJ_XYZT
+struct PJ_COORD <: FieldVector{4, Float64}
+    x::Float64
+    y::Float64
+    z::Float64
+    t::Float64
 end
 
 const PJ_AREA = Cvoid
