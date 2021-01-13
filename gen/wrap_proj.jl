@@ -134,12 +134,17 @@ function rewriter(x::Expr)
         x2 = :(function $f($(fargs2...))
             $cc2
         end) |> prettify
-        x2, argpos
+        return x2, argpos
     else
         # do not modify expressions that are no ccall function wrappers
         # argument positions do not apply, but something still needs to be returned
-        argpos = nothing
-        x, argpos
+        
+        if x.head == :struct && x.args[2] == :PJ_COORD
+            # PJ_COORD becomes a subtype of StaticArrays' FieldVector
+            return prettify(pj_coord), nothing
+        else
+            return x, nothing
+        end
     end
 end
 
@@ -148,6 +153,13 @@ const doc = readxml(xmlpath)
 
 includedir = joinpath(PROJ_jll.artifact_dir, "include")
 headerfiles = [joinpath(includedir, "proj.h")]
+
+pj_coord = :(struct PJ_COORD <: FieldVector{4, Float64}
+    x::Float64
+    y::Float64
+    z::Float64
+    t::Float64
+end)
 
 wc = init(; headers = headerfiles,
             output_file = joinpath(@__DIR__, "..", "src", "proj_c.jl"),

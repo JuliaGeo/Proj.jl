@@ -2,6 +2,7 @@ module Proj4
 
 using PROJ_jll
 using CEnum
+using StaticArrays
 
 export Projection, # proj_types.jl
        transform, transform!,  # proj_functions.jl
