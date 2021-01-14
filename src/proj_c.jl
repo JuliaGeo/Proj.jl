@@ -367,11 +367,11 @@ function proj_degree_output(P, dir)
 end
 
 function proj_trans(P, direction, coord)
-    ccall((:proj_trans, libproj), PJ_COORD, (Ptr{PJ}, PJ_DIRECTION, PJ_COORD), P, direction, coord)
+    ccall((:proj_trans, libproj), Coord, (Ptr{PJ}, PJ_DIRECTION, Coord), P, direction, coord)
 end
 
 function proj_trans_array(P, direction, n, coord)
-    ccall((:proj_trans_array, libproj), Cint, (Ptr{PJ}, PJ_DIRECTION, Csize_t, Ptr{PJ_COORD}), P, direction, n, coord)
+    ccall((:proj_trans_array, libproj), Cint, (Ptr{PJ}, PJ_DIRECTION, Csize_t, Ptr{Coord}), P, direction, n, coord)
 end
 
 function proj_trans_generic(P, direction, x, sx, nx, y, sy, ny, z, sz, nz, t, st, nt)
@@ -379,31 +379,31 @@ function proj_trans_generic(P, direction, x, sx, nx, y, sy, ny, z, sz, nz, t, st
 end
 
 function proj_coord(x = 0.0, y = 0.0, z = 0.0, t = 0.0)
-    ccall((:proj_coord, libproj), PJ_COORD, (Cdouble, Cdouble, Cdouble, Cdouble), x, y, z, t)
+    ccall((:proj_coord, libproj), Coord, (Cdouble, Cdouble, Cdouble, Cdouble), x, y, z, t)
 end
 
 function proj_roundtrip(P, direction, n, coord)
-    ccall((:proj_roundtrip, libproj), Cdouble, (Ptr{PJ}, PJ_DIRECTION, Cint, Ptr{PJ_COORD}), P, direction, n, coord)
+    ccall((:proj_roundtrip, libproj), Cdouble, (Ptr{PJ}, PJ_DIRECTION, Cint, Ptr{Coord}), P, direction, n, coord)
 end
 
 function proj_lp_dist(P, a, b)
-    ccall((:proj_lp_dist, libproj), Cdouble, (Ptr{PJ}, PJ_COORD, PJ_COORD), P, a, b)
+    ccall((:proj_lp_dist, libproj), Cdouble, (Ptr{PJ}, Coord, Coord), P, a, b)
 end
 
 function proj_lpz_dist(P, a, b)
-    ccall((:proj_lpz_dist, libproj), Cdouble, (Ptr{PJ}, PJ_COORD, PJ_COORD), P, a, b)
+    ccall((:proj_lpz_dist, libproj), Cdouble, (Ptr{PJ}, Coord, Coord), P, a, b)
 end
 
 function proj_xy_dist(a, b)
-    ccall((:proj_xy_dist, libproj), Cdouble, (PJ_COORD, PJ_COORD), a, b)
+    ccall((:proj_xy_dist, libproj), Cdouble, (Coord, Coord), a, b)
 end
 
 function proj_xyz_dist(a, b)
-    ccall((:proj_xyz_dist, libproj), Cdouble, (PJ_COORD, PJ_COORD), a, b)
+    ccall((:proj_xyz_dist, libproj), Cdouble, (Coord, Coord), a, b)
 end
 
 function proj_geod(P, a, b)
-    ccall((:proj_geod, libproj), PJ_COORD, (Ptr{PJ}, PJ_COORD, PJ_COORD), P, a, b)
+    ccall((:proj_geod, libproj), Coord, (Ptr{PJ}, Coord, Coord), P, a, b)
 end
 
 function proj_context_errno(ctx = C_NULL)
@@ -439,7 +439,7 @@ function proj_log_func(app_data, logf, ctx = C_NULL)
 end
 
 function proj_factors(P, lp)
-    ccall((:proj_factors, libproj), PJ_FACTORS, (Ptr{PJ}, PJ_COORD), P, lp)
+    ccall((:proj_factors, libproj), PJ_FACTORS, (Ptr{PJ}, Coord), P, lp)
 end
 
 function proj_info()
@@ -1489,7 +1489,7 @@ end
 the index in operations that would be used to transform coord. Or -1 in case of error, or no match.
 """
 function proj_get_suggested_operation(operations, direction, coord, ctx = C_NULL)
-    ccall((:proj_get_suggested_operation, libproj), Cint, (Ptr{PJ_CONTEXT}, Ptr{PJ_OBJ_LIST}, PJ_DIRECTION, PJ_COORD), ctx, operations, direction, coord)
+    ccall((:proj_get_suggested_operation, libproj), Cint, (Ptr{PJ_CONTEXT}, Ptr{PJ_OBJ_LIST}, PJ_DIRECTION, Coord), ctx, operations, direction, coord)
 end
 
 """

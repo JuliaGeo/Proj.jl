@@ -8,14 +8,6 @@ const PROJ_VERSION_MAJOR = 7
 const PROJ_VERSION_MINOR = 2
 const PROJ_VERSION_PATCH = 0
 const PJ_DEFAULT_CTX = 0
-
-struct PJ_COORD <: FieldVector{4, Float64}
-    x::Float64
-    y::Float64
-    z::Float64
-    t::Float64
-end
-
 const PJ_AREA = Cvoid
 
 struct P5_FACTORS

@@ -85,7 +85,7 @@ end
     a = Proj4.proj_coord(12, 55)
     @test a isa AbstractVector
     @test a isa FieldVector{4, Float64}
-    @test a isa Proj4.PJ_COORD
+    @test a isa Proj4.Coord
     @test eltype(a) == Float64
     @test length(a) == 4
     @test sum(a) == 12 + 55

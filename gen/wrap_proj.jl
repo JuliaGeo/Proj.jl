@@ -25,6 +25,7 @@ If Doxygen gives errors, it helps to turn off Latex and HTML output:
 
 using Clang
 using MacroTools
+using MacroTools: postwalk
 using EzXML
 using PROJ_jll
 
@@ -136,17 +137,14 @@ function rewriter(x::Expr)
         x2 = :(function $f($(fargs2...))
             $cc2
         end) |> prettify
-        return x2, argpos
+
+        # rename PJ_COORD to Coord
+        x3 = postwalk(x -> x === :PJ_COORD ? :Coord : x, x2)
+        return x3, argpos
     else
         # do not modify expressions that are no ccall function wrappers
         # argument positions do not apply, but something still needs to be returned
-        
-        if x.head == :struct && x.args[2] == :PJ_COORD
-            # PJ_COORD becomes a subtype of StaticArrays' FieldVector
-            return prettify(pj_coord), nothing
-        else
-            return x, nothing
-        end
+        return x, nothing
     end
 end
 
@@ -156,15 +154,9 @@ const doc = readxml(xmlpath)
 includedir = joinpath(PROJ_jll.artifact_dir, "include")
 headerfiles = [joinpath(includedir, "proj.h")]
 
-const pj_coord = :(struct PJ_COORD <: FieldVector{4, Float64}
-    x::Float64
-    y::Float64
-    z::Float64
-    t::Float64
-end)
-
+# PJ_COORD becomes `Coord <: FieldVector{4, Float64}` and the rest is left out altogether
 # https://proj.org/development/reference/datatypes.html#c.PJ_COORD
-const coord_union = [:PJ_XYZT, :PJ_UVWT, :PJ_LPZT, :PJ_GEOD, :PJ_OPK,
+const coord_union = [:PJ_COORD, :PJ_XYZT, :PJ_UVWT, :PJ_LPZT, :PJ_GEOD, :PJ_OPK,
     :PJ_ENU, :PJ_XYZ, :PJ_UVW, :PJ_LPZ, :PJ_XY, :PJ_UV, :PJ_LP]
 
 wc = init(; headers = headerfiles,
