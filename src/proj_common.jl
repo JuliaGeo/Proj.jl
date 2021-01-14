@@ -9,13 +9,6 @@ const PROJ_VERSION_MINOR = 2
 const PROJ_VERSION_PATCH = 0
 const PJ_DEFAULT_CTX = 0
 
-struct PJ_XYZT
-    x::Cdouble
-    y::Cdouble
-    z::Cdouble
-    t::Cdouble
-end
-
 struct PJ_COORD <: FieldVector{4, Float64}
     x::Float64
     y::Float64
@@ -63,11 +56,6 @@ struct PJ_PROJ_INFO
     accuracy::Cdouble
 end
 
-struct PJ_LP
-    lam::Cdouble
-    phi::Cdouble
-end
-
 struct PJ_GRID_INFO
     gridname::NTuple{32, UInt8}
     filename::NTuple{260, UInt8}
@@ -113,66 +101,6 @@ end
 struct PJ_PRIME_MERIDIANS
     id::Cstring
     defn::Cstring
-end
-
-struct PJ_UVWT
-    u::Cdouble
-    v::Cdouble
-    w::Cdouble
-    t::Cdouble
-end
-
-struct PJ_LPZT
-    lam::Cdouble
-    phi::Cdouble
-    z::Cdouble
-    t::Cdouble
-end
-
-struct PJ_OPK
-    o::Cdouble
-    p::Cdouble
-    k::Cdouble
-end
-
-struct PJ_ENU
-    e::Cdouble
-    n::Cdouble
-    u::Cdouble
-end
-
-struct PJ_GEOD
-    s::Cdouble
-    a1::Cdouble
-    a2::Cdouble
-end
-
-struct PJ_UV
-    u::Cdouble
-    v::Cdouble
-end
-
-struct PJ_XY
-    x::Cdouble
-    y::Cdouble
-end
-
-struct PJ_XYZ
-    x::Cdouble
-    y::Cdouble
-    z::Cdouble
-end
-
-struct PJ_UVW
-    u::Cdouble
-    v::Cdouble
-    w::Cdouble
-end
-
-struct PJ_LPZ
-    lam::Cdouble
-    phi::Cdouble
-    z::Cdouble
 end
 
 @cenum PJ_LOG_LEVEL::UInt32 begin
