@@ -157,7 +157,7 @@ headerfiles = [joinpath(includedir, "proj.h")]
 # PJ_COORD becomes `Coord <: FieldVector{4, Float64}` and the rest is left out altogether
 # https://proj.org/development/reference/datatypes.html#c.PJ_COORD
 const coord_union = [:PJ_COORD, :PJ_XYZT, :PJ_UVWT, :PJ_LPZT, :PJ_GEOD, :PJ_OPK,
-    :PJ_ENU, :PJ_XYZ, :PJ_UVW, :PJ_LPZ, :PJ_XY, :PJ_UV, :PJ_LP]
+    :PJ_ENU, :PJ_XYZ, :PJ_UVW, :PJ_LPZ, :PJ_XY, :PJ_UV]
 
 wc = init(; headers = headerfiles,
             output_file = joinpath(@__DIR__, "..", "src", "proj_c.jl"),

@@ -48,6 +48,11 @@ struct PJ_PROJ_INFO
     accuracy::Cdouble
 end
 
+struct PJ_LP
+    lam::Cdouble
+    phi::Cdouble
+end
+
 struct PJ_GRID_INFO
     gridname::NTuple{32, UInt8}
     filename::NTuple{260, UInt8}
