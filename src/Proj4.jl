@@ -12,9 +12,13 @@ export Projection, # proj_types.jl
 # geodesic support
 export geod_direct, geod_inverse, geod_destination, geod_distance
 
+# these are part of the deprecated PROJ API, and will be removed soon
 include("projection_codes.jl") # ESRI and EPSG projection strings
 include("proj_capi.jl") # low-level C-facing functions (corresponding to src/proj_api.h)
 include("proj_geodesic.jl") # low-level C-facing functions (corresponding to src/geodesic.h)
+
+# these are part of the new PROJ API
+include("coord.jl")
 include("proj_common.jl")
 include("proj_c.jl")
 include("error.jl")
