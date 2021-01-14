@@ -50,6 +50,8 @@ function rewriter(xs::Vector)
         if x isa String
             push!(rewritten, x)
             continue
+        elseif x.head == :struct && x.args[2] in coord_union
+            continue
         end
         @assert x isa Expr
 
@@ -154,12 +156,16 @@ const doc = readxml(xmlpath)
 includedir = joinpath(PROJ_jll.artifact_dir, "include")
 headerfiles = [joinpath(includedir, "proj.h")]
 
-pj_coord = :(struct PJ_COORD <: FieldVector{4, Float64}
+const pj_coord = :(struct PJ_COORD <: FieldVector{4, Float64}
     x::Float64
     y::Float64
     z::Float64
     t::Float64
 end)
+
+# https://proj.org/development/reference/datatypes.html#c.PJ_COORD
+const coord_union = [:PJ_XYZT, :PJ_UVWT, :PJ_LPZT, :PJ_GEOD, :PJ_OPK,
+    :PJ_ENU, :PJ_XYZ, :PJ_UVW, :PJ_LPZ, :PJ_XY, :PJ_UV, :PJ_LP]
 
 wc = init(; headers = headerfiles,
             output_file = joinpath(@__DIR__, "..", "src", "proj_c.jl"),
