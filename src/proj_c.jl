@@ -378,7 +378,7 @@ function proj_trans_generic(P, direction, x, sx, nx, y, sy, ny, z, sz, nz, t, st
     ccall((:proj_trans_generic, libproj), Csize_t, (Ptr{PJ}, PJ_DIRECTION, Ptr{Cdouble}, Csize_t, Csize_t, Ptr{Cdouble}, Csize_t, Csize_t, Ptr{Cdouble}, Csize_t, Csize_t, Ptr{Cdouble}, Csize_t, Csize_t), P, direction, x, sx, nx, y, sy, ny, z, sz, nz, t, st, nt)
 end
 
-function proj_coord(x = 0.0, y = 0.0, z = 0.0, t = 0.0)
+function proj_coord(x = 0.0, y = 0.0, z = 0.0, t = Inf)
     ccall((:proj_coord, libproj), Coord, (Cdouble, Cdouble, Cdouble, Cdouble), x, y, z, t)
 end
 

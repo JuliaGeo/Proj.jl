@@ -89,26 +89,26 @@ end
     @test a isa Proj4.Coord
     @test eltype(a) == Float64
     @test length(a) == 4
-    @test sum(a) == 12 + 55
+    @test sum(a) == Inf
     @test isbits(a)
     @test a[1] === 12.0
     @test a[2] === 55.0
     @test a[3] === 0.0
-    @test a[4] === 0.0
+    @test a[4] === Inf
 
     # transform to UTM zone 32
     b = Proj4.proj_trans(pj, Proj4.PJ_FWD, a)
     @test b[1] ≈ 691875.632
     @test b[2] ≈ 6098907.825
     @test b[3] === 0.0
-    @test b[4] === 0.0
+    @test b[4] === Inf
 
     # inverse transform, back to geographical
     b = Proj4.proj_trans(pj, Proj4.PJ_INV, b)
     @test b[1] ≈ 12.0
     @test b[2] ≈ 55.0
     @test b[3] === 0.0
-    @test b[4] === 0.0
+    @test b[4] === Inf
 
     # Clean up
     pj = Proj4.proj_destroy(pj)

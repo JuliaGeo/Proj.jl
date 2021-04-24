@@ -99,11 +99,11 @@ function rewriter(x::Expr)
                 optpos = findfirst(==(:area), fargs)
                 keywordify!(fargs2, argpos, optpos)
             elseif f === :proj_coord
-                # proj_coord(x, y, z, t) to proj_coord(x = 0.0, y = 0.0, z = 0.0, t = 0.0)
+                # proj_coord(x, y, z, t) to proj_coord(x = 0.0, y = 0.0, z = 0.0, t = Inf)
                 fargs2[1] = Expr(:kw, :x, 0.0)
                 fargs2[2] = Expr(:kw, :y, 0.0)
                 fargs2[3] = Expr(:kw, :z, 0.0)
-                fargs2[4] = Expr(:kw, :t, 0.0)
+                fargs2[4] = Expr(:kw, :t, Inf)
             end
             # ctx is always the first argument
             if fargs[1] === :ctx
