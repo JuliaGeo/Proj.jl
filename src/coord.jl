@@ -54,28 +54,40 @@ end
 
 function (tr::Transformation)(coord::SVector{2,<:Real})
     coord = SVector{4, Float64}(coord[1], coord[2], 0.0, Inf)
-    p = @ccall libproj.proj_trans(
-        tr.pj::Ptr{PJ},
-        PJ_FWD::PJ_DIRECTION,
-        coord::SVector{4,Float64},
-    )::SVector{4,Float64}
+    p = proj_trans(tr.pj, PJ_FWD, coord)
     return SVector{2,Float64}(p[1], p[2])
 end
+
 function (tr::Transformation)(coord::SVector{3,<:Real})
     coord = SVector{4, Float64}(coord[1], coord[2], coord[3], Inf)
-    @ccall libproj.proj_trans(
-        tr.pj::Ptr{PJ},
-        PJ_FWD::PJ_DIRECTION,
-        coord::SVector{4,Float64},
-    )::SVector{4,Float64}
+    p = proj_trans(tr.pj, PJ_FWD, coord)
     return SVector{3,Float64}(p[1], p[2], p[3])
 end
+
 function (tr::Transformation)(coord::SVector{4,<:Real})
-    @ccall libproj.proj_trans(
-        tr.pj::Ptr{PJ},
-        PJ_FWD::PJ_DIRECTION,
-        coord::SVector{4,Float64},
-    )::SVector{4,Float64}
+    return proj_trans(tr.pj, PJ_FWD, coord)
 end
-# TODO add methods for tuples and AbstractVector
-# and perhaps for vectors of points, use proj_trans_array / proj_trans_generic
+
+function (tr::Transformation)(coord)
+    # avoid splatting for performance
+    n = length(coord)
+    coord = if n == 2
+        proj_coord(coord[1], coord[2])
+    elseif n == 3
+        proj_coord(coord[1], coord[2], coord[3])
+    elseif n == 4
+        proj_coord(coord[1], coord[2], coord[3], coord[4])
+    else
+        throw(ArgumentError("input should be length 2, 3 or 4"))
+    end
+
+    p = proj_trans(tr.pj, PJ_FWD, coord)
+
+    if n == 2
+        return SVector{2, Float64}(p[1], p[2])
+    elseif n == 3
+        return SVector{3, Float64}(p[1], p[2], p[3])
+    else
+        return p
+    end
+end
