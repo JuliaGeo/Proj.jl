@@ -210,10 +210,22 @@ end
 tr = Proj4.Transformation("EPSG:4326", "EPSG:28992", normalize = true)
 tr(Proj4.proj_coord(5.39, 52.16))
 b = tr(SA[5.39, 52.16, 0.0, 0.0])
-@test b isa SVector{4, Float64}
-b = tr(SA[5.39, 52.16])
-@test b isa SVector{2, Float64}
-tr(SA_F32[5.39, 52.16])
-@test b isa SVector{2, Float64}
-b = tr(SA[5, 52])
-@test b isa SVector{2, Float64}
+
+
+# StaticVector, Vector or Tuple
+x, y = 5.39, 52.16
+for inpoint in [SA[x, y], [x, y], (x, y)]
+    p = tr(inpoint)
+    @test p ≈ [155191.3538124342, 463537.1362732911]
+    @test p isa SVector{2, Float64}
+end
+
+# SVector{3, Float64}
+p = tr(SA[5.39, 52.16, 2.0])
+@test p ≈ [155191.35381147722, 463537.13624246384, 2.0]
+@test p isa SVector{3, Float64}
+
+# SVector{4, Float64}
+p = tr(SA[5.39, 52.16, 0.0, Inf])
+@test p ≈ [155191.3538124342, 463537.1362732911, 0.0, Inf]
+@test p isa SVector{4, Float64}
