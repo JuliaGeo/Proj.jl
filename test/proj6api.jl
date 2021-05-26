@@ -208,6 +208,12 @@ end
 end
 
 tr = Proj4.Transformation("EPSG:4326", "EPSG:28992", normalize = true)
+
+@test repr(tr) == """
+Transformation
+    source: WGS 84 (with axis order normalized for visualization)
+    target: Amersfoort / RD New"""
+
 tr(Proj4.proj_coord(5.39, 52.16))
 b = tr(SA[5.39, 52.16, 0.0, 0.0])
 
