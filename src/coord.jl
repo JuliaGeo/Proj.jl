@@ -35,6 +35,19 @@ function Transformation(
     return Transformation(pj)
 end
 
+function Base.show(io::IO, tr::Transformation)
+    source_crs = proj_get_source_crs(tr.pj)
+    target_crs = proj_get_target_crs(tr.pj)
+    source_info = proj_pj_info(source_crs)
+    target_info = proj_pj_info(target_crs)
+    source_description = unsafe_string(source_info.description)
+    target_description = unsafe_string(target_info.description)
+    print(io, """
+    Transformation
+        source: $source_description
+        target: $target_description""")
+end
+
 """
     normalize_axis_order!(pj::Ptr{PJ}, ctx = C_NULL)
 
