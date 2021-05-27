@@ -3,11 +3,11 @@ const Coord = SVector{4, Float64}
 mutable struct Transformation <: CoordinateTransformations.Transformation
     pj::Ptr{PJ}
     function Transformation(pj::Ptr{PJ})
-        tr = new(pj)
-        finalizer(tr) do tr
-            tr.pj = proj_destroy(tr.pj)
+        trans = new(pj)
+        finalizer(trans) do trans
+            trans.pj = proj_destroy(trans.pj)
         end
-        return tr
+        return trans
     end
 end
 
@@ -35,9 +35,9 @@ function Transformation(
     return Transformation(pj)
 end
 
-function Base.show(io::IO, tr::Transformation)
-    source_crs = proj_get_source_crs(tr.pj)
-    target_crs = proj_get_target_crs(tr.pj)
+function Base.show(io::IO, trans::Transformation)
+    source_crs = proj_get_source_crs(trans.pj)
+    target_crs = proj_get_target_crs(trans.pj)
     source_info = proj_pj_info(source_crs)
     target_info = proj_pj_info(target_crs)
     source_description = unsafe_string(source_info.description)
@@ -60,28 +60,28 @@ function normalize_axis_order!(pj::Ptr{PJ}, ctx = C_NULL)
     return pj_for_gis
 end
 
-function Base.inv(tr::Transformation, ctx = C_NULL)
-    pj_inv = proj_coordoperation_create_inverse(tr.pj, ctx)
+function Base.inv(trans::Transformation, ctx = C_NULL)
+    pj_inv = proj_coordoperation_create_inverse(trans.pj, ctx)
     return Transformation(pj_inv)
 end
 
-function (tr::Transformation)(coord::SVector{2,<:Real})
+function (trans::Transformation)(coord::SVector{2,<:Real})
     coord = SVector{4, Float64}(coord[1], coord[2], 0.0, Inf)
-    p = proj_trans(tr.pj, PJ_FWD, coord)
+    p = proj_trans(trans.pj, PJ_FWD, coord)
     return SVector{2,Float64}(p[1], p[2])
 end
 
-function (tr::Transformation)(coord::SVector{3,<:Real})
+function (trans::Transformation)(coord::SVector{3,<:Real})
     coord = SVector{4, Float64}(coord[1], coord[2], coord[3], Inf)
-    p = proj_trans(tr.pj, PJ_FWD, coord)
+    p = proj_trans(trans.pj, PJ_FWD, coord)
     return SVector{3,Float64}(p[1], p[2], p[3])
 end
 
-function (tr::Transformation)(coord::SVector{4,<:Real})
-    return proj_trans(tr.pj, PJ_FWD, coord)
+function (trans::Transformation)(coord::SVector{4,<:Real})
+    return proj_trans(trans.pj, PJ_FWD, coord)
 end
 
-function (tr::Transformation)(coord)
+function (trans::Transformation)(coord)
     # avoid splatting for performance
     n = length(coord)
     coord = if n == 2
@@ -94,7 +94,7 @@ function (tr::Transformation)(coord)
         throw(ArgumentError("input should be length 2, 3 or 4"))
     end
 
-    p = proj_trans(tr.pj, PJ_FWD, coord)
+    p = proj_trans(trans.pj, PJ_FWD, coord)
 
     if n == 2
         return SVector{2, Float64}(p[1], p[2])
