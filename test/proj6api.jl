@@ -119,14 +119,21 @@ end
 end
 
 @testset "inverse transformation" begin
-    tr = Proj4.Transformation("EPSG:4326", "+proj=utm +zone=32 +datum=WGS84")
-    tr⁻¹ = inv(tr)
-    tr¹ = inv(tr⁻¹)
+    trans = Proj4.Transformation("EPSG:4326", "+proj=utm +zone=32 +datum=WGS84")
+
+    # for custom / proj strings, no description can be looked up in the database
+    @test repr(trans) == """
+    Transformation
+        source: WGS 84
+        target: unknown"""
+
+    trans⁻¹ = inv(trans)
+    trans¹ = inv(trans⁻¹)
 
     # inverse twice should get the same transform back
     wkt_type = Proj4.PJ_WKT2_2019
-    @test Proj4.proj_as_wkt(tr⁻¹.pj, wkt_type) != Proj4.proj_as_wkt(tr.pj, wkt_type)
-    @test Proj4.proj_as_wkt(tr¹.pj, wkt_type) == Proj4.proj_as_wkt(tr.pj, wkt_type)
+    @test Proj4.proj_as_wkt(trans⁻¹.pj, wkt_type) != Proj4.proj_as_wkt(trans.pj, wkt_type)
+    @test Proj4.proj_as_wkt(trans¹.pj, wkt_type) == Proj4.proj_as_wkt(trans.pj, wkt_type)
 end
 
 @testset "single transformation" begin
@@ -134,17 +141,17 @@ end
     target_crs = Proj4.proj_create("EPSG:28992")
     @test source_crs isa Ptr{Nothing}
     @test target_crs isa Ptr{Nothing}
-    tr = Proj4.Transformation(source_crs, target_crs)
+    trans = Proj4.Transformation(source_crs, target_crs)
 
     a = Proj4.proj_coord(52.16, 5.39)
-    b = Proj4.proj_trans(tr.pj, Proj4.PJ_FWD, a)
+    b = Proj4.proj_trans(trans.pj, Proj4.PJ_FWD, a)
     @test a != b
     @test b ≈ Proj4.proj_coord(155191.3538124342, 463537.1362732911)
 
     # with normalize=True, we need to use lon/lat, and still get x/y out
-    tr = Proj4.Transformation(source_crs, target_crs, normalize = true)
+    trans = Proj4.Transformation(source_crs, target_crs, normalize = true)
     a = Proj4.proj_coord(5.39, 52.16)
-    b = Proj4.proj_trans(tr.pj, Proj4.PJ_FWD, a)
+    b = Proj4.proj_trans(trans.pj, Proj4.PJ_FWD, a)
     @test a != b
     @test b ≈ Proj4.proj_coord(155191.3538124342, 463537.1362732911)
 end
@@ -152,32 +159,32 @@ end
 @testset "dense 4D coord vector transformation" begin
     source_crs = Proj4.proj_create("EPSG:4326")
     target_crs = Proj4.proj_create("EPSG:28992")
-    tr = Proj4.Transformation(source_crs, target_crs, normalize = true)
+    trans = Proj4.Transformation(source_crs, target_crs, normalize = true)
     # This array is mutated in place. Note that this array needs to have 4D elements,
     # with 2D elements it will only do every other one
     A = [Proj4.proj_coord(5.39, 52.16) for _ = 1:5]
-    err = Proj4.proj_trans_array(tr.pj, Proj4.PJ_FWD, length(A), A)
+    err = Proj4.proj_trans_array(trans.pj, Proj4.PJ_FWD, length(A), A)
     @test err == 0
     B = [Proj4.proj_coord(155191.3538124342, 463537.1362732911) for _ = 1:5]
     @test A ≈ B
 
     # since A is not in target_crs, we will get an error on a second call
-    err = Proj4.proj_trans_array(tr.pj, Proj4.PJ_FWD, length(A), A)
-    errno = Proj4.proj_errno(tr.pj)
+    err = Proj4.proj_trans_array(trans.pj, Proj4.PJ_FWD, length(A), A)
+    errno = Proj4.proj_errno(trans.pj)
     @test err == errno == -14
     @test Proj4.proj_errno_string(errno) == "latitude or longitude exceeded limits"
     # reset error
-    Proj4.proj_errno_reset(tr.pj)
-    @test Proj4.proj_errno(tr.pj) == 0
+    Proj4.proj_errno_reset(trans.pj)
+    @test Proj4.proj_errno(trans.pj) == 0
     # test triggering finalizer manually
-    finalize(tr)
-    @test tr.pj === C_NULL
+    finalize(trans)
+    @test trans.pj === C_NULL
 end
 
 @testset "generic array transformation" begin
     source_crs = Proj4.proj_create("EPSG:4326")
     target_crs = Proj4.proj_create("EPSG:28992")
-    tr = Proj4.Transformation(source_crs, target_crs, normalize = true)
+    trans = Proj4.Transformation(source_crs, target_crs, normalize = true)
 
     # inplace transformation of vector of 2D coordinates
     # using https://proj.org/development/reference/functions.html#c.proj_trans_generic
@@ -187,7 +194,7 @@ end
     n = length(A)
     # 8 is sizeof(Float64), so ptr + 8 points to first latitude element
     n_done = Proj4.proj_trans_generic(
-        tr.pj,
+        trans.pj,
         Proj4.PJ_FWD,
         ptr,
         st,
@@ -207,31 +214,31 @@ end
     @test A ≈ B
 end
 
-tr = Proj4.Transformation("EPSG:4326", "EPSG:28992", normalize = true)
+trans = Proj4.Transformation("EPSG:4326", "EPSG:28992", normalize = true)
 
-@test repr(tr) == """
+@test repr(trans) == """
 Transformation
     source: WGS 84 (with axis order normalized for visualization)
     target: Amersfoort / RD New"""
 
-tr(Proj4.proj_coord(5.39, 52.16))
-b = tr(SA[5.39, 52.16, 0.0, 0.0])
+trans(Proj4.proj_coord(5.39, 52.16))
+b = trans(SA[5.39, 52.16, 0.0, 0.0])
 
 
 # StaticVector, Vector or Tuple
 x, y = 5.39, 52.16
 for inpoint in [SA[x, y], [x, y], (x, y)]
-    p = tr(inpoint)
+    p = trans(inpoint)
     @test p ≈ [155191.3538124342, 463537.1362732911]
     @test p isa SVector{2, Float64}
 end
 
 # SVector{3, Float64}
-p = tr(SA[5.39, 52.16, 2.0])
+p = trans(SA[5.39, 52.16, 2.0])
 @test p ≈ [155191.35381147722, 463537.13624246384, 2.0]
 @test p isa SVector{3, Float64}
 
 # SVector{4, Float64}
-p = tr(SA[5.39, 52.16, 0.0, Inf])
+p = trans(SA[5.39, 52.16, 0.0, Inf])
 @test p ≈ [155191.3538124342, 463537.1362732911, 0.0, Inf]
 @test p isa SVector{4, Float64}

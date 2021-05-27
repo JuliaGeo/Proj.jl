@@ -54,8 +54,8 @@ end
 
 function xyzt_transform(point::AbstractVector; network::Bool=false)
     proj_network = network ? "ON" : nothing
-    tr = Proj4.Transformation("EPSG:4326+5773", "EPSG:7856+5711", normalize = true)
-    tr(point)
+    trans = Proj4.Transformation("EPSG:4326+5773", "EPSG:7856+5711", normalize = true)
+    trans(point)
 end
 
 # http://osgeo-org.1560.x6.nabble.com/PROJ-Different-results-from-cs2cs-vs-C-API-code-td5446396.html
