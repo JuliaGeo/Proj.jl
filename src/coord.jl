@@ -19,7 +19,7 @@ function Transformation(
     normalize::Bool = false,
 )
     pj = proj_create_crs_to_crs(source_crs, target_crs, area, ctx)
-    pj = normalize ? normalize_axis_order!(pj, ctx) : pj
+    pj = normalize ? normalize_axis_order!(pj; ctx=ctx) : pj
     return Transformation(pj)
 end
 
@@ -31,7 +31,7 @@ function Transformation(
     normalize::Bool = false,
 )
     pj = proj_create_crs_to_crs_from_pj(source_crs, target_crs, area, ctx)
-    pj = normalize ? normalize_axis_order!(pj, ctx) : pj
+    pj = normalize ? normalize_axis_order!(pj; ctx=ctx) : pj
     return Transformation(pj)
 end
 
@@ -49,20 +49,26 @@ function Base.show(io::IO, trans::Transformation)
 end
 
 """
-    normalize_axis_order!(pj::Ptr{PJ}, ctx = C_NULL)
+    normalize_axis_order!(pj::Ptr{PJ}; ctx = C_NULL)
 
 Call proj_normalize_for_visualization on an object, and return the new object after freeing
 the input object.
 """
-function normalize_axis_order!(pj::Ptr{PJ}, ctx = C_NULL)
+function normalize_axis_order!(pj::Ptr{PJ}; ctx = C_NULL)
     pj_for_gis = proj_normalize_for_visualization(pj, ctx)
     proj_destroy(pj)
     return pj_for_gis
 end
 
-function Base.inv(trans::Transformation, ctx = C_NULL)
-    pj_inv = proj_coordoperation_create_inverse(trans.pj, ctx)
-    return Transformation(pj_inv)
+function Base.inv(
+    trans::Transformation;
+    area::Ptr{PJ_AREA} = C_NULL,
+    ctx::Ptr{PJ_CONTEXT} = C_NULL,
+    normalize::Bool = false,
+)
+    target_crs = proj_get_source_crs(trans.pj)
+    source_crs = proj_get_target_crs(trans.pj)
+    return Transformation(source_crs, target_crs; area=area, ctx=ctx, normalize=normalize)
 end
 
 function (trans::Transformation)(coord::SVector{2,<:Real})
@@ -106,12 +112,12 @@ function (trans::Transformation)(coord)
 end
 
 function CoordinateTransformations.compose(
-        trans1::Transformation,
-        trans2::Transformation;
-        area::Ptr{PJ_AREA} = C_NULL,
-        ctx::Ptr{PJ_CONTEXT} = C_NULL,
-        normalize::Bool = false,
-    )
+    trans1::Transformation,
+    trans2::Transformation;
+    area::Ptr{PJ_AREA} = C_NULL,
+    ctx::Ptr{PJ_CONTEXT} = C_NULL,
+    normalize::Bool = false,
+)
     # create a new Transformation from trans1 source to trans2 target
     # can also be typed as trans1 ∘ trans2, typed with \circ
     # a → b ∘ c → d doesn't make much sense if b != c, though we don't enforce it
