@@ -18,7 +18,7 @@ function Transformation(
     ctx::Ptr{PJ_CONTEXT} = C_NULL,
     normalize::Bool = false,
 )
-    pj = proj_create_crs_to_crs(source_crs, target_crs)
+    pj = proj_create_crs_to_crs(source_crs, target_crs, area, ctx)
     pj = normalize ? normalize_axis_order!(pj, ctx) : pj
     return Transformation(pj)
 end
@@ -30,7 +30,7 @@ function Transformation(
     ctx::Ptr{PJ_CONTEXT} = C_NULL,
     normalize::Bool = false,
 )
-    pj = proj_create_crs_to_crs_from_pj(source_crs, target_crs)
+    pj = proj_create_crs_to_crs_from_pj(source_crs, target_crs, area, ctx)
     pj = normalize ? normalize_axis_order!(pj, ctx) : pj
     return Transformation(pj)
 end
@@ -103,4 +103,19 @@ function (trans::Transformation)(coord)
     else
         return p
     end
+end
+
+function CoordinateTransformations.compose(
+        trans1::Transformation,
+        trans2::Transformation;
+        area::Ptr{PJ_AREA} = C_NULL,
+        ctx::Ptr{PJ_CONTEXT} = C_NULL,
+        normalize::Bool = false,
+    )
+    # create a new Transformation from trans1 source to trans2 target
+    # can also be typed as trans1 ∘ trans2, typed with \circ
+    # a → b ∘ c → d doesn't make much sense if b != c, though we don't enforce it
+    source_crs = proj_get_source_crs(trans1.pj)
+    target_crs = proj_get_target_crs(trans2.pj)
+    return Transformation(source_crs, target_crs; area=area, ctx=ctx, normalize=normalize)
 end
