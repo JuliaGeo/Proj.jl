@@ -214,13 +214,33 @@ end
     @test A ≈ B
 end
 
+@testset "compose" begin
+    trans1 = Proj4.Transformation("EPSG:4326", "EPSG:28992", normalize = true)
+    trans2 = Proj4.Transformation("EPSG:32632", "EPSG:2027", normalize = true)
+    trans = trans1 ∘ trans2  # same as compose(trans1, trans2)
+    source_crs = Proj4.proj_get_source_crs(trans.pj)
+    target_crs = Proj4.proj_get_target_crs(trans.pj)
+
+    # trans1 source is the new source
+    source_crs1 = Proj4.proj_get_source_crs(trans1.pj)
+    source_wkt = Proj4.proj_as_wkt(source_crs, Proj4.PJ_WKT2_2019, C_NULL)
+    source_wkt1 = Proj4.proj_as_wkt(source_crs1, Proj4.PJ_WKT2_2019, C_NULL)
+    @test source_wkt == source_wkt1
+
+    # trans2 source is the new target
+    target_crs1 = Proj4.proj_get_target_crs(trans2.pj)
+    target_wkt = Proj4.proj_as_wkt(target_crs, Proj4.PJ_WKT2_2019, C_NULL)
+    target_wkt1 = Proj4.proj_as_wkt(target_crs1, Proj4.PJ_WKT2_2019, C_NULL)
+    @test target_wkt == target_wkt1
+
+    # which we can also see from show
+    @test repr(trans) == """
+    Transformation
+        source: WGS 84 (with axis order normalized for visualization)
+        target: NAD27(76) / UTM zone 15N"""
+end
+
 trans = Proj4.Transformation("EPSG:4326", "EPSG:28992", normalize = true)
-
-@test repr(trans) == """
-Transformation
-    source: WGS 84 (with axis order normalized for visualization)
-    target: Amersfoort / RD New"""
-
 trans(Proj4.proj_coord(5.39, 52.16))
 b = trans(SA[5.39, 52.16, 0.0, 0.0])
 
