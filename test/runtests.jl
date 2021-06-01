@@ -1,5 +1,6 @@
 using Proj4
 using Test
+using GeometryBasics: Point
 
 @testset "Proj4" begin
 
