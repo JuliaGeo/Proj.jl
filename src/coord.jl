@@ -71,20 +71,25 @@ function Base.inv(
     return Transformation(source_crs, target_crs; area=area, ctx=ctx, normalize=normalize)
 end
 
-function (trans::Transformation)(coord::SVector{2,<:Real})
+function (trans::Transformation)(coord::StaticVector{2,<:AbstractFloat})
+    T = similar_type(coord)
     coord = SVector{4, Float64}(coord[1], coord[2], 0.0, Inf)
     p = proj_trans(trans.pj, PJ_FWD, coord)
-    return SVector{2,Float64}(p[1], p[2])
+    return T(p[1], p[2])
 end
 
-function (trans::Transformation)(coord::SVector{3,<:Real})
+function (trans::Transformation)(coord::StaticVector{3,<:AbstractFloat})
+    T = similar_type(coord)
     coord = SVector{4, Float64}(coord[1], coord[2], coord[3], Inf)
     p = proj_trans(trans.pj, PJ_FWD, coord)
-    return SVector{3,Float64}(p[1], p[2], p[3])
+    return T(p[1], p[2], p[3])
 end
 
-function (trans::Transformation)(coord::SVector{4,<:Real})
-    return proj_trans(trans.pj, PJ_FWD, coord)
+function (trans::Transformation)(coord::StaticVector{4,<:AbstractFloat})
+    T = similar_type(coord)
+    coord = SVector{4, Float64}(coord[1], coord[2], coord[3], Inf)
+    p = proj_trans(trans.pj, PJ_FWD, coord)
+    return T(p)
 end
 
 function (trans::Transformation)(coord)
