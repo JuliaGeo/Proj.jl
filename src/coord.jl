@@ -1,4 +1,5 @@
 const Coord = SVector{4, Float64}
+const Coord234 = Union{SVector{2, Float64}, SVector{3, Float64}, SVector{4, Float64}}
 
 mutable struct Transformation <: CoordinateTransformations.Transformation
     pj::Ptr{PJ}
@@ -92,7 +93,7 @@ function (trans::Transformation)(coord::StaticVector{4,<:AbstractFloat})
     return T(p)
 end
 
-function (trans::Transformation)(coord)
+function (trans::Transformation)(coord)::Coord234
     # avoid splatting for performance
     n = length(coord)
     coord = if n == 2
