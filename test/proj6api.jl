@@ -148,8 +148,8 @@ end
     @test a != b
     @test b ≈ Proj4.proj_coord(155191.3538124342, 463537.1362732911)
 
-    # with normalize=True, we need to use lon/lat, and still get x/y out
-    trans = Proj4.Transformation(source_crs, target_crs, normalize = true)
+    # with always_xy=True, we need to use lon/lat, and still get x/y out
+    trans = Proj4.Transformation(source_crs, target_crs, always_xy = true)
     a = Proj4.proj_coord(5.39, 52.16)
     b = Proj4.proj_trans(trans.pj, Proj4.PJ_FWD, a)
     @test a != b
@@ -159,7 +159,7 @@ end
 @testset "dense 4D coord vector transformation" begin
     source_crs = Proj4.proj_create("EPSG:4326")
     target_crs = Proj4.proj_create("EPSG:28992")
-    trans = Proj4.Transformation(source_crs, target_crs, normalize = true)
+    trans = Proj4.Transformation(source_crs, target_crs, always_xy = true)
     # This array is mutated in place. Note that this array needs to have 4D elements,
     # with 2D elements it will only do every other one
     A = [Proj4.proj_coord(5.39, 52.16) for _ = 1:5]
@@ -184,7 +184,7 @@ end
 @testset "generic array transformation" begin
     source_crs = Proj4.proj_create("EPSG:4326")
     target_crs = Proj4.proj_create("EPSG:28992")
-    trans = Proj4.Transformation(source_crs, target_crs, normalize = true)
+    trans = Proj4.Transformation(source_crs, target_crs, always_xy = true)
 
     # inplace transformation of vector of 2D coordinates
     # using https://proj.org/development/reference/functions.html#c.proj_trans_generic
@@ -215,8 +215,8 @@ end
 end
 
 @testset "compose" begin
-    trans1 = Proj4.Transformation("EPSG:4326", "EPSG:28992", normalize = true)
-    trans2 = Proj4.Transformation("EPSG:32632", "EPSG:2027", normalize = true)
+    trans1 = Proj4.Transformation("EPSG:4326", "EPSG:28992", always_xy = true)
+    trans2 = Proj4.Transformation("EPSG:32632", "EPSG:2027", always_xy = true)
     trans = trans1 ∘ trans2  # same as compose(trans1, trans2)
     source_crs = Proj4.proj_get_source_crs(trans.pj)
     target_crs = Proj4.proj_get_target_crs(trans.pj)
@@ -240,7 +240,7 @@ end
         target: NAD27(76) / UTM zone 15N"""
 end
 
-trans = Proj4.Transformation("EPSG:4326", "EPSG:28992", normalize = true)
+trans = Proj4.Transformation("EPSG:4326", "EPSG:28992", always_xy = true)
 trans(Proj4.proj_coord(5.39, 52.16))
 b = trans(SA[5.39, 52.16, 0.0, 0.0])
 

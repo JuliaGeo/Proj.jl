@@ -21,8 +21,8 @@ trans([55, 12])
 
 # Note that above the latitude is passed first, because that is the axis order that the
 # EPSG mandates. If you want to pass in (longitude, latitude) / (x, y), you can set the
-# `normalize` keyword to true. For more info see https://proj.org/faq.html#why-is-the-axis-ordering-in-proj-not-consistent
-trans = Proj4.Transformation("EPSG:4326", "+proj=utm +zone=32 +datum=WGS84", normalize=true)
+# `always_xy` keyword to true. For more info see https://proj.org/faq.html#why-is-the-axis-ordering-in-proj-not-consistent
+trans = Proj4.Transformation("EPSG:4326", "+proj=utm +zone=32 +datum=WGS84", always_xy=true)
 
 # now we input (longitude, latitude), and get the same result as above
 trans([12, 55])
