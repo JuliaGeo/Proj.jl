@@ -54,7 +54,7 @@ end
 
 function xyzt_transform(point::AbstractVector; network::Bool=false)
     proj_network = network ? "ON" : nothing
-    trans = Proj4.Transformation("EPSG:4326+5773", "EPSG:7856+5711", normalize = true)
+    trans = Proj4.Transformation("EPSG:4326+5773", "EPSG:7856+5711", always_xy = true)
     trans(point)
 end
 
