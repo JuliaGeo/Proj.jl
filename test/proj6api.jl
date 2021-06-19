@@ -240,38 +240,63 @@ end
         target: NAD27(76) / UTM zone 15N"""
 end
 
-trans = Proj4.Transformation("EPSG:4326", "EPSG:28992", always_xy = true)
-trans(Proj4.proj_coord(5.39, 52.16))
-b = trans(SA[5.39, 52.16, 0.0, 0.0])
+@testset "in and output types" begin
+    trans = Proj4.Transformation("EPSG:4326", "EPSG:28992", always_xy = true)
+    trans(Proj4.proj_coord(5.39, 52.16))
+    b = trans(SA[5.39, 52.16, 0.0, 0.0])
 
 
-# StaticVector, Vector or Tuple
-x, y = 5.39, 52.16
-for inpoint in [SA[x, y], [x, y], (x, y)]
-    p = if inpoint isa Vector
-        Test.@inferred SArray{S, Float64, 1, L} where {S<:Tuple, L} trans(inpoint)
-    else
-        Test.@inferred trans(inpoint)
+    # StaticVector, Vector or Tuple
+    x, y = 5.39, 52.16
+    for inpoint in [SA[x, y], [x, y], (x, y)]
+        p = if inpoint isa Vector
+            Test.@inferred SArray{S, Float64, 1, L} where {S<:Tuple, L} trans(inpoint)
+        else
+            Test.@inferred trans(inpoint)
+        end
+        @test p ≈ [155191.3538124342, 463537.1362732911]
+        @test p isa SVector{2, Float64}
     end
+
+    # StaticVectors like GeometryBasics.Point are returned, also with Float32
+    p = Test.@inferred trans(Point(5.39f0, 52.16f0))
     @test p ≈ [155191.3538124342, 463537.1362732911]
-    @test p isa SVector{2, Float64}
+    @test p isa Point{2, Float32}
+
+    # Integer input will go to the ::Any method and become Float64
+    @test trans(SA[1,2]) isa SVector{2, Float64}
+    @test trans([5,52]) ≈ [128410.08537081012, 445806.50883314764]
+
+    # SVector{3, Float64}
+    p = Test.@inferred trans(SA[5.39, 52.16, 2.0])
+    @test p ≈ [155191.35381147722, 463537.13624246384, 2.0]
+    @test p isa SVector{3, Float64}
+
+    # SVector{4, Float64}
+    p = Test.@inferred trans(SA[5.39, 52.16, 0.0, Inf])
+    @test p ≈ [155191.3538124342, 463537.1362732911, 0.0, Inf]
+    @test p isa SVector{4, Float64}
 end
 
-# StaticVectors like GeometryBasics.Point are returned, also with Float32
-p = Test.@inferred trans(Point(5.39f0, 52.16f0))
-@test p ≈ [155191.3538124342, 463537.1362732911]
-@test p isa Point{2, Float32}
+@testset "network" begin
+    as_before = Proj4.network_enabled()
 
-# Integer input will go to the ::Any method and become Float64
-@test trans(SA[1,2]) isa SVector{2, Float64}
-@test trans([5,52]) ≈ [128410.08537081012, 445806.50883314764]
+    # turn off network, no z transformation
+    @test !Proj4.enable_network(false)
+    @test !Proj4.network_enabled()
+    trans_z = Proj4.Transformation("EPSG:4326+5773", "EPSG:7856+5711", always_xy = true)
+    @test trans_z((151, -33, 5))[3] == 5
+    # turn on network, z transformation
+    @test Proj4.enable_network(true)
+    @test Proj4.network_enabled()
+    trans_z = Proj4.Transformation("EPSG:4326+5773", "EPSG:7856+5711", always_xy = true)
+    @test trans_z((151, -33, 5))[3] ≈ 5.28067830334755
 
-# SVector{3, Float64}
-p = Test.@inferred trans(SA[5.39, 52.16, 2.0])
-@test p ≈ [155191.35381147722, 463537.13624246384, 2.0]
-@test p isa SVector{3, Float64}
+    # 0 args turns it on as well
+    Proj4.enable_network(false)
+    Proj4.enable_network()
+    @test Proj4.network_enabled()
 
-# SVector{4, Float64}
-p = Test.@inferred trans(SA[5.39, 52.16, 0.0, Inf])
-@test p ≈ [155191.3538124342, 463537.1362732911, 0.0, Inf]
-@test p isa SVector{4, Float64}
+    # restore setting as outside the testset
+    Proj4.enable_network(as_before)
+end
