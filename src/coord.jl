@@ -131,3 +131,27 @@ function CoordinateTransformations.compose(
     target_crs = proj_get_target_crs(trans2.pj)
     return Transformation(source_crs, target_crs; area=area, ctx=ctx, always_xy=always_xy)
 end
+
+"""
+    enable_network(active::Bool = true, ctx::Ptr{PJ_CONTEXT} = C_NULL)::Bool
+
+Enable PROJ network access, if `active` is true, disable it if it is false. Optionally pass
+a context to set it for that context, instead of the global one.
+
+Returns true if network access is possible.
+"""
+function enable_network(active::Bool = true, ctx::Ptr{PJ_CONTEXT} = C_NULL)
+    enabled = proj_context_set_enable_network(Cint(active), ctx)
+    return Bool(enabled)
+end
+
+"""
+    network_enabled(ctx::Ptr{PJ_CONTEXT} = C_NULL)::Bool
+
+Returns true if PROJ network access is enabled, false otherwise. Optionally pass a context
+to check for that context, instead of the global one.
+"""
+function network_enabled(ctx::Ptr{PJ_CONTEXT} = C_NULL)
+    enabled = proj_context_is_network_enabled(ctx)
+    return Bool(enabled)
+end
