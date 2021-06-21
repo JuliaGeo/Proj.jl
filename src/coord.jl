@@ -186,14 +186,14 @@ function CoordinateTransformations.compose(
 end
 
 """
-    enable_network(active::Bool = true, ctx::Ptr{PJ_CONTEXT} = C_NULL)::Bool
+    enable_network!(active::Bool = true, ctx::Ptr{PJ_CONTEXT} = C_NULL)::Bool
 
 Enable PROJ network access, if `active` is true, disable it if it is false. Optionally pass
 a context to set it for that context, instead of the global one.
 
 Returns true if network access is possible.
 """
-function enable_network(active::Bool = true, ctx::Ptr{PJ_CONTEXT} = C_NULL)
+function enable_network!(active::Bool = true, ctx::Ptr{PJ_CONTEXT} = C_NULL)
     enabled = proj_context_set_enable_network(Cint(active), ctx)
     return Bool(enabled)
 end
