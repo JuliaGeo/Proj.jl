@@ -1,6 +1,59 @@
 const Coord = SVector{4, Float64}
 const Coord234 = Union{SVector{2, Float64}, SVector{3, Float64}, SVector{4, Float64}}
 
+"""
+    Transformation(source_crs, target_crs; area=C_NULL, ctx=C_NULL, always_xy=false)
+
+Create a Transformation that is a pipeline between two known coordinate reference systems.
+Transformation implements the
+[CoordinateTransformations.jl](https://github.com/JuliaGeometry/CoordinateTransformations.jl)
+API.
+
+`source_crs` and `target_crs` can be:
+- a "AUTHORITY:CODE", like EPSG:25832. When using that syntax for a source CRS, the created
+  pipeline will expect that the coordinates respect the axis order and axis unit of the
+  official definition (so for example, for EPSG:4326, with latitude first and longitude
+  next, in degrees). Similarly, when using that syntax for a target CRS, output values will
+  be emitted according to the official definition of this CRS. This behavior can be
+  overruled by passing `always_xy=true`.
+- a PROJ string, like "+proj=longlat +datum=WGS84". When using that syntax, the axis order
+  and unit for geographic CRS will be longitude, latitude, and the unit degrees.
+- the name of a CRS as found in the PROJ database, e.g "WGS84", "NAD27", etc.
+- more generally any string accepted by `proj_create` representing a CRS
+- besides an `AbstractString`, it can also accept a `Ptr{PJ}`, pointing to a CRS that was
+  already created with `proj_create`
+
+`area` sets the "area of use" for the Transformation. When it is supplied, the more accurate
+transformation between two given systems can be chosen. When no area of use is specific and
+several coordinate operations are possible depending on the area of use, this function will
+internally store those candidate coordinate operations in the return PJ object. Each
+subsequent coordinate transformation will then select the appropriate coordinate operation
+by comparing the input coordinates with the area of use of the candidate coordinate
+operations. The `area` pointer needs to be created using `proj_area_create`, filled using
+`proj_area_set_bbox`, and destroyed using `proj_area_destroy`.
+
+`ctx` determines the threading context. By default it is set to the global context. For
+thread safety, use separate contexts created with `proj_context_create` or
+`proj_context_clone`, and destroyed with `proj_context_destroy`.
+
+`always_xy` can optionally fix the axis orderding to x,y or lon,lat order. By default it is
+`false`, meaning the order is defined by the authority in charge of a given coordinate
+reference system, as explained in [this PROJ FAQ
+entry](https://proj.org/faq.html#why-is-the-axis-ordering-in-proj-not-consistent).
+
+# Examples
+```julia
+julia> trans = Proj4.Transformation("EPSG:4326", "EPSG:28992", always_xy=true)
+Transformation
+    source: WGS 84 (with axis order normalized for visualization)
+    target: Amersfoort / RD New
+
+julia> trans((5.39, 52.16))  # this is in lon,lat order, since we set always_xy to true
+2-element StaticArrays.SVector{2, Float64} with indices SOneTo(2):
+ 155191.3538124342
+ 463537.1362732911
+```
+"""
 mutable struct Transformation <: CoordinateTransformations.Transformation
     pj::Ptr{PJ}
     function Transformation(pj::Ptr{PJ})
