@@ -30,9 +30,9 @@ trans([12, 55])
 
 # using `inv` we can reverse the direction, `compose` can combine two transformations in one
 inv(trans)([691875.632, 6098907.825]) ≈ [12, 55]
+```
 
-
-
+```julia
 # This is the old API of this package, which will be removed soon
 wgs84 = Projection("+proj=longlat +datum=WGS84 +no_defs")
 utm56 = Projection("+proj=utm +zone=56 +south +datum=WGS84 +units=m +no_defs")
