@@ -282,12 +282,12 @@ end
     as_before = Proj4.network_enabled()
 
     # turn off network, no z transformation
-    @test !Proj4.enable_network(false)
+    @test !Proj4.enable_network!(false)
     @test !Proj4.network_enabled()
     trans_z = Proj4.Transformation("EPSG:4326+5773", "EPSG:7856+5711", always_xy = true)
     @test trans_z((151, -33, 5))[3] == 5
     # turn on network, z transformation
-    @test Proj4.enable_network(true)
+    @test Proj4.enable_network!(true)
     @test Proj4.network_enabled()
     trans_z = Proj4.Transformation("EPSG:4326+5773", "EPSG:7856+5711", always_xy = true)
     z = trans_z((151, -33, 5))[3]
@@ -299,10 +299,10 @@ end
     end
 
     # 0 args turns it on as well
-    Proj4.enable_network(false)
-    Proj4.enable_network()
+    Proj4.enable_network!(false)
+    Proj4.enable_network!()
     @test Proj4.network_enabled()
 
     # restore setting as outside the testset
-    Proj4.enable_network(as_before)
+    Proj4.enable_network!(as_before)
 end

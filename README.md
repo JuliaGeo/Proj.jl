@@ -44,7 +44,7 @@ transform(wgs84, utm56, [150 -27 0])
 Note that, as described in https://proj.org/resource_files.html, PROJ has the capability
 to use remote grids for transformations that need them. For users that have not set
 the environment variable `PROJNETWORK=ON`, or changed `proj.ini`, the networking is
-disabled by default. To enable from Julia, run `Proj4.enable_network()`.
+disabled by default. To enable from Julia, run `Proj4.enable_network!()`.
 `Proj4.network_enabled()` can be used to check the setting. Note that it needs to be set
 before creating a transformation, otherwise it will have no effect.
 
