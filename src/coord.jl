@@ -141,7 +141,7 @@ end
 
 function (trans::Transformation)(coord::StaticVector{4,<:AbstractFloat})
     T = similar_type(coord)
-    coord = SVector{4, Float64}(coord[1], coord[2], coord[3], Inf)
+    coord = SVector{4, Float64}(coord[1], coord[2], coord[3], coord[4])
     p = proj_trans(trans.pj, PJ_FWD, coord)
     return T(p)
 end
