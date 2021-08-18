@@ -143,6 +143,9 @@ end
     @test target_crs isa Ptr{Nothing}
     trans = Proj4.Transformation(source_crs, target_crs)
 
+    # Check that altitude and time inputs are correctly forwarded from the transformation
+    @test trans(SA_F64[52.16, 5.39, 5, 2020]) ≈ SA[155191.3538124342, 463537.1362732911, 5.0, 2020.0]
+
     a = Proj4.proj_coord(52.16, 5.39)
     b = Proj4.proj_trans(trans.pj, Proj4.PJ_FWD, a)
     @test a != b
