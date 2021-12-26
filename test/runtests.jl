@@ -1,12 +1,12 @@
-using Proj4
+using Proj
 using Test
 using GeometryBasics: Point
 
-@testset "Proj4" begin
+@testset "Proj" begin
 
 println("""
-C library version: $(Proj4.version)  [\"$(Proj4._get_release())\"]
-geodesic support: $(Proj4.has_geodesic_support)
+C library version: $(Proj.version)  [\"$(Proj._get_release())\"]
+geodesic support: $(Proj.has_geodesic_support)
 """)
 
 include("proj6api.jl")
@@ -14,7 +14,7 @@ include("proj6api.jl")
 # Some very basic sanity checking
 wgs84 = Projection("+proj=longlat +datum=WGS84 +no_defs")
 utm56 = Projection("+proj=utm +zone=56 +south +datum=WGS84 +units=m +no_defs")
-nad83 = Projection(Proj4.epsg[4269])
+nad83 = Projection(Proj.epsg[4269])
 
 # Reference data computed using GeographicLib's GeoConvert tool
 @test transform(wgs84, utm56, [150.0, -27.0, 0.0]) ≈
@@ -53,9 +53,9 @@ rt90 = Projection("+lon_0=15.808277777799999 +lat_0=0.0 +k=1.0 +x_0=1500000.0 +y
      329200 6599800] atol=1e-2
 
 # Just to verify that we get different Projections from different (projection) definitions
-wgs84 = Projection(Proj4.epsg[4326]) # World
-svy21 = Projection(Proj4.epsg[3414]) # Singapore
-proj = Projection(Proj4.epsg[3906]) # based on the Australian National Spheroid (bessel ellipse)
+wgs84 = Projection(Proj.epsg[4326]) # World
+svy21 = Projection(Proj.epsg[3414]) # Singapore
+proj = Projection(Proj.epsg[3906]) # based on the Australian National Spheroid (bessel ellipse)
 
 wgs84_a, wgs84_es = spheroid_params(wgs84)
 svy21_a, svy21_es = spheroid_params(svy21)
@@ -72,7 +72,7 @@ proj_a, proj_es = spheroid_params(proj)
 @test !is_latlong(utm56)
 @test !is_latlong(sweref99tm)
 @test !is_latlong(svy21)
-@test is_geocent(Projection(Proj4.epsg[4328])) # WGS 84 (geocentric)
+@test is_geocent(Projection(Proj.epsg[4328])) # WGS 84 (geocentric)
 @test !is_geocent(wgs84) # WGS 84 (geocentric)
 
 #=
@@ -100,7 +100,7 @@ p1, p2 = [-73.78, 40.64],[103.99, 30.36] # p1, p2 in degrees
 proj1, proj2 = wgs84, proj # chosen to have different ellipses
 q1, q2 = lonlat2xy(p1, proj1), lonlat2xy(p2, proj2)
 
-if Proj4.has_geodesic_support
+if Proj.has_geodesic_support
     r2 = transform(proj2, proj1, q2)
     dist_q1r2, azi1, azi2 = geod_inverse(q1, r2, proj1)
     dest, azi = geod_direct(q1, azi1, dist_q1r2, proj1)
@@ -159,9 +159,9 @@ if Proj4.has_geodesic_support
 end
 
 epsg_error = Int[]
-for epsg_code in keys(Proj4.epsg)
+for epsg_code in keys(Proj.epsg)
     try
-        proj = Projection(Proj4.epsg[epsg_code])
+        proj = Projection(Proj.epsg[epsg_code])
         proj_string1 = string(proj)
         proj1 = Projection(proj_string1)
         proj_string2 = string(proj1)
@@ -176,9 +176,9 @@ for epsg_code in keys(Proj4.epsg)
 end
 
 esri_error = Int[]
-for esri_code in keys(Proj4.esri)
+for esri_code in keys(Proj.esri)
     try
-        proj_string = Proj4.esri[esri_code]
+        proj_string = Proj.esri[esri_code]
         proj = Projection(proj_string)
         proj_string1 = string(proj)
         proj1 = Projection(proj_string1)
@@ -195,7 +195,7 @@ end
 
 if length(epsg_error) > 0 || length(esri_error) > 0
     errorFraction = (length(epsg_error) + length(esri_error)) /
-                    (length(Proj4.epsg) + length(Proj4.esri))
+                    (length(Proj.epsg) + length(Proj.esri))
     # Some errors are ok (due to old libproj versions), but a good fraction of
     # the strings should parse - if not something *really* wrong has probably
     # occurred.
@@ -210,12 +210,12 @@ if length(epsg_error) > 0 || length(esri_error) > 0
     total errors: $(round(100*errorFraction; digits=2))%
     """)
     for epsg_code in sort(epsg_error)
-        println("[EPSG:$epsg_code] \"$(Proj4.epsg[epsg_code])\"")
+        println("[EPSG:$epsg_code] \"$(Proj.epsg[epsg_code])\"")
     end
     for esri_code in sort(esri_error)
-        println("[ESRI:$esri_code] \"$(Proj4.esri[esri_code])\"")
+        println("[ESRI:$esri_code] \"$(Proj.esri[esri_code])\"")
     end
 end
 
 
-end # testset "Proj4"
+end # testset "Proj"
