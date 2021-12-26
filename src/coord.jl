@@ -43,7 +43,7 @@ entry](https://proj.org/faq.html#why-is-the-axis-ordering-in-proj-not-consistent
 
 # Examples
 ```julia
-julia> trans = Proj4.Transformation("EPSG:4326", "EPSG:28992", always_xy=true)
+julia> trans = Proj.Transformation("EPSG:4326", "EPSG:28992", always_xy=true)
 Transformation
     source: WGS 84 (with axis order normalized for visualization)
     target: Amersfoort / RD New

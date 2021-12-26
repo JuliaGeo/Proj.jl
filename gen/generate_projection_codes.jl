@@ -4,7 +4,7 @@ using Printf
 # Load in `deps.jl`, complaining if it does not exist
 const depsjl_path = joinpath(@__DIR__, "..", "deps", "deps.jl")
 if !isfile(depsjl_path)
-    error("Proj4 not installed properly, run Pkg.build(\"Proj4\"), restart Julia and try again")
+    error("Proj not installed properly, run Pkg.build(\"Proj\"), restart Julia and try again")
 end
 include(depsjl_path)
 check_deps()

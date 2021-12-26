@@ -1,6 +1,6 @@
 using Test
 using StaticArrays
-using Proj4
+using Proj
 import PROJ_jll
 
 function read_cmd(cmd)
@@ -54,7 +54,7 @@ end
 
 function xyzt_transform(point::AbstractVector; network::Bool=false)
     proj_network = network ? "ON" : nothing
-    trans = Proj4.Transformation("EPSG:4326+5773", "EPSG:7856+5711", always_xy = true)
+    trans = Proj.Transformation("EPSG:4326+5773", "EPSG:7856+5711", always_xy = true)
     trans(point)
 end
 
@@ -79,8 +79,8 @@ xy2 = "313152.777214 6346936.495810"
 # need to switch axis order here
 # interestingly this does not respond to the PROJ_NETWORK environment variable,
 # but does respond to enabling it in the context
-Proj4.proj_context_is_network_enabled()
-@test Proj4.proj_context_set_enable_network(1) == 1
+Proj.proj_context_is_network_enabled()
+@test Proj.proj_context_set_enable_network(1) == 1
 # this is like passing floatmax() to the cli, but if we do it correctly we expect
 # it to be like the version that passes only xyz to the cli
 @test xyzt_transform(SA_F64[151, -33, 5]) == SA[313152.7772137531, 6.346936495809965e6, 5.280647277836724]

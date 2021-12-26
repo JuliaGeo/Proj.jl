@@ -1,4 +1,4 @@
-module Proj4
+module Proj
 
 using PROJ_jll
 using CEnum
