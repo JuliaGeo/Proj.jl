@@ -4,6 +4,8 @@ output_file_path = "../src/libproj.jl"
 print_using_CEnum = false
 extract_c_comment_style = "doxygen"
 fold_single_line_comment = true
+struct_field_comment_style = "outofline"
+enumerator_comment_style = "outofline"
 
 output_ignorelist = [
     # PJ_COORD and all its aliases
