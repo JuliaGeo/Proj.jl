@@ -2,6 +2,8 @@
 library_name = "libproj"
 output_file_path = "../src/libproj.jl"
 print_using_CEnum = false
+extract_c_comment_style = "doxygen"
+fold_single_line_comment = true
 
 output_ignorelist = [
     # PJ_COORD and all its aliases
