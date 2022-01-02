@@ -5,44 +5,14 @@ using CEnum
 using StaticArrays
 using CoordinateTransformations
 
-export Projection, # proj_types.jl
-       transform, transform!,  # proj_functions.jl
-       is_latlong, is_geocent, compare_datums, spheroid_params,
-       xy2lonlat, xy2lonlat!, lonlat2xy, lonlat2xy!
-
-# geodesic support
-export geod_direct, geod_inverse, geod_destination, geod_distance
+export PROJ_jll
 
 # re-export CoordinateTransformations methods we implement
 export compose, ∘
 
-# these are part of the deprecated PROJ API, and will be removed soon
-include("projection_codes.jl") # ESRI and EPSG projection strings
-include("proj_capi.jl") # low-level C-facing functions (corresponding to src/proj_api.h)
-include("proj_geodesic.jl") # low-level C-facing functions (corresponding to src/geodesic.h)
-
-# these are part of the new PROJ API
-include("proj_common.jl")
+include("libproj.jl")
 include("coord.jl")
-include("proj_c.jl")
 include("error.jl")
-
-function _version()
-    m = match(r"(\d+).(\d+).(\d+),.+", _get_release())
-    VersionNumber(parse(Int, m[1]), parse(Int, m[2]), parse(Int, m[3]))
-end
-
-"Parsed version number for the underlying version of libproj"
-const version = _version()
-
-# Detect underlying libproj support for geodesic calculations
-const has_geodesic_support = true
-
-include("proj_types.jl") # type definitions for proj objects
-include("proj_functions.jl") # user-facing proj functions
-
-"Get a global error string in human readable form"
-error_message() = _strerrno()
 
 """
 Load a null-terminated list of strings
@@ -68,11 +38,11 @@ const PROJ_LIB = Ref{String}()
 function __init__()
     # register custom error handler
     funcptr = @cfunction(log_func, Ptr{Cvoid}, (Ptr{Cvoid}, Cint, Cstring))
-    proj_log_func(C_NULL, funcptr)
+    proj_log_func(C_NULL, C_NULL, funcptr)
 
     # point to the location of the provided shared resources
     PROJ_LIB[] = joinpath(PROJ_jll.artifact_dir, "share", "proj")
-    proj_context_set_search_paths(1, [PROJ_LIB[]])
+    proj_context_set_search_paths(C_NULL, 1, [PROJ_LIB[]])
 end
 
 end # module
