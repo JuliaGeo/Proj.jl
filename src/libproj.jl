@@ -122,7 +122,7 @@ function proj_context_clone(ctx)
 end
 
 # typedef const char * ( * proj_file_finder ) ( PJ_CONTEXT * ctx , const char * , void * user_data )
-"""Callback to resolve a filename to a full path """
+"""Callback to resolve a filename to a full path"""
 const proj_file_finder = Ptr{Cvoid}
 
 function proj_context_set_file_finder(ctx, finder, user_data)
@@ -150,7 +150,7 @@ mutable struct PROJ_FILE_HANDLE end
 """
     PROJ_OPEN_ACCESS
 
-Open access / mode 
+Open access / mode
 """
 @cenum PROJ_OPEN_ACCESS::UInt32 begin
     PROJ_OPEN_ACCESS_READ_ONLY = 0
@@ -161,7 +161,7 @@ end
 """
     PROJ_FILE_API
 
-File API callbacks 
+File API callbacks
 """
 struct PROJ_FILE_API
     version::Cint
@@ -201,11 +201,11 @@ a non-NULL opaque handle in case of success.
 const proj_network_open_cbk_type = Ptr{Cvoid}
 
 # typedef void ( * proj_network_close_cbk_type ) ( PJ_CONTEXT * ctx , PROJ_NETWORK_HANDLE * handle , void * user_data )
-"""Network access: close callback """
+"""Network access: close callback"""
 const proj_network_close_cbk_type = Ptr{Cvoid}
 
 # typedef const char * ( * proj_network_get_header_value_cbk_type ) ( PJ_CONTEXT * ctx , PROJ_NETWORK_HANDLE * handle , const char * header_name , void * user_data )
-"""Network access: get HTTP headers """
+"""Network access: get HTTP headers"""
 const proj_network_get_header_value_cbk_type = Ptr{Cvoid}
 
 # typedef size_t ( * proj_network_read_range_type ) ( PJ_CONTEXT * ctx , PROJ_NETWORK_HANDLE * handle , unsigned long long offset , size_t size_to_read , void * buffer , size_t error_string_max_size , char * out_error_string , void * user_data )
@@ -276,7 +276,7 @@ end
 """
     proj_create(ctx, definition)
 
-Doxygen\\_Suppress 
+Doxygen\\_Suppress
 """
 function proj_create(ctx, definition)
     @ccall libproj.proj_create(ctx::Ptr{PJ_CONTEXT}, definition::Cstring)::Ptr{PJ}
@@ -301,7 +301,7 @@ end
 """
     proj_assign_context(pj, ctx)
 
-Doxygen\\_Suppress 
+Doxygen\\_Suppress
 """
 function proj_assign_context(pj, ctx)
     @ccall libproj.proj_assign_context(pj::Ptr{PJ}, ctx::Ptr{PJ_CONTEXT})::Cvoid
@@ -364,7 +364,7 @@ end
 """
     proj_coord(x, y, z, t)
 
-Doxygen\\_Suppress 
+Doxygen\\_Suppress
 """
 function proj_coord(x, y, z, t)
     @ccall libproj.proj_coord(x::Cdouble, y::Cdouble, z::Cdouble, t::Cdouble)::PJ_COORD
@@ -490,13 +490,13 @@ function proj_cleanup()
     @ccall libproj.proj_cleanup()::Cvoid
 end
 
-"""Type representing a NULL terminated list of NULL-terminate strings. """
+"""Type representing a NULL terminated list of NULL-terminate strings."""
 const PROJ_STRING_LIST = Ptr{Cstring}
 
 """
     PJ_GUESSED_WKT_DIALECT
 
-Guessed WKT "dialect". 
+Guessed WKT "dialect".
 """
 @cenum PJ_GUESSED_WKT_DIALECT::UInt32 begin
     PJ_GUESSED_WKT2_2019 = 0
@@ -510,7 +510,7 @@ end
 """
     PJ_CATEGORY
 
-Object category. 
+Object category.
 """
 @cenum PJ_CATEGORY::UInt32 begin
     PJ_CATEGORY_ELLIPSOID = 0
@@ -524,7 +524,7 @@ end
 """
     PJ_TYPE
 
-Object type. 
+Object type.
 """
 @cenum PJ_TYPE::UInt32 begin
     PJ_TYPE_UNKNOWN = 0
@@ -560,7 +560,7 @@ end
 """
     PJ_COMPARISON_CRITERION
 
-Comparison criterion. 
+Comparison criterion.
 """
 @cenum PJ_COMPARISON_CRITERION::UInt32 begin
     PJ_COMP_STRICT = 0
@@ -571,7 +571,7 @@ end
 """
     PJ_WKT_TYPE
 
-WKT version. 
+WKT version.
 """
 @cenum PJ_WKT_TYPE::UInt32 begin
     PJ_WKT2_2015 = 0
@@ -587,7 +587,7 @@ end
 """
     PROJ_CRS_EXTENT_USE
 
-Specify how source and target CRS extent should be used to restrict candidate operations (only taken into account if no explicit area of interest is specified. 
+Specify how source and target CRS extent should be used to restrict candidate operations (only taken into account if no explicit area of interest is specified.
 """
 @cenum PROJ_CRS_EXTENT_USE::UInt32 begin
     PJ_CRS_EXTENT_NONE = 0
@@ -599,7 +599,7 @@ end
 """
     PROJ_GRID_AVAILABILITY_USE
 
-Describe how grid availability is used. 
+Describe how grid availability is used.
 """
 @cenum PROJ_GRID_AVAILABILITY_USE::UInt32 begin
     PROJ_GRID_AVAILABILITY_USED_FOR_SORTING = 0
@@ -611,7 +611,7 @@ end
 """
     PJ_PROJ_STRING_TYPE
 
-PROJ string version. 
+PROJ string version.
 """
 @cenum PJ_PROJ_STRING_TYPE::UInt32 begin
     PJ_PROJ_5 = 0
@@ -621,7 +621,7 @@ end
 """
     PROJ_SPATIAL_CRITERION
 
-Spatial criterion to restrict candidate operations. 
+Spatial criterion to restrict candidate operations.
 """
 @cenum PROJ_SPATIAL_CRITERION::UInt32 begin
     PROJ_SPATIAL_CRITERION_STRICT_CONTAINMENT = 0
@@ -631,7 +631,7 @@ end
 """
     PROJ_INTERMEDIATE_CRS_USE
 
-Describe if and how intermediate CRS should be used 
+Describe if and how intermediate CRS should be used
 """
 @cenum PROJ_INTERMEDIATE_CRS_USE::UInt32 begin
     PROJ_INTERMEDIATE_CRS_USE_ALWAYS = 0
@@ -642,7 +642,7 @@ end
 """
     PJ_COORDINATE_SYSTEM_TYPE
 
-Type of coordinate system. 
+Type of coordinate system.
 """
 @cenum PJ_COORDINATE_SYSTEM_TYPE::UInt32 begin
     PJ_CS_TYPE_UNKNOWN = 0
@@ -705,7 +705,7 @@ end
 
 Structure given description of a unit.
 
-This structure may grow over time, and should not be directly allocated by client code. 
+This structure may grow over time, and should not be directly allocated by client code.
 
 \\since 7.1
 """
@@ -724,7 +724,7 @@ end
 
 Structure given description of a celestial body.
 
-This structure may grow over time, and should not be directly allocated by client code. 
+This structure may grow over time, and should not be directly allocated by client code.
 
 \\since 8.1
 """
@@ -1241,7 +1241,7 @@ Solve the direct geodesic problem.
 
 If either point is at a pole, the azimuth is defined by keeping the longitude fixed, writing *lat* = ±(90° − ε), and taking the limit ε → 0+. An arc length greater that 180° signifies a geodesic which is not a shortest path. (For a prolate ellipsoid, an additional condition is necessary for a shortest path: the longitudinal extent must not exceed of 180°.)
 
-Example, determine the point 10000 km NE of JFK: 
+Example, determine the point 10000 km NE of JFK:
 
 ```c++
 {.c}
@@ -1331,7 +1331,7 @@ If either point is at a pole, the azimuth is defined by keeping the longitude fi
 
 The solution to the inverse problem is found using Newton's method. If this fails to converge (this is very unlikely in geodetic applications but does occur for very eccentric ellipsoids), then the bisection method is used to refine the solution.
 
-Example, determine the distance between JFK and Singapore Changi Airport: 
+Example, determine the distance between JFK and Singapore Changi Airport:
 
 ```c++
 {.c}
@@ -1519,7 +1519,7 @@ Compute the position along a [`geod_geodesicline`](@ref).
 
 *l* must have been initialized with a call, e.g., to [`geod_lineinit`](@ref)(), with *caps* |= GEOD\\_DISTANCE\\_IN (or *caps* = 0). The values of *lon2* and *azi2* returned are in the range [−180°, 180°]. Any of the "return" arguments *plat2*, etc., may be replaced by 0, if you do not need some quantities computed.
 
-Example, compute way points between JFK and Singapore Changi Airport the "obvious" way using [`geod_direct`](@ref)(): 
+Example, compute way points between JFK and Singapore Changi Airport the "obvious" way using [`geod_direct`](@ref)():
 
 ```c++
 {.c}
@@ -1534,7 +1534,7 @@ Example, compute way points between JFK and Singapore Changi Airport the "obviou
    }
 ```
 
-A faster way using [`geod_position`](@ref)(): 
+A faster way using [`geod_position`](@ref)():
 
 ```c++
 {.c}
@@ -1576,7 +1576,7 @@ The general position function.
 
 With *flags* & GEOD\\_LONG\\_UNROLL bit set, the longitude is "unrolled" so that the quantity *lon2* − *lon1* indicates how many times and in what sense the geodesic encircles the ellipsoid.
 
-Example, compute way points between JFK and Singapore Changi Airport using [`geod_genposition`](@ref)(). In this example, the points are evenly space in arc length (and so only approximately equally spaced in distance). This is faster than using [`geod_position`](@ref)() and would be appropriate if drawing the path on a map. 
+Example, compute way points between JFK and Singapore Changi Airport using [`geod_genposition`](@ref)(). In this example, the points are evenly space in arc length (and so only approximately equally spaced in distance). This is faster than using [`geod_position`](@ref)() and would be appropriate if drawing the path on a map.
 
 ```c++
 {.c}
@@ -1743,7 +1743,7 @@ The area and perimeter are accumulated at two times the standard floating point 
 
 More points can be added to the polygon after this call.
 
-Example, compute the perimeter and area of the geodesic triangle with vertices (0°N,0°E), (0°N,90°E), (90°N,0°E). 
+Example, compute the perimeter and area of the geodesic triangle with vertices (0°N,0°E), (0°N,90°E), (90°N,0°E).
 
 ```c++
 {.c}
@@ -1851,7 +1851,7 @@ A simple interface for computing the area of a geodesic polygon.
 
 Arbitrarily complex polygons are allowed. In the case self-intersecting of polygons the area is accumulated "algebraically", e.g., the areas of the 2 loops in a figure-8 polygon will partially cancel. There's no need to "close" the polygon by repeating the first vertex. The area returned is signed with counter-clockwise traversal being treated as positive.
 
-Example, compute the area of Antarctica: 
+Example, compute the area of Antarctica:
 
 ```c++
 {.c}
