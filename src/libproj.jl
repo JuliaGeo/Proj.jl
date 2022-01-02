@@ -151,6 +151,12 @@ mutable struct PROJ_FILE_HANDLE end
     PROJ_OPEN_ACCESS
 
 Open access / mode
+
+| Enumerator                           | Note                                                                                        |
+| :----------------------------------- | :------------------------------------------------------------------------------------------ |
+| PROJ\\_OPEN\\_ACCESS\\_READ\\_ONLY   | Read-only access. Equivalent to "rb"                                                        |
+| PROJ\\_OPEN\\_ACCESS\\_READ\\_UPDATE | Read-update access. File should be created if not existing. Equivalent to "r+b"             |
+| PROJ\\_OPEN\\_ACCESS\\_CREATE        | Create access. File should be truncated to 0-byte if already existing. Equivalent to "w+b"  |
 """
 @cenum PROJ_OPEN_ACCESS::UInt32 begin
     PROJ_OPEN_ACCESS_READ_ONLY = 0
@@ -162,6 +168,20 @@ end
     PROJ_FILE_API
 
 File API callbacks
+
+| Field        | Note                                                                                          |
+| :----------- | :-------------------------------------------------------------------------------------------- |
+| version      | Version of this structure. Should be set to 1 currently.                                      |
+| open\\_cbk   | Open file. Return NULL if error                                                               |
+| read\\_cbk   | Read sizeBytes into buffer from current position and return number of bytes read              |
+| write\\_cbk  | Write sizeBytes into buffer from current position and return number of bytes written          |
+| seek\\_cbk   | Seek to offset using whence=SEEK\\_SET/SEEK\\_CUR/SEEK\\_END. Return TRUE in case of success  |
+| tell\\_cbk   | Return current file position                                                                  |
+| close\\_cbk  | Close file                                                                                    |
+| exists\\_cbk | Return TRUE if a file exists                                                                  |
+| mkdir\\_cbk  | Return TRUE if directory exists or could be created                                           |
+| unlink\\_cbk | Return TRUE if file could be removed                                                          |
+| rename\\_cbk | Return TRUE if file could be renamed                                                          |
 """
 struct PROJ_FILE_API
     version::Cint
@@ -497,6 +517,15 @@ const PROJ_STRING_LIST = Ptr{Cstring}
     PJ_GUESSED_WKT_DIALECT
 
 Guessed WKT "dialect".
+
+| Enumerator                 | Note                                             |
+| :------------------------- | :----------------------------------------------- |
+| PJ\\_GUESSED\\_WKT2\\_2019 | WKT2_2019                                        |
+| PJ\\_GUESSED\\_WKT2\\_2018 | Deprecated alias for PJ\\_GUESSED\\_WKT2\\_2019  |
+| PJ\\_GUESSED\\_WKT2\\_2015 | WKT2_2015                                        |
+| PJ\\_GUESSED\\_WKT1\\_GDAL | WKT1                                             |
+| PJ\\_GUESSED\\_WKT1\\_ESRI | ESRI variant of WKT1                             |
+| PJ\\_GUESSED\\_NOT\\_WKT   | Not WKT / unrecognized                           |
 """
 @cenum PJ_GUESSED_WKT_DIALECT::UInt32 begin
     PJ_GUESSED_WKT2_2019 = 0
@@ -525,6 +554,29 @@ end
     PJ_TYPE
 
 Object type.
+
+| Enumerator                                 | Note                                                                                                                                |
+| :----------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------- |
+| PJ\\_TYPE\\_CRS                            | Abstract type, not returned by [`proj_get_type`](@ref)()                                                                            |
+| PJ\\_TYPE\\_GEODETIC\\_CRS                 |                                                                                                                                     |
+| PJ\\_TYPE\\_GEOCENTRIC\\_CRS               |                                                                                                                                     |
+| PJ\\_TYPE\\_GEOGRAPHIC\\_CRS               | [`proj_get_type`](@ref)() will never return that type, but PJ\\_TYPE\\_GEOGRAPHIC\\_2D\\_CRS or PJ\\_TYPE\\_GEOGRAPHIC\\_3D\\_CRS.  |
+| PJ\\_TYPE\\_GEOGRAPHIC\\_2D\\_CRS          |                                                                                                                                     |
+| PJ\\_TYPE\\_GEOGRAPHIC\\_3D\\_CRS          |                                                                                                                                     |
+| PJ\\_TYPE\\_VERTICAL\\_CRS                 |                                                                                                                                     |
+| PJ\\_TYPE\\_PROJECTED\\_CRS                |                                                                                                                                     |
+| PJ\\_TYPE\\_COMPOUND\\_CRS                 |                                                                                                                                     |
+| PJ\\_TYPE\\_TEMPORAL\\_CRS                 |                                                                                                                                     |
+| PJ\\_TYPE\\_ENGINEERING\\_CRS              |                                                                                                                                     |
+| PJ\\_TYPE\\_BOUND\\_CRS                    |                                                                                                                                     |
+| PJ\\_TYPE\\_OTHER\\_CRS                    |                                                                                                                                     |
+| PJ\\_TYPE\\_CONVERSION                     |                                                                                                                                     |
+| PJ\\_TYPE\\_TRANSFORMATION                 |                                                                                                                                     |
+| PJ\\_TYPE\\_CONCATENATED\\_OPERATION       |                                                                                                                                     |
+| PJ\\_TYPE\\_OTHER\\_COORDINATE\\_OPERATION |                                                                                                                                     |
+| PJ\\_TYPE\\_TEMPORAL\\_DATUM               |                                                                                                                                     |
+| PJ\\_TYPE\\_ENGINEERING\\_DATUM            |                                                                                                                                     |
+| PJ\\_TYPE\\_PARAMETRIC\\_DATUM             |                                                                                                                                     |
 """
 @cenum PJ_TYPE::UInt32 begin
     PJ_TYPE_UNKNOWN = 0
@@ -561,6 +613,12 @@ end
     PJ_COMPARISON_CRITERION
 
 Comparison criterion.
+
+| Enumerator                                               | Note                                                                                                                                                                                                                                                                                        |
+| :------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| PJ\\_COMP\\_STRICT                                       | All properties are identical.                                                                                                                                                                                                                                                               |
+| PJ\\_COMP\\_EQUIVALENT                                   | The objects are equivalent for the purpose of coordinate operations. They can differ by the name of their objects, identifiers, other metadata. Parameters may be expressed in different units, provided that the value is (with some tolerance) the same once expressed in a common unit.  |
+| PJ\\_COMP\\_EQUIVALENT\\_EXCEPT\\_AXIS\\_ORDER\\_GEOGCRS | Same as EQUIVALENT, relaxed with an exception that the axis order of the base CRS of a DerivedCRS/ProjectedCRS or the axis order of a GeographicCRS is ignored. Only to be used with DerivedCRS/ProjectedCRS/GeographicCRS                                                                  |
 """
 @cenum PJ_COMPARISON_CRITERION::UInt32 begin
     PJ_COMP_STRICT = 0
@@ -572,6 +630,17 @@ end
     PJ_WKT_TYPE
 
 WKT version.
+
+| Enumerator                    | Note                                                                    |
+| :---------------------------- | :---------------------------------------------------------------------- |
+| PJ\\_WKT2\\_2015              | cf osgeo::proj::io::WKTFormatter::Convention::WKT2                      |
+| PJ\\_WKT2\\_2015\\_SIMPLIFIED | cf osgeo::proj::io::WKTFormatter::Convention::WKT2\\_SIMPLIFIED         |
+| PJ\\_WKT2\\_2019              | cf osgeo::proj::io::WKTFormatter::Convention::WKT2\\_2019               |
+| PJ\\_WKT2\\_2018              | Deprecated alias for PJ\\_WKT2\\_2019                                   |
+| PJ\\_WKT2\\_2019\\_SIMPLIFIED | cf osgeo::proj::io::WKTFormatter::Convention::WKT2\\_2019\\_SIMPLIFIED  |
+| PJ\\_WKT2\\_2018\\_SIMPLIFIED | Deprecated alias for PJ\\_WKT2\\_2019                                   |
+| PJ\\_WKT1\\_GDAL              | cf osgeo::proj::io::WKTFormatter::Convention::WKT1\\_GDAL               |
+| PJ\\_WKT1\\_ESRI              | cf osgeo::proj::io::WKTFormatter::Convention::WKT1\\_ESRI               |
 """
 @cenum PJ_WKT_TYPE::UInt32 begin
     PJ_WKT2_2015 = 0
@@ -588,6 +657,13 @@ end
     PROJ_CRS_EXTENT_USE
 
 Specify how source and target CRS extent should be used to restrict candidate operations (only taken into account if no explicit area of interest is specified.
+
+| Enumerator                       | Note                                                                           |
+| :------------------------------- | :----------------------------------------------------------------------------- |
+| PJ\\_CRS\\_EXTENT\\_NONE         | Ignore CRS extent                                                              |
+| PJ\\_CRS\\_EXTENT\\_BOTH         | Test coordinate operation extent against both CRS extent.                      |
+| PJ\\_CRS\\_EXTENT\\_INTERSECTION | Test coordinate operation extent against the intersection of both CRS extent.  |
+| PJ\\_CRS\\_EXTENT\\_SMALLEST     | Test coordinate operation against the smallest of both CRS extent.             |
 """
 @cenum PROJ_CRS_EXTENT_USE::UInt32 begin
     PJ_CRS_EXTENT_NONE = 0
@@ -600,6 +676,13 @@ end
     PROJ_GRID_AVAILABILITY_USE
 
 Describe how grid availability is used.
+
+| Enumerator                                                             | Note                                                                                                                                                                                  |
+| :--------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| PROJ\\_GRID\\_AVAILABILITY\\_USED\\_FOR\\_SORTING                      | Grid availability is only used for sorting results. Operations where some grids are missing will be sorted last.                                                                      |
+| PROJ\\_GRID\\_AVAILABILITY\\_DISCARD\\_OPERATION\\_IF\\_MISSING\\_GRID | Completely discard an operation if a required grid is missing.                                                                                                                        |
+| PROJ\\_GRID\\_AVAILABILITY\\_IGNORED                                   | Ignore grid availability at all. Results will be presented as if all grids were available.                                                                                            |
+| PROJ\\_GRID\\_AVAILABILITY\\_KNOWN\\_AVAILABLE                         | Results will be presented as if grids known to PROJ (that is registered in the grid\\_alternatives table of its database) were available. Used typically when networking is enabled.  |
 """
 @cenum PROJ_GRID_AVAILABILITY_USE::UInt32 begin
     PROJ_GRID_AVAILABILITY_USED_FOR_SORTING = 0
@@ -612,6 +695,11 @@ end
     PJ_PROJ_STRING_TYPE
 
 PROJ string version.
+
+| Enumerator    | Note                                                           |
+| :------------ | :------------------------------------------------------------- |
+| PJ\\_PROJ\\_5 | cf osgeo::proj::io::PROJStringFormatter::Convention::PROJ\\_5  |
+| PJ\\_PROJ\\_4 | cf osgeo::proj::io::PROJStringFormatter::Convention::PROJ\\_4  |
 """
 @cenum PJ_PROJ_STRING_TYPE::UInt32 begin
     PJ_PROJ_5 = 0
@@ -622,6 +710,11 @@ end
     PROJ_SPATIAL_CRITERION
 
 Spatial criterion to restrict candidate operations.
+
+| Enumerator                                          | Note                                                                                |
+| :-------------------------------------------------- | :---------------------------------------------------------------------------------- |
+| PROJ\\_SPATIAL\\_CRITERION\\_STRICT\\_CONTAINMENT   | The area of validity of transforms should strictly contain the are of interest.     |
+| PROJ\\_SPATIAL\\_CRITERION\\_PARTIAL\\_INTERSECTION | The area of validity of transforms should at least intersect the area of interest.  |
 """
 @cenum PROJ_SPATIAL_CRITERION::UInt32 begin
     PROJ_SPATIAL_CRITERION_STRICT_CONTAINMENT = 0
@@ -632,6 +725,12 @@ end
     PROJ_INTERMEDIATE_CRS_USE
 
 Describe if and how intermediate CRS should be used
+
+| Enumerator                                                          | Note                                                                                       |
+| :------------------------------------------------------------------ | :----------------------------------------------------------------------------------------- |
+| PROJ\\_INTERMEDIATE\\_CRS\\_USE\\_ALWAYS                            | Always search for intermediate CRS.                                                        |
+| PROJ\\_INTERMEDIATE\\_CRS\\_USE\\_IF\\_NO\\_DIRECT\\_TRANSFORMATION | Only attempt looking for intermediate CRS if there is no direct transformation available.  |
+| PROJ\\_INTERMEDIATE\\_CRS\\_USE\\_NEVER                             |                                                                                            |
 """
 @cenum PROJ_INTERMEDIATE_CRS_USE::UInt32 begin
     PROJ_INTERMEDIATE_CRS_USE_ALWAYS = 0
@@ -663,6 +762,22 @@ end
 Structure given overall description of a CRS.
 
 This structure may grow over time, and should not be directly allocated by client code.
+
+| Field                      | Note                                                                                                                   |
+| :------------------------- | :--------------------------------------------------------------------------------------------------------------------- |
+| auth\\_name                | Authority name.                                                                                                        |
+| code                       | Object code.                                                                                                           |
+| name                       | Object name.                                                                                                           |
+| type                       | Object type.                                                                                                           |
+| deprecated                 | Whether the object is deprecated                                                                                       |
+| bbox\\_valid               | Whereas the west\\_lon\\_degree, south\\_lat\\_degree, east\\_lon\\_degree and north\\_lat\\_degree fields are valid.  |
+| west\\_lon\\_degree        | Western-most longitude of the area of use, in degrees.                                                                 |
+| south\\_lat\\_degree       | Southern-most latitude of the area of use, in degrees.                                                                 |
+| east\\_lon\\_degree        | Eastern-most longitude of the area of use, in degrees.                                                                 |
+| north\\_lat\\_degree       | Northern-most latitude of the area of use, in degrees.                                                                 |
+| area\\_name                | Name of the area of use.                                                                                               |
+| projection\\_method\\_name | Name of the projection method for a projected CRS. Might be NULL evenfor projected CRS in some cases.                  |
+| celestial\\_body\\_name    | Name of the celestial body of the CRS (e.g. "Earth").  \\since 8.1                                                     |
 """
 struct PROJ_CRS_INFO
     auth_name::Cstring
@@ -686,6 +801,19 @@ end
 Structure describing optional parameters for proj\\_get\\_crs\\_list();
 
 This structure may grow over time, and should not be directly allocated by client code.
+
+| Field                                   | Note                                                                                                                                                                                                                                                         |
+| :-------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| types                                   | Array of allowed object types. Should be NULL if all types are allowed                                                                                                                                                                                       |
+| typesCount                              | Size of types. Should be 0 if all types are allowed                                                                                                                                                                                                          |
+| crs\\_area\\_of\\_use\\_contains\\_bbox | If TRUE and bbox\\_valid == TRUE, then only CRS whose area of use entirely contains the specified bounding box will be returned. If FALSE and bbox\\_valid == TRUE, then only CRS whose area of use intersects the specified bounding box will be returned.  |
+| bbox\\_valid                            | To set to TRUE so that west\\_lon\\_degree, south\\_lat\\_degree, east\\_lon\\_degree and north\\_lat\\_degree fields are taken into account.                                                                                                                |
+| west\\_lon\\_degree                     | Western-most longitude of the area of use, in degrees.                                                                                                                                                                                                       |
+| south\\_lat\\_degree                    | Southern-most latitude of the area of use, in degrees.                                                                                                                                                                                                       |
+| east\\_lon\\_degree                     | Eastern-most longitude of the area of use, in degrees.                                                                                                                                                                                                       |
+| north\\_lat\\_degree                    | Northern-most latitude of the area of use, in degrees.                                                                                                                                                                                                       |
+| allow\\_deprecated                      | Whether deprecated objects are allowed. Default to FALSE.                                                                                                                                                                                                    |
+| celestial\\_body\\_name                 | Celestial body of the CRS (e.g. "Earth"). The default value, NULL, means no restriction  \\since 8.1                                                                                                                                                         |
 """
 struct PROJ_CRS_LIST_PARAMETERS
     types::Ptr{PJ_TYPE}
@@ -708,6 +836,16 @@ Structure given description of a unit.
 This structure may grow over time, and should not be directly allocated by client code.
 
 \\since 7.1
+
+| Field               | Note                                                                                                                                                                                                       |
+| :------------------ | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| auth\\_name         | Authority name.                                                                                                                                                                                            |
+| code                | Object code.                                                                                                                                                                                               |
+| name                | Object name. For example "metre", "US survey foot", etc.                                                                                                                                                   |
+| category            | Category of the unit: one of "linear", "linear\\_per\\_time", "angular", "angular\\_per\\_time", "scale", "scale\\_per\\_time" or "time"                                                                   |
+| conv\\_factor       | Conversion factor to apply to transform from that unit to the corresponding SI unit (metre for "linear", radian for "angular", etc.). It might be 0 in some cases to indicate no known conversion factor.  |
+| proj\\_short\\_name | PROJ short name, like "m", "ft", "us-ft", etc... Might be NULL                                                                                                                                             |
+| deprecated          | Whether the object is deprecated                                                                                                                                                                           |
 """
 struct PROJ_UNIT_INFO
     auth_name::Cstring
@@ -727,6 +865,11 @@ Structure given description of a celestial body.
 This structure may grow over time, and should not be directly allocated by client code.
 
 \\since 8.1
+
+| Field       | Note                              |
+| :---------- | :-------------------------------- |
+| auth\\_name | Authority name.                   |
+| name        | Object name. For example "Earth"  |
 """
 struct PROJ_CELESTIAL_BODY_INFO
     auth_name::Cstring
@@ -1139,6 +1282,11 @@ end
     geod_geodesic
 
 The struct containing information about the ellipsoid. This must be initialized by [`geod_init`](@ref)() before use.********************************************************************
+
+| Field | Note                   |
+| :---- | :--------------------- |
+| a     | the equatorial radius  |
+| f     | the flattening  SKIP   |
 """
 struct geod_geodesic
     a::Cdouble
@@ -1159,6 +1307,19 @@ end
     geod_geodesicline
 
 The struct containing information about a single geodesic. This must be initialized by [`geod_lineinit`](@ref)(), [`geod_directline`](@ref)(), [`geod_gendirectline`](@ref)(), or [`geod_inverseline`](@ref)() before use.********************************************************************
+
+| Field | Note                               |
+| :---- | :--------------------------------- |
+| lat1  | the starting latitude              |
+| lon1  | the starting longitude             |
+| azi1  | the starting azimuth               |
+| a     | the equatorial radius              |
+| f     | the flattening                     |
+| salp1 | sine of *azi1*                     |
+| calp1 | cosine of *azi1*                   |
+| a13   | arc length to reference point      |
+| s13   | distance to reference point  SKIP  |
+| caps  | the capabilities                   |
 """
 struct geod_geodesicline
     lat1::Cdouble
@@ -1203,6 +1364,12 @@ end
     geod_polygon
 
 The struct for accumulating information about a geodesic polygon. This is used for computing the perimeter and area of a polygon. This must be initialized by [`geod_polygon_init`](@ref)() before use.********************************************************************
+
+| Field | Note                         |
+| :---- | :--------------------------- |
+| lat   | the current latitude         |
+| lon   | the current longitude  SKIP  |
+| num   | the number of points so far  |
 """
 struct geod_polygon
     lat::Cdouble
@@ -1772,6 +1939,19 @@ end
     geod_mask
 
 mask values for the *caps* argument to [`geod_lineinit`](@ref)().********************************************************************
+
+| Enumerator           | Note                      |
+| :------------------- | :------------------------ |
+| GEOD\\_NONE          | Calculate nothing         |
+| GEOD\\_LATITUDE      | Calculate latitude        |
+| GEOD\\_LONGITUDE     | Calculate longitude       |
+| GEOD\\_AZIMUTH       | Calculate azimuth         |
+| GEOD\\_DISTANCE      | Calculate distance        |
+| GEOD\\_DISTANCE\\_IN | Allow distance as input   |
+| GEOD\\_REDUCEDLENGTH | Calculate reduced length  |
+| GEOD\\_GEODESICSCALE | Calculate geodesic scale  |
+| GEOD\\_AREA          | Calculate reduced length  |
+| GEOD\\_ALL           | Calculate everything      |
 """
 @cenum geod_mask::UInt32 begin
     GEOD_NONE = 0
@@ -1790,6 +1970,12 @@ end
     geod_flags
 
 flag values for the *flags* argument to [`geod_gendirect`](@ref)() and [`geod_genposition`](@ref)()********************************************************************
+
+| Enumerator           | Note                                     |
+| :------------------- | :--------------------------------------- |
+| GEOD\\_NOFLAGS       | No flags                                 |
+| GEOD\\_ARCMODE       | Position given in terms of arc distance  |
+| GEOD\\_LONG\\_UNROLL | Unroll the longitude                     |
 """
 @cenum geod_flags::UInt32 begin
     GEOD_NOFLAGS = 0
