@@ -1222,8 +1222,8 @@ end
 Initialize a [`geod_geodesic`](@ref) object.
 
 ### Parameters
-* `g`:\\[out\\] a pointer to the object to be initialized. 
-* `a`:\\[in\\] the equatorial radius (meters). 
+* `g`:\\[out\\] a pointer to the object to be initialized.
+* `a`:\\[in\\] the equatorial radius (meters).
 * `f`:\\[in\\] the flattening.********************************************************************
 """
 function geod_init(g, a, f)
@@ -1253,13 +1253,13 @@ Example, determine the point 10000 km NE of JFK:
 ********************************************************************
 
 ### Parameters
-* `g`:\\[in\\] a pointer to the [`geod_geodesic`](@ref) object specifying the ellipsoid. 
-* `lat1`:\\[in\\] latitude of point 1 (degrees). 
-* `lon1`:\\[in\\] longitude of point 1 (degrees). 
-* `azi1`:\\[in\\] azimuth at point 1 (degrees). 
-* `s12`:\\[in\\] distance from point 1 to point 2 (meters); it can be negative. 
-* `plat2`:\\[out\\] pointer to the latitude of point 2 (degrees). 
-* `plon2`:\\[out\\] pointer to the longitude of point 2 (degrees). 
+* `g`:\\[in\\] a pointer to the [`geod_geodesic`](@ref) object specifying the ellipsoid.
+* `lat1`:\\[in\\] latitude of point 1 (degrees).
+* `lon1`:\\[in\\] longitude of point 1 (degrees).
+* `azi1`:\\[in\\] azimuth at point 1 (degrees).
+* `s12`:\\[in\\] distance from point 1 to point 2 (meters); it can be negative.
+* `plat2`:\\[out\\] pointer to the latitude of point 2 (degrees).
+* `plon2`:\\[out\\] pointer to the longitude of point 2 (degrees).
 * `pazi2`:\\[out\\] pointer to the (forward) azimuth at point 2 (degrees).
 """
 function geod_direct(g, lat1, lon1, azi1, s12, plat2, plon2, pazi2)
@@ -1276,20 +1276,20 @@ The general direct geodesic problem.
 With *flags* & GEOD\\_LONG\\_UNROLL bit set, the longitude is "unrolled" so that the quantity *lon2* − *lon1* indicates how many times and in what sense the geodesic encircles the ellipsoid.********************************************************************
 
 ### Parameters
-* `g`:\\[in\\] a pointer to the [`geod_geodesic`](@ref) object specifying the ellipsoid. 
-* `lat1`:\\[in\\] latitude of point 1 (degrees). 
-* `lon1`:\\[in\\] longitude of point 1 (degrees). 
-* `azi1`:\\[in\\] azimuth at point 1 (degrees). 
-* `flags`:\\[in\\] bitor'ed combination of [`geod_flags`](@ref)(); *flags* & GEOD\\_ARCMODE determines the meaning of *s12_a12* and *flags* & GEOD\\_LONG\\_UNROLL "unrolls" *lon2*. 
-* `s12_a12`:\\[in\\] if *flags* & GEOD\\_ARCMODE is 0, this is the distance from point 1 to point 2 (meters); otherwise it is the arc length from point 1 to point 2 (degrees); it can be negative. 
-* `plat2`:\\[out\\] pointer to the latitude of point 2 (degrees). 
-* `plon2`:\\[out\\] pointer to the longitude of point 2 (degrees). 
-* `pazi2`:\\[out\\] pointer to the (forward) azimuth at point 2 (degrees). 
-* `ps12`:\\[out\\] pointer to the distance from point 1 to point 2 (meters). 
-* `pm12`:\\[out\\] pointer to the reduced length of geodesic (meters). 
-* `pM12`:\\[out\\] pointer to the geodesic scale of point 2 relative to point 1 (dimensionless). 
-* `pM21`:\\[out\\] pointer to the geodesic scale of point 1 relative to point 2 (dimensionless). 
-* `pS12`:\\[out\\] pointer to the area under the geodesic (meters<sup>2</sup>). 
+* `g`:\\[in\\] a pointer to the [`geod_geodesic`](@ref) object specifying the ellipsoid.
+* `lat1`:\\[in\\] latitude of point 1 (degrees).
+* `lon1`:\\[in\\] longitude of point 1 (degrees).
+* `azi1`:\\[in\\] azimuth at point 1 (degrees).
+* `flags`:\\[in\\] bitor'ed combination of [`geod_flags`](@ref)(); *flags* & GEOD\\_ARCMODE determines the meaning of *s12_a12* and *flags* & GEOD\\_LONG\\_UNROLL "unrolls" *lon2*.
+* `s12_a12`:\\[in\\] if *flags* & GEOD\\_ARCMODE is 0, this is the distance from point 1 to point 2 (meters); otherwise it is the arc length from point 1 to point 2 (degrees); it can be negative.
+* `plat2`:\\[out\\] pointer to the latitude of point 2 (degrees).
+* `plon2`:\\[out\\] pointer to the longitude of point 2 (degrees).
+* `pazi2`:\\[out\\] pointer to the (forward) azimuth at point 2 (degrees).
+* `ps12`:\\[out\\] pointer to the distance from point 1 to point 2 (meters).
+* `pm12`:\\[out\\] pointer to the reduced length of geodesic (meters).
+* `pM12`:\\[out\\] pointer to the geodesic scale of point 2 relative to point 1 (dimensionless).
+* `pM21`:\\[out\\] pointer to the geodesic scale of point 1 relative to point 2 (dimensionless).
+* `pS12`:\\[out\\] pointer to the area under the geodesic (meters<sup>2</sup>).
 ### Returns
 *a12* arc length from point 1 to point 2 (degrees).
 """
@@ -1322,13 +1322,13 @@ Example, determine the distance between JFK and Singapore Changi Airport:
 ********************************************************************
 
 ### Parameters
-* `g`:\\[in\\] a pointer to the [`geod_geodesic`](@ref) object specifying the ellipsoid. 
-* `lat1`:\\[in\\] latitude of point 1 (degrees). 
-* `lon1`:\\[in\\] longitude of point 1 (degrees). 
-* `lat2`:\\[in\\] latitude of point 2 (degrees). 
-* `lon2`:\\[in\\] longitude of point 2 (degrees). 
-* `ps12`:\\[out\\] pointer to the distance from point 1 to point 2 (meters). 
-* `pazi1`:\\[out\\] pointer to the azimuth at point 1 (degrees). 
+* `g`:\\[in\\] a pointer to the [`geod_geodesic`](@ref) object specifying the ellipsoid.
+* `lat1`:\\[in\\] latitude of point 1 (degrees).
+* `lon1`:\\[in\\] longitude of point 1 (degrees).
+* `lat2`:\\[in\\] latitude of point 2 (degrees).
+* `lon2`:\\[in\\] longitude of point 2 (degrees).
+* `ps12`:\\[out\\] pointer to the distance from point 1 to point 2 (meters).
+* `pazi1`:\\[out\\] pointer to the azimuth at point 1 (degrees).
 * `pazi2`:\\[out\\] pointer to the (forward) azimuth at point 2 (degrees).
 """
 function geod_inverse(g, lat1, lon1, lat2, lon2, ps12, pazi1, pazi2)
@@ -1343,18 +1343,18 @@ The general inverse geodesic calculation.
 *g* must have been initialized with a call to [`geod_init`](@ref)(). *lat1* and *lat2* should be in the range [−90°, 90°]. Any of the "return" arguments *ps12*, etc., may be replaced by 0, if you do not need some quantities computed.********************************************************************
 
 ### Parameters
-* `g`:\\[in\\] a pointer to the [`geod_geodesic`](@ref) object specifying the ellipsoid. 
-* `lat1`:\\[in\\] latitude of point 1 (degrees). 
-* `lon1`:\\[in\\] longitude of point 1 (degrees). 
-* `lat2`:\\[in\\] latitude of point 2 (degrees). 
-* `lon2`:\\[in\\] longitude of point 2 (degrees). 
-* `ps12`:\\[out\\] pointer to the distance from point 1 to point 2 (meters). 
-* `pazi1`:\\[out\\] pointer to the azimuth at point 1 (degrees). 
-* `pazi2`:\\[out\\] pointer to the (forward) azimuth at point 2 (degrees). 
-* `pm12`:\\[out\\] pointer to the reduced length of geodesic (meters). 
-* `pM12`:\\[out\\] pointer to the geodesic scale of point 2 relative to point 1 (dimensionless). 
-* `pM21`:\\[out\\] pointer to the geodesic scale of point 1 relative to point 2 (dimensionless). 
-* `pS12`:\\[out\\] pointer to the area under the geodesic (meters<sup>2</sup>). 
+* `g`:\\[in\\] a pointer to the [`geod_geodesic`](@ref) object specifying the ellipsoid.
+* `lat1`:\\[in\\] latitude of point 1 (degrees).
+* `lon1`:\\[in\\] longitude of point 1 (degrees).
+* `lat2`:\\[in\\] latitude of point 2 (degrees).
+* `lon2`:\\[in\\] longitude of point 2 (degrees).
+* `ps12`:\\[out\\] pointer to the distance from point 1 to point 2 (meters).
+* `pazi1`:\\[out\\] pointer to the azimuth at point 1 (degrees).
+* `pazi2`:\\[out\\] pointer to the (forward) azimuth at point 2 (degrees).
+* `pm12`:\\[out\\] pointer to the reduced length of geodesic (meters).
+* `pM12`:\\[out\\] pointer to the geodesic scale of point 2 relative to point 1 (dimensionless).
+* `pM21`:\\[out\\] pointer to the geodesic scale of point 1 relative to point 2 (dimensionless).
+* `pS12`:\\[out\\] pointer to the area under the geodesic (meters<sup>2</sup>).
 ### Returns
 *a12* arc length from point 1 to point 2 (degrees).
 """
@@ -1374,11 +1374,11 @@ The [`geod_mask`](@ref) values are [see [`geod_mask`](@ref)()]: - *caps* |= GEOD
 When initialized by this function, point 3 is undefined (l->s13 = l->a13 = NaN).********************************************************************
 
 ### Parameters
-* `l`:\\[out\\] a pointer to the object to be initialized. 
-* `g`:\\[in\\] a pointer to the [`geod_geodesic`](@ref) object specifying the ellipsoid. 
-* `lat1`:\\[in\\] latitude of point 1 (degrees). 
-* `lon1`:\\[in\\] longitude of point 1 (degrees). 
-* `azi1`:\\[in\\] azimuth at point 1 (degrees). 
+* `l`:\\[out\\] a pointer to the object to be initialized.
+* `g`:\\[in\\] a pointer to the [`geod_geodesic`](@ref) object specifying the ellipsoid.
+* `lat1`:\\[in\\] latitude of point 1 (degrees).
+* `lon1`:\\[in\\] longitude of point 1 (degrees).
+* `azi1`:\\[in\\] azimuth at point 1 (degrees).
 * `caps`:\\[in\\] bitor'ed combination of [`geod_mask`](@ref)() values specifying the capabilities the [`geod_geodesicline`](@ref) object should possess, i.e., which quantities can be returned in calls to [`geod_position`](@ref)() and [`geod_genposition`](@ref)().
 """
 function geod_lineinit(l, g, lat1, lon1, azi1, caps)
@@ -1393,12 +1393,12 @@ Initialize a [`geod_geodesicline`](@ref) object in terms of the direct geodesic 
 This function sets point 3 of the [`geod_geodesicline`](@ref) to correspond to point 2 of the direct geodesic problem. See [`geod_lineinit`](@ref)() for more information.********************************************************************
 
 ### Parameters
-* `l`:\\[out\\] a pointer to the object to be initialized. 
-* `g`:\\[in\\] a pointer to the [`geod_geodesic`](@ref) object specifying the ellipsoid. 
-* `lat1`:\\[in\\] latitude of point 1 (degrees). 
-* `lon1`:\\[in\\] longitude of point 1 (degrees). 
-* `azi1`:\\[in\\] azimuth at point 1 (degrees). 
-* `s12`:\\[in\\] distance from point 1 to point 2 (meters); it can be negative. 
+* `l`:\\[out\\] a pointer to the object to be initialized.
+* `g`:\\[in\\] a pointer to the [`geod_geodesic`](@ref) object specifying the ellipsoid.
+* `lat1`:\\[in\\] latitude of point 1 (degrees).
+* `lon1`:\\[in\\] longitude of point 1 (degrees).
+* `azi1`:\\[in\\] azimuth at point 1 (degrees).
+* `s12`:\\[in\\] distance from point 1 to point 2 (meters); it can be negative.
 * `caps`:\\[in\\] bitor'ed combination of [`geod_mask`](@ref)() values specifying the capabilities the [`geod_geodesicline`](@ref) object should possess, i.e., which quantities can be returned in calls to [`geod_position`](@ref)() and [`geod_genposition`](@ref)().
 """
 function geod_directline(l, g, lat1, lon1, azi1, s12, caps)
@@ -1413,13 +1413,13 @@ Initialize a [`geod_geodesicline`](@ref) object in terms of the direct geodesic 
 This function sets point 3 of the [`geod_geodesicline`](@ref) to correspond to point 2 of the direct geodesic problem. See [`geod_lineinit`](@ref)() for more information.********************************************************************
 
 ### Parameters
-* `l`:\\[out\\] a pointer to the object to be initialized. 
-* `g`:\\[in\\] a pointer to the [`geod_geodesic`](@ref) object specifying the ellipsoid. 
-* `lat1`:\\[in\\] latitude of point 1 (degrees). 
-* `lon1`:\\[in\\] longitude of point 1 (degrees). 
-* `azi1`:\\[in\\] azimuth at point 1 (degrees). 
-* `flags`:\\[in\\] either GEOD\\_NOFLAGS or GEOD\\_ARCMODE to determining the meaning of the *s12_a12*. 
-* `s12_a12`:\\[in\\] if *flags* = GEOD\\_NOFLAGS, this is the distance from point 1 to point 2 (meters); if *flags* = GEOD\\_ARCMODE, it is the arc length from point 1 to point 2 (degrees); it can be negative. 
+* `l`:\\[out\\] a pointer to the object to be initialized.
+* `g`:\\[in\\] a pointer to the [`geod_geodesic`](@ref) object specifying the ellipsoid.
+* `lat1`:\\[in\\] latitude of point 1 (degrees).
+* `lon1`:\\[in\\] longitude of point 1 (degrees).
+* `azi1`:\\[in\\] azimuth at point 1 (degrees).
+* `flags`:\\[in\\] either GEOD\\_NOFLAGS or GEOD\\_ARCMODE to determining the meaning of the *s12_a12*.
+* `s12_a12`:\\[in\\] if *flags* = GEOD\\_NOFLAGS, this is the distance from point 1 to point 2 (meters); if *flags* = GEOD\\_ARCMODE, it is the arc length from point 1 to point 2 (degrees); it can be negative.
 * `caps`:\\[in\\] bitor'ed combination of [`geod_mask`](@ref)() values specifying the capabilities the [`geod_geodesicline`](@ref) object should possess, i.e., which quantities can be returned in calls to [`geod_position`](@ref)() and [`geod_genposition`](@ref)().
 """
 function geod_gendirectline(l, g, lat1, lon1, azi1, flags, s12_a12, caps)
@@ -1434,12 +1434,12 @@ Initialize a [`geod_geodesicline`](@ref) object in terms of the inverse geodesic
 This function sets point 3 of the [`geod_geodesicline`](@ref) to correspond to point 2 of the inverse geodesic problem. See [`geod_lineinit`](@ref)() for more information.********************************************************************
 
 ### Parameters
-* `l`:\\[out\\] a pointer to the object to be initialized. 
-* `g`:\\[in\\] a pointer to the [`geod_geodesic`](@ref) object specifying the ellipsoid. 
-* `lat1`:\\[in\\] latitude of point 1 (degrees). 
-* `lon1`:\\[in\\] longitude of point 1 (degrees). 
-* `lat2`:\\[in\\] latitude of point 2 (degrees). 
-* `lon2`:\\[in\\] longitude of point 2 (degrees). 
+* `l`:\\[out\\] a pointer to the object to be initialized.
+* `g`:\\[in\\] a pointer to the [`geod_geodesic`](@ref) object specifying the ellipsoid.
+* `lat1`:\\[in\\] latitude of point 1 (degrees).
+* `lon1`:\\[in\\] longitude of point 1 (degrees).
+* `lat2`:\\[in\\] latitude of point 2 (degrees).
+* `lon2`:\\[in\\] longitude of point 2 (degrees).
 * `caps`:\\[in\\] bitor'ed combination of [`geod_mask`](@ref)() values specifying the capabilities the [`geod_geodesicline`](@ref) object should possess, i.e., which quantities can be returned in calls to [`geod_position`](@ref)() and [`geod_genposition`](@ref)().
 """
 function geod_inverseline(l, g, lat1, lon1, lat2, lon2, caps)
@@ -1487,10 +1487,10 @@ A faster way using [`geod_position`](@ref)():
 ********************************************************************
 
 ### Parameters
-* `l`:\\[in\\] a pointer to the [`geod_geodesicline`](@ref) object specifying the geodesic line. 
-* `s12`:\\[in\\] distance from point 1 to point 2 (meters); it can be negative. 
-* `plat2`:\\[out\\] pointer to the latitude of point 2 (degrees). 
-* `plon2`:\\[out\\] pointer to the longitude of point 2 (degrees); requires that *l* was initialized with *caps* |= GEOD\\_LONGITUDE. 
+* `l`:\\[in\\] a pointer to the [`geod_geodesicline`](@ref) object specifying the geodesic line.
+* `s12`:\\[in\\] distance from point 1 to point 2 (meters); it can be negative.
+* `plat2`:\\[out\\] pointer to the latitude of point 2 (degrees).
+* `plon2`:\\[out\\] pointer to the longitude of point 2 (degrees); requires that *l* was initialized with *caps* |= GEOD\\_LONGITUDE.
 * `pazi2`:\\[out\\] pointer to the (forward) azimuth at point 2 (degrees).
 """
 function geod_position(l, s12, plat2, plon2, pazi2)
@@ -1527,17 +1527,17 @@ Example, compute way points between JFK and Singapore Changi Airport using [`geo
 ********************************************************************
 
 ### Parameters
-* `l`:\\[in\\] a pointer to the [`geod_geodesicline`](@ref) object specifying the geodesic line. 
-* `flags`:\\[in\\] bitor'ed combination of [`geod_flags`](@ref)(); *flags* & GEOD\\_ARCMODE determines the meaning of *s12_a12* and *flags* & GEOD\\_LONG\\_UNROLL "unrolls" *lon2*; if *flags* & GEOD\\_ARCMODE is 0, then *l* must have been initialized with *caps* |= GEOD\\_DISTANCE\\_IN. 
-* `s12_a12`:\\[in\\] if *flags* & GEOD\\_ARCMODE is 0, this is the distance from point 1 to point 2 (meters); otherwise it is the arc length from point 1 to point 2 (degrees); it can be negative. 
-* `plat2`:\\[out\\] pointer to the latitude of point 2 (degrees). 
-* `plon2`:\\[out\\] pointer to the longitude of point 2 (degrees); requires that *l* was initialized with *caps* |= GEOD\\_LONGITUDE. 
-* `pazi2`:\\[out\\] pointer to the (forward) azimuth at point 2 (degrees). 
-* `ps12`:\\[out\\] pointer to the distance from point 1 to point 2 (meters); requires that *l* was initialized with *caps* |= GEOD\\_DISTANCE. 
-* `pm12`:\\[out\\] pointer to the reduced length of geodesic (meters); requires that *l* was initialized with *caps* |= GEOD\\_REDUCEDLENGTH. 
-* `pM12`:\\[out\\] pointer to the geodesic scale of point 2 relative to point 1 (dimensionless); requires that *l* was initialized with *caps* |= GEOD\\_GEODESICSCALE. 
-* `pM21`:\\[out\\] pointer to the geodesic scale of point 1 relative to point 2 (dimensionless); requires that *l* was initialized with *caps* |= GEOD\\_GEODESICSCALE. 
-* `pS12`:\\[out\\] pointer to the area under the geodesic (meters<sup>2</sup>); requires that *l* was initialized with *caps* |= GEOD\\_AREA. 
+* `l`:\\[in\\] a pointer to the [`geod_geodesicline`](@ref) object specifying the geodesic line.
+* `flags`:\\[in\\] bitor'ed combination of [`geod_flags`](@ref)(); *flags* & GEOD\\_ARCMODE determines the meaning of *s12_a12* and *flags* & GEOD\\_LONG\\_UNROLL "unrolls" *lon2*; if *flags* & GEOD\\_ARCMODE is 0, then *l* must have been initialized with *caps* |= GEOD\\_DISTANCE\\_IN.
+* `s12_a12`:\\[in\\] if *flags* & GEOD\\_ARCMODE is 0, this is the distance from point 1 to point 2 (meters); otherwise it is the arc length from point 1 to point 2 (degrees); it can be negative.
+* `plat2`:\\[out\\] pointer to the latitude of point 2 (degrees).
+* `plon2`:\\[out\\] pointer to the longitude of point 2 (degrees); requires that *l* was initialized with *caps* |= GEOD\\_LONGITUDE.
+* `pazi2`:\\[out\\] pointer to the (forward) azimuth at point 2 (degrees).
+* `ps12`:\\[out\\] pointer to the distance from point 1 to point 2 (meters); requires that *l* was initialized with *caps* |= GEOD\\_DISTANCE.
+* `pm12`:\\[out\\] pointer to the reduced length of geodesic (meters); requires that *l* was initialized with *caps* |= GEOD\\_REDUCEDLENGTH.
+* `pM12`:\\[out\\] pointer to the geodesic scale of point 2 relative to point 1 (dimensionless); requires that *l* was initialized with *caps* |= GEOD\\_GEODESICSCALE.
+* `pM21`:\\[out\\] pointer to the geodesic scale of point 1 relative to point 2 (dimensionless); requires that *l* was initialized with *caps* |= GEOD\\_GEODESICSCALE.
+* `pS12`:\\[out\\] pointer to the area under the geodesic (meters<sup>2</sup>); requires that *l* was initialized with *caps* |= GEOD\\_AREA.
 ### Returns
 *a12* arc length from point 1 to point 2 (degrees).
 """
@@ -1553,7 +1553,7 @@ Specify position of point 3 in terms of distance.
 This is only useful if the [`geod_geodesicline`](@ref) object has been constructed with *caps* |= GEOD\\_DISTANCE\\_IN.********************************************************************
 
 ### Parameters
-* `l`:\\[in,out\\] a pointer to the [`geod_geodesicline`](@ref) object. 
+* `l`:\\[in,out\\] a pointer to the [`geod_geodesicline`](@ref) object.
 * `s13`:\\[in\\] the distance from point 1 to point 3 (meters); it can be negative.
 """
 function geod_setdistance(l, s13)
@@ -1568,8 +1568,8 @@ Specify position of point 3 in terms of either distance or arc length.
 If flags = GEOD\\_NOFLAGS, this calls [`geod_setdistance`](@ref)(). If flags = GEOD\\_ARCMODE, the *s13* is only set if the [`geod_geodesicline`](@ref) object has been constructed with *caps* |= GEOD\\_DISTANCE.********************************************************************
 
 ### Parameters
-* `l`:\\[in,out\\] a pointer to the [`geod_geodesicline`](@ref) object. 
-* `flags`:\\[in\\] either GEOD\\_NOFLAGS or GEOD\\_ARCMODE to determining the meaning of the *s13_a13*. 
+* `l`:\\[in,out\\] a pointer to the [`geod_geodesicline`](@ref) object.
+* `flags`:\\[in\\] either GEOD\\_NOFLAGS or GEOD\\_ARCMODE to determining the meaning of the *s13_a13*.
 * `s13_a13`:\\[in\\] if *flags* = GEOD\\_NOFLAGS, this is the distance from point 1 to point 3 (meters); if *flags* = GEOD\\_ARCMODE, it is the arc length from point 1 to point 3 (degrees); it can be negative.
 """
 function geod_gensetdistance(l, flags, s13_a13)
@@ -1588,7 +1588,7 @@ The area and perimeter are accumulated at two times the standard floating point 
 An example of the use of this function is given in the documentation for [`geod_polygon_compute`](@ref)().********************************************************************
 
 ### Parameters
-* `p`:\\[out\\] a pointer to the object to be initialized. 
+* `p`:\\[out\\] a pointer to the object to be initialized.
 * `polylinep`:\\[in\\] non-zero if a polyline instead of a polygon.
 """
 function geod_polygon_init(p, polylinep)
@@ -1617,9 +1617,9 @@ Add a point to the polygon or polyline.
 An example of the use of this function is given in the documentation for [`geod_polygon_compute`](@ref)().********************************************************************
 
 ### Parameters
-* `g`:\\[in\\] a pointer to the [`geod_geodesic`](@ref) object specifying the ellipsoid. 
-* `p`:\\[in,out\\] a pointer to the [`geod_polygon`](@ref) object specifying the polygon. 
-* `lat`:\\[in\\] the latitude of the point (degrees). 
+* `g`:\\[in\\] a pointer to the [`geod_geodesic`](@ref) object specifying the ellipsoid.
+* `p`:\\[in,out\\] a pointer to the [`geod_polygon`](@ref) object specifying the polygon.
+* `lat`:\\[in\\] the latitude of the point (degrees).
 * `lon`:\\[in\\] the longitude of the point (degrees).
 """
 function geod_polygon_addpoint(g, p, lat, lon)
@@ -1634,9 +1634,9 @@ Add an edge to the polygon or polyline.
 *g* and *p* must have been initialized with calls to [`geod_init`](@ref)() and [`geod_polygon_init`](@ref)(), respectively. The same *g* must be used for all the points and edges in a polygon. This does nothing if no points have been added yet. The *lat* and *lon* fields of *p* give the location of the new vertex.********************************************************************
 
 ### Parameters
-* `g`:\\[in\\] a pointer to the [`geod_geodesic`](@ref) object specifying the ellipsoid. 
-* `p`:\\[in,out\\] a pointer to the [`geod_polygon`](@ref) object specifying the polygon. 
-* `azi`:\\[in\\] azimuth at current point (degrees). 
+* `g`:\\[in\\] a pointer to the [`geod_geodesic`](@ref) object specifying the ellipsoid.
+* `p`:\\[in,out\\] a pointer to the [`geod_polygon`](@ref) object specifying the polygon.
+* `azi`:\\[in\\] azimuth at current point (degrees).
 * `s`:\\[in\\] distance from current point to next point (meters).
 """
 function geod_polygon_addedge(g, p, azi, s)
@@ -1672,12 +1672,12 @@ Example, compute the perimeter and area of the geodesic triangle with vertices (
 ********************************************************************
 
 ### Parameters
-* `g`:\\[in\\] a pointer to the [`geod_geodesic`](@ref) object specifying the ellipsoid. 
-* `p`:\\[in\\] a pointer to the [`geod_polygon`](@ref) object specifying the polygon. 
-* `reverse`:\\[in\\] if non-zero then clockwise (instead of counter-clockwise) traversal counts as a positive area. 
-* `sign`:\\[in\\] if non-zero then return a signed result for the area if the polygon is traversed in the "wrong" direction instead of returning the area for the rest of the earth. 
-* `pA`:\\[out\\] pointer to the area of the polygon (meters<sup>2</sup>); only set if *polyline* is non-zero in the call to [`geod_polygon_init`](@ref)(). 
-* `pP`:\\[out\\] pointer to the perimeter of the polygon or length of the polyline (meters). 
+* `g`:\\[in\\] a pointer to the [`geod_geodesic`](@ref) object specifying the ellipsoid.
+* `p`:\\[in\\] a pointer to the [`geod_polygon`](@ref) object specifying the polygon.
+* `reverse`:\\[in\\] if non-zero then clockwise (instead of counter-clockwise) traversal counts as a positive area.
+* `sign`:\\[in\\] if non-zero then return a signed result for the area if the polygon is traversed in the "wrong" direction instead of returning the area for the rest of the earth.
+* `pA`:\\[out\\] pointer to the area of the polygon (meters<sup>2</sup>); only set if *polyline* is non-zero in the call to [`geod_polygon_init`](@ref)().
+* `pP`:\\[out\\] pointer to the perimeter of the polygon or length of the polyline (meters).
 ### Returns
 the number of points.
 """
@@ -1693,14 +1693,14 @@ Return the results assuming a tentative final test point is added; however, the 
 *lat* should be in the range [−90°, 90°].********************************************************************
 
 ### Parameters
-* `g`:\\[in\\] a pointer to the [`geod_geodesic`](@ref) object specifying the ellipsoid. 
-* `p`:\\[in\\] a pointer to the [`geod_polygon`](@ref) object specifying the polygon. 
-* `lat`:\\[in\\] the latitude of the test point (degrees). 
-* `lon`:\\[in\\] the longitude of the test point (degrees). 
-* `reverse`:\\[in\\] if non-zero then clockwise (instead of counter-clockwise) traversal counts as a positive area. 
-* `sign`:\\[in\\] if non-zero then return a signed result for the area if the polygon is traversed in the "wrong" direction instead of returning the area for the rest of the earth. 
-* `pA`:\\[out\\] pointer to the area of the polygon (meters<sup>2</sup>); only set if *polyline* is non-zero in the call to [`geod_polygon_init`](@ref)(). 
-* `pP`:\\[out\\] pointer to the perimeter of the polygon or length of the polyline (meters). 
+* `g`:\\[in\\] a pointer to the [`geod_geodesic`](@ref) object specifying the ellipsoid.
+* `p`:\\[in\\] a pointer to the [`geod_polygon`](@ref) object specifying the polygon.
+* `lat`:\\[in\\] the latitude of the test point (degrees).
+* `lon`:\\[in\\] the longitude of the test point (degrees).
+* `reverse`:\\[in\\] if non-zero then clockwise (instead of counter-clockwise) traversal counts as a positive area.
+* `sign`:\\[in\\] if non-zero then return a signed result for the area if the polygon is traversed in the "wrong" direction instead of returning the area for the rest of the earth.
+* `pA`:\\[out\\] pointer to the area of the polygon (meters<sup>2</sup>); only set if *polyline* is non-zero in the call to [`geod_polygon_init`](@ref)().
+* `pP`:\\[out\\] pointer to the perimeter of the polygon or length of the polyline (meters).
 ### Returns
 the number of points.
 """
@@ -1714,14 +1714,14 @@ end
 Return the results assuming a tentative final test point is added via an azimuth and distance; however, the data for the test point is not saved. This lets you report a running result for the perimeter and area as the user moves the mouse cursor. Ordinary floating point arithmetic is used to accumulate the data for the test point; thus the area and perimeter returned are less accurate than if [`geod_polygon_addedge`](@ref)() and [`geod_polygon_compute`](@ref)() are used.
 
 ### Parameters
-* `g`:\\[in\\] a pointer to the [`geod_geodesic`](@ref) object specifying the ellipsoid. 
-* `p`:\\[in\\] a pointer to the [`geod_polygon`](@ref) object specifying the polygon. 
-* `azi`:\\[in\\] azimuth at current point (degrees). 
-* `s`:\\[in\\] distance from current point to final test point (meters). 
-* `reverse`:\\[in\\] if non-zero then clockwise (instead of counter-clockwise) traversal counts as a positive area. 
-* `sign`:\\[in\\] if non-zero then return a signed result for the area if the polygon is traversed in the "wrong" direction instead of returning the area for the rest of the earth. 
-* `pA`:\\[out\\] pointer to the area of the polygon (meters<sup>2</sup>); only set if *polyline* is non-zero in the call to [`geod_polygon_init`](@ref)(). 
-* `pP`:\\[out\\] pointer to the perimeter of the polygon or length of the polyline (meters). 
+* `g`:\\[in\\] a pointer to the [`geod_geodesic`](@ref) object specifying the ellipsoid.
+* `p`:\\[in\\] a pointer to the [`geod_polygon`](@ref) object specifying the polygon.
+* `azi`:\\[in\\] azimuth at current point (degrees).
+* `s`:\\[in\\] distance from current point to final test point (meters).
+* `reverse`:\\[in\\] if non-zero then clockwise (instead of counter-clockwise) traversal counts as a positive area.
+* `sign`:\\[in\\] if non-zero then return a signed result for the area if the polygon is traversed in the "wrong" direction instead of returning the area for the rest of the earth.
+* `pA`:\\[out\\] pointer to the area of the polygon (meters<sup>2</sup>); only set if *polyline* is non-zero in the call to [`geod_polygon_init`](@ref)().
+* `pP`:\\[out\\] pointer to the perimeter of the polygon or length of the polyline (meters).
 ### Returns
 the number of points.********************************************************************
 """
@@ -1757,11 +1757,11 @@ Example, compute the area of Antarctica:
 ********************************************************************
 
 ### Parameters
-* `g`:\\[in\\] a pointer to the [`geod_geodesic`](@ref) object specifying the ellipsoid. 
-* `lats`:\\[in\\] an array of latitudes of the polygon vertices (degrees). 
-* `lons`:\\[in\\] an array of longitudes of the polygon vertices (degrees). 
-* `n`:\\[in\\] the number of vertices. 
-* `pA`:\\[out\\] pointer to the area of the polygon (meters<sup>2</sup>). 
+* `g`:\\[in\\] a pointer to the [`geod_geodesic`](@ref) object specifying the ellipsoid.
+* `lats`:\\[in\\] an array of latitudes of the polygon vertices (degrees).
+* `lons`:\\[in\\] an array of longitudes of the polygon vertices (degrees).
+* `n`:\\[in\\] the number of vertices.
+* `pA`:\\[out\\] pointer to the area of the polygon (meters<sup>2</sup>).
 * `pP`:\\[out\\] pointer to the perimeter of the polygon (meters).
 """
 function geod_polygonarea(g, lats, lons, n, pA, pP)
