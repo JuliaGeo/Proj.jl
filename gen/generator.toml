@@ -26,3 +26,4 @@ output_ignorelist = [
 [codegen]
 use_ccall_macro = true
 always_NUL_terminated_string = true
+opaque_as_mutable_struct = false

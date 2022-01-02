@@ -1,6 +1,3 @@
-const Coord = SVector{4, Float64}
-const Coord234 = Union{SVector{2, Float64}, SVector{3, Float64}, SVector{4, Float64}}
-
 """
     Transformation(source_crs, target_crs; area=C_NULL, ctx=C_NULL, always_xy=false)
 

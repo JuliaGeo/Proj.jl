@@ -2,14 +2,35 @@ using Clang.Generators
 using MacroTools
 import PROJ_jll
 
-function rewrite!(x::Expr)
+function rewrite(ex::Expr)
+    if @capture(ex,
+        function fname_(fargs__)
+            @ccall lib_.cname_(cargs__)::rettype_
+        end
+    )
+        fargs′ = fargs
+        # ctx argument goes last and becomes optional
+        if !isempty(fargs) && namify(first(fargs)) == :ctx
+            fargs′ = circshift(fargs, -1)
+            fargs′[end] = Expr(:kw, :ctx, :C_NULL)
+        end
+
+        # bind the ccall such that we can easily wrap it
+        cc = :(@ccall $lib.$cname($(cargs...))::$rettype)
+        cc′ = rettype == :Cstring ? :(unsafe_string($cc)) : cc
+
+        # stitch the modified function expression back together
+        return :(function $fname($(fargs′...))
+            $cc′
+        end) |> prettify
+
+    end
+    return ex
 end
 
 function rewrite!(dag::ExprDAG)
     for node in get_nodes(dag)
-        for expr in get_exprs(node)
-            rewrite!(expr)
-        end
+        map!(rewrite, node.exprs, node.exprs)
     end
 end
 
