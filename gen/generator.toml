@@ -1,0 +1,23 @@
+[general]
+library_name = "libproj"
+output_file_path = "../src/libproj.jl"
+print_using_CEnum = false
+
+output_ignorelist = [
+    # PJ_COORD and all its aliases
+    "PJ_COORD",
+    "PJ_XYZT",
+    "PJ_UVWT",
+    "PJ_LPZT",
+    "PJ_OPK",
+    "PJ_ENU",
+    "PJ_GEOD",
+    "PJ_UV",
+    "PJ_XY",
+    "PJ_XYZ",
+    "PJ_UVW",
+    "PJ_LPZ",
+]
+
+[codegen]
+use_ccall_macro = true
