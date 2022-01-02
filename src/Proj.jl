@@ -10,6 +10,13 @@ export PROJ_jll
 # re-export CoordinateTransformations methods we implement
 export compose, ∘
 
+# type aliases
+const Coord = SVector{4, Float64}
+const Coord234 = Union{SVector{2, Float64}, SVector{3, Float64}, SVector{4, Float64}}
+const PJ_COORD = Coord
+const PROJ_COMPUTE_VERSION = VersionNumber
+const GEODESIC_VERSION_NUM = VersionNumber
+
 include("libproj.jl")
 include("coord.jl")
 include("error.jl")
@@ -38,11 +45,11 @@ const PROJ_LIB = Ref{String}()
 function __init__()
     # register custom error handler
     funcptr = @cfunction(log_func, Ptr{Cvoid}, (Ptr{Cvoid}, Cint, Cstring))
-    proj_log_func(C_NULL, C_NULL, funcptr)
+    proj_log_func(C_NULL, funcptr)
 
     # point to the location of the provided shared resources
     PROJ_LIB[] = joinpath(PROJ_jll.artifact_dir, "share", "proj")
-    proj_context_set_search_paths(C_NULL, 1, [PROJ_LIB[]])
+    proj_context_set_search_paths(1, [PROJ_LIB[]])
 end
 
 end # module
