@@ -65,16 +65,16 @@ end
 # (so here as the reference epoch for the time-dependent Helmert transformation is 2020.0,
 # it will be as if you specified 2020.0).
 
-xy1 = "313152.777216 6346936.495714"
-xy2 = "313152.777214 6346936.495810"
-@test xyzt_transform_cli(SA[-33, 151, 5, 2020]; network=true) == "$xy1 5.280678 2020"
-@test xyzt_transform_cli("-33 151 5 2020"; network=true) == "$xy1 5.280678 2020"
+xy1 = "313153.228163 6346937.876336"
+xy2 = "313153.271257 6346937.914865"
+@test xyzt_transform_cli(SA[-33, 151, 5, 2020]; network=true) == "$xy1 5.280603 2020"
+@test xyzt_transform_cli("-33 151 5 2020"; network=true) == "$xy1 5.280603 2020"
 # no z correction with no network, as expected
 @test xyzt_transform_cli(SA[-33, 151, 5, 2020]; network=false) == "$xy2 5.000000 2020"
 # year 0, different xyz, as expected
-@test xyzt_transform_cli(SA[-33, 151, 5, 0]; network=true) == "313188.897461 6347047.288591 4.940935 0"
+@test xyzt_transform_cli(SA[-33, 151, 5, 0]; network=true) == "313153.228163 6346937.876336 5.280603 0"
 # no time input is like passing 2020, as expected
-@test xyzt_transform_cli(SA[-33, 151, 5]; network=true) == "$xy1 5.280678"
+@test xyzt_transform_cli(SA[-33, 151, 5]; network=true) == "$xy1 5.280603"
 
 # need to switch axis order here
 # interestingly this does not respond to the PROJ_NETWORK environment variable,
@@ -83,24 +83,23 @@ Proj.proj_context_is_network_enabled()
 @test Proj.proj_context_set_enable_network(1) == 1
 # this is like passing floatmax() to the cli, but if we do it correctly we expect
 # it to be like the version that passes only xyz to the cli
-@test xyzt_transform(SA_F64[151, -33, 5]) == SA[313152.7772137531, 6.346936495809965e6, 5.280647277836724]
+@test xyzt_transform(SA_F64[151, -33, 5]) == SA[313153.2281628684, 6.346937876336246e6, 5.280603319143665]
 # this is expected, like the above
-@test xyzt_transform(SA_F64[151, -33, 5, 2020]) == SA[313152.77721557155, 6.34693649571435e6, 5.28067830334755, 2020.0]
+@test xyzt_transform(SA_F64[151, -33, 5, 2020]) == SA[313153.2281628684, 6.346937876336246e6, 5.280603319143665, 2020.0]
 
-@test xyzt_transform(SA_F64[151, -33, 5, floatmax() * 2]) == SA[313152.77721557155, 6.34693649571435e6, 5.28067830334755, Inf]
+@test xyzt_transform(SA_F64[151, -33, 5, floatmax() * 2]) == SA[313153.2281628684, 6.346937876336246e6, 5.280603319143665, Inf]
 
 @test PROJ_jll.cs2cs() do cs2cs
     read_cmd(pipeline(IOBuffer("-33 151 5 0"), `$cs2cs -d 8 EPSG:4326+5773 EPSG:7856+5711`))
-end == "313152.77721375 6346936.49580996 5.00000000 0"
+end == "313153.22816287 6346937.87633625 5.28060332 0"
 
 @test PROJ_jll.projinfo() do projinfo
     read_cmd(`$projinfo  -o PROJ EPSG:25832`)
 end == """PROJ.4 string:
-+proj=utm +zone=32 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs +type=crs
-"""
++proj=utm +zone=32 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs +type=crs"""
 
 PROJ_jll.projinfo() do projinfo
-    n_candidate_ops = "Candidate operations found: 4"
+    n_candidate_ops = "Candidate operations found: 3"
     grid_not_found = "Grid us_nga_egm96_15.tif needed but not found on the system." *
         " Can be obtained at https://cdn.proj.org/us_nga_egm96_15.tif"
     info = read_cmd(`$projinfo -s EPSG:4326+5773 -t EPSG:7856+5711`)
