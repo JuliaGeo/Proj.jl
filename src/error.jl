@@ -20,7 +20,3 @@ function log_func(user_data::Ptr{Cvoid}, level::Cint, msg::Cstring)
     end
     return C_NULL
 end
-
-"Prevent an error converting a null pointer to a string, returns `nothing` instead"
-aftercare(x::Cstring) = x == C_NULL ? nothing : unsafe_string(x)
-aftercare(x::Ptr{Cstring}) = unsafe_loadstringlist(x)

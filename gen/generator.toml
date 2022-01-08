@@ -9,6 +9,7 @@ enumerator_comment_style = "outofline"
 
 output_ignorelist = [
     # PJ_COORD and all its aliases
+    # PJ_COORD is renamed to Coord
     "PJ_COORD",
     "PJ_XYZT",
     "PJ_UVWT",
@@ -21,6 +22,8 @@ output_ignorelist = [
     "PJ_XYZ",
     "PJ_UVW",
     "PJ_LPZ",
+    # PROJ_STRING_LIST is renamed to Ptr{Cstring}
+    "PROJ_STRING_LIST",
 ]
 
 [codegen]

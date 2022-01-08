@@ -4,9 +4,16 @@ using Proj
 import PROJ_jll
 
 @testset "Error handling" begin
-    @test Proj.proj_errno_string(0) == nothing
-    @test Proj.proj_errno_string(1) == "Operation not permitted"
-    @test Proj.proj_errno_string(2) == "No such file or directory"
+    @test Proj.proj_errno_string(0) === nothing
+    @test Proj.proj_errno_string(1) == "Unknown error (code 1)"
+    @test Proj.proj_errno_string(Proj.PROJ_ERR_INVALID_OP_WRONG_SYNTAX) == "Invalid PROJ string syntax"
+
+    pj = Proj.proj_create("EPSG:4326")
+    Proj.proj_errno_set(pj, 14)
+    @test Proj.proj_errno(pj) == 14
+    Proj.proj_errno_reset(pj)
+    @test Proj.proj_errno(pj) == 0
+    pj = Proj.proj_destroy(pj)
 
     # this throws an internal error that is handled by our log_func
     @test_throws Proj.PROJError Proj.proj_create("+proj=bobbyjoe")
@@ -41,23 +48,21 @@ end
     results = Proj.proj_create_operations(src, tgt, factory)
     @test results != C_NULL
     n = Proj.proj_list_get_count(results)
-    for i = 1:n
-        operation = Proj.proj_list_get(results, i - 1)
-        hasballpark = Bool(Proj.proj_coordoperation_has_ballpark_transformation(operation))
-        print("""Operation $i
-            Name: $(Proj.proj_get_name(operation))
-            Has Ballpark: $hasballpark
-        """)
-        info = Proj.proj_pj_info(operation)
-        print("""Info $i:
-            ID:$(unsafe_string(info.id))
-            Desc:$(unsafe_string(info.description))
-            Def:$(unsafe_string(info.definition))
-            Inv:$(Bool(info.has_inverse))
-            Acc:$(info.accuracy)
-        """)
-        Proj.proj_destroy(operation)
-    end
+    @test n == 1
+
+    operation = Proj.proj_list_get(results, 0)
+    @test Bool(Proj.proj_coordoperation_has_ballpark_transformation(operation))
+    @test Bool(Proj.proj_coordoperation_has_ballpark_transformation(operation))
+    @test startswith(Proj.proj_get_name(operation), "Inverse of GAUSS LABORDE REUNION")
+
+    info = Proj.proj_pj_info(operation)
+    @test unsafe_string(info.id) == "pipeline"
+    @test startswith(unsafe_string(info.description), "Inverse of GAUSS LABORDE REUNION")
+    @test startswith(unsafe_string(info.definition), "proj=pipeline step inv proj=gstmerc")
+    @test Bool(info.has_inverse)
+    @test info.accuracy === -1.0
+    Proj.proj_destroy(operation)
+
     Proj.proj_list_destroy(results)
 
     Proj.proj_operation_factory_context_destroy(factory)
@@ -172,12 +177,9 @@ end
     @test A ≈ B
 
     # since A is not in target_crs, we will get an error on a second call
-    err = Proj.proj_trans_array(trans.pj, Proj.PJ_FWD, length(A), A)
-    errno = Proj.proj_errno(trans.pj)
-    @test err == errno == -14
-    @test Proj.proj_errno_string(errno) == "latitude or longitude exceeded limits"
-    # reset error
-    Proj.proj_errno_reset(trans.pj)
+    err = Proj.PROJError("push: Invalid latitude")
+    @test_throws err Proj.proj_trans_array(trans.pj, Proj.PJ_FWD, length(A), A)
+    # error number is reset during PROJError construction
     @test Proj.proj_errno(trans.pj) == 0
     # test triggering finalizer manually
     finalize(trans)
@@ -298,7 +300,7 @@ end
         # TODO on CI this hits julia 1.3 all OS, julia 1.6 and nightly Ubuntu only
         @warn "networking not configured correctly"
     else
-        @test trans_z((151, -33, 5))[3] ≈ 5.28067830334755
+        @test trans_z((151, -33, 5))[3] ≈ 5.280603319143665
     end
 
     # 0 args turns it on as well

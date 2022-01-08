@@ -133,6 +133,11 @@ function proj_context_set_search_paths(count_paths, paths, ctx = C_NULL)
     @ccall libproj.proj_context_set_search_paths(ctx::Ptr{PJ_CONTEXT}, count_paths::Cint, paths::Ptr{Cstring})::Cvoid
 end
 
+"""
+    proj_context_set_ca_bundle_path(path, ctx = C_NULL)
+
+Doxygen\\_Suppress
+"""
 function proj_context_set_ca_bundle_path(path, ctx = C_NULL)
     @ccall libproj.proj_context_set_ca_bundle_path(ctx::Ptr{PJ_CONTEXT}, path::Cstring)::Cvoid
 end
@@ -258,11 +263,11 @@ function proj_context_set_url_endpoint(url, ctx = C_NULL)
 end
 
 function proj_context_get_url_endpoint(ctx = C_NULL)
-    unsafe_string(@ccall(libproj.proj_context_get_url_endpoint(ctx::Ptr{PJ_CONTEXT})::Cstring))
+    aftercare(@ccall(libproj.proj_context_get_url_endpoint(ctx::Ptr{PJ_CONTEXT})::Cstring))
 end
 
 function proj_context_get_user_writable_directory(create, ctx = C_NULL)
-    unsafe_string(@ccall(libproj.proj_context_get_user_writable_directory(ctx::Ptr{PJ_CONTEXT}, create::Cint)::Cstring))
+    aftercare(@ccall(libproj.proj_context_get_user_writable_directory(ctx::Ptr{PJ_CONTEXT}, create::Cint)::Cstring))
 end
 
 function proj_grid_cache_set_enable(enabled, ctx = C_NULL)
@@ -306,11 +311,11 @@ function proj_create_argv(argc, argv, ctx = C_NULL)
     @ccall libproj.proj_create_argv(ctx::Ptr{PJ_CONTEXT}, argc::Cint, argv::Ptr{Cstring})::Ptr{PJ}
 end
 
-function proj_create_crs_to_crs(source_crs, target_crs, area, ctx = C_NULL)
+function proj_create_crs_to_crs(source_crs, target_crs, area = C_NULL, ctx = C_NULL)
     @ccall libproj.proj_create_crs_to_crs(ctx::Ptr{PJ_CONTEXT}, source_crs::Cstring, target_crs::Cstring, area::Ptr{PJ_AREA})::Ptr{PJ}
 end
 
-function proj_create_crs_to_crs_from_pj(source_crs, target_crs, area, options, ctx = C_NULL)
+function proj_create_crs_to_crs_from_pj(source_crs, target_crs, area = C_NULL, options = C_NULL, ctx = C_NULL)
     @ccall libproj.proj_create_crs_to_crs_from_pj(ctx::Ptr{PJ_CONTEXT}, source_crs::Ptr{PJ}, target_crs::Ptr{PJ}, area::Ptr{PJ_AREA}, options::Ptr{Cstring})::Ptr{PJ}
 end
 
@@ -366,11 +371,11 @@ function proj_degree_output(P, dir)
 end
 
 function proj_trans(P, direction, coord)
-    @ccall libproj.proj_trans(P::Ptr{PJ}, direction::PJ_DIRECTION, coord::PJ_COORD)::PJ_COORD
+    @ccall libproj.proj_trans(P::Ptr{PJ}, direction::PJ_DIRECTION, coord::Coord)::Coord
 end
 
 function proj_trans_array(P, direction, n, coord)
-    @ccall libproj.proj_trans_array(P::Ptr{PJ}, direction::PJ_DIRECTION, n::Csize_t, coord::Ptr{PJ_COORD})::Cint
+    @ccall libproj.proj_trans_array(P::Ptr{PJ}, direction::PJ_DIRECTION, n::Csize_t, coord::Ptr{Coord})::Cint
 end
 
 function proj_trans_generic(P, direction, x, sx, nx, y, sy, ny, z, sz, nz, t, st, nt)
@@ -382,36 +387,36 @@ function proj_trans_bounds(context, P, direction, xmin, ymin, xmax, ymax, out_xm
 end
 
 """
-    proj_coord(x, y, z, t)
+    proj_coord(x = 0.0, y = 0.0, z = 0.0, t = Inf)
 
 Doxygen\\_Suppress
 """
-function proj_coord(x, y, z, t)
-    @ccall libproj.proj_coord(x::Cdouble, y::Cdouble, z::Cdouble, t::Cdouble)::PJ_COORD
+function proj_coord(x = 0.0, y = 0.0, z = 0.0, t = Inf)
+    @ccall libproj.proj_coord(x::Cdouble, y::Cdouble, z::Cdouble, t::Cdouble)::Coord
 end
 
 function proj_roundtrip(P, direction, n, coord)
-    @ccall libproj.proj_roundtrip(P::Ptr{PJ}, direction::PJ_DIRECTION, n::Cint, coord::Ptr{PJ_COORD})::Cdouble
+    @ccall libproj.proj_roundtrip(P::Ptr{PJ}, direction::PJ_DIRECTION, n::Cint, coord::Ptr{Coord})::Cdouble
 end
 
 function proj_lp_dist(P, a, b)
-    @ccall libproj.proj_lp_dist(P::Ptr{PJ}, a::PJ_COORD, b::PJ_COORD)::Cdouble
+    @ccall libproj.proj_lp_dist(P::Ptr{PJ}, a::Coord, b::Coord)::Cdouble
 end
 
 function proj_lpz_dist(P, a, b)
-    @ccall libproj.proj_lpz_dist(P::Ptr{PJ}, a::PJ_COORD, b::PJ_COORD)::Cdouble
+    @ccall libproj.proj_lpz_dist(P::Ptr{PJ}, a::Coord, b::Coord)::Cdouble
 end
 
 function proj_xy_dist(a, b)
-    @ccall libproj.proj_xy_dist(a::PJ_COORD, b::PJ_COORD)::Cdouble
+    @ccall libproj.proj_xy_dist(a::Coord, b::Coord)::Cdouble
 end
 
 function proj_xyz_dist(a, b)
-    @ccall libproj.proj_xyz_dist(a::PJ_COORD, b::PJ_COORD)::Cdouble
+    @ccall libproj.proj_xyz_dist(a::Coord, b::Coord)::Cdouble
 end
 
 function proj_geod(P, a, b)
-    @ccall libproj.proj_geod(P::Ptr{PJ}, a::PJ_COORD, b::PJ_COORD)::PJ_COORD
+    @ccall libproj.proj_geod(P::Ptr{PJ}, a::Coord, b::Coord)::Coord
 end
 
 function proj_context_errno(ctx = C_NULL)
@@ -435,11 +440,11 @@ function proj_errno_restore(P, err)
 end
 
 function proj_errno_string(err)
-    unsafe_string(@ccall(libproj.proj_errno_string(err::Cint)::Cstring))
+    aftercare(@ccall(libproj.proj_errno_string(err::Cint)::Cstring))
 end
 
 function proj_context_errno_string(err, ctx = C_NULL)
-    unsafe_string(@ccall(libproj.proj_context_errno_string(ctx::Ptr{PJ_CONTEXT}, err::Cint)::Cstring))
+    aftercare(@ccall(libproj.proj_context_errno_string(ctx::Ptr{PJ_CONTEXT}, err::Cint)::Cstring))
 end
 
 function proj_log_level(log_level, ctx = C_NULL)
@@ -451,7 +456,7 @@ function proj_log_func(app_data, logf, ctx = C_NULL)
 end
 
 function proj_factors(P, lp)
-    @ccall libproj.proj_factors(P::Ptr{PJ}, lp::PJ_COORD)::PJ_FACTORS
+    @ccall libproj.proj_factors(P::Ptr{PJ}, lp::Coord)::PJ_FACTORS
 end
 
 function proj_info()
@@ -503,15 +508,12 @@ function proj_dmstor(is, rs)
 end
 
 function proj_rtodms(s, r, pos, neg)
-    unsafe_string(@ccall(libproj.proj_rtodms(s::Cstring, r::Cdouble, pos::Cint, neg::Cint)::Cstring))
+    aftercare(@ccall(libproj.proj_rtodms(s::Cstring, r::Cdouble, pos::Cint, neg::Cint)::Cstring))
 end
 
 function proj_cleanup()
     @ccall libproj.proj_cleanup()::Cvoid
 end
-
-"""Type representing a NULL terminated list of NULL-terminate strings."""
-const PROJ_STRING_LIST = Ptr{Cstring}
 
 """
     PJ_GUESSED_WKT_DIALECT
@@ -879,38 +881,38 @@ end
 const PJ_OBJ_LIST = Cvoid
 
 function proj_string_list_destroy(list)
-    @ccall libproj.proj_string_list_destroy(list::PROJ_STRING_LIST)::Cvoid
+    @ccall libproj.proj_string_list_destroy(list::Ptr{Cstring})::Cvoid
 end
 
 function proj_context_set_autoclose_database(autoclose, ctx = C_NULL)
     @ccall libproj.proj_context_set_autoclose_database(ctx::Ptr{PJ_CONTEXT}, autoclose::Cint)::Cvoid
 end
 
-function proj_context_set_database_path(dbPath, auxDbPaths, options, ctx = C_NULL)
+function proj_context_set_database_path(dbPath, auxDbPaths, options = C_NULL, ctx = C_NULL)
     @ccall libproj.proj_context_set_database_path(ctx::Ptr{PJ_CONTEXT}, dbPath::Cstring, auxDbPaths::Ptr{Cstring}, options::Ptr{Cstring})::Cint
 end
 
 function proj_context_get_database_path(ctx = C_NULL)
-    unsafe_string(@ccall(libproj.proj_context_get_database_path(ctx::Ptr{PJ_CONTEXT})::Cstring))
+    aftercare(@ccall(libproj.proj_context_get_database_path(ctx::Ptr{PJ_CONTEXT})::Cstring))
 end
 
 function proj_context_get_database_metadata(key, ctx = C_NULL)
-    unsafe_string(@ccall(libproj.proj_context_get_database_metadata(ctx::Ptr{PJ_CONTEXT}, key::Cstring)::Cstring))
+    aftercare(@ccall(libproj.proj_context_get_database_metadata(ctx::Ptr{PJ_CONTEXT}, key::Cstring)::Cstring))
 end
 
-function proj_context_get_database_structure(options, ctx = C_NULL)
-    @ccall libproj.proj_context_get_database_structure(ctx::Ptr{PJ_CONTEXT}, options::Ptr{Cstring})::PROJ_STRING_LIST
+function proj_context_get_database_structure(options = C_NULL, ctx = C_NULL)
+    @ccall libproj.proj_context_get_database_structure(ctx::Ptr{PJ_CONTEXT}, options::Ptr{Cstring})::Ptr{Cstring}
 end
 
 function proj_context_guess_wkt_dialect(wkt, ctx = C_NULL)
     @ccall libproj.proj_context_guess_wkt_dialect(ctx::Ptr{PJ_CONTEXT}, wkt::Cstring)::PJ_GUESSED_WKT_DIALECT
 end
 
-function proj_create_from_wkt(wkt, options, out_warnings, out_grammar_errors, ctx = C_NULL)
-    @ccall libproj.proj_create_from_wkt(ctx::Ptr{PJ_CONTEXT}, wkt::Cstring, options::Ptr{Cstring}, out_warnings::Ptr{PROJ_STRING_LIST}, out_grammar_errors::Ptr{PROJ_STRING_LIST})::Ptr{PJ}
+function proj_create_from_wkt(wkt, options = C_NULL, out_warnings = C_NULL, out_grammar_errors = C_NULL, ctx = C_NULL)
+    @ccall libproj.proj_create_from_wkt(ctx::Ptr{PJ_CONTEXT}, wkt::Cstring, options::Ptr{Cstring}, out_warnings::Ptr{Ptr{Cstring}}, out_grammar_errors::Ptr{Ptr{Cstring}})::Ptr{PJ}
 end
 
-function proj_create_from_database(auth_name, code, category, usePROJAlternativeGridNames, options, ctx = C_NULL)
+function proj_create_from_database(auth_name, code, category, usePROJAlternativeGridNames, options = C_NULL, ctx = C_NULL)
     @ccall libproj.proj_create_from_database(ctx::Ptr{PJ_CONTEXT}, auth_name::Cstring, code::Cstring, category::PJ_CATEGORY, usePROJAlternativeGridNames::Cint, options::Ptr{Cstring})::Ptr{PJ}
 end
 
@@ -926,7 +928,7 @@ function proj_clone(obj, ctx = C_NULL)
     @ccall libproj.proj_clone(ctx::Ptr{PJ_CONTEXT}, obj::Ptr{PJ})::Ptr{PJ}
 end
 
-function proj_create_from_name(auth_name, searchedName, types, typesCount, approximateMatch, limitResultCount, options, ctx = C_NULL)
+function proj_create_from_name(auth_name, searchedName, types, typesCount, approximateMatch, limitResultCount, options = C_NULL, ctx = C_NULL)
     @ccall libproj.proj_create_from_name(ctx::Ptr{PJ_CONTEXT}, auth_name::Cstring, searchedName::Cstring, types::Ptr{PJ_TYPE}, typesCount::Csize_t, approximateMatch::Cint, limitResultCount::Csize_t, options::Ptr{Cstring})::Ptr{PJ_OBJ_LIST}
 end
 
@@ -955,39 +957,39 @@ function proj_is_crs(obj)
 end
 
 function proj_get_name(obj)
-    unsafe_string(@ccall(libproj.proj_get_name(obj::Ptr{PJ})::Cstring))
+    aftercare(@ccall(libproj.proj_get_name(obj::Ptr{PJ})::Cstring))
 end
 
 function proj_get_id_auth_name(obj, index)
-    unsafe_string(@ccall(libproj.proj_get_id_auth_name(obj::Ptr{PJ}, index::Cint)::Cstring))
+    aftercare(@ccall(libproj.proj_get_id_auth_name(obj::Ptr{PJ}, index::Cint)::Cstring))
 end
 
 function proj_get_id_code(obj, index)
-    unsafe_string(@ccall(libproj.proj_get_id_code(obj::Ptr{PJ}, index::Cint)::Cstring))
+    aftercare(@ccall(libproj.proj_get_id_code(obj::Ptr{PJ}, index::Cint)::Cstring))
 end
 
 function proj_get_remarks(obj)
-    unsafe_string(@ccall(libproj.proj_get_remarks(obj::Ptr{PJ})::Cstring))
+    aftercare(@ccall(libproj.proj_get_remarks(obj::Ptr{PJ})::Cstring))
 end
 
 function proj_get_scope(obj)
-    unsafe_string(@ccall(libproj.proj_get_scope(obj::Ptr{PJ})::Cstring))
+    aftercare(@ccall(libproj.proj_get_scope(obj::Ptr{PJ})::Cstring))
 end
 
 function proj_get_area_of_use(obj, out_west_lon_degree, out_south_lat_degree, out_east_lon_degree, out_north_lat_degree, out_area_name, ctx = C_NULL)
     @ccall libproj.proj_get_area_of_use(ctx::Ptr{PJ_CONTEXT}, obj::Ptr{PJ}, out_west_lon_degree::Ptr{Cdouble}, out_south_lat_degree::Ptr{Cdouble}, out_east_lon_degree::Ptr{Cdouble}, out_north_lat_degree::Ptr{Cdouble}, out_area_name::Ptr{Cstring})::Cint
 end
 
-function proj_as_wkt(obj, type, options, ctx = C_NULL)
-    unsafe_string(@ccall(libproj.proj_as_wkt(ctx::Ptr{PJ_CONTEXT}, obj::Ptr{PJ}, type::PJ_WKT_TYPE, options::Ptr{Cstring})::Cstring))
+function proj_as_wkt(obj, type, options = C_NULL, ctx = C_NULL)
+    aftercare(@ccall(libproj.proj_as_wkt(ctx::Ptr{PJ_CONTEXT}, obj::Ptr{PJ}, type::PJ_WKT_TYPE, options::Ptr{Cstring})::Cstring))
 end
 
-function proj_as_proj_string(obj, type, options, ctx = C_NULL)
-    unsafe_string(@ccall(libproj.proj_as_proj_string(ctx::Ptr{PJ_CONTEXT}, obj::Ptr{PJ}, type::PJ_PROJ_STRING_TYPE, options::Ptr{Cstring})::Cstring))
+function proj_as_proj_string(obj, type, options = C_NULL, ctx = C_NULL)
+    aftercare(@ccall(libproj.proj_as_proj_string(ctx::Ptr{PJ_CONTEXT}, obj::Ptr{PJ}, type::PJ_PROJ_STRING_TYPE, options::Ptr{Cstring})::Cstring))
 end
 
-function proj_as_projjson(obj, options, ctx = C_NULL)
-    unsafe_string(@ccall(libproj.proj_as_projjson(ctx::Ptr{PJ_CONTEXT}, obj::Ptr{PJ}, options::Ptr{Cstring})::Cstring))
+function proj_as_projjson(obj, options = C_NULL, ctx = C_NULL)
+    aftercare(@ccall(libproj.proj_as_projjson(ctx::Ptr{PJ_CONTEXT}, obj::Ptr{PJ}, options::Ptr{Cstring})::Cstring))
 end
 
 function proj_get_source_crs(obj, ctx = C_NULL)
@@ -998,12 +1000,12 @@ function proj_get_target_crs(obj, ctx = C_NULL)
     @ccall libproj.proj_get_target_crs(ctx::Ptr{PJ_CONTEXT}, obj::Ptr{PJ})::Ptr{PJ}
 end
 
-function proj_identify(obj, auth_name, options, out_confidence, ctx = C_NULL)
+function proj_identify(obj, auth_name, out_confidence, options = C_NULL, ctx = C_NULL)
     @ccall libproj.proj_identify(ctx::Ptr{PJ_CONTEXT}, obj::Ptr{PJ}, auth_name::Cstring, options::Ptr{Cstring}, out_confidence::Ptr{Ptr{Cint}})::Ptr{PJ_OBJ_LIST}
 end
 
-function proj_get_geoid_models_from_database(auth_name, code, options, ctx = C_NULL)
-    @ccall libproj.proj_get_geoid_models_from_database(ctx::Ptr{PJ_CONTEXT}, auth_name::Cstring, code::Cstring, options::Ptr{Cstring})::PROJ_STRING_LIST
+function proj_get_geoid_models_from_database(auth_name, code, options = C_NULL, ctx = C_NULL)
+    @ccall libproj.proj_get_geoid_models_from_database(ctx::Ptr{PJ_CONTEXT}, auth_name::Cstring, code::Cstring, options::Ptr{Cstring})::Ptr{Cstring}
 end
 
 function proj_int_list_destroy(list)
@@ -1011,11 +1013,11 @@ function proj_int_list_destroy(list)
 end
 
 function proj_get_authorities_from_database(ctx = C_NULL)
-    @ccall libproj.proj_get_authorities_from_database(ctx::Ptr{PJ_CONTEXT})::PROJ_STRING_LIST
+    @ccall libproj.proj_get_authorities_from_database(ctx::Ptr{PJ_CONTEXT})::Ptr{Cstring}
 end
 
 function proj_get_codes_from_database(auth_name, type, allow_deprecated, ctx = C_NULL)
-    @ccall libproj.proj_get_codes_from_database(ctx::Ptr{PJ_CONTEXT}, auth_name::Cstring, type::PJ_TYPE, allow_deprecated::Cint)::PROJ_STRING_LIST
+    @ccall libproj.proj_get_codes_from_database(ctx::Ptr{PJ_CONTEXT}, auth_name::Cstring, type::PJ_TYPE, allow_deprecated::Cint)::Ptr{Cstring}
 end
 
 function proj_get_celestial_body_list_from_database(auth_name, out_result_count, ctx = C_NULL)
@@ -1060,12 +1062,12 @@ function proj_insert_object_session_destroy(session, ctx = C_NULL)
     @ccall libproj.proj_insert_object_session_destroy(ctx::Ptr{PJ_CONTEXT}, session::Ptr{PJ_INSERT_SESSION})::Cvoid
 end
 
-function proj_get_insert_statements(session, object, authority, code, numeric_codes, allowed_authorities, options, ctx = C_NULL)
-    @ccall libproj.proj_get_insert_statements(ctx::Ptr{PJ_CONTEXT}, session::Ptr{PJ_INSERT_SESSION}, object::Ptr{PJ}, authority::Cstring, code::Cstring, numeric_codes::Cint, allowed_authorities::Ptr{Cstring}, options::Ptr{Cstring})::PROJ_STRING_LIST
+function proj_get_insert_statements(session, object, authority, code, numeric_codes, allowed_authorities, options = C_NULL, ctx = C_NULL)
+    @ccall libproj.proj_get_insert_statements(ctx::Ptr{PJ_CONTEXT}, session::Ptr{PJ_INSERT_SESSION}, object::Ptr{PJ}, authority::Cstring, code::Cstring, numeric_codes::Cint, allowed_authorities::Ptr{Cstring}, options::Ptr{Cstring})::Ptr{Cstring}
 end
 
-function proj_suggests_code_for(object, authority, numeric_code, options, ctx = C_NULL)
-    unsafe_string(@ccall(libproj.proj_suggests_code_for(ctx::Ptr{PJ_CONTEXT}, object::Ptr{PJ}, authority::Cstring, numeric_code::Cint, options::Ptr{Cstring})::Cstring))
+function proj_suggests_code_for(object, authority, numeric_code, options = C_NULL, ctx = C_NULL)
+    aftercare(@ccall(libproj.proj_suggests_code_for(ctx::Ptr{PJ_CONTEXT}, object::Ptr{PJ}, authority::Cstring, numeric_code::Cint, options::Ptr{Cstring})::Cstring))
 end
 
 function proj_string_destroy(str)
@@ -1139,7 +1141,7 @@ function proj_list_destroy(result)
 end
 
 function proj_get_suggested_operation(operations, direction, coord, ctx = C_NULL)
-    @ccall libproj.proj_get_suggested_operation(ctx::Ptr{PJ_CONTEXT}, operations::Ptr{PJ_OBJ_LIST}, direction::PJ_DIRECTION, coord::PJ_COORD)::Cint
+    @ccall libproj.proj_get_suggested_operation(ctx::Ptr{PJ_CONTEXT}, operations::Ptr{PJ_OBJ_LIST}, direction::PJ_DIRECTION, coord::Coord)::Cint
 end
 
 function proj_crs_is_derived(crs, ctx = C_NULL)
@@ -1211,7 +1213,7 @@ function proj_ellipsoid_get_parameters(ellipsoid, out_semi_major_metre, out_semi
 end
 
 function proj_get_celestial_body_name(obj, ctx = C_NULL)
-    unsafe_string(@ccall(libproj.proj_get_celestial_body_name(ctx::Ptr{PJ_CONTEXT}, obj::Ptr{PJ})::Cstring))
+    aftercare(@ccall(libproj.proj_get_celestial_body_name(ctx::Ptr{PJ_CONTEXT}, obj::Ptr{PJ})::Cstring))
 end
 
 function proj_get_prime_meridian(obj, ctx = C_NULL)
@@ -1989,7 +1991,7 @@ const PROJ_VERSION_MAJOR = 8
 
 const PROJ_VERSION_MINOR = 2
 
-const PROJ_VERSION_PATCH = 0
+const PROJ_VERSION_PATCH = 1
 
 const PROJ_VERSION_NUMBER = PROJ_COMPUTE_VERSION(PROJ_VERSION_MAJOR, PROJ_VERSION_MINOR, PROJ_VERSION_PATCH)
 

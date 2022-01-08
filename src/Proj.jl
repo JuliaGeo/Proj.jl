@@ -13,7 +13,6 @@ export compose, ∘
 # type aliases
 const Coord = SVector{4, Float64}
 const Coord234 = Union{SVector{2, Float64}, SVector{3, Float64}, SVector{4, Float64}}
-const PJ_COORD = Coord
 const PROJ_COMPUTE_VERSION = VersionNumber
 const GEODESIC_VERSION_NUM = VersionNumber
 
@@ -27,7 +26,7 @@ Load a null-terminated list of strings
 It takes a `PROJ_STRING_LIST`, which is a `Ptr{Cstring}`, and returns a `Vector{String}`.
 """
 function unsafe_loadstringlist(ptr::Ptr{Cstring})
-    strings = Vector{String}()
+    strings = String[]
     (ptr == C_NULL) && return strings
     i = 1
     cstring = unsafe_load(ptr, i)
@@ -36,8 +35,13 @@ function unsafe_loadstringlist(ptr::Ptr{Cstring})
         i += 1
         cstring = unsafe_load(ptr, i)
     end
-    strings
+    proj_string_list_destroy(ptr)
+    return strings
 end
+
+"Prevent an error converting a null pointer to a string, returns `nothing` instead"
+aftercare(x::Cstring) = x == C_NULL ? nothing : unsafe_string(x)
+aftercare(x::Ptr{Cstring}) = unsafe_loadstringlist(x)
 
 const PROJ_LIB = Ref{String}()
 
