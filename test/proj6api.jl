@@ -6,7 +6,8 @@ import PROJ_jll
 @testset "Error handling" begin
     @test Proj.proj_errno_string(0) === nothing
     @test Proj.proj_errno_string(1) == "Unknown error (code 1)"
-    @test Proj.proj_errno_string(Proj.PROJ_ERR_INVALID_OP_WRONG_SYNTAX) == "Invalid PROJ string syntax"
+    @test Proj.proj_errno_string(Proj.PROJ_ERR_INVALID_OP_WRONG_SYNTAX) ==
+          "Invalid PROJ string syntax"
 
     pj = Proj.proj_create("EPSG:4326")
     Proj.proj_errno_set(pj, 14)
@@ -149,7 +150,8 @@ end
     trans = Proj.Transformation(source_crs, target_crs)
 
     # Check that altitude and time inputs are correctly forwarded from the transformation
-    @test trans(SA_F64[52.16, 5.39, 5, 2020]) ≈ SA[155191.3538124342, 463537.1362732911, 5.0, 2020.0]
+    @test trans(SA_F64[52.16, 5.39, 5, 2020]) ≈
+          SA[155191.3538124342, 463537.1362732911, 5.0, 2020.0]
 
     a = Proj.proj_coord(52.16, 5.39)
     b = Proj.proj_trans(trans.pj, Proj.PJ_FWD, a)
@@ -255,32 +257,32 @@ end
     x, y = 5.39, 52.16
     for inpoint in [SA[x, y], [x, y], (x, y)]
         p = if inpoint isa Vector
-            Test.@inferred SArray{S, Float64, 1, L} where {S<:Tuple, L} trans(inpoint)
+            Test.@inferred SArray{S,Float64,1,L} where {S<:Tuple,L} trans(inpoint)
         else
             Test.@inferred trans(inpoint)
         end
         @test p ≈ [155191.3538124342, 463537.1362732911]
-        @test p isa SVector{2, Float64}
+        @test p isa SVector{2,Float64}
     end
 
     # StaticVectors like GeometryBasics.Point are returned, also with Float32
     p = Test.@inferred trans(Point(5.39f0, 52.16f0))
     @test p ≈ [155191.3538124342, 463537.1362732911]
-    @test p isa Point{2, Float32}
+    @test p isa Point{2,Float32}
 
     # Integer input will go to the ::Any method and become Float64
-    @test trans(SA[1,2]) isa SVector{2, Float64}
-    @test trans([5,52]) ≈ [128410.08537081012, 445806.50883314764]
+    @test trans(SA[1, 2]) isa SVector{2,Float64}
+    @test trans([5, 52]) ≈ [128410.08537081012, 445806.50883314764]
 
     # SVector{3, Float64}
     p = Test.@inferred trans(SA[5.39, 52.16, 2.0])
     @test p ≈ [155191.35381147722, 463537.13624246384, 2.0]
-    @test p isa SVector{3, Float64}
+    @test p isa SVector{3,Float64}
 
     # SVector{4, Float64}
     p = Test.@inferred trans(SA[5.39, 52.16, 0.0, Inf])
     @test p ≈ [155191.3538124342, 463537.1362732911, 0.0, Inf]
-    @test p isa SVector{4, Float64}
+    @test p isa SVector{4,Float64}
 end
 
 @testset "network" begin

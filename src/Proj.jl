@@ -8,8 +8,8 @@ using CoordinateTransformations
 export PROJ_jll
 
 # type aliases
-const Coord = SVector{4, Float64}
-const Coord234 = Union{SVector{2, Float64}, SVector{3, Float64}, SVector{4, Float64}}
+const Coord = SVector{4,Float64}
+const Coord234 = Union{SVector{2,Float64},SVector{3,Float64},SVector{4,Float64}}
 const PROJ_COMPUTE_VERSION = VersionNumber
 const GEODESIC_VERSION_NUM = VersionNumber
 

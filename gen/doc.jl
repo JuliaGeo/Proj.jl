@@ -64,7 +64,7 @@ function brief_description(node::EzXML.Node)
 end
 
 "Compose a Markdown docstring based on a Doxygen XML element"
-function build_docstring(node::EzXML.Node, argpos::Union{Vector, Nothing})
+function build_docstring(node::EzXML.Node, argpos::Union{Vector,Nothing})
     kind = node["kind"]
     if kind == "function"
         build_function(node, argpos)
@@ -95,7 +95,9 @@ end
 
 "Get the C name out of a expression"
 function cname(ex)
-    if @capture(ex, function f_(args__) ccall((a_, b_), xs__) end)
+    if @capture(ex, function f_(args__)
+        ccall((a_, b_), xs__)
+    end)
         String(eval(a))
     else
         # TODO make MacroTools.namify work for structs and macros

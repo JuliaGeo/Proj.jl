@@ -21,38 +21,45 @@ end == "421184.70 4983436.77 0.00"
 @test PROJ_jll.cs2cs() do cs2cs
     withenv("PROJ_NETWORK" => "ON") do
         # instead of ntv1_can.dat we can also specify ca_nrc_ntv1_can.tif
-        read_cmd(pipeline(IOBuffer("-111 50"),
-        `$cs2cs +proj=latlong +ellps=clrk66 +nadgrids=ntv1_can.dat
-            +to +proj=latlong +ellps=GRS80 +datum=NAD83`))
+        read_cmd(
+            pipeline(
+                IOBuffer("-111 50"),
+                `$cs2cs +proj=latlong +ellps=clrk66 +nadgrids=ntv1_can.dat
+                    +to +proj=latlong +ellps=GRS80 +datum=NAD83`,
+            ),
+        )
     end
 end == "111d0'3.006\"W 50d0'0.125\"N 0.000"
 
 @test PROJ_jll.cs2cs() do cs2cs
     withenv("PROJ_NETWORK" => "ON") do
-        read_cmd(pipeline(IOBuffer("-111 50"),
-        `$cs2cs +proj=latlong +ellps=clrk66 +nadgrids=ca_nrc_ntv1_can.tif
-            +to +proj=latlong +ellps=GRS80 +datum=NAD83`))
+        read_cmd(
+            pipeline(
+                IOBuffer("-111 50"),
+                `$cs2cs +proj=latlong +ellps=clrk66 +nadgrids=ca_nrc_ntv1_can.tif
+                    +to +proj=latlong +ellps=GRS80 +datum=NAD83`,
+            ),
+        )
     end
 end == "111d0'3.006\"W 50d0'0.125\"N 0.000"
 
 
-function xyzt_transform_cli(point::AbstractVector; network::Bool=false)
+function xyzt_transform_cli(point::AbstractVector; network::Bool = false)
     # convert the vector to a string like "-33 151 5 2020"
     input = String(strip(string(point'), ('[', ']')))
     xyzt_transform_cli(input; network)
 end
 
-function xyzt_transform_cli(point::String; network::Bool=false)
+function xyzt_transform_cli(point::String; network::Bool = false)
     proj_network = network ? "ON" : nothing
     PROJ_jll.cs2cs() do cs2cs
         withenv("PROJ_NETWORK" => proj_network) do
-            read_cmd(pipeline(IOBuffer(point),
-                `$cs2cs -d 6 EPSG:4326+5773 EPSG:7856+5711`))
+            read_cmd(pipeline(IOBuffer(point), `$cs2cs -d 6 EPSG:4326+5773 EPSG:7856+5711`))
         end
     end
 end
 
-function xyzt_transform(point::AbstractVector; network::Bool=false)
+function xyzt_transform(point::AbstractVector; network::Bool = false)
     proj_network = network ? "ON" : nothing
     trans = Proj.Transformation("EPSG:4326+5773", "EPSG:7856+5711", always_xy = true)
     trans(point)
@@ -67,14 +74,15 @@ end
 
 xy1 = "313153.228163 6346937.876336"
 xy2 = "313153.271257 6346937.914865"
-@test xyzt_transform_cli(SA[-33, 151, 5, 2020]; network=true) == "$xy1 5.280603 2020"
-@test xyzt_transform_cli("-33 151 5 2020"; network=true) == "$xy1 5.280603 2020"
+@test xyzt_transform_cli(SA[-33, 151, 5, 2020]; network = true) == "$xy1 5.280603 2020"
+@test xyzt_transform_cli("-33 151 5 2020"; network = true) == "$xy1 5.280603 2020"
 # no z correction with no network, as expected
-@test xyzt_transform_cli(SA[-33, 151, 5, 2020]; network=false) == "$xy2 5.000000 2020"
+@test xyzt_transform_cli(SA[-33, 151, 5, 2020]; network = false) == "$xy2 5.000000 2020"
 # year 0, different xyz, as expected
-@test xyzt_transform_cli(SA[-33, 151, 5, 0]; network=true) == "313153.228163 6346937.876336 5.280603 0"
+@test xyzt_transform_cli(SA[-33, 151, 5, 0]; network = true) ==
+      "313153.228163 6346937.876336 5.280603 0"
 # no time input is like passing 2020, as expected
-@test xyzt_transform_cli(SA[-33, 151, 5]; network=true) == "$xy1 5.280603"
+@test xyzt_transform_cli(SA[-33, 151, 5]; network = true) == "$xy1 5.280603"
 
 # need to switch axis order here
 # interestingly this does not respond to the PROJ_NETWORK environment variable,
@@ -83,14 +91,19 @@ Proj.proj_context_is_network_enabled()
 @test Proj.proj_context_set_enable_network(1) == 1
 # this is like passing floatmax() to the cli, but if we do it correctly we expect
 # it to be like the version that passes only xyz to the cli
-@test xyzt_transform(SA_F64[151, -33, 5]) == SA[313153.2281628684, 6.346937876336246e6, 5.280603319143665]
+@test xyzt_transform(SA_F64[151, -33, 5]) ==
+      SA[313153.2281628684, 6.346937876336246e6, 5.280603319143665]
 # this is expected, like the above
-@test xyzt_transform(SA_F64[151, -33, 5, 2020]) == SA[313153.2281628684, 6.346937876336246e6, 5.280603319143665, 2020.0]
+@test xyzt_transform(SA_F64[151, -33, 5, 2020]) ==
+      SA[313153.2281628684, 6.346937876336246e6, 5.280603319143665, 2020.0]
 
-@test xyzt_transform(SA_F64[151, -33, 5, floatmax() * 2]) == SA[313153.2281628684, 6.346937876336246e6, 5.280603319143665, Inf]
+@test xyzt_transform(SA_F64[151, -33, 5, floatmax()*2]) ==
+      SA[313153.2281628684, 6.346937876336246e6, 5.280603319143665, Inf]
 
 @test PROJ_jll.cs2cs() do cs2cs
-    read_cmd(pipeline(IOBuffer("-33 151 5 0"), `$cs2cs -d 8 EPSG:4326+5773 EPSG:7856+5711`))
+    read_cmd(
+        pipeline(IOBuffer("-33 151 5 0"), `$cs2cs -d 8 EPSG:4326+5773 EPSG:7856+5711`),
+    )
 end == "313153.22816287 6346937.87633625 5.28060332 0"
 
 @test PROJ_jll.projinfo() do projinfo
@@ -100,7 +113,8 @@ end == """PROJ.4 string:
 
 PROJ_jll.projinfo() do projinfo
     n_candidate_ops = "Candidate operations found: 3"
-    grid_not_found = "Grid us_nga_egm96_15.tif needed but not found on the system." *
+    grid_not_found =
+        "Grid us_nga_egm96_15.tif needed but not found on the system." *
         " Can be obtained at https://cdn.proj.org/us_nga_egm96_15.tif"
     info = read_cmd(`$projinfo -s EPSG:4326+5773 -t EPSG:7856+5711`)
     @test occursin(n_candidate_ops, info)
