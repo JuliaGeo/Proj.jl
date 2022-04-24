@@ -1,21 +1,17 @@
 using Clang.Generators
 using MacroTools: @capture, postwalk, prettify
 using PROJ_jll: artifact_dir
+using JuliaFormatter: format
 
 "create an optional argument expression"
 kw(name, val) = Expr(:kw, name, val)
 
-renames = Dict(
-    :PJ_COORD => :Coord,
-    :PROJ_STRING_LIST => :(Ptr{Cstring}),
-)
+renames = Dict(:PJ_COORD => :Coord, :PROJ_STRING_LIST => :(Ptr{Cstring}))
 
 function rewrite(ex::Expr)
-    if @capture(ex,
-        function fname_(fargs__)
-            @ccall lib_.cname_(cargs__)::rettype_
-        end
-    )
+    if @capture(ex, function fname_(fargs__)
+        @ccall lib_.cname_(cargs__)::rettype_
+    end)
         fargs′ = copy(fargs)
         # if ctx is the first argument, put it at the end as an optional argument
         if !isempty(fargs) && fargs[1] == :ctx
@@ -88,3 +84,6 @@ ctx = create_context(headers, args, options)
 build!(ctx, BUILDSTAGE_NO_PRINTING)
 rewrite!(ctx.dag)
 build!(ctx, BUILDSTAGE_PRINTING_ONLY)
+
+# run JuliaFormatter on the whole package
+format(joinpath(@__DIR__, ".."))

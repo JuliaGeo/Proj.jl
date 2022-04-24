@@ -70,7 +70,7 @@ function Transformation(
     always_xy::Bool = false,
 )
     pj = proj_create_crs_to_crs(source_crs, target_crs, area, ctx)
-    pj = always_xy ? normalize_axis_order!(pj; ctx=ctx) : pj
+    pj = always_xy ? normalize_axis_order!(pj; ctx = ctx) : pj
     return Transformation(pj)
 end
 
@@ -82,7 +82,7 @@ function Transformation(
     always_xy::Bool = false,
 )
     pj = proj_create_crs_to_crs_from_pj(source_crs, target_crs, area, ctx)
-    pj = always_xy ? normalize_axis_order!(pj; ctx=ctx) : pj
+    pj = always_xy ? normalize_axis_order!(pj; ctx = ctx) : pj
     return Transformation(pj)
 end
 
@@ -93,10 +93,13 @@ function Base.show(io::IO, trans::Transformation)
     target_info = proj_pj_info(target_crs)
     source_description = unsafe_string(source_info.description)
     target_description = unsafe_string(target_info.description)
-    print(io, """
-    Transformation
-        source: $source_description
-        target: $target_description""")
+    print(
+        io,
+        """
+Transformation
+    source: $source_description
+    target: $target_description""",
+    )
 end
 
 """
@@ -119,26 +122,32 @@ function Base.inv(
 )
     target_crs = proj_get_source_crs(trans.pj)
     source_crs = proj_get_target_crs(trans.pj)
-    return Transformation(source_crs, target_crs; area=area, ctx=ctx, always_xy=always_xy)
+    return Transformation(
+        source_crs,
+        target_crs;
+        area = area,
+        ctx = ctx,
+        always_xy = always_xy,
+    )
 end
 
 function (trans::Transformation)(coord::StaticVector{2,<:AbstractFloat})
     T = similar_type(coord)
-    coord = SVector{4, Float64}(coord[1], coord[2], 0.0, Inf)
+    coord = SVector{4,Float64}(coord[1], coord[2], 0.0, Inf)
     p = proj_trans(trans.pj, PJ_FWD, coord)
     return T(p[1], p[2])
 end
 
 function (trans::Transformation)(coord::StaticVector{3,<:AbstractFloat})
     T = similar_type(coord)
-    coord = SVector{4, Float64}(coord[1], coord[2], coord[3], Inf)
+    coord = SVector{4,Float64}(coord[1], coord[2], coord[3], Inf)
     p = proj_trans(trans.pj, PJ_FWD, coord)
     return T(p[1], p[2], p[3])
 end
 
 function (trans::Transformation)(coord::StaticVector{4,<:AbstractFloat})
     T = similar_type(coord)
-    coord = SVector{4, Float64}(coord[1], coord[2], coord[3], coord[4])
+    coord = SVector{4,Float64}(coord[1], coord[2], coord[3], coord[4])
     p = proj_trans(trans.pj, PJ_FWD, coord)
     return T(p)
 end
@@ -159,9 +168,9 @@ function (trans::Transformation)(coord)::Coord234
     p = proj_trans(trans.pj, PJ_FWD, coord)
 
     if n == 2
-        return SVector{2, Float64}(p[1], p[2])
+        return SVector{2,Float64}(p[1], p[2])
     elseif n == 3
-        return SVector{3, Float64}(p[1], p[2], p[3])
+        return SVector{3,Float64}(p[1], p[2], p[3])
     else
         return p
     end
@@ -179,7 +188,13 @@ function CoordinateTransformations.compose(
     # a → b ∘ c → d doesn't make much sense if b != c, though we don't enforce it
     source_crs = proj_get_source_crs(trans1.pj)
     target_crs = proj_get_target_crs(trans2.pj)
-    return Transformation(source_crs, target_crs; area=area, ctx=ctx, always_xy=always_xy)
+    return Transformation(
+        source_crs,
+        target_crs;
+        area = area,
+        ctx = ctx,
+        always_xy = always_xy,
+    )
 end
 
 """
