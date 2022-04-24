@@ -1987,11 +1987,11 @@ end
 
 # Skipping MacroDefinition: PROJ_DLL __attribute__ ( ( visibility ( "default" ) ) )
 
-const PROJ_VERSION_MAJOR = 8
+const PROJ_VERSION_MAJOR = 9
 
-const PROJ_VERSION_MINOR = 2
+const PROJ_VERSION_MINOR = 0
 
-const PROJ_VERSION_PATCH = 1
+const PROJ_VERSION_PATCH = 0
 
 const PROJ_VERSION_NUMBER = PROJ_COMPUTE_VERSION(PROJ_VERSION_MAJOR, PROJ_VERSION_MINOR, PROJ_VERSION_PATCH)
 
