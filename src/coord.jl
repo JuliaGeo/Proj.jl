@@ -1,10 +1,12 @@
 """
-    Transformation(source_crs, target_crs; area=C_NULL, ctx=C_NULL, always_xy=false)
+    Transformation(source_crs, target_crs; direction = Proj.PJ_FWD, area=C_NULL, ctx=C_NULL, always_xy=false)
 
 Create a Transformation that is a pipeline between two known coordinate reference systems.
 Transformation implements the
 [CoordinateTransformations.jl](https://github.com/JuliaGeometry/CoordinateTransformations.jl)
 API.
+
+`direction` can be either `Proj.PJ_FWD` or `Proj.PJ_INV`.
 
 `source_crs` and `target_crs` can be:
 - a "AUTHORITY:CODE", like EPSG:25832. When using that syntax for a source CRS, the created
@@ -53,8 +55,9 @@ julia> trans((5.39, 52.16))  # this is in lon,lat order, since we set always_xy 
 """
 mutable struct Transformation <: CoordinateTransformations.Transformation
     pj::Ptr{PJ}
-    function Transformation(pj::Ptr{PJ})
-        trans = new(pj)
+    direction::PJ_DIRECTION
+    function Transformation(pj::Ptr{PJ}, direction::PJ_DIRECTION=PJ_FWD)
+        trans = new(pj, direction)
         finalizer(trans) do trans
             trans.pj = proj_destroy(trans.pj)
         end
@@ -65,25 +68,27 @@ end
 function Transformation(
     source_crs::AbstractString,
     target_crs::AbstractString;
+    direction::PJ_DIRECTION = PJ_FWD,
     area::Ptr{PJ_AREA} = C_NULL,
     ctx::Ptr{PJ_CONTEXT} = C_NULL,
     always_xy::Bool = false,
 )
     pj = proj_create_crs_to_crs(source_crs, target_crs, area, ctx)
-    pj = always_xy ? normalize_axis_order!(pj; ctx) : pj
-    return Transformation(pj)
+    pj = always_xy ? normalize_axis_order!(pj; ctx=ctx) : pj
+    return Transformation(pj, direction)
 end
 
 function Transformation(
     source_crs::Ptr{PJ},
     target_crs::Ptr{PJ};
+    direction::PJ_DIRECTION = PJ_FWD,
     area::Ptr{PJ_AREA} = C_NULL,
     ctx::Ptr{PJ_CONTEXT} = C_NULL,
     always_xy::Bool = false,
 )
     pj = proj_create_crs_to_crs_from_pj(source_crs, target_crs, area, ctx)
-    pj = always_xy ? normalize_axis_order!(pj; ctx) : pj
-    return Transformation(pj)
+    pj = always_xy ? normalize_axis_order!(pj; ctx=ctx) : pj
+    return Transformation(pj, direction)
 end
 
 function Base.show(io::IO, trans::Transformation)
@@ -93,13 +98,15 @@ function Base.show(io::IO, trans::Transformation)
     target_info = proj_pj_info(target_crs)
     source_description = unsafe_string(source_info.description)
     target_description = unsafe_string(target_info.description)
-    print(
-        io,
-        """
-Transformation
-    source: $source_description
-    target: $target_description""",
-    )
+
+    direction_str = trans.direction == PJ_FWD ? "forward" : "inverse"
+
+    print(io, """
+    Transformation
+        source: $source_description
+        target: $target_description
+        in the $direction_str direction
+        """)
 end
 
 """
@@ -120,29 +127,27 @@ function Base.inv(
     ctx::Ptr{PJ_CONTEXT} = C_NULL,
     always_xy::Bool = false,
 )
-    target_crs = proj_get_source_crs(trans.pj)
-    source_crs = proj_get_target_crs(trans.pj)
-    return Transformation(source_crs, target_crs; area, ctx, always_xy)
+    return Transformation(trans.pj, trans.direction == PJ_FWD ? PJ_INV : PJ_FWD)
 end
 
 function (trans::Transformation)(coord::StaticVector{2,<:AbstractFloat})
     T = similar_type(coord)
-    coord = SVector{4,Float64}(coord[1], coord[2], 0.0, Inf)
-    p = proj_trans(trans.pj, PJ_FWD, coord)
+    coord = SVector{4, Float64}(coord[1], coord[2], 0.0, Inf)
+    p = proj_trans(trans.pj, trans.direction, coord)
     return T(p[1], p[2])
 end
 
 function (trans::Transformation)(coord::StaticVector{3,<:AbstractFloat})
     T = similar_type(coord)
-    coord = SVector{4,Float64}(coord[1], coord[2], coord[3], Inf)
-    p = proj_trans(trans.pj, PJ_FWD, coord)
+    coord = SVector{4, Float64}(coord[1], coord[2], coord[3], Inf)
+    p = proj_trans(trans.pj, trans.direction, coord)
     return T(p[1], p[2], p[3])
 end
 
 function (trans::Transformation)(coord::StaticVector{4,<:AbstractFloat})
     T = similar_type(coord)
-    coord = SVector{4,Float64}(coord[1], coord[2], coord[3], coord[4])
-    p = proj_trans(trans.pj, PJ_FWD, coord)
+    coord = SVector{4, Float64}(coord[1], coord[2], coord[3], coord[4])
+    p = proj_trans(trans.pj, trans.direction, coord)
     return T(p)
 end
 
@@ -159,7 +164,7 @@ function (trans::Transformation)(coord)::Coord234
         throw(ArgumentError("input should be length 2, 3 or 4"))
     end
 
-    p = proj_trans(trans.pj, PJ_FWD, coord)
+    p = proj_trans(trans.pj, trans.direction, coord)
 
     if n == 2
         return SVector{2,Float64}(p[1], p[2])
@@ -180,9 +185,10 @@ function CoordinateTransformations.compose(
     # create a new Transformation from trans1 source to trans2 target
     # can also be typed as trans1 ∘ trans2, typed with \circ
     # a → b ∘ c → d doesn't make much sense if b != c, though we don't enforce it
-    source_crs = proj_get_source_crs(trans1.pj)
-    target_crs = proj_get_target_crs(trans2.pj)
-    return Transformation(source_crs, target_crs; area, ctx, always_xy)
+
+    source_crs = trans1.direction == PJ_FWD ? proj_get_source_crs(trans1.pj) : proj_get_target_crs(trans1.pj)
+    target_crs = trans2.direction == PJ_FWD ? proj_get_target_crs(trans2.pj) : proj_get_source_crs(trans2.pj)
+    return Transformation(source_crs, target_crs; area=area, ctx=ctx, always_xy=always_xy)
 end
 
 """
