@@ -6,6 +6,7 @@ using StaticArrays
 using CoordinateTransformations
 
 export PROJ_jll
+export PJ_DIRECTION, PJ_FWD, PJ_IDENT, PJ_INV
 
 # type aliases
 const Coord = SVector{4,Float64}

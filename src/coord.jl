@@ -1,12 +1,10 @@
 """
-    Transformation(source_crs, target_crs; direction = Proj.PJ_FWD, area=C_NULL, ctx=C_NULL, always_xy=false)
+    Transformation(source_crs, target_crs; always_xy=false, direction = PJ_FWD, area=C_NULL, ctx=C_NULL)
 
 Create a Transformation that is a pipeline between two known coordinate reference systems.
 Transformation implements the
 [CoordinateTransformations.jl](https://github.com/JuliaGeometry/CoordinateTransformations.jl)
 API.
-
-`direction` can be either `Proj.PJ_FWD` or `Proj.PJ_INV`.
 
 `source_crs` and `target_crs` can be:
 - a "AUTHORITY:CODE", like EPSG:25832. When using that syntax for a source CRS, the created
@@ -22,6 +20,14 @@ API.
 - besides an `AbstractString`, it can also accept a `Ptr{PJ}`, pointing to a CRS that was
   already created with `proj_create`
 
+`always_xy` can optionally fix the axis orderding to x,y or lon,lat order. By default it is
+`false`, meaning the order is defined by the authority in charge of a given coordinate
+reference system, as explained in [this PROJ FAQ
+entry](https://proj.org/faq.html#why-is-the-axis-ordering-in-proj-not-consistent).
+
+`direction` can be one of (`PJ_FWD`, `PJ_IDENT`, `PJ_INV`), which correspond to forward
+(source to target), identity (do nothing) and inverse (target to source) transformations.
+
 `area` sets the "area of use" for the Transformation. When it is supplied, the more accurate
 transformation between two given systems can be chosen. When no area of use is specific and
 several coordinate operations are possible depending on the area of use, this function will
@@ -34,11 +40,6 @@ operations. The `area` pointer needs to be created using `proj_area_create`, fil
 `ctx` determines the threading context. By default it is set to the global context. For
 thread safety, use separate contexts created with `proj_context_create` or
 `proj_context_clone`, and destroyed with `proj_context_destroy`.
-
-`always_xy` can optionally fix the axis orderding to x,y or lon,lat order. By default it is
-`false`, meaning the order is defined by the authority in charge of a given coordinate
-reference system, as explained in [this PROJ FAQ
-entry](https://proj.org/faq.html#why-is-the-axis-ordering-in-proj-not-consistent).
 
 # Examples
 ```julia
@@ -56,7 +57,7 @@ julia> trans((5.39, 52.16))  # this is in lon,lat order, since we set always_xy 
 mutable struct Transformation <: CoordinateTransformations.Transformation
     pj::Ptr{PJ}
     direction::PJ_DIRECTION
-    function Transformation(pj::Ptr{PJ}, direction::PJ_DIRECTION=PJ_FWD)
+    function Transformation(pj::Ptr{PJ}, direction::PJ_DIRECTION = PJ_FWD)
         trans = new(pj, direction)
         finalizer(trans) do trans
             trans.pj = proj_destroy(trans.pj)
@@ -69,26 +70,26 @@ end
 function Transformation(
     source_crs::AbstractString,
     target_crs::AbstractString;
+    always_xy::Bool = false,
     direction::PJ_DIRECTION = PJ_FWD,
     area::Ptr{PJ_AREA} = C_NULL,
     ctx::Ptr{PJ_CONTEXT} = C_NULL,
-    always_xy::Bool = false,
 )
     pj = proj_create_crs_to_crs(source_crs, target_crs, area, ctx)
-    pj = always_xy ? normalize_axis_order!(pj; ctx=ctx) : pj
+    pj = always_xy ? normalize_axis_order!(pj; ctx) : pj
     return Transformation(pj, direction)
 end
 
 function Transformation(
     source_crs::Ptr{PJ},
     target_crs::Ptr{PJ};
+    always_xy::Bool = false,
     direction::PJ_DIRECTION = PJ_FWD,
     area::Ptr{PJ_AREA} = C_NULL,
     ctx::Ptr{PJ_CONTEXT} = C_NULL,
-    always_xy::Bool = false,
 )
     pj = proj_create_crs_to_crs_from_pj(source_crs, target_crs, area, ctx)
-    pj = always_xy ? normalize_axis_order!(pj; ctx=ctx) : pj
+    pj = always_xy ? normalize_axis_order!(pj; ctx) : pj
     return Transformation(pj, direction)
 end
 
@@ -100,14 +101,17 @@ function Base.show(io::IO, trans::Transformation)
     source_description = unsafe_string(source_info.description)
     target_description = unsafe_string(target_info.description)
 
-    direction_str = trans.direction == PJ_FWD ? "forward" : "inverse"
+    dir = trans.direction
+    direction_str = dir == PJ_FWD ? "forward" : dir == PJ_IDENT ? "identity" : "inverse"
 
-    print(io, """
-    Transformation
-        source: $source_description
-        target: $target_description
-        in the $direction_str direction
-        """)
+    print(
+        io,
+        """Transformation
+            source: $source_description
+            target: $target_description
+            direction: $direction_str
+        """,
+    )
 end
 
 """
@@ -124,38 +128,40 @@ end
 
 function Base.inv(
     trans::Transformation;
+    always_xy::Bool = false,
     area::Ptr{PJ_AREA} = C_NULL,
     ctx::Ptr{PJ_CONTEXT} = C_NULL,
-    always_xy::Bool = false,
 )
     source_crs = proj_get_source_crs(trans.pj)
     target_crs = proj_get_target_crs(trans.pj)
 
     return Transformation(
-        source_crs, target_crs;
-        direction = trans.direction == PJ_FWD ? PJ_INV : PJ_FWD,
-        area = area,
-        ctx = ctx,
+        source_crs,
+        target_crs;
+        direction = inv(trans.direction),
+        area,
+        ctx,
+        always_xy,
     )
 end
 
 function (trans::Transformation)(coord::StaticVector{2,<:AbstractFloat})
     T = similar_type(coord)
-    coord = SVector{4, Float64}(coord[1], coord[2], 0.0, Inf)
+    coord = SVector{4,Float64}(coord[1], coord[2], 0.0, Inf)
     p = proj_trans(trans.pj, trans.direction, coord)
     return T(p[1], p[2])
 end
 
 function (trans::Transformation)(coord::StaticVector{3,<:AbstractFloat})
     T = similar_type(coord)
-    coord = SVector{4, Float64}(coord[1], coord[2], coord[3], Inf)
+    coord = SVector{4,Float64}(coord[1], coord[2], coord[3], Inf)
     p = proj_trans(trans.pj, trans.direction, coord)
     return T(p[1], p[2], p[3])
 end
 
 function (trans::Transformation)(coord::StaticVector{4,<:AbstractFloat})
     T = similar_type(coord)
-    coord = SVector{4, Float64}(coord[1], coord[2], coord[3], coord[4])
+    coord = SVector{4,Float64}(coord[1], coord[2], coord[3], coord[4])
     p = proj_trans(trans.pj, trans.direction, coord)
     return T(p)
 end
@@ -187,17 +193,21 @@ end
 function CoordinateTransformations.compose(
     trans1::Transformation,
     trans2::Transformation;
+    always_xy::Bool = false,
     area::Ptr{PJ_AREA} = C_NULL,
     ctx::Ptr{PJ_CONTEXT} = C_NULL,
-    always_xy::Bool = false,
 )
     # create a new Transformation from trans1 source to trans2 target
     # can also be typed as trans1 ∘ trans2, typed with \circ
     # a → b ∘ c → d doesn't make much sense if b != c, though we don't enforce it
 
-    source_crs = trans1.direction == PJ_FWD ? proj_get_source_crs(trans1.pj) : proj_get_target_crs(trans1.pj)
-    target_crs = trans2.direction == PJ_FWD ? proj_get_target_crs(trans2.pj) : proj_get_source_crs(trans2.pj)
-    return Transformation(source_crs, target_crs; area=area, ctx=ctx, always_xy=always_xy)
+    source_crs =
+        trans1.direction == PJ_FWD ? proj_get_source_crs(trans1.pj) :
+        proj_get_target_crs(trans1.pj)
+    target_crs =
+        trans2.direction == PJ_FWD ? proj_get_target_crs(trans2.pj) :
+        proj_get_source_crs(trans2.pj)
+    return Transformation(source_crs, target_crs; area, ctx, always_xy)
 end
 
 """
@@ -222,4 +232,14 @@ to check for that context, instead of the global one.
 function network_enabled(ctx::Ptr{PJ_CONTEXT} = C_NULL)
     enabled = proj_context_is_network_enabled(ctx)
     return Bool(enabled)
+end
+
+function Base.inv(direction::PJ_DIRECTION)
+    return if direction == PJ_FWD
+        PJ_INV
+    elseif direction == PJ_IDENT
+        PJ_IDENT
+    else
+        PJ_FWD
+    end
 end
