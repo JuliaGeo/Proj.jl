@@ -63,6 +63,7 @@ mutable struct Transformation <: CoordinateTransformations.Transformation
         end
         return trans
     end
+
 end
 
 function Transformation(
@@ -127,7 +128,15 @@ function Base.inv(
     ctx::Ptr{PJ_CONTEXT} = C_NULL,
     always_xy::Bool = false,
 )
-    return Transformation(trans.pj, trans.direction == PJ_FWD ? PJ_INV : PJ_FWD)
+    source_crs = proj_get_source_crs(trans.pj)
+    target_crs = proj_get_target_crs(trans.pj)
+
+    return Transformation(
+        source_crs, target_crs;
+        direction = trans.direction == PJ_FWD ? PJ_INV : PJ_FWD,
+        area = area,
+        ctx = ctx,
+    )
 end
 
 function (trans::Transformation)(coord::StaticVector{2,<:AbstractFloat})
