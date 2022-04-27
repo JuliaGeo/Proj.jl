@@ -125,21 +125,53 @@ end
 end
 
 @testset "inverse transformation" begin
-    trans = Proj.Transformation("EPSG:4326", "+proj=utm +zone=32 +datum=WGS84")
+    trans = Proj.Transformation(
+        "EPSG:4326",
+        "+proj=utm +zone=32 +datum=WGS84",
+        always_xy = true,
+    )
 
-    # for custom / proj strings, no description can be looked up in the database
+    # for custom / proj strings, or modified axis order, no description can be looked up in
+    # the database
     @test repr(trans) == """
     Transformation
-        source: WGS 84
-        target: unknown"""
+        source: unknown
+        target: unknown
+        direction: forward
+    """
 
-    trans⁻¹ = inv(trans)
-    trans¹ = inv(trans⁻¹)
+    trans⁻¹ = inv(trans, always_xy = true)
+    trans¹ = inv(trans⁻¹, always_xy = true)
 
-    # inverse twice should get the same transform back
+    # inv does not flip source and target, so the WKT stays the same
     wkt_type = Proj.PJ_WKT2_2019
-    @test Proj.proj_as_wkt(trans⁻¹.pj, wkt_type) != Proj.proj_as_wkt(trans.pj, wkt_type)
+    @test Proj.proj_as_wkt(trans⁻¹.pj, wkt_type) == Proj.proj_as_wkt(trans.pj, wkt_type)
     @test Proj.proj_as_wkt(trans¹.pj, wkt_type) == Proj.proj_as_wkt(trans.pj, wkt_type)
+
+    a = Proj.proj_coord(12, 55)
+    b = Proj.proj_coord(691875.632, 6098907.825)
+    @test trans⁻¹(b) ≈ a
+    @test trans¹(a) ≈ b
+    @test trans⁻¹.direction == PJ_INV
+    @test trans¹.direction == PJ_FWD
+
+    # we don't check if source and target are equal when constructing a identity transform
+    # since Transformation is mutable, it can always be changed after construction
+    trans = Proj.Transformation(
+        "EPSG:4326",
+        "+proj=utm +zone=32 +datum=WGS84",
+        direction = PJ_IDENT,
+    )
+    @test trans(a) ≈ a
+    trans⁻¹ = inv(trans, always_xy = true)
+    @test trans⁻¹(a) ≈ a
+    @test trans⁻¹.direction == PJ_IDENT
+    trans⁻¹.direction = PJ_FWD
+    @test trans⁻¹(a) ≈ b
+
+    @test inv(PJ_FWD) == PJ_INV
+    @test inv(PJ_IDENT) == PJ_IDENT
+    @test inv(PJ_INV) == PJ_FWD
 end
 
 @testset "single transformation" begin
@@ -244,7 +276,9 @@ end
     @test repr(trans) == """
     Transformation
         source: WGS 84 (with axis order normalized for visualization)
-        target: NAD27(76) / UTM zone 15N"""
+        target: NAD27(76) / UTM zone 15N
+        direction: forward
+    """
 end
 
 @testset "in and output types" begin
