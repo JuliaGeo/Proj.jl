@@ -32,18 +32,9 @@ trans([12, 55])
 inv(trans)([691875.632, 6098907.825]) ≈ [12, 55]
 ```
 
-```julia
-# This is the old API of this package, which will be removed soon
-wgs84 = Projection("+proj=longlat +datum=WGS84 +no_defs")
-utm56 = Projection("+proj=utm +zone=56 +south +datum=WGS84 +units=m +no_defs")
-
-transform(wgs84, utm56, [150 -27 0])
-# Should result in [202273.913 7010024.033 0.0]
-```
-
 Note that, as described in https://proj.org/resource_files.html, PROJ has the capability
-to use remote grids for transformations that need them. For users that have not set
-the environment variable `PROJNETWORK=ON`, or changed `proj.ini`, the networking is
+to use remote grids for transformations that need them. Unless you have manually set
+the environment variable `PROJNETWORK=ON` or changed `proj.ini`, networking is
 disabled by default. To enable from Julia, run `Proj.enable_network!()`.
 `Proj.network_enabled()` can be used to check the setting. Note that it needs to be set
 before creating a transformation, otherwise it will have no effect.
