@@ -100,11 +100,18 @@ Proj.proj_context_is_network_enabled()
 @test xyzt_transform(SA_F64[151, -33, 5, floatmax()*2]) ==
       SA[313153.2281628684, 6.346937876336246e6, 5.280603319143665, Inf]
 
-@test PROJ_jll.cs2cs() do cs2cs
-    read_cmd(
-        pipeline(IOBuffer("-33 151 5 0"), `$cs2cs -d 8 EPSG:4326+5773 EPSG:7856+5711`),
-    )
-end == "313153.22816287 6346937.87633625 5.28060332 0"
+PROJ_jll.cs2cs() do cs2cs
+    withenv("PROJ_NETWORK" => "OFF") do
+        @test read_cmd(
+            pipeline(IOBuffer("-33 151 5 0"), `$cs2cs -d 8 EPSG:4326+5773 EPSG:7856+5711`),
+        ) == "313153.27125690 6346937.91486492 5.00000000 0"
+    end
+    withenv("PROJ_NETWORK" => "ON") do
+        @test read_cmd(
+            pipeline(IOBuffer("-33 151 5 0"), `$cs2cs -d 8 EPSG:4326+5773 EPSG:7856+5711`),
+        ) == "313153.22816287 6346937.87633625 5.28060332 0"
+    end
+end
 
 @test PROJ_jll.projinfo() do projinfo
     read_cmd(`$projinfo  -o PROJ EPSG:25832`)
