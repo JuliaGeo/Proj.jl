@@ -3,6 +3,7 @@ module Proj
 using PROJ_jll
 using CEnum
 using CoordinateTransformations
+using NetworkOptions: ca_roots
 
 export PROJ_jll
 export PJ_DIRECTION, PJ_FWD, PJ_IDENT, PJ_INV
@@ -122,6 +123,12 @@ function __init__()
     # register custom error handler
     funcptr = @cfunction(log_func, Ptr{Cvoid}, (Ptr{Cvoid}, Cint, Cstring))
     proj_log_func(C_NULL, funcptr)
+
+    # set path to CA certificates
+    ca_path = ca_roots()
+    if ca_path !== nothing
+        proj_context_set_ca_bundle_path(ca_path)
+    end
 
     # point to the location of the provided shared resources
     PROJ_LIB[] = joinpath(PROJ_jll.artifact_dir, "share", "proj")
