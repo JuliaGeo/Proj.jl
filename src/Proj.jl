@@ -2,15 +2,87 @@ module Proj
 
 using PROJ_jll
 using CEnum
-using StaticArrays
 using CoordinateTransformations
 
 export PROJ_jll
 export PJ_DIRECTION, PJ_FWD, PJ_IDENT, PJ_INV
 
+"""
+    struct Coord <: AbstractVector{Float64}
+
+    Coord(x, y, [z = 0], [t = Inf])
+    Coord(v::AbstractVector{<:Real})
+    Coord(v)
+
+Represent a coordinate with 4 Float64 values. Struct for interoperability with the PROJ C
+API, specifically anything that expects a
+[`PJ_COORD`](https://proj.org/development/reference/datatypes.html#c.PJ_COORD).
+
+The constructors accept either 2 to 4 numbers, or 1 collection of 2 to 4 numbers, with the
+first two required numbers representing x and y coordinates. Number 3 is the elevation
+(defaults to 0), and number 4 is the time in years (defaults to Inf).
+
+The four fields are called x, y, z and t, but note that depending on the [axis
+ordering](https://proj.org/faq.html#why-is-the-axis-ordering-in-proj-not-consistent) the
+field x may represent y and vice versa. You can use getindex `coord[2]` to avoid confusion.
+
+The user generally does not need to create a `Coord` directly, since the input coordinates
+are automatically converted to `Coord` by ccall. Therefore the constuctors need to be as
+flexible as the call methods on the `Transformation`.
+
+# Examples
+```julia
+julia> Proj.Coord(1.0, 2.0)
+4-element Proj.Coord:
+  1.0
+  2.0
+  0.0
+ Inf
+
+julia> Proj.Coord((1.0, 2.0, 3.0))
+4-element Proj.Coord:
+  1.0
+  2.0
+  3.0
+ Inf
+```
+"""
+struct Coord <: AbstractVector{Float64}
+    x::Float64
+    y::Float64
+    z::Float64
+    t::Float64
+    Coord(x, y, z = 0.0, t = Inf) = new(x, y, z, t)
+end
+
+# this shields a StackOverflow from the splatting constructor
+Coord(::Real) = error("Proj.Coord takes 2 to 4 numbers, one given")
+Coord(v) = Coord(v...)
+
+function Coord(v::AbstractVector{<:Real})
+    n = length(v)
+    return if n == 2
+        Coord(v[begin], v[begin+1])
+    elseif n == 3
+        Coord(v[begin], v[begin+1], v[begin+2])
+    elseif n == 4
+        Coord(v[begin], v[begin+1], v[begin+2], v[begin+3])
+    else
+        error("Proj.Coord takes 2 to 4 numbers")
+    end
+end
+
+Base.convert(::Type{Coord}, x) = Coord(x)
+Base.convert(::Type{Coord}, x::Coord) = x
+
+Base.length(::Coord) = 4
+Base.size(::Coord) = (4,)
+Base.getindex(coord::Coord, i::Int) = getfield(coord, i)
+Base.IndexStyle(::Type{Coord}) = IndexLinear()
+Base.eltype(::Coord) = Float64
+
 # type aliases
-const Coord = SVector{4,Float64}
-const Coord234 = Union{SVector{2,Float64},SVector{3,Float64},SVector{4,Float64}}
+const NTuple234 = Union{NTuple{2,Float64},NTuple{3,Float64},NTuple{4,Float64}}
 const PROJ_COMPUTE_VERSION = VersionNumber
 const GEODESIC_VERSION_NUM = VersionNumber
 
@@ -19,7 +91,9 @@ include("coord.jl")
 include("error.jl")
 
 """
-Load a null-terminated list of strings
+    unsafe_loadstringlist(ptr::Ptr{Cstring})
+
+Load a null-terminated list of strings.
 
 It takes a `PROJ_STRING_LIST`, which is a `Ptr{Cstring}`, and returns a `Vector{String}`.
 """
