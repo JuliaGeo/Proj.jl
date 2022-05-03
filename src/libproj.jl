@@ -539,11 +539,11 @@ function proj_trans_bounds(
 end
 
 """
-    proj_coord(x = 0.0, y = 0.0, z = 0.0, t = Inf)
+    proj_coord(x, y, z = 0.0, t = Inf)
 
 Doxygen\\_Suppress
 """
-function proj_coord(x = 0.0, y = 0.0, z = 0.0, t = Inf)
+function proj_coord(x, y, z = 0.0, t = Inf)
     @ccall libproj.proj_coord(x::Cdouble, y::Cdouble, z::Cdouble, t::Cdouble)::Coord
 end
 

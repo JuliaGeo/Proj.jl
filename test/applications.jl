@@ -51,7 +51,7 @@ function xyzt_transform_cli(point::AbstractVector; network::Bool = false)
 end
 
 function xyzt_transform_cli(point::String; network::Bool = false)
-    proj_network = network ? "ON" : nothing
+    proj_network = network ? "ON" : "OFF"
     PROJ_jll.cs2cs() do cs2cs
         withenv("PROJ_NETWORK" => proj_network) do
             read_cmd(pipeline(IOBuffer(point), `$cs2cs -d 6 EPSG:4326+5773 EPSG:7856+5711`))
@@ -60,9 +60,11 @@ function xyzt_transform_cli(point::String; network::Bool = false)
 end
 
 function xyzt_transform(point::AbstractVector; network::Bool = false)
-    proj_network = network ? "ON" : nothing
-    trans = Proj.Transformation("EPSG:4326+5773", "EPSG:7856+5711", always_xy = true)
-    trans(point)
+    proj_network = network ? "ON" : "OFF"
+    withenv("PROJ_NETWORK" => proj_network) do
+        trans = Proj.Transformation("EPSG:4326+5773", "EPSG:7856+5711", always_xy = true)
+        trans(point)
+    end
 end
 
 # http://osgeo-org.1560.x6.nabble.com/PROJ-Different-results-from-cs2cs-vs-C-API-code-td5446396.html
@@ -91,14 +93,13 @@ Proj.proj_context_is_network_enabled()
 @test Proj.proj_context_set_enable_network(1) == 1
 # this is like passing floatmax() to the cli, but if we do it correctly we expect
 # it to be like the version that passes only xyz to the cli
-@test xyzt_transform(SA_F64[151, -33, 5]) ==
-      SA[313153.2281628684, 6.346937876336246e6, 5.280603319143665]
+p = xyzt_transform(SA_F64[151, -33, 5])
+@test is_approx(p, (313153.2281628684, 6.346937876336246e6, 5.280603319143665))
 # this is expected, like the above
-@test xyzt_transform(SA_F64[151, -33, 5, 2020]) ==
-      SA[313153.2281628684, 6.346937876336246e6, 5.280603319143665, 2020.0]
-
-@test xyzt_transform(SA_F64[151, -33, 5, floatmax()*2]) ==
-      SA[313153.2281628684, 6.346937876336246e6, 5.280603319143665, Inf]
+p = xyzt_transform(SA_F64[151, -33, 5, 2020])
+@test is_approx(p, (313153.2281628684, 6.346937876336246e6, 5.280603319143665, 2020.0))
+p = xyzt_transform(SA_F64[151, -33, 5, floatmax()*2])
+@test is_approx(p, (313153.2281628684, 6.346937876336246e6, 5.280603319143665, Inf))
 
 PROJ_jll.cs2cs() do cs2cs
     withenv("PROJ_NETWORK" => "OFF") do

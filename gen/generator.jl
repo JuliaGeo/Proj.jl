@@ -21,7 +21,7 @@ function rewrite(ex::Expr)
 
         # make certain function arguments optional
         if fname === :proj_coord
-            fargs′ = [kw(:x, 0.0), kw(:y, 0.0), kw(:z, 0.0), kw(:t, Inf)]
+            fargs′ = [:x, :y, kw(:z, 0.0), kw(:t, Inf)]
         elseif fname in (:proj_create_crs_to_crs, :proj_create_crs_to_crs_from_pj)
             fargs′[3] = kw(:area, :C_NULL)
         elseif fname === :proj_create_from_wkt

@@ -2,22 +2,25 @@
 
 [![CI](https://github.com/JuliaGeo/Proj.jl/workflows/CI/badge.svg)](https://github.com/JuliaGeo/Proj.jl/actions?query=workflow%3ACI)
 
-A simple Julia wrapper around the [PROJ](https://proj.org/) cartographic projections library.
+A simple [Julia](https://julialang.org/) wrapper around the [PROJ](https://proj.org/)
+cartographic projections library.
 
 Quickstart, based on the [PROJ docs](https://proj.org/development/quickstart.html):
 
 ```julia
 using Proj
 
-# Proj.jl implements the CoordinateTransformations.jl API
-# A Proj.Transformation needs the source and target coordinate reference systems
+# Proj.jl implements the CoordinateTransformations.jl API.
+# A Proj.Transformation needs the source and target coordinate reference systems.
 trans = Proj.Transformation("EPSG:4326", "+proj=utm +zone=32 +datum=WGS84")
 
-# Once created, you can call this object to transform points
-# the result will be a SVector from StaticArrays.jl
+# Once created, you can call this object to transform points.
+# The result will be a tuple of Float64s, of length 2, 3 or 4 depending on the input length.
+# The 3rd coordinate is elevation (default 0), and the 4th is time (default Inf).
 # Here the (latitude, longitude) of Copenhagen is entered
-trans([55, 12])
-# -> SVector{2, Float64}(691875.632, 6098907.825)
+trans(55, 12)
+# -> (691875.632137542, 6.098907825129169e6)
+# Passing coordinates as a single tuple or vector also works.
 
 # Note that above the latitude is passed first, because that is the axis order that the
 # EPSG mandates. If you want to pass in (longitude, latitude) / (x, y), you can set the
@@ -25,11 +28,11 @@ trans([55, 12])
 trans = Proj.Transformation("EPSG:4326", "+proj=utm +zone=32 +datum=WGS84", always_xy=true)
 
 # now we input (longitude, latitude), and get the same result as above
-trans([12, 55])
-# -> SVector{2, Float64}(691875.632, 6098907.825)
+trans(12, 55)
+# -> (691875.632137542, 6.098907825129169e6)
 
 # using `inv` we can reverse the direction, `compose` can combine two transformations in one
-inv(trans)([691875.632, 6098907.825]) ≈ [12, 55]
+inv(trans)(691875.632137542, 6.098907825129169e6) == (12, 55)
 ```
 
 Note that, as described in https://proj.org/resource_files.html, PROJ has the capability
