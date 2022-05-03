@@ -90,9 +90,8 @@ end
     # Given that we have used proj_normalize_for_visualization(), the order of
     # coordinates is longitude, latitude, and values are expressed in degrees.
     a = Proj.proj_coord(12, 55)
-    @test a isa AbstractVector
-    @test a isa SVector{4,Float64}
     @test a isa Proj.Coord
+    @test a isa AbstractVector
     @test eltype(a) == Float64
     @test length(a) == 4
     @test sum(a) == Inf
@@ -104,17 +103,11 @@ end
 
     # transform to UTM zone 32
     b = Proj.proj_trans(pj, Proj.PJ_FWD, a)
-    @test b[1] ≈ 691875.632
-    @test b[2] ≈ 6098907.825
-    @test b[3] === 0.0
-    @test b[4] === Inf
+    @test is_approx(b, (691875.632, 6098907.825, 0.0, Inf))
 
     # inverse transform, back to geographical
     b = Proj.proj_trans(pj, Proj.PJ_INV, b)
-    @test b[1] ≈ 12.0
-    @test b[2] ≈ 55.0
-    @test b[3] === 0.0
-    @test b[4] === Inf
+    @test is_approx(b, (12.0, 55.0, 0.0, Inf))
 
     # Clean up
     pj = Proj.proj_destroy(pj)
@@ -148,10 +141,10 @@ end
     @test Proj.proj_as_wkt(trans⁻¹.pj, wkt_type) == Proj.proj_as_wkt(trans.pj, wkt_type)
     @test Proj.proj_as_wkt(trans¹.pj, wkt_type) == Proj.proj_as_wkt(trans.pj, wkt_type)
 
-    a = Proj.proj_coord(12, 55)
-    b = Proj.proj_coord(691875.632, 6098907.825)
-    @test trans⁻¹(b) ≈ a
-    @test trans¹(a) ≈ b
+    a = (12.0, 55.0)
+    b = (691875.632, 6098907.825)
+    @test is_approx(trans⁻¹(b), a)
+    @test is_approx(trans¹(a), b)
     @test trans⁻¹.direction == PJ_INV
     @test trans¹.direction == PJ_FWD
 
@@ -162,12 +155,12 @@ end
         "+proj=utm +zone=32 +datum=WGS84",
         direction = PJ_IDENT,
     )
-    @test trans(a) ≈ a
+    @test trans(a) === a
     trans⁻¹ = inv(trans, always_xy = true)
-    @test trans⁻¹(a) ≈ a
+    @test trans⁻¹(a) === a
     @test trans⁻¹.direction == PJ_IDENT
     trans⁻¹.direction = PJ_FWD
-    @test trans⁻¹(a) ≈ b
+    @test is_approx(trans⁻¹(a), b)
 
     @test inv(PJ_FWD) == PJ_INV
     @test inv(PJ_IDENT) == PJ_IDENT
@@ -182,20 +175,18 @@ end
     trans = Proj.Transformation(source_crs, target_crs)
 
     # Check that altitude and time inputs are correctly forwarded from the transformation
-    @test trans(SA_F64[52.16, 5.39, 5, 2020]) ≈
-          SA[155191.3538124342, 463537.1362732911, 5.0, 2020.0]
+    p = trans(SA_F64[52.16, 5.39, 5, 2020])
+    @test is_approx(p, (155191.3538124342, 463537.1362732911, 5.0, 2020.0))
 
-    a = Proj.proj_coord(52.16, 5.39)
+    a = (52.16, 5.39)
     b = Proj.proj_trans(trans.pj, Proj.PJ_FWD, a)
-    @test a != b
-    @test b ≈ Proj.proj_coord(155191.3538124342, 463537.1362732911)
+    @test is_approx(b, (155191.3538124342, 463537.1362732911))
 
-    # with always_xy=True, we need to use lon/lat, and still get x/y out
+    # with always_xy = true, we need to use lon/lat, and still get x/y out
     trans = Proj.Transformation(source_crs, target_crs, always_xy = true)
-    a = Proj.proj_coord(5.39, 52.16)
+    a = (5.39, 52.16)
     b = Proj.proj_trans(trans.pj, Proj.PJ_FWD, a)
-    @test a != b
-    @test b ≈ Proj.proj_coord(155191.3538124342, 463537.1362732911)
+    @test is_approx(b, (155191.3538124342, 463537.1362732911))
 end
 
 @testset "dense 4D coord vector transformation" begin
@@ -204,11 +195,11 @@ end
     trans = Proj.Transformation(source_crs, target_crs, always_xy = true)
     # This array is mutated in place. Note that this array needs to have 4D elements,
     # with 2D elements it will only do every other one
-    A = [Proj.proj_coord(5.39, 52.16) for _ = 1:5]
+    A = [Proj.Coord(5.39, 52.16) for _ = 1:5]
     err = Proj.proj_trans_array(trans.pj, Proj.PJ_FWD, length(A), A)
     @test err == 0
-    B = [Proj.proj_coord(155191.3538124342, 463537.1362732911) for _ = 1:5]
-    @test A ≈ B
+    B = [Proj.Coord(155191.3538124342, 463537.1362732911) for _ = 1:5]
+    @test all(is_approx(a, b) for (a, b) in zip(A, B))
 
     # since A is not in target_crs, we will get an error on a second call
     err = Proj.PROJError("push: Invalid latitude")
@@ -281,42 +272,56 @@ end
     """
 end
 
+@testset "Coord constructor" begin
+    coord = Proj.Coord(1.0, 2.0, 3.0, Inf)
+    @test_throws MethodError Proj.Coord()
+    @test_throws ErrorException Proj.Coord(0.0)
+    @test Proj.Coord(1.0, 2.0) == Proj.Coord(1.0, 2.0, 0.0, Inf)
+    @test Proj.Coord(1.0, 2.0, 3.0) == coord
+    @test Proj.Coord(1.0, 2.0, 3.0, 4.0) == Proj.Coord(1.0, 2.0, 3.0, 4.0)
+
+    @test Proj.Coord((1.0, 2.0, 3.0)) == coord
+    @test Proj.Coord([1.0, 2.0, 3.0]) == coord
+    @test Proj.Coord(1, 2, 3) == coord
+    @test Proj.Coord([1, 2, 3]) == coord
+    @test Proj.Coord(UInt8[1, 2, 3]) == coord
+    @test Proj.Coord(1:3) == coord
+    @test Proj.Coord(1.0f0:3) == coord
+    @test Proj.Coord((i for i = 1:3)) == coord
+    @test Proj.Coord(coord) === coord
+    @test convert(Proj.Coord, coord) === coord
+    @test convert(Proj.Coord, (1.0, 2.0, 3.0)) == coord
+
+    @inferred Proj.Coord(1, 2)
+    @inferred Proj.Coord((1, 2))
+    @inferred Proj.Coord([1, 2])
+    @inferred Proj.Coord(SA[1, 2])
+end
+
 @testset "in and output types" begin
     trans = Proj.Transformation("EPSG:4326", "EPSG:28992", always_xy = true)
     trans(Proj.proj_coord(5.39, 52.16))
     b = trans(SA[5.39, 52.16, 0.0, 0.0])
 
-
     # StaticVector, Vector or Tuple
-    x, y = 5.39, 52.16
-    for inpoint in [SA[x, y], [x, y], (x, y)]
-        p = if inpoint isa Vector
-            Test.@inferred SArray{S,Float64,1,L} where {S<:Tuple,L} trans(inpoint)
-        else
-            Test.@inferred trans(inpoint)
-        end
-        @test p ≈ [155191.3538124342, 463537.1362732911]
-        @test p isa SVector{2,Float64}
-    end
+    x, y, z, t = 5.39, 52.16, 0.0, Inf
 
-    # StaticVectors like GeometryBasics.Point are returned, also with Float32
-    p = Test.@inferred trans(Point(5.39f0, 52.16f0))
-    @test p ≈ [155191.3538124342, 463537.1362732911]
-    @test p isa Point{2,Float32}
+    @inferred trans(x, y)
+    @inferred trans(x, y, z)
+    @inferred trans(x, y, z, t)
+    @inferred trans(Proj.Coord(x, y))
+    @inferred trans((x, y))
+    # for Vector it cannot be precisely inferred due to unknown length
+    @inferred Proj.NTuple234 trans([x, y])
+    @inferred trans(SA[x, y])
 
-    # Integer input will go to the ::Any method and become Float64
-    @test trans(SA[1, 2]) isa SVector{2,Float64}
-    @test trans([5, 52]) ≈ [128410.08537081012, 445806.50883314764]
-
-    # SVector{3, Float64}
-    p = Test.@inferred trans(SA[5.39, 52.16, 2.0])
-    @test p ≈ [155191.35381147722, 463537.13624246384, 2.0]
-    @test p isa SVector{3,Float64}
-
-    # SVector{4, Float64}
-    p = Test.@inferred trans(SA[5.39, 52.16, 0.0, Inf])
-    @test p ≈ [155191.3538124342, 463537.1362732911, 0.0, Inf]
-    @test p isa SVector{4,Float64}
+    # SVector{2/3/4, Float64}
+    p = trans(SA[5, 52])
+    @test is_approx(p, (128410.08537081012, 445806.50883314764))
+    p = trans(SA[5.39, 52.16, 2.0])
+    @test is_approx(p, (155191.35381147722, 463537.13624246384, 2.0))
+    p = trans(SA[5.39, 52.16, 0.0, Inf])
+    @test is_approx(p, (155191.3538124342, 463537.1362732911, 0.0, Inf))
 end
 
 @testset "network" begin
@@ -332,12 +337,7 @@ end
     @test Proj.network_enabled()
     trans_z = Proj.Transformation("EPSG:4326+5773", "EPSG:7856+5711", always_xy = true)
     z = trans_z((151, -33, 5))[3]
-    if isinf(z)
-        # TODO on CI this hits julia 1.3 all OS, julia 1.6 and nightly Ubuntu only
-        @warn "networking not configured correctly"
-    else
-        @test trans_z((151, -33, 5))[3] ≈ 5.280603319143665
-    end
+    @test trans_z((151, -33, 5))[3] ≈ 5.280603319143665
 
     # 0 args turns it on as well
     Proj.enable_network!(false)

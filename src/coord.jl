@@ -6,6 +6,11 @@ Transformation implements the
 [CoordinateTransformations.jl](https://github.com/JuliaGeometry/CoordinateTransformations.jl)
 API.
 
+To do the transformation on coordinates, call an instance of this struct like a function.
+See below for an example. These functions accept either 2 to 4 numbers, or 1 collection of 2
+to 4 numbers, with the first two required numbers representing x and y coordinates. Number 3
+is the elevation (defaults to 0), and number 4 is the time in years (defaults to Inf).
+
 `source_crs` and `target_crs` can be:
 - a "AUTHORITY:CODE", like EPSG:25832. When using that syntax for a source CRS, the created
   pipeline will expect that the coordinates respect the axis order and axis unit of the
@@ -48,10 +53,8 @@ Transformation
     source: WGS 84 (with axis order normalized for visualization)
     target: Amersfoort / RD New
 
-julia> trans((5.39, 52.16))  # this is in lon,lat order, since we set always_xy to true
-2-element StaticArrays.SVector{2, Float64} with indices SOneTo(2):
- 155191.3538124342
- 463537.1362732911
+julia> trans(5.39, 52.16)  # this is in lon,lat order, since we set always_xy to true
+(155191.3538124342, 463537.1362732911)
 ```
 """
 mutable struct Transformation <: CoordinateTransformations.Transformation
@@ -145,48 +148,35 @@ function Base.inv(
     )
 end
 
-function (trans::Transformation)(coord::StaticVector{2,<:AbstractFloat})
-    T = similar_type(coord)
-    coord = SVector{4,Float64}(coord[1], coord[2], 0.0, Inf)
-    p = proj_trans(trans.pj, trans.direction, coord)
-    return T(p[1], p[2])
+function (trans::Transformation)(x, y)::NTuple{2,Float64}
+    p = proj_trans(trans.pj, trans.direction, (x, y))
+    return p.x, p.y
 end
 
-function (trans::Transformation)(coord::StaticVector{3,<:AbstractFloat})
-    T = similar_type(coord)
-    coord = SVector{4,Float64}(coord[1], coord[2], coord[3], Inf)
-    p = proj_trans(trans.pj, trans.direction, coord)
-    return T(p[1], p[2], p[3])
+function (trans::Transformation)(x, y, z)::NTuple{3,Float64}
+    p = proj_trans(trans.pj, trans.direction, (x, y, z))
+    return p.x, p.y, p.z
 end
 
-function (trans::Transformation)(coord::StaticVector{4,<:AbstractFloat})
-    T = similar_type(coord)
-    coord = SVector{4,Float64}(coord[1], coord[2], coord[3], coord[4])
-    p = proj_trans(trans.pj, trans.direction, coord)
-    return T(p)
+function (trans::Transformation)(x, y, z, t)::NTuple{4,Float64}
+    p = proj_trans(trans.pj, trans.direction, (x, y, z, t))
+    return p.x, p.y, p.z, p.t
 end
 
-function (trans::Transformation)(coord)::Coord234
-    # avoid splatting for performance
+function (trans::Transformation)(coord::Coord)::NTuple{4,Float64}
+    p = proj_trans(trans.pj, trans.direction, coord)
+    return p.x, p.y, p.z, p.t
+end
+
+function (trans::Transformation)(coord)::NTuple234
     n = length(coord)
-    coord = if n == 2
-        proj_coord(coord[1], coord[2])
-    elseif n == 3
-        proj_coord(coord[1], coord[2], coord[3])
-    elseif n == 4
-        proj_coord(coord[1], coord[2], coord[3], coord[4])
-    else
-        throw(ArgumentError("input should be length 2, 3 or 4"))
-    end
-
     p = proj_trans(trans.pj, trans.direction, coord)
-
-    if n == 2
-        return SVector{2,Float64}(p[1], p[2])
+    return if n == 2
+        p.x, p.y
     elseif n == 3
-        return SVector{3,Float64}(p[1], p[2], p[3])
+        p.x, p.y, p.z
     else
-        return p
+        p.x, p.y, p.z, p.t
     end
 end
 
