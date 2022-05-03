@@ -168,15 +168,15 @@ function (trans::Transformation)(coord::Coord)::NTuple{4,Float64}
     return p.x, p.y, p.z, p.t
 end
 
-function (trans::Transformation)(coord)::NTuple234
+function (trans::Transformation)(coord::T)::T where T
     n = length(coord)
     p = proj_trans(trans.pj, trans.direction, coord)
     return if n == 2
-        p.x, p.y
+        T(p.x, p.y)
     elseif n == 3
-        p.x, p.y, p.z
+        T(p.x, p.y, p.z)
     else
-        p.x, p.y, p.z, p.t
+        T(p.x, p.y, p.z, p.t)
     end
 end
 
