@@ -2,6 +2,7 @@ using Test
 using StaticArrays
 using Proj
 import PROJ_jll
+using NetworkOptions: ca_roots
 
 function read_cmd(cmd)
     bytes = read(cmd)
@@ -19,20 +20,7 @@ end == "421184.70 4983436.77 0.00"
 
 # https://proj.org/usage/transformation.html?#grid-based-datum-adjustments
 @test PROJ_jll.cs2cs() do cs2cs
-    withenv("PROJ_NETWORK" => "ON") do
-        # instead of ntv1_can.dat we can also specify ca_nrc_ntv1_can.tif
-        read_cmd(
-            pipeline(
-                IOBuffer("-111 50"),
-                `$cs2cs +proj=latlong +ellps=clrk66 +nadgrids=ntv1_can.dat
-                    +to +proj=latlong +ellps=GRS80 +datum=NAD83`,
-            ),
-        )
-    end
-end == "111d0'3.006\"W 50d0'0.125\"N 0.000"
-
-@test PROJ_jll.cs2cs() do cs2cs
-    withenv("PROJ_NETWORK" => "ON") do
+    withenv("PROJ_NETWORK" => "ON", "PROJ_CURL_CA_BUNDLE" => ca_roots()) do
         read_cmd(
             pipeline(
                 IOBuffer("-111 50"),
@@ -42,7 +30,6 @@ end == "111d0'3.006\"W 50d0'0.125\"N 0.000"
         )
     end
 end == "111d0'3.006\"W 50d0'0.125\"N 0.000"
-
 
 function xyzt_transform_cli(point::AbstractVector; network::Bool = false)
     # convert the vector to a string like "-33 151 5 2020"
