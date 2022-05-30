@@ -6,7 +6,7 @@ using StaticArrays: SA
 is_approx(a, b) = all(isapprox(c[1], c[2]) for c in zip(a, b))
 
 @testset "Proj" begin
-    include("proj6api.jl")
+    include("libproj.jl")
     include("applications.jl")
 
 end # testset "Proj"
