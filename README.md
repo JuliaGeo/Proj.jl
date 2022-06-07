@@ -3,7 +3,7 @@
 [![CI](https://github.com/JuliaGeo/Proj.jl/workflows/CI/badge.svg)](https://github.com/JuliaGeo/Proj.jl/actions?query=workflow%3ACI)
 
 A simple [Julia](https://julialang.org/) wrapper around the [PROJ](https://proj.org/)
-cartographic projections library. This package has been renamed from Proj4.jl to Proj.jl.
+cartographic projections library. This package has been renamed from [Proj4.jl](https://github.com/JuliaGeo/Proj.jl/tree/v0.7.6) to Proj.jl.
 
 Quickstart, based on the [PROJ docs](https://proj.org/development/quickstart.html):
 
