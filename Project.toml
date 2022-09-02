@@ -1,6 +1,6 @@
 name = "Proj"
 uuid = "c94c279d-25a6-4763-9509-64d165bea63e"
-version = "1.0.0"
+version = "1.1.0"
 
 [deps]
 CEnum = "fa961155-64e5-5f13-b03f-caf6b980ea82"
@@ -11,7 +11,7 @@ PROJ_jll = "58948b4f-47e0-5654-a9ad-f609743f8632"
 [compat]
 CEnum = "0.2, 0.3, 0.4"
 CoordinateTransformations = "0.6"
-PROJ_jll = "900"
+PROJ_jll = "900.100"
 julia = "1.6"
 
 [extras]
