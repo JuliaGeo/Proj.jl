@@ -141,11 +141,6 @@ function proj_context_set_search_paths(count_paths, paths, ctx = C_NULL)
     )::Cvoid
 end
 
-"""
-    proj_context_set_ca_bundle_path(path, ctx = C_NULL)
-
-Doxygen\\_Suppress
-"""
 function proj_context_set_ca_bundle_path(path, ctx = C_NULL)
     @ccall libproj.proj_context_set_ca_bundle_path(
         ctx::Ptr{PJ_CONTEXT},
@@ -153,6 +148,11 @@ function proj_context_set_ca_bundle_path(path, ctx = C_NULL)
     )::Cvoid
 end
 
+"""
+    proj_context_use_proj4_init_rules(enable, ctx = C_NULL)
+
+Doxygen\\_Suppress
+"""
 function proj_context_use_proj4_init_rules(enable, ctx = C_NULL)
     @ccall libproj.proj_context_use_proj4_init_rules(
         ctx::Ptr{PJ_CONTEXT},
@@ -450,6 +450,10 @@ function proj_area_set_bbox(
     )::Cvoid
 end
 
+function proj_area_set_name(area, name)
+    @ccall libproj.proj_area_set_name(area::Ptr{PJ_AREA}, name::Cstring)::Cvoid
+end
+
 function proj_area_destroy(area)
     @ccall libproj.proj_area_destroy(area::Ptr{PJ_AREA})::Cvoid
 end
@@ -478,6 +482,10 @@ end
 
 function proj_trans(P, direction, coord)
     @ccall libproj.proj_trans(P::Ptr{PJ}, direction::PJ_DIRECTION, coord::Coord)::Coord
+end
+
+function proj_trans_get_last_used_operation(P)
+    @ccall libproj.proj_trans_get_last_used_operation(P::Ptr{PJ})::Ptr{PJ}
 end
 
 function proj_trans_array(P, direction, n, coord)
@@ -1532,6 +1540,18 @@ function proj_operation_factory_context_set_area_of_interest(
     )::Cvoid
 end
 
+function proj_operation_factory_context_set_area_of_interest_name(
+    factory_ctx,
+    area_name,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_operation_factory_context_set_area_of_interest_name(
+        ctx::Ptr{PJ_CONTEXT},
+        factory_ctx::Ptr{PJ_OPERATION_FACTORY_CONTEXT},
+        area_name::Cstring,
+    )::Cvoid
+end
+
 function proj_operation_factory_context_set_crs_extent_use(factory_ctx, use, ctx = C_NULL)
     @ccall libproj.proj_operation_factory_context_set_crs_extent_use(
         ctx::Ptr{PJ_CONTEXT},
@@ -2147,17 +2167,17 @@ end
 
 The general direct geodesic problem.
 
-*g* must have been initialized with a call to [`geod_init`](@ref)(). *lat1* should be in the range [−90°, 90°]. The function value *a12* equals *s12_a12* if *flags* & GEOD\\_ARCMODE. Any of the "return" arguments, *plat2*, etc., may be replaced by 0, if you do not need some quantities computed.
+*g* must have been initialized with a call to [`geod_init`](@ref)(). *lat1* should be in the range [−90°, 90°]. The function value *a12* equals *s12_a12* if *flags* & ::GEOD\\_ARCMODE. Any of the "return" arguments, *plat2*, etc., may be replaced by 0, if you do not need some quantities computed.
 
-With *flags* & GEOD\\_LONG\\_UNROLL bit set, the longitude is "unrolled" so that the quantity *lon2* − *lon1* indicates how many times and in what sense the geodesic encircles the ellipsoid.********************************************************************
+With *flags* & ::GEOD\\_LONG\\_UNROLL bit set, the longitude is "unrolled" so that the quantity *lon2* − *lon1* indicates how many times and in what sense the geodesic encircles the ellipsoid.********************************************************************
 
 ### Parameters
 * `g`:\\[in\\] a pointer to the [`geod_geodesic`](@ref) object specifying the ellipsoid.
 * `lat1`:\\[in\\] latitude of point 1 (degrees).
 * `lon1`:\\[in\\] longitude of point 1 (degrees).
 * `azi1`:\\[in\\] azimuth at point 1 (degrees).
-* `flags`:\\[in\\] bitor'ed combination of [`geod_flags`](@ref)(); *flags* & GEOD\\_ARCMODE determines the meaning of *s12_a12* and *flags* & GEOD\\_LONG\\_UNROLL "unrolls" *lon2*.
-* `s12_a12`:\\[in\\] if *flags* & GEOD\\_ARCMODE is 0, this is the distance from point 1 to point 2 (meters); otherwise it is the arc length from point 1 to point 2 (degrees); it can be negative.
+* `flags`:\\[in\\] bitor'ed combination of ::[`geod_flags`](@ref); *flags* & ::GEOD\\_ARCMODE determines the meaning of *s12_a12* and *flags* & ::GEOD\\_LONG\\_UNROLL "unrolls" *lon2*.
+* `s12_a12`:\\[in\\] if *flags* & ::GEOD\\_ARCMODE is 0, this is the distance from point 1 to point 2 (meters); otherwise it is the arc length from point 1 to point 2 (degrees); it can be negative.
 * `plat2`:\\[out\\] pointer to the latitude of point 2 (degrees).
 * `plon2`:\\[out\\] pointer to the longitude of point 2 (degrees).
 * `pazi2`:\\[out\\] pointer to the (forward) azimuth at point 2 (degrees).
@@ -2310,7 +2330,7 @@ Initialize a [`geod_geodesicline`](@ref) object.
 
 *g* must have been initialized with a call to [`geod_init`](@ref)(). *lat1* should be in the range [−90°, 90°].
 
-The [`geod_mask`](@ref) values are [see [`geod_mask`](@ref)()]: - *caps* |= GEOD\\_LATITUDE for the latitude *lat2*; this is added automatically, - *caps* |= GEOD\\_LONGITUDE for the latitude *lon2*, - *caps* |= GEOD\\_AZIMUTH for the latitude *azi2*; this is added automatically, - *caps* |= GEOD\\_DISTANCE for the distance *s12*, - *caps* |= GEOD\\_REDUCEDLENGTH for the reduced length *m12*, - *caps* |= GEOD\\_GEODESICSCALE for the geodesic scales *M12* and *M21*, - *caps* |= GEOD\\_AREA for the area *S12*, - *caps* |= GEOD\\_DISTANCE\\_IN permits the length of the geodesic to be given in terms of *s12*; without this capability the length can only be specified in terms of arc length. . A value of *caps* = 0 is treated as GEOD\\_LATITUDE | GEOD\\_LONGITUDE | GEOD\\_AZIMUTH | GEOD\\_DISTANCE\\_IN (to support the solution of the "standard" direct problem).
+The ::[`geod_mask`](@ref) values are: - *caps* |= ::GEOD\\_LATITUDE for the latitude *lat2*; this is added automatically, - *caps* |= ::GEOD\\_LONGITUDE for the latitude *lon2*, - *caps* |= ::GEOD\\_AZIMUTH for the latitude *azi2*; this is added automatically, - *caps* |= ::GEOD\\_DISTANCE for the distance *s12*, - *caps* |= ::GEOD\\_REDUCEDLENGTH for the reduced length *m12*, - *caps* |= ::GEOD\\_GEODESICSCALE for the geodesic scales *M12* and *M21*, - *caps* |= ::GEOD\\_AREA for the area *S12*, - *caps* |= ::GEOD\\_DISTANCE\\_IN permits the length of the geodesic to be given in terms of *s12*; without this capability the length can only be specified in terms of arc length. . A value of *caps* = 0 is treated as ::GEOD\\_LATITUDE | ::GEOD\\_LONGITUDE | ::GEOD\\_AZIMUTH | ::GEOD\\_DISTANCE\\_IN (to support the solution of the "standard" direct problem).
 
 When initialized by this function, point 3 is undefined (l->s13 = l->a13 = NaN).********************************************************************
 
@@ -2320,7 +2340,7 @@ When initialized by this function, point 3 is undefined (l->s13 = l->a13 = NaN).
 * `lat1`:\\[in\\] latitude of point 1 (degrees).
 * `lon1`:\\[in\\] longitude of point 1 (degrees).
 * `azi1`:\\[in\\] azimuth at point 1 (degrees).
-* `caps`:\\[in\\] bitor'ed combination of [`geod_mask`](@ref)() values specifying the capabilities the [`geod_geodesicline`](@ref) object should possess, i.e., which quantities can be returned in calls to [`geod_position`](@ref)() and [`geod_genposition`](@ref)().
+* `caps`:\\[in\\] bitor'ed combination of ::[`geod_mask`](@ref) values specifying the capabilities the [`geod_geodesicline`](@ref) object should possess, i.e., which quantities can be returned in calls to [`geod_position`](@ref)() and [`geod_genposition`](@ref)().
 """
 function geod_lineinit(l, g, lat1, lon1, azi1, caps)
     @ccall libproj.geod_lineinit(
@@ -2347,7 +2367,7 @@ This function sets point 3 of the [`geod_geodesicline`](@ref) to correspond to p
 * `lon1`:\\[in\\] longitude of point 1 (degrees).
 * `azi1`:\\[in\\] azimuth at point 1 (degrees).
 * `s12`:\\[in\\] distance from point 1 to point 2 (meters); it can be negative.
-* `caps`:\\[in\\] bitor'ed combination of [`geod_mask`](@ref)() values specifying the capabilities the [`geod_geodesicline`](@ref) object should possess, i.e., which quantities can be returned in calls to [`geod_position`](@ref)() and [`geod_genposition`](@ref)().
+* `caps`:\\[in\\] bitor'ed combination of ::[`geod_mask`](@ref) values specifying the capabilities the [`geod_geodesicline`](@ref) object should possess, i.e., which quantities can be returned in calls to [`geod_position`](@ref)() and [`geod_genposition`](@ref)().
 """
 function geod_directline(l, g, lat1, lon1, azi1, s12, caps)
     @ccall libproj.geod_directline(
@@ -2374,9 +2394,9 @@ This function sets point 3 of the [`geod_geodesicline`](@ref) to correspond to p
 * `lat1`:\\[in\\] latitude of point 1 (degrees).
 * `lon1`:\\[in\\] longitude of point 1 (degrees).
 * `azi1`:\\[in\\] azimuth at point 1 (degrees).
-* `flags`:\\[in\\] either GEOD\\_NOFLAGS or GEOD\\_ARCMODE to determining the meaning of the *s12_a12*.
-* `s12_a12`:\\[in\\] if *flags* = GEOD\\_NOFLAGS, this is the distance from point 1 to point 2 (meters); if *flags* = GEOD\\_ARCMODE, it is the arc length from point 1 to point 2 (degrees); it can be negative.
-* `caps`:\\[in\\] bitor'ed combination of [`geod_mask`](@ref)() values specifying the capabilities the [`geod_geodesicline`](@ref) object should possess, i.e., which quantities can be returned in calls to [`geod_position`](@ref)() and [`geod_genposition`](@ref)().
+* `flags`:\\[in\\] either ::GEOD\\_NOFLAGS or ::GEOD\\_ARCMODE to determining the meaning of the *s12_a12*.
+* `s12_a12`:\\[in\\] if *flags* = ::GEOD\\_NOFLAGS, this is the distance from point 1 to point 2 (meters); if *flags* = ::GEOD\\_ARCMODE, it is the arc length from point 1 to point 2 (degrees); it can be negative.
+* `caps`:\\[in\\] bitor'ed combination of ::[`geod_mask`](@ref) values specifying the capabilities the [`geod_geodesicline`](@ref) object should possess, i.e., which quantities can be returned in calls to [`geod_position`](@ref)() and [`geod_genposition`](@ref)().
 """
 function geod_gendirectline(l, g, lat1, lon1, azi1, flags, s12_a12, caps)
     @ccall libproj.geod_gendirectline(
@@ -2405,7 +2425,7 @@ This function sets point 3 of the [`geod_geodesicline`](@ref) to correspond to p
 * `lon1`:\\[in\\] longitude of point 1 (degrees).
 * `lat2`:\\[in\\] latitude of point 2 (degrees).
 * `lon2`:\\[in\\] longitude of point 2 (degrees).
-* `caps`:\\[in\\] bitor'ed combination of [`geod_mask`](@ref)() values specifying the capabilities the [`geod_geodesicline`](@ref) object should possess, i.e., which quantities can be returned in calls to [`geod_position`](@ref)() and [`geod_genposition`](@ref)().
+* `caps`:\\[in\\] bitor'ed combination of ::[`geod_mask`](@ref) values specifying the capabilities the [`geod_geodesicline`](@ref) object should possess, i.e., which quantities can be returned in calls to [`geod_position`](@ref)() and [`geod_genposition`](@ref)().
 """
 function geod_inverseline(l, g, lat1, lon1, lat2, lon2, caps)
     @ccall libproj.geod_inverseline(
@@ -2424,14 +2444,14 @@ end
 
 Compute the position along a [`geod_geodesicline`](@ref).
 
-*l* must have been initialized with a call, e.g., to [`geod_lineinit`](@ref)(), with *caps* |= GEOD\\_DISTANCE\\_IN (or *caps* = 0). The values of *lon2* and *azi2* returned are in the range [−180°, 180°]. Any of the "return" arguments *plat2*, etc., may be replaced by 0, if you do not need some quantities computed.
+*l* must have been initialized with a call, e.g., to [`geod_lineinit`](@ref)(), with *caps* |= ::GEOD\\_DISTANCE\\_IN (or *caps* = 0). The values of *lon2* and *azi2* returned are in the range [−180°, 180°]. Any of the "return" arguments *plat2*, etc., may be replaced by 0, if you do not need some quantities computed.
 
 Example, compute way points between JFK and Singapore Changi Airport the "obvious" way using [`geod_direct`](@ref)():
 
 ```c++
 {.c}
    struct geod_geodesic g;
-   double s12, azi1, lat[101],lon[101];
+   double s12, azi1, lat[101], lon[101];
    int i;
    geod_init(&g, 6378137, 1/298.257223563);
    geod_inverse(&g, 40.64, -73.78, 1.36, 103.99, &s12, &azi1, 0);
@@ -2447,7 +2467,7 @@ A faster way using [`geod_position`](@ref)():
 {.c}
    struct geod_geodesic g;
    struct geod_geodesicline l;
-   double lat[101],lon[101];
+   double lat[101], lon[101];
    int i;
    geod_init(&g, 6378137, 1/298.257223563);
    geod_inverseline(&l, &g, 40.64, -73.78, 1.36, 103.99, 0);
@@ -2463,7 +2483,7 @@ A faster way using [`geod_position`](@ref)():
 * `l`:\\[in\\] a pointer to the [`geod_geodesicline`](@ref) object specifying the geodesic line.
 * `s12`:\\[in\\] distance from point 1 to point 2 (meters); it can be negative.
 * `plat2`:\\[out\\] pointer to the latitude of point 2 (degrees).
-* `plon2`:\\[out\\] pointer to the longitude of point 2 (degrees); requires that *l* was initialized with *caps* |= GEOD\\_LONGITUDE.
+* `plon2`:\\[out\\] pointer to the longitude of point 2 (degrees); requires that *l* was initialized with *caps* |= ::GEOD\\_LONGITUDE.
 * `pazi2`:\\[out\\] pointer to the (forward) azimuth at point 2 (degrees).
 """
 function geod_position(l, s12, plat2, plon2, pazi2)
@@ -2481,11 +2501,11 @@ end
 
 The general position function.
 
-*l* must have been initialized with a call to [`geod_lineinit`](@ref)() with *caps* |= GEOD\\_DISTANCE\\_IN. The value *azi2* returned is in the range [−180°, 180°]. Any of the "return" arguments *plat2*, etc., may be replaced by 0, if you do not need some quantities computed. Requesting a value which *l* is not capable of computing is not an error; the corresponding argument will not be altered.
+*l* must have been initialized with a call to [`geod_lineinit`](@ref)() with *caps* |= ::GEOD\\_DISTANCE\\_IN. The value *azi2* returned is in the range [−180°, 180°]. Any of the "return" arguments *plat2*, etc., may be replaced by 0, if you do not need some quantities computed. Requesting a value which *l* is not capable of computing is not an error; the corresponding argument will not be altered.
 
-With *flags* & GEOD\\_LONG\\_UNROLL bit set, the longitude is "unrolled" so that the quantity *lon2* − *lon1* indicates how many times and in what sense the geodesic encircles the ellipsoid.
+With *flags* & ::GEOD\\_LONG\\_UNROLL bit set, the longitude is "unrolled" so that the quantity *lon2* − *lon1* indicates how many times and in what sense the geodesic encircles the ellipsoid.
 
-Example, compute way points between JFK and Singapore Changi Airport using [`geod_genposition`](@ref)(). In this example, the points are evenly space in arc length (and so only approximately equally spaced in distance). This is faster than using [`geod_position`](@ref)() and would be appropriate if drawing the path on a map.
+Example, compute way points between JFK and Singapore Changi Airport using [`geod_genposition`](@ref)(). In this example, the points are evenly spaced in arc length (and so only approximately equally spaced in distance). This is faster than using [`geod_position`](@ref)() and would be appropriate if drawing the path on a map.
 
 ```c++
 {.c}
@@ -2507,16 +2527,16 @@ Example, compute way points between JFK and Singapore Changi Airport using [`geo
 
 ### Parameters
 * `l`:\\[in\\] a pointer to the [`geod_geodesicline`](@ref) object specifying the geodesic line.
-* `flags`:\\[in\\] bitor'ed combination of [`geod_flags`](@ref)(); *flags* & GEOD\\_ARCMODE determines the meaning of *s12_a12* and *flags* & GEOD\\_LONG\\_UNROLL "unrolls" *lon2*; if *flags* & GEOD\\_ARCMODE is 0, then *l* must have been initialized with *caps* |= GEOD\\_DISTANCE\\_IN.
-* `s12_a12`:\\[in\\] if *flags* & GEOD\\_ARCMODE is 0, this is the distance from point 1 to point 2 (meters); otherwise it is the arc length from point 1 to point 2 (degrees); it can be negative.
+* `flags`:\\[in\\] bitor'ed combination of ::[`geod_flags`](@ref); *flags* & ::GEOD\\_ARCMODE determines the meaning of *s12_a12* and *flags* & ::GEOD\\_LONG\\_UNROLL "unrolls" *lon2*; if *flags* & ::GEOD\\_ARCMODE is 0, then *l* must have been initialized with *caps* |= ::GEOD\\_DISTANCE\\_IN.
+* `s12_a12`:\\[in\\] if *flags* & ::GEOD\\_ARCMODE is 0, this is the distance from point 1 to point 2 (meters); otherwise it is the arc length from point 1 to point 2 (degrees); it can be negative.
 * `plat2`:\\[out\\] pointer to the latitude of point 2 (degrees).
-* `plon2`:\\[out\\] pointer to the longitude of point 2 (degrees); requires that *l* was initialized with *caps* |= GEOD\\_LONGITUDE.
+* `plon2`:\\[out\\] pointer to the longitude of point 2 (degrees); requires that *l* was initialized with *caps* |= ::GEOD\\_LONGITUDE.
 * `pazi2`:\\[out\\] pointer to the (forward) azimuth at point 2 (degrees).
-* `ps12`:\\[out\\] pointer to the distance from point 1 to point 2 (meters); requires that *l* was initialized with *caps* |= GEOD\\_DISTANCE.
-* `pm12`:\\[out\\] pointer to the reduced length of geodesic (meters); requires that *l* was initialized with *caps* |= GEOD\\_REDUCEDLENGTH.
-* `pM12`:\\[out\\] pointer to the geodesic scale of point 2 relative to point 1 (dimensionless); requires that *l* was initialized with *caps* |= GEOD\\_GEODESICSCALE.
-* `pM21`:\\[out\\] pointer to the geodesic scale of point 1 relative to point 2 (dimensionless); requires that *l* was initialized with *caps* |= GEOD\\_GEODESICSCALE.
-* `pS12`:\\[out\\] pointer to the area under the geodesic (meters<sup>2</sup>); requires that *l* was initialized with *caps* |= GEOD\\_AREA.
+* `ps12`:\\[out\\] pointer to the distance from point 1 to point 2 (meters); requires that *l* was initialized with *caps* |= ::GEOD\\_DISTANCE.
+* `pm12`:\\[out\\] pointer to the reduced length of geodesic (meters); requires that *l* was initialized with *caps* |= ::GEOD\\_REDUCEDLENGTH.
+* `pM12`:\\[out\\] pointer to the geodesic scale of point 2 relative to point 1 (dimensionless); requires that *l* was initialized with *caps* |= ::GEOD\\_GEODESICSCALE.
+* `pM21`:\\[out\\] pointer to the geodesic scale of point 1 relative to point 2 (dimensionless); requires that *l* was initialized with *caps* |= ::GEOD\\_GEODESICSCALE.
+* `pS12`:\\[out\\] pointer to the area under the geodesic (meters<sup>2</sup>); requires that *l* was initialized with *caps* |= ::GEOD\\_AREA.
 ### Returns
 *a12* arc length from point 1 to point 2 (degrees).
 """
@@ -2553,7 +2573,7 @@ end
 
 Specify position of point 3 in terms of distance.
 
-This is only useful if the [`geod_geodesicline`](@ref) object has been constructed with *caps* |= GEOD\\_DISTANCE\\_IN.********************************************************************
+This is only useful if the [`geod_geodesicline`](@ref) object has been constructed with *caps* |= ::GEOD\\_DISTANCE\\_IN.********************************************************************
 
 ### Parameters
 * `l`:\\[in,out\\] a pointer to the [`geod_geodesicline`](@ref) object.
@@ -2568,12 +2588,12 @@ end
 
 Specify position of point 3 in terms of either distance or arc length.
 
-If flags = GEOD\\_NOFLAGS, this calls [`geod_setdistance`](@ref)(). If flags = GEOD\\_ARCMODE, the *s13* is only set if the [`geod_geodesicline`](@ref) object has been constructed with *caps* |= GEOD\\_DISTANCE.********************************************************************
+If flags = ::GEOD\\_NOFLAGS, this calls [`geod_setdistance`](@ref)(). If flags = ::GEOD\\_ARCMODE, the *s13* is only set if the [`geod_geodesicline`](@ref) object has been constructed with *caps* |= ::GEOD\\_DISTANCE.********************************************************************
 
 ### Parameters
 * `l`:\\[in,out\\] a pointer to the [`geod_geodesicline`](@ref) object.
-* `flags`:\\[in\\] either GEOD\\_NOFLAGS or GEOD\\_ARCMODE to determining the meaning of the *s13_a13*.
-* `s13_a13`:\\[in\\] if *flags* = GEOD\\_NOFLAGS, this is the distance from point 1 to point 3 (meters); if *flags* = GEOD\\_ARCMODE, it is the arc length from point 1 to point 3 (degrees); it can be negative.
+* `flags`:\\[in\\] either ::GEOD\\_NOFLAGS or ::GEOD\\_ARCMODE to determining the meaning of the *s13_a13*.
+* `s13_a13`:\\[in\\] if *flags* = ::GEOD\\_NOFLAGS, this is the distance from point 1 to point 3 (meters); if *flags* = ::GEOD\\_ARCMODE, it is the arc length from point 1 to point 3 (degrees); it can be negative.
 """
 function geod_gensetdistance(l, flags, s13_a13)
     @ccall libproj.geod_gensetdistance(
@@ -2869,7 +2889,7 @@ end
 
 const PROJ_VERSION_MAJOR = 9
 
-const PROJ_VERSION_MINOR = 0
+const PROJ_VERSION_MINOR = 1
 
 const PROJ_VERSION_PATCH = 0
 
@@ -2910,9 +2930,9 @@ const PROJ_ERR_OTHER_NO_INVERSE_OP = PROJ_ERR_OTHER + 2
 
 const PROJ_ERR_OTHER_NETWORK_ERROR = PROJ_ERR_OTHER + 3
 
-const GEODESIC_VERSION_MAJOR = 1
+const GEODESIC_VERSION_MAJOR = 2
 
-const GEODESIC_VERSION_MINOR = 52
+const GEODESIC_VERSION_MINOR = 0
 
 const GEODESIC_VERSION_PATCH = 0
 

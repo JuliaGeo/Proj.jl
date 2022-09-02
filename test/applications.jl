@@ -80,7 +80,7 @@ Proj.proj_context_is_network_enabled()
 # this is like passing floatmax() to the cli, but if we do it correctly we expect
 # it to be like the version that passes only xyz to the cli
 p = xyzt_transform(SA_F64[151, -33, 5])
-x, y, z= 313152.7772137531f0, 6.346936495809965f6, 5.280647277836724f0
+x, y, z = 313152.7772137531f0, 6.346936495809965f6, 5.280647277836724f0
 @test is_approx(p, (x, y, z))
 # this is expected, like the above
 p = xyzt_transform(SA_F64[151, -33, 5, 2020])
