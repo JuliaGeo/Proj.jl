@@ -116,7 +116,7 @@ end
 aftercare(x::Cstring) = x == C_NULL ? nothing : unsafe_string(x)
 aftercare(x::Ptr{Cstring}) = unsafe_loadstringlist(x)
 
-const PROJ_LIB = Ref{String}()
+const PROJ_DATA = Ref{String}()
 
 "Module initialization function"
 function __init__()
@@ -131,8 +131,8 @@ function __init__()
     end
 
     # point to the location of the provided shared resources
-    PROJ_LIB[] = joinpath(PROJ_jll.artifact_dir, "share", "proj")
-    proj_context_set_search_paths(1, [PROJ_LIB[]])
+    PROJ_DATA[] = joinpath(PROJ_jll.artifact_dir, "share", "proj")
+    proj_context_set_search_paths(1, [PROJ_DATA[]])
 end
 
 end # module
