@@ -61,17 +61,16 @@ end
 # (so here as the reference epoch for the time-dependent Helmert transformation is 2020.0,
 # it will be as if you specified 2020.0).
 
-xy1 = "313153.228163 6346937.876336"
-xy2 = "313153.271257 6346937.914865"
-@test xyzt_transform_cli(SA[-33, 151, 5, 2020]; network = true) == "$xy1 5.280603 2020"
-@test xyzt_transform_cli("-33 151 5 2020"; network = true) == "$xy1 5.280603 2020"
+xy1 = "313152.777214 6346936.495810"
+@test xyzt_transform_cli(SA[-33, 151, 5, 2020]; network = true) == "$xy1 5.280647 2020"
+@test xyzt_transform_cli("-33 151 5 2020"; network = true) == "$xy1 5.280647 2020"
 # no z correction with no network, as expected
-@test xyzt_transform_cli(SA[-33, 151, 5, 2020]; network = false) == "$xy2 5.000000 2020"
+@test xyzt_transform_cli(SA[-33, 151, 5, 2020]; network = false) == "$xy1 5.000000 2020"
 # year 0, different xyz, as expected
 @test xyzt_transform_cli(SA[-33, 151, 5, 0]; network = true) ==
-      "313153.228163 6346937.876336 5.280603 0"
+      "313152.777214 6346936.495810 5.280647 0"
 # no time input is like passing 2020, as expected
-@test xyzt_transform_cli(SA[-33, 151, 5]; network = true) == "$xy1 5.280603"
+@test xyzt_transform_cli(SA[-33, 151, 5]; network = true) == "$xy1 5.280647"
 
 # need to switch axis order here
 # interestingly this does not respond to the PROJ_NETWORK environment variable,
@@ -81,23 +80,24 @@ Proj.proj_context_is_network_enabled()
 # this is like passing floatmax() to the cli, but if we do it correctly we expect
 # it to be like the version that passes only xyz to the cli
 p = xyzt_transform(SA_F64[151, -33, 5])
-@test is_approx(p, (313153.2281628684, 6.346937876336246e6, 5.280603319143665))
+x, y, z= 313152.7772137531f0, 6.346936495809965f6, 5.280647277836724f0
+@test is_approx(p, (x, y, z))
 # this is expected, like the above
 p = xyzt_transform(SA_F64[151, -33, 5, 2020])
-@test is_approx(p, (313153.2281628684, 6.346937876336246e6, 5.280603319143665, 2020.0))
+@test is_approx(p, (x, y, z, 2020.0))
 p = xyzt_transform(SA_F64[151, -33, 5, floatmax()*2])
-@test is_approx(p, (313153.2281628684, 6.346937876336246e6, 5.280603319143665, Inf))
+@test is_approx(p, (x, y, z, Inf))
 
 PROJ_jll.cs2cs() do cs2cs
     withenv("PROJ_NETWORK" => "OFF") do
         @test read_cmd(
             pipeline(IOBuffer("-33 151 5 0"), `$cs2cs -d 8 EPSG:4326+5773 EPSG:7856+5711`),
-        ) == "313153.27125690 6346937.91486492 5.00000000 0"
+        ) == "313152.77721375 6346936.49580996 5.00000000 0"
     end
     withenv("PROJ_NETWORK" => "ON") do
         @test read_cmd(
             pipeline(IOBuffer("-33 151 5 0"), `$cs2cs -d 8 EPSG:4326+5773 EPSG:7856+5711`),
-        ) == "313153.22816287 6346937.87633625 5.28060332 0"
+        ) == "313152.77721375 6346936.49580996 5.28064728 0"
     end
 end
 

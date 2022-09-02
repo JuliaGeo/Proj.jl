@@ -337,7 +337,7 @@ end
     @test Proj.network_enabled()
     trans_z = Proj.Transformation("EPSG:4326+5773", "EPSG:7856+5711", always_xy = true)
     z = trans_z((151, -33, 5))[3]
-    @test z ≈ 5.280603319143665
+    @test z ≈ 5.280647277836724f0
 
     # 0 args turns it on as well
     Proj.enable_network!(false)
