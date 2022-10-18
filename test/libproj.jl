@@ -189,6 +189,23 @@ end
     @test is_approx(b, (155191.3538124342, 463537.1362732911))
 end
 
+@testset "bounds" begin
+    trans = Proj.Transformation("EPSG:4326", "+proj=utm +zone=32 +datum=WGS84")
+    x,y = 52,11
+    tx,ty = trans(x,y)
+
+    (xmin,xmax), (ymin,ymax) = (50,55), (10,15)
+    (txmin, txmax), (tymin, tymax) = Proj.bounds(trans, (xmin,xmax), (ymin,ymax))
+    
+    @test txmin < tx < txmax
+    @test tymin < ty < tymax
+
+    (ttxmin, ttxmax), (ttymin, ttymax) = Proj.bounds(inv(trans), (txmin, txmax), (tymin, tymax))
+    @test ttxmin < xmin < xmax < ttxmax
+    @test ttymin < ymin < ymax < ttymax
+    
+end
+
 @testset "dense 4D coord vector transformation" begin
     source_crs = Proj.proj_create("EPSG:4326")
     target_crs = Proj.proj_create("EPSG:28992")

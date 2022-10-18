@@ -180,6 +180,24 @@ function (trans::Transformation)(coord)::NTuple234
     end
 end
 
+"""
+    Proj.bounds(trans::Transformation, (xmin, xmax), (ymin,ymax); densify_pts=21) -> ((bxmin, bxmax), (bymin, bymax))
+
+Transform boundary densifying the edges to account for nonlinear transformations along
+these edges and extracting the outermost bounds. Returns a tuple of tuples of the bounding
+rectangle.
+
+See [`proj_trans_bounds`](https://proj.org/development/reference/functions.html#c.proj_trans_bounds)
+"""
+function bounds(trans::Transformation, (xmin,xmax), (ymin,ymax); densify_pts=21, ctx::Ptr{PJ_CONTEXT} = C_NULL)
+    out_xmin = Ref{Float64}(NaN)
+    out_xmax = Ref{Float64}(NaN)
+    out_ymin = Ref{Float64}(NaN)
+    out_ymax = Ref{Float64}(NaN)
+    proj_trans_bounds(ctx, trans.pj, trans.direction, xmin, ymin, xmax, ymax, out_xmin, out_ymin, out_xmax, out_ymax, densify_pts)
+    return (out_xmin[], out_xmax[]), (out_ymin[], out_ymax[])
+end
+
 function CoordinateTransformations.compose(
     trans1::Transformation,
     trans2::Transformation;
