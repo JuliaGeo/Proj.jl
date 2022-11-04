@@ -115,6 +115,17 @@ function Transformation(
     return Transformation(pj, direction)
 end
 
+function Transformation(
+    source_crs::CRS,
+    target_crs::CRS;
+    always_xy::Bool = false,
+    direction::PJ_DIRECTION = PJ_FWD,
+    area::Ptr{PJ_AREA} = C_NULL,
+    ctx::Ptr{PJ_CONTEXT} = C_NULL,
+)
+    return Transformation(source_crs.pj, target_crs.pj, always_xy = always_xy, direction = direction, area = area, ctx = ctx)
+end
+
 function Base.show(io::IO, trans::Transformation)
 
 

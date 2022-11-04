@@ -89,9 +89,9 @@ const PROJ_COMPUTE_VERSION = VersionNumber
 const GEODESIC_VERSION_NUM = VersionNumber
 
 include("libproj.jl")
+include("crs.jl")
 include("coord.jl")
 include("error.jl")
-include("crs.jl")
 
 """
     unsafe_loadstringlist(ptr::Ptr{Cstring})

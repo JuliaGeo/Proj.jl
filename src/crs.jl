@@ -57,6 +57,27 @@ function is_geographic(crs::CRS)
         PJ_TYPE_GEOGRAPHIC_2D_CRS,
         PJ_TYPE_GEOGRAPHIC_3D_CRS)
 end
+
 function is_projected(crs::CRS)
     proj_get_type(crs.pj) == PJ_TYPE_PROJECTED_CRS
+end
+
+function GFT.WellKnownText2(crs::CRS; type::PJ_WKT_TYPE=PJ_WKT2_2019, ctx::Ptr{PJ_CONTEXT}=C_NULL)
+    return GFT.WellKnownText2(GFT.CRS(), proj_as_wkt(crs.pj, type, ctx))
+end
+
+function GFT.WellKnownText(crs::CRS; type::PJ_WKT_TYPE=PJ_WKT1_GDAL, ctx::Ptr{PJ_CONTEXT}=C_NULL)
+    return GFT.WellKnownText(GFT.CRS(), proj_as_wkt(crs.pj, type, ctx))
+end
+
+function GFT.ESRIWellKnownText(crs::CRS; type::PJ_WKT_TYPE=PJ_WKT1_ESRI, ctx::Ptr{PJ_CONTEXT}=C_NULL)
+    return GFT.ESRIWellKnownText(GFT.CRS(), proj_as_wkt(crs.pj, type, ctx))
+end
+
+function GFT.ProjString(crs::CRS; type::PJ_PROJ_STRING_TYPE=PJ_PROJ_5, ctx::Ptr{PJ_CONTEXT}=C_NULL)
+    return GFT.ProjString(proj_as_proj_string(crs.pj, type, ctx))
+end
+
+function GFT.ProjJSON(crs::CRS; ctx::Ptr{PJ_CONTEXT}=C_NULL)
+    return GFT.ProjJSON(proj_as_projjson(crs.pj, ctx))
 end
