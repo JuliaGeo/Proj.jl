@@ -1,5 +1,6 @@
 """
     Transformation(source_crs, target_crs; always_xy=false, direction = PJ_FWD, area=C_NULL, ctx=C_NULL)
+    Transformation(pipeline; always_xy=false, direction = PJ_FWD, area=C_NULL, ctx=C_NULL)
 
 Create a Transformation that is a pipeline between two known coordinate reference systems.
 Transformation implements the
@@ -24,6 +25,8 @@ is the elevation (defaults to 0), and number 4 is the time in years (defaults to
 - more generally any string accepted by `proj_create` representing a CRS
 - besides an `AbstractString`, it can also accept a `Ptr{PJ}`, pointing to a CRS that was
   already created with `proj_create`
+
+`pipeline` can be a PROJ pipeline string, like "+proj=pipeline +step +proj=unitconvert ...".
 
 `always_xy` can optionally fix the axis orderding to x,y or lon,lat order. By default it is
 `false`, meaning the order is defined by the authority in charge of a given coordinate
@@ -84,6 +87,17 @@ function Transformation(
 end
 
 function Transformation(
+    pipeline::AbstractString,
+    always_xy::Bool = false,
+    direction::PJ_DIRECTION = PJ_FWD,
+    ctx::Ptr{PJ_CONTEXT} = C_NULL,
+)
+    pj = proj_create(pipeline, ctx)
+    pj = always_xy ? normalize_axis_order!(pj; ctx) : pj
+    return Transformation(pj, direction)
+end
+
+function Transformation(
     source_crs::Ptr{PJ},
     target_crs::Ptr{PJ};
     always_xy::Bool = false,
@@ -97,24 +111,41 @@ function Transformation(
 end
 
 function Base.show(io::IO, trans::Transformation)
-    source_crs = proj_get_source_crs(trans.pj)
-    target_crs = proj_get_target_crs(trans.pj)
-    source_info = proj_pj_info(source_crs)
-    target_info = proj_pj_info(target_crs)
-    source_description = unsafe_string(source_info.description)
-    target_description = unsafe_string(target_info.description)
+
 
     dir = trans.direction
     direction_str = dir == PJ_FWD ? "forward" : dir == PJ_IDENT ? "identity" : "inverse"
 
-    print(
-        io,
-        """Transformation
-            source: $source_description
-            target: $target_description
-            direction: $direction_str
-        """,
-    )
+    info = proj_pj_info(trans.pj)
+    type = unsafe_string(info.id)
+    if type == "unknown"
+        source_crs = proj_get_source_crs(trans.pj)
+        target_crs = proj_get_target_crs(trans.pj)
+        source_info = proj_pj_info(source_crs)
+        target_info = proj_pj_info(target_crs)
+        source_description = unsafe_string(source_info.description)
+        target_description = unsafe_string(target_info.description)
+
+        print(
+            io,
+            """Transformation $type
+                source: $source_description
+                target: $target_description
+                direction: $direction_str
+            """,
+        )
+    else
+        description = unsafe_string(info.description)
+        definition = unsafe_string(info.definition)
+        print(
+            io,
+            """Transformation $type
+                description: $description
+                definition: $definition
+                direction: $direction_str
+            """,
+        )
+    end
 end
 
 """
