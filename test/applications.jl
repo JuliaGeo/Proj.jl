@@ -3,7 +3,7 @@ using StaticArrays
 using Proj
 import PROJ_jll
 using NetworkOptions: ca_roots
-
+import GeoFormatTypes as GFT
 function read_cmd(cmd)
     bytes = read(cmd)
     str = String(bytes)
@@ -114,4 +114,9 @@ PROJ_jll.projinfo() do projinfo
     info = read_cmd(`$projinfo -s EPSG:4326+5773 -t EPSG:7856+5711`)
     @test occursin(n_candidate_ops, info)
     @test occursin(grid_not_found, info)
+end
+
+@testset "CRS" begin
+    gftcrs = GFT.EPSG(4326)
+    crs = Proj.CRS(gftcrs)
 end

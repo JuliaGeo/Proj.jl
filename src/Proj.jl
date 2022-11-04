@@ -4,6 +4,7 @@ using PROJ_jll
 using CEnum
 using CoordinateTransformations
 using NetworkOptions: ca_roots
+import GeoFormatTypes as GFT
 
 export PROJ_jll
 export PJ_DIRECTION, PJ_FWD, PJ_IDENT, PJ_INV
@@ -90,6 +91,7 @@ const GEODESIC_VERSION_NUM = VersionNumber
 include("libproj.jl")
 include("coord.jl")
 include("error.jl")
+include("crs.jl")
 
 """
     unsafe_loadstringlist(ptr::Ptr{Cstring})
