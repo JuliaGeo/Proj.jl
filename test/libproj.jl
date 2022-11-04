@@ -127,9 +127,9 @@ end
     # for custom / proj strings, or modified axis order, no description can be looked up in
     # the database
     @test repr(trans) == """
-    Transformation
-        source: unknown
-        target: unknown
+    Transformation pipeline
+        description: UTM zone 32N
+        definition: proj=pipeline step proj=unitconvert xy_in=deg xy_out=rad step proj=utm zone=32 ellps=WGS84
         direction: forward
     """
 
@@ -282,9 +282,9 @@ end
 
     # which we can also see from show
     @test repr(trans) == """
-    Transformation
-        source: WGS 84 (with axis order normalized for visualization)
-        target: NAD27(76) / UTM zone 15N
+    Transformation pipeline
+        description: Ballpark geographic offset from WGS 84 (with axis order normalized for visualization) to NAD27(76) + UTM zone 15N
+        definition: proj=pipeline step proj=unitconvert xy_in=deg xy_out=rad step proj=utm zone=15 ellps=clrk66
         direction: forward
     """
 end
