@@ -93,7 +93,11 @@ function Transformation(
     ctx::Ptr{PJ_CONTEXT}=C_NULL
 )
     pj = proj_create(pipeline, ctx)
-    @assert !Bool(proj_is_crs(pj)) "Not a transformation (but a CRS):\n$pipeline"
+    if Bool(proj_is_crs(pj))
+        throw(ArgumentError("""Cannot create a Transformation from a single CRS.
+        Pass either one pipeline or a source and target CRS.
+        CRS given: $(repr(pipeline))"""))
+    end
     pj = always_xy ? normalize_axis_order!(pj; ctx) : pj
     return Transformation(pj, direction)
 end
