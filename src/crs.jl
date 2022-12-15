@@ -28,6 +28,7 @@ function CRS(
     ctx::Ptr{PJ_CONTEXT}=C_NULL
 )
     crs = proj_create(crs, ctx)
+    @assert Bool(proj_is_crs(crs)) "Not a CRS:\n$crs"
     return CRS(crs)
 end
 
@@ -51,15 +52,54 @@ function Base.show(io::IO, crs::CRS)
         """)
 end
 
+proj_get_type(crs::CRS) = proj_get_type(crs.pj)
+
+function is_type(crs::CRS, types::NTuple{N,PJ_TYPE}) where {N}
+    if is_compound(crs)
+        mapreduce(Fix2(is_type, types), |, crs, init=false)
+    elseif is_bound(crs)
+        is_type(proj_get_source_crs(crs), types)
+    else
+        proj_get_type(crs) in types
+    end
+end
+
+proj_get_source_crs(crs::CRS) = CRS(proj_get_source_crs(crs.pj))
+
+function Base.iterate(crs::CRS, i=0)
+    is_compound(crs) || return nothing
+    pt = proj_crs_get_sub_crs(crs, i)
+    if pt == C_NULL
+        return nothing
+    else
+        return CRS(pt), i + 1
+    end
+end
+Base.IteratorSize(::Type{CRS}) = Base.SizeUnknown()
+Base.eltype(::Type{CRS}) = CRS
+
+proj_crs_get_sub_crs(crs::CRS, i) = proj_crs_get_sub_crs(crs.pj, i)
+
 function is_geographic(crs::CRS)
-    proj_get_type(crs.pj) in (
-        PJ_TYPE_GEOGRAPHIC_CRS,
-        PJ_TYPE_GEOGRAPHIC_2D_CRS,
-        PJ_TYPE_GEOGRAPHIC_3D_CRS)
+    is_type(crs,
+        (
+            PJ_TYPE_GEOGRAPHIC_CRS,
+            PJ_TYPE_GEOGRAPHIC_2D_CRS,
+            PJ_TYPE_GEOGRAPHIC_3D_CRS
+        )
+    )
 end
 
 function is_projected(crs::CRS)
-    proj_get_type(crs.pj) == PJ_TYPE_PROJECTED_CRS
+    is_type(crs, (PJ_TYPE_PROJECTED_CRS,))
+end
+
+function is_compound(crs::CRS)
+    proj_get_type(crs) == PJ_TYPE_COMPOUND_CRS
+end
+
+function is_bound(crs::CRS)
+    proj_get_type(crs) == PJ_TYPE_BOUND_CRS
 end
 
 function GFT.WellKnownText2(crs::CRS; type::PJ_WKT_TYPE=PJ_WKT2_2019, ctx::Ptr{PJ_CONTEXT}=C_NULL)
@@ -81,3 +121,14 @@ end
 function GFT.ProjJSON(crs::CRS; ctx::Ptr{PJ_CONTEXT}=C_NULL)
     return GFT.ProjJSON(proj_as_projjson(crs.pj, ctx))
 end
+
+proj_get_id_code(crs::CRS) = proj_get_id_code(crs.pj)
+
+function GFT.EPSG(crs::CRS)
+    code = proj_get_id_code(crs)
+    return GFT.EPSG("EPSG:" * code)
+end
+
+Base.convert(T::Type{<:GFT.CoordinateReferenceSystemFormat}, crs::CRS) = T(crs)
+Base.convert(::Type{CRS}, crs::GFT.CoordinateReferenceSystemFormat) = CRS(crs)
+Base.convert(T::Type{<:GFT.CoordinateReferenceSystemFormat}, crs::GFT.CoordinateReferenceSystemFormat) = T(CRS(crs))
