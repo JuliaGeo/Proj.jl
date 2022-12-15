@@ -1245,11 +1245,11 @@ function proj_get_name(obj)
     aftercare(@ccall(libproj.proj_get_name(obj::Ptr{PJ})::Cstring))
 end
 
-function proj_get_id_auth_name(obj, index)
+function proj_get_id_auth_name(obj, index=0)
     aftercare(@ccall(libproj.proj_get_id_auth_name(obj::Ptr{PJ}, index::Cint)::Cstring))
 end
 
-function proj_get_id_code(obj, index)
+function proj_get_id_code(obj, index=0)
     aftercare(@ccall(libproj.proj_get_id_code(obj::Ptr{PJ}, index::Cint)::Cstring))
 end
 

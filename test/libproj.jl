@@ -372,6 +372,11 @@ end
 
 @testset "CRS" begin
     gftcrs = GFT.EPSG(4326)
+
+    crs = Proj.CRS("EPSG:4326")
+    crs = Proj.CRS("+proj=longlat +datum=WGS84 +no_defs +type=crs")
+    @test_throws AssertionError Proj.CRS("+proj=pipeline +ellps=GRS80 +step +proj=merc +step +proj=axisswap +order=2,1")
+
     crs = Proj.CRS(gftcrs)
 
     @test repr(crs) == """
@@ -381,11 +386,12 @@ end
 
     @test Proj.is_geographic(crs)
     @test !Proj.is_projected(crs)
-    @test GFT.WellKnownText(crs) == GFT.WellKnownText{GFT.CRS}(GFT.CRS(), "GEOGCS[\"WGS 84\",\n    DATUM[\"WGS_1984\",\n        SPHEROID[\"WGS 84\",6378137,298.257223563,\n            AUTHORITY[\"EPSG\",\"7030\"]],\n        AUTHORITY[\"EPSG\",\"6326\"]],\n    PRIMEM[\"Greenwich\",0,\n        AUTHORITY[\"EPSG\",\"8901\"]],\n    UNIT[\"degree\",0.0174532925199433,\n        AUTHORITY[\"EPSG\",\"9122\"]],\n    AUTHORITY[\"EPSG\",\"4326\"]]")
-    @test GFT.WellKnownText2(crs) == GFT.WellKnownText2{GFT.CRS}(GFT.CRS(), "GEOGCRS[\"WGS 84\",\n    ENSEMBLE[\"World Geodetic System 1984 ensemble\",\n        MEMBER[\"World Geodetic System 1984 (Transit)\"],\n        MEMBER[\"World Geodetic System 1984 (G730)\"],\n        MEMBER[\"World Geodetic System 1984 (G873)\"],\n        MEMBER[\"World Geodetic System 1984 (G1150)\"],\n        MEMBER[\"World Geodetic System 1984 (G1674)\"],\n        MEMBER[\"World Geodetic System 1984 (G1762)\"],\n        MEMBER[\"World Geodetic System 1984 (G2139)\"],\n        ELLIPSOID[\"WGS 84\",6378137,298.257223563,\n            LENGTHUNIT[\"metre\",1]],\n        ENSEMBLEACCURACY[2.0]],\n    PRIMEM[\"Greenwich\",0,\n        ANGLEUNIT[\"degree\",0.0174532925199433]],\n    CS[ellipsoidal,2],\n        AXIS[\"geodetic latitude (Lat)\",north,\n            ORDER[1],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        AXIS[\"geodetic longitude (Lon)\",east,\n            ORDER[2],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n    USAGE[\n        SCOPE[\"Horizontal component of 3D system.\"],\n        AREA[\"World.\"],\n        BBOX[-90,-180,90,180]],\n    ID[\"EPSG\",4326]]")
-    @test GFT.ESRIWellKnownText(crs) == GFT.ESRIWellKnownText{GFT.CRS}(GFT.CRS(), "GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]]")
-    @test GFT.ProjString(crs) == GFT.ProjString("+proj=longlat +datum=WGS84 +no_defs +type=crs")
-    @test GFT.ProjJSON(crs) == GFT.ProjJSON("{\n  \"\$schema\": \"https://proj.org/schemas/v0.5/projjson.schema.json\",\n  \"type\": \"GeographicCRS\",\n  \"name\": \"WGS 84\",\n  \"datum_ensemble\": {\n    \"name\": \"World Geodetic System 1984 ensemble\",\n    \"members\": [\n      {\n        \"name\": \"World Geodetic System 1984 (Transit)\",\n        \"id\": {\n          \"authority\": \"EPSG\",\n          \"code\": 1166\n        }\n      },\n      {\n        \"name\": \"World Geodetic System 1984 (G730)\",\n        \"id\": {\n          \"authority\": \"EPSG\",\n          \"code\": 1152\n        }\n      },\n      {\n        \"name\": \"World Geodetic System 1984 (G873)\",\n        \"id\": {\n          \"authority\": \"EPSG\",\n          \"code\": 1153\n        }\n      },\n      {\n        \"name\": \"World Geodetic System 1984 (G1150)\",\n        \"id\": {\n          \"authority\": \"EPSG\",\n          \"code\": 1154\n        }\n      },\n      {\n        \"name\": \"World Geodetic System 1984 (G1674)\",\n        \"id\": {\n          \"authority\": \"EPSG\",\n          \"code\": 1155\n        }\n      },\n      {\n        \"name\": \"World Geodetic System 1984 (G1762)\",\n        \"id\": {\n          \"authority\": \"EPSG\",\n          \"code\": 1156\n        }\n      },\n      {\n        \"name\": \"World Geodetic System 1984 (G2139)\",\n        \"id\": {\n          \"authority\": \"EPSG\",\n          \"code\": 1309\n        }\n      }\n    ],\n    \"ellipsoid\": {\n      \"name\": \"WGS 84\",\n      \"semi_major_axis\": 6378137,\n      \"inverse_flattening\": 298.257223563\n    },\n    \"accuracy\": \"2.0\",\n    \"id\": {\n      \"authority\": \"EPSG\",\n      \"code\": 6326\n    }\n  },\n  \"coordinate_system\": {\n    \"subtype\": \"ellipsoidal\",\n    \"axis\": [\n      {\n        \"name\": \"Geodetic latitude\",\n        \"abbreviation\": \"Lat\",\n        \"direction\": \"north\",\n        \"unit\": \"degree\"\n      },\n      {\n        \"name\": \"Geodetic longitude\",\n        \"abbreviation\": \"Lon\",\n        \"direction\": \"east\",\n        \"unit\": \"degree\"\n      }\n    ]\n  },\n  \"scope\": \"Horizontal component of 3D system.\",\n  \"area\": \"World.\",\n  \"bbox\": {\n    \"south_latitude\": -90,\n    \"west_longitude\": -180,\n    \"north_latitude\": 90,\n    \"east_longitude\": 180\n  },\n  \"id\": {\n    \"authority\": \"EPSG\",\n    \"code\": 4326\n  }\n}")
+    @test !Proj.is_compound(crs)
+    @test !Proj.is_bound(crs)
+
+    @test isnothing(iterate(crs))
+
+
 
     trans = Proj.Transformation(crs, crs)
     @test repr(trans) == """
@@ -394,4 +400,24 @@ end
             target: WGS 84
             direction: forward
         """
+
+    crs = Proj.CRS("EPSG:4326+3855")
+    @test length(collect(crs)) == 2
+end
+
+@testset "GFT" begin
+    gftcrs = GFT.EPSG(4326)
+    crs = Proj.CRS(gftcrs)
+
+    @test GFT.WellKnownText(crs) == GFT.WellKnownText{GFT.CRS}(GFT.CRS(), "GEOGCS[\"WGS 84\",\n    DATUM[\"WGS_1984\",\n        SPHEROID[\"WGS 84\",6378137,298.257223563,\n            AUTHORITY[\"EPSG\",\"7030\"]],\n        AUTHORITY[\"EPSG\",\"6326\"]],\n    PRIMEM[\"Greenwich\",0,\n        AUTHORITY[\"EPSG\",\"8901\"]],\n    UNIT[\"degree\",0.0174532925199433,\n        AUTHORITY[\"EPSG\",\"9122\"]],\n    AUTHORITY[\"EPSG\",\"4326\"]]")
+    @test GFT.WellKnownText2(crs) == GFT.WellKnownText2{GFT.CRS}(GFT.CRS(), "GEOGCRS[\"WGS 84\",\n    ENSEMBLE[\"World Geodetic System 1984 ensemble\",\n        MEMBER[\"World Geodetic System 1984 (Transit)\"],\n        MEMBER[\"World Geodetic System 1984 (G730)\"],\n        MEMBER[\"World Geodetic System 1984 (G873)\"],\n        MEMBER[\"World Geodetic System 1984 (G1150)\"],\n        MEMBER[\"World Geodetic System 1984 (G1674)\"],\n        MEMBER[\"World Geodetic System 1984 (G1762)\"],\n        MEMBER[\"World Geodetic System 1984 (G2139)\"],\n        ELLIPSOID[\"WGS 84\",6378137,298.257223563,\n            LENGTHUNIT[\"metre\",1]],\n        ENSEMBLEACCURACY[2.0]],\n    PRIMEM[\"Greenwich\",0,\n        ANGLEUNIT[\"degree\",0.0174532925199433]],\n    CS[ellipsoidal,2],\n        AXIS[\"geodetic latitude (Lat)\",north,\n            ORDER[1],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        AXIS[\"geodetic longitude (Lon)\",east,\n            ORDER[2],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n    USAGE[\n        SCOPE[\"Horizontal component of 3D system.\"],\n        AREA[\"World.\"],\n        BBOX[-90,-180,90,180]],\n    ID[\"EPSG\",4326]]")
+    @test GFT.ESRIWellKnownText(crs) == GFT.ESRIWellKnownText{GFT.CRS}(GFT.CRS(), "GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]]")
+    @test GFT.ProjString(crs) == GFT.ProjString("+proj=longlat +datum=WGS84 +no_defs +type=crs")
+    @test GFT.ProjJSON(crs) == GFT.ProjJSON("{\n  \"\$schema\": \"https://proj.org/schemas/v0.5/projjson.schema.json\",\n  \"type\": \"GeographicCRS\",\n  \"name\": \"WGS 84\",\n  \"datum_ensemble\": {\n    \"name\": \"World Geodetic System 1984 ensemble\",\n    \"members\": [\n      {\n        \"name\": \"World Geodetic System 1984 (Transit)\",\n        \"id\": {\n          \"authority\": \"EPSG\",\n          \"code\": 1166\n        }\n      },\n      {\n        \"name\": \"World Geodetic System 1984 (G730)\",\n        \"id\": {\n          \"authority\": \"EPSG\",\n          \"code\": 1152\n        }\n      },\n      {\n        \"name\": \"World Geodetic System 1984 (G873)\",\n        \"id\": {\n          \"authority\": \"EPSG\",\n          \"code\": 1153\n        }\n      },\n      {\n        \"name\": \"World Geodetic System 1984 (G1150)\",\n        \"id\": {\n          \"authority\": \"EPSG\",\n          \"code\": 1154\n        }\n      },\n      {\n        \"name\": \"World Geodetic System 1984 (G1674)\",\n        \"id\": {\n          \"authority\": \"EPSG\",\n          \"code\": 1155\n        }\n      },\n      {\n        \"name\": \"World Geodetic System 1984 (G1762)\",\n        \"id\": {\n          \"authority\": \"EPSG\",\n          \"code\": 1156\n        }\n      },\n      {\n        \"name\": \"World Geodetic System 1984 (G2139)\",\n        \"id\": {\n          \"authority\": \"EPSG\",\n          \"code\": 1309\n        }\n      }\n    ],\n    \"ellipsoid\": {\n      \"name\": \"WGS 84\",\n      \"semi_major_axis\": 6378137,\n      \"inverse_flattening\": 298.257223563\n    },\n    \"accuracy\": \"2.0\",\n    \"id\": {\n      \"authority\": \"EPSG\",\n      \"code\": 6326\n    }\n  },\n  \"coordinate_system\": {\n    \"subtype\": \"ellipsoidal\",\n    \"axis\": [\n      {\n        \"name\": \"Geodetic latitude\",\n        \"abbreviation\": \"Lat\",\n        \"direction\": \"north\",\n        \"unit\": \"degree\"\n      },\n      {\n        \"name\": \"Geodetic longitude\",\n        \"abbreviation\": \"Lon\",\n        \"direction\": \"east\",\n        \"unit\": \"degree\"\n      }\n    ]\n  },\n  \"scope\": \"Horizontal component of 3D system.\",\n  \"area\": \"World.\",\n  \"bbox\": {\n    \"south_latitude\": -90,\n    \"west_longitude\": -180,\n    \"north_latitude\": 90,\n    \"east_longitude\": 180\n  },\n  \"id\": {\n    \"authority\": \"EPSG\",\n    \"code\": 4326\n  }\n}")
+    @test GFT.EPSG(crs) == GFT.EPSG("EPSG:4326")
+
+    @test convert(GFT.EPSG, crs) == GFT.EPSG("EPSG:4326")
+    @test Proj.proj_get_id_code(convert(Proj.CRS, GFT.EPSG("EPSG:4326"))) == Proj.proj_get_id_code(crs)
+
+    @test convert(GFT.ProjString, gftcrs) == GFT.ProjString("+proj=longlat +datum=WGS84 +no_defs +type=crs")
 end
