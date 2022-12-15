@@ -166,7 +166,7 @@ end
     @test inv(PJ_IDENT) == PJ_IDENT
     @test inv(PJ_INV) == PJ_FWD
 
-    @test_throws AssertionError Proj.Transformation("EPSG:28992")
+    @test_throws ArgumentError Proj.Transformation("EPSG:28992")
     trans = Proj.Transformation("+proj=pipeline +ellps=GRS80 +step +proj=merc +step +proj=axisswap +order=2,1")
 
 end
