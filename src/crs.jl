@@ -4,12 +4,12 @@
 Create a CRS. `crs` can be:
 - a proj-string,
 - a WKT string,
-- an object code (like “EPSG:4326”, “urn:ogc:def:crs:EPSG::4326”, “urn:ogc:def:coordinateOperation:EPSG::1671”),
-- an Object name. e.g “WGS 84”, “WGS 84 / UTM zone 31N”. In that case as uniqueness is not guaranteed, heuristics are applied to determine the appropriate best match.
-- a OGC URN combining references for compound coordinate reference systems (e.g “urn:ogc:def:crs,crs:EPSG::2393,crs:EPSG::5717” or custom abbreviated syntax “EPSG:2393+5717”),
-- a OGC URN combining references for concatenated operations (e.g. “urn:ogc:def:coordinateOperation,coordinateOperation:EPSG::3895,coordinateOperation:EPSG::1618”)
+- an object code (like "EPSG:4326", "urn:ogc:def:crs:EPSG::4326", "urn:ogc:def:coordinateOperation:EPSG::1671"),
+- an Object name. e.g "WGS 84", "WGS 84 / UTM zone 31N". In that case as uniqueness is not guaranteed, heuristics are applied to determine the appropriate best match.
+- a OGC URN combining references for compound coordinate reference systems (e.g "urn:ogc:def:crs,crs:EPSG::2393,crs:EPSG::5717" or custom abbreviated syntax "EPSG:2393+5717"),
+- a OGC URN combining references for concatenated operations (e.g. "urn:ogc:def:coordinateOperation,coordinateOperation:EPSG::3895,coordinateOperation:EPSG::1618")
 - a PROJJSON string. The jsonschema is at https://proj.org/schemas/v0.4/projjson.schema.json
-- a compound CRS made from two object names separated with “ + “. e.g. “WGS 84 + EGM96 height”
+- a compound CRS made from two object names separated with " + ". e.g. "WGS 84 + EGM96 height"
 - a GeoFormatTypes CoordinateReferenceSystemFormat such as EPSG or ProjString
 """
 mutable struct CRS
