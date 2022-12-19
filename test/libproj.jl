@@ -395,9 +395,9 @@ end
 
     trans = Proj.Transformation(crs, crs)
     @test repr(trans) == """
-        Transformation
-            source: WGS 84
-            target: WGS 84
+        Transformation noop
+            description: Null geographic offset from WGS 84 to WGS 84
+            definition: proj=noop ellps=GRS80
             direction: forward
         """
 
