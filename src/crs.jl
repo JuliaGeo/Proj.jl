@@ -17,7 +17,7 @@ mutable struct CRS
     function CRS(crs::Ptr{PJ})
         crs = new(crs)
         finalizer(crs) do crs
-            crs.pj = proj_destroy(crs.pj)
+            crs = proj_destroy(crs)
         end
         return crs
     end
@@ -41,7 +41,7 @@ function CRS(
 end
 
 function Base.show(io::IO, crs::CRS)
-    info = proj_pj_info(crs.pj)
+    info = proj_pj_info(crs)
     description = unsafe_string(info.description)
     definition = unsafe_string(info.definition)
     print(
@@ -52,7 +52,7 @@ function Base.show(io::IO, crs::CRS)
         """)
 end
 
-proj_get_type(crs::CRS) = proj_get_type(crs.pj)
+Base.unsafe_convert(::Type{Ptr{Cvoid}}, c::CRS) = c.pj
 
 function is_type(crs::CRS, types::NTuple{N,PJ_TYPE}) where {N}
     if is_compound(crs)
@@ -63,8 +63,6 @@ function is_type(crs::CRS, types::NTuple{N,PJ_TYPE}) where {N}
         proj_get_type(crs) in types
     end
 end
-
-proj_get_source_crs(crs::CRS) = CRS(proj_get_source_crs(crs.pj))
 
 function Base.iterate(crs::CRS, i=0)
     is_compound(crs) || return nothing
@@ -77,8 +75,6 @@ function Base.iterate(crs::CRS, i=0)
 end
 Base.IteratorSize(::Type{CRS}) = Base.SizeUnknown()
 Base.eltype(::Type{CRS}) = CRS
-
-proj_crs_get_sub_crs(crs::CRS, i) = proj_crs_get_sub_crs(crs.pj, i)
 
 function is_geographic(crs::CRS)
     is_type(crs,
@@ -103,26 +99,24 @@ function is_bound(crs::CRS)
 end
 
 function GFT.WellKnownText2(crs::CRS; type::PJ_WKT_TYPE=PJ_WKT2_2019, ctx::Ptr{PJ_CONTEXT}=C_NULL)
-    return GFT.WellKnownText2(GFT.CRS(), proj_as_wkt(crs.pj, type, ctx))
+    return GFT.WellKnownText2(GFT.CRS(), proj_as_wkt(crs, type, ctx))
 end
 
 function GFT.WellKnownText(crs::CRS; type::PJ_WKT_TYPE=PJ_WKT1_GDAL, ctx::Ptr{PJ_CONTEXT}=C_NULL)
-    return GFT.WellKnownText(GFT.CRS(), proj_as_wkt(crs.pj, type, ctx))
+    return GFT.WellKnownText(GFT.CRS(), proj_as_wkt(crs, type, ctx))
 end
 
 function GFT.ESRIWellKnownText(crs::CRS; type::PJ_WKT_TYPE=PJ_WKT1_ESRI, ctx::Ptr{PJ_CONTEXT}=C_NULL)
-    return GFT.ESRIWellKnownText(GFT.CRS(), proj_as_wkt(crs.pj, type, ctx))
+    return GFT.ESRIWellKnownText(GFT.CRS(), proj_as_wkt(crs, type, ctx))
 end
 
 function GFT.ProjString(crs::CRS; type::PJ_PROJ_STRING_TYPE=PJ_PROJ_5, ctx::Ptr{PJ_CONTEXT}=C_NULL)
-    return GFT.ProjString(proj_as_proj_string(crs.pj, type, ctx))
+    return GFT.ProjString(proj_as_proj_string(crs, type, ctx))
 end
 
 function GFT.ProjJSON(crs::CRS; ctx::Ptr{PJ_CONTEXT}=C_NULL)
-    return GFT.ProjJSON(proj_as_projjson(crs.pj, ctx))
+    return GFT.ProjJSON(proj_as_projjson(crs, ctx))
 end
-
-proj_get_id_code(crs::CRS) = proj_get_id_code(crs.pj)
 
 function GFT.EPSG(crs::CRS)
     code = proj_get_id_code(crs)
