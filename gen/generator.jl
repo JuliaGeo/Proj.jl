@@ -24,6 +24,8 @@ function rewrite(ex::Expr)
             fargs′ = [:x, :y, kw(:z, 0.0), kw(:t, Inf)]
         elseif fname in (:proj_create_crs_to_crs, :proj_create_crs_to_crs_from_pj)
             fargs′[3] = kw(:area, :C_NULL)
+        elseif fname in (:proj_get_id_auth_name, :proj_get_id_code)
+            fargs′[2] = kw(:index, 0)
         elseif fname === :proj_create_from_wkt
             fargs′[3] = kw(:out_warnings, :C_NULL)
             fargs′[4] = kw(:out_grammar_errors, :C_NULL)

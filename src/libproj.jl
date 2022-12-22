@@ -125,6 +125,11 @@ end
 """Callback to resolve a filename to a full path"""
 const proj_file_finder = Ptr{Cvoid}
 
+"""
+    proj_context_set_file_finder(finder, user_data, ctx = C_NULL)
+
+` `
+"""
 function proj_context_set_file_finder(finder, user_data, ctx = C_NULL)
     @ccall libproj.proj_context_set_file_finder(
         ctx::Ptr{PJ_CONTEXT},
@@ -151,7 +156,7 @@ end
 """
     proj_context_use_proj4_init_rules(enable, ctx = C_NULL)
 
-Doxygen\\_Suppress
+` Doxygen_Suppress `
 """
 function proj_context_use_proj4_init_rules(enable, ctx = C_NULL)
     @ccall libproj.proj_context_use_proj4_init_rules(
@@ -371,7 +376,7 @@ end
 """
     proj_create(definition, ctx = C_NULL)
 
-Doxygen\\_Suppress
+` Doxygen_Suppress `
 """
 function proj_create(definition, ctx = C_NULL)
     @ccall libproj.proj_create(ctx::Ptr{PJ_CONTEXT}, definition::Cstring)::Ptr{PJ}
@@ -410,6 +415,11 @@ function proj_create_crs_to_crs_from_pj(
     )::Ptr{PJ}
 end
 
+"""
+    proj_normalize_for_visualization(obj, ctx = C_NULL)
+
+` `
+"""
 function proj_normalize_for_visualization(obj, ctx = C_NULL)
     @ccall libproj.proj_normalize_for_visualization(
         ctx::Ptr{PJ_CONTEXT},
@@ -420,7 +430,7 @@ end
 """
     proj_assign_context(pj, ctx)
 
-Doxygen\\_Suppress
+` Doxygen_Suppress `
 """
 function proj_assign_context(pj, ctx)
     @ccall libproj.proj_assign_context(pj::Ptr{PJ}, ctx::Ptr{PJ_CONTEXT})::Cvoid
@@ -516,6 +526,11 @@ function proj_trans_generic(P, direction, x, sx, nx, y, sy, ny, z, sz, nz, t, st
     )::Csize_t
 end
 
+"""
+    proj_trans_bounds(context, P, direction, xmin, ymin, xmax, ymax, out_xmin, out_ymin, out_xmax, out_ymax, densify_pts)
+
+` `
+"""
 function proj_trans_bounds(
     context,
     P,
@@ -549,7 +564,7 @@ end
 """
     proj_coord(x, y, z = 0.0, t = Inf)
 
-Doxygen\\_Suppress
+` Doxygen_Suppress `
 """
 function proj_coord(x, y, z = 0.0, t = Inf)
     @ccall libproj.proj_coord(x::Cdouble, y::Cdouble, z::Cdouble, t::Cdouble)::Coord
@@ -1056,6 +1071,11 @@ end
 
 const PJ_OBJ_LIST = Cvoid
 
+"""
+    proj_string_list_destroy(list)
+
+` `
+"""
 function proj_string_list_destroy(list)
     @ccall libproj.proj_string_list_destroy(list::Ptr{Cstring})::Cvoid
 end
@@ -1245,11 +1265,11 @@ function proj_get_name(obj)
     aftercare(@ccall(libproj.proj_get_name(obj::Ptr{PJ})::Cstring))
 end
 
-function proj_get_id_auth_name(obj, index=0)
+function proj_get_id_auth_name(obj, index = 0)
     aftercare(@ccall(libproj.proj_get_id_auth_name(obj::Ptr{PJ}, index::Cint)::Cstring))
 end
 
-function proj_get_id_code(obj, index=0)
+function proj_get_id_code(obj, index = 0)
     aftercare(@ccall(libproj.proj_get_id_code(obj::Ptr{PJ}, index::Cint)::Cstring))
 end
 
@@ -1436,6 +1456,11 @@ end
 
 const PJ_INSERT_SESSION = Cvoid
 
+"""
+    proj_insert_object_session_create(ctx = C_NULL)
+
+` `
+"""
 function proj_insert_object_session_create(ctx = C_NULL)
     @ccall libproj.proj_insert_object_session_create(
         ctx::Ptr{PJ_CONTEXT},
@@ -1497,6 +1522,11 @@ end
 
 const PJ_OPERATION_FACTORY_CONTEXT = Cvoid
 
+"""
+    proj_create_operation_factory_context(authority, ctx = C_NULL)
+
+` `
+"""
 function proj_create_operation_factory_context(authority, ctx = C_NULL)
     @ccall libproj.proj_create_operation_factory_context(
         ctx::Ptr{PJ_CONTEXT},
@@ -2003,10 +2033,10 @@ end
 
 The struct containing information about the ellipsoid. This must be initialized by [`geod_init`](@ref)() before use.********************************************************************
 
-| Field | Note                   |
-| :---- | :--------------------- |
-| a     | the equatorial radius  |
-| f     | the flattening  SKIP   |
+| Field | Note                      |
+| :---- | :------------------------ |
+| a     | the equatorial radius     |
+| f     | the flattening  ` SKIP `  |
 """
 struct geod_geodesic
     a::Cdouble
@@ -2028,18 +2058,18 @@ end
 
 The struct containing information about a single geodesic. This must be initialized by [`geod_lineinit`](@ref)(), [`geod_directline`](@ref)(), [`geod_gendirectline`](@ref)(), or [`geod_inverseline`](@ref)() before use.********************************************************************
 
-| Field | Note                               |
-| :---- | :--------------------------------- |
-| lat1  | the starting latitude              |
-| lon1  | the starting longitude             |
-| azi1  | the starting azimuth               |
-| a     | the equatorial radius              |
-| f     | the flattening                     |
-| salp1 | sine of *azi1*                     |
-| calp1 | cosine of *azi1*                   |
-| a13   | arc length to reference point      |
-| s13   | distance to reference point  SKIP  |
-| caps  | the capabilities                   |
+| Field | Note                                   |
+| :---- | :------------------------------------- |
+| lat1  | the starting latitude                  |
+| lon1  | the starting longitude                 |
+| azi1  | the starting azimuth                   |
+| a     | the equatorial radius                  |
+| f     | the flattening                         |
+| salp1 | sine of *azi1*                         |
+| calp1 | cosine of *azi1*                       |
+| a13   | arc length to reference point          |
+| s13   | distance to reference point  ` SKIP `  |
+| caps  | the capabilities                       |
 """
 struct geod_geodesicline
     lat1::Cdouble
@@ -2085,11 +2115,11 @@ end
 
 The struct for accumulating information about a geodesic polygon. This is used for computing the perimeter and area of a polygon. This must be initialized by [`geod_polygon_init`](@ref)() before use.********************************************************************
 
-| Field | Note                         |
-| :---- | :--------------------------- |
-| lat   | the current latitude         |
-| lon   | the current longitude  SKIP  |
-| num   | the number of points so far  |
+| Field | Note                             |
+| :---- | :------------------------------- |
+| lat   | the current latitude             |
+| lon   | the current longitude  ` SKIP `  |
+| num   | the number of points so far      |
 """
 struct geod_polygon
     lat::Cdouble

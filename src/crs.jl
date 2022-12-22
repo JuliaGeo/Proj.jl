@@ -23,19 +23,13 @@ mutable struct CRS
     end
 end
 
-function CRS(
-    crs::AbstractString,
-    ctx::Ptr{PJ_CONTEXT}=C_NULL
-)
+function CRS(crs::AbstractString, ctx::Ptr{PJ_CONTEXT} = C_NULL)
     crs = proj_create(crs, ctx)
     @assert Bool(proj_is_crs(crs)) "Not a CRS:\n$crs"
     return CRS(crs)
 end
 
-function CRS(
-    crs::GFT.CoordinateReferenceSystemFormat,
-    ctx::Ptr{PJ_CONTEXT}=C_NULL
-)
+function CRS(crs::GFT.CoordinateReferenceSystemFormat, ctx::Ptr{PJ_CONTEXT} = C_NULL)
     crs = proj_create(convert(String, crs), ctx)
     return CRS(crs)
 end
@@ -49,14 +43,15 @@ function Base.show(io::IO, crs::CRS)
         """CRS
             description: $description
             definition: $definition
-        """)
+        """,
+    )
 end
 
 Base.unsafe_convert(::Type{Ptr{Cvoid}}, c::CRS) = c.pj
 
 function is_type(crs::CRS, types::NTuple{N,PJ_TYPE}) where {N}
     if is_compound(crs)
-        mapreduce(Fix2(is_type, types), |, crs, init=false)
+        mapreduce(Fix2(is_type, types), |, crs, init = false)
     elseif is_bound(crs)
         is_type(proj_get_source_crs(crs), types)
     else
@@ -64,7 +59,7 @@ function is_type(crs::CRS, types::NTuple{N,PJ_TYPE}) where {N}
     end
 end
 
-function Base.iterate(crs::CRS, i=0)
+function Base.iterate(crs::CRS, i = 0)
     is_compound(crs) || return nothing
     pt = proj_crs_get_sub_crs(crs, i)
     if pt == C_NULL
@@ -77,12 +72,9 @@ Base.IteratorSize(::Type{CRS}) = Base.SizeUnknown()
 Base.eltype(::Type{CRS}) = CRS
 
 function is_geographic(crs::CRS)
-    is_type(crs,
-        (
-            PJ_TYPE_GEOGRAPHIC_CRS,
-            PJ_TYPE_GEOGRAPHIC_2D_CRS,
-            PJ_TYPE_GEOGRAPHIC_3D_CRS
-        )
+    is_type(
+        crs,
+        (PJ_TYPE_GEOGRAPHIC_CRS, PJ_TYPE_GEOGRAPHIC_2D_CRS, PJ_TYPE_GEOGRAPHIC_3D_CRS),
     )
 end
 
@@ -98,23 +90,39 @@ function is_bound(crs::CRS)
     proj_get_type(crs) == PJ_TYPE_BOUND_CRS
 end
 
-function GFT.WellKnownText2(crs::CRS; type::PJ_WKT_TYPE=PJ_WKT2_2019, ctx::Ptr{PJ_CONTEXT}=C_NULL)
+function GFT.WellKnownText2(
+    crs::CRS;
+    type::PJ_WKT_TYPE = PJ_WKT2_2019,
+    ctx::Ptr{PJ_CONTEXT} = C_NULL,
+)
     return GFT.WellKnownText2(GFT.CRS(), proj_as_wkt(crs, type, ctx))
 end
 
-function GFT.WellKnownText(crs::CRS; type::PJ_WKT_TYPE=PJ_WKT1_GDAL, ctx::Ptr{PJ_CONTEXT}=C_NULL)
+function GFT.WellKnownText(
+    crs::CRS;
+    type::PJ_WKT_TYPE = PJ_WKT1_GDAL,
+    ctx::Ptr{PJ_CONTEXT} = C_NULL,
+)
     return GFT.WellKnownText(GFT.CRS(), proj_as_wkt(crs, type, ctx))
 end
 
-function GFT.ESRIWellKnownText(crs::CRS; type::PJ_WKT_TYPE=PJ_WKT1_ESRI, ctx::Ptr{PJ_CONTEXT}=C_NULL)
+function GFT.ESRIWellKnownText(
+    crs::CRS;
+    type::PJ_WKT_TYPE = PJ_WKT1_ESRI,
+    ctx::Ptr{PJ_CONTEXT} = C_NULL,
+)
     return GFT.ESRIWellKnownText(GFT.CRS(), proj_as_wkt(crs, type, ctx))
 end
 
-function GFT.ProjString(crs::CRS; type::PJ_PROJ_STRING_TYPE=PJ_PROJ_5, ctx::Ptr{PJ_CONTEXT}=C_NULL)
+function GFT.ProjString(
+    crs::CRS;
+    type::PJ_PROJ_STRING_TYPE = PJ_PROJ_5,
+    ctx::Ptr{PJ_CONTEXT} = C_NULL,
+)
     return GFT.ProjString(proj_as_proj_string(crs, type, ctx))
 end
 
-function GFT.ProjJSON(crs::CRS; ctx::Ptr{PJ_CONTEXT}=C_NULL)
+function GFT.ProjJSON(crs::CRS; ctx::Ptr{PJ_CONTEXT} = C_NULL)
     return GFT.ProjJSON(proj_as_projjson(crs, ctx))
 end
 

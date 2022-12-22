@@ -122,7 +122,7 @@ end
     trans = Proj.Transformation(
         "EPSG:4326",
         "+proj=utm +zone=32 +datum=WGS84",
-        always_xy=true,
+        always_xy = true,
     )
 
     # for custom / proj strings, or modified axis order, no description can be looked up in
@@ -134,8 +134,8 @@ end
         direction: forward
     """
 
-    trans⁻¹ = inv(trans, always_xy=true)
-    trans¹ = inv(trans⁻¹, always_xy=true)
+    trans⁻¹ = inv(trans, always_xy = true)
+    trans¹ = inv(trans⁻¹, always_xy = true)
 
     # inv does not flip source and target, so the WKT stays the same
     wkt_type = Proj.PJ_WKT2_2019
@@ -154,10 +154,10 @@ end
     trans = Proj.Transformation(
         "EPSG:4326",
         "+proj=utm +zone=32 +datum=WGS84",
-        direction=PJ_IDENT,
+        direction = PJ_IDENT,
     )
     @test trans(a) === a
-    trans⁻¹ = inv(trans, always_xy=true)
+    trans⁻¹ = inv(trans, always_xy = true)
     @test trans⁻¹(a) === a
     @test trans⁻¹.direction == PJ_IDENT
     trans⁻¹.direction = PJ_FWD
@@ -188,7 +188,7 @@ end
     @test is_approx(b, (155191.3538124342, 463537.1362732911))
 
     # with always_xy = true, we need to use lon/lat, and still get x/y out
-    trans = Proj.Transformation(source_crs, target_crs, always_xy=true)
+    trans = Proj.Transformation(source_crs, target_crs, always_xy = true)
     a = (5.39, 52.16)
     b = Proj.proj_trans(trans.pj, Proj.PJ_FWD, a)
     @test is_approx(b, (155191.3538124342, 463537.1362732911))
@@ -205,7 +205,8 @@ end
     @test txmin < tx < txmax
     @test tymin < ty < tymax
 
-    (ttxmin, ttxmax), (ttymin, ttymax) = Proj.bounds(inv(trans), (txmin, txmax), (tymin, tymax))
+    (ttxmin, ttxmax), (ttymin, ttymax) =
+        Proj.bounds(inv(trans), (txmin, txmax), (tymin, tymax))
     @test ttxmin < xmin < xmax < ttxmax
     @test ttymin < ymin < ymax < ttymax
 
@@ -214,7 +215,7 @@ end
 @testset "dense 4D coord vector transformation" begin
     source_crs = Proj.proj_create("EPSG:4326")
     target_crs = Proj.proj_create("EPSG:28992")
-    trans = Proj.Transformation(source_crs, target_crs, always_xy=true)
+    trans = Proj.Transformation(source_crs, target_crs, always_xy = true)
     # This array is mutated in place. Note that this array needs to have 4D elements,
     # with 2D elements it will only do every other one
     A = [Proj.Coord(5.39, 52.16) for _ = 1:5]
@@ -236,7 +237,7 @@ end
 @testset "generic array transformation" begin
     source_crs = Proj.proj_create("EPSG:4326")
     target_crs = Proj.proj_create("EPSG:28992")
-    trans = Proj.Transformation(source_crs, target_crs, always_xy=true)
+    trans = Proj.Transformation(source_crs, target_crs, always_xy = true)
 
     # inplace transformation of vector of 2D coordinates
     # using https://proj.org/development/reference/functions.html#c.proj_trans_generic
@@ -267,8 +268,8 @@ end
 end
 
 @testset "compose" begin
-    trans1 = Proj.Transformation("EPSG:4326", "EPSG:28992", always_xy=true)
-    trans2 = Proj.Transformation("EPSG:32632", "EPSG:2027", always_xy=true)
+    trans1 = Proj.Transformation("EPSG:4326", "EPSG:28992", always_xy = true)
+    trans2 = Proj.Transformation("EPSG:32632", "EPSG:2027", always_xy = true)
     trans = trans1 ∘ trans2  # same as compose(trans1, trans2)
     source_crs = Proj.proj_get_source_crs(trans.pj)
     target_crs = Proj.proj_get_target_crs(trans.pj)
@@ -321,7 +322,7 @@ end
 end
 
 @testset "in and output types" begin
-    trans = Proj.Transformation("EPSG:4326", "EPSG:28992", always_xy=true)
+    trans = Proj.Transformation("EPSG:4326", "EPSG:28992", always_xy = true)
     trans(Proj.proj_coord(5.39, 52.16))
     b = trans(SA[5.39, 52.16, 0.0, 0.0])
 
@@ -352,12 +353,12 @@ end
     # turn off network, no z transformation
     @test !Proj.enable_network!(false)
     @test !Proj.network_enabled()
-    trans_z = Proj.Transformation("EPSG:4326+5773", "EPSG:7856+5711", always_xy=true)
+    trans_z = Proj.Transformation("EPSG:4326+5773", "EPSG:7856+5711", always_xy = true)
     @test trans_z((151, -33, 5))[3] == 5
     # turn on network, z transformation
     @test Proj.enable_network!(true)
     @test Proj.network_enabled()
-    trans_z = Proj.Transformation("EPSG:4326+5773", "EPSG:7856+5711", always_xy=true)
+    trans_z = Proj.Transformation("EPSG:4326+5773", "EPSG:7856+5711", always_xy = true)
     z = trans_z((151, -33, 5))[3]
     @test z ≈ 5.280647277836724f0
 
@@ -375,7 +376,9 @@ end
 
     crs = Proj.CRS("EPSG:4326")
     crs = Proj.CRS("+proj=longlat +datum=WGS84 +no_defs +type=crs")
-    @test_throws AssertionError Proj.CRS("+proj=pipeline +ellps=GRS80 +step +proj=merc +step +proj=axisswap +order=2,1")
+    @test_throws AssertionError Proj.CRS(
+        "+proj=pipeline +ellps=GRS80 +step +proj=merc +step +proj=axisswap +order=2,1",
+    )
 
     crs = Proj.CRS(gftcrs)
 
@@ -409,15 +412,28 @@ end
     gftcrs = GFT.EPSG(4326)
     crs = Proj.CRS(gftcrs)
 
-    @test GFT.WellKnownText(crs) == GFT.WellKnownText{GFT.CRS}(GFT.CRS(), "GEOGCS[\"WGS 84\",\n    DATUM[\"WGS_1984\",\n        SPHEROID[\"WGS 84\",6378137,298.257223563,\n            AUTHORITY[\"EPSG\",\"7030\"]],\n        AUTHORITY[\"EPSG\",\"6326\"]],\n    PRIMEM[\"Greenwich\",0,\n        AUTHORITY[\"EPSG\",\"8901\"]],\n    UNIT[\"degree\",0.0174532925199433,\n        AUTHORITY[\"EPSG\",\"9122\"]],\n    AUTHORITY[\"EPSG\",\"4326\"]]")
-    @test GFT.WellKnownText2(crs) == GFT.WellKnownText2{GFT.CRS}(GFT.CRS(), "GEOGCRS[\"WGS 84\",\n    ENSEMBLE[\"World Geodetic System 1984 ensemble\",\n        MEMBER[\"World Geodetic System 1984 (Transit)\"],\n        MEMBER[\"World Geodetic System 1984 (G730)\"],\n        MEMBER[\"World Geodetic System 1984 (G873)\"],\n        MEMBER[\"World Geodetic System 1984 (G1150)\"],\n        MEMBER[\"World Geodetic System 1984 (G1674)\"],\n        MEMBER[\"World Geodetic System 1984 (G1762)\"],\n        MEMBER[\"World Geodetic System 1984 (G2139)\"],\n        ELLIPSOID[\"WGS 84\",6378137,298.257223563,\n            LENGTHUNIT[\"metre\",1]],\n        ENSEMBLEACCURACY[2.0]],\n    PRIMEM[\"Greenwich\",0,\n        ANGLEUNIT[\"degree\",0.0174532925199433]],\n    CS[ellipsoidal,2],\n        AXIS[\"geodetic latitude (Lat)\",north,\n            ORDER[1],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        AXIS[\"geodetic longitude (Lon)\",east,\n            ORDER[2],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n    USAGE[\n        SCOPE[\"Horizontal component of 3D system.\"],\n        AREA[\"World.\"],\n        BBOX[-90,-180,90,180]],\n    ID[\"EPSG\",4326]]")
-    @test GFT.ESRIWellKnownText(crs) == GFT.ESRIWellKnownText{GFT.CRS}(GFT.CRS(), "GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]]")
-    @test GFT.ProjString(crs) == GFT.ProjString("+proj=longlat +datum=WGS84 +no_defs +type=crs")
-    @test GFT.ProjJSON(crs) == GFT.ProjJSON("{\n  \"\$schema\": \"https://proj.org/schemas/v0.5/projjson.schema.json\",\n  \"type\": \"GeographicCRS\",\n  \"name\": \"WGS 84\",\n  \"datum_ensemble\": {\n    \"name\": \"World Geodetic System 1984 ensemble\",\n    \"members\": [\n      {\n        \"name\": \"World Geodetic System 1984 (Transit)\",\n        \"id\": {\n          \"authority\": \"EPSG\",\n          \"code\": 1166\n        }\n      },\n      {\n        \"name\": \"World Geodetic System 1984 (G730)\",\n        \"id\": {\n          \"authority\": \"EPSG\",\n          \"code\": 1152\n        }\n      },\n      {\n        \"name\": \"World Geodetic System 1984 (G873)\",\n        \"id\": {\n          \"authority\": \"EPSG\",\n          \"code\": 1153\n        }\n      },\n      {\n        \"name\": \"World Geodetic System 1984 (G1150)\",\n        \"id\": {\n          \"authority\": \"EPSG\",\n          \"code\": 1154\n        }\n      },\n      {\n        \"name\": \"World Geodetic System 1984 (G1674)\",\n        \"id\": {\n          \"authority\": \"EPSG\",\n          \"code\": 1155\n        }\n      },\n      {\n        \"name\": \"World Geodetic System 1984 (G1762)\",\n        \"id\": {\n          \"authority\": \"EPSG\",\n          \"code\": 1156\n        }\n      },\n      {\n        \"name\": \"World Geodetic System 1984 (G2139)\",\n        \"id\": {\n          \"authority\": \"EPSG\",\n          \"code\": 1309\n        }\n      }\n    ],\n    \"ellipsoid\": {\n      \"name\": \"WGS 84\",\n      \"semi_major_axis\": 6378137,\n      \"inverse_flattening\": 298.257223563\n    },\n    \"accuracy\": \"2.0\",\n    \"id\": {\n      \"authority\": \"EPSG\",\n      \"code\": 6326\n    }\n  },\n  \"coordinate_system\": {\n    \"subtype\": \"ellipsoidal\",\n    \"axis\": [\n      {\n        \"name\": \"Geodetic latitude\",\n        \"abbreviation\": \"Lat\",\n        \"direction\": \"north\",\n        \"unit\": \"degree\"\n      },\n      {\n        \"name\": \"Geodetic longitude\",\n        \"abbreviation\": \"Lon\",\n        \"direction\": \"east\",\n        \"unit\": \"degree\"\n      }\n    ]\n  },\n  \"scope\": \"Horizontal component of 3D system.\",\n  \"area\": \"World.\",\n  \"bbox\": {\n    \"south_latitude\": -90,\n    \"west_longitude\": -180,\n    \"north_latitude\": 90,\n    \"east_longitude\": 180\n  },\n  \"id\": {\n    \"authority\": \"EPSG\",\n    \"code\": 4326\n  }\n}")
+    @test GFT.WellKnownText(crs) == GFT.WellKnownText{GFT.CRS}(
+        GFT.CRS(),
+        "GEOGCS[\"WGS 84\",\n    DATUM[\"WGS_1984\",\n        SPHEROID[\"WGS 84\",6378137,298.257223563,\n            AUTHORITY[\"EPSG\",\"7030\"]],\n        AUTHORITY[\"EPSG\",\"6326\"]],\n    PRIMEM[\"Greenwich\",0,\n        AUTHORITY[\"EPSG\",\"8901\"]],\n    UNIT[\"degree\",0.0174532925199433,\n        AUTHORITY[\"EPSG\",\"9122\"]],\n    AUTHORITY[\"EPSG\",\"4326\"]]",
+    )
+    @test GFT.WellKnownText2(crs) == GFT.WellKnownText2{GFT.CRS}(
+        GFT.CRS(),
+        "GEOGCRS[\"WGS 84\",\n    ENSEMBLE[\"World Geodetic System 1984 ensemble\",\n        MEMBER[\"World Geodetic System 1984 (Transit)\"],\n        MEMBER[\"World Geodetic System 1984 (G730)\"],\n        MEMBER[\"World Geodetic System 1984 (G873)\"],\n        MEMBER[\"World Geodetic System 1984 (G1150)\"],\n        MEMBER[\"World Geodetic System 1984 (G1674)\"],\n        MEMBER[\"World Geodetic System 1984 (G1762)\"],\n        MEMBER[\"World Geodetic System 1984 (G2139)\"],\n        ELLIPSOID[\"WGS 84\",6378137,298.257223563,\n            LENGTHUNIT[\"metre\",1]],\n        ENSEMBLEACCURACY[2.0]],\n    PRIMEM[\"Greenwich\",0,\n        ANGLEUNIT[\"degree\",0.0174532925199433]],\n    CS[ellipsoidal,2],\n        AXIS[\"geodetic latitude (Lat)\",north,\n            ORDER[1],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        AXIS[\"geodetic longitude (Lon)\",east,\n            ORDER[2],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n    USAGE[\n        SCOPE[\"Horizontal component of 3D system.\"],\n        AREA[\"World.\"],\n        BBOX[-90,-180,90,180]],\n    ID[\"EPSG\",4326]]",
+    )
+    @test GFT.ESRIWellKnownText(crs) == GFT.ESRIWellKnownText{GFT.CRS}(
+        GFT.CRS(),
+        "GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]]",
+    )
+    @test GFT.ProjString(crs) ==
+          GFT.ProjString("+proj=longlat +datum=WGS84 +no_defs +type=crs")
+    @test GFT.ProjJSON(crs) == GFT.ProjJSON(
+        "{\n  \"\$schema\": \"https://proj.org/schemas/v0.5/projjson.schema.json\",\n  \"type\": \"GeographicCRS\",\n  \"name\": \"WGS 84\",\n  \"datum_ensemble\": {\n    \"name\": \"World Geodetic System 1984 ensemble\",\n    \"members\": [\n      {\n        \"name\": \"World Geodetic System 1984 (Transit)\",\n        \"id\": {\n          \"authority\": \"EPSG\",\n          \"code\": 1166\n        }\n      },\n      {\n        \"name\": \"World Geodetic System 1984 (G730)\",\n        \"id\": {\n          \"authority\": \"EPSG\",\n          \"code\": 1152\n        }\n      },\n      {\n        \"name\": \"World Geodetic System 1984 (G873)\",\n        \"id\": {\n          \"authority\": \"EPSG\",\n          \"code\": 1153\n        }\n      },\n      {\n        \"name\": \"World Geodetic System 1984 (G1150)\",\n        \"id\": {\n          \"authority\": \"EPSG\",\n          \"code\": 1154\n        }\n      },\n      {\n        \"name\": \"World Geodetic System 1984 (G1674)\",\n        \"id\": {\n          \"authority\": \"EPSG\",\n          \"code\": 1155\n        }\n      },\n      {\n        \"name\": \"World Geodetic System 1984 (G1762)\",\n        \"id\": {\n          \"authority\": \"EPSG\",\n          \"code\": 1156\n        }\n      },\n      {\n        \"name\": \"World Geodetic System 1984 (G2139)\",\n        \"id\": {\n          \"authority\": \"EPSG\",\n          \"code\": 1309\n        }\n      }\n    ],\n    \"ellipsoid\": {\n      \"name\": \"WGS 84\",\n      \"semi_major_axis\": 6378137,\n      \"inverse_flattening\": 298.257223563\n    },\n    \"accuracy\": \"2.0\",\n    \"id\": {\n      \"authority\": \"EPSG\",\n      \"code\": 6326\n    }\n  },\n  \"coordinate_system\": {\n    \"subtype\": \"ellipsoidal\",\n    \"axis\": [\n      {\n        \"name\": \"Geodetic latitude\",\n        \"abbreviation\": \"Lat\",\n        \"direction\": \"north\",\n        \"unit\": \"degree\"\n      },\n      {\n        \"name\": \"Geodetic longitude\",\n        \"abbreviation\": \"Lon\",\n        \"direction\": \"east\",\n        \"unit\": \"degree\"\n      }\n    ]\n  },\n  \"scope\": \"Horizontal component of 3D system.\",\n  \"area\": \"World.\",\n  \"bbox\": {\n    \"south_latitude\": -90,\n    \"west_longitude\": -180,\n    \"north_latitude\": 90,\n    \"east_longitude\": 180\n  },\n  \"id\": {\n    \"authority\": \"EPSG\",\n    \"code\": 4326\n  }\n}",
+    )
     @test GFT.EPSG(crs) == GFT.EPSG("EPSG:4326")
 
     @test convert(GFT.EPSG, crs) == GFT.EPSG("EPSG:4326")
-    @test Proj.proj_get_id_code(convert(Proj.CRS, GFT.EPSG("EPSG:4326"))) == Proj.proj_get_id_code(crs)
+    @test Proj.proj_get_id_code(convert(Proj.CRS, GFT.EPSG("EPSG:4326"))) ==
+          Proj.proj_get_id_code(crs)
 
     # Maybe enable later, based on https://github.com/JuliaGeo/GeoFormatTypes.jl/issues/21
     # @test convert(GFT.ProjString, gftcrs) == GFT.ProjString("+proj=longlat +datum=WGS84 +no_defs +type=crs")

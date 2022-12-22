@@ -123,7 +123,7 @@ function Transformation(
     area::Ptr{PJ_AREA} = C_NULL,
     ctx::Ptr{PJ_CONTEXT} = C_NULL,
 )
-    return Transformation(source_crs.pj, target_crs.pj, always_xy = always_xy, direction = direction, area = area, ctx = ctx)
+    return Transformation(source_crs.pj, target_crs.pj; always_xy, direction, area, ctx)
 end
 
 function Base.show(io::IO, trans::Transformation)
@@ -236,12 +236,31 @@ rectangle.
 
 See [`proj_trans_bounds`](https://proj.org/development/reference/functions.html#c.proj_trans_bounds)
 """
-function bounds(trans::Transformation, (xmin, xmax), (ymin, ymax); densify_pts=21, ctx::Ptr{PJ_CONTEXT}=C_NULL)
+function bounds(
+    trans::Transformation,
+    (xmin, xmax),
+    (ymin, ymax);
+    densify_pts = 21,
+    ctx::Ptr{PJ_CONTEXT} = C_NULL,
+)
     out_xmin = Ref{Float64}(NaN)
     out_xmax = Ref{Float64}(NaN)
     out_ymin = Ref{Float64}(NaN)
     out_ymax = Ref{Float64}(NaN)
-    proj_trans_bounds(ctx, trans.pj, trans.direction, xmin, ymin, xmax, ymax, out_xmin, out_ymin, out_xmax, out_ymax, densify_pts)
+    proj_trans_bounds(
+        ctx,
+        trans.pj,
+        trans.direction,
+        xmin,
+        ymin,
+        xmax,
+        ymax,
+        out_xmin,
+        out_ymin,
+        out_xmax,
+        out_ymax,
+        densify_pts,
+    )
     return (out_xmin[], out_xmax[]), (out_ymin[], out_ymax[])
 end
 
