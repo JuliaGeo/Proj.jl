@@ -11,8 +11,10 @@ Quickstart, based on the [PROJ docs](https://proj.org/development/quickstart.htm
 using Proj
 
 # Proj.jl implements the CoordinateTransformations.jl API.
-# A Proj.Transformation needs the source and target coordinate reference systems.
+# A Proj.Transformation needs the source and target coordinate reference systems (CRS),
+# or a single pipeline.
 trans = Proj.Transformation("EPSG:4326", "+proj=utm +zone=32 +datum=WGS84")
+# The CRS can be a string or the CRS type, which also interfaces with GeoFormatTypes.jl.
 
 # Once created, you can call this object to transform points.
 # The result will be a tuple of Float64s, of length 2, 3 or 4 depending on the input length.
