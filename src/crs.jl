@@ -127,8 +127,9 @@ function GFT.ProjJSON(crs::CRS; ctx::Ptr{PJ_CONTEXT} = C_NULL)
 end
 
 function GFT.EPSG(crs::CRS)
-    code = proj_get_id_code(crs)
-    return GFT.EPSG("EPSG:" * code)
+    str = proj_get_id_code(crs)
+    code = parse(Int, str)
+    return GFT.EPSG(code)
 end
 
 Base.convert(T::Type{<:GFT.CoordinateReferenceSystemFormat}, crs::CRS) = T(crs)
