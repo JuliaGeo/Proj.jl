@@ -78,3 +78,30 @@ Returns `(lat, lon, azimuth)` at the `relative_arclength` between the line's sta
 function geod_position_relative(line::geod_geodesicline, relative_arclength::Real)
     return geod_position(line, line.s13 * relative_arclength)
 end
+
+"""
+    geod_path(geodesic::geod_geodesic, lat1, lon1, lat2, lon2, npoints = 1000)
+
+Returns a tuple of vectors representing longitude and latitude.
+
+## Example
+
+```julia
+geod = Proj.geod_geodesic(6378137, 1/298.257223563)
+lats, lons = Proj.geod_path(geod, 40.64, -73.78, 1.36, 103.99)
+```
+"""
+function geod_path(geodesic::geod_geodesic, lat1, lon1, lat2, lon2, npoints = 1000; caps = Cuint(0))
+    inverse_line = geod_inverseline(geodesic, lat1, lon1, lat2, lon2, caps)
+
+    lats = zeros(Float64, npoints)
+    lons = zeros(Float64, npoints)
+
+    for i in 1:npoints
+        lats[i], lons[i], _ = geod_position_relative(inverse_line, (i-1)/npoints)
+    end
+
+    return lats, lons
+end
+# lines(GeoMakie.coastlines(); linewidth = 0.5, axis = (; aspect = DataAspect(), title = "Geodesic path from JFK to SIN"))
+# lines!(lons, lats; linewidth = 1.5)
