@@ -438,3 +438,36 @@ end
     # Maybe enable later, based on https://github.com/JuliaGeo/GeoFormatTypes.jl/issues/21
     # @test convert(GFT.ProjString, gftcrs) == GFT.ProjString("+proj=longlat +datum=WGS84 +no_defs +type=crs")
 end
+
+@testset "Geodesics" begin
+    
+    local geod, direct_line, inverse_line
+
+    # point 1 is JFK airport, point 2 is Changi airport
+    lat1, lon1, lat2, lon2 = 40.64, -73.78, 1.36, 103.99
+
+    @test_nowarn geod = Proj.geod_geodesic(6378137, 1/298.257223563)
+    @test_nowarn direct_line = Proj.geod_directline(geod, lat1, lon1, 3.3057734780176125, 1.534751294051294e7) # the azi1 and s13 values were computed directly
+    @test_nowarn inverse_line = Proj.geod_inverseline(geod, lat1, lon1, lat2, lon2)
+
+    @test begin
+        lat, lon = Proj.geod_position(direct_line, 0)
+        lat ≈ lat1 && lon ≈ lon1
+    end
+
+    @test begin
+        lat, lon = Proj.geod_position(inverse_line, 0)
+        lat ≈ lat1 && lon ≈ lon1
+    end
+
+    @test begin
+        lat, lon = Proj.geod_position_relative(direct_line, 1)
+        lat ≈ lat2 && lon ≈ lon2
+    end
+
+    @test begin
+        lat, lon = Proj.geod_position_relative(inverse_line, 1)
+        lat ≈ lat2 && lon ≈ lon2
+    end
+
+end
