@@ -119,7 +119,7 @@ function geod_path(geodesic::geod_geodesic, lat1, lon1, lat2, lon2, npoints = 10
     lons = zeros(Float64, npoints)
 
     for i in 1:npoints
-        lats[i], lons[i], _ = geod_position_relative(inverse_line, (i-1)/npoints)
+        lats[i], lons[i], _ = geod_position_relative(inverse_line, (i-1)/(npoints-1))
     end
 
     return lats, lons
