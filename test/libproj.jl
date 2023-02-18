@@ -470,4 +470,9 @@ end
         lat ≈ lat2 && lon ≈ lon2
     end
 
+    @test begin
+        lats, lons = Proj.geod_path(geod, lat1, lon1, lat2, lon2, 2)
+        lats[1] ≈ lat1 && lats[2] ≈ lat2 && lons[1] ≈ lon1 && lons[2] ≈ lon2
+    end
+
 end
