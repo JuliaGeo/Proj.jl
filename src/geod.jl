@@ -3,12 +3,20 @@
 
 # geod_geodesic
 
+"""
+    Proj._null(geod_*)
+
+A null initializer which returns an object of the given type, 
+with all floats set to NaN, and all integers set to 0.
+
+Available types are `geod_geodesic`, `geod_geodesicline`.
+"""
 function _null(::Type{geod_geodesic})
     return geod_geodesic(
-        0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-        ntuple(_ -> 0.0, Val(6)),
-        ntuple(_ -> 0.0, Val(15)),
-        ntuple(_ -> 0.0, Val(21)),
+        NaN64, NaN64, NaN64, NaN64, NaN64, NaN64, NaN64, NaN64, NaN64,
+        ntuple(_ -> NaN64, Val(6)),
+        ntuple(_ -> NaN64, Val(15)),
+        ntuple(_ -> NaN64, Val(21)),
     )
 end
 
@@ -22,8 +30,8 @@ end
 
 function _null(::Type{Proj.geod_geodesicline})
     return geod_geodesicline(
-        (0 for _ in 1:30)...,
-        ntuple(_ -> 0.0, 7), ntuple(_ -> 0.0, 7), ntuple(_ -> 0.0, 7), ntuple(_ -> 0.0, 6), ntuple(_ -> 0.0, 6),
+        (NaN64 for _ in 1:30)...,
+        ntuple(_ -> NaN64, 7), ntuple(_ -> NaN64, 7), ntuple(_ -> NaN64, 7), ntuple(_ -> NaN64, 6), ntuple(_ -> NaN64, 6),
         Cuint(0)
     )
 end
@@ -56,7 +64,7 @@ function geod_position(line::geod_geodesicline, s12::Real)
     lon = Ref{Cdouble}(NaN64)
     azi = Ref{Cdouble}(NaN64)
 
-    return geod_position(pointer_from_objref(line), s12, lat, lon, azi)
+    geod_position(pointer_from_objref(line), s12, lat, lon, azi)
 
     return lat[], lon[], azi[]
 end
