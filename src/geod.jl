@@ -79,6 +79,27 @@ function geod_position_relative(line::geod_geodesicline, relative_arclength::Rea
     return geod_position(line, line.s13 * relative_arclength)
 end
 
+function geod_setdistance(l::geod_geodesicline, s13::Real)
+    geod_setdistance(pointer_from_objref(l), Cdouble(l13))
+end
+
+function geod_genposition(l::geod_geodesicline, flags::Union{Cuint, geod_flags}, s12_a12)
+    plat2 = Ref{Cdouble}(NaN64)
+    plon2 = Ref{Cdouble}(NaN64)
+    pazi2 = Ref{Cdouble}(NaN64)
+    ps12 = Ref{Cdouble}(NaN64)
+    pm12 = Ref{Cdouble}(NaN64)
+    pM12 = Ref{Cdouble}(NaN64)
+    pM21 = Ref{Cdouble}(NaN64)
+    pS12 = Ref{Cdouble}(NaN64)
+
+    geod_genposition(pointer_from_objref(l), flags, s12_a12, plat2, plon2, pazi2, ps12, pm12, pM12, pM21, pS12)
+
+    return (plat2[], plon2[], pazi2[], ps12[], pm12[], pM12[], pM21[], pS12[])
+
+end
+
+
 """
     geod_path(geodesic::geod_geodesic, lat1, lon1, lat2, lon2, npoints = 1000)
 
