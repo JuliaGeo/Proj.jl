@@ -9,7 +9,7 @@
 A null initializer which returns an object of the given type, 
 with all floats set to NaN, and all integers set to 0.
 
-Available types are `geod_geodesic`, `geod_geodesicline`.
+Available types are `geod_geodesic`, `geod_geodesicline, `geod_polygon`.
 """
 function _null(::Type{geod_geodesic})
     return geod_geodesic(
@@ -28,14 +28,13 @@ end
 
 # geod_geodesicline
 
-function _null(::Type{Proj.geod_geodesicline})
+function _null(::Type{geod_geodesicline})
     return geod_geodesicline(
         (NaN64 for _ in 1:30)...,
         ntuple(_ -> NaN64, 7), ntuple(_ -> NaN64, 7), ntuple(_ -> NaN64, 7), ntuple(_ -> NaN64, 6), ntuple(_ -> NaN64, 6),
         Cuint(0)
     )
 end
-
 
 function geod_directline(g::geod_geodesic, lat1, lon1, azi1, s12, caps::Cuint = UInt32(0))
     obj = _null(geod_geodesicline)
@@ -126,3 +125,73 @@ function geod_path(geodesic::geod_geodesic, lat1, lon1, lat2, lon2, npoints = 10
 end
 # lines(GeoMakie.coastlines(); linewidth = 0.5, axis = (; aspect = DataAspect(), title = "Geodesic path from JFK to SIN"))
 # lines!(lons, lats; linewidth = 1.5)
+
+
+# Polygon interface
+
+
+# geod_polygon
+
+function _null(::Type{geod_polygon})
+    return geod_polygon(
+        NaN64, NaN64, NaN64, NaN64,
+        (NaN64, NaN64), (NaN64, NaN64),
+        Cint(0), Cint(0), Cint(0)
+    )
+end
+
+function geod_polygon_init(p::geod_polygon, polylinep::Int = 1)
+    polylinep_Cint = Cint(polylinep)
+    @assert polylinep_Cint == polylinep "Your integer is too large and there will be an under/overflow error.  Please pass an Cint."
+    geod_polygon_init(pointer_from_objref(p, polylinep_Cint))
+    return p
+end
+
+geod_polygon_clear(p::geod_polygon) = geod_polygon_clear(pointer_from_objref(p))
+
+function geod_polygon_addpoint(g::geod_geodesic, p::geod_polygon, lat::Real, lon::Real)
+    geod_polygon_addpoint(pointer_from_objref(g), pointer_from_objref(p), Cdouble(lat), Cdouble(lon))
+    return p
+end
+
+function geod_polygon_addedge(g::geod_geodesic, p::geod_polygon, azi::Real, s::Real)
+    geod_polygon_addedge(pointer_from_objref(g), pointer_from_objref(p), Cdouble(azi), Cdouble(s))
+    return p
+end
+
+"""
+    geod_polygon_compute(g::geod_geodesic, p::geod_polygon, reverse::Bool = false, sign::Bool = true)
+
+Returns a tuple of `(area, perimeter)` in m² and m respectively.  Area is only returned if `polyline` is nonzero in the call to `geod_polygon_init`.
+"""
+function geod_polygon_compute(g::geod_geodesic, p::geod_polygon, reverse::Bool = false, sign::Bool = true)
+    # initializing to zero makes the return not happen for that value, so we need to initialize to 1
+    pA = Ref{Cdouble}(1e0)
+    pP = Ref{Cdouble}(1e0)
+    
+    n = geod_polygon_compute(pointer_from_objref(g), pointer_from_objref(p), Cint(reverse), Cint(sign), pA, pP)
+
+    return (pA[], pP[])
+end
+
+"""
+    geod_polygonarea(g::geod_geodesic, lats::AbstractVector{<: Real}, lons::AbstractVector{<: Real})
+
+    Simple interface to compute the geodesic area of a polygon.  
+Returns a tuple of `(area, perimeter)` in m² and m respectively.
+"""
+function geod_polygonarea(g::geod_geodesic, lats::AbstractVector{<: Real}, lons::AbstractVector{<: Real})
+    @assert length(lats) == length(lons)
+    c_lats = convert(Vector{Cdouble}, lats)
+    c_lons = convert(Vector{Cdouble}, lons)
+
+    pA = Ref{Cdouble}(1e0)
+    pP = Ref{Cdouble}(1e0)
+    
+    geod_polygonarea(pointer_from_objref(g), c_lats, c_lons, length(lats), pA, pP)
+
+    return (pA[], pP[])
+
+end
+
+# TODO: add geod_polygon_addpoint and geod_polygon_addedge
