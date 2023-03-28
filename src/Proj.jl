@@ -3,6 +3,7 @@ module Proj
 using PROJ_jll
 using CEnum
 using CoordinateTransformations
+using GeoInterface
 using NetworkOptions: ca_roots
 import GeoFormatTypes as GFT
 
@@ -92,6 +93,7 @@ include("libproj.jl")
 include("crs.jl")
 include("coord.jl")
 include("error.jl")
+include("geointerface.jl")
 
 """
     unsafe_loadstringlist(ptr::Ptr{Cstring})
