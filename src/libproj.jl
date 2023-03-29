@@ -2038,7 +2038,7 @@ The struct containing information about the ellipsoid. This must be initialized 
 | a     | the equatorial radius     |
 | f     | the flattening  ` SKIP `  |
 """
-mutable struct geod_geodesic
+struct geod_geodesic
     a::Cdouble
     f::Cdouble
     f1::Cdouble
@@ -2071,7 +2071,7 @@ The struct containing information about a single geodesic. This must be initiali
 | s13   | distance to reference point  ` SKIP `  |
 | caps  | the capabilities                       |
 """
-mutable struct geod_geodesicline
+struct geod_geodesicline
     lat1::Cdouble
     lon1::Cdouble
     azi1::Cdouble
@@ -2121,7 +2121,7 @@ The struct for accumulating information about a geodesic polygon. This is used f
 | lon   | the current longitude  ` SKIP `  |
 | num   | the number of points so far      |
 """
-mutable struct geod_polygon
+struct geod_polygon
     lat::Cdouble
     lon::Cdouble
     lat0::Cdouble

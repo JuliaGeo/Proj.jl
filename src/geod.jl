@@ -21,9 +21,10 @@ function _null(::Type{geod_geodesic})
 end
 
 function geod_geodesic(equatorial_radius::Real, flattening::Real)
-    obj = _null(geod_geodesic)
-    geod_init(Ref(obj), Cdouble(equatorial_radius), Cdouble(flattening))
-    return obj
+    init_obj = _null(geod_geodesic)
+    new_objref = Ref(init_obj)
+    geod_init(new_objref, Cdouble(equatorial_radius), Cdouble(flattening))
+    return new_objref[]
 end
 
 # geod_geodesicline
@@ -37,23 +38,26 @@ function _null(::Type{geod_geodesicline})
 end
 
 function geod_directline(g::geod_geodesic, lat1, lon1, azi1, s12, caps::Cuint = UInt32(0))
-    obj = _null(geod_geodesicline)
+    init_obj = _null(geod_geodesicline)
+    new_objref = Ref(init_obj)
     geod_directline(
-        pointer_from_objref(obj),
-        pointer_from_objref(g), 
+        new_objref,
+        Ref(g), 
         lat1, lon1, azi1, s12, caps
     )
-    return obj
+    return new_objref[]
 end
 
 function geod_inverseline(g::geod_geodesic, lat1, lon1, lat2, lon2, caps::Cuint = UInt32(0))
-    obj = _null(geod_geodesicline)
+    init_obj = _null(geod_geodesicline)
+    new_objref = Ref(init_obj)
+
     geod_inverseline(
-        pointer_from_objref(obj),
-        pointer_from_objref(g), 
+        new_objref,
+        Ref(g), 
         lat1, lon1, lat2, lon2, caps
     )
-    return obj
+    return new_objref[]
 end
 
 # returns according to the C order (y, x, az).  Do we want this to return by the Julian order (x, y, azi)?  
@@ -63,7 +67,7 @@ function geod_position(line::geod_geodesicline, s12::Real)
     lon = Ref{Cdouble}(NaN64)
     azi = Ref{Cdouble}(NaN64)
 
-    geod_position(pointer_from_objref(line), s12, lat, lon, azi)
+    geod_position(Ref(line), s12, lat, lon, azi)
 
     return lat[], lon[], azi[]
 end
@@ -79,7 +83,7 @@ function geod_position_relative(line::geod_geodesicline, relative_arclength::Rea
 end
 
 function geod_setdistance(l::geod_geodesicline, s13::Real)
-    geod_setdistance(pointer_from_objref(l), Cdouble(l13))
+    geod_setdistance(Ref(l), Cdouble(l13))
 end
 
 function geod_genposition(l::geod_geodesicline, flags::Union{Cuint, geod_flags}, s12_a12)
@@ -92,7 +96,7 @@ function geod_genposition(l::geod_geodesicline, flags::Union{Cuint, geod_flags},
     pM21 = Ref{Cdouble}(NaN64)
     pS12 = Ref{Cdouble}(NaN64)
 
-    geod_genposition(pointer_from_objref(l), flags, s12_a12, plat2, plon2, pazi2, ps12, pm12, pM12, pM21, pS12)
+    geod_genposition(Ref(l), flags, s12_a12, plat2, plon2, pazi2, ps12, pm12, pM12, pM21, pS12)
 
     return (plat2[], plon2[], pazi2[], ps12[], pm12[], pM12[], pM21[], pS12[])
 
@@ -143,19 +147,19 @@ end
 function geod_polygon_init(p::geod_polygon, polylinep::Int = 1)
     polylinep_Cint = Cint(polylinep)
     @assert polylinep_Cint == polylinep "Your integer is too large and there will be an under/overflow error.  Please pass an Cint."
-    geod_polygon_init(pointer_from_objref(p, polylinep_Cint))
+    geod_polygon_init(Ref(p), polylinep_Cint)
     return p
 end
 
-geod_polygon_clear(p::geod_polygon) = geod_polygon_clear(pointer_from_objref(p))
+geod_polygon_clear(p::geod_polygon) = geod_polygon_clear(Ref(p))
 
 function geod_polygon_addpoint(g::geod_geodesic, p::geod_polygon, lat::Real, lon::Real)
-    geod_polygon_addpoint(pointer_from_objref(g), pointer_from_objref(p), Cdouble(lat), Cdouble(lon))
+    geod_polygon_addpoint(Ref(g), Ref(p), Cdouble(lat), Cdouble(lon))
     return p
 end
 
 function geod_polygon_addedge(g::geod_geodesic, p::geod_polygon, azi::Real, s::Real)
-    geod_polygon_addedge(pointer_from_objref(g), pointer_from_objref(p), Cdouble(azi), Cdouble(s))
+    geod_polygon_addedge(Ref(g), Ref(p), Cdouble(azi), Cdouble(s))
     return p
 end
 
@@ -169,7 +173,7 @@ function geod_polygon_compute(g::geod_geodesic, p::geod_polygon, reverse::Bool =
     pA = Ref{Cdouble}(1e0)
     pP = Ref{Cdouble}(1e0)
     
-    n = geod_polygon_compute(pointer_from_objref(g), pointer_from_objref(p), Cint(reverse), Cint(sign), pA, pP)
+    n = geod_polygon_compute(Ref(g), Ref(p), Cint(reverse), Cint(sign), pA, pP)
 
     return (pA[], pP[])
 end
@@ -188,10 +192,10 @@ function geod_polygonarea(g::geod_geodesic, lats::AbstractVector{<: Real}, lons:
     pA = Ref{Cdouble}(1e0)
     pP = Ref{Cdouble}(1e0)
     
-    geod_polygonarea(pointer_from_objref(g), c_lats, c_lons, length(lats), pA, pP)
+    geod_polygonarea(Ref(g), c_lats, c_lons, length(lats), pA, pP)
 
     return (pA[], pP[])
 
 end
 
-# TODO: add geod_polygon_addpoint and geod_polygon_addedge
+# TODO: add geod_polygon_addpoint, geod_polygon_addedge, geod_polygon_testedge, geod_polygon_testpoint
