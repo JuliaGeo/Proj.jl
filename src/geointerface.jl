@@ -20,6 +20,8 @@ Reproject any GeoInterface.jl compatible `geometry` from `source_crs` to `target
 The returned object will be constructed from `GeoInterface.WrapperGeometry`
 geometries, wrapping views of `Proj.Coord`.
 """
+reproject(geom; source_crs, target_crs, time=Inf) =
+    reproject(geom, source_crs, target_crs; time)
 function reproject(geom, source_crs, target_crs; time=Inf)
     source_crs1 = convert(Proj.CRS, source_crs)
     target_crs1 = convert(Proj.CRS, target_crs)
