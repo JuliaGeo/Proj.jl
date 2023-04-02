@@ -5,30 +5,48 @@ const GI = GeoInterface
 # Coord is a PointTrait
 GI.isgeometry(::Type{Coord}) = true
 GI.geomtrait(::Coord) = GI.PointTrait()
-GI.x(::PointTrait, c::Coord) = c.x
-GI.y(::PointTrait, c::Coord) = c.y
-# GI.z(::PointTrait, c::Coord) = c.z
-GI.getcoord(::PointTrait, c::Coord) = (c.x, c.y)
-GI.getcoord(::PointTrait, c::Coord, i::Int) = c[i]
-GI.coordnames(::PointTrait, ::Coord) = (:X, :Y)
+GI.x(::PointTrait, c::Coord) = c.x # TODO: these may have the wrong order for some CRS. 
+GI.y(::PointTrait, c::Coord) = c.y 
+GI.z(::PointTrait, c::Coord{3}) = c.z
+GI.is3d(::PointTrait, c::Coord{2}) = false
+GI.is3d(::PointTrait, c::Coord{3}) = true
+GI.ismeasured(::PointTrait, c::Coord) = false
+function GI.getcoord(::PointTrait, c::Coord{N}, i::Int) where N
+    checkbounds(1:N, i)
+    @inbounds c[i]
+end
+GI.getcoord(::PointTrait, c::Coord{2}) = (c.x, c.y)
+GI.getcoord(::PointTrait, c::Coord{3}) = (c.x, c.y, c.z)
+coordnames(::PointTrait, ::Coord{2}) = (:X, :Y)
+coordnames(::PointTrait, ::Coord{3}) = (:X, :Y, :Z)
 
 """
     reproject(geometry, source_crs, target_crs)
+    reproject(geometry; [source_crs,] target_crs)
 
 Reproject any GeoInterface.jl compatible `geometry` from `source_crs` to `target_crs`.
 
 The returned object will be constructed from `GeoInterface.WrapperGeometry`
 geometries, wrapping views of `Proj.Coord`.
 """
-reproject(geom; source_crs, target_crs, time=Inf) =
-    reproject(geom, source_crs, target_crs; time)
-function reproject(geom, source_crs, target_crs; time=Inf)
-    wrapped_geom, coords = reconstruct(geom) do p
-        Proj.Coord(GI.x(p), GI.y(p), (GI.is3d(geom) ? GI.z(p) : 0.0), time)
+function reproject(geom; source_crs=nothing, target_crs, kw...)
+    source_crs = isnothing(source_crs) ? GeoInterface.crs(geom) : source_crs
+    isnothing(source_crs) && throw(ArgumentError("geom has no crs attatched. Pass a `source_crs` keyword"))
+    reproject(geom, source_crs, target_crs; kw...)
+end
+function reproject(geom, source_crs, target_crs; time=Inf, always_xy=true)
+    wrapped_geom, coords = if GI.is3d(geom)
+        reconstruct(geom; crs=target_crs) do p
+            Proj.Coord{3}(GI.x(p), GI.y(p), GI.z(p); time)
+        end
+    else
+        reconstruct(geom; crs=target_crs) do p
+            Proj.Coord{2}(GI.x(p), GI.y(p); time)
+        end
     end
     source_crs1 = convert(Proj.CRS, source_crs)
     target_crs1 = convert(Proj.CRS, target_crs)
-    trans = Proj.Transformation(source_crs1, target_crs1, always_xy = true)
+    trans = Proj.Transformation(source_crs1, target_crs1; always_xy)
     err = Proj.proj_trans_array(trans.pj, Proj.PJ_FWD, length(coords), coords)
     err == 0 || error("Proj error $err")
     # crs = target_crs isa GFT.GeoFormat ? target_crs : convert(WellKnownText, crs)
@@ -69,6 +87,7 @@ _reconstruct!(f, points, geom, n::Int, crs) = _reconstruct!(f, points, GI.trait(
 function _reconstruct!(f, points, trait::AbstractGeometryTrait, geom, n, crs)
     T = GI.geointerface_geomtype(trait)
     geoms = map(GI.getgeom(geom)) do childgeom
+        childcrs = nothing # We dont pass the CRS down, the type gets too complicated
         n, reconstructed_childgeom = _reconstruct!(f, points, GI.trait(childgeom), childgeom, n, crs)
         reconstructed_childgeom
     end

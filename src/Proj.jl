@@ -50,13 +50,17 @@ julia> Proj.Coord((1.0, 2.0, 3.0))
  Inf
 ```
 """
-struct Coord <: AbstractVector{Float64}
+struct Coord{N} <: AbstractVector{Float64}
     x::Float64
     y::Float64
     z::Float64
     t::Float64
-    Coord(x, y, z = 0.0, t = Inf) = new(x, y, z, t)
 end
+Coord{3}(x, y, z=0.0; time=Inf) = Coord{3}(x, y, z, time)
+Coord{2}(x, y; time=Inf) = Coord{2}(x, y, 0.0, time)
+Coord(x, y; time=Inf) = Coord{2}(x, y, 0.0, time)
+Coord(x, y, z; time=Inf) = Coord{3}(x, y, z, time)
+Coord(x, y, z, t) = Coord{3}(x, y, z, t)
 
 # this shields a StackOverflow from the splatting constructor
 Coord(::Real) = error("Proj.Coord takes 2 to 4 numbers, one given")

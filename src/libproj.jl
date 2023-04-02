@@ -490,20 +490,20 @@ function proj_degree_output(P, dir)
     @ccall libproj.proj_degree_output(P::Ptr{PJ}, dir::PJ_DIRECTION)::Cint
 end
 
-function proj_trans(P, direction, coord)
-    @ccall libproj.proj_trans(P::Ptr{PJ}, direction::PJ_DIRECTION, coord::Coord)::Coord
+function proj_trans(P, direction, coord::Coord{N}) where N
+    @ccall libproj.proj_trans(P::Ptr{PJ}, direction::PJ_DIRECTION, coord::Coord{N})::Coord{N}
 end
 
 function proj_trans_get_last_used_operation(P)
     @ccall libproj.proj_trans_get_last_used_operation(P::Ptr{PJ})::Ptr{PJ}
 end
 
-function proj_trans_array(P, direction, n, coord)
+function proj_trans_array(P, direction, n, coord::Vector{Coord{N}}) where N
     @ccall libproj.proj_trans_array(
         P::Ptr{PJ},
         direction::PJ_DIRECTION,
         n::Csize_t,
-        coord::Ptr{Coord},
+        coord::Ptr{Coord{N}},
     )::Cint
 end
 
@@ -566,37 +566,44 @@ end
 
 ` Doxygen_Suppress `
 """
-function proj_coord(x, y, z = 0.0, t = Inf)
-    @ccall libproj.proj_coord(x::Cdouble, y::Cdouble, z::Cdouble, t::Cdouble)::Coord
+function proj_coord(x, y; time=Inf)
+    z = 0.0 
+    @ccall libproj.proj_coord(x::Cdouble, y::Cdouble, z::Cdouble, t::Cdouble)::Coord{2}
+end
+function proj_coord(x, y, z; time=Inf)
+    @ccall libproj.proj_coord(x::Cdouble, y::Cdouble, z::Cdouble, t::Cdouble)::Coord{3}
+end
+function proj_coord(x, y, z, t)
+    @ccall libproj.proj_coord(x::Cdouble, y::Cdouble, z::Cdouble, t::Cdouble)::Coord{3}
 end
 
-function proj_roundtrip(P, direction, n, coord)
+function proj_roundtrip(P, direction, n, coord::Coord{N}) where N
     @ccall libproj.proj_roundtrip(
         P::Ptr{PJ},
         direction::PJ_DIRECTION,
         n::Cint,
-        coord::Ptr{Coord},
+        coord::Ptr{Coord{N}},
     )::Cdouble
 end
 
-function proj_lp_dist(P, a, b)
-    @ccall libproj.proj_lp_dist(P::Ptr{PJ}, a::Coord, b::Coord)::Cdouble
+function proj_lp_dist(P, a::Coord{Na}, b::Coord{Nb}) where {Na,Nb}
+    @ccall libproj.proj_lp_dist(P::Ptr{PJ}, a::Coord{Na}, b::Coord{Nb})::Cdouble
 end
 
-function proj_lpz_dist(P, a, b)
-    @ccall libproj.proj_lpz_dist(P::Ptr{PJ}, a::Coord, b::Coord)::Cdouble
+function proj_lpz_dist(P, a::Coord{Na}, b::Coord{Nb}) where {Na,Nb}
+    @ccall libproj.proj_lpz_dist(P::Ptr{PJ}, a::Coord{Na}, b::Coord{Nb})::Cdouble
 end
 
-function proj_xy_dist(a, b)
-    @ccall libproj.proj_xy_dist(a::Coord, b::Coord)::Cdouble
+function proj_xy_dist(a::Coord{Na}, b::Coord{Nb}) where {Na,Nb}
+    @ccall libproj.proj_xy_dist(a::Coord{Na}, b::Coord{Nb})::Cdouble
 end
 
-function proj_xyz_dist(a, b)
-    @ccall libproj.proj_xyz_dist(a::Coord, b::Coord)::Cdouble
+function proj_xyz_dist(a::Coord{Na}, b::Coord{Nb}) where {Na,Nb}
+    @ccall libproj.proj_xyz_dist(a::Coord{Na}, b::Coord{Nb})::Cdouble
 end
 
-function proj_geod(P, a, b)
-    @ccall libproj.proj_geod(P::Ptr{PJ}, a::Coord, b::Coord)::Coord
+function proj_geod(P, a::Coord{N}, b::Coord{N}) where {N}
+    @ccall libproj.proj_geod(P::Ptr{PJ}, a::Coord{N}, b::Coord{N})::Coord{N}
 end
 
 function proj_context_errno(ctx = C_NULL)
@@ -644,8 +651,8 @@ function proj_log_func(app_data, logf, ctx = C_NULL)
     )::Cvoid
 end
 
-function proj_factors(P, lp)
-    @ccall libproj.proj_factors(P::Ptr{PJ}, lp::Coord)::PJ_FACTORS
+function proj_factors(P, lp::Coord{N}) where N
+    @ccall libproj.proj_factors(P::Ptr{PJ}, lp::Coord{N})::PJ_FACTORS
 end
 
 function proj_info()
@@ -1699,12 +1706,12 @@ function proj_list_destroy(result)
     @ccall libproj.proj_list_destroy(result::Ptr{PJ_OBJ_LIST})::Cvoid
 end
 
-function proj_get_suggested_operation(operations, direction, coord, ctx = C_NULL)
+function proj_get_suggested_operation(operations, direction, coord::Coord{N}, ctx = C_NULL) where N
     @ccall libproj.proj_get_suggested_operation(
         ctx::Ptr{PJ_CONTEXT},
         operations::Ptr{PJ_OBJ_LIST},
         direction::PJ_DIRECTION,
-        coord::Coord,
+        coord::Coord{N},
     )::Cint
 end
 
