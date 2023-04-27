@@ -55,12 +55,25 @@ Reproject any GeoInterface.jl compatible `geometry` from `source_crs` to `target
 The returned object will be constructed from `GeoInterface.WrapperGeometry`
 geometries, wrapping views of `Proj.Point`.
 """
-function reproject(geom; source_crs=nothing, target_crs, kw...)
-    source_crs = isnothing(source_crs) ? GeoInterface.crs(geom) : source_crs
-    isnothing(source_crs) && throw(ArgumentError("geom has no crs attatched. Pass a `source_crs` keyword"))
-    reproject(geom, source_crs, target_crs; kw...)
+function reproject(geom; 
+    source_crs=nothing, target_crs=nothing, transform=nothing, kw...
+)
+    if isnothing(transform)
+        source_crs = isnothing(source_crs) ? GeoInterface.crs(geom) : source_crs
+        isnothing(source_crs) && throw(ArgumentError("geom has no crs attatched. Pass a `source_crs` keyword"))
+        reproject(geom, source_crs, target_crs; transform, kw...)
+    else
+        reproject(geom, transform)
+    end
 end
-function reproject(geom, source_crs, target_crs; time=Inf, always_xy=true)
+function reproject(geom, source_crs, target_crs; 
+    time=Inf, 
+    always_xy=true,
+    transform=Proj.Transformation(source_crs1, target_crs1; always_xy),
+)
+    reproject(geom, transform; time)
+end
+function reproject(geom, transform::Transformation; time)
     wrapped_geom, coords = if GI.is3d(geom)
         reconstruct(geom; crs=target_crs) do p
             Proj.Point{3}(GI.x(p), GI.y(p), GI.z(p); time)
@@ -72,7 +85,6 @@ function reproject(geom, source_crs, target_crs; time=Inf, always_xy=true)
     end
     source_crs1 = convert(Proj.CRS, source_crs)
     target_crs1 = convert(Proj.CRS, target_crs)
-    trans = Proj.Transformation(source_crs1, target_crs1; always_xy)
     err = Proj.proj_trans_array(trans.pj, Proj.PJ_FWD, length(coords), coords)
     err == 0 || error("Proj error $err")
     # crs = target_crs isa GFT.GeoFormat ? target_crs : convert(WellKnownText, crs)
