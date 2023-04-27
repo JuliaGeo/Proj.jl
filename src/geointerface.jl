@@ -2,23 +2,49 @@ using GeoInterface
 
 const GI = GeoInterface
 
-# Coord is a PointTrait
-GI.isgeometry(::Type{Coord}) = true
-GI.geomtrait(::Coord) = GI.PointTrait()
-GI.x(::PointTrait, c::Coord) = c.x # TODO: these may have the wrong order for some CRS. 
-GI.y(::PointTrait, c::Coord) = c.y 
-GI.z(::PointTrait, c::Coord{3}) = c.z
-GI.is3d(::PointTrait, c::Coord{2}) = false
-GI.is3d(::PointTrait, c::Coord{3}) = true
-GI.ismeasured(::PointTrait, c::Coord) = false
-function GI.getcoord(::PointTrait, c::Coord{N}, i::Int) where N
+struct Point{D}
+    c::Coord
+end
+Point{D}(x, y, z, t) where N = Point{N}(Coord(x, y, z, y))
+
+Point{3}(x, y, z=0.0; time=Inf) = Point{3}(x, y, z, time)
+Point{2}(x, y; time=Inf) = Point{2}(x, y, 0.0, time)
+Point(x, y; time=Inf) = Point{2}(x, y, 0.0, time)
+Point(x, y, z; time=Inf) = Point{3}(x, y, z, time)
+Point(x, y, z, t) = Point{3}(x, y, z, t)
+
+# this shields a StackOverflow from the splatting constructor
+Point(::Real) = error("Proj.Point takes 2 to 4 numbers, one given")
+Point(v) = Point(v...)
+function Point(v::AbstractVector{<:Real})
+    n = length(v)
+    return if n == 2
+        Point{2}(v[begin], v[begin+1])
+    elseif n == 3
+        Point{3}(v[begin], v[begin+1], v[begin+2])
+    elseif n == 4
+        Point{3}(v[begin], v[begin+1], v[begin+2], v[begin+3])
+    else
+        error("Proj.Point takes 2 to 4 numbers")
+    end
+end
+
+GI.isgeometry(::Type{Point}) = true
+GI.geomtrait(::Point) = GI.PointTrait()
+GI.x(::PointTrait, c::Point) = c.x # TODO: these may have the wrong order for some CRS. 
+GI.y(::PointTrait, c::Point) = c.y 
+GI.z(::PointTrait, c::Point{3}) = c.z
+GI.is3d(::PointTrait, c::Point{2}) = false
+GI.is3d(::PointTrait, c::Point{3}) = true
+GI.ismeasured(::PointTrait, c::Point) = false
+function GI.getcoord(::PointTrait, c::Point{N}, i::Int) where N
     checkbounds(1:N, i)
     @inbounds c[i]
 end
-GI.getcoord(::PointTrait, c::Coord{2}) = (c.x, c.y)
-GI.getcoord(::PointTrait, c::Coord{3}) = (c.x, c.y, c.z)
-coordnames(::PointTrait, ::Coord{2}) = (:X, :Y)
-coordnames(::PointTrait, ::Coord{3}) = (:X, :Y, :Z)
+GI.getcoord(::PointTrait, c::Point{2}) = (c.x, c.y)
+GI.getcoord(::PointTrait, c::Point{3}) = (c.x, c.y, c.z)
+coordnames(::PointTrait, ::Point{2}) = (:X, :Y)
+coordnames(::PointTrait, ::Point{3}) = (:X, :Y, :Z)
 
 """
     reproject(geometry, source_crs, target_crs)
@@ -27,7 +53,7 @@ coordnames(::PointTrait, ::Coord{3}) = (:X, :Y, :Z)
 Reproject any GeoInterface.jl compatible `geometry` from `source_crs` to `target_crs`.
 
 The returned object will be constructed from `GeoInterface.WrapperGeometry`
-geometries, wrapping views of `Proj.Coord`.
+geometries, wrapping views of `Proj.Point`.
 """
 function reproject(geom; source_crs=nothing, target_crs, kw...)
     source_crs = isnothing(source_crs) ? GeoInterface.crs(geom) : source_crs
@@ -37,11 +63,11 @@ end
 function reproject(geom, source_crs, target_crs; time=Inf, always_xy=true)
     wrapped_geom, coords = if GI.is3d(geom)
         reconstruct(geom; crs=target_crs) do p
-            Proj.Coord{3}(GI.x(p), GI.y(p), GI.z(p); time)
+            Proj.Point{3}(GI.x(p), GI.y(p), GI.z(p); time)
         end
     else
         reconstruct(geom; crs=target_crs) do p
-            Proj.Coord{2}(GI.x(p), GI.y(p); time)
+            Proj.Point{2}(GI.x(p), GI.y(p); time)
         end
     end
     source_crs1 = convert(Proj.CRS, source_crs)
