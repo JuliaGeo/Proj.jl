@@ -3,9 +3,9 @@ using GeoInterface
 const GI = GeoInterface
 
 struct Point{D}
-    c::Coord
+    coord::Coord
 end
-Point{D}(x, y, z, t) where N = Point{N}(Coord(x, y, z, y))
+Point{D}(x, y, z, t) where D = Point{D}(Coord(x, y, z, y))
 
 Point{3}(x, y, z=0.0; time=Inf) = Point{3}(x, y, z, time)
 Point{2}(x, y; time=Inf) = Point{2}(x, y, 0.0, time)
@@ -29,20 +29,20 @@ function Point(v::AbstractVector{<:Real})
     end
 end
 
-GI.isgeometry(::Type{Point}) = true
+GI.isgeometry(::Type{<:Point}) = true
 GI.geomtrait(::Point) = GI.PointTrait()
-GI.x(::PointTrait, c::Point) = c.x # TODO: these may have the wrong order for some CRS. 
-GI.y(::PointTrait, c::Point) = c.y 
-GI.z(::PointTrait, c::Point{3}) = c.z
+GI.x(::PointTrait, c::Point) = c.coord.x # TODO: these may have the wrong order for some CRS. 
+GI.y(::PointTrait, c::Point) = c.coord.y 
+GI.z(::PointTrait, c::Point{3}) = c.coord.z
 GI.is3d(::PointTrait, c::Point{2}) = false
 GI.is3d(::PointTrait, c::Point{3}) = true
 GI.ismeasured(::PointTrait, c::Point) = false
-function GI.getcoord(::PointTrait, c::Point{N}, i::Int) where N
+function GI.getcoord(::PointTrait, p::Point{N}, i::Int) where N
     checkbounds(1:N, i)
-    @inbounds c[i]
+    @inbounds p.coord[i]
 end
-GI.getcoord(::PointTrait, c::Point{2}) = (c.x, c.y)
-GI.getcoord(::PointTrait, c::Point{3}) = (c.x, c.y, c.z)
+GI.getcoord(::PointTrait, p::Point{2}) = (c.x, c.y)
+GI.getcoord(::PointTrait, p::Point{3}) = (c.x, c.y, c.z)
 coordnames(::PointTrait, ::Point{2}) = (:X, :Y)
 coordnames(::PointTrait, ::Point{3}) = (:X, :Y, :Z)
 

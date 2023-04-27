@@ -3,7 +3,6 @@ using Test
 using GeoInterface
 using GeoFormatTypes
 const GI = GeoInterface
-using Plots
 
 using GeoInterfaceRecipes
 GeoInterfaceRecipes.@enable_geo_plots GeoInterface.Wrappers.WrapperGeometry
