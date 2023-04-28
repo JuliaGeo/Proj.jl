@@ -8,5 +8,6 @@ is_approx(a, b) = all(isapprox(c[1], c[2]) for c in zip(a, b))
 @testset "Proj" begin
     include("libproj.jl")
     include("applications.jl")
+    include("geointerface.jl")
 
 end # testset "Proj"

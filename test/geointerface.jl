@@ -11,6 +11,10 @@ ring1 = GI.LinearRing([(1, 2), (7, 4), (5, 6), (1, 2)])
 ring2 = GI.LinearRing([(11, 2), (20, 4), (15, 6), (11, 2)])
 hole2 = GI.LinearRing([(14, 4), (16, 4), (17, 5), (14, 4)])
 
+# Set up a regular tranformation of the points for reference
+source_crs = convert(Proj.CRS, EPSG(4326))
+target_crs = convert(Proj.CRS, EPSG(3857))
+trans = Proj.Transformation(source_crs, target_crs; always_xy=true)
 ref_points3857 = map(GeoInterface.getpoint(multipolygon)) do p
     trans([GeoInterface.x(p), GeoInterface.y(p)])
 end
@@ -34,9 +38,3 @@ points3857 = GI.convert.(Tuple, GI.getpoint(multipolygon3857))
 # Embedded crs check
 @test GI.crs(multipolygon3857) == EPSG(3857)
 @test GI.crs(multipolygon4326) == EPSG(4326)
-
-source_crs = convert(Proj.CRS, EPSG(4326))
-target_crs = convert(Proj.CRS, EPSG(3857))
-trans = Proj.Transformation(source_crs, target_crs; always_xy=true)
-
-
