@@ -47,13 +47,30 @@ coordnames(::PointTrait, ::Point{2}) = (:X, :Y)
 coordnames(::PointTrait, ::Point{3}) = (:X, :Y, :Z)
 
 """
-    reproject(geometry, source_crs, target_crs)
-    reproject(geometry; [source_crs,] target_crs)
+    reproject(geometry; source_crs, target_crs, transform, always_xy, time)
+    reproject(geometry, source_crs, target_crs; always_xy, time)
+    reproject(geometry, transform; always_xy, time)
 
 Reproject any GeoInterface.jl compatible `geometry` from `source_crs` to `target_crs`.
 
 The returned object will be constructed from `GeoInterface.WrapperGeometry`
-geometries, wrapping views of `Proj.Point`.
+geometries, wrapping views of a `Vector{Proj.Point{D}}`, where `D` is the dimension.
+
+# Arguments
+
+- `geometry`: Any GeoInterface.jl compatible geometries.
+- `source_crs`: the source coordinate referece system, as a GeoFormatTypes.jl object or a string.
+- `target_crs`: the target coordinate referece system, as a GeoFormatTypes.jl object or a string.
+
+If these a passed as keywords, `transform` will take priority. 
+Without it `target_crs` is always needed, and `source_crs` is
+needed if it is not retreivable from the geometry with `GeoInterface.crs(geometry)`.
+
+# Keywords
+
+-`always_xy`: force x, y coordinate order, `true` by default. 
+    `false` will expect and return points in the crs coordinate order.
+-`time`: the time for the coordinates. `Inf` by default.
 """
 function reproject(geom; 
     source_crs=nothing, target_crs=nothing, transform=nothing, kw...
@@ -92,22 +109,17 @@ function reproject(geom, transform::Transformation; time)
 end
 
 
-"""
-    reconstruct(f::Function, geom)
-    reconstruct(geometry, points::AbstractVector)
+    # reconstruct(f::Function, geom)
 
-Reconstruct GeoInterface compatible `geometry` from the `PointTrait` geometries
-in `points`, or from the result of function `f` over the points in `geom`.
+# Reconstruct GeoInterface compatible `geometry` from the `PointTrait` geometries
+# in `points`, or from the result of function `f` over the points in `geom`.
 
-The returned object will be constructed from `GeoInterface.WrapperGeometry`
-geometries, wrapping views into the `points` vector. Otherwise, the structure and
-GeoInterface traits will be the same as for `geometry`.
+# The returned object will be constructed from `GeoInterface.WrapperGeometry`
+# geometries, wrapping views into the `points` vector. Otherwise, the structure and
+# GeoInterface traits will be the same as for `geometry`.
 
-This is a lazy operation, only allocating for outer wrappers of nested geometries.
-Later changes to the `points` vector *will* affect the returned geometry.
-
-`GeoInterface.npoint(geometry) == length(points)` must be `true`.
-"""
+# This is a lazy operation, only allocating for outer wrappers of nested geometries.
+# Later changes to the `points` vector *will* affect the returned geometry.
 function reconstruct(f, geom; crs=nothing)
     p1 = f(first(GI.getpoint(geom)))
     T = typeof(p1)
