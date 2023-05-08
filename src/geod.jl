@@ -5,9 +5,19 @@
 # - `geod_directline(g, lat1, lon1, azi1, s12)`
 # - `geod_inverseline(g, lat1, lon1, lat2, lon2)`
 # - `geod_position(l, s12)`
-# - Many of the `geod_polygon` methods
+# - Many of the `geod_polygon` methods are also wrapped here.
 
-# Basic wrappers for geod_direct and geod_inverse
+# In addition, we have wrapped some functions for convenience and to minimize allocations:
+# - `geod_position(l, s12s::AbstractArray{<:Real})`
+
+# Finally, in order to sample along a geodetic path, we have a convenience function `geod_path(geodesic::geod_geodesic, lat1, lon1, lat2, lon2, npoints)`.
+
+# Simple examples are available in the docstrings for each of these functions, but
+# do note that quite a few of them display the C documentation directly.  Look at 
+# the output of e.g. `methods(geod_geodesic)` for a list of all available methods.
+
+# ## Basic wrappers 
+# These are some basic wrappers for `geod_direct` and `geod_inverse`.
 
 function geod_direct(g::geod_geodesic, lat::Real, lon::Real, azi::Real, s12::Real)
     lat_out = Ref{Cdouble}(NaN64)
@@ -29,9 +39,13 @@ function geod_inverse(g::geod_geodesic, lat1::Real, lon1::Real, lat2::Real, lon2
     return s12[], azi1[], azi2[]
 end
 
-# Constructors and null Constructors
+# ## Constructors and null Constructors
 
-# geod_geodesic
+# Since these objects are stack allocated, we create the `_null` function,
+# which simply creates an object with its values initialized to `NaN` or 0
+# as appropriate.  This is used in the constructors below.
+
+# ### `geod_geodesic`
 
 """
     Proj._null(geod_*)
@@ -57,7 +71,7 @@ function geod_geodesic(equatorial_radius::Real, flattening::Real)
     return new_objref[]
 end
 
-# geod_geodesicline
+# ### `geod_geodesicline`
 
 function _null(::Type{geod_geodesicline})
     return geod_geodesicline(
@@ -90,8 +104,17 @@ function geod_inverseline(g::geod_geodesic, lat1, lon1, lat2, lon2, caps::Cuint 
     return new_objref[]
 end
 
-# returns according to the C order (y, x, az).  Do we want this to return by the Julian order (x, y, azi)?  
-# If so, should this be a new function?
+# ## Wrappers for path functions
+
+# These functions wrap path or position calculating functions in GeographicLib.
+# in general, `geod_position` accepts real numbers as well as arrays.
+
+
+# !!! note
+#     This returns according to the C order (y, x, az).  
+#     Do we want this to return by the Julian order (x, y, azi)?  
+#     If so, should this be a new function?
+
 function geod_position(line::geod_geodesicline, s12::Real)
     lat = Ref{Cdouble}(NaN64)
     lon = Ref{Cdouble}(NaN64)
@@ -133,7 +156,7 @@ end
 Returns `(lat, lon, azimuth)` at the `relative_arclength` between the line's start and end point.  
 `relative_arclength` can be any real value, but values along the line should be between 0 and 1.
 
-If `relative_arclength` is an Array, 
+If `relative_arclength` is an Array, then a Tuple of arrays are returned.
 """
 function geod_position_relative(line::geod_geodesicline, relative_arclength::Union{<: Real, <: AbstractArray{<: Real}})
     return geod_position(line, line.s13 * relative_arclength)
@@ -187,9 +210,9 @@ function geod_path(geodesic::geod_geodesic, lat1, lon1, lat2, lon2, npoints = 10
 end
 
 
-# Polygon interface
+# ## Polygon interface
 
-# geod_polygon
+# ### `geod_polygon`
 
 function _null(::Type{geod_polygon})
     return geod_polygon(
