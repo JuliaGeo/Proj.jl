@@ -143,8 +143,8 @@ function geod_position(line::geod_geodesicline, s12s::AbstractArray{<: Real})
     azi = Ref{Cdouble}(NaN64)
     for ind in eachindex(s12s)
         geod_position(Ref(line), s12s[ind], lat, lon, azi)
-        result_lon[ind] = lon[]
         result_lat[ind] = lat[]
+        result_lon[ind] = lon[]
         result_azi[ind] = azi[]
     end
     return result_lat, result_lon, result_azi
@@ -202,9 +202,11 @@ lats, lons = Proj.geod_path(geod, 40.64, -73.78, 1.36, 103.99)
 ```
 """
 function geod_path(geodesic::geod_geodesic, lat1, lon1, lat2, lon2, npoints = 1000; caps = Cuint(0))
+    @assert npoints > 1
+
     inverse_line = geod_inverseline(geodesic, lat1, lon1, lat2, lon2, caps)
 
-    lats, lons, azis = geod_position(inverse_line, LinRange(0, 1, npoints))
+    lats, lons, azis = geod_position_relative(inverse_line, LinRange(0, 1, npoints))
 
     return lats, lons
 end
