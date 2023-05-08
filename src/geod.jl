@@ -1,3 +1,33 @@
+# This file contains an interface to GeodesicLib through Proj.  It provides some basic interfaces for:
+# - `geod_geodesic(eq_radius, flattening)`
+# - `geod_direct(g, lat1, lon1, azi1, s12)`
+# - `geod_inverse(g, lat1, lon1, lat2, lon2)`
+# - `geod_directline(g, lat1, lon1, azi1, s12)`
+# - `geod_inverseline(g, lat1, lon1, lat2, lon2)`
+# - `geod_position(l, s12)`
+# - Many of the `geod_polygon` methods
+
+# Basic wrappers for geod_direct and geod_inverse
+
+function geod_direct(g::geod_geodesic, lat::Real, lon::Real, azi::Real, s12::Real)
+    lat_out = Ref{Cdouble}(NaN64)
+    lon_out = Ref{Cdouble}(NaN64)
+    azi_out = Ref{Cdouble}(NaN64)
+
+    geod_direct(Ref(g), lat, lon, azi, s12, lat_out, lon_out, azi_out)
+
+    return lat_out[], lon_out[], azi_out[]
+end
+
+function geod_inverse(g::geod_geodesic, lat1::Real, lon1::Real, lat2::Real, lon2::Real,)
+    s12 = Ref{Cdouble}(NaN64)
+    azi1 = Ref{Cdouble}(NaN64)
+    azi2 = Ref{Cdouble}(NaN64)
+
+    geod_inverse(Ref(g), lat1, lat2, lon1, lon2, s12, azi1, azi2)
+
+    return s12[], azi1[], azi2[]
+end
 
 # Constructors and null Constructors
 
@@ -72,13 +102,40 @@ function geod_position(line::geod_geodesicline, s12::Real)
     return lat[], lon[], azi[]
 end
 
+
+"""
+    geod_position(line::geod_geodesicline, s12::Real)::(lat, lon, azi)
+    geod_position(line::geod_geodesicline, s12s::AbstractArray{<: Real})::(lats, lons, azis)
+
+Returns `(lat, lon, azimuth)` at the `s12` distance along the line.
+If provided an array, will return three `similar` arrays, which also have 
+
+"""
+function geod_position(line::geod_geodesicline, s12s::AbstractArray{<: Real})
+    result_lon = similar(s12s)
+    result_lat = similar(s12s)
+    result_azi = similar(s12s)
+    lat = Ref{Cdouble}(NaN64)
+    lon = Ref{Cdouble}(NaN64)
+    azi = Ref{Cdouble}(NaN64)
+    for ind in eachindex(s12s)
+        geod_position(Ref(line), s12s[ind], lat, lon, azi)
+        result_lon[ind] = lon[]
+        result_lat[ind] = lat[]
+        result_azi[ind] = azi[]
+    end
+    return result_lat, result_lon, result_azi
+end
+
 """
     geod_position_relative(line::geod_geodesicline, relative_arclength::Real)
 
 Returns `(lat, lon, azimuth)` at the `relative_arclength` between the line's start and end point.  
 `relative_arclength` can be any real value, but values along the line should be between 0 and 1.
+
+If `relative_arclength` is an Array, 
 """
-function geod_position_relative(line::geod_geodesicline, relative_arclength::Real)
+function geod_position_relative(line::geod_geodesicline, relative_arclength::Union{<: Real, <: AbstractArray{<: Real}})
     return geod_position(line, line.s13 * relative_arclength)
 end
 
@@ -86,6 +143,12 @@ function geod_setdistance(l::geod_geodesicline, s13::Real)
     geod_setdistance(Ref(l), Cdouble(l13))
 end
 
+"""
+    geod_genposition(l::geod_geodesicline, flags::Union{Cuint, geod_flags}, s12_a12)
+
+Calls the C function `geod_genposition` and returns a tuple of the results, namely:
+`(plat2[], plon2[], pazi2[], ps12[], pm12[], pM12[], pM21[], pS12[])`
+"""
 function geod_genposition(l::geod_geodesicline, flags::Union{Cuint, geod_flags}, s12_a12)
     plat2 = Ref{Cdouble}(NaN64)
     plon2 = Ref{Cdouble}(NaN64)
@@ -118,21 +181,13 @@ lats, lons = Proj.geod_path(geod, 40.64, -73.78, 1.36, 103.99)
 function geod_path(geodesic::geod_geodesic, lat1, lon1, lat2, lon2, npoints = 1000; caps = Cuint(0))
     inverse_line = geod_inverseline(geodesic, lat1, lon1, lat2, lon2, caps)
 
-    lats = zeros(Float64, npoints)
-    lons = zeros(Float64, npoints)
-
-    for i in 1:npoints
-        lats[i], lons[i], _ = geod_position_relative(inverse_line, (i-1)/(npoints-1))
-    end
+    lats, lons, azis = geod_position(inverse_line, LinRange(0, 1, npoints))
 
     return lats, lons
 end
-# lines(GeoMakie.coastlines(); linewidth = 0.5, axis = (; aspect = DataAspect(), title = "Geodesic path from JFK to SIN"))
-# lines!(lons, lats; linewidth = 1.5)
 
 
 # Polygon interface
-
 
 # geod_polygon
 
