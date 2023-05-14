@@ -446,8 +446,9 @@ end
     # point 1 is JFK airport, point 2 is Changi airport
     lat1, lon1, lat2, lon2 = 40.64, -73.78, 1.36, 103.99
 
-    @test_nowarn geod = Proj.geod_geodesic(6378137, 1/298.257223563)
-    @test_nowarn direct_line = Proj.geod_directline(geod, lat1, lon1, 3.3057734780176125, 1.534751294051294e7) # the azi1 and s13 values were computed directly
+    @test_nowarn geod = Proj.geod_geodesic(6378137, 1 / 298.257223563)
+    @test_nowarn direct_line =
+        Proj.geod_directline(geod, lat1, lon1, 3.3057734780176125, 1.534751294051294e7) # the azi1 and s13 values were computed directly
     @test_nowarn inverse_line = Proj.geod_inverseline(geod, lat1, lon1, lat2, lon2)
 
     @test begin

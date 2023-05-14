@@ -29,7 +29,7 @@ function geod_direct(g::geod_geodesic, lat::Real, lon::Real, azi::Real, s12::Rea
     return lat_out[], lon_out[], azi_out[]
 end
 
-function geod_inverse(g::geod_geodesic, lat1::Real, lon1::Real, lat2::Real, lon2::Real,)
+function geod_inverse(g::geod_geodesic, lat1::Real, lon1::Real, lat2::Real, lon2::Real)
     s12 = Ref{Cdouble}(NaN)
     azi1 = Ref{Cdouble}(NaN)
     azi2 = Ref{Cdouble}(NaN)
@@ -57,7 +57,15 @@ Available types are `geod_geodesic`, `geod_geodesicline, `geod_polygon`.
 """
 function _null(::Type{geod_geodesic})
     return geod_geodesic(
-        NaN, NaN, NaN, NaN, NaN, NaN, NaN, NaN, NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
         ntuple(_ -> NaN, Val(6)),
         ntuple(_ -> NaN, Val(15)),
         ntuple(_ -> NaN, Val(21)),
@@ -75,20 +83,20 @@ end
 
 function _null(::Type{geod_geodesicline})
     return geod_geodesicline(
-        (NaN for _ in 1:30)...,
-        ntuple(_ -> NaN, 7), ntuple(_ -> NaN, 7), ntuple(_ -> NaN, 7), ntuple(_ -> NaN, 6), ntuple(_ -> NaN, 6),
-        Cuint(0)
+        (NaN for _ = 1:30)...,
+        ntuple(_ -> NaN, 7),
+        ntuple(_ -> NaN, 7),
+        ntuple(_ -> NaN, 7),
+        ntuple(_ -> NaN, 6),
+        ntuple(_ -> NaN, 6),
+        Cuint(0),
     )
 end
 
 function geod_directline(g::geod_geodesic, lat1, lon1, azi1, s12, caps::Cuint = UInt32(0))
     init_obj = _null(geod_geodesicline)
     new_objref = Ref(init_obj)
-    geod_directline(
-        new_objref,
-        Ref(g),
-        lat1, lon1, azi1, s12, caps
-    )
+    geod_directline(new_objref, Ref(g), lat1, lon1, azi1, s12, caps)
     return new_objref[]
 end
 
@@ -96,11 +104,7 @@ function geod_inverseline(g::geod_geodesic, lat1, lon1, lat2, lon2, caps::Cuint 
     init_obj = _null(geod_geodesicline)
     new_objref = Ref(init_obj)
 
-    geod_inverseline(
-        new_objref,
-        Ref(g),
-        lat1, lon1, lat2, lon2, caps
-    )
+    geod_inverseline(new_objref, Ref(g), lat1, lon1, lat2, lon2, caps)
     return new_objref[]
 end
 
@@ -134,7 +138,7 @@ Returns `(lat, lon, azimuth)` at the `s12` distance along the line.
 If provided an array, will return three `similar` arrays, which also have
 
 """
-function geod_position(line::geod_geodesicline, s12s::AbstractArray{<: Real})
+function geod_position(line::geod_geodesicline, s12s::AbstractArray{<:Real})
     result_lon = similar(s12s)
     result_lat = similar(s12s)
     result_azi = similar(s12s)
@@ -158,7 +162,10 @@ Returns `(lat, lon, azimuth)` at the `relative_arclength` between the line's sta
 
 If `relative_arclength` is an Array, then a Tuple of arrays are returned.
 """
-function geod_position_relative(line::geod_geodesicline, relative_arclength::Union{<: Real, <: AbstractArray{<: Real}})
+function geod_position_relative(
+    line::geod_geodesicline,
+    relative_arclength::Union{<:Real,<:AbstractArray{<:Real}},
+)
     return geod_position(line, line.s13 * relative_arclength)
 end
 
@@ -172,7 +179,7 @@ end
 Calls the C function `geod_genposition` and returns a tuple of the results, namely:
 `(plat2[], plon2[], pazi2[], ps12[], pm12[], pM12[], pM21[], pS12[])`
 """
-function geod_genposition(l::geod_geodesicline, flags::Union{Cuint, geod_flags}, s12_a12)
+function geod_genposition(l::geod_geodesicline, flags::Union{Cuint,geod_flags}, s12_a12)
     plat2 = Ref{Cdouble}(NaN)
     plon2 = Ref{Cdouble}(NaN)
     pazi2 = Ref{Cdouble}(NaN)
@@ -182,7 +189,19 @@ function geod_genposition(l::geod_geodesicline, flags::Union{Cuint, geod_flags},
     pM21 = Ref{Cdouble}(NaN)
     pS12 = Ref{Cdouble}(NaN)
 
-    geod_genposition(Ref(l), flags, s12_a12, plat2, plon2, pazi2, ps12, pm12, pM12, pM21, pS12)
+    geod_genposition(
+        Ref(l),
+        flags,
+        s12_a12,
+        plat2,
+        plon2,
+        pazi2,
+        ps12,
+        pm12,
+        pM12,
+        pM21,
+        pS12,
+    )
 
     return (plat2[], plon2[], pazi2[], ps12[], pm12[], pM12[], pM21[], pS12[])
 
@@ -201,7 +220,15 @@ geod = Proj.geod_geodesic(6378137, 1/298.257223563)
 lats, lons = Proj.geod_path(geod, 40.64, -73.78, 1.36, 103.99)
 ```
 """
-function geod_path(geodesic::geod_geodesic, lat1, lon1, lat2, lon2, npoints = 1000; caps = Cuint(0))
+function geod_path(
+    geodesic::geod_geodesic,
+    lat1,
+    lon1,
+    lat2,
+    lon2,
+    npoints = 1000;
+    caps = Cuint(0),
+)
     @assert npoints > 1
 
     inverse_line = geod_inverseline(geodesic, lat1, lon1, lat2, lon2, caps)
@@ -218,9 +245,15 @@ end
 
 function _null(::Type{geod_polygon})
     return geod_polygon(
-        NaN, NaN, NaN, NaN,
-        (NaN, NaN), (NaN, NaN),
-        Cint(0), Cint(0), Cint(0)
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        (NaN, NaN),
+        (NaN, NaN),
+        Cint(0),
+        Cint(0),
+        Cint(0),
     )
 end
 
@@ -248,7 +281,12 @@ end
 
 Returns a tuple of `(area, perimeter)` in m² and m respectively.  Area is only returned if `polyline` is nonzero in the call to `geod_polygon_init`.
 """
-function geod_polygon_compute(g::geod_geodesic, p::geod_polygon, reverse::Bool = false, sign::Bool = true)
+function geod_polygon_compute(
+    g::geod_geodesic,
+    p::geod_polygon,
+    reverse::Bool = false,
+    sign::Bool = true,
+)
     # initializing to zero makes the return not happen for that value, so we need to initialize to 1
     pA = Ref{Cdouble}(1e0)
     pP = Ref{Cdouble}(1e0)
@@ -264,7 +302,11 @@ end
     Simple interface to compute the geodesic area of a polygon.
 Returns a tuple of `(area, perimeter)` in m² and m respectively.
 """
-function geod_polygonarea(g::geod_geodesic, lats::AbstractVector{<: Real}, lons::AbstractVector{<: Real})
+function geod_polygonarea(
+    g::geod_geodesic,
+    lats::AbstractVector{<:Real},
+    lons::AbstractVector{<:Real},
+)
     @assert length(lats) == length(lons)
     c_lats = convert(Vector{Cdouble}, lats)
     c_lons = convert(Vector{Cdouble}, lons)
