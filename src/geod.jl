@@ -20,9 +20,9 @@
 # These are some basic wrappers for `geod_direct` and `geod_inverse`.
 
 function geod_direct(g::geod_geodesic, lat::Real, lon::Real, azi::Real, s12::Real)
-    lat_out = Ref{Cdouble}(NaN64)
-    lon_out = Ref{Cdouble}(NaN64)
-    azi_out = Ref{Cdouble}(NaN64)
+    lat_out = Ref{Cdouble}(NaN)
+    lon_out = Ref{Cdouble}(NaN)
+    azi_out = Ref{Cdouble}(NaN)
 
     geod_direct(Ref(g), lat, lon, azi, s12, lat_out, lon_out, azi_out)
 
@@ -30,9 +30,9 @@ function geod_direct(g::geod_geodesic, lat::Real, lon::Real, azi::Real, s12::Rea
 end
 
 function geod_inverse(g::geod_geodesic, lat1::Real, lon1::Real, lat2::Real, lon2::Real,)
-    s12 = Ref{Cdouble}(NaN64)
-    azi1 = Ref{Cdouble}(NaN64)
-    azi2 = Ref{Cdouble}(NaN64)
+    s12 = Ref{Cdouble}(NaN)
+    azi1 = Ref{Cdouble}(NaN)
+    azi2 = Ref{Cdouble}(NaN)
 
     geod_inverse(Ref(g), lat1, lat2, lon1, lon2, s12, azi1, azi2)
 
@@ -57,10 +57,10 @@ Available types are `geod_geodesic`, `geod_geodesicline, `geod_polygon`.
 """
 function _null(::Type{geod_geodesic})
     return geod_geodesic(
-        NaN64, NaN64, NaN64, NaN64, NaN64, NaN64, NaN64, NaN64, NaN64,
-        ntuple(_ -> NaN64, Val(6)),
-        ntuple(_ -> NaN64, Val(15)),
-        ntuple(_ -> NaN64, Val(21)),
+        NaN, NaN, NaN, NaN, NaN, NaN, NaN, NaN, NaN,
+        ntuple(_ -> NaN, Val(6)),
+        ntuple(_ -> NaN, Val(15)),
+        ntuple(_ -> NaN, Val(21)),
     )
 end
 
@@ -75,8 +75,8 @@ end
 
 function _null(::Type{geod_geodesicline})
     return geod_geodesicline(
-        (NaN64 for _ in 1:30)...,
-        ntuple(_ -> NaN64, 7), ntuple(_ -> NaN64, 7), ntuple(_ -> NaN64, 7), ntuple(_ -> NaN64, 6), ntuple(_ -> NaN64, 6),
+        (NaN for _ in 1:30)...,
+        ntuple(_ -> NaN, 7), ntuple(_ -> NaN, 7), ntuple(_ -> NaN, 7), ntuple(_ -> NaN, 6), ntuple(_ -> NaN, 6),
         Cuint(0)
     )
 end
@@ -116,9 +116,9 @@ end
 #     If so, should this be a new function?
 
 function geod_position(line::geod_geodesicline, s12::Real)
-    lat = Ref{Cdouble}(NaN64)
-    lon = Ref{Cdouble}(NaN64)
-    azi = Ref{Cdouble}(NaN64)
+    lat = Ref{Cdouble}(NaN)
+    lon = Ref{Cdouble}(NaN)
+    azi = Ref{Cdouble}(NaN)
 
     geod_position(Ref(line), s12, lat, lon, azi)
 
@@ -138,9 +138,9 @@ function geod_position(line::geod_geodesicline, s12s::AbstractArray{<: Real})
     result_lon = similar(s12s)
     result_lat = similar(s12s)
     result_azi = similar(s12s)
-    lat = Ref{Cdouble}(NaN64)
-    lon = Ref{Cdouble}(NaN64)
-    azi = Ref{Cdouble}(NaN64)
+    lat = Ref{Cdouble}(NaN)
+    lon = Ref{Cdouble}(NaN)
+    azi = Ref{Cdouble}(NaN)
     for ind in eachindex(s12s)
         geod_position(Ref(line), s12s[ind], lat, lon, azi)
         result_lat[ind] = lat[]
@@ -173,14 +173,14 @@ Calls the C function `geod_genposition` and returns a tuple of the results, name
 `(plat2[], plon2[], pazi2[], ps12[], pm12[], pM12[], pM21[], pS12[])`
 """
 function geod_genposition(l::geod_geodesicline, flags::Union{Cuint, geod_flags}, s12_a12)
-    plat2 = Ref{Cdouble}(NaN64)
-    plon2 = Ref{Cdouble}(NaN64)
-    pazi2 = Ref{Cdouble}(NaN64)
-    ps12 = Ref{Cdouble}(NaN64)
-    pm12 = Ref{Cdouble}(NaN64)
-    pM12 = Ref{Cdouble}(NaN64)
-    pM21 = Ref{Cdouble}(NaN64)
-    pS12 = Ref{Cdouble}(NaN64)
+    plat2 = Ref{Cdouble}(NaN)
+    plon2 = Ref{Cdouble}(NaN)
+    pazi2 = Ref{Cdouble}(NaN)
+    ps12 = Ref{Cdouble}(NaN)
+    pm12 = Ref{Cdouble}(NaN)
+    pM12 = Ref{Cdouble}(NaN)
+    pM21 = Ref{Cdouble}(NaN)
+    pS12 = Ref{Cdouble}(NaN)
 
     geod_genposition(Ref(l), flags, s12_a12, plat2, plon2, pazi2, ps12, pm12, pM12, pM21, pS12)
 
@@ -218,8 +218,8 @@ end
 
 function _null(::Type{geod_polygon})
     return geod_polygon(
-        NaN64, NaN64, NaN64, NaN64,
-        (NaN64, NaN64), (NaN64, NaN64),
+        NaN, NaN, NaN, NaN,
+        (NaN, NaN), (NaN, NaN),
         Cint(0), Cint(0), Cint(0)
     )
 end
