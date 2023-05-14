@@ -440,7 +440,7 @@ end
 end
 
 @testset "Geodesics" begin
-    
+
     local geod, direct_line, inverse_line
 
     # point 1 is JFK airport, point 2 is Changi airport

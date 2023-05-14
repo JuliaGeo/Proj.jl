@@ -13,10 +13,10 @@
 # Finally, in order to sample along a geodetic path, we have a convenience function `geod_path(geodesic::geod_geodesic, lat1, lon1, lat2, lon2, npoints)`.
 
 # Simple examples are available in the docstrings for each of these functions, but
-# do note that quite a few of them display the C documentation directly.  Look at 
+# do note that quite a few of them display the C documentation directly.  Look at
 # the output of e.g. `methods(geod_geodesic)` for a list of all available methods.
 
-# ## Basic wrappers 
+# ## Basic wrappers
 # These are some basic wrappers for `geod_direct` and `geod_inverse`.
 
 function geod_direct(g::geod_geodesic, lat::Real, lon::Real, azi::Real, s12::Real)
@@ -50,7 +50,7 @@ end
 """
     Proj._null(geod_*)
 
-A null initializer which returns an object of the given type, 
+A null initializer which returns an object of the given type,
 with all floats set to NaN, and all integers set to 0.
 
 Available types are `geod_geodesic`, `geod_geodesicline, `geod_polygon`.
@@ -86,7 +86,7 @@ function geod_directline(g::geod_geodesic, lat1, lon1, azi1, s12, caps::Cuint = 
     new_objref = Ref(init_obj)
     geod_directline(
         new_objref,
-        Ref(g), 
+        Ref(g),
         lat1, lon1, azi1, s12, caps
     )
     return new_objref[]
@@ -98,7 +98,7 @@ function geod_inverseline(g::geod_geodesic, lat1, lon1, lat2, lon2, caps::Cuint 
 
     geod_inverseline(
         new_objref,
-        Ref(g), 
+        Ref(g),
         lat1, lon1, lat2, lon2, caps
     )
     return new_objref[]
@@ -111,8 +111,8 @@ end
 
 
 # !!! note
-#     This returns according to the C order (y, x, az).  
-#     Do we want this to return by the Julian order (x, y, azi)?  
+#     This returns according to the C order (y, x, az).
+#     Do we want this to return by the Julian order (x, y, azi)?
 #     If so, should this be a new function?
 
 function geod_position(line::geod_geodesicline, s12::Real)
@@ -131,7 +131,7 @@ end
     geod_position(line::geod_geodesicline, s12s::AbstractArray{<: Real})::(lats, lons, azis)
 
 Returns `(lat, lon, azimuth)` at the `s12` distance along the line.
-If provided an array, will return three `similar` arrays, which also have 
+If provided an array, will return three `similar` arrays, which also have
 
 """
 function geod_position(line::geod_geodesicline, s12s::AbstractArray{<: Real})
@@ -153,7 +153,7 @@ end
 """
     geod_position_relative(line::geod_geodesicline, relative_arclength::Real)
 
-Returns `(lat, lon, azimuth)` at the `relative_arclength` between the line's start and end point.  
+Returns `(lat, lon, azimuth)` at the `relative_arclength` between the line's start and end point.
 `relative_arclength` can be any real value, but values along the line should be between 0 and 1.
 
 If `relative_arclength` is an Array, then a Tuple of arrays are returned.
@@ -252,7 +252,7 @@ function geod_polygon_compute(g::geod_geodesic, p::geod_polygon, reverse::Bool =
     # initializing to zero makes the return not happen for that value, so we need to initialize to 1
     pA = Ref{Cdouble}(1e0)
     pP = Ref{Cdouble}(1e0)
-    
+
     n = geod_polygon_compute(Ref(g), Ref(p), Cint(reverse), Cint(sign), pA, pP)
 
     return (pA[], pP[])
@@ -261,7 +261,7 @@ end
 """
     geod_polygonarea(g::geod_geodesic, lats::AbstractVector{<: Real}, lons::AbstractVector{<: Real})
 
-    Simple interface to compute the geodesic area of a polygon.  
+    Simple interface to compute the geodesic area of a polygon.
 Returns a tuple of `(area, perimeter)` in m² and m respectively.
 """
 function geod_polygonarea(g::geod_geodesic, lats::AbstractVector{<: Real}, lons::AbstractVector{<: Real})
@@ -271,7 +271,7 @@ function geod_polygonarea(g::geod_geodesic, lats::AbstractVector{<: Real}, lons:
 
     pA = Ref{Cdouble}(1e0)
     pP = Ref{Cdouble}(1e0)
-    
+
     geod_polygonarea(Ref(g), c_lats, c_lons, length(lats), pA, pP)
 
     return (pA[], pP[])
