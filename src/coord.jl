@@ -73,8 +73,21 @@ mutable struct Transformation <: CoordinateTransformations.Transformation
 end
 
 function Transformation(
-    source_crs::Union{AbstractString,GFT.CoordinateReferenceSystemFormat},
-    target_crs::Union{AbstractString,GFT.CoordinateReferenceSystemFormat};
+    source_crs::AbstractString,
+    target_crs::AbstractString;
+    always_xy::Bool=false,
+    direction::PJ_DIRECTION=PJ_FWD,
+    area::Ptr{PJ_AREA}=C_NULL,
+    ctx::Ptr{PJ_CONTEXT}=C_NULL
+)
+    pj = proj_create_crs_to_crs(source_crs, target_crs, area, ctx)
+    pj = always_xy ? normalize_axis_order!(pj; ctx) : pj
+    return Transformation(pj, direction)
+end
+
+function Transformation(
+    source_crs::GFT.CoordinateReferenceSystemFormat,
+    target_crs::GFT.CoordinateReferenceSystemFormat;
     always_xy::Bool=false,
     direction::PJ_DIRECTION=PJ_FWD,
     area::Ptr{PJ_AREA}=C_NULL,
