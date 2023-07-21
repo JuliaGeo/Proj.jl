@@ -63,7 +63,7 @@ julia> trans(5.39, 52.16)  # this is in lon,lat order, since we set always_xy to
 mutable struct Transformation <: CoordinateTransformations.Transformation
     pj::Ptr{PJ}
     direction::PJ_DIRECTION
-    function Transformation(pj::Ptr{PJ}, direction::PJ_DIRECTION=PJ_FWD)
+    function Transformation(pj::Ptr{PJ}, direction::PJ_DIRECTION = PJ_FWD)
         trans = new(pj, direction)
         finalizer(trans) do trans
             trans.pj = proj_destroy(trans.pj)
@@ -76,10 +76,10 @@ end
 function Transformation(
     source_crs::AbstractString,
     target_crs::AbstractString;
-    always_xy::Bool=false,
-    direction::PJ_DIRECTION=PJ_FWD,
-    area::Ptr{PJ_AREA}=C_NULL,
-    ctx::Ptr{PJ_CONTEXT}=C_NULL
+    always_xy::Bool = false,
+    direction::PJ_DIRECTION = PJ_FWD,
+    area::Ptr{PJ_AREA} = C_NULL,
+    ctx::Ptr{PJ_CONTEXT} = C_NULL,
 )
     pj = proj_create_crs_to_crs(source_crs, target_crs, area, ctx)
     pj = always_xy ? normalize_axis_order!(pj; ctx) : pj
@@ -88,9 +88,9 @@ end
 
 function Transformation(
     pipeline::AbstractString;
-    always_xy::Bool=false,
-    direction::PJ_DIRECTION=PJ_FWD,
-    ctx::Ptr{PJ_CONTEXT}=C_NULL
+    always_xy::Bool = false,
+    direction::PJ_DIRECTION = PJ_FWD,
+    ctx::Ptr{PJ_CONTEXT} = C_NULL,
 )
     pj = proj_create(pipeline, ctx)
     if Bool(proj_is_crs(pj))
@@ -105,10 +105,10 @@ end
 function Transformation(
     source_crs::Ptr{PJ},
     target_crs::Ptr{PJ};
-    always_xy::Bool=false,
-    direction::PJ_DIRECTION=PJ_FWD,
-    area::Ptr{PJ_AREA}=C_NULL,
-    ctx::Ptr{PJ_CONTEXT}=C_NULL
+    always_xy::Bool = false,
+    direction::PJ_DIRECTION = PJ_FWD,
+    area::Ptr{PJ_AREA} = C_NULL,
+    ctx::Ptr{PJ_CONTEXT} = C_NULL,
 )
     pj = proj_create_crs_to_crs_from_pj(source_crs, target_crs, area, ctx)
     pj = always_xy ? normalize_axis_order!(pj; ctx) : pj
@@ -170,7 +170,7 @@ end
 Call proj_normalize_for_visualization on an object, and return the new object after freeing
 the input object.
 """
-function normalize_axis_order!(pj::Ptr{PJ}; ctx=C_NULL)
+function normalize_axis_order!(pj::Ptr{PJ}; ctx = C_NULL)
     pj_for_gis = proj_normalize_for_visualization(pj, ctx)
     proj_destroy(pj)
     return pj_for_gis
@@ -178,9 +178,9 @@ end
 
 function Base.inv(
     trans::Transformation;
-    always_xy::Bool=false,
-    area::Ptr{PJ_AREA}=C_NULL,
-    ctx::Ptr{PJ_CONTEXT}=C_NULL
+    always_xy::Bool = false,
+    area::Ptr{PJ_AREA} = C_NULL,
+    ctx::Ptr{PJ_CONTEXT} = C_NULL,
 )
     source_crs = proj_get_source_crs(trans.pj)
     target_crs = proj_get_target_crs(trans.pj)
@@ -188,10 +188,10 @@ function Base.inv(
     return Transformation(
         source_crs,
         target_crs;
-        direction=inv(trans.direction),
+        direction = inv(trans.direction),
         area,
         ctx,
-        always_xy
+        always_xy,
     )
 end
 
@@ -267,9 +267,9 @@ end
 function CoordinateTransformations.compose(
     trans1::Transformation,
     trans2::Transformation;
-    always_xy::Bool=false,
-    area::Ptr{PJ_AREA}=C_NULL,
-    ctx::Ptr{PJ_CONTEXT}=C_NULL
+    always_xy::Bool = false,
+    area::Ptr{PJ_AREA} = C_NULL,
+    ctx::Ptr{PJ_CONTEXT} = C_NULL,
 )
     # create a new Transformation from trans1 source to trans2 target
     # can also be typed as trans1 ∘ trans2, typed with \circ
@@ -292,7 +292,7 @@ a context to set it for that context, instead of the global one.
 
 Returns true if network access is possible.
 """
-function enable_network!(active::Bool=true, ctx::Ptr{PJ_CONTEXT}=C_NULL)
+function enable_network!(active::Bool = true, ctx::Ptr{PJ_CONTEXT} = C_NULL)
     enabled = proj_context_set_enable_network(Cint(active), ctx)
     return Bool(enabled)
 end
@@ -303,7 +303,7 @@ end
 Returns true if PROJ network access is enabled, false otherwise. Optionally pass a context
 to check for that context, instead of the global one.
 """
-function network_enabled(ctx::Ptr{PJ_CONTEXT}=C_NULL)
+function network_enabled(ctx::Ptr{PJ_CONTEXT} = C_NULL)
     enabled = proj_context_is_network_enabled(ctx)
     return Bool(enabled)
 end
