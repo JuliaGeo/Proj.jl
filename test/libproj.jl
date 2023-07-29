@@ -194,6 +194,27 @@ end
     @test is_approx(b, (155191.3538124342, 463537.1362732911))
 end
 
+@testset "Transformation inputs" begin
+
+    #crs as GFT.CoordinateReferenceSystemFormat
+    source_crs = GFT.EPSG("EPSG:4326")
+    target_crs = GFT.EPSG("EPSG:32628")
+
+    trans = Proj.Transformation(source_crs, target_crs, always_xy=false)
+    info = Proj.proj_pj_info(trans.pj)
+    description1 = unsafe_string(info.definition)
+    
+    #crs as txt
+    source_crs = "EPSG:4326"
+    target_crs = "EPSG:32628"
+
+    trans = Proj.Transformation(source_crs, target_crs, always_xy=false)
+    info = Proj.proj_pj_info(trans.pj)
+    description2 = unsafe_string(info.definition)
+
+    @test description1 == description2
+end
+
 @testset "bounds" begin
     trans = Proj.Transformation("EPSG:4326", "+proj=utm +zone=32 +datum=WGS84")
     x, y = 52, 11
@@ -287,6 +308,7 @@ end
     @test target_wkt == target_wkt1
 
     # which we can also see from show
+
     @test repr(trans) == """
     Transformation pipeline
         description: Ballpark geographic offset from WGS 84 (with axis order normalized for visualization) to NAD27(76) + UTM zone 15N
@@ -427,8 +449,9 @@ end
     @test GFT.ProjString(crs) ==
           GFT.ProjString("+proj=longlat +datum=WGS84 +no_defs +type=crs")
     @test GFT.ProjJSON(crs) == GFT.ProjJSON(
-        "{\n  \"\$schema\": \"https://proj.org/schemas/v0.5/projjson.schema.json\",\n  \"type\": \"GeographicCRS\",\n  \"name\": \"WGS 84\",\n  \"datum_ensemble\": {\n    \"name\": \"World Geodetic System 1984 ensemble\",\n    \"members\": [\n      {\n        \"name\": \"World Geodetic System 1984 (Transit)\",\n        \"id\": {\n          \"authority\": \"EPSG\",\n          \"code\": 1166\n        }\n      },\n      {\n        \"name\": \"World Geodetic System 1984 (G730)\",\n        \"id\": {\n          \"authority\": \"EPSG\",\n          \"code\": 1152\n        }\n      },\n      {\n        \"name\": \"World Geodetic System 1984 (G873)\",\n        \"id\": {\n          \"authority\": \"EPSG\",\n          \"code\": 1153\n        }\n      },\n      {\n        \"name\": \"World Geodetic System 1984 (G1150)\",\n        \"id\": {\n          \"authority\": \"EPSG\",\n          \"code\": 1154\n        }\n      },\n      {\n        \"name\": \"World Geodetic System 1984 (G1674)\",\n        \"id\": {\n          \"authority\": \"EPSG\",\n          \"code\": 1155\n        }\n      },\n      {\n        \"name\": \"World Geodetic System 1984 (G1762)\",\n        \"id\": {\n          \"authority\": \"EPSG\",\n          \"code\": 1156\n        }\n      },\n      {\n        \"name\": \"World Geodetic System 1984 (G2139)\",\n        \"id\": {\n          \"authority\": \"EPSG\",\n          \"code\": 1309\n        }\n      }\n    ],\n    \"ellipsoid\": {\n      \"name\": \"WGS 84\",\n      \"semi_major_axis\": 6378137,\n      \"inverse_flattening\": 298.257223563\n    },\n    \"accuracy\": \"2.0\",\n    \"id\": {\n      \"authority\": \"EPSG\",\n      \"code\": 6326\n    }\n  },\n  \"coordinate_system\": {\n    \"subtype\": \"ellipsoidal\",\n    \"axis\": [\n      {\n        \"name\": \"Geodetic latitude\",\n        \"abbreviation\": \"Lat\",\n        \"direction\": \"north\",\n        \"unit\": \"degree\"\n      },\n      {\n        \"name\": \"Geodetic longitude\",\n        \"abbreviation\": \"Lon\",\n        \"direction\": \"east\",\n        \"unit\": \"degree\"\n      }\n    ]\n  },\n  \"scope\": \"Horizontal component of 3D system.\",\n  \"area\": \"World.\",\n  \"bbox\": {\n    \"south_latitude\": -90,\n    \"west_longitude\": -180,\n    \"north_latitude\": 90,\n    \"east_longitude\": 180\n  },\n  \"id\": {\n    \"authority\": \"EPSG\",\n    \"code\": 4326\n  }\n}",
-    )
+        "{\n  \"\$schema\": \"https://proj.org/schemas/v0.7/projjson.schema.json\",\n  \"type\": \"GeographicCRS\",\n  \"name\": \"WGS 84\",\n  \"datum_ensemble\": {\n    \"name\": \"World Geodetic System 1984 ensemble\",\n    \"members\": [\n      {\n        \"name\": \"World Geodetic System 1984 (Transit)\",\n        \"id\": {\n          \"authority\": \"EPSG\",\n          \"code\": 1166\n        }\n      },\n      {\n        \"name\": \"World Geodetic System 1984 (G730)\",\n        \"id\": {\n          \"authority\": \"EPSG\",\n          \"code\": 1152\n        }\n      },\n      {\n        \"name\": \"World Geodetic System 1984 (G873)\",\n        \"id\": {\n          \"authority\": \"EPSG\",\n          \"code\": 1153\n        }\n      },\n      {\n        \"name\": \"World Geodetic System 1984 (G1150)\",\n        \"id\": {\n          \"authority\": \"EPSG\",\n          \"code\": 1154\n        }\n      },\n      {\n        \"name\": \"World Geodetic System 1984 (G1674)\",\n        \"id\": {\n          \"authority\": \"EPSG\",\n          \"code\": 1155\n        }\n      },\n      {\n        \"name\": \"World Geodetic System 1984 (G1762)\",\n        \"id\": {\n          \"authority\": \"EPSG\",\n          \"code\": 1156\n        }\n      },\n      {\n        \"name\": \"World Geodetic System 1984 (G2139)\",\n        \"id\": {\n          \"authority\": \"EPSG\",\n          \"code\": 1309\n        }\n      }\n    ],\n    \"ellipsoid\": {\n      \"name\": \"WGS 84\",\n      \"semi_major_axis\": 6378137,\n      \"inverse_flattening\": 298.257223563\n    },\n    \"accuracy\": \"2.0\",\n    \"id\": {\n      \"authority\": \"EPSG\",\n      \"code\": 6326\n    }\n  },\n  \"coordinate_system\": {\n    \"subtype\": \"ellipsoidal\",\n    \"axis\": [\n      {\n        \"name\": \"Geodetic latitude\",\n        \"abbreviation\": \"Lat\",\n        \"direction\": \"north\",\n        \"unit\": \"degree\"\n      },\n      {\n        \"name\": \"Geodetic longitude\",\n        \"abbreviation\": \"Lon\",\n        \"direction\": \"east\",\n        \"unit\": \"degree\"\n      }\n    ]\n  },\n  \"scope\": \"Horizontal component of 3D system.\",\n  \"area\": \"World.\",\n  \"bbox\": {\n    \"south_latitude\": -90,\n    \"west_longitude\": -180,\n    \"north_latitude\": 90,\n    \"east_longitude\": 180\n  },\n  \"id\": {\n    \"authority\": \"EPSG\",\n    \"code\": 4326\n  }\n}"
+    ) 
+    
     @test GFT.EPSG(crs) == GFT.EPSG("EPSG:4326")
 
     @test convert(GFT.EPSG, crs) == GFT.EPSG("EPSG:4326")
