@@ -70,7 +70,6 @@ mutable struct Transformation <: CoordinateTransformations.Transformation
         end
         return trans
     end
-
 end
 
 function Transformation(
@@ -84,6 +83,17 @@ function Transformation(
     pj = proj_create_crs_to_crs(source_crs, target_crs, area, ctx)
     pj = always_xy ? normalize_axis_order!(pj; ctx) : pj
     return Transformation(pj, direction)
+end
+
+function Transformation(
+    source_crs::GFT.CoordinateReferenceSystemFormat,
+    target_crs::GFT.CoordinateReferenceSystemFormat;
+    always_xy::Bool=false,
+    direction::PJ_DIRECTION=PJ_FWD,
+    area::Ptr{PJ_AREA}=C_NULL,
+    ctx::Ptr{PJ_CONTEXT}=C_NULL
+)
+    return Transformation(CRS(source_crs).pj, CRS(target_crs).pj; always_xy, direction, area, ctx)
 end
 
 function Transformation(

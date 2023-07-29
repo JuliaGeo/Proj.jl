@@ -196,6 +196,27 @@ end
     @test is_approx(b, (155191.3538124342, 463537.1362732911))
 end
 
+@testset "Transformation inputs" begin
+
+    #crs as GFT.CoordinateReferenceSystemFormat
+    source_crs = GFT.EPSG("EPSG:4326")
+    target_crs = GFT.EPSG("EPSG:32628")
+
+    trans = Proj.Transformation(source_crs, target_crs, always_xy=false)
+    info = Proj.proj_pj_info(trans.pj)
+    description1 = unsafe_string(info.definition)
+    
+    #crs as txt
+    source_crs = "EPSG:4326"
+    target_crs = "EPSG:32628"
+
+    trans = Proj.Transformation(source_crs, target_crs, always_xy=false)
+    info = Proj.proj_pj_info(trans.pj)
+    description2 = unsafe_string(info.definition)
+
+    @test description1 == description2
+end
+
 @testset "bounds" begin
     trans = Proj.Transformation("EPSG:4326", "+proj=utm +zone=32 +datum=WGS84")
     x, y = 52, 11
