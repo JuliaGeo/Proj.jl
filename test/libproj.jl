@@ -477,3 +477,17 @@ end
     # Maybe enable later, based on https://github.com/JuliaGeo/GeoFormatTypes.jl/issues/21
     # @test convert(GFT.ProjString, gftcrs) == GFT.ProjString("+proj=longlat +datum=WGS84 +no_defs +type=crs")
 end
+
+@testset "Proj.identify" begin
+    crs = Proj.CRS("+proj=longlat +datum=WGS84 +no_defs +type=crs")
+    crs_ref, confidence = Proj.identify(crs)
+    @test confidence == 70
+
+    crs_ref, confidence = Proj.identify(crs; allmatches = true)
+    @test length(confidence) == 4
+    @test length(crs_ref) == 4
+
+    crs_ref, confidence = Proj.identify(crs; allmatches = false, authority = "EPSG")
+    @test GFT.EPSG(crs_ref) == GFT.EPSG(4326)
+    @test confidence == 70
+end
