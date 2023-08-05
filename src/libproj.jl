@@ -702,6 +702,20 @@ function proj_rtodms(s, r, pos, neg)
     )
 end
 
+function proj_rtodms2(s, sizeof_s, r, pos, neg)
+    aftercare(
+        @ccall(
+            libproj.proj_rtodms2(
+                s::Cstring,
+                sizeof_s::Csize_t,
+                r::Cdouble,
+                pos::Cint,
+                neg::Cint,
+            )::Cstring
+        )
+    )
+end
+
 function proj_cleanup()
     @ccall libproj.proj_cleanup()::Cvoid
 end
@@ -770,6 +784,8 @@ Object type.
 | PJ\\_TYPE\\_TEMPORAL\\_DATUM               |                                                                                                                                     |
 | PJ\\_TYPE\\_ENGINEERING\\_DATUM            |                                                                                                                                     |
 | PJ\\_TYPE\\_PARAMETRIC\\_DATUM             |                                                                                                                                     |
+| PJ\\_TYPE\\_DERIVED\\_PROJECTED\\_CRS      |                                                                                                                                     |
+| PJ\\_TYPE\\_COORDINATE\\_METADATA          |                                                                                                                                     |
 """
 @cenum PJ_TYPE::UInt32 begin
     PJ_TYPE_UNKNOWN = 0
@@ -800,6 +816,8 @@ Object type.
     PJ_TYPE_TEMPORAL_DATUM = 25
     PJ_TYPE_ENGINEERING_DATUM = 26
     PJ_TYPE_PARAMETRIC_DATUM = 27
+    PJ_TYPE_DERIVED_PROJECTED_CRS = 28
+    PJ_TYPE_COORDINATE_METADATA = 29
 end
 
 """
@@ -1277,8 +1295,16 @@ function proj_get_remarks(obj)
     aftercare(@ccall(libproj.proj_get_remarks(obj::Ptr{PJ})::Cstring))
 end
 
+function proj_get_domain_count(obj)
+    @ccall libproj.proj_get_domain_count(obj::Ptr{PJ})::Cint
+end
+
 function proj_get_scope(obj)
     aftercare(@ccall(libproj.proj_get_scope(obj::Ptr{PJ})::Cstring))
+end
+
+function proj_get_scope_ex(obj, domainIdx)
+    aftercare(@ccall(libproj.proj_get_scope_ex(obj::Ptr{PJ}, domainIdx::Cint)::Cstring))
 end
 
 function proj_get_area_of_use(
@@ -1293,6 +1319,28 @@ function proj_get_area_of_use(
     @ccall libproj.proj_get_area_of_use(
         ctx::Ptr{PJ_CONTEXT},
         obj::Ptr{PJ},
+        out_west_lon_degree::Ptr{Cdouble},
+        out_south_lat_degree::Ptr{Cdouble},
+        out_east_lon_degree::Ptr{Cdouble},
+        out_north_lat_degree::Ptr{Cdouble},
+        out_area_name::Ptr{Cstring},
+    )::Cint
+end
+
+function proj_get_area_of_use_ex(
+    obj,
+    domainIdx,
+    out_west_lon_degree,
+    out_south_lat_degree,
+    out_east_lon_degree,
+    out_north_lat_degree,
+    out_area_name,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_get_area_of_use_ex(
+        ctx::Ptr{PJ_CONTEXT},
+        obj::Ptr{PJ},
+        domainIdx::Cint,
         out_west_lon_degree::Ptr{Cdouble},
         out_south_lat_degree::Ptr{Cdouble},
         out_east_lon_degree::Ptr{Cdouble},
@@ -2026,6 +2074,13 @@ function proj_concatoperation_get_step(concatoperation, i_step, ctx = C_NULL)
         concatoperation::Ptr{PJ},
         i_step::Cint,
     )::Ptr{PJ}
+end
+
+function proj_coordinate_metadata_get_epoch(obj, ctx = C_NULL)
+    @ccall libproj.proj_coordinate_metadata_get_epoch(
+        ctx::Ptr{PJ_CONTEXT},
+        obj::Ptr{PJ},
+    )::Cdouble
 end
 
 """
@@ -2919,9 +2974,9 @@ end
 
 const PROJ_VERSION_MAJOR = 9
 
-const PROJ_VERSION_MINOR = 1
+const PROJ_VERSION_MINOR = 2
 
-const PROJ_VERSION_PATCH = 0
+const PROJ_VERSION_PATCH = 1
 
 const PROJ_VERSION_NUMBER =
     PROJ_COMPUTE_VERSION(PROJ_VERSION_MAJOR, PROJ_VERSION_MINOR, PROJ_VERSION_PATCH)
@@ -2962,7 +3017,7 @@ const PROJ_ERR_OTHER_NETWORK_ERROR = PROJ_ERR_OTHER + 3
 
 const GEODESIC_VERSION_MAJOR = 2
 
-const GEODESIC_VERSION_MINOR = 0
+const GEODESIC_VERSION_MINOR = 1
 
 const GEODESIC_VERSION_PATCH = 0
 
