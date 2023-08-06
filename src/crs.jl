@@ -137,3 +137,53 @@ Base.convert(::Type{CRS}, crs::GFT.CoordinateReferenceSystemFormat) = CRS(crs)
 
 # Maybe enable later, based on https://github.com/JuliaGeo/GeoFormatTypes.jl/issues/21
 # Base.convert(T::Type{<:GFT.CoordinateReferenceSystemFormat}, crs::GFT.CoordinateReferenceSystemFormat) = T(CRS(crs))
+
+
+
+
+"""
+    identify(obj; authority = nothing, options = nothing)
+
+Returns the a list of matching reference CRS or nothing, and the confidence values (0-100) 
+or nothing. This is a high level interface to proj_identify.
+
+Inputs:
+   obj -- Object of type CRS. Must not be NULL
+   authority [nothing] -- Authority name, or NULL for all authorities (e.g. "EPSG")
+   allmatches [false] -- if true return all matches, if false return top match
+   options -- Placeholder for future options. Should be set to nothing.
+"""
+function identify(obj; authority=nothing, allmatches=false, options=nothing)
+
+    out_confidence = Ref(Ptr{Cint}(C_NULL))
+    if isnothing(authority)
+        #set authority to C_NULL
+        authority = C_NULL
+    end
+
+    if isnothing(options)
+        #set authority to C_NULL
+        options = C_NULL
+    end
+
+    pj_list = Proj.proj_identify(obj, authority, out_confidence, options)
+
+    # was a match found?
+    if pj_list == C_NULL
+        crs_ref = nothing
+        confidence = nothing
+    else
+        if allmatches
+            # return all results
+            cnt = Proj.proj_list_get_count(pj_list)
+            crs_ref = [Proj.CRS(Proj.proj_list_get(pj_list, i)) for i = 0:(cnt-1)]
+            confidence = [unsafe_load(out_confidence[], i) for i = 1:cnt]
+        else
+            # only return top results
+            crs_ref = Proj.CRS(Proj.proj_list_get(pj_list, 0))
+            confidence = unsafe_load(out_confidence[], 1)
+        end
+    end
+
+    return crs_ref, confidence
+end
