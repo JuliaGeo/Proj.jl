@@ -294,9 +294,9 @@ end
     trans1 = Proj.Transformation("EPSG:4326", "EPSG:28992", always_xy = true)
     # enable network when creating Transformation to avoid
     # PROJError: hgridshift: could not find required grid(s).
-    Proj.enable_network!(true)
-    trans2 = Proj.Transformation("EPSG:32632", "EPSG:2027", always_xy = true)
-    Proj.enable_network!(false)
+    trans2 = Proj.with_network() do
+        Proj.Transformation("EPSG:32632", "EPSG:2027", always_xy = true)
+    end
     trans = trans1 ∘ trans2  # same as compose(trans1, trans2)
     source_crs = Proj.proj_get_source_crs(trans.pj)
     target_crs = Proj.proj_get_target_crs(trans.pj)
@@ -378,12 +378,15 @@ end
 @testset "network" begin
     as_before = Proj.network_enabled()
 
+    Proj.enable_network!(false)
+    @test !Proj.network_enabled()
     # enable network when creating Transformation to avoid
     # PROJError: vgridshift: could not find required grid(s).
-    Proj.enable_network!()
-    trans_z = Proj.Transformation("EPSG:4326+5773", "EPSG:7856+5711", always_xy = true)
+    trans_z = Proj.with_network() do
+        @test Proj.network_enabled()
+        Proj.Transformation("EPSG:4326+5773", "EPSG:7856+5711", always_xy = true)
+    end
     # turn off network, z becomes Inf
-    @test !Proj.enable_network!(false)
     @test !Proj.network_enabled()
     @test trans_z((151, -33, 5))[3] == Inf
     # turn on network, z transformation
@@ -397,6 +400,10 @@ end
     Proj.enable_network!(false)
     Proj.enable_network!()
     @test Proj.network_enabled()
+
+    Proj.with_network(; active = false) do
+        @test !Proj.network_enabled()
+    end
 
     # restore setting as outside the testset
     Proj.enable_network!(as_before)
