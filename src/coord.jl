@@ -318,6 +318,16 @@ function network_enabled(ctx::Ptr{PJ_CONTEXT} = C_NULL)
     return Bool(enabled)
 end
 
+function with_network(f::Function; active::Bool = true, ctx::Ptr{Proj.PJ_CONTEXT} = C_NULL)
+    as_before = Proj.network_enabled(ctx)
+    Proj.enable_network!(active, ctx)
+    try
+        f()
+    finally
+        Proj.enable_network!(as_before, ctx)
+    end
+end
+
 function Base.inv(direction::PJ_DIRECTION)
     return if direction == PJ_FWD
         PJ_INV
