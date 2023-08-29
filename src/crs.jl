@@ -165,6 +165,7 @@ function identify(obj::CRS; auth_name=nothing)
         crs_ref = [Proj.CRS(Proj.proj_list_get(pj_list, i)) for i = 0:(cnt-1)]
         confidence = [unsafe_load(out_confidence[], i) for i = 1:cnt]
         list = [(crs=crs_ref[i], confidence=confidence[i]) for i in eachindex(crs_ref)]
+        proj_int_list_destroy(pj_list)
     end
     return list
 end
