@@ -138,52 +138,33 @@ Base.convert(::Type{CRS}, crs::GFT.CoordinateReferenceSystemFormat) = CRS(crs)
 # Maybe enable later, based on https://github.com/JuliaGeo/GeoFormatTypes.jl/issues/21
 # Base.convert(T::Type{<:GFT.CoordinateReferenceSystemFormat}, crs::GFT.CoordinateReferenceSystemFormat) = T(CRS(crs))
 
-
-
-
 """
-    identify(obj; authority = nothing, options = nothing)
+    identify(obj; auth_name = nothing)
 
-Returns the a list of matching reference CRS or nothing, and the confidence values (0-100) 
-or nothing. This is a high level interface to proj_identify.
+Returns a list of matching reference CRS and confidence values (0-100). 
 
 Inputs:
-   obj -- Object of type CRS. Must not be NULL
-   authority [nothing] -- Authority name, or NULL for all authorities (e.g. "EPSG")
-   allmatches [false] -- if true return all matches, if false return top match
-   options -- Placeholder for future options. Should be set to nothing.
+   obj -- Object of type CRS
+   auth_name [nothing] -- Authority name, or nothing for all authorities (e.g. "EPSG")
 """
-function identify(obj; authority=nothing, allmatches=false, options=nothing)
+function identify(obj::CRS; auth_name=nothing)
 
     out_confidence = Ref(Ptr{Cint}(C_NULL))
-    if isnothing(authority)
+    if isnothing(auth_name)
         #set authority to C_NULL
-        authority = C_NULL
+        auth_name = C_NULL
     end
 
-    if isnothing(options)
-        #set authority to C_NULL
-        options = C_NULL
-    end
-
-    pj_list = Proj.proj_identify(obj, authority, out_confidence, options)
+    pj_list = Proj.proj_identify(obj, auth_name, out_confidence)
 
     # was a match found?
     if pj_list == C_NULL
-        crs_ref = nothing
-        confidence = nothing
+        list = Vector{NamedTuple{(:crs, :confidence),Tuple{Proj.CRS,Int32}}}[]
     else
-        if allmatches
-            # return all results
-            cnt = Proj.proj_list_get_count(pj_list)
-            crs_ref = [Proj.CRS(Proj.proj_list_get(pj_list, i)) for i = 0:(cnt-1)]
-            confidence = [unsafe_load(out_confidence[], i) for i = 1:cnt]
-        else
-            # only return top results
-            crs_ref = Proj.CRS(Proj.proj_list_get(pj_list, 0))
-            confidence = unsafe_load(out_confidence[], 1)
-        end
+        cnt = Proj.proj_list_get_count(pj_list)
+        crs_ref = [Proj.CRS(Proj.proj_list_get(pj_list, i)) for i = 0:(cnt-1)]
+        confidence = [unsafe_load(out_confidence[], i) for i = 1:cnt]
+        list = [(crs=crs_ref[i], confidence=confidence[i]) for i in eachindex(crs_ref)]
     end
-
-    return crs_ref, confidence
+    return list
 end
