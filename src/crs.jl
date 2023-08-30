@@ -147,7 +147,10 @@ Returns a list of matching reference CRS and confidence values (0-100).
 - `crs::CRS`: Coordinate reference system
 - `auth_name=nothing`: Authority name, or nothing for all authorities (e.g. "EPSG")
 """
-function identify(crs::CRS; auth_name=nothing)::Vector{@NamedTuple{crs::CRS, confidence::Int32}}
+function identify(
+    crs::CRS;
+    auth_name = nothing,
+)::Vector{@NamedTuple{crs::CRS, confidence::Int32}}
 
     out_confidence = Ref(Ptr{Cint}(C_NULL))
     if isnothing(auth_name)
@@ -161,8 +164,8 @@ function identify(crs::CRS; auth_name=nothing)::Vector{@NamedTuple{crs::CRS, con
     # was a match found?
     if pj_list != C_NULL
         n = proj_list_get_count(pj_list)
-        for i in 1:n
-            crs = CRS(proj_list_get(pj_list, i-1))
+        for i = 1:n
+            crs = CRS(proj_list_get(pj_list, i - 1))
             confidence = unsafe_load(out_confidence[], i)
             push!(list, (; crs, confidence))
         end

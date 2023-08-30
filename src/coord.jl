@@ -88,12 +88,19 @@ end
 function Transformation(
     source_crs::GFT.CoordinateReferenceSystemFormat,
     target_crs::GFT.CoordinateReferenceSystemFormat;
-    always_xy::Bool=false,
-    direction::PJ_DIRECTION=PJ_FWD,
-    area::Ptr{PJ_AREA}=C_NULL,
-    ctx::Ptr{PJ_CONTEXT}=C_NULL
+    always_xy::Bool = false,
+    direction::PJ_DIRECTION = PJ_FWD,
+    area::Ptr{PJ_AREA} = C_NULL,
+    ctx::Ptr{PJ_CONTEXT} = C_NULL,
 )
-    return Transformation(CRS(source_crs).pj, CRS(target_crs).pj; always_xy, direction, area, ctx)
+    return Transformation(
+        CRS(source_crs).pj,
+        CRS(target_crs).pj;
+        always_xy,
+        direction,
+        area,
+        ctx,
+    )
 end
 
 function Transformation(
