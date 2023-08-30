@@ -1,6 +1,7 @@
 using Test
 using StaticArrays
 using Proj
+import GeoInterface as GI
 import PROJ_jll
 import GeoFormatTypes as GFT
 
@@ -476,6 +477,23 @@ end
 
     # Maybe enable later, based on https://github.com/JuliaGeo/GeoFormatTypes.jl/issues/21
     # @test convert(GFT.ProjString, gftcrs) == GFT.ProjString("+proj=longlat +datum=WGS84 +no_defs +type=crs")
+end
+
+@testset "GeoInterface" begin
+    @test GI.testgeometry(Proj.Coord(0, 0))
+
+    wp = GI.Wrappers.Point(5, 54)
+    np = GI.convert(Proj.Coord, wp)
+    @test np isa Proj.Coord
+
+    np = GI.convert(Proj, wp)
+    @test np isa Proj.Coord
+
+    trans = Proj.Transformation("EPSG:4326", "EPSG:28992", always_xy = true)
+    tp = trans(wp)
+    @test length(tp) == 2
+    @test tp[1] ≈ 129604.1711
+    @test tp[2] ≈ 668374.4875
 end
 
 @testset "Proj.identify" begin

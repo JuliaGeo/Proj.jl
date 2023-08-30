@@ -232,7 +232,7 @@ function (trans::Transformation)(coord::Coord)::NTuple{4,Float64}
     return p.x, p.y, p.z, p.t
 end
 
-function (trans::Transformation)(coord)::NTuple234
+function (trans::Transformation)(coord::NTuple234)::NTuple234
     n = length(coord)
     p = proj_trans(trans.pj, trans.direction, coord)
     return if n == 2
@@ -241,6 +241,21 @@ function (trans::Transformation)(coord)::NTuple234
         p.x, p.y, p.z
     else
         p.x, p.y, p.z, p.t
+    end
+end
+
+function (trans::Transformation)(coord)
+    (GI.isgeometry(coord) && GI.geomtrait(coord)) == GI.PointTrait() ||
+        throw(ArgumentError("Argument is not a Point geometry"))
+    c = GI.convert(Coord, GI.PointTrait(), coord)
+    p = proj_trans(trans.pj, trans.direction, c)
+    n = GI.ncoord(coord)
+    if n == 2
+        return p.x, p.y
+    elseif n == 3
+        return p.x, p.y, p.z
+    else
+        return p.x, p.y, p.z, p.t
     end
 end
 
