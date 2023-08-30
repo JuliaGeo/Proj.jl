@@ -135,10 +135,10 @@ end
 function Transformation(
     source_crs::CRS,
     target_crs::CRS;
-    always_xy::Bool=false,
-    direction::PJ_DIRECTION=PJ_FWD,
-    area::Ptr{PJ_AREA}=C_NULL,
-    ctx::Ptr{PJ_CONTEXT}=C_NULL
+    always_xy::Bool = false,
+    direction::PJ_DIRECTION = PJ_FWD,
+    area::Ptr{PJ_AREA} = C_NULL,
+    ctx::Ptr{PJ_CONTEXT} = C_NULL,
 )
     return Transformation(source_crs.pj, target_crs.pj; always_xy, direction, area, ctx)
 end
@@ -245,7 +245,8 @@ function (trans::Transformation)(coord::NTuple234)::NTuple234
 end
 
 function (trans::Transformation)(coord)
-    (GI.isgeometry(coord) && GI.geomtrait(coord)) == GI.PointTrait() || throw(ArgumentError("Argument is not a Point geometry"))
+    (GI.isgeometry(coord) && GI.geomtrait(coord)) == GI.PointTrait() ||
+        throw(ArgumentError("Argument is not a Point geometry"))
     c = GI.convert(Coord, GI.PointTrait(), coord)
     p = proj_trans(trans.pj, trans.direction, c)
     n = GI.ncoord(coord)
@@ -271,8 +272,8 @@ function bounds(
     trans::Transformation,
     (xmin, xmax),
     (ymin, ymax);
-    densify_pts=21,
-    ctx::Ptr{PJ_CONTEXT}=C_NULL
+    densify_pts = 21,
+    ctx::Ptr{PJ_CONTEXT} = C_NULL,
 )
     out_xmin = Ref{Float64}(NaN)
     out_xmax = Ref{Float64}(NaN)

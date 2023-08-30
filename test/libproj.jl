@@ -123,7 +123,7 @@ end
     trans = Proj.Transformation(
         "EPSG:4326",
         "+proj=utm +zone=32 +datum=WGS84",
-        always_xy=true,
+        always_xy = true,
     )
 
     # for custom / proj strings, or modified axis order, no description can be looked up in
@@ -135,8 +135,8 @@ end
         direction: forward
     """
 
-    trans⁻¹ = inv(trans, always_xy=true)
-    trans¹ = inv(trans⁻¹, always_xy=true)
+    trans⁻¹ = inv(trans, always_xy = true)
+    trans¹ = inv(trans⁻¹, always_xy = true)
 
     # inv does not flip source and target, so the WKT stays the same
     wkt_type = Proj.PJ_WKT2_2019
@@ -155,10 +155,10 @@ end
     trans = Proj.Transformation(
         "EPSG:4326",
         "+proj=utm +zone=32 +datum=WGS84",
-        direction=PJ_IDENT,
+        direction = PJ_IDENT,
     )
     @test trans(a) === a
-    trans⁻¹ = inv(trans, always_xy=true)
+    trans⁻¹ = inv(trans, always_xy = true)
     @test trans⁻¹(a) === a
     @test trans⁻¹.direction == PJ_IDENT
     trans⁻¹.direction = PJ_FWD
@@ -191,7 +191,7 @@ end
     @test is_approx(b, (155191.3538124342, 463537.1362732911))
 
     # with always_xy = true, we need to use lon/lat, and still get x/y out
-    trans = Proj.Transformation(source_crs, target_crs, always_xy=true)
+    trans = Proj.Transformation(source_crs, target_crs, always_xy = true)
     a = (5.39, 52.16)
     b = Proj.proj_trans(trans.pj, Proj.PJ_FWD, a)
     @test is_approx(b, (155191.3538124342, 463537.1362732911))
@@ -239,7 +239,7 @@ end
 @testset "dense 4D coord vector transformation" begin
     source_crs = Proj.proj_create("EPSG:4326")
     target_crs = Proj.proj_create("EPSG:28992")
-    trans = Proj.Transformation(source_crs, target_crs, always_xy=true)
+    trans = Proj.Transformation(source_crs, target_crs, always_xy = true)
     # This array is mutated in place. Note that this array needs to have 4D elements,
     # with 2D elements it will only do every other one
     A = [Proj.Coord(5.39, 52.16) for _ = 1:5]
@@ -261,7 +261,7 @@ end
 @testset "generic array transformation" begin
     source_crs = Proj.proj_create("EPSG:4326")
     target_crs = Proj.proj_create("EPSG:28992")
-    trans = Proj.Transformation(source_crs, target_crs, always_xy=true)
+    trans = Proj.Transformation(source_crs, target_crs, always_xy = true)
 
     # inplace transformation of vector of 2D coordinates
     # using https://proj.org/development/reference/functions.html#c.proj_trans_generic
@@ -351,7 +351,7 @@ end
 end
 
 @testset "in and output types" begin
-    trans = Proj.Transformation("EPSG:4326", "EPSG:28992", always_xy=true)
+    trans = Proj.Transformation("EPSG:4326", "EPSG:28992", always_xy = true)
     trans(Proj.proj_coord(5.39, 52.16))
     b = trans(SA[5.39, 52.16, 0.0, 0.0])
 
@@ -393,7 +393,7 @@ end
     # turn on network, z transformation
     @test Proj.enable_network!(true)
     @test Proj.network_enabled()
-    trans_z = Proj.Transformation("EPSG:4326+5773", "EPSG:7856+5711", always_xy=true)
+    trans_z = Proj.Transformation("EPSG:4326+5773", "EPSG:7856+5711", always_xy = true)
     z = trans_z((151, -33, 5))[3]
     @test z ≈ 5.280647277836724f0
 
@@ -489,7 +489,7 @@ end
     np = GI.convert(Proj, wp)
     @test np isa Proj.Coord
 
-    trans = Proj.Transformation("EPSG:4326", "EPSG:28992", always_xy=true)
+    trans = Proj.Transformation("EPSG:4326", "EPSG:28992", always_xy = true)
     tp = trans(wp)
     @test length(tp) == 2
     @test tp[1] ≈ 129604.1711

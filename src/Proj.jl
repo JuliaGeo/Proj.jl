@@ -55,7 +55,7 @@ struct Coord <: AbstractVector{Float64}
     y::Float64
     z::Float64
     t::Float64
-    Coord(x, y, z=0.0, t=Inf) = new(x, y, z, t)
+    Coord(x, y, z = 0.0, t = Inf) = new(x, y, z, t)
 end
 
 # this shields a StackOverflow from the splatting constructor
