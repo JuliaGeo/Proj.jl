@@ -202,7 +202,7 @@ end
     source_crs = GFT.EPSG("EPSG:4326")
     target_crs = GFT.EPSG("EPSG:32628")
 
-    trans = Proj.Transformation(source_crs, target_crs, always_xy=false)
+    trans = Proj.Transformation(source_crs, target_crs, always_xy = false)
     info = Proj.proj_pj_info(trans.pj)
     description1 = unsafe_string(info.definition)
 
@@ -210,7 +210,7 @@ end
     source_crs = "EPSG:4326"
     target_crs = "EPSG:32628"
 
-    trans = Proj.Transformation(source_crs, target_crs, always_xy=false)
+    trans = Proj.Transformation(source_crs, target_crs, always_xy = false)
     info = Proj.proj_pj_info(trans.pj)
     description2 = unsafe_string(info.definition)
 
@@ -476,4 +476,15 @@ end
 
     # Maybe enable later, based on https://github.com/JuliaGeo/GeoFormatTypes.jl/issues/21
     # @test convert(GFT.ProjString, gftcrs) == GFT.ProjString("+proj=longlat +datum=WGS84 +no_defs +type=crs")
+end
+
+@testset "Proj.identify" begin
+    crs = Proj.CRS("+proj=longlat +datum=WGS84 +no_defs +type=crs")
+    identity = Proj.identify(crs)
+    @test identity[1].confidence == 70
+    @test length(identity) == 4
+
+    identity = Proj.identify(crs; auth_name = "EPSG")
+    @test GFT.EPSG(identity[1].crs) == GFT.EPSG(4326)
+    @test identity[1].confidence == 70
 end
