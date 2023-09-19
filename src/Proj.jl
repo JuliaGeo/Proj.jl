@@ -5,6 +5,7 @@ using CEnum
 using CoordinateTransformations
 using NetworkOptions: ca_roots
 import GeoFormatTypes as GFT
+import GeoInterface as GI
 
 export PROJ_jll
 export PJ_DIRECTION, PJ_FWD, PJ_IDENT, PJ_INV
@@ -82,6 +83,31 @@ Base.size(::Coord) = (4,)
 Base.getindex(coord::Coord, i::Int) = getfield(coord, i)
 Base.IndexStyle(::Type{Coord}) = IndexLinear()
 Base.eltype(::Coord) = Float64
+
+geointerface_geomtype(::GI.PointTrait) = Coord
+
+GI.isgeometry(::Type{Coord}) = true
+GI.geomtrait(::Coord) = GI.PointTrait()
+GI.ncoord(::Coord) = 4
+GI.getcoord(coord::Coord, i::Int) = getfield(coord, i)
+GI.x(coord::Coord) = coord.x
+GI.y(coord::Coord) = coord.y
+GI.z(coord::Coord) = coord.z
+GI.m(coord::Coord) = coord.t
+
+function GI.convert(::Type{Coord}, ::GI.PointTrait, geom)
+    n = GI.ncoord(geom)
+    if n == 2
+        return Coord(GI.x(geom), GI.y(geom))
+    elseif n == 3
+        return Coord(GI.x(geom), GI.y(geom), GI.z(geom))
+    elseif n == 4
+        return Coord(GI.x(geom), GI.y(geom), GI.z(geom), GI.m(geom))
+    else
+        error("Coord takes 2 to 4 numbers")
+    end
+end
+
 
 # type aliases
 const NTuple234 = Union{NTuple{2,Float64},NTuple{3,Float64},NTuple{4,Float64}}

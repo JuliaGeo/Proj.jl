@@ -1,7 +1,7 @@
 """
     CRS(crs)
 
-Create a CRS. `crs` can be:
+Create a coordinate reference system. `crs` can be:
 - a proj-string,
 - a WKT string,
 - an object code (like "EPSG:4326", "urn:ogc:def:crs:EPSG::4326", "urn:ogc:def:coordinateOperation:EPSG::1671"),
@@ -137,3 +137,39 @@ Base.convert(::Type{CRS}, crs::GFT.CoordinateReferenceSystemFormat) = CRS(crs)
 
 # Maybe enable later, based on https://github.com/JuliaGeo/GeoFormatTypes.jl/issues/21
 # Base.convert(T::Type{<:GFT.CoordinateReferenceSystemFormat}, crs::GFT.CoordinateReferenceSystemFormat) = T(CRS(crs))
+
+"""
+    identify(crs::CRS; auth_name = nothing)
+
+Returns a list of matching reference CRS and confidence values (0-100).
+
+# Arguments
+- `crs::CRS`: Coordinate reference system
+- `auth_name=nothing`: Authority name, or nothing for all authorities (e.g. "EPSG")
+"""
+function identify(
+    crs::CRS;
+    auth_name = nothing,
+)::Vector{@NamedTuple{crs::CRS, confidence::Int32}}
+
+    out_confidence = Ref(Ptr{Cint}(C_NULL))
+    if isnothing(auth_name)
+        # set authority to C_NULL
+        auth_name = C_NULL
+    end
+
+    pj_list = proj_identify(crs, auth_name, out_confidence)
+    list = NamedTuple{(:crs, :confidence),Tuple{CRS,Int32}}[]
+
+    # was a match found?
+    if pj_list != C_NULL
+        n = proj_list_get_count(pj_list)
+        for i = 1:n
+            crs = CRS(proj_list_get(pj_list, i - 1))
+            confidence = unsafe_load(out_confidence[], i)
+            push!(list, (; crs, confidence))
+        end
+        proj_int_list_destroy(out_confidence[])
+    end
+    return list
+end

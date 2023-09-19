@@ -41,7 +41,8 @@ Note that, as described in https://proj.org/resource_files.html, PROJ has the ca
 to use remote grids for transformations that need them. Unless you have manually set
 the environment variable `PROJNETWORK=ON` or changed `proj.ini`, networking is
 disabled by default. To enable from Julia, run `Proj.enable_network!()`.
-`Proj.network_enabled()` can be used to check the setting. Note that it needs to be set
+`Proj.network_enabled()` can be used to check the setting, and `Proj.with_network` provides
+a way to temporarily enable or disable it in a do-block. Note that it needs to be set
 before creating a transformation, otherwise it will have no effect.
 
 API documentation for the underlying C API may be found here:
