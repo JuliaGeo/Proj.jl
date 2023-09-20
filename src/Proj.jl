@@ -117,6 +117,7 @@ const GEODESIC_VERSION_NUM = VersionNumber
 include("libproj.jl")
 include("crs.jl")
 include("coord.jl")
+include("geod.jl")
 include("error.jl")
 
 """
