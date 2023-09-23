@@ -1,7 +1,7 @@
 using Test
 using StaticArrays
 using Proj
-import PROJ_jll
+using PROJ_jll
 using NetworkOptions: ca_roots
 
 function read_cmd(cmd)
@@ -14,21 +14,18 @@ function read_cmd(cmd)
 end
 
 # https://proj.org/apps/cs2cs.html#using-epsg-crs-codes
-@test PROJ_jll.cs2cs() do cs2cs
-    read_cmd(pipeline(IOBuffer("45N 2E"), `$cs2cs EPSG:4326 EPSG:32631`))
-end == "421184.70 4983436.77 0.00"
+@test read_cmd(pipeline(IOBuffer("45N 2E"), `$(cs2cs()) EPSG:4326 EPSG:32631`)) ==
+      "421184.70 4983436.77 0.00"
 
 # https://proj.org/usage/transformation.html?#grid-based-datum-adjustments
-@test PROJ_jll.cs2cs() do cs2cs
-    withenv("PROJ_NETWORK" => "ON", "PROJ_CURL_CA_BUNDLE" => ca_roots()) do
-        read_cmd(
-            pipeline(
-                IOBuffer("-111 50"),
-                `$cs2cs +proj=latlong +ellps=clrk66 +nadgrids=ca_nrc_ntv1_can.tif
-                    +to +proj=latlong +ellps=GRS80 +datum=NAD83`,
-            ),
-        )
-    end
+@test withenv("PROJ_NETWORK" => "ON", "PROJ_CURL_CA_BUNDLE" => ca_roots()) do
+    read_cmd(
+        pipeline(
+            IOBuffer("-111 50"),
+            `$(cs2cs()) +proj=latlong +ellps=clrk66 +nadgrids=ca_nrc_ntv1_can.tif
+                +to +proj=latlong +ellps=GRS80 +datum=NAD83`,
+        ),
+    )
 end == "111d0'3.006\"W 50d0'0.125\"N 0.000"
 
 function xyzt_transform_cli(point::AbstractVector; network::Bool = false)
@@ -39,10 +36,8 @@ end
 
 function xyzt_transform_cli(point::String; network::Bool = false)
     proj_network = network ? "ON" : "OFF"
-    PROJ_jll.cs2cs() do cs2cs
-        withenv("PROJ_NETWORK" => proj_network) do
-            read_cmd(pipeline(IOBuffer(point), `$cs2cs -d 6 EPSG:4326+5773 EPSG:7856+5711`))
-        end
+    withenv("PROJ_NETWORK" => proj_network) do
+        read_cmd(pipeline(IOBuffer(point), `$(cs2cs()) -d 6 EPSG:4326+5773 EPSG:7856+5711`))
     end
 end
 
@@ -88,30 +83,25 @@ p = xyzt_transform(SA_F64[151, -33, 5, 2020])
 p = xyzt_transform(SA_F64[151, -33, 5, floatmax()*2])
 @test is_approx(p, (x, y, z, Inf))
 
-PROJ_jll.cs2cs() do cs2cs
-    withenv("PROJ_NETWORK" => "OFF") do
-        @test read_cmd(
-            pipeline(IOBuffer("-33 151 5 0"), `$cs2cs -d 8 EPSG:4326+5773 EPSG:7856+5711`),
-        ) == "313152.77721375 6346936.49580996 5.00000000 0"
-    end
-    withenv("PROJ_NETWORK" => "ON") do
-        @test read_cmd(
-            pipeline(IOBuffer("-33 151 5 0"), `$cs2cs -d 8 EPSG:4326+5773 EPSG:7856+5711`),
-        ) == "313152.77721375 6346936.49580996 5.28064728 0"
-    end
-end
+@test withenv("PROJ_NETWORK" => "OFF") do
+    read_cmd(
+        pipeline(IOBuffer("-33 151 5 0"), `$(cs2cs()) -d 8 EPSG:4326+5773 EPSG:7856+5711`),
+    )
+end == "313152.77721375 6346936.49580996 5.00000000 0"
 
-@test PROJ_jll.projinfo() do projinfo
-    read_cmd(`$projinfo  -o PROJ EPSG:25832`)
-end == """PROJ.4 string:
+@test withenv("PROJ_NETWORK" => "ON") do
+    read_cmd(
+        pipeline(IOBuffer("-33 151 5 0"), `$(cs2cs()) -d 8 EPSG:4326+5773 EPSG:7856+5711`),
+    )
+end == "313152.77721375 6346936.49580996 5.28064728 0"
+
+@test read_cmd(`$(projinfo()) -o PROJ EPSG:25832`) == """PROJ.4 string:
 +proj=utm +zone=32 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs +type=crs"""
 
-PROJ_jll.projinfo() do projinfo
-    n_candidate_ops = "Candidate operations found: 3"
-    grid_not_found =
-        "Grid us_nga_egm96_15.tif needed but not found on the system." *
-        " Can be obtained at https://cdn.proj.org/us_nga_egm96_15.tif"
-    info = read_cmd(`$projinfo -s EPSG:4326+5773 -t EPSG:7856+5711`)
-    @test occursin(n_candidate_ops, info)
-    @test occursin(grid_not_found, info)
-end
+n_candidate_ops = "Candidate operations found: 3"
+grid_not_found =
+    "Grid us_nga_egm96_15.tif needed but not found on the system." *
+    " Can be obtained at https://cdn.proj.org/us_nga_egm96_15.tif"
+info = read_cmd(`$(projinfo()) -s EPSG:4326+5773 -t EPSG:7856+5711`)
+@test occursin(n_candidate_ops, info)
+@test occursin(grid_not_found, info)
