@@ -477,6 +477,13 @@ end
 
     # Maybe enable later, based on https://github.com/JuliaGeo/GeoFormatTypes.jl/issues/21
     # @test convert(GFT.ProjString, gftcrs) == GFT.ProjString("+proj=longlat +datum=WGS84 +no_defs +type=crs")
+
+    # Check that we can round trip CRS/wkt without errors 
+    @test GFT.EPSG(Proj.CRS(GFT.WellKnownText(crs))) ==
+          GFT.EPSG(Proj.CRS(GFT.WellKnownText2(crs))) 
+
+    # This runs but we lose the EPSG number for testing
+    Proj.CRS(GFT.ESRIWellKnownText(crs)) 
 end
 
 @testset "Geodesics" begin
