@@ -472,6 +472,7 @@ end
     @test GFT.EPSG(crs) == GFT.EPSG("EPSG:4326")
 
     @test convert(GFT.EPSG, crs) == GFT.EPSG("EPSG:4326")
+    @test convert(GFT.WellKnownText2, crs) == GFT.WellKnownText2(crs)
     @test Proj.proj_get_id_code(convert(Proj.CRS, GFT.EPSG("EPSG:4326"))) ==
           Proj.proj_get_id_code(crs)
 

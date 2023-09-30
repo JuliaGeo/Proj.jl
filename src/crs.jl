@@ -29,8 +29,10 @@ function CRS(crs::AbstractString, ctx::Ptr{PJ_CONTEXT} = C_NULL)
     return CRS(crs)
 end
 
+const MaybeGFTCRS = Union{GFT.CRS,GFT.Unknown,GFT.Extended}
+
 function CRS(
-    crs::Union{GFT.CoordinateReferenceSystemFormat,GFT.MixedFormat},
+    crs::Union{GFT.CoordinateReferenceSystemFormat,GFT.MixedFormat{<:MaybeGFTCRS}},
     ctx::Ptr{PJ_CONTEXT} = C_NULL
 )
     crs = proj_create(convert(String, crs), ctx)
@@ -137,6 +139,8 @@ end
 
 Base.convert(T::Type{<:GFT.CoordinateReferenceSystemFormat}, crs::CRS) = T(crs)
 Base.convert(::Type{CRS}, crs::GFT.CoordinateReferenceSystemFormat) = CRS(crs)
+Base.convert(T::Type{<:GFT.MixedFormat}, crs::CRS) = T(crs)
+Base.convert(::Type{CRS}, crs::GFT.MixedFormat{<:MaybeGFTCRS}) = CRS(crs)
 
 # Maybe enable later, based on https://github.com/JuliaGeo/GeoFormatTypes.jl/issues/21
 # Base.convert(T::Type{<:GFT.CoordinateReferenceSystemFormat}, crs::GFT.CoordinateReferenceSystemFormat) = T(CRS(crs))
