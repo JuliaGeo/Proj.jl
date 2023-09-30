@@ -29,7 +29,10 @@ function CRS(crs::AbstractString, ctx::Ptr{PJ_CONTEXT} = C_NULL)
     return CRS(crs)
 end
 
-function CRS(crs::GFT.CoordinateReferenceSystemFormat, ctx::Ptr{PJ_CONTEXT} = C_NULL)
+function CRS(
+    crs::Union{GFT.CoordinateReferenceSystemFormat,GFT.MixedFormat},
+    ctx::Ptr{PJ_CONTEXT} = C_NULL
+)
     crs = proj_create(convert(String, crs), ctx)
     return CRS(crs)
 end
