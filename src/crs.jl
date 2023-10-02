@@ -33,7 +33,7 @@ const MaybeGFTCRS = Union{GFT.CRS,GFT.Unknown,GFT.Extended}
 
 function CRS(
     crs::Union{GFT.CoordinateReferenceSystemFormat,GFT.MixedFormat{<:MaybeGFTCRS}},
-    ctx::Ptr{PJ_CONTEXT} = C_NULL
+    ctx::Ptr{PJ_CONTEXT} = C_NULL,
 )
     crs = proj_create(convert(String, crs), ctx)
     return CRS(crs)

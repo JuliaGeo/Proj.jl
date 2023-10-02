@@ -481,10 +481,10 @@ end
 
     # Check that we can round trip CRS/wkt without errors 
     @test GFT.EPSG(Proj.CRS(GFT.WellKnownText(crs))) ==
-          GFT.EPSG(Proj.CRS(GFT.WellKnownText2(crs))) 
+          GFT.EPSG(Proj.CRS(GFT.WellKnownText2(crs)))
 
     # This runs but we lose the EPSG number for testing
-    Proj.CRS(GFT.ESRIWellKnownText(crs)) 
+    Proj.CRS(GFT.ESRIWellKnownText(crs))
 end
 
 @testset "Geodesics" begin
