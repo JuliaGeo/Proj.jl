@@ -249,7 +249,7 @@ Should try to read the size\\_to\\_read first bytes at the specified offset of t
 
 error\\_string\\_max\\_size should be the maximum size that can be written into the out\\_error\\_string buffer (including terminating nul character).
 
-### Returns
+# Returns
 a non-NULL opaque handle in case of success.
 """
 const proj_network_open_cbk_type = Ptr{Cvoid}
@@ -270,7 +270,7 @@ Read size\\_to\\_read bytes from handle, starting at offset, into buffer. During
 
 error\\_string\\_max\\_size should be the maximum size that can be written into the out\\_error\\_string buffer (including terminating nul character).
 
-### Returns
+# Returns
 the number of bytes actually read (0 in case of error)
 """
 const proj_network_read_range_type = Ptr{Cvoid}
@@ -1791,6 +1791,13 @@ function proj_crs_get_datum_forced(crs, ctx = C_NULL)
     @ccall libproj.proj_crs_get_datum_forced(ctx::Ptr{PJ_CONTEXT}, crs::Ptr{PJ})::Ptr{PJ}
 end
 
+function proj_crs_has_point_motion_operation(crs, ctx = C_NULL)
+    @ccall libproj.proj_crs_has_point_motion_operation(
+        ctx::Ptr{PJ_CONTEXT},
+        crs::Ptr{PJ},
+    )::Cint
+end
+
 function proj_datum_ensemble_get_member_count(datum_ensemble, ctx = C_NULL)
     @ccall libproj.proj_datum_ensemble_get_member_count(
         ctx::Ptr{PJ_CONTEXT},
@@ -2076,11 +2083,2303 @@ function proj_concatoperation_get_step(concatoperation, i_step, ctx = C_NULL)
     )::Ptr{PJ}
 end
 
+function proj_coordinate_metadata_create(crs, epoch, ctx = C_NULL)
+    @ccall libproj.proj_coordinate_metadata_create(
+        ctx::Ptr{PJ_CONTEXT},
+        crs::Ptr{PJ},
+        epoch::Cdouble,
+    )::Ptr{PJ}
+end
+
 function proj_coordinate_metadata_get_epoch(obj, ctx = C_NULL)
     @ccall libproj.proj_coordinate_metadata_get_epoch(
         ctx::Ptr{PJ_CONTEXT},
         obj::Ptr{PJ},
     )::Cdouble
+end
+
+"""
+    PJ_UNIT_TYPE
+
+Type of unit of measure.
+
+| Enumerator           | Note                        |
+| :------------------- | :-------------------------- |
+| PJ\\_UT\\_ANGULAR    | Angular unit of measure     |
+| PJ\\_UT\\_LINEAR     | Linear unit of measure      |
+| PJ\\_UT\\_SCALE      | Scale unit of measure       |
+| PJ\\_UT\\_TIME       | Time unit of measure        |
+| PJ\\_UT\\_PARAMETRIC | Parametric unit of measure  |
+"""
+@cenum PJ_UNIT_TYPE::UInt32 begin
+    PJ_UT_ANGULAR = 0
+    PJ_UT_LINEAR = 1
+    PJ_UT_SCALE = 2
+    PJ_UT_TIME = 3
+    PJ_UT_PARAMETRIC = 4
+end
+
+"""
+    PJ_AXIS_DESCRIPTION
+
+Axis description.
+
+| Field                | Note                                  |
+| :------------------- | :------------------------------------ |
+| name                 | Axis name.                            |
+| abbreviation         | Axis abbreviation.                    |
+| direction            | Axis direction.                       |
+| unit\\_name          | Axis unit name.                       |
+| unit\\_conv\\_factor | Conversion factor to SI of the unit.  |
+| unit\\_type          | Type of unit                          |
+"""
+struct PJ_AXIS_DESCRIPTION
+    name::Cstring
+    abbreviation::Cstring
+    direction::Cstring
+    unit_name::Cstring
+    unit_conv_factor::Cdouble
+    unit_type::PJ_UNIT_TYPE
+end
+
+"""
+    PJ_CARTESIAN_CS_2D_TYPE
+
+Type of Cartesian 2D coordinate system.
+
+| Enumerator                                                      | Note                                    |
+| :-------------------------------------------------------------- | :-------------------------------------- |
+| PJ\\_CART2D\\_EASTING\\_NORTHING                                | Easting-Norting                         |
+| PJ\\_CART2D\\_NORTHING\\_EASTING                                | Northing-Easting                        |
+| PJ\\_CART2D\\_NORTH\\_POLE\\_EASTING\\_SOUTH\\_NORTHING\\_SOUTH | North Pole Easting/SOUTH-Norting/SOUTH  |
+| PJ\\_CART2D\\_SOUTH\\_POLE\\_EASTING\\_NORTH\\_NORTHING\\_NORTH | South Pole Easting/NORTH-Norting/NORTH  |
+| PJ\\_CART2D\\_WESTING\\_SOUTHING                                | Westing-southing                        |
+"""
+@cenum PJ_CARTESIAN_CS_2D_TYPE::UInt32 begin
+    PJ_CART2D_EASTING_NORTHING = 0
+    PJ_CART2D_NORTHING_EASTING = 1
+    PJ_CART2D_NORTH_POLE_EASTING_SOUTH_NORTHING_SOUTH = 2
+    PJ_CART2D_SOUTH_POLE_EASTING_NORTH_NORTHING_NORTH = 3
+    PJ_CART2D_WESTING_SOUTHING = 4
+end
+
+"""
+    PJ_ELLIPSOIDAL_CS_2D_TYPE
+
+Type of Ellipsoidal 2D coordinate system.
+
+| Enumerator                          | Note                |
+| :---------------------------------- | :------------------ |
+| PJ\\_ELLPS2D\\_LONGITUDE\\_LATITUDE | Longitude-Latitude  |
+| PJ\\_ELLPS2D\\_LATITUDE\\_LONGITUDE | Latitude-Longitude  |
+"""
+@cenum PJ_ELLIPSOIDAL_CS_2D_TYPE::UInt32 begin
+    PJ_ELLPS2D_LONGITUDE_LATITUDE = 0
+    PJ_ELLPS2D_LATITUDE_LONGITUDE = 1
+end
+
+"""
+    PJ_ELLIPSOIDAL_CS_3D_TYPE
+
+Type of Ellipsoidal 3D coordinate system.
+
+| Enumerator                                   | Note                           |
+| :------------------------------------------- | :----------------------------- |
+| PJ\\_ELLPS3D\\_LONGITUDE\\_LATITUDE\\_HEIGHT | Longitude-Latitude-Height(up)  |
+| PJ\\_ELLPS3D\\_LATITUDE\\_LONGITUDE\\_HEIGHT | Latitude-Longitude-Height(up)  |
+"""
+@cenum PJ_ELLIPSOIDAL_CS_3D_TYPE::UInt32 begin
+    PJ_ELLPS3D_LONGITUDE_LATITUDE_HEIGHT = 0
+    PJ_ELLPS3D_LATITUDE_LONGITUDE_HEIGHT = 1
+end
+
+"""
+    PJ_PARAM_DESCRIPTION
+
+Description of a parameter value for a Conversion.
+
+| Field                | Note                                                 |
+| :------------------- | :--------------------------------------------------- |
+| name                 | Parameter name.                                      |
+| auth\\_name          | Parameter authority name.                            |
+| code                 | Parameter code.                                      |
+| value                | Parameter value.                                     |
+| unit\\_name          | Name of unit in which parameter value is expressed.  |
+| unit\\_conv\\_factor | Conversion factor to SI of the unit.                 |
+| unit\\_type          | Type of unit                                         |
+"""
+struct PJ_PARAM_DESCRIPTION
+    name::Cstring
+    auth_name::Cstring
+    code::Cstring
+    value::Cdouble
+    unit_name::Cstring
+    unit_conv_factor::Cdouble
+    unit_type::PJ_UNIT_TYPE
+end
+
+"""
+    proj_create_cs(type, axis_count, axis, ctx = C_NULL)
+
+` iso19111_advanced_functions Binding in C of advanced methods from`
+
+the C++ API @{
+"""
+function proj_create_cs(type, axis_count, axis, ctx = C_NULL)
+    @ccall libproj.proj_create_cs(
+        ctx::Ptr{PJ_CONTEXT},
+        type::PJ_COORDINATE_SYSTEM_TYPE,
+        axis_count::Cint,
+        axis::Ptr{PJ_AXIS_DESCRIPTION},
+    )::Ptr{PJ}
+end
+
+function proj_create_cartesian_2D_cs(type, unit_name, unit_conv_factor, ctx = C_NULL)
+    @ccall libproj.proj_create_cartesian_2D_cs(
+        ctx::Ptr{PJ_CONTEXT},
+        type::PJ_CARTESIAN_CS_2D_TYPE,
+        unit_name::Cstring,
+        unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_ellipsoidal_2D_cs(type, unit_name, unit_conv_factor, ctx = C_NULL)
+    @ccall libproj.proj_create_ellipsoidal_2D_cs(
+        ctx::Ptr{PJ_CONTEXT},
+        type::PJ_ELLIPSOIDAL_CS_2D_TYPE,
+        unit_name::Cstring,
+        unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_ellipsoidal_3D_cs(
+    type,
+    horizontal_angular_unit_name,
+    horizontal_angular_unit_conv_factor,
+    vertical_linear_unit_name,
+    vertical_linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_ellipsoidal_3D_cs(
+        ctx::Ptr{PJ_CONTEXT},
+        type::PJ_ELLIPSOIDAL_CS_3D_TYPE,
+        horizontal_angular_unit_name::Cstring,
+        horizontal_angular_unit_conv_factor::Cdouble,
+        vertical_linear_unit_name::Cstring,
+        vertical_linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_query_geodetic_crs_from_datum(
+    crs_auth_name,
+    datum_auth_name,
+    datum_code,
+    crs_type,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_query_geodetic_crs_from_datum(
+        ctx::Ptr{PJ_CONTEXT},
+        crs_auth_name::Cstring,
+        datum_auth_name::Cstring,
+        datum_code::Cstring,
+        crs_type::Cstring,
+    )::Ptr{PJ_OBJ_LIST}
+end
+
+function proj_create_geographic_crs(
+    crs_name,
+    datum_name,
+    ellps_name,
+    semi_major_metre,
+    inv_flattening,
+    prime_meridian_name,
+    prime_meridian_offset,
+    pm_angular_units,
+    pm_units_conv,
+    ellipsoidal_cs,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_geographic_crs(
+        ctx::Ptr{PJ_CONTEXT},
+        crs_name::Cstring,
+        datum_name::Cstring,
+        ellps_name::Cstring,
+        semi_major_metre::Cdouble,
+        inv_flattening::Cdouble,
+        prime_meridian_name::Cstring,
+        prime_meridian_offset::Cdouble,
+        pm_angular_units::Cstring,
+        pm_units_conv::Cdouble,
+        ellipsoidal_cs::Ptr{PJ},
+    )::Ptr{PJ}
+end
+
+function proj_create_geographic_crs_from_datum(
+    crs_name,
+    datum_or_datum_ensemble,
+    ellipsoidal_cs,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_geographic_crs_from_datum(
+        ctx::Ptr{PJ_CONTEXT},
+        crs_name::Cstring,
+        datum_or_datum_ensemble::Ptr{PJ},
+        ellipsoidal_cs::Ptr{PJ},
+    )::Ptr{PJ}
+end
+
+function proj_create_geocentric_crs(
+    crs_name,
+    datum_name,
+    ellps_name,
+    semi_major_metre,
+    inv_flattening,
+    prime_meridian_name,
+    prime_meridian_offset,
+    angular_units,
+    angular_units_conv,
+    linear_units,
+    linear_units_conv,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_geocentric_crs(
+        ctx::Ptr{PJ_CONTEXT},
+        crs_name::Cstring,
+        datum_name::Cstring,
+        ellps_name::Cstring,
+        semi_major_metre::Cdouble,
+        inv_flattening::Cdouble,
+        prime_meridian_name::Cstring,
+        prime_meridian_offset::Cdouble,
+        angular_units::Cstring,
+        angular_units_conv::Cdouble,
+        linear_units::Cstring,
+        linear_units_conv::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_geocentric_crs_from_datum(
+    crs_name,
+    datum_or_datum_ensemble,
+    linear_units,
+    linear_units_conv,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_geocentric_crs_from_datum(
+        ctx::Ptr{PJ_CONTEXT},
+        crs_name::Cstring,
+        datum_or_datum_ensemble::Ptr{PJ},
+        linear_units::Cstring,
+        linear_units_conv::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_derived_geographic_crs(
+    crs_name,
+    base_geographic_crs,
+    conversion,
+    ellipsoidal_cs,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_derived_geographic_crs(
+        ctx::Ptr{PJ_CONTEXT},
+        crs_name::Cstring,
+        base_geographic_crs::Ptr{PJ},
+        conversion::Ptr{PJ},
+        ellipsoidal_cs::Ptr{PJ},
+    )::Ptr{PJ}
+end
+
+function proj_is_derived_crs(crs, ctx = C_NULL)
+    @ccall libproj.proj_is_derived_crs(ctx::Ptr{PJ_CONTEXT}, crs::Ptr{PJ})::Cint
+end
+
+function proj_alter_name(obj, name, ctx = C_NULL)
+    @ccall libproj.proj_alter_name(
+        ctx::Ptr{PJ_CONTEXT},
+        obj::Ptr{PJ},
+        name::Cstring,
+    )::Ptr{PJ}
+end
+
+function proj_alter_id(obj, auth_name, code, ctx = C_NULL)
+    @ccall libproj.proj_alter_id(
+        ctx::Ptr{PJ_CONTEXT},
+        obj::Ptr{PJ},
+        auth_name::Cstring,
+        code::Cstring,
+    )::Ptr{PJ}
+end
+
+function proj_crs_alter_geodetic_crs(obj, new_geod_crs, ctx = C_NULL)
+    @ccall libproj.proj_crs_alter_geodetic_crs(
+        ctx::Ptr{PJ_CONTEXT},
+        obj::Ptr{PJ},
+        new_geod_crs::Ptr{PJ},
+    )::Ptr{PJ}
+end
+
+function proj_crs_alter_cs_angular_unit(
+    obj,
+    angular_units,
+    angular_units_conv,
+    unit_auth_name,
+    unit_code,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_crs_alter_cs_angular_unit(
+        ctx::Ptr{PJ_CONTEXT},
+        obj::Ptr{PJ},
+        angular_units::Cstring,
+        angular_units_conv::Cdouble,
+        unit_auth_name::Cstring,
+        unit_code::Cstring,
+    )::Ptr{PJ}
+end
+
+function proj_crs_alter_cs_linear_unit(
+    obj,
+    linear_units,
+    linear_units_conv,
+    unit_auth_name,
+    unit_code,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_crs_alter_cs_linear_unit(
+        ctx::Ptr{PJ_CONTEXT},
+        obj::Ptr{PJ},
+        linear_units::Cstring,
+        linear_units_conv::Cdouble,
+        unit_auth_name::Cstring,
+        unit_code::Cstring,
+    )::Ptr{PJ}
+end
+
+function proj_crs_alter_parameters_linear_unit(
+    obj,
+    linear_units,
+    linear_units_conv,
+    unit_auth_name,
+    unit_code,
+    convert_to_new_unit,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_crs_alter_parameters_linear_unit(
+        ctx::Ptr{PJ_CONTEXT},
+        obj::Ptr{PJ},
+        linear_units::Cstring,
+        linear_units_conv::Cdouble,
+        unit_auth_name::Cstring,
+        unit_code::Cstring,
+        convert_to_new_unit::Cint,
+    )::Ptr{PJ}
+end
+
+function proj_crs_promote_to_3D(crs_3D_name, crs_2D, ctx = C_NULL)
+    @ccall libproj.proj_crs_promote_to_3D(
+        ctx::Ptr{PJ_CONTEXT},
+        crs_3D_name::Cstring,
+        crs_2D::Ptr{PJ},
+    )::Ptr{PJ}
+end
+
+function proj_crs_create_projected_3D_crs_from_2D(
+    crs_name,
+    projected_2D_crs,
+    geog_3D_crs,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_crs_create_projected_3D_crs_from_2D(
+        ctx::Ptr{PJ_CONTEXT},
+        crs_name::Cstring,
+        projected_2D_crs::Ptr{PJ},
+        geog_3D_crs::Ptr{PJ},
+    )::Ptr{PJ}
+end
+
+function proj_crs_demote_to_2D(crs_2D_name, crs_3D, ctx = C_NULL)
+    @ccall libproj.proj_crs_demote_to_2D(
+        ctx::Ptr{PJ_CONTEXT},
+        crs_2D_name::Cstring,
+        crs_3D::Ptr{PJ},
+    )::Ptr{PJ}
+end
+
+function proj_create_engineering_crs(crsName, ctx = C_NULL)
+    @ccall libproj.proj_create_engineering_crs(
+        ctx::Ptr{PJ_CONTEXT},
+        crsName::Cstring,
+    )::Ptr{PJ}
+end
+
+function proj_create_vertical_crs(
+    crs_name,
+    datum_name,
+    linear_units,
+    linear_units_conv,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_vertical_crs(
+        ctx::Ptr{PJ_CONTEXT},
+        crs_name::Cstring,
+        datum_name::Cstring,
+        linear_units::Cstring,
+        linear_units_conv::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_vertical_crs_ex(
+    crs_name,
+    datum_name,
+    datum_auth_name,
+    datum_code,
+    linear_units,
+    linear_units_conv,
+    geoid_model_name,
+    geoid_model_auth_name,
+    geoid_model_code,
+    geoid_geog_crs,
+    options = C_NULL,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_vertical_crs_ex(
+        ctx::Ptr{PJ_CONTEXT},
+        crs_name::Cstring,
+        datum_name::Cstring,
+        datum_auth_name::Cstring,
+        datum_code::Cstring,
+        linear_units::Cstring,
+        linear_units_conv::Cdouble,
+        geoid_model_name::Cstring,
+        geoid_model_auth_name::Cstring,
+        geoid_model_code::Cstring,
+        geoid_geog_crs::Ptr{PJ},
+        options::Ptr{Cstring},
+    )::Ptr{PJ}
+end
+
+function proj_create_compound_crs(crs_name, horiz_crs, vert_crs, ctx = C_NULL)
+    @ccall libproj.proj_create_compound_crs(
+        ctx::Ptr{PJ_CONTEXT},
+        crs_name::Cstring,
+        horiz_crs::Ptr{PJ},
+        vert_crs::Ptr{PJ},
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion(
+    name,
+    auth_name,
+    code,
+    method_name,
+    method_auth_name,
+    method_code,
+    param_count,
+    params,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion(
+        ctx::Ptr{PJ_CONTEXT},
+        name::Cstring,
+        auth_name::Cstring,
+        code::Cstring,
+        method_name::Cstring,
+        method_auth_name::Cstring,
+        method_code::Cstring,
+        param_count::Cint,
+        params::Ptr{PJ_PARAM_DESCRIPTION},
+    )::Ptr{PJ}
+end
+
+function proj_create_transformation(
+    name,
+    auth_name,
+    code,
+    source_crs,
+    target_crs,
+    interpolation_crs,
+    method_name,
+    method_auth_name,
+    method_code,
+    param_count,
+    params,
+    accuracy,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_transformation(
+        ctx::Ptr{PJ_CONTEXT},
+        name::Cstring,
+        auth_name::Cstring,
+        code::Cstring,
+        source_crs::Ptr{PJ},
+        target_crs::Ptr{PJ},
+        interpolation_crs::Ptr{PJ},
+        method_name::Cstring,
+        method_auth_name::Cstring,
+        method_code::Cstring,
+        param_count::Cint,
+        params::Ptr{PJ_PARAM_DESCRIPTION},
+        accuracy::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_convert_conversion_to_other_method(
+    conversion,
+    new_method_epsg_code,
+    new_method_name,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_convert_conversion_to_other_method(
+        ctx::Ptr{PJ_CONTEXT},
+        conversion::Ptr{PJ},
+        new_method_epsg_code::Cint,
+        new_method_name::Cstring,
+    )::Ptr{PJ}
+end
+
+function proj_create_projected_crs(
+    crs_name,
+    geodetic_crs,
+    conversion,
+    coordinate_system,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_projected_crs(
+        ctx::Ptr{PJ_CONTEXT},
+        crs_name::Cstring,
+        geodetic_crs::Ptr{PJ},
+        conversion::Ptr{PJ},
+        coordinate_system::Ptr{PJ},
+    )::Ptr{PJ}
+end
+
+function proj_crs_create_bound_crs(base_crs, hub_crs, transformation, ctx = C_NULL)
+    @ccall libproj.proj_crs_create_bound_crs(
+        ctx::Ptr{PJ_CONTEXT},
+        base_crs::Ptr{PJ},
+        hub_crs::Ptr{PJ},
+        transformation::Ptr{PJ},
+    )::Ptr{PJ}
+end
+
+function proj_crs_create_bound_crs_to_WGS84(crs, options = C_NULL, ctx = C_NULL)
+    @ccall libproj.proj_crs_create_bound_crs_to_WGS84(
+        ctx::Ptr{PJ_CONTEXT},
+        crs::Ptr{PJ},
+        options::Ptr{Cstring},
+    )::Ptr{PJ}
+end
+
+function proj_crs_create_bound_vertical_crs(
+    vert_crs,
+    hub_geographic_3D_crs,
+    grid_name,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_crs_create_bound_vertical_crs(
+        ctx::Ptr{PJ_CONTEXT},
+        vert_crs::Ptr{PJ},
+        hub_geographic_3D_crs::Ptr{PJ},
+        grid_name::Cstring,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_utm(zone, north, ctx = C_NULL)
+    @ccall libproj.proj_create_conversion_utm(
+        ctx::Ptr{PJ_CONTEXT},
+        zone::Cint,
+        north::Cint,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_transverse_mercator(
+    center_lat,
+    center_long,
+    scale,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_transverse_mercator(
+        ctx::Ptr{PJ_CONTEXT},
+        center_lat::Cdouble,
+        center_long::Cdouble,
+        scale::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_gauss_schreiber_transverse_mercator(
+    center_lat,
+    center_long,
+    scale,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_gauss_schreiber_transverse_mercator(
+        ctx::Ptr{PJ_CONTEXT},
+        center_lat::Cdouble,
+        center_long::Cdouble,
+        scale::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_transverse_mercator_south_oriented(
+    center_lat,
+    center_long,
+    scale,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_transverse_mercator_south_oriented(
+        ctx::Ptr{PJ_CONTEXT},
+        center_lat::Cdouble,
+        center_long::Cdouble,
+        scale::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_two_point_equidistant(
+    latitude_first_point,
+    longitude_first_point,
+    latitude_second_point,
+    longitude_secon_point,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_two_point_equidistant(
+        ctx::Ptr{PJ_CONTEXT},
+        latitude_first_point::Cdouble,
+        longitude_first_point::Cdouble,
+        latitude_second_point::Cdouble,
+        longitude_secon_point::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_tunisia_mapping_grid(
+    center_lat,
+    center_long,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_tunisia_mapping_grid(
+        ctx::Ptr{PJ_CONTEXT},
+        center_lat::Cdouble,
+        center_long::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_tunisia_mining_grid(
+    center_lat,
+    center_long,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_tunisia_mining_grid(
+        ctx::Ptr{PJ_CONTEXT},
+        center_lat::Cdouble,
+        center_long::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_albers_equal_area(
+    latitude_false_origin,
+    longitude_false_origin,
+    latitude_first_parallel,
+    latitude_second_parallel,
+    easting_false_origin,
+    northing_false_origin,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_albers_equal_area(
+        ctx::Ptr{PJ_CONTEXT},
+        latitude_false_origin::Cdouble,
+        longitude_false_origin::Cdouble,
+        latitude_first_parallel::Cdouble,
+        latitude_second_parallel::Cdouble,
+        easting_false_origin::Cdouble,
+        northing_false_origin::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_lambert_conic_conformal_1sp(
+    center_lat,
+    center_long,
+    scale,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_lambert_conic_conformal_1sp(
+        ctx::Ptr{PJ_CONTEXT},
+        center_lat::Cdouble,
+        center_long::Cdouble,
+        scale::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_lambert_conic_conformal_1sp_variant_b(
+    latitude_nat_origin,
+    scale,
+    latitude_false_origin,
+    longitude_false_origin,
+    easting_false_origin,
+    northing_false_origin,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_lambert_conic_conformal_1sp_variant_b(
+        ctx::Ptr{PJ_CONTEXT},
+        latitude_nat_origin::Cdouble,
+        scale::Cdouble,
+        latitude_false_origin::Cdouble,
+        longitude_false_origin::Cdouble,
+        easting_false_origin::Cdouble,
+        northing_false_origin::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_lambert_conic_conformal_2sp(
+    latitude_false_origin,
+    longitude_false_origin,
+    latitude_first_parallel,
+    latitude_second_parallel,
+    easting_false_origin,
+    northing_false_origin,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_lambert_conic_conformal_2sp(
+        ctx::Ptr{PJ_CONTEXT},
+        latitude_false_origin::Cdouble,
+        longitude_false_origin::Cdouble,
+        latitude_first_parallel::Cdouble,
+        latitude_second_parallel::Cdouble,
+        easting_false_origin::Cdouble,
+        northing_false_origin::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_lambert_conic_conformal_2sp_michigan(
+    latitude_false_origin,
+    longitude_false_origin,
+    latitude_first_parallel,
+    latitude_second_parallel,
+    easting_false_origin,
+    northing_false_origin,
+    ellipsoid_scaling_factor,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_lambert_conic_conformal_2sp_michigan(
+        ctx::Ptr{PJ_CONTEXT},
+        latitude_false_origin::Cdouble,
+        longitude_false_origin::Cdouble,
+        latitude_first_parallel::Cdouble,
+        latitude_second_parallel::Cdouble,
+        easting_false_origin::Cdouble,
+        northing_false_origin::Cdouble,
+        ellipsoid_scaling_factor::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_lambert_conic_conformal_2sp_belgium(
+    latitude_false_origin,
+    longitude_false_origin,
+    latitude_first_parallel,
+    latitude_second_parallel,
+    easting_false_origin,
+    northing_false_origin,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_lambert_conic_conformal_2sp_belgium(
+        ctx::Ptr{PJ_CONTEXT},
+        latitude_false_origin::Cdouble,
+        longitude_false_origin::Cdouble,
+        latitude_first_parallel::Cdouble,
+        latitude_second_parallel::Cdouble,
+        easting_false_origin::Cdouble,
+        northing_false_origin::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_azimuthal_equidistant(
+    latitude_nat_origin,
+    longitude_nat_origin,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_azimuthal_equidistant(
+        ctx::Ptr{PJ_CONTEXT},
+        latitude_nat_origin::Cdouble,
+        longitude_nat_origin::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_guam_projection(
+    latitude_nat_origin,
+    longitude_nat_origin,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_guam_projection(
+        ctx::Ptr{PJ_CONTEXT},
+        latitude_nat_origin::Cdouble,
+        longitude_nat_origin::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_bonne(
+    latitude_nat_origin,
+    longitude_nat_origin,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_bonne(
+        ctx::Ptr{PJ_CONTEXT},
+        latitude_nat_origin::Cdouble,
+        longitude_nat_origin::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_lambert_cylindrical_equal_area_spherical(
+    latitude_first_parallel,
+    longitude_nat_origin,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_lambert_cylindrical_equal_area_spherical(
+        ctx::Ptr{PJ_CONTEXT},
+        latitude_first_parallel::Cdouble,
+        longitude_nat_origin::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_lambert_cylindrical_equal_area(
+    latitude_first_parallel,
+    longitude_nat_origin,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_lambert_cylindrical_equal_area(
+        ctx::Ptr{PJ_CONTEXT},
+        latitude_first_parallel::Cdouble,
+        longitude_nat_origin::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_cassini_soldner(
+    center_lat,
+    center_long,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_cassini_soldner(
+        ctx::Ptr{PJ_CONTEXT},
+        center_lat::Cdouble,
+        center_long::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_equidistant_conic(
+    center_lat,
+    center_long,
+    latitude_first_parallel,
+    latitude_second_parallel,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_equidistant_conic(
+        ctx::Ptr{PJ_CONTEXT},
+        center_lat::Cdouble,
+        center_long::Cdouble,
+        latitude_first_parallel::Cdouble,
+        latitude_second_parallel::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_eckert_i(
+    center_long,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_eckert_i(
+        ctx::Ptr{PJ_CONTEXT},
+        center_long::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_eckert_ii(
+    center_long,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_eckert_ii(
+        ctx::Ptr{PJ_CONTEXT},
+        center_long::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_eckert_iii(
+    center_long,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_eckert_iii(
+        ctx::Ptr{PJ_CONTEXT},
+        center_long::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_eckert_iv(
+    center_long,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_eckert_iv(
+        ctx::Ptr{PJ_CONTEXT},
+        center_long::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_eckert_v(
+    center_long,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_eckert_v(
+        ctx::Ptr{PJ_CONTEXT},
+        center_long::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_eckert_vi(
+    center_long,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_eckert_vi(
+        ctx::Ptr{PJ_CONTEXT},
+        center_long::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_equidistant_cylindrical(
+    latitude_first_parallel,
+    longitude_nat_origin,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_equidistant_cylindrical(
+        ctx::Ptr{PJ_CONTEXT},
+        latitude_first_parallel::Cdouble,
+        longitude_nat_origin::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_equidistant_cylindrical_spherical(
+    latitude_first_parallel,
+    longitude_nat_origin,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_equidistant_cylindrical_spherical(
+        ctx::Ptr{PJ_CONTEXT},
+        latitude_first_parallel::Cdouble,
+        longitude_nat_origin::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_gall(
+    center_long,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_gall(
+        ctx::Ptr{PJ_CONTEXT},
+        center_long::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_goode_homolosine(
+    center_long,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_goode_homolosine(
+        ctx::Ptr{PJ_CONTEXT},
+        center_long::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_interrupted_goode_homolosine(
+    center_long,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_interrupted_goode_homolosine(
+        ctx::Ptr{PJ_CONTEXT},
+        center_long::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_geostationary_satellite_sweep_x(
+    center_long,
+    height,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_geostationary_satellite_sweep_x(
+        ctx::Ptr{PJ_CONTEXT},
+        center_long::Cdouble,
+        height::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_geostationary_satellite_sweep_y(
+    center_long,
+    height,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_geostationary_satellite_sweep_y(
+        ctx::Ptr{PJ_CONTEXT},
+        center_long::Cdouble,
+        height::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_gnomonic(
+    center_lat,
+    center_long,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_gnomonic(
+        ctx::Ptr{PJ_CONTEXT},
+        center_lat::Cdouble,
+        center_long::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_hotine_oblique_mercator_variant_a(
+    latitude_projection_centre,
+    longitude_projection_centre,
+    azimuth_initial_line,
+    angle_from_rectified_to_skrew_grid,
+    scale,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_hotine_oblique_mercator_variant_a(
+        ctx::Ptr{PJ_CONTEXT},
+        latitude_projection_centre::Cdouble,
+        longitude_projection_centre::Cdouble,
+        azimuth_initial_line::Cdouble,
+        angle_from_rectified_to_skrew_grid::Cdouble,
+        scale::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_hotine_oblique_mercator_variant_b(
+    latitude_projection_centre,
+    longitude_projection_centre,
+    azimuth_initial_line,
+    angle_from_rectified_to_skrew_grid,
+    scale,
+    easting_projection_centre,
+    northing_projection_centre,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_hotine_oblique_mercator_variant_b(
+        ctx::Ptr{PJ_CONTEXT},
+        latitude_projection_centre::Cdouble,
+        longitude_projection_centre::Cdouble,
+        azimuth_initial_line::Cdouble,
+        angle_from_rectified_to_skrew_grid::Cdouble,
+        scale::Cdouble,
+        easting_projection_centre::Cdouble,
+        northing_projection_centre::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_hotine_oblique_mercator_two_point_natural_origin(
+    latitude_projection_centre,
+    latitude_point1,
+    longitude_point1,
+    latitude_point2,
+    longitude_point2,
+    scale,
+    easting_projection_centre,
+    northing_projection_centre,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_hotine_oblique_mercator_two_point_natural_origin(
+        ctx::Ptr{PJ_CONTEXT},
+        latitude_projection_centre::Cdouble,
+        latitude_point1::Cdouble,
+        longitude_point1::Cdouble,
+        latitude_point2::Cdouble,
+        longitude_point2::Cdouble,
+        scale::Cdouble,
+        easting_projection_centre::Cdouble,
+        northing_projection_centre::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_laborde_oblique_mercator(
+    latitude_projection_centre,
+    longitude_projection_centre,
+    azimuth_initial_line,
+    scale,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_laborde_oblique_mercator(
+        ctx::Ptr{PJ_CONTEXT},
+        latitude_projection_centre::Cdouble,
+        longitude_projection_centre::Cdouble,
+        azimuth_initial_line::Cdouble,
+        scale::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_international_map_world_polyconic(
+    center_long,
+    latitude_first_parallel,
+    latitude_second_parallel,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_international_map_world_polyconic(
+        ctx::Ptr{PJ_CONTEXT},
+        center_long::Cdouble,
+        latitude_first_parallel::Cdouble,
+        latitude_second_parallel::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_krovak_north_oriented(
+    latitude_projection_centre,
+    longitude_of_origin,
+    colatitude_cone_axis,
+    latitude_pseudo_standard_parallel,
+    scale_factor_pseudo_standard_parallel,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_krovak_north_oriented(
+        ctx::Ptr{PJ_CONTEXT},
+        latitude_projection_centre::Cdouble,
+        longitude_of_origin::Cdouble,
+        colatitude_cone_axis::Cdouble,
+        latitude_pseudo_standard_parallel::Cdouble,
+        scale_factor_pseudo_standard_parallel::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_krovak(
+    latitude_projection_centre,
+    longitude_of_origin,
+    colatitude_cone_axis,
+    latitude_pseudo_standard_parallel,
+    scale_factor_pseudo_standard_parallel,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_krovak(
+        ctx::Ptr{PJ_CONTEXT},
+        latitude_projection_centre::Cdouble,
+        longitude_of_origin::Cdouble,
+        colatitude_cone_axis::Cdouble,
+        latitude_pseudo_standard_parallel::Cdouble,
+        scale_factor_pseudo_standard_parallel::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_lambert_azimuthal_equal_area(
+    latitude_nat_origin,
+    longitude_nat_origin,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_lambert_azimuthal_equal_area(
+        ctx::Ptr{PJ_CONTEXT},
+        latitude_nat_origin::Cdouble,
+        longitude_nat_origin::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_miller_cylindrical(
+    center_long,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_miller_cylindrical(
+        ctx::Ptr{PJ_CONTEXT},
+        center_long::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_mercator_variant_a(
+    center_lat,
+    center_long,
+    scale,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_mercator_variant_a(
+        ctx::Ptr{PJ_CONTEXT},
+        center_lat::Cdouble,
+        center_long::Cdouble,
+        scale::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_mercator_variant_b(
+    latitude_first_parallel,
+    center_long,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_mercator_variant_b(
+        ctx::Ptr{PJ_CONTEXT},
+        latitude_first_parallel::Cdouble,
+        center_long::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_popular_visualisation_pseudo_mercator(
+    center_lat,
+    center_long,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_popular_visualisation_pseudo_mercator(
+        ctx::Ptr{PJ_CONTEXT},
+        center_lat::Cdouble,
+        center_long::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_mollweide(
+    center_long,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_mollweide(
+        ctx::Ptr{PJ_CONTEXT},
+        center_long::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_new_zealand_mapping_grid(
+    center_lat,
+    center_long,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_new_zealand_mapping_grid(
+        ctx::Ptr{PJ_CONTEXT},
+        center_lat::Cdouble,
+        center_long::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_oblique_stereographic(
+    center_lat,
+    center_long,
+    scale,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_oblique_stereographic(
+        ctx::Ptr{PJ_CONTEXT},
+        center_lat::Cdouble,
+        center_long::Cdouble,
+        scale::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_orthographic(
+    center_lat,
+    center_long,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_orthographic(
+        ctx::Ptr{PJ_CONTEXT},
+        center_lat::Cdouble,
+        center_long::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_american_polyconic(
+    center_lat,
+    center_long,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_american_polyconic(
+        ctx::Ptr{PJ_CONTEXT},
+        center_lat::Cdouble,
+        center_long::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_polar_stereographic_variant_a(
+    center_lat,
+    center_long,
+    scale,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_polar_stereographic_variant_a(
+        ctx::Ptr{PJ_CONTEXT},
+        center_lat::Cdouble,
+        center_long::Cdouble,
+        scale::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_polar_stereographic_variant_b(
+    latitude_standard_parallel,
+    longitude_of_origin,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_polar_stereographic_variant_b(
+        ctx::Ptr{PJ_CONTEXT},
+        latitude_standard_parallel::Cdouble,
+        longitude_of_origin::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_robinson(
+    center_long,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_robinson(
+        ctx::Ptr{PJ_CONTEXT},
+        center_long::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_sinusoidal(
+    center_long,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_sinusoidal(
+        ctx::Ptr{PJ_CONTEXT},
+        center_long::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_stereographic(
+    center_lat,
+    center_long,
+    scale,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_stereographic(
+        ctx::Ptr{PJ_CONTEXT},
+        center_lat::Cdouble,
+        center_long::Cdouble,
+        scale::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_van_der_grinten(
+    center_long,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_van_der_grinten(
+        ctx::Ptr{PJ_CONTEXT},
+        center_long::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_wagner_i(
+    center_long,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_wagner_i(
+        ctx::Ptr{PJ_CONTEXT},
+        center_long::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_wagner_ii(
+    center_long,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_wagner_ii(
+        ctx::Ptr{PJ_CONTEXT},
+        center_long::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_wagner_iii(
+    latitude_true_scale,
+    center_long,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_wagner_iii(
+        ctx::Ptr{PJ_CONTEXT},
+        latitude_true_scale::Cdouble,
+        center_long::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_wagner_iv(
+    center_long,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_wagner_iv(
+        ctx::Ptr{PJ_CONTEXT},
+        center_long::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_wagner_v(
+    center_long,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_wagner_v(
+        ctx::Ptr{PJ_CONTEXT},
+        center_long::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_wagner_vi(
+    center_long,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_wagner_vi(
+        ctx::Ptr{PJ_CONTEXT},
+        center_long::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_wagner_vii(
+    center_long,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_wagner_vii(
+        ctx::Ptr{PJ_CONTEXT},
+        center_long::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_quadrilateralized_spherical_cube(
+    center_lat,
+    center_long,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_quadrilateralized_spherical_cube(
+        ctx::Ptr{PJ_CONTEXT},
+        center_lat::Cdouble,
+        center_long::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_spherical_cross_track_height(
+    peg_point_lat,
+    peg_point_long,
+    peg_point_heading,
+    peg_point_height,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_spherical_cross_track_height(
+        ctx::Ptr{PJ_CONTEXT},
+        peg_point_lat::Cdouble,
+        peg_point_long::Cdouble,
+        peg_point_heading::Cdouble,
+        peg_point_height::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_equal_earth(
+    center_long,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_equal_earth(
+        ctx::Ptr{PJ_CONTEXT},
+        center_long::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_vertical_perspective(
+    topo_origin_lat,
+    topo_origin_long,
+    topo_origin_height,
+    view_point_height,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_vertical_perspective(
+        ctx::Ptr{PJ_CONTEXT},
+        topo_origin_lat::Cdouble,
+        topo_origin_long::Cdouble,
+        topo_origin_height::Cdouble,
+        view_point_height::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_pole_rotation_grib_convention(
+    south_pole_lat_in_unrotated_crs,
+    south_pole_long_in_unrotated_crs,
+    axis_rotation,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_pole_rotation_grib_convention(
+        ctx::Ptr{PJ_CONTEXT},
+        south_pole_lat_in_unrotated_crs::Cdouble,
+        south_pole_long_in_unrotated_crs::Cdouble,
+        axis_rotation::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
+function proj_create_conversion_pole_rotation_netcdf_cf_convention(
+    grid_north_pole_latitude,
+    grid_north_pole_longitude,
+    north_pole_grid_longitude,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_pole_rotation_netcdf_cf_convention(
+        ctx::Ptr{PJ_CONTEXT},
+        grid_north_pole_latitude::Cdouble,
+        grid_north_pole_longitude::Cdouble,
+        north_pole_grid_longitude::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
 end
 
 """
@@ -2193,7 +4492,7 @@ end
 
 Initialize a [`geod_geodesic`](@ref) object.
 
-### Parameters
+# Arguments
 * `g`:\\[out\\] a pointer to the object to be initialized.
 * `a`:\\[in\\] the equatorial radius (meters).
 * `f`:\\[in\\] the flattening.********************************************************************
@@ -2224,7 +4523,7 @@ Example, determine the point 10000 km NE of JFK:
 
 ********************************************************************
 
-### Parameters
+# Arguments
 * `g`:\\[in\\] a pointer to the [`geod_geodesic`](@ref) object specifying the ellipsoid.
 * `lat1`:\\[in\\] latitude of point 1 (degrees).
 * `lon1`:\\[in\\] longitude of point 1 (degrees).
@@ -2256,7 +4555,7 @@ The general direct geodesic problem.
 
 With *flags* & ::GEOD\\_LONG\\_UNROLL bit set, the longitude is "unrolled" so that the quantity *lon2* − *lon1* indicates how many times and in what sense the geodesic encircles the ellipsoid.********************************************************************
 
-### Parameters
+# Arguments
 * `g`:\\[in\\] a pointer to the [`geod_geodesic`](@ref) object specifying the ellipsoid.
 * `lat1`:\\[in\\] latitude of point 1 (degrees).
 * `lon1`:\\[in\\] longitude of point 1 (degrees).
@@ -2271,7 +4570,7 @@ With *flags* & ::GEOD\\_LONG\\_UNROLL bit set, the longitude is "unrolled" so th
 * `pM12`:\\[out\\] pointer to the geodesic scale of point 2 relative to point 1 (dimensionless).
 * `pM21`:\\[out\\] pointer to the geodesic scale of point 1 relative to point 2 (dimensionless).
 * `pS12`:\\[out\\] pointer to the area under the geodesic (meters<sup>2</sup>).
-### Returns
+# Returns
 *a12* arc length from point 1 to point 2 (degrees).
 """
 function geod_gendirect(
@@ -2332,7 +4631,7 @@ Example, determine the distance between JFK and Singapore Changi Airport:
 
 ********************************************************************
 
-### Parameters
+# Arguments
 * `g`:\\[in\\] a pointer to the [`geod_geodesic`](@ref) object specifying the ellipsoid.
 * `lat1`:\\[in\\] latitude of point 1 (degrees).
 * `lon1`:\\[in\\] longitude of point 1 (degrees).
@@ -2362,7 +4661,7 @@ The general inverse geodesic calculation.
 
 *g* must have been initialized with a call to [`geod_init`](@ref)(). *lat1* and *lat2* should be in the range [−90°, 90°]. Any of the "return" arguments *ps12*, etc., may be replaced by 0, if you do not need some quantities computed.********************************************************************
 
-### Parameters
+# Arguments
 * `g`:\\[in\\] a pointer to the [`geod_geodesic`](@ref) object specifying the ellipsoid.
 * `lat1`:\\[in\\] latitude of point 1 (degrees).
 * `lon1`:\\[in\\] longitude of point 1 (degrees).
@@ -2375,7 +4674,7 @@ The general inverse geodesic calculation.
 * `pM12`:\\[out\\] pointer to the geodesic scale of point 2 relative to point 1 (dimensionless).
 * `pM21`:\\[out\\] pointer to the geodesic scale of point 1 relative to point 2 (dimensionless).
 * `pS12`:\\[out\\] pointer to the area under the geodesic (meters<sup>2</sup>).
-### Returns
+# Returns
 *a12* arc length from point 1 to point 2 (degrees).
 """
 function geod_geninverse(
@@ -2419,7 +4718,7 @@ The ::[`geod_mask`](@ref) values are: - *caps* |= ::GEOD\\_LATITUDE for the lati
 
 When initialized by this function, point 3 is undefined (l->s13 = l->a13 = NaN).********************************************************************
 
-### Parameters
+# Arguments
 * `l`:\\[out\\] a pointer to the object to be initialized.
 * `g`:\\[in\\] a pointer to the [`geod_geodesic`](@ref) object specifying the ellipsoid.
 * `lat1`:\\[in\\] latitude of point 1 (degrees).
@@ -2445,7 +4744,7 @@ Initialize a [`geod_geodesicline`](@ref) object in terms of the direct geodesic 
 
 This function sets point 3 of the [`geod_geodesicline`](@ref) to correspond to point 2 of the direct geodesic problem. See [`geod_lineinit`](@ref)() for more information.********************************************************************
 
-### Parameters
+# Arguments
 * `l`:\\[out\\] a pointer to the object to be initialized.
 * `g`:\\[in\\] a pointer to the [`geod_geodesic`](@ref) object specifying the ellipsoid.
 * `lat1`:\\[in\\] latitude of point 1 (degrees).
@@ -2473,7 +4772,7 @@ Initialize a [`geod_geodesicline`](@ref) object in terms of the direct geodesic 
 
 This function sets point 3 of the [`geod_geodesicline`](@ref) to correspond to point 2 of the direct geodesic problem. See [`geod_lineinit`](@ref)() for more information.********************************************************************
 
-### Parameters
+# Arguments
 * `l`:\\[out\\] a pointer to the object to be initialized.
 * `g`:\\[in\\] a pointer to the [`geod_geodesic`](@ref) object specifying the ellipsoid.
 * `lat1`:\\[in\\] latitude of point 1 (degrees).
@@ -2503,7 +4802,7 @@ Initialize a [`geod_geodesicline`](@ref) object in terms of the inverse geodesic
 
 This function sets point 3 of the [`geod_geodesicline`](@ref) to correspond to point 2 of the inverse geodesic problem. See [`geod_lineinit`](@ref)() for more information.********************************************************************
 
-### Parameters
+# Arguments
 * `l`:\\[out\\] a pointer to the object to be initialized.
 * `g`:\\[in\\] a pointer to the [`geod_geodesic`](@ref) object specifying the ellipsoid.
 * `lat1`:\\[in\\] latitude of point 1 (degrees).
@@ -2564,7 +4863,7 @@ A faster way using [`geod_position`](@ref)():
 
 ********************************************************************
 
-### Parameters
+# Arguments
 * `l`:\\[in\\] a pointer to the [`geod_geodesicline`](@ref) object specifying the geodesic line.
 * `s12`:\\[in\\] distance from point 1 to point 2 (meters); it can be negative.
 * `plat2`:\\[out\\] pointer to the latitude of point 2 (degrees).
@@ -2610,7 +4909,7 @@ Example, compute way points between JFK and Singapore Changi Airport using [`geo
 
 ********************************************************************
 
-### Parameters
+# Arguments
 * `l`:\\[in\\] a pointer to the [`geod_geodesicline`](@ref) object specifying the geodesic line.
 * `flags`:\\[in\\] bitor'ed combination of ::[`geod_flags`](@ref); *flags* & ::GEOD\\_ARCMODE determines the meaning of *s12_a12* and *flags* & ::GEOD\\_LONG\\_UNROLL "unrolls" *lon2*; if *flags* & ::GEOD\\_ARCMODE is 0, then *l* must have been initialized with *caps* |= ::GEOD\\_DISTANCE\\_IN.
 * `s12_a12`:\\[in\\] if *flags* & ::GEOD\\_ARCMODE is 0, this is the distance from point 1 to point 2 (meters); otherwise it is the arc length from point 1 to point 2 (degrees); it can be negative.
@@ -2622,7 +4921,7 @@ Example, compute way points between JFK and Singapore Changi Airport using [`geo
 * `pM12`:\\[out\\] pointer to the geodesic scale of point 2 relative to point 1 (dimensionless); requires that *l* was initialized with *caps* |= ::GEOD\\_GEODESICSCALE.
 * `pM21`:\\[out\\] pointer to the geodesic scale of point 1 relative to point 2 (dimensionless); requires that *l* was initialized with *caps* |= ::GEOD\\_GEODESICSCALE.
 * `pS12`:\\[out\\] pointer to the area under the geodesic (meters<sup>2</sup>); requires that *l* was initialized with *caps* |= ::GEOD\\_AREA.
-### Returns
+# Returns
 *a12* arc length from point 1 to point 2 (degrees).
 """
 function geod_genposition(
@@ -2660,7 +4959,7 @@ Specify position of point 3 in terms of distance.
 
 This is only useful if the [`geod_geodesicline`](@ref) object has been constructed with *caps* |= ::GEOD\\_DISTANCE\\_IN.********************************************************************
 
-### Parameters
+# Arguments
 * `l`:\\[in,out\\] a pointer to the [`geod_geodesicline`](@ref) object.
 * `s13`:\\[in\\] the distance from point 1 to point 3 (meters); it can be negative.
 """
@@ -2675,7 +4974,7 @@ Specify position of point 3 in terms of either distance or arc length.
 
 If flags = ::GEOD\\_NOFLAGS, this calls [`geod_setdistance`](@ref)(). If flags = ::GEOD\\_ARCMODE, the *s13* is only set if the [`geod_geodesicline`](@ref) object has been constructed with *caps* |= ::GEOD\\_DISTANCE.********************************************************************
 
-### Parameters
+# Arguments
 * `l`:\\[in,out\\] a pointer to the [`geod_geodesicline`](@ref) object.
 * `flags`:\\[in\\] either ::GEOD\\_NOFLAGS or ::GEOD\\_ARCMODE to determining the meaning of the *s13_a13*.
 * `s13_a13`:\\[in\\] if *flags* = ::GEOD\\_NOFLAGS, this is the distance from point 1 to point 3 (meters); if *flags* = ::GEOD\\_ARCMODE, it is the arc length from point 1 to point 3 (degrees); it can be negative.
@@ -2699,7 +4998,7 @@ The area and perimeter are accumulated at two times the standard floating point 
 
 An example of the use of this function is given in the documentation for [`geod_polygon_compute`](@ref)().********************************************************************
 
-### Parameters
+# Arguments
 * `p`:\\[out\\] a pointer to the object to be initialized.
 * `polylinep`:\\[in\\] non-zero if a polyline instead of a polygon.
 """
@@ -2712,7 +5011,7 @@ end
 
 Clear the polygon, allowing a new polygon to be started.
 
-### Parameters
+# Arguments
 * `p`:\\[in,out\\] a pointer to the object to be cleared.********************************************************************
 """
 function geod_polygon_clear(p)
@@ -2728,7 +5027,7 @@ Add a point to the polygon or polyline.
 
 An example of the use of this function is given in the documentation for [`geod_polygon_compute`](@ref)().********************************************************************
 
-### Parameters
+# Arguments
 * `g`:\\[in\\] a pointer to the [`geod_geodesic`](@ref) object specifying the ellipsoid.
 * `p`:\\[in,out\\] a pointer to the [`geod_polygon`](@ref) object specifying the polygon.
 * `lat`:\\[in\\] the latitude of the point (degrees).
@@ -2750,7 +5049,7 @@ Add an edge to the polygon or polyline.
 
 *g* and *p* must have been initialized with calls to [`geod_init`](@ref)() and [`geod_polygon_init`](@ref)(), respectively. The same *g* must be used for all the points and edges in a polygon. This does nothing if no points have been added yet. The *lat* and *lon* fields of *p* give the location of the new vertex.********************************************************************
 
-### Parameters
+# Arguments
 * `g`:\\[in\\] a pointer to the [`geod_geodesic`](@ref) object specifying the ellipsoid.
 * `p`:\\[in,out\\] a pointer to the [`geod_polygon`](@ref) object specifying the polygon.
 * `azi`:\\[in\\] azimuth at current point (degrees).
@@ -2793,14 +5092,14 @@ Example, compute the perimeter and area of the geodesic triangle with vertices (
 
 ********************************************************************
 
-### Parameters
+# Arguments
 * `g`:\\[in\\] a pointer to the [`geod_geodesic`](@ref) object specifying the ellipsoid.
 * `p`:\\[in\\] a pointer to the [`geod_polygon`](@ref) object specifying the polygon.
 * `reverse`:\\[in\\] if non-zero then clockwise (instead of counter-clockwise) traversal counts as a positive area.
 * `sign`:\\[in\\] if non-zero then return a signed result for the area if the polygon is traversed in the "wrong" direction instead of returning the area for the rest of the earth.
 * `pA`:\\[out\\] pointer to the area of the polygon (meters<sup>2</sup>); only set if *polyline* is non-zero in the call to [`geod_polygon_init`](@ref)().
 * `pP`:\\[out\\] pointer to the perimeter of the polygon or length of the polyline (meters).
-### Returns
+# Returns
 the number of points.
 """
 function geod_polygon_compute(g, p, reverse, sign, pA, pP)
@@ -2821,7 +5120,7 @@ Return the results assuming a tentative final test point is added; however, the 
 
 *lat* should be in the range [−90°, 90°].********************************************************************
 
-### Parameters
+# Arguments
 * `g`:\\[in\\] a pointer to the [`geod_geodesic`](@ref) object specifying the ellipsoid.
 * `p`:\\[in\\] a pointer to the [`geod_polygon`](@ref) object specifying the polygon.
 * `lat`:\\[in\\] the latitude of the test point (degrees).
@@ -2830,7 +5129,7 @@ Return the results assuming a tentative final test point is added; however, the 
 * `sign`:\\[in\\] if non-zero then return a signed result for the area if the polygon is traversed in the "wrong" direction instead of returning the area for the rest of the earth.
 * `pA`:\\[out\\] pointer to the area of the polygon (meters<sup>2</sup>); only set if *polyline* is non-zero in the call to [`geod_polygon_init`](@ref)().
 * `pP`:\\[out\\] pointer to the perimeter of the polygon or length of the polyline (meters).
-### Returns
+# Returns
 the number of points.
 """
 function geod_polygon_testpoint(g, p, lat, lon, reverse, sign, pA, pP)
@@ -2851,7 +5150,7 @@ end
 
 Return the results assuming a tentative final test point is added via an azimuth and distance; however, the data for the test point is not saved. This lets you report a running result for the perimeter and area as the user moves the mouse cursor. Ordinary floating point arithmetic is used to accumulate the data for the test point; thus the area and perimeter returned are less accurate than if [`geod_polygon_addedge`](@ref)() and [`geod_polygon_compute`](@ref)() are used.
 
-### Parameters
+# Arguments
 * `g`:\\[in\\] a pointer to the [`geod_geodesic`](@ref) object specifying the ellipsoid.
 * `p`:\\[in\\] a pointer to the [`geod_polygon`](@ref) object specifying the polygon.
 * `azi`:\\[in\\] azimuth at current point (degrees).
@@ -2860,7 +5159,7 @@ Return the results assuming a tentative final test point is added via an azimuth
 * `sign`:\\[in\\] if non-zero then return a signed result for the area if the polygon is traversed in the "wrong" direction instead of returning the area for the rest of the earth.
 * `pA`:\\[out\\] pointer to the area of the polygon (meters<sup>2</sup>); only set if *polyline* is non-zero in the call to [`geod_polygon_init`](@ref)().
 * `pP`:\\[out\\] pointer to the perimeter of the polygon or length of the polyline (meters).
-### Returns
+# Returns
 the number of points.********************************************************************
 """
 function geod_polygon_testedge(g, p, azi, s, reverse, sign, pA, pP)
@@ -2903,7 +5202,7 @@ Example, compute the area of Antarctica:
 
 ********************************************************************
 
-### Parameters
+# Arguments
 * `g`:\\[in\\] a pointer to the [`geod_geodesic`](@ref) object specifying the ellipsoid.
 * `lats`:\\[in\\] an array of latitudes of the polygon vertices (degrees).
 * `lons`:\\[in\\] an array of longitudes of the polygon vertices (degrees).
@@ -2974,7 +5273,7 @@ end
 
 const PROJ_VERSION_MAJOR = 9
 
-const PROJ_VERSION_MINOR = 3
+const PROJ_VERSION_MINOR = 4
 
 const PROJ_VERSION_PATCH = 0
 
@@ -3006,6 +5305,8 @@ const PROJ_ERR_COORD_TRANSFM_NO_OPERATION = PROJ_ERR_COORD_TRANSFM + 3
 const PROJ_ERR_COORD_TRANSFM_OUTSIDE_GRID = PROJ_ERR_COORD_TRANSFM + 4
 
 const PROJ_ERR_COORD_TRANSFM_GRID_AT_NODATA = PROJ_ERR_COORD_TRANSFM + 5
+
+const PROJ_ERR_COORD_TRANSFM_NO_CONVERGENCE = PROJ_ERR_COORD_TRANSFM + 6
 
 const PROJ_ERR_OTHER = 4096
 
