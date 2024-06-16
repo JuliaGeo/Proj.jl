@@ -34,7 +34,7 @@ function geod_inverse(g::geod_geodesic, lat1::Real, lon1::Real, lat2::Real, lon2
     azi1 = Ref{Cdouble}(NaN)
     azi2 = Ref{Cdouble}(NaN)
 
-    geod_inverse(Ref(g), lat1, lat2, lon1, lon2, s12, azi1, azi2)
+    geod_inverse(Ref(g), lat1, lon1, lat2, lon2, s12, azi1, azi2)
 
     return s12[], azi1[], azi2[]
 end
