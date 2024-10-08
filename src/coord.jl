@@ -86,8 +86,8 @@ function Transformation(
 end
 
 function Transformation(
-    source_crs::GFT.CoordinateReferenceSystemFormat,
-    target_crs::GFT.CoordinateReferenceSystemFormat;
+    source_crs::Union{GFT.CoordinateReferenceSystemFormat,GFT.MixedFormat{<:MaybeGFTCRS}},
+    target_crs::Union{GFT.CoordinateReferenceSystemFormat,GFT.MixedFormat{<:MaybeGFTCRS}};
     always_xy::Bool = false,
     direction::PJ_DIRECTION = PJ_FWD,
     area::Ptr{PJ_AREA} = C_NULL,
