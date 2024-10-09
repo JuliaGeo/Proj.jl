@@ -323,6 +323,14 @@ function proj_context_get_user_writable_directory(create, ctx = C_NULL)
     )
 end
 
+function proj_context_set_user_writable_directory(path, create, ctx = C_NULL)
+    @ccall libproj.proj_context_set_user_writable_directory(
+        ctx::Ptr{PJ_CONTEXT},
+        path::Cstring,
+        create::Cint,
+    )::Cvoid
+end
+
 function proj_grid_cache_set_enable(enabled, ctx = C_NULL)
     @ccall libproj.proj_grid_cache_set_enable(ctx::Ptr{PJ_CONTEXT}, enabled::Cint)::Cvoid
 end
@@ -1953,6 +1961,16 @@ end
 
 function proj_coordoperation_has_ballpark_transformation(coordoperation, ctx = C_NULL)
     @ccall libproj.proj_coordoperation_has_ballpark_transformation(
+        ctx::Ptr{PJ_CONTEXT},
+        coordoperation::Ptr{PJ},
+    )::Cint
+end
+
+function proj_coordoperation_requires_per_coordinate_input_time(
+    coordoperation,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_coordoperation_requires_per_coordinate_input_time(
         ctx::Ptr{PJ_CONTEXT},
         coordoperation::Ptr{PJ},
     )::Cint
@@ -3926,6 +3944,34 @@ function proj_create_conversion_orthographic(
     )::Ptr{PJ}
 end
 
+function proj_create_conversion_local_orthographic(
+    center_lat,
+    center_long,
+    azimuth,
+    scale,
+    false_easting,
+    false_northing,
+    ang_unit_name,
+    ang_unit_conv_factor,
+    linear_unit_name,
+    linear_unit_conv_factor,
+    ctx = C_NULL,
+)
+    @ccall libproj.proj_create_conversion_local_orthographic(
+        ctx::Ptr{PJ_CONTEXT},
+        center_lat::Cdouble,
+        center_long::Cdouble,
+        azimuth::Cdouble,
+        scale::Cdouble,
+        false_easting::Cdouble,
+        false_northing::Cdouble,
+        ang_unit_name::Cstring,
+        ang_unit_conv_factor::Cdouble,
+        linear_unit_name::Cstring,
+        linear_unit_conv_factor::Cdouble,
+    )::Ptr{PJ}
+end
+
 function proj_create_conversion_american_polyconic(
     center_lat,
     center_long,
@@ -5273,7 +5319,7 @@ end
 
 const PROJ_VERSION_MAJOR = 9
 
-const PROJ_VERSION_MINOR = 4
+const PROJ_VERSION_MINOR = 5
 
 const PROJ_VERSION_PATCH = 0
 
@@ -5307,6 +5353,8 @@ const PROJ_ERR_COORD_TRANSFM_OUTSIDE_GRID = PROJ_ERR_COORD_TRANSFM + 4
 const PROJ_ERR_COORD_TRANSFM_GRID_AT_NODATA = PROJ_ERR_COORD_TRANSFM + 5
 
 const PROJ_ERR_COORD_TRANSFM_NO_CONVERGENCE = PROJ_ERR_COORD_TRANSFM + 6
+
+const PROJ_ERR_COORD_TRANSFM_MISSING_TIME = PROJ_ERR_COORD_TRANSFM + 7
 
 const PROJ_ERR_OTHER = 4096
 
