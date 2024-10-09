@@ -203,19 +203,29 @@ end
     source_crs = GFT.EPSG("EPSG:4326")
     target_crs = GFT.EPSG("EPSG:32628")
 
-    trans = Proj.Transformation(source_crs, target_crs, always_xy = false)
+    trans = Proj.Transformation(source_crs, target_crs, always_xy = true)
     info = Proj.proj_pj_info(trans.pj)
     description1 = unsafe_string(info.definition)
+
+    # crs as WellKnownText{CRS}
+    # verbose to work around the lack of a GFT blessed implementation in Proj
+    source_crs = GFT.WellKnownText(GFT.CRS(), GFT.val(GFT.ESRIWellKnownText(Proj.CRS("EPSG:4326"))))
+    target_crs = GFT.WellKnownText(GFT.CRS(), GFT.val(GFT.ESRIWellKnownText(Proj.CRS("EPSG:32628"))))
+
+    trans = Proj.Transformation(source_crs, target_crs, always_xy = true)
+    info = Proj.proj_pj_info(trans.pj)
+    description2 = unsafe_string(info.definition)
 
     #crs as txt
     source_crs = "EPSG:4326"
     target_crs = "EPSG:32628"
 
-    trans = Proj.Transformation(source_crs, target_crs, always_xy = false)
+    trans = Proj.Transformation(source_crs, target_crs, always_xy = true)
     info = Proj.proj_pj_info(trans.pj)
-    description2 = unsafe_string(info.definition)
+    description_true = unsafe_string(info.definition)
 
-    @test description1 == description2
+    @test description1 == description_true
+    @test description2 == description_true
 end
 
 @testset "bounds" begin
