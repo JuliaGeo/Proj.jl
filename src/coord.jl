@@ -81,6 +81,7 @@ function Transformation(
     ctx::Ptr{PJ_CONTEXT} = C_NULL,
 )
     pj = proj_create_crs_to_crs(source_crs, target_crs, area, ctx)
+    pj === C_NULL && throw(ArgumentError("Cannot create the requested coordinate transformation."))
     pj = always_xy ? normalize_axis_order!(pj; ctx) : pj
     return Transformation(pj, direction)
 end
@@ -115,6 +116,7 @@ function Transformation(
         Pass either one pipeline or a source and target CRS.
         CRS given: $(repr(pipeline))"""))
     end
+    pj === C_NULL && throw(ArgumentError("Cannot create the requested coordinate transformation."))
     pj = always_xy ? normalize_axis_order!(pj; ctx) : pj
     return Transformation(pj, direction)
 end
@@ -128,6 +130,7 @@ function Transformation(
     ctx::Ptr{PJ_CONTEXT} = C_NULL,
 )
     pj = proj_create_crs_to_crs_from_pj(source_crs, target_crs, area, ctx)
+    pj === C_NULL && throw(ArgumentError("Cannot create the requested coordinate transformation."))
     pj = always_xy ? normalize_axis_order!(pj; ctx) : pj
     return Transformation(pj, direction)
 end
