@@ -173,6 +173,13 @@ end
         "+proj=pipeline +ellps=GRS80 +step +proj=merc +step +proj=axisswap +order=2,1",
     )
 
+    # Transformation errors when attempting a transform from an engineering crs
+    crs_string = "LOCAL_CS[\"unnamed\",UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]"
+    crs = GFT.WellKnownText(GFT.CRS(), crs_string)
+    @test_throws ArgumentError Proj.Transformation(crs_string, "EPSG:4326")
+    @test_throws ArgumentError Proj.Transformation(crs, GFT.EPSG(4326))
+    @test_throws ArgumentError Proj.Transformation(crs_string, "EPSG:4326", always_xy = true)
+    @test_throws ArgumentError Proj.Transformation(crs, GFT.EPSG(4326), always_xy = true)
 end
 
 @testset "single transformation" begin
