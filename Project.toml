@@ -1,6 +1,6 @@
 name = "Proj"
 uuid = "c94c279d-25a6-4763-9509-64d165bea63e"
-version = "1.8.0"
+version = "1.8.1"
 
 [deps]
 CEnum = "fa961155-64e5-5f13-b03f-caf6b980ea82"
