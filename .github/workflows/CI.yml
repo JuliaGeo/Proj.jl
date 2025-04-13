@@ -25,6 +25,8 @@ jobs:
           - ubuntu-latest
           - macOS-latest
           - windows-latest
+        arch:
+          - default
     steps:
       - uses: actions/checkout@v4
       - uses: julia-actions/setup-julia@v2
