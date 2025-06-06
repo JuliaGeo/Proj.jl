@@ -141,6 +141,12 @@ Base.convert(T::Type{<:GFT.CoordinateReferenceSystemFormat}, crs::CRS) = T(crs)
 Base.convert(::Type{CRS}, crs::GFT.CoordinateReferenceSystemFormat) = CRS(crs)
 Base.convert(T::Type{<:GFT.MixedFormat}, crs::CRS) = T(crs)
 Base.convert(::Type{CRS}, crs::GFT.MixedFormat{<:MaybeGFTCRS}) = CRS(crs)
+# Blessed type pyracy
+Base.convert(T::Type{<:GFT.GeoFormat}, ::GFT.CRS, crs::GFT.ProjJSON) =
+    T(CRS(crs))
+Base.convert(T::Type{<:GFT.ProjJSON}, ::GFT.CRS, crs::GFT.GeoFormat) =
+    T(CRS(crs))
+
 
 # Maybe enable later, based on https://github.com/JuliaGeo/GeoFormatTypes.jl/issues/21
 # Base.convert(T::Type{<:GFT.CoordinateReferenceSystemFormat}, crs::GFT.CoordinateReferenceSystemFormat) = T(CRS(crs))
