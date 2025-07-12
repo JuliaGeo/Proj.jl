@@ -30,7 +30,7 @@ end == "111d0'3.006\"W 50d0'0.125\"N 0.000"
 
 function xyzt_transform_cli(point::AbstractVector; network::Bool = false)
     # convert the vector to a string like "-33 151 5 2020"
-    input = String(strip(string(point'), ('[', ']')))
+    input = join(point, ' ')
     xyzt_transform_cli(input; network)
 end
 
