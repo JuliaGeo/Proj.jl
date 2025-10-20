@@ -489,6 +489,10 @@ end
     @test GFT.EPSG(crs) == GFT.EPSG("EPSG:4326")
 
     @test convert(GFT.EPSG, crs) == GFT.EPSG("EPSG:4326")
+
+    # Test error handling when CRS doesn't have an EPSG code
+    crs_without_epsg = Proj.CRS("+proj=merc +lat_ts=56.5 +ellps=GRS80 +type=crs")
+    @test_throws r"Could not parse.*EPSG code"is GFT.EPSG(crs_without_epsg)
     @test convert(GFT.WellKnownText2, crs) == GFT.WellKnownText2(crs)
     @test Proj.proj_get_id_code(convert(Proj.CRS, GFT.EPSG("EPSG:4326"))) ==
           Proj.proj_get_id_code(crs)
