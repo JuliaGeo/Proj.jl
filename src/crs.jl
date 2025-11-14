@@ -35,8 +35,15 @@ function CRS(
     crs::Union{GFT.CoordinateReferenceSystemFormat,GFT.MixedFormat{<:MaybeGFTCRS}},
     ctx::Ptr{PJ_CONTEXT} = C_NULL,
 )
-    crs = proj_create(convert(String, crs), ctx)
-    return CRS(crs)
+    crs_str = convert(String, crs)
+    # For ProjString format, ensure +type=crs is present if it's a proj-string definition
+    # This is needed because proj_create() creates a projection (not a CRS) without it
+    if crs isa GFT.ProjString && startswith(crs_str, "+proj=") && !contains(crs_str, "+type=crs")
+        crs_str = crs_str * " +type=crs"
+    end
+    pj = proj_create(crs_str, ctx)
+    @assert Bool(proj_is_crs(pj)) "Not a CRS:\n$pj"
+    return CRS(pj)
 end
 
 function Base.show(io::IO, crs::CRS)
