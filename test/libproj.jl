@@ -235,6 +235,49 @@ end
     @test description2 == description_true
 end
 
+@testset "ProjString Transformation (issue #102)" begin
+    # Test that ProjString works the same as String for Transformation
+    # Issue: https://github.com/JuliaGeo/Proj.jl/issues/102
+
+    # Test case 1: Original issue example
+    equi7_eu_projstring = "+proj=aeqd +lat_0=53 +lon_0=24 +x_0=5837287.81977 +y_0=2121415.69617 +datum=WGS84 +units=m +no_defs"
+
+    # Both String and ProjString should work
+    trans_string = Proj.Transformation(equi7_eu_projstring, "EPSG:3857", always_xy=true)
+    trans_projstring = Proj.Transformation(GFT.ProjString(equi7_eu_projstring), GFT.EPSG(3857), always_xy=true)
+
+    # They should produce the same transformation
+    @test unsafe_string(Proj.proj_pj_info(trans_string.pj).definition) ==
+          unsafe_string(Proj.proj_pj_info(trans_projstring.pj).definition)
+
+    # Test case 2: Simple longlat case
+    longlat_projstring = "+proj=longlat +datum=WGS84"
+
+    trans_string2 = Proj.Transformation(longlat_projstring, "EPSG:3857", always_xy=true)
+    trans_projstring2 = Proj.Transformation(GFT.ProjString(longlat_projstring), GFT.EPSG(3857), always_xy=true)
+
+    @test unsafe_string(Proj.proj_pj_info(trans_string2.pj).definition) ==
+          unsafe_string(Proj.proj_pj_info(trans_projstring2.pj).definition)
+
+    # Test case 3: ProjString already containing +type=crs should work
+    longlat_with_type = "+proj=longlat +datum=WGS84 +type=crs"
+    trans_with_type = Proj.Transformation(GFT.ProjString(longlat_with_type), GFT.EPSG(3857), always_xy=true)
+
+    @test unsafe_string(Proj.proj_pj_info(trans_with_type.pj).definition) ==
+          unsafe_string(Proj.proj_pj_info(trans_string2.pj).definition)
+
+    # Test case 4: Both source and target as ProjString
+    target_projstring = "+proj=utm +zone=32 +datum=WGS84"
+    trans_both = Proj.Transformation(
+        GFT.ProjString(longlat_projstring),
+        GFT.ProjString(target_projstring),
+        always_xy=true
+    )
+
+    # Should not throw an error and should create a valid transformation
+    @test trans_both isa Proj.Transformation
+end
+
 @testset "bounds" begin
     trans = Proj.Transformation("EPSG:4326", "+proj=utm +zone=32 +datum=WGS84")
     x, y = 52, 11
