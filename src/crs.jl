@@ -133,6 +133,9 @@ end
 
 function GFT.EPSG(crs::CRS)
     str = proj_get_id_code(crs)
+    if isnothing(str)
+        error("Could not parse $crs to EPSG code; it probably does not correspond to one.")
+    end
     code = parse(Int, str)
     return GFT.EPSG(code)
 end
