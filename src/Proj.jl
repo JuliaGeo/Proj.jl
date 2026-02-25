@@ -4,6 +4,7 @@ using PROJ_jll
 using CEnum
 using CoordinateTransformations
 using NetworkOptions: ca_roots
+import Extents
 import GeoFormatTypes as GFT
 import GeoInterface as GI
 

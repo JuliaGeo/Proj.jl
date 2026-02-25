@@ -263,6 +263,78 @@ function (trans::Transformation)(coord)
 end
 
 """
+    (trans::Transformation)(extent::Extents.Extent) -> Extents.Extent
+
+Transform an `Extents.Extent` using the transformation. The extent must have X and Y
+dimensions. Extra dimensions (Z, Ti, etc.) are preserved unchanged.
+
+Throws an `ArgumentError` if the transformation is rotated or non-axis-aligned,
+since an axis-aligned bounding box cannot accurately represent a rotated extent.
+
+# Examples
+```julia
+julia> trans = Proj.Transformation("EPSG:4326", "EPSG:28992", always_xy=true)
+julia> extent = Extents.Extent(X=(5.0, 6.0), Y=(52.0, 53.0))
+julia> trans(extent)
+Extent(X = (131793.0, 199684.0), Y = (449093.0, 560431.0))
+```
+"""
+function (trans::Transformation)(extent::Extents.Extent)
+    haskey(extent, :X) && haskey(extent, :Y) ||
+        throw(ArgumentError("Extent must have X and Y dimensions"))
+
+    _check_axis_aligned(trans, extent) ||
+        throw(ArgumentError("Cannot transform Extent: CRS is rotated or non-axis-aligned"))
+
+    (xmin, xmax), (ymin, ymax) = bounds(trans, extent.X, extent.Y)
+
+    # Build output extent, preserving extra dimensions
+    transformed = (X=(xmin, xmax), Y=(ymin, ymax))
+    for k in keys(extent)
+        if k !== :X && k !== :Y
+            transformed = (; transformed..., k => extent[k])
+        end
+    end
+    return Extents.Extent(transformed)
+end
+
+"""
+    _check_axis_aligned(trans::Transformation, extent::Extents.Extent) -> Bool
+
+Check if a transformation preserves axis alignment for the given extent.
+Returns `true` if the 4 corners of the extent transform to an axis-aligned rectangle,
+`false` otherwise.
+"""
+function _check_axis_aligned(trans::Transformation, extent::Extents.Extent)
+    xmin, xmax = extent.X
+    ymin, ymax = extent.Y
+
+    # Transform the 4 corners
+    c1 = trans(xmin, ymin)  # bottom-left
+    c2 = trans(xmax, ymin)  # bottom-right
+    c3 = trans(xmin, ymax)  # top-left
+    c4 = trans(xmax, ymax)  # top-right
+
+    # For axis-aligned transform, vertical edges should have same x-coord
+    # and horizontal edges should have same y-coord
+    # Use relative tolerance based on extent size
+    x_range = max(abs(c1[1] - c2[1]), abs(c3[1] - c4[1]), 1.0)
+    y_range = max(abs(c1[2] - c3[2]), abs(c2[2] - c4[2]), 1.0)
+    rtol = 1e-10
+
+    # Check left edge: c1 and c3 should have same x
+    abs(c1[1] - c3[1]) < rtol * x_range || return false
+    # Check right edge: c2 and c4 should have same x
+    abs(c2[1] - c4[1]) < rtol * x_range || return false
+    # Check bottom edge: c1 and c2 should have same y
+    abs(c1[2] - c2[2]) < rtol * y_range || return false
+    # Check top edge: c3 and c4 should have same y
+    abs(c3[2] - c4[2]) < rtol * y_range || return false
+
+    return true
+end
+
+"""
     Proj.bounds(trans::Transformation, (xmin, xmax), (ymin,ymax); densify_pts=21) -> ((bxmin, bxmax), (bymin, bymax))
 
 Transform boundary densifying the edges to account for nonlinear transformations along
