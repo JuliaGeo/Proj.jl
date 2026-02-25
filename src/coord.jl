@@ -288,24 +288,11 @@ function (trans::Transformation)(extent::Extents.Extent)
 
     (xmin, xmax), (ymin, ymax) = bounds(trans, extent.X, extent.Y)
 
-    # Build output extent, preserving extra dimensions
-    transformed = (X=(xmin, xmax), Y=(ymin, ymax))
-    for k in keys(extent)
-        if k !== :X && k !== :Y
-            transformed = (; transformed..., k => extent[k])
-        end
-    end
-    return Extents.Extent(transformed)
+    return Extents.Extent(merge(NamedTuple(extent), (X=(xmin, xmax), Y=(ymin, ymax))))
 end
 
-"""
-    _check_axis_aligned(trans::Transformation, extent::Extents.Extent) -> Bool
-
-Check if a transformation preserves axis alignment for the given extent.
-Returns `true` if the 4 corners of the extent transform to an axis-aligned rectangle,
-`false` otherwise.
-"""
-function _check_axis_aligned(trans::Transformation, extent::Extents.Extent)
+# Check if corners transform to an axis-aligned rectangle
+function _check_axis_aligned(trans::Transformation, extent::Extents.Extent; rtol=0.1)
     xmin, xmax = extent.X
     ymin, ymax = extent.Y
 
@@ -315,20 +302,19 @@ function _check_axis_aligned(trans::Transformation, extent::Extents.Extent)
     c3 = trans(xmin, ymax)  # top-left
     c4 = trans(xmax, ymax)  # top-right
 
-    # For axis-aligned transform, vertical edges should have same x-coord
-    # and horizontal edges should have same y-coord
-    # Use relative tolerance based on extent size
+    # For axis-aligned transform, vertical edges should have similar x-coords
+    # and horizontal edges should have similar y-coords
+    # Use relative tolerance to allow for projection curvature
     x_range = max(abs(c1[1] - c2[1]), abs(c3[1] - c4[1]), 1.0)
     y_range = max(abs(c1[2] - c3[2]), abs(c2[2] - c4[2]), 1.0)
-    rtol = 1e-10
 
-    # Check left edge: c1 and c3 should have same x
+    # Check left edge: c1 and c3 should have similar x
     abs(c1[1] - c3[1]) < rtol * x_range || return false
-    # Check right edge: c2 and c4 should have same x
+    # Check right edge: c2 and c4 should have similar x
     abs(c2[1] - c4[1]) < rtol * x_range || return false
-    # Check bottom edge: c1 and c2 should have same y
+    # Check bottom edge: c1 and c2 should have similar y
     abs(c1[2] - c2[2]) < rtol * y_range || return false
-    # Check top edge: c3 and c4 should have same y
+    # Check top edge: c3 and c4 should have similar y
     abs(c3[2] - c4[2]) < rtol * y_range || return false
 
     return true
