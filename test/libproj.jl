@@ -1,6 +1,7 @@
 using Test
 using StaticArrays
 using Proj
+import Extents
 import GeoInterface as GI
 import PROJ_jll
 import GeoFormatTypes as GFT
@@ -251,6 +252,46 @@ end
     @test ttxmin < xmin < xmax < ttxmax
     @test ttymin < ymin < ymax < ttymax
 
+end
+
+@testset "Extent transformation" begin
+    trans = Proj.Transformation("EPSG:4326", "EPSG:28992", always_xy=true)
+
+    # Basic extent transformation
+    ext = Extents.Extent(X=(5.0, 6.0), Y=(52.0, 53.0))
+    result = trans(ext)
+    @test result isa Extents.Extent
+    @test haskey(result, :X)
+    @test haskey(result, :Y)
+    @test result.X[1] < result.X[2]
+    @test result.Y[1] < result.Y[2]
+
+    # Test that a point inside the extent transforms to inside the result
+    px, py = trans(5.5, 52.5)
+    @test result.X[1] < px < result.X[2]
+    @test result.Y[1] < py < result.Y[2]
+
+    # Extra dimensions are preserved
+    ext_with_z = Extents.Extent(X=(5.0, 6.0), Y=(52.0, 53.0), Z=(0.0, 100.0))
+    result_z = trans(ext_with_z)
+    @test haskey(result_z, :Z)
+    @test result_z.Z == (0.0, 100.0)
+
+    # Order of dimensions is preserved
+    ext_ordered = Extents.Extent(Z=(0.0, 100.0), X=(5.0, 6.0), Y=(52.0, 53.0))
+    result_ordered = trans(ext_ordered)
+    @test keys(result_ordered) == (:Z, :X, :Y)
+
+    # Error without X and Y
+    @test_throws ArgumentError trans(Extents.Extent(Z=(0.0, 100.0)))
+
+    # Error on rotated CRS (oblique mercator)
+    trans_rotated = Proj.Transformation(
+        "EPSG:4326",
+        "+proj=omerc +lat_0=45 +lonc=0 +alpha=45 +gamma=45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84",
+        always_xy=true
+    )
+    @test_throws ArgumentError trans_rotated(ext)
 end
 
 @testset "dense 4D coord vector transformation" begin
